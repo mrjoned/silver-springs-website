@@ -1,0 +1,19 @@
+{
+  "name": "silver-springs-website",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22.22.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "node scripts/check-project.mjs && astro build --force",
+    "preview": "astro preview",
+    "test": "node tests/data-connection.mjs && node tests/publishing.mjs",
+    "test:publishing": "node tests/publishing-build.mjs"
+  },
+  "dependencies": {
+    "astro": "7.4.1"
+  }
+}

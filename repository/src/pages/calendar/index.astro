@@ -1,0 +1,7 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import content from "../../content/pages/calendar.html?raw";
+---
+<SiteLayout title={"Calendar"} description={"The Silver Springs Survival event calendar: community events, Rush Weekends, and resource-world resets."} styles={["/assets/site.css", "/assets/gallery-calendar.css"]} scripts={["/assets/calendar.js"]}>
+  <Fragment set:html={content} />
+</SiteLayout>

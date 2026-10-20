@@ -1,0 +1,14 @@
+{
+  "id": "686b473d7923090ca23816cf",
+  "title": "📝General Updates",
+  "author": "Jonathan Hill",
+  "topics": [
+    "build-contest",
+    "gameplay",
+    "runecrafting"
+  ],
+  "excerpt": "Hey everyone, just a few quick general updates. ⬆️We plan to update to 1.21.7 within the next day or two. Get your updated clients ready! Note that saddles will be removed from the shop when we do this, as they are now craftable. Sell any…",
+  "date": "2025-07-06T23:09:25.854000-05:00",
+  "draft": false,
+  "body": "\n  \n  <p class=\"post-emphasis\">Hey everyone, just a few quick general updates.</p><ul><li><p>⬆️We plan to <strong>update to 1.21.7</strong> within the next day or two. Get your updated clients ready!</p><ul><li><p class=\"post-small\">Note that saddles will be removed from the shop when we do this, as they are now craftable. Sell any you have off now if you&#x27;d like!</p></li></ul></li><li><p>🌍The <strong>resource world</strong> has received a few updates</p><ul><li><p>Biome warps now generate with more randomness, and the warp names are now more generic. For example. &quot;ResCold&quot; warps to a semi-random cold biome, like frozen peaks, and &quot;ResForest&quot; warps to a random large forest, like jungles or dark forests. The desert warp is still a mainstay.</p></li><li><p>Warps should be much more likely to generate further apart from each other.</p></li><li><p>This is experimental, so let us know what you think of the general idea!</p></li></ul></li><li><p>🌏Your <strong>creative world inventory</strong> now persists between visits.</p></li><li><p><strong>😴Insomnia</strong> no longer resets if you die in non-survival scenarios.</p></li><li><p>🍯Signs can now be <strong>unwaxed</strong> by right-clicking with an axe. This returns the honeycomb 50% of the time.</p></li><li><p><strong>🛡️Impetus of Athena</strong> effects are rebalanced. Warfare attacks now damage in a cone, while ambush only empowers the attack used to exit stealth, so it is now single-target, but it temporarily shreds 50% of their armor. Stare additionally costs +1 Aegis versus players.</p></li><li><p>🗓️Reminder that the <strong>Greenhouse build contest</strong> is due next weekend, and that you can submit entries as early as you&#x27;d like!</p></li></ul><p>Please leave feedback on any changes in ⁠💌feedback-and-suggestions, thanks🫶</p>\n\n\n  \n\n\n\n\n\n\n\n\n\n"
+}

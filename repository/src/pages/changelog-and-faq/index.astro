@@ -1,0 +1,44 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import PostTags from '../../components/PostTags.astro';
+import { posts, topics, searchIndex } from '../../lib/posts.js';
+const latest = posts[0];
+const years = [...new Set(posts.map((post) => post.year))].sort().reverse();
+const archiveJSON = JSON.stringify(searchIndex).replace(/</g, '\\u003c');
+---
+<SiteLayout title="Announcements, Changelog & FAQ" description="Browse Silver Springs Survival announcements, gameplay changes, events, and FAQ posts." styles={['/assets/site.css', '/assets/news.css']} scripts={['/assets/news.js']}>
+  <main id="main">
+    <section class="inner-hero news-hero"><div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span>Announcements, Changelog & FAQ</span></nav>
+      <div class="eyebrow">The latest & the details</div><h1>What’s new in<br /><em>Silver Springs.</em></h1>
+      <p>Server announcements, gameplay changes, event details, and answers to the questions that come with them.</p>
+      <div class="news-hero-actions"><a class="btn primary" href="#archive">Browse the archive ↓</a><a class="btn" href="/changelog-and-faq/?topic=faq#archive">Find FAQ posts →</a></div>
+    </div></section>
+    <section class="wrap news-highlights" id="news-highlights">
+      {latest ? <article class="featured-post"><div class="eyebrow">Latest announcement</div><div class="featured-date"><time datetime={latest.dateISO}>{latest.dateLabel}</time></div>
+        <h2><a href={latest.path}>{latest.title}</a></h2><p>{latest.excerpt}</p><PostTags topics={latest.topics} /><a class="textlink" href={latest.path}>Read the announcement →</a>
+      </article> : <article class="featured-post"><h2>More stories to come.</h2><p>Check Discord for the latest from Silver Springs.</p></article>}
+      <aside class="news-connect"><div class="eyebrow">Stay in the loop</div><h3>Discord gets it first.</h3><p>We share updates on Discord first, then bring them to the website when available.</p><a class="textlink" href="https://discord.gg/r22U3prgPE">Join the community ↗</a><div class="news-shortcuts"><a href="/calendar/">Check the event calendar →</a><a href="/content-overview/">Explore the gameplay guides →</a></div></aside>
+    </section>
+    <section class="wrap archive-section" id="archive">
+      <div class="archive-heading"><div><div class="eyebrow">The archive</div><h2>Catch up. Dig into the details.</h2></div><span class="archive-total">{posts.length} posts{years.length ? ` · ${years[years.length - 1]}–${years[0]}` : ''}</span></div>
+      <div class="archive-controls">
+        <label class="archive-search"><span class="sr-only">Search titles and full post text</span><input id="news-search" type="search" placeholder="Search updates, events, enchantments…" autocomplete="off" /></label>
+        <label>Year<select id="news-year"><option value="all">All years</option>{years.map((year) => <option value={year}>{year}</option>)}</select></label>
+        <label>Order<select id="news-sort"><option value="newest">Newest first</option><option value="oldest">Oldest first</option></select></label>
+      </div>
+      <div class="topic-filters" role="group" aria-label="Filter posts by topic"><button class="topic-filter" data-topic="all" aria-pressed="true">All posts</button>{topics.map(({ id, label }) => <button class="topic-filter" data-topic={id} aria-pressed="false">{label}</button>)}</div>
+      <div class="archive-results"><p id="news-results" role="status">Showing all {posts.length} posts</p><button id="clear-news-filters" hidden>Clear filters</button></div>
+      <div id="news-posts">
+        {posts.map((post) => <article class="archive-card" data-post={post.id}>
+          <div class="archive-date"><time datetime={post.dateISO}>{post.dateLabel}</time></div>
+          <div class="archive-card-body"><PostTags topics={post.topics} /><h3><a href={post.path}>{post.title}</a></h3><p>{post.excerpt}</p><a class="textlink" href={post.path}>Read the full post →</a></div>
+        </article>)}
+      </div>
+      <div id="news-empty" hidden><h3>No posts found.</h3><p>Try another topic, year, or search term.</p></div>
+      <div class="archive-more"><button class="btn" id="news-more">Show more posts ↓</button></div>
+      <p class="archive-import">Check Discord for updates first, and browse published announcements here.</p>
+    </section>
+    <script is:inline type="application/json" id="news-data" set:html={archiveJSON}></script>
+  </main>
+</SiteLayout>

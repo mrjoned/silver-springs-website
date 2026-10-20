@@ -1,0 +1,7 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import content from "../content/pages/404.html?raw";
+---
+<SiteLayout title={"Page not found"} description={"Silver Springs Survival community and player guides."} styles={["/assets/site.css"]} scripts={[]} noindex>
+  <Fragment set:html={content} />
+</SiteLayout>
