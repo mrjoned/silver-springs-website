@@ -35,7 +35,7 @@ content:
         required: true
         options:
           time: true
-          format: "yyyy-MM-dd'T'HH:mm:ssxxx"
+          format: "yyyy-MM-dd'T'HH:mm:ss.SSSSSSxxx"
       - name: draft
         label: Draft (hide from website)
         type: boolean
