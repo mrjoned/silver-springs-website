@@ -1,0 +1,125 @@
+media:
+  input: public/assets/uploads
+  output: /assets/uploads
+  extensions: [jpg, jpeg, png, webp, gif]
+  rename: safe
+
+content:
+  - name: announcements
+    label: Announcements
+    type: collection
+    path: src/content/announcements
+    format: json
+    filename:
+      template: "{primary}.json"
+      field: create
+    subfolders: false
+    operations:
+      rename: false
+    view:
+      primary: title
+      fields: [title, date, draft]
+      sort: [date, title]
+      search: [title, excerpt, body]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Publication date
+        type: date
+        required: true
+        options:
+          time: true
+          format: "yyyy-MM-dd'T'HH:mm:ssxxx"
+      - name: draft
+        label: Draft (hide from website)
+        type: boolean
+        default: true
+      - name: author
+        label: Author
+        type: string
+        default: Jonathan Hill
+      - name: topics
+        label: Topics
+        type: select
+        options:
+          multiple: true
+          values:
+            - name: gameplay
+              label: Gameplay
+            - name: runecrafting
+              label: Runecrafting
+            - name: valor-shop
+              label: Valor Shop
+            - name: event
+              label: Events
+            - name: build-contest
+              label: Build Contests
+            - name: weekend-rush
+              label: Rush Weekends
+            - name: faq
+              label: FAQ
+            - name: miscellaneous
+              label: Miscellaneous
+      - name: excerpt
+        label: Summary
+        type: text
+        description: Optional short summary for announcement cards. Leave blank to use the opening text.
+      - name: body
+        label: Announcement
+        type: rich-text
+        required: true
+        options:
+          format: html
+          switcher: true
+
+  - name: photos
+    label: Gallery
+    type: collection
+    path: src/content/photos
+    format: json
+    filename:
+      template: "{year}{month}{day}-{hour}{minute}{second}-{primary}.json"
+      field: create
+    subfolders: false
+    view:
+      primary: title
+      fields: [title, image, date, draft]
+      sort: [date, title, order]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Caption
+        type: string
+        required: true
+      - name: image
+        label: Photo
+        type: image
+        required: true
+      - name: alt
+        label: Image description
+        type: string
+        required: true
+        description: Briefly describe what is pictured for visitors using screen readers.
+      - name: date
+        label: Photo date
+        type: date
+        default: ""
+        options:
+          format: yyyy-MM-dd
+      - name: order
+        label: Display order
+        type: number
+        default: 0
+        description: Lower numbers appear first. Leave 0 to place a new photo before the imported collection.
+      - name: draft
+        label: Draft (hide from website)
+        type: boolean
+        default: true

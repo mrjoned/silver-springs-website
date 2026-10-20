@@ -21,28 +21,13 @@ The five Hub tools and their own shell remain unchanged as static documents unde
 
 `site.css` styles the homepage/community/archive pages; `chrome.css` styles the guide/Hub/map shells. The content guides retain their separately scoped stylesheet. This avoids homepage card and hero styles changing the tools.
 
-## Adding an announcement
+## Publishing content
 
-1. Create `src/content/posts/your-post-slug.html`, containing the post body HTML. Use semantic paragraphs, headings, lists, and local image paths. This is only the article body, not a full HTML document.
-2. Add one record to `src/data/posts.json`:
+See [PUBLISHING.md](PUBLISHING.md). `.pages.yml` supplies the Announcements and Gallery editor forms. Each announcement now lives in one JSON file under `src/content/announcements/`; gallery entries live under `src/content/photos/`. New media uploads go to `public/assets/uploads/`.
 
-```json
-{
-  "id": "your-unique-post-id",
-  "slug": "your-post-slug",
-  "title": "Your announcement title",
-  "published": 1792454400000,
-  "author": "Your display name",
-  "topics": ["gameplay"],
-  "excerpt": "A short summary for the archive."
-}
-```
+`src/lib/publishing.js` excludes drafts, validates published entries, derives URLs from stable filenames, and sorts posts/photos. `src/lib/posts.js` and `src/lib/photos.js` load those entries at build time. `LatestNews.astro` uses the same published-post list as the archive, so the first two homepage cards update automatically. The Gallery page and `/gallery/photos.json` are also generated together, avoiding manual grid edits.
 
-Set `published` to the post's actual Unix timestamp **in milliseconds**. The value above is illustrative; replace it. Slugs and IDs must be unique. Available topic IDs are `gameplay`, `runecrafting`, `valor-shop`, `event`, `build-contest`, `weekend-rush`, `faq`, and `miscellaneous`.
-
-3. Commit and rebuild. `src/lib/posts.js` loads the body, derives search text and dates, sorts posts, and supplies the archive and `[slug].astro` routes. Topic links, the archive's highlighted latest post, search records, and older/newer links update together.
-
-The homepage's two announcement summaries remain authored homepage content. Update `src/content/pages/home.html` when changing them.
+All 49 imported post bodies and original URLs, and all 45 images in their original collection order, are retained. The old split post-metadata/body files and fixed gallery JSON have been replaced by the editor-backed entries. Normal page text remains under `src/content/pages/`; the homepage is split into `home-before-news.html` and `home-after-news.html`, with the generated news component between them.
 
 ## Live data and remaining boundaries
 
