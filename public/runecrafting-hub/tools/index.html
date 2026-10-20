@@ -1,0 +1,59 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Runecrafting Hub</title><style>
+:root{color-scheme:dark;--bg:#090a10;--panel:#171923;--panel2:#20222e;--line:#343342;--text:#f7f4fa;--muted:#b8b5c5;--pink:#e96aa9;--pink2:#ffb2d7;--accent:#c48aff;font-family:"Atkinson Hyperlegible",Verdana,Arial,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% 0,#291627 0,transparent 650px),var(--bg);color:var(--text);font:15px/1.6 "Atkinson Hyperlegible",Verdana,Arial,sans-serif}button,a{touch-action:manipulation}a{color:inherit;text-decoration:none}
+.hub-header{max-width:1240px;margin:auto;padding:28px 25px 18px}
+.eyebrow{font-size:10px;color:var(--accent);letter-spacing:.16em;font-weight:800}.hub-header h1{font-size:clamp(38px,5.5vw,64px);line-height:1.08;letter-spacing:-.05em;margin:13px 0 18px}.subtitle{color:var(--muted);max-width:660px;margin:0 0 28px;font-size:17px;line-height:1.65}
+.nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}.nav-btn{border:1px solid transparent;background:transparent;color:var(--muted);border-radius:9px;padding:11px 15px;font:650 13px/1.4 "Atkinson Hyperlegible",Verdana,Arial,sans-serif;cursor:pointer;display:flex;align-items:center;gap:8px;min-height:44px;transition:background .15s,border-color .15s}.nav-btn:hover{background:#20222e;color:var(--text)}.nav-btn[aria-selected=true]{background:#322437;border-color:#67415b;color:#f7f4fa}.symbol{font-size:16px}button:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.context{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:16px 20px}.context h2{font-size:17px;letter-spacing:-.025em;margin:0 0 3px;line-height:1.35}.context p{margin:0;color:var(--muted);font-size:13px}.context .pill{color:#e5bbd0;font-size:11px;border:1px solid #684559;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.workspace{max-width:1240px;margin:auto;padding:0 25px 36px}.tool-frame{width:100%;height:1100px;display:block;border:1px solid var(--line);background:var(--bg);border-radius:16px}.tool-frame[hidden]{display:none}.footer{max-width:1190px;margin:auto;padding:18px 20px 30px;border-top:1px solid var(--line);color:var(--muted);text-align:center;font-size:12px}
+@media(max-width:650px){.hub-header{padding:20px 16px 14px}.subtitle{font-size:15px;margin-bottom:22px}.nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.nav-btn{padding:10px 8px;font-size:12px;justify-content:center}.nav-btn:last-child{grid-column:1/-1}.workspace{padding:0 12px 26px}.context{padding:14px}.context .pill{display:none}.tool-frame{border-radius:14px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important}}
+
+.tool-frame{border:0;border-radius:0}
+</style><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&amp;display=swap"></head><body><header class="hub-header"><div class="eyebrow">RUNECRAFTING TOOLS</div><h1>Runecrafting Hub</h1><p class="subtitle">Everything you need to discover, compare, plan, and craft enchantments in one place.</p><nav class="nav" role="tablist" aria-label="Runecrafting tools"><button type="button" class="nav-btn" data-tool="planner" aria-selected="true" role="tab"><span class="symbol">⚒</span><span>Build Planner</span></button><button type="button" class="nav-btn" data-tool="encyclopedia" aria-selected="false" role="tab"><span class="symbol">📖</span><span>Encyclopedia</span></button><button type="button" class="nav-btn" data-tool="calculator" aria-selected="false" role="tab"><span class="symbol">🧮</span><span>Rune Calculator</span></button><button type="button" class="nav-btn" data-tool="guide" aria-selected="false" role="tab"><span class="symbol">🛡</span><span>Equipment Guide</span></button><button type="button" class="nav-btn" data-tool="comparison" aria-selected="false" role="tab"><span class="symbol">⚖</span><span>Comparison</span></button></nav></header><main class="workspace"><iframe title="Build Planner" id="frame-planner" class="tool-frame" loading="eager" ></iframe><iframe title="Encyclopedia" id="frame-encyclopedia" class="tool-frame" loading="lazy" hidden></iframe><iframe title="Rune Calculator" id="frame-calculator" class="tool-frame" loading="lazy" hidden></iframe><iframe title="Equipment Guide" id="frame-guide" class="tool-frame" loading="lazy" hidden></iframe><iframe title="Comparison" id="frame-comparison" class="tool-frame" loading="lazy" hidden></iframe></main><footer class="footer">Silver Springs Survival · Runecrafting tools</footer><script>
+const toolData={planner:"hub_build_planner.html",encyclopedia:"hub_encyclopedia.html",calculator:"hub_rune_calculator.html",guide:"hub_equipment_guide.html",comparison:"hub_comparison.html"};
+const toolMeta={"planner": {"name": "Build Planner", "description": "Plan enchantments and rune costs"}, "encyclopedia": {"name": "Encyclopedia", "description": "Browse enchantments and recipes"}, "calculator": {"name": "Rune Calculator", "description": "Calculate rune requirements"}, "guide": {"name": "Equipment Guide", "description": "Find enchantments by equipment"}, "comparison": {"name": "Comparison", "description": "Compare enchantments side by side"}};
+const buttons=[...document.querySelectorAll('[data-tool]')];
+const loaded=new Set();
+function loadTool(key){if(loaded.has(key))return;const frame=document.getElementById('frame-'+key);frame.src=toolData[key];loaded.add(key);frame.addEventListener('load',()=>resizeFrame(frame));}
+function resizeFrame(frame){if(frame.hidden)return;try{const doc=frame.contentDocument;if(!doc)return;const height=Math.ceil(doc.body?.getBoundingClientRect().height||0);if(height>200)frame.style.height=(height+28)+'px'}catch(e){}}
+function activate(key,updateHash=true){if(!toolData[key])key='planner';buttons.forEach(b=>{const active=b.dataset.tool===key;b.setAttribute('aria-selected',String(active));b.tabIndex=active?0:-1});document.querySelectorAll('.tool-frame').forEach(f=>f.hidden=f.id!=='frame-'+key);loadTool(key);resizeFrame(document.getElementById('frame-'+key));if(updateHash)history.replaceState(null,'','#'+key)}
+buttons.forEach(b=>b.addEventListener('click',()=>activate(b.dataset.tool)));
+window.addEventListener('hashchange',()=>activate(location.hash.slice(1),false));
+setInterval(()=>{const key=document.querySelector('.nav-btn[aria-selected="true"]')?.dataset.tool;if(key)resizeFrame(document.getElementById('frame-'+key))},900);
+activate(location.hash.slice(1)||'planner',false);
+</script><!-- Squarespace embed auto-height -->
+<script>
+(function () {
+  'use strict';
+  if (window.parent === window) return;
+  const allowedParents = [window.location.origin,'https://www.silverspringssurvival.com','https://silverspringssurvival.com'];
+  let lastHeight = 0, queued = false;
+  function publishHeight() {
+    queued = false;
+    // Body bounds can shrink; document.scrollHeight cannot shrink below the iframe viewport.
+    const height = Math.ceil(document.body.getBoundingClientRect().height);
+    if (!Number.isFinite(height) || height < 200 || height === lastHeight) return;
+    lastHeight = height;
+    allowedParents.forEach(origin => window.parent.postMessage({type:'sss-runecrafting-hub:resize',version:1,height},origin));
+  }
+  function schedule() {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(publishHeight);
+  }
+  if (window.ResizeObserver) new ResizeObserver(schedule).observe(document.body);
+  window.addEventListener('resize',schedule);
+  window.addEventListener('load',schedule);
+  window.addEventListener('message',event => {
+    if (event.source === window.parent && allowedParents.includes(event.origin) && event.data?.type === 'sss-runecrafting-hub:request-height') {
+      lastHeight = 0;
+      schedule();
+    }
+  });
+  if (document.fonts?.ready) document.fonts.ready.then(schedule);
+  setInterval(schedule,900);
+  schedule();
+})();
+</script>
+</body></html>

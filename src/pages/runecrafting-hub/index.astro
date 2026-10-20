@@ -1,0 +1,7 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import content from "../../content/pages/runecrafting-hub.html?raw";
+---
+<SiteLayout title={"Runecrafting Hub"} description={"Silver Springs Survival custom content and player tools."} styles={["/assets/chrome.css"]} scripts={["/runecrafting-hub/embed.js"]}>
+  <Fragment set:html={content} />
+</SiteLayout>

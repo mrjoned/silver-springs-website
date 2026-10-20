@@ -1,0 +1,7 @@
+---
+import { topicLabel } from '../lib/posts.js';
+const { topics = [] } = Astro.props;
+---
+<div class="post-tags">
+  {topics.map((topic) => <a class="post-tag" href={`/changelog-and-faq/?topic=${topic}#archive`}>{topicLabel(topic)}</a>)}
+</div>

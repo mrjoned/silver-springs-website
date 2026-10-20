@@ -1,0 +1,7 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import content from "../../content/pages/gallery.html?raw";
+---
+<SiteLayout title={"Gallery"} description={"Explore player builds and community memories from the Silver Springs Survival archives."} styles={["/assets/site.css", "/assets/gallery-calendar.css"]} scripts={["/assets/gallery.js"]}>
+  <Fragment set:html={content} />
+</SiteLayout>

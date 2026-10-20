@@ -1,0 +1,7 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import content from "../../content/pages/about-us.html?raw";
+---
+<SiteLayout title={"About Us"} description={"A little about Silver Springs Survival: our community, customized vanilla gameplay, and how to get started."} styles={["/assets/site.css"]} scripts={[]}>
+  <Fragment set:html={content} />
+</SiteLayout>
