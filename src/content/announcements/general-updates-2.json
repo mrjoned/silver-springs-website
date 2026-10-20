@@ -1,0 +1,15 @@
+{
+  "id": "686ee9e6da9d4867f4cda88d",
+  "title": "📝General Updates",
+  "author": "Jonathan Hill",
+  "topics": [
+    "gameplay",
+    "valor-shop",
+    "runecrafting",
+    "miscellaneous"
+  ],
+  "excerpt": "Hey everyone! I know the pings have been frequent lately but we’ve been getting a lot done. 😎 Got another batch of updates and fixes for you. As always, report any feedback or issues. Thanks! Socketing : Horse armor, wolf armor, and…",
+  "date": "2025-07-09T17:21:42.892000-05:00",
+  "draft": false,
+  "body": "\n  \n    \n  \n  <p>Hey everyone! I know the pings have been frequent lately but we’ve been getting a lot done. 😎 Got another batch of updates and fixes for you. As always, report any feedback or issues. Thanks!</p><p class=\"post-emphasis\"><strong>💎Socketing</strong>:</p><ul><li><p><strong>Horse armor, wolf armor, and harnesses</strong> can now be socketed.</p><ul><li><p>All can be increased to 11 armor and 2 armor toughness, the same as Diamond Horse Armor.</p></li><li><p>Horse and wolf armor can hold 4 stat gems, while harnesses can hold 6. Gems of Agility socketed into harnesses instead increase fly speed.</p></li></ul></li><li><p><strong>Gems of Tenacity</strong> now additionally grant +5% stun resist. This means full tenacity armor reduces stun durations by 80%.</p></li></ul><p class=\"post-emphasis\"><strong>🎮Gameplay</strong>:</p><ul><li><p>You can now capture Happy Ghasts in eggs.</p></li><li><p>You now have 64 block reach in the creative world by default. This can be toggled off with ‘/toggle creative_world block_reach.’</p></li><li><p>The <strong>Hawking Warp</strong> can now be used anywhere outside of parkours, though no longer goes through walls.</p></li></ul><p class=\"post-emphasis\"><strong>🖥️Commands</strong>:</p><ul><li><p>Added ‘/map’ to get a link to the live server map.</p></li><li><p>Added ‘/toggle sounds combat_end’ to enable a subtle sound when you exit combat.</p></li><li><p>Added ‘/vaporize &lt;player&gt;’ as a new simple command (Fine!)</p></li></ul><p class=\"post-emphasis\"><strong>🪲Bug Fixes</strong>:</p><ul><li><p>Fixed <em>Impetus of Hades</em> allowing you to stealth in view of players in PvP arenas.</p></li><li><p>Fixed <em>Mulching</em> still giving seeds when used with <em>Magnetism</em>.</p></li><li><p>Fixed <em>Noclip</em> warping you when sprinting towards a ladder on a thin wall.</p></li><li><p>Fixed display copy pasting not always working for displays of items with custom stack sizes (cakes, potions, etc.)</p></li></ul><h4>🫶</h4>\n\n\n  \n\n\n\n\n\n\n\n\n\n"
+}

@@ -1,0 +1,15 @@
+{
+  "id": "68af6889ae0878096fcb9212",
+  "title": "📝General Updates",
+  "author": "Jonathan Hill",
+  "topics": [
+    "runecrafting",
+    "valor-shop",
+    "gameplay",
+    "miscellaneous"
+  ],
+  "excerpt": "Hey @everyone, here to deliver some updates completed in the past week! 🍷 Impetus of Dionysus can now hand-brew custom potions you've unlocked via mcMMO alchemy. 🧍The armor stand editing GUI now has a name tag button for toggling…",
+  "date": "2025-08-27T15:27:36.627000-05:00",
+  "draft": false,
+  "body": "\n  \n    \n  \n  <p>Hey @everyone, here to deliver some updates completed in the past week!</p><ul><li><p>🍷<em>Impetus of Dionysus</em> can now hand-brew custom potions you&#x27;ve unlocked via mcMMO alchemy.</p></li><li><p>🧍The armor stand editing GUI now has a name tag button for toggling visibility of its name. This also works for Mob Scarecrows.</p></li><li><p>🐗Mob Scarecrows now prevent zombified piglins spawns and only lose 0-1 Withered Hearts when broken while upgraded.</p></li><li><p>🧙‍♀️The spawn secret hints given by the boardwalk clairvoyant now include the number of the hinted secret.</p></li><li><p>🟧Added `/creative_world` as a master command for managing creative world settings, including two new subcommands:</p><ul><li><p>🕰️`/creative_world time &lt;time&gt;` - Sets a personal creative world time-of-day override. Accepts `dawn`, `dusk`, `night`, or `reset`.</p></li><li><p>🌧️`/creative_world weather &lt;weather&gt;` - Sets a personal creative world weather override. Accepts `rain` or `reset`.</p></li><li><p>There are also `home` and `particle_wand` subcommands which simply act as aliases to `/creativehome` and `/particlewand`.</p></li><li><p>Using just `/creative_world` on its own acts as an alias to `/warp creative`.</p></li></ul></li></ul><h2>🫶</h2>\n\n\n  \n\n\n\n\n\n\n\n\n\n"
+}

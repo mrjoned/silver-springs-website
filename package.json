@@ -8,9 +8,10 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "node scripts/check-project.mjs && astro build",
+    "build": "node scripts/check-project.mjs && astro build --force",
     "preview": "astro preview",
-    "test": "node tests/data-connection.mjs"
+    "test": "node tests/data-connection.mjs && node tests/publishing.mjs",
+    "test:publishing": "node tests/publishing-build.mjs"
   },
   "dependencies": {
     "astro": "7.4.1"
