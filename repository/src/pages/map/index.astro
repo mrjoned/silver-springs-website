@@ -1,7 +1,0 @@
----
-import SiteLayout from "../../layouts/SiteLayout.astro";
-import content from "../../content/pages/map.html?raw";
----
-<SiteLayout title={"Live Server Map"} description={"Explore the Silver Springs Survival live server map."} styles={["/assets/chrome.css", "/assets/map.css"]} scripts={["/assets/map.js"]}>
-  <Fragment set:html={content} />
-</SiteLayout>
