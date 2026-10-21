@@ -42,13 +42,43 @@
       return '<div class="sss-richtext-table"><table><thead><tr>'+header.map(t=>cell(t,'th')).join('')+'</tr></thead><tbody>'+rows.map(row=>'<tr>'+row.map(t=>cell(t,'td')).join('')+'</tr>').join('')+'</tbody></table></div>';
     }
   };
+  const colors = new Set(['red','gold','yellow','green','aqua','blue','purple','pink','gray','white']);
+  // Process text nodes only, leaving HTML attributes and code samples untouched.
+  function colorize(html) {
+    const parts = html.split(/(<[^>]*>)/g);
+    const output = [], stack = [];
+    let codeDepth = 0;
+    for (const part of parts) {
+      if (part.startsWith('<')) {
+        if (/^<(?:pre|code)\b/i.test(part)) codeDepth++;
+        if (/^<\/(?:pre|code)>/i.test(part)) codeDepth = Math.max(0, codeDepth - 1);
+        if (/^<\/?(?:p|div|li|ul|ol|blockquote|pre|table|tr|td|th|hr)\b/i.test(part)) stack.length = 0;
+        output.push(part);
+        continue;
+      }
+      if (codeDepth) { output.push(part); continue; }
+      for (const token of part.split(/(\[\/?[a-z]+\])/gi)) {
+        const match = /^\[(\/?)([a-z]+)\]$/i.exec(token);
+        const color = match?.[2].toLowerCase();
+        if (!colors.has(color)) { output.push(token); continue; }
+        if (!match[1]) {
+          stack.push({color, index:output.length}); output.push(token);
+        } else if (stack.length && stack[stack.length-1].color === color) {
+          const opening = stack.pop();
+          output[opening.index] = '<span class="sss-color-' + color + '">';
+          output.push('</span>');
+        } else { output.push(token); }
+      }
+    }
+    return output.join('');
+  }
   const parser = new window.marked.Marked({gfm:true,breaks:true,renderer});
   const cache = new Map();
   window.SSSDescriptions = {
     format(value) {
       const text=String(value||'No description available yet.');
       if(cache.has(text))return cache.get(text);
-      const result=parser.parse(text);
+      const result=colorize(parser.parse(text));
       if(cache.size>=500)cache.clear();cache.set(text,result);
       return result;
     }
