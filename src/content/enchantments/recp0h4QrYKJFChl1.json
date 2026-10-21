@@ -4,7 +4,7 @@
   "name": "Paradigm of Gluttony",
   "source": "Runecrafted",
   "category": "Paradigm",
-  "description": "Your hunger bar acts as an additional secondary health bar, but consumed food is at best as filling as bread. \n> **On-Equip**: Consume half of your current hunger.\n",
+  "description": "<p>Your hunger bar acts as an additional secondary health bar, but consumed food is at best as filling as bread. </p><blockquote><p><strong>On-Equip</strong>: Consume half of your current hunger.</p></blockquote>",
   "maxLevel": 1,
   "items": [
     "Helmets"

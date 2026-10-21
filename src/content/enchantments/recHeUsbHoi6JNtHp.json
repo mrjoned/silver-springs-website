@@ -4,7 +4,7 @@
   "name": "Howling",
   "source": "Runecrafted",
   "category": "Sweeping",
-  "description": "Charged attacks grant 1 stack, up to 4. At 4 stacks, right-click to consume all stacks and Howl, releasing a sonic wave that strikes enemies in a 6-block cylinder for 75% damage. If your offhand weapon is Howling, it also strikes them for 25% damage.\n",
+  "description": "<p>Charged attacks grant 1 stack, up to 4. At 4 stacks, right-click to consume all stacks and Howl, releasing a sonic wave that strikes enemies in a 6-block cylinder for 75% damage. If your offhand weapon is Howling, it also strikes them for 25% damage.</p>",
   "maxLevel": 1,
   "items": [
     "Swords",

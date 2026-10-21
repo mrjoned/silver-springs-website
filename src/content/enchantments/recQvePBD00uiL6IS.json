@@ -4,7 +4,7 @@
   "name": "Paradigm of Envy",
   "source": "Runecrafted",
   "category": "Paradigm",
-  "description": "An item with a different Paradigm can be inserted into this one to gain only its positive effects, but your maximum health is reduced by 40%.\n",
+  "description": "<p>An item with a different Paradigm can be inserted into this one to gain only its positive effects, but your maximum health is reduced by 40%.</p>",
   "maxLevel": 1,
   "items": [
     "Helmets"

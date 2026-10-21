@@ -4,7 +4,7 @@
   "name": "Blitz",
   "source": "Runecrafted",
   "category": "Travel",
-  "description": "After sprinting while grounded for 1.5 seconds, you **Blitz**, gaining 20-40% speed until you stop sprinting.\n",
+  "description": "<p>After sprinting while grounded for 1.5 seconds, you <strong>Blitz</strong>, gaining 20-40% speed until you stop sprinting.</p>",
   "maxLevel": 2,
   "items": [
     "Leggings"

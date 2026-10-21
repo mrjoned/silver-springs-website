@@ -4,7 +4,7 @@
   "name": "Strafing",
   "source": "Runecrafted",
   "category": "Control",
-  "description": "You are slowed 60% less while drawing a shot.\n",
+  "description": "<p>You are slowed 60% less while drawing a shot.</p>",
   "maxLevel": 1,
   "items": [
     "Bows"

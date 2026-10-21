@@ -4,7 +4,7 @@
   "name": "Skip",
   "source": "Runecrafted",
   "category": "Dash",
-  "description": "While charging, you can jump across liquids, briefly turning them to cobblestone as you land.\n",
+  "description": "<p>While charging, you can jump across liquids, briefly turning them to cobblestone as you land.</p>",
   "maxLevel": 1,
   "items": [
     "Spears"

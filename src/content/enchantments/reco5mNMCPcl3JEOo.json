@@ -4,7 +4,7 @@
   "name": "Pilot Light",
   "source": "Runecrafted",
   "category": "Uncategorized",
-  "description": "Right clicking on Furnaces, Blast Furnaces, and Smokers charges them with 4 Coal worth of fuel.\n",
+  "description": "<p>Right clicking on Furnaces, Blast Furnaces, and Smokers charges them with 4 Coal worth of fuel.</p>",
   "maxLevel": 1,
   "items": [
     "Flint and Steel"

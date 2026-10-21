@@ -4,7 +4,7 @@
   "name": "Flurry",
   "source": "Runecrafted",
   "category": "Damage",
-  "description": "Charge strikes grant **+30-90% attack speed** on your next 3 jabs\n",
+  "description": "<p>Charge strikes grant <strong>+30-90% attack speed</strong> on your next 3 jabs</p>",
   "maxLevel": 3,
   "items": [
     "Spears"

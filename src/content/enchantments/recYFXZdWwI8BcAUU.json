@@ -4,7 +4,7 @@
   "name": "Executioner",
   "source": "Runecrafted",
   "category": "Loot",
-  "description": "Charged attacks immediately execute targets left below 5% health. Executed targets are 3.5x more likely to drop their head.\n",
+  "description": "<p>Charged attacks immediately execute targets left below 5% health. Executed targets are 3.5x more likely to drop their head.</p>",
   "maxLevel": 1,
   "items": [
     "Axes"

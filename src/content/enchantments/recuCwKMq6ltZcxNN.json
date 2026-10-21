@@ -4,7 +4,7 @@
   "name": "Kaleidoscope",
   "source": "Runecrafted",
   "category": "Uncategorized",
-  "description": "Viewing a portal through this spyglass instantly transports you through it.\n",
+  "description": "<p>Viewing a portal through this spyglass instantly transports you through it.</p>",
   "maxLevel": 1,
   "items": [
     "Spyglass"

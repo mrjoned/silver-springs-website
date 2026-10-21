@@ -4,7 +4,7 @@
   "name": "Tithing",
   "source": "Runecrafted",
   "category": "Cutting",
-  "description": "More entities can be sheared periodically for resources.\n- **Blazes:** Blaze Rods\n- **Chickens and Parrots:** Feathers\n- **Creepers:** Gunpowder\n- **Ghasts:** Ghast Tears\n- **Glow Squids: **Glow Ink\n- **Guardians: **Prismarine Shards and Crystals\n- **Magma Cubes: **Magma Cream\n- **Phantoms:** Phantom Membranes\n- **Shulkers:** Shulker Shells\n- **Skeletons:** Bone Meal\n- **Slimes:** Slime Balls\n- **Sniffers:** Moss\n- **Spiders and Striders:** String\n- **Squids: **Ink\n- **Wither Skeletons: **Coal\n",
+  "description": "<p>More entities can be sheared periodically for resources.</p><ul><li><strong>Blazes:</strong> Blaze Rods</li><li><strong>Chickens and Parrots:</strong> Feathers</li><li><strong>Creepers:</strong> Gunpowder</li><li><strong>Ghasts:</strong> Ghast Tears</li><li>**Glow Squids: **Glow Ink</li><li>**Guardians: **Prismarine Shards and Crystals</li><li>**Magma Cubes: **Magma Cream</li><li><strong>Phantoms:</strong> Phantom Membranes</li><li><strong>Shulkers:</strong> Shulker Shells</li><li><strong>Skeletons:</strong> Bone Meal</li><li><strong>Slimes:</strong> Slime Balls</li><li><strong>Sniffers:</strong> Moss</li><li><strong>Spiders and Striders:</strong> String</li><li>**Squids: **Ink</li><li>**Wither Skeletons: **Coal</li></ul>",
   "maxLevel": 1,
   "items": [
     "Shears"

@@ -4,7 +4,7 @@
   "name": "Curse of the Farlands",
   "source": "Curse",
   "category": "Curse",
-  "description": "- When applied to a tool, breaking a block instead breaks a random adjacent block.\n- When applied to boots, your position periodically rounds.\n",
+  "description": "<ul><li>When applied to a tool, breaking a block instead breaks a random adjacent block.</li><li>When applied to boots, your position periodically rounds.</li></ul>",
   "maxLevel": 1,
   "items": [
     "Pickaxes",

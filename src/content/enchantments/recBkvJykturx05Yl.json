@@ -4,7 +4,7 @@
   "name": "Shrink Ray",
   "source": "Runecrafted",
   "category": "Focus",
-  "description": "- Creatures viewed through this spyglass slowly shrink. Creatures shrunk to minimum size become passive.\n- Enemies with higher max health shrink slower.\n",
+  "description": "<ul><li>Creatures viewed through this spyglass slowly shrink. Creatures shrunk to minimum size become passive.</li><li>Enemies with higher max health shrink slower.</li></ul>",
   "maxLevel": 1,
   "items": [
     "Spyglass"

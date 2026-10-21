@@ -4,7 +4,7 @@
   "name": "Lizard Tail",
   "source": "Runecrafted",
   "category": "Protection",
-  "description": "You survive death at 0.5 hearts, cleansing negative effects and shedding a decoy tail which draws in distractible enemies for 10 seconds, during which you stealth and gain 80% speed. This can’t occur again until you fully heal.\n",
+  "description": "<p>You survive death at 0.5 hearts, cleansing negative effects and shedding a decoy tail which draws in distractible enemies for 10 seconds, during which you stealth and gain 80% speed. This can’t occur again until you fully heal.</p>",
   "maxLevel": 1,
   "items": [
     "Leggings"

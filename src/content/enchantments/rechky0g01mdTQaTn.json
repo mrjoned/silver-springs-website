@@ -4,7 +4,7 @@
   "name": "Magnetism",
   "source": "Runecrafted",
   "category": "Excavation",
-  "description": "Drops from mined blocks are placed directly in your inventory. When mining an ore, the resources are siphoned from the entire vein, leaving behind cobbled blocks. \n",
+  "description": "<p>Drops from mined blocks are placed directly in your inventory. When mining an ore, the resources are siphoned from the entire vein, leaving behind cobbled blocks. </p>",
   "maxLevel": 1,
   "items": [
     "Pickaxes",

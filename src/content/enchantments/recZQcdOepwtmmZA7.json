@@ -4,7 +4,7 @@
   "name": "Man-Eater",
   "source": "Mythical",
   "category": "Dash",
-  "description": "Charges forcibly dash to Charybdis, briefly liquefying terrain. Jabs near the whirlpool pull in enemies and execute at 10% HP, sating 1 hunger.\n",
+  "description": "<p>Charges forcibly dash to Charybdis, briefly liquefying terrain. Jabs near the whirlpool pull in enemies and execute at 10% HP, sating 1 hunger.</p>",
   "maxLevel": null,
   "items": [
     "Spears"

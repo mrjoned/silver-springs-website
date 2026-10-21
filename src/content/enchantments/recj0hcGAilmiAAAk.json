@@ -4,7 +4,7 @@
   "name": "Paradigm of Pride",
   "source": "Runecrafted",
   "category": "Paradigm",
-  "description": "You ignore the first 1-5 hits from each enemy, but you take double damage from them otherwise.\n",
+  "description": "<p>You ignore the first 1-5 hits from each enemy, but you take double damage from them otherwise.</p>",
   "maxLevel": 1,
   "items": [
     "Helmets"

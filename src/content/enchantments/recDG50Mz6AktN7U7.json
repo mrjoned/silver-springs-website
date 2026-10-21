@@ -4,7 +4,7 @@
   "name": "Resonance",
   "source": "Runecrafted",
   "category": "Radial",
-  "description": "Smash attacks emit a sound wave which applies stacking _resonance_ to other enemies within 10 blocks, dealing 1❤️ sonic damage and 0.25 seconds stunning per stack.\n",
+  "description": "<p>Smash attacks emit a sound wave which applies stacking <em>resonance</em> to other enemies within 10 blocks, dealing 1❤️ sonic damage and 0.25 seconds stunning per stack.</p>",
   "maxLevel": 1,
   "items": [
     "Maces"

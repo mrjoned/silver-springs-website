@@ -4,7 +4,7 @@
   "name": "Rocket Boosting",
   "source": "Runecrafted",
   "category": "Descent",
-  "description": "Sneaking while jumping performs an upward rocket boost and resets accumulated fall distance. You can perform 2-3 rocket boosts before landing.\n> Fall damage is reduced by 2 hearts. \n",
+  "description": "<p>Sneaking while jumping performs an upward rocket boost and resets accumulated fall distance. You can perform 2-3 rocket boosts before landing.</p><blockquote><p>Fall damage is reduced by 2 hearts. </p></blockquote>",
   "maxLevel": 2,
   "items": [
     "Boots"

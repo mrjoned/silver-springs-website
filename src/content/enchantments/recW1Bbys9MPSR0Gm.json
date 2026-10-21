@@ -4,7 +4,7 @@
   "name": "Whirlpool",
   "source": "Mythical",
   "category": "Trajectory",
-  "description": "Throws fly straight and pull enemies, then slam down and form a suffocating whirlpool.\n",
+  "description": "<p>Throws fly straight and pull enemies, then slam down and form a suffocating whirlpool.</p>",
   "maxLevel": null,
   "items": [
     "Tridents"

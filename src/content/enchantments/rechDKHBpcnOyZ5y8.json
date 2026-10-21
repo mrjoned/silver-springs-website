@@ -4,7 +4,7 @@
   "name": "Adrenaline Rush",
   "source": "Runecrafted",
   "category": "Protection",
-  "description": "You gain Adrenaline for 10 seconds when dropping to 25% health. This slows nearby enemies, cuts damage-over-time effects to half speed, and grants you +40-80% speed, damage and damage reduction. This can’t occur again until you fully heal.\n",
+  "description": "<p>You gain Adrenaline for 10 seconds when dropping to 25% health. This slows nearby enemies, cuts damage-over-time effects to half speed, and grants you +40-80% speed, damage and damage reduction. This can’t occur again until you fully heal.</p>",
   "maxLevel": 2,
   "items": [
     "Chestplates"

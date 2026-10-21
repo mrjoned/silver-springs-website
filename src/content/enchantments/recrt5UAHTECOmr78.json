@@ -4,7 +4,7 @@
   "name": "Gatling",
   "source": "Runecrafted",
   "category": "Spread",
-  "description": "The first loaded arrow which hits an enemy, and every other thereafter, grant +1 _clip size. _Firing a loaded arrow fires 1 additional arrow per _clip size_ in a rapid, narrow barrage.\n",
+  "description": "<p>The first loaded arrow which hits an enemy, and every other thereafter, grant +1 _clip size. _Firing a loaded arrow fires 1 additional arrow per <em>clip size</em> in a rapid, narrow barrage.</p>",
   "maxLevel": 1,
   "items": [
     "Crossbows"

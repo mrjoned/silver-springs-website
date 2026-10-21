@@ -4,7 +4,7 @@
   "name": "Avalanche",
   "source": "Runecrafted",
   "category": "Radial",
-  "description": "Upon ascending to the maximum height from this mace's boosting enchantment, it releases a sheet of ice which falls forward onto targets below, dealing 4♥️ freezing damage and 8 seconds of frostbite.\n",
+  "description": "<p>Upon ascending to the maximum height from this mace&#39;s boosting enchantment, it releases a sheet of ice which falls forward onto targets below, dealing 4♥️ freezing damage and 8 seconds of frostbite.</p>",
   "maxLevel": 1,
   "items": [
     "Maces"

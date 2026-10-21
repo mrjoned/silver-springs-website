@@ -4,7 +4,7 @@
   "name": "Smokescreen",
   "source": "Runecrafted",
   "category": "Contraption",
-  "description": "Grounded projectiles emit smoke for 10 seconds, preventing sight-reliant enemies from naturally detecting targets within. Enemies hit directly have their sight obscured for the same duration instead\n",
+  "description": "<p>Grounded projectiles emit smoke for 10 seconds, preventing sight-reliant enemies from naturally detecting targets within. Enemies hit directly have their sight obscured for the same duration instead</p>",
   "maxLevel": 1,
   "items": [
     "Crossbows"

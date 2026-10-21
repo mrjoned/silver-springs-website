@@ -4,7 +4,7 @@
   "name": "Impetus of Poseidon",
   "source": "Runecrafted",
   "category": "Impetus",
-  "description": "- You can riptide while grounded without being wet.\n- Whenever your riptide, you _ride the wave_, always traveling the full distance, at constant speed, and with full control of your direction, striking all nearby enemies along the way.\n",
+  "description": "<ul><li>You can riptide while grounded without being wet.</li><li>Whenever your riptide, you <em>ride the wave</em>, always traveling the full distance, at constant speed, and with full control of your direction, striking all nearby enemies along the way.</li></ul>",
   "maxLevel": 1,
   "items": [
     "Leggings"

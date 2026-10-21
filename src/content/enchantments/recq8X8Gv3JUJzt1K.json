@@ -4,7 +4,7 @@
   "name": "Walkman",
   "source": "Runecrafted",
   "category": "Travel",
-  "description": "A music disc can be inserted into these leggings to play it, or shift inserted to play it on loop. While they are playing music, you walk (not sprint) **10-20% faster.**\n",
+  "description": "<p>A music disc can be inserted into these leggings to play it, or shift inserted to play it on loop. While they are playing music, you walk (not sprint) <strong>10-20% faster.</strong></p>",
   "maxLevel": 2,
   "items": [
     "Leggings"

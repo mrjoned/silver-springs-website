@@ -4,7 +4,7 @@
   "name": "Avatar of Bees",
   "source": "Runecrafted",
   "category": "Avatar",
-  "description": "While gliding near the ground in the overworld, you can float indefinitely. Grants +1 block reach. Prevents bees from targeting you. \nEating honey while gliding causes you to release pollen for 5 seconds, bonemealing crops below you in a 3-block radius. \n",
+  "description": "<p>While gliding near the ground in the overworld, you can float indefinitely. Grants +1 block reach. Prevents bees from targeting you.<br>Eating honey while gliding causes you to release pollen for 5 seconds, bonemealing crops below you in a 3-block radius. </p>",
   "maxLevel": 1,
   "items": [
     "Elytra"

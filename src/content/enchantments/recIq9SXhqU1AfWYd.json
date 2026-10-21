@@ -4,7 +4,7 @@
   "name": "Wrapping",
   "source": "Runecrafted",
   "category": "Safety",
-  "description": "While gliding, taking Void damage wraps you around the world height limit.\n",
+  "description": "<p>While gliding, taking Void damage wraps you around the world height limit.</p>",
   "maxLevel": 1,
   "items": [
     "Elytra"

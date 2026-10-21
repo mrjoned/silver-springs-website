@@ -4,7 +4,7 @@
   "name": "Avatar of Shulkers",
   "source": "Runecrafted",
   "category": "Avatar",
-  "description": "You reflect projectiles and take -25% damage from them. \nSneak punching the block below you closes your shell until you stop sneaking. While your shell is closed, you take -25% damage and are immune to knockback, jumping teleports you to a random nearby location, and fired arrows become shulker bullets. If they hit a target who was already levitating, the levitation is cleansed instead, but the bullet and the target’s fall both deal 4x damage.\n",
+  "description": "<p>You reflect projectiles and take -25% damage from them.<br>Sneak punching the block below you closes your shell until you stop sneaking. While your shell is closed, you take -25% damage and are immune to knockback, jumping teleports you to a random nearby location, and fired arrows become shulker bullets. If they hit a target who was already levitating, the levitation is cleansed instead, but the bullet and the target’s fall both deal 4x damage.</p>",
   "maxLevel": 1,
   "items": [
     "Chestplates"

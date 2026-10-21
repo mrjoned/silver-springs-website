@@ -4,7 +4,7 @@
   "name": "Hair-Trigger",
   "source": "Runecrafted",
   "category": "Control",
-  "description": "Being struck or taking fall damage while holding this bow in your main hand automatically fires a fully charged shot. Firing a damaging projectile puts Hair-Trigger on a 1-second cooldown. \n",
+  "description": "<p>Being struck or taking fall damage while holding this bow in your main hand automatically fires a fully charged shot. Firing a damaging projectile puts Hair-Trigger on a 1-second cooldown. </p>",
   "maxLevel": 1,
   "items": [
     "Bows"

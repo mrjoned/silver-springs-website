@@ -4,7 +4,7 @@
   "name": "Pestle",
   "source": "Runecrafted",
   "category": "Loot",
-  "description": "Slain enemies have a chance, scaling with overkill damage, to be crushed into _primordial dust_, which can be crafted with crystals and socketing gems to duplicate them.\n",
+  "description": "<p>Slain enemies have a chance, scaling with overkill damage, to be crushed into <em>primordial dust</em>, which can be crafted with crystals and socketing gems to duplicate them.</p>",
   "maxLevel": 1,
   "items": [
     "Maces"

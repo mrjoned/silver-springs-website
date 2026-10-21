@@ -4,7 +4,7 @@
   "name": "Fling",
   "source": "Runecrafted",
   "category": "Control",
-  "description": "The first target you charge is _impaled_ for 2 seconds and held before you. Ending the charge flings the _impaled_ a distance and **stuns **them and enemies the collide with, both based on your speed.\n",
+  "description": "<p>The first target you charge is <em>impaled</em> for 2 seconds and held before you. Ending the charge flings the <em>impaled</em> a distance and **stuns **them and enemies the collide with, both based on your speed.</p>",
   "maxLevel": 1,
   "items": [
     "Spears"

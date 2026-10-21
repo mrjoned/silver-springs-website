@@ -4,7 +4,7 @@
   "name": "Noclip",
   "source": "Runecrafted",
   "category": "Traversal",
-  "description": "While sprinting, you can warp through 1-block thick walls.\n",
+  "description": "<p>While sprinting, you can warp through 1-block thick walls.</p>",
   "maxLevel": 1,
   "items": [
     "Boots"

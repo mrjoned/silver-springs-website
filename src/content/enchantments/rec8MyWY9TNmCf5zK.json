@@ -4,7 +4,7 @@
   "name": "Curse of Vanishing",
   "source": "Curse",
   "category": "Curse",
-  "description": "This item disappears upon death rather than dropping.\n",
+  "description": "<p>This item disappears upon death rather than dropping.</p>",
   "maxLevel": 1,
   "items": [
     "Helmets",

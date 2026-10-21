@@ -4,7 +4,7 @@
   "name": "Reverberating",
   "source": "Runecrafted",
   "category": "Hazard",
-  "description": "You reflect a sonic wave at entities who shoot you which stuns them for 0.25-1 seconds upon arrival. \n",
+  "description": "<p>You reflect a sonic wave at entities who shoot you which stuns them for 0.25-1 seconds upon arrival. </p>",
   "maxLevel": 1,
   "items": [
     "Helmets",

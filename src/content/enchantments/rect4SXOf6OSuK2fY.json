@@ -4,7 +4,7 @@
   "name": "Subduction",
   "source": "Runecrafted",
   "category": "Boosting",
-  "description": "Smash attacks subduct the ground, creating a stone spire which instantly lifts you **5-9 blocks,** crumbling after 4 seconds.\n",
+  "description": "<p>Smash attacks subduct the ground, creating a stone spire which instantly lifts you <strong>5-9 blocks,</strong> crumbling after 4 seconds.</p>",
   "maxLevel": 3,
   "items": [
     "Maces"

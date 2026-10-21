@@ -4,7 +4,7 @@
   "name": "Bolt-action",
   "source": "Runecrafted",
   "category": "Reload",
-  "description": "Swinging with a round loaded pushes it to the _magazine_, which can hold 2 rounds. Upon firing, the most recent round in the _magazine_ is immediately reloaded.\n",
+  "description": "<p>Swinging with a round loaded pushes it to the <em>magazine</em>, which can hold 2 rounds. Upon firing, the most recent round in the <em>magazine</em> is immediately reloaded.</p>",
   "maxLevel": 1,
   "items": [
     "Crossbows"

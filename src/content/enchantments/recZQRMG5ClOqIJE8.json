@@ -4,7 +4,7 @@
   "name": "Avatar of Iron Golems",
   "source": "Runecrafted",
   "category": "Avatar",
-  "description": "You take -50% knockback, deal +25% knockback. Gain +2❤️ max HP.\nYou can give zombie villagers a poppy to cure them without applying Weakness.\n",
+  "description": "<p>You take -50% knockback, deal +25% knockback. Gain +2❤️ max HP.<br>You can give zombie villagers a poppy to cure them without applying Weakness.</p>",
   "maxLevel": 1,
   "items": [
     "Chestplates"

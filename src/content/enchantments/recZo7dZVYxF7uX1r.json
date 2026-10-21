@@ -4,7 +4,7 @@
   "name": "Soulbound",
   "source": "Runecrafted",
   "category": "Uncategorized",
-  "description": "This item returns to you after death, losing 1 Soulbound level in the process.\n",
+  "description": "<p>This item returns to you after death, losing 1 Soulbound level in the process.</p>",
   "maxLevel": 3,
   "items": [
     "Helmets",

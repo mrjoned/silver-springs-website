@@ -4,7 +4,7 @@
   "name": "Sweeping Edge",
   "source": "Vanilla",
   "category": "Sweeping",
-  "description": "Sweeps even when no target is hit directly.\n",
+  "description": "<p>Sweeps even when no target is hit directly.</p>",
   "maxLevel": 3,
   "items": [
     "Swords"

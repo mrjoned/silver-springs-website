@@ -4,7 +4,7 @@
   "name": "Vault",
   "source": "Runecrafted",
   "category": "Dash",
-  "description": "The first jump within 1 second of changing charge phases launches you forward.\n",
+  "description": "<p>The first jump within 1 second of changing charge phases launches you forward.</p>",
   "maxLevel": 1,
   "items": [
     "Spears"

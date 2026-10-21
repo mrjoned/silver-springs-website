@@ -4,7 +4,7 @@
   "name": "Detonating",
   "source": "Runecrafted",
   "category": "Uncategorized",
-  "description": "Ignited TNT becomes a sticky blast charge which explodes in a 3x3x10 area in the ignition direction, leaving behind trace amounts of sand and gunpowder.\n",
+  "description": "<p>Ignited TNT becomes a sticky blast charge which explodes in a 3x3x10 area in the ignition direction, leaving behind trace amounts of sand and gunpowder.</p>",
   "maxLevel": 1,
   "items": [
     "Flint and Steel"

@@ -4,7 +4,7 @@
   "name": "Equilibrium",
   "source": "Runecrafted",
   "category": "Protection",
-  "description": "You equalize for 2 seconds upon dropping to 50% health, during which you are invulnerable, gain 40% speed, and heal for 15% health. This can’t occur again until you fully heal.\n",
+  "description": "<p>You equalize for 2 seconds upon dropping to 50% health, during which you are invulnerable, gain 40% speed, and heal for 15% health. This can’t occur again until you fully heal.</p>",
   "maxLevel": 1,
   "items": [
     "Helmets"

@@ -4,7 +4,7 @@
   "name": "Heartseeker",
   "source": "Runecrafted",
   "category": "Loot",
-  "description": "Enemies slain in one strike may drop their **heart**.\n",
+  "description": "<p>Enemies slain in one strike may drop their <strong>heart</strong>.</p>",
   "maxLevel": 1,
   "items": [
     "Spears"

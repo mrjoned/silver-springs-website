@@ -4,7 +4,7 @@
   "name": "Impaling",
   "source": "Vanilla",
   "category": "Damage",
-  "description": "Now works vs. any mob in water/rain regardless of if it's aquatic\n",
+  "description": "<p>Now works vs. any mob in water/rain regardless of if it&#39;s aquatic</p>",
   "maxLevel": 5,
   "items": [
     "Tridents"

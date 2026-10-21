@@ -4,7 +4,7 @@
   "name": "Aphelion of Neptune",
   "source": "Runecrafted",
   "category": "Aphelion",
-  "description": "**Eclipses** the Grasshopper. It instead can be continuously charged, during which it creates an _icy jet stream_ in your target direction, freezing and pushing yourself along with any enemies and projectiles within.\n- **Eclipse: **The behavior of the eclipsed object is replaced while wearing this Aphelion.\n",
+  "description": "<p><strong>Eclipses</strong> the Grasshopper. It instead can be continuously charged, during which it creates an <em>icy jet stream</em> in your target direction, freezing and pushing yourself along with any enemies and projectiles within.</p><ul><li>**Eclipse: **The behavior of the eclipsed object is replaced while wearing this Aphelion.</li></ul>",
   "maxLevel": 1,
   "items": [
     "Boots"

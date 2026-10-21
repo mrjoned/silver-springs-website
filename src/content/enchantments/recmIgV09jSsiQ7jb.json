@@ -4,7 +4,7 @@
   "name": "Fire Aspect III",
   "source": "Runecrafted",
   "category": "Aspect",
-  "description": "Attacks ignite the victim for 4-12 seconds. \n> **Runecrafting Bonus**: Right clicks act as if a Flint and Steel were used. Cuts healing of burning targets by 50%.\n",
+  "description": "<p>Attacks ignite the victim for 4-12 seconds. </p><blockquote><p><strong>Runecrafting Bonus</strong>: Right clicks act as if a Flint and Steel were used. Cuts healing of burning targets by 50%.</p></blockquote>",
   "maxLevel": 3,
   "items": [
     "Swords",

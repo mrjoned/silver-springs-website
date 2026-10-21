@@ -4,7 +4,7 @@
   "name": "Bracing",
   "source": "Runecrafted",
   "category": "Control",
-  "description": "Every other charged attack grants 1 Absorption heart during the recharge. \n",
+  "description": "<p>Every other charged attack grants 1 Absorption heart during the recharge. </p>",
   "maxLevel": 1,
   "items": [
     "Axes"

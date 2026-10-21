@@ -4,7 +4,7 @@
   "name": "Avatar of Wardens",
   "source": "Runecrafted",
   "category": "Avatar",
-  "description": "You gain +0.5 step height and can sense enemies via their **vibrations**, causing you to **anger**. Once fully angered, you gain the following effects:\n- +1♥️ attack damage and +10% speed\n- Right click periodically to release a 5♥️ **sonic boom**\n- Shift punch the block below you to _burrow_, healing 2♥️ and calming your anger\n",
+  "description": "<p>You gain +0.5 step height and can sense enemies via their <strong>vibrations</strong>, causing you to <strong>anger</strong>. Once fully angered, you gain the following effects:</p><ul><li>+1♥️ attack damage and +10% speed</li><li>Right click periodically to release a 5♥️ <strong>sonic boom</strong></li><li>Shift punch the block below you to <em>burrow</em>, healing 2♥️ and calming your anger</li></ul>",
   "maxLevel": 1,
   "items": [
     "Chestplates"

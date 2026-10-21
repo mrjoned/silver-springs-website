@@ -4,7 +4,7 @@
   "name": "Curse of the Forbidden Ones",
   "source": "Curse",
   "category": "Curse",
-  "description": "Attacks deal +5❤️ to enemies with a forbidden name but -5❤️ damage otherwise.\n**Forbidden Names: Names containing \"Doug\", \"Greg\", \"Jacob\", Charolette\", \"Nathan\", \"Watson\", or \"broace\".**\n",
+  "description": "<p>Attacks deal +5❤️ to enemies with a forbidden name but -5❤️ damage otherwise.<br><strong>Forbidden Names: Names containing &quot;Doug&quot;, &quot;Greg&quot;, &quot;Jacob&quot;, Charolette&quot;, &quot;Nathan&quot;, &quot;Watson&quot;, or &quot;broace&quot;.</strong></p>",
   "maxLevel": 1,
   "items": [
     "Swords",

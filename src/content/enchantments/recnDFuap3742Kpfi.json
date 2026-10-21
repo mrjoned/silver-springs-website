@@ -4,7 +4,7 @@
   "name": "Trueshot",
   "source": "Runecrafted",
   "category": "Reload",
-  "description": "Fired projectiles instantly arrive at your targeted location.\n",
+  "description": "<p>Fired projectiles instantly arrive at your targeted location.</p>",
   "maxLevel": 1,
   "items": [
     "Crossbows"

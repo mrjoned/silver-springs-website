@@ -4,7 +4,7 @@
   "name": "Hot Rod",
   "source": "Runecrafted",
   "category": "Tackle",
-  "description": "This rod _sears_ 30-50% of caught fish, doubling restored hunger and sell price, and can fish in lava, doubling the _sear_ chance.\n",
+  "description": "<p>This rod <em>sears</em> 30-50% of caught fish, doubling restored hunger and sell price, and can fish in lava, doubling the <em>sear</em> chance.</p>",
   "maxLevel": 3,
   "items": [
     "Fishing Rods"

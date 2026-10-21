@@ -4,7 +4,7 @@
   "name": "Bounty Hunter",
   "source": "Runecrafted",
   "category": "Loot",
-  "description": "Rarely after killing an enemy with this weapon, it identifies a hostile bounty enemy nearby. Killing a bounty with this weapon grants 5000 to 10000 silver.\n",
+  "description": "<p>Rarely after killing an enemy with this weapon, it identifies a hostile bounty enemy nearby. Killing a bounty with this weapon grants 5000 to 10000 silver.</p>",
   "maxLevel": 1,
   "items": [
     "Swords",

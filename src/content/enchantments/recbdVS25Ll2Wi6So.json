@@ -4,7 +4,7 @@
   "name": "Curse of Asphyxiation",
   "source": "Curse",
   "category": "Curse",
-  "description": "While worn, you drown twice as fast.\n",
+  "description": "<p>While worn, you drown twice as fast.</p>",
   "maxLevel": 1,
   "items": [
     "Helmets"

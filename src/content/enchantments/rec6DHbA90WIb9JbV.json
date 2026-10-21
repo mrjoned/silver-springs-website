@@ -4,7 +4,7 @@
   "name": "Ground Pound",
   "source": "Runecrafted",
   "category": "Descent",
-  "description": "Fall damage is reduced by -25-50%. Double sneaking while airborne performs a rapid downward stomp. Upon landing, the shockwave deals 50% of the initial damage to enemies within 5 blocks.\n",
+  "description": "<p>Fall damage is reduced by -25-50%. Double sneaking while airborne performs a rapid downward stomp. Upon landing, the shockwave deals 50% of the initial damage to enemies within 5 blocks.</p>",
   "maxLevel": 2,
   "items": [
     "Boots"

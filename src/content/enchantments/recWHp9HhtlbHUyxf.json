@@ -4,7 +4,7 @@
   "name": "Battering Ram",
   "source": "Runecrafted",
   "category": "Bashing",
-  "description": "Bashing causes you to rapidly dash forward, pushing all enemies you collide with along the dash, then stunning them for 1.5 seconds.\n",
+  "description": "<p>Bashing causes you to rapidly dash forward, pushing all enemies you collide with along the dash, then stunning them for 1.5 seconds.</p>",
   "maxLevel": 1,
   "items": [
     "Shields"

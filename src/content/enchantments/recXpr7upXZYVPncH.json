@@ -4,7 +4,7 @@
   "name": "Fencing",
   "source": "Runecrafted",
   "category": "Control",
-  "description": "After an attack, you can double-tap a movement key to hop in that direction, during which you are invulnerable.\n",
+  "description": "<p>After an attack, you can double-tap a movement key to hop in that direction, during which you are invulnerable.</p>",
   "maxLevel": 1,
   "items": [
     "Swords"

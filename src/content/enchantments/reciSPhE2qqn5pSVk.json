@@ -4,7 +4,7 @@
   "name": "Skewering",
   "source": "Runecrafted",
   "category": "Splashing",
-  "description": "Attacks gain +1 range and _pierce_ in a 3-prong cone behind the target for 35-75% damage. Throws bypass shields and _pierce_ up to 2-4 enemies for full damage. _Pierced_ enemies are briefly slowed.\n",
+  "description": "<p>Attacks gain +1 range and <em>pierce</em> in a 3-prong cone behind the target for 35-75% damage. Throws bypass shields and <em>pierce</em> up to 2-4 enemies for full damage. <em>Pierced</em> enemies are briefly slowed.</p>",
   "maxLevel": 3,
   "items": [
     "Tridents"

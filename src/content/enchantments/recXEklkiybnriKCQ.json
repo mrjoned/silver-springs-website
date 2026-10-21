@@ -4,7 +4,7 @@
   "name": "Loyalty",
   "source": "Vanilla",
   "category": "Uncategorized",
-  "description": "Returns earlier and at a faster speed. Returns even if it falls in the void.\n",
+  "description": "<p>Returns earlier and at a faster speed. Returns even if it falls in the void.</p>",
   "maxLevel": 3,
   "items": [
     "Tridents"

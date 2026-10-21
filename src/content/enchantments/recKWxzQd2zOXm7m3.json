@@ -4,7 +4,7 @@
   "name": "Curse of Ataxia",
   "source": "Curse",
   "category": "Curse",
-  "description": "While worn, you take triple fall damage.\n",
+  "description": "<p>While worn, you take triple fall damage.</p>",
   "maxLevel": 1,
   "items": [
     "Boots"

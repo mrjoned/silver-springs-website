@@ -4,7 +4,7 @@
   "name": "Transmuting",
   "source": "Runecrafted",
   "category": "Yield",
-  "description": "Sneak right clicking an **appropriate resource block** attunes to it. Mining other appropriate blocks converts their drops into those of the attuned block at the **equivalent exchange rate**.\n```\nPickaxes: All ores except Emerald and Ancient Debris.\nAxes: All logs.\nShovels: Mycelium, Podzol, Clay, Red Sand, Soul Sand, and Mud.\nShears: All leaves.\n```\n> For example, a Diamond sells for 8x as much as Raw Gold, so mining Gole Ore while attuned to Diamond Ore has a 1/8 chance to drop a diamond, while mining Diamond Ore while attuned to Gold Ore drops 8 Raw Gold.\n",
+  "description": "<p>Sneak right clicking an <strong>appropriate resource block</strong> attunes to it. Mining other appropriate blocks converts their drops into those of the attuned block at the <strong>equivalent exchange rate</strong>.</p><pre><code>Pickaxes: All ores except Emerald and Ancient Debris.\nAxes: All logs.\nShovels: Mycelium, Podzol, Clay, Red Sand, Soul Sand, and Mud.\nShears: All leaves.</code></pre><blockquote><p>For example, a Diamond sells for 8x as much as Raw Gold, so mining Gole Ore while attuned to Diamond Ore has a 1/8 chance to drop a diamond, while mining Diamond Ore while attuned to Gold Ore drops 8 Raw Gold.</p></blockquote>",
   "maxLevel": 1,
   "items": [
     "Pickaxes",

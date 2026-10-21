@@ -4,7 +4,7 @@
   "name": "Marking",
   "source": "Runecrafted",
   "category": "Focus",
-  "description": "Creatures view through this spyglass for 1 second glow and become magically tracked. Projectiles home in on tracked entities.\n",
+  "description": "<p>Creatures view through this spyglass for 1 second glow and become magically tracked. Projectiles home in on tracked entities.</p>",
   "maxLevel": 1,
   "items": [
     "Spyglass"

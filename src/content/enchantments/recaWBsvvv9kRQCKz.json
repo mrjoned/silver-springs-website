@@ -4,7 +4,7 @@
   "name": "Riposte",
   "source": "Runecrafted",
   "category": "Parry",
-  "description": "After a **parry**, your next attack automatically critically strikes.\n> **Parry**: blocking <=0.3 seconds before a strike\n",
+  "description": "<p>After a <strong>parry</strong>, your next attack automatically critically strikes.</p><blockquote><p><strong>Parry</strong>: blocking &lt;=0.3 seconds before a strike</p></blockquote>",
   "maxLevel": 1,
   "items": [
     "Shields"

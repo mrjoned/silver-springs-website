@@ -4,7 +4,7 @@
   "name": "Curse of Belittling",
   "source": "Curse",
   "category": "Curse",
-  "description": "While worn, you are 12.5% smaller and lose 12.5% attack damage.\n",
+  "description": "<p>While worn, you are 12.5% smaller and lose 12.5% attack damage.</p>",
   "maxLevel": 1,
   "items": [
     "Helmets",

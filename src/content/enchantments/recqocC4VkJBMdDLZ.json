@@ -4,7 +4,7 @@
   "name": "Sundering",
   "source": "Runecrafted",
   "category": "Damage",
-  "description": "Attacks deal +1❤ damage and _sunder_ enemies, stacking 3 times. Throws and riptides charge twice as fast while a nearby enemy is _sundered_, then expunge _sunder_ stacks on-impact, dealing +2-4❤ per stack.\n",
+  "description": "<p>Attacks deal +1❤ damage and <em>sunder</em> enemies, stacking 3 times. Throws and riptides charge twice as fast while a nearby enemy is <em>sundered</em>, then expunge <em>sunder</em> stacks on-impact, dealing +2-4❤ per stack.</p>",
   "maxLevel": 3,
   "items": [
     "Tridents"

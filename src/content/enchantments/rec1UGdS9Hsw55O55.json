@@ -4,7 +4,7 @@
   "name": "Wire Cutters",
   "source": "Runecrafted",
   "category": "Cutting",
-  "description": "Explosive entities can be sheared to _defuse_ them, dropping their explosive as an item and pacifying them if applicable.\n",
+  "description": "<p>Explosive entities can be sheared to <em>defuse</em> them, dropping their explosive as an item and pacifying them if applicable.</p>",
   "maxLevel": 1,
   "items": [
     "Shears"

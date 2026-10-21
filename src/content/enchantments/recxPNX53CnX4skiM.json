@@ -4,7 +4,7 @@
   "name": "Projectile Protection V",
   "source": "Runecrafted",
   "category": "Protection",
-  "description": "Projectiles deal 8-40% less damage and apply `15-75%` less knockback. \n> **Runecrafting Bonus**: Negative potion effects from projectiles have -75% less duration.\n",
+  "description": "<p>Projectiles deal 8-40% less damage and apply <code>15-75%</code> less knockback. </p><blockquote><p><strong>Runecrafting Bonus</strong>: Negative potion effects from projectiles have -75% less duration.</p></blockquote>",
   "maxLevel": 5,
   "items": [
     "Helmets",

@@ -4,7 +4,7 @@
   "name": "Airbag",
   "source": "Runecrafted",
   "category": "Safety",
-  "description": "While gliding, colliding with a wall deals 40-80% less damage and repulses you backwards.\n",
+  "description": "<p>While gliding, colliding with a wall deals 40-80% less damage and repulses you backwards.</p>",
   "maxLevel": 2,
   "items": [
     "Elytra"

@@ -4,7 +4,7 @@
   "name": "Sweet Spot",
   "source": "Runecrafted",
   "category": "Damage",
-  "description": "Attacks have +1 range and deal +0.5-1❤️, doubled to +1-2❤️ against enemies within that bonus range _sweet spot._\n",
+  "description": "<p>Attacks have +1 range and deal +0.5-1❤️, doubled to +1-2❤️ against enemies within that bonus range <em>sweet spot.</em></p>",
   "maxLevel": 3,
   "items": [
     "Swords"

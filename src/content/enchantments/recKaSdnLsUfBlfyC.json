@@ -4,7 +4,7 @@
   "name": "Tempest",
   "source": "Runecrafted",
   "category": "Sweeping",
-  "description": "On-kill, gain a _tempest charge._ Right click to expend it to dash forward 5 blocks or to the first enemy, then slice for 2-4❤️ damage.\n",
+  "description": "<p>On-kill, gain a <em>tempest charge.</em> Right click to expend it to dash forward 5 blocks or to the first enemy, then slice for 2-4❤️ damage.</p>",
   "maxLevel": 1,
   "items": [
     "Axes"

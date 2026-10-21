@@ -4,7 +4,7 @@
   "name": "Ballast",
   "source": "Runecrafted",
   "category": "Damage",
-  "description": "- This trident attacks 10% slower for **1-2❤️ damage.**\n- Throws are _heavier_, falling faster but dealing **+2-♾️❤️ damage, **increasing linearly with distance fallen.\n",
+  "description": "<ul><li>This trident attacks 10% slower for <strong>1-2❤️ damage.</strong></li><li>Throws are <em>heavier</em>, falling faster but dealing **+2-♾️❤️ damage, **increasing linearly with distance fallen.</li></ul>",
   "maxLevel": 3,
   "items": [
     "Tridents"

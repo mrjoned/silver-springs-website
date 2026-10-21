@@ -4,7 +4,7 @@
   "name": "Soul Speed",
   "source": "Vanilla",
   "category": "Traversal",
-  "description": "Durability drain removed.\n",
+  "description": "<p>Durability drain removed.</p>",
   "maxLevel": 3,
   "items": [
     "Boots"

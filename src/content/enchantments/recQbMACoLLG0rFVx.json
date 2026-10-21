@@ -4,7 +4,7 @@
   "name": "Chaining",
   "source": "Runecrafted",
   "category": "Splashing",
-  "description": "Impacts chain up to 3 times, auto-throwing at the nearest unchained enemy within 12 blocks for 35-75% of the original impact’s damage. \n",
+  "description": "<p>Impacts chain up to 3 times, auto-throwing at the nearest unchained enemy within 12 blocks for 35-75% of the original impact’s damage. </p>",
   "maxLevel": 3,
   "items": [
     "Tridents"

@@ -4,7 +4,7 @@
   "name": "Aphelion of Venus",
   "source": "Runecrafted",
   "category": "Aphelion",
-  "description": "**Eclipses** Fire, Ice, and Plague Aspect. Applying those effects instead adds them to your **atmosphere** for 8 seconds.\n- **Eclipse**: The behavior of the eclipsed object is replaced while wearing this Aphelion.\n- **Atmosphere**: Enemies gain your atmosphere's effects only while within it. Its radius starts at 2 blocks and grows by 1 block every other attack.\n",
+  "description": "<p><strong>Eclipses</strong> Fire, Ice, and Plague Aspect. Applying those effects instead adds them to your <strong>atmosphere</strong> for 8 seconds.</p><ul><li><strong>Eclipse</strong>: The behavior of the eclipsed object is replaced while wearing this Aphelion.</li><li><strong>Atmosphere</strong>: Enemies gain your atmosphere&#39;s effects only while within it. Its radius starts at 2 blocks and grows by 1 block every other attack.</li></ul>",
   "maxLevel": 1,
   "items": [
     "Boots"

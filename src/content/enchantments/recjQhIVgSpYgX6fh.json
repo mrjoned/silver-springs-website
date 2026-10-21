@@ -4,7 +4,7 @@
   "name": "Windup",
   "source": "Runecrafted",
   "category": "Damage",
-  "description": "After preparing a throw, you can continue charging for 1.75-0.75 seconds to wind up a huge throw which deals +6 hearts of damage.\n",
+  "description": "<p>After preparing a throw, you can continue charging for 1.75-0.75 seconds to wind up a huge throw which deals +6 hearts of damage.</p>",
   "maxLevel": 3,
   "items": [
     "Tridents"

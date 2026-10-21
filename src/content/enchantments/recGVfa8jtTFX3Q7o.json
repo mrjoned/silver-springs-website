@@ -4,7 +4,7 @@
   "name": "Dynamo",
   "source": "Runecrafted",
   "category": "Damage",
-  "description": "Untargeted swings convert accumulated smash damage into an equivalent amount of _torque_. Standard mace attacks deal bonus lightning damage equal to 25-35% of _torque_.\n",
+  "description": "<p>Untargeted swings convert accumulated smash damage into an equivalent amount of <em>torque</em>. Standard mace attacks deal bonus lightning damage equal to 25-35% of <em>torque</em>.</p>",
   "maxLevel": 3,
   "items": [
     "Maces"

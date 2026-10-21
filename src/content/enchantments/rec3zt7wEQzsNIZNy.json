@@ -4,7 +4,7 @@
   "name": "Chainsaw",
   "source": "Runecrafted",
   "category": "Sweeping",
-  "description": "Each attack _revs the chainsaw_, up to 4 times, after which you _berserk_ for 2 seconds, over which you shred enemies in front of or around you for 12❤️ while gaining 40% speed and melee damage immunity.\n",
+  "description": "<p>Each attack <em>revs the chainsaw</em>, up to 4 times, after which you <em>berserk</em> for 2 seconds, over which you shred enemies in front of or around you for 12❤️ while gaining 40% speed and melee damage immunity.</p>",
   "maxLevel": 1,
   "items": [
     "Axes"

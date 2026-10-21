@@ -4,7 +4,7 @@
   "name": "Dowsing Thumb",
   "source": "Runecrafted",
   "category": "Harvest",
-  "description": "This hoe _dowses _upon **harvesting**, occasionally finding raw ores or **occult materials**. Very rarely, you _strike it rich_, hitting a vein which ejects 8-12 stacks of raw copper, iron, or gold.\n- **Occult Materials**: Ominous bottles, rabbit's feet, crusted gems, and more.\n",
+  "description": "<p>This hoe _dowses _upon <strong>harvesting</strong>, occasionally finding raw ores or <strong>occult materials</strong>. Very rarely, you <em>strike it rich</em>, hitting a vein which ejects 8-12 stacks of raw copper, iron, or gold.</p><ul><li><strong>Occult Materials</strong>: Ominous bottles, rabbit&#39;s feet, crusted gems, and more.</li></ul>",
   "maxLevel": 2,
   "items": [
     "Hoes"

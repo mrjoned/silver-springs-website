@@ -4,7 +4,7 @@
   "name": "Precision",
   "source": "Projects",
   "category": "Damage",
-  "description": "The spear enters a power phase 1.5 seconds into its charge which lasts 1 second and deals +2-4❤️ damage.\n",
+  "description": "<p>The spear enters a power phase 1.5 seconds into its charge which lasts 1 second and deals +2-4❤️ damage.</p>",
   "maxLevel": 3,
   "items": [
     "Spears"
