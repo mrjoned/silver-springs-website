@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recdnq85ICLcG5RNS",
+  "draft": false,
+  "name": "Protein Powder",
+  "category": "Charm",
+  "description": "Drinking potions with effects grants +2 hunger.",
+  "cost": "40,000 Silver",
+  "skillRequirements": "N/A",
+  "acquisition": "For purchase from one of the Silver Springs villager vendors.",
+  "order": 66,
+  "relatedEnchantments": [],
+  "shop": "village"
+}

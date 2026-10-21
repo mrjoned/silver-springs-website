@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recFmM5Z0hy5wMaoC",
+  "draft": false,
+  "name": "Transmog Helmet",
+  "category": "Service",
+  "description": "Transmutes a regular helmet into a custom helmet which resembles any item.",
+  "cost": "4 Valor Badges",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 40,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}

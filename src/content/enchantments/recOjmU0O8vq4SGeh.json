@@ -1,0 +1,31 @@
+{
+  "sourceRecordId": "recOjmU0O8vq4SGeh",
+  "draft": false,
+  "name": "Aphelion of Uranus",
+  "source": "Runecrafted",
+  "category": "Aphelion",
+  "description": "**Eclipses **Howling. Your Howl instead requires 7 stacks and intiates an _icy riptide_, freezing enemies you pass through for 2 seconds and striking for 75% damage. If your offhand is Howling, it also strikes for 25% damage.\n- **Eclipse: **The behavior of the eclipsed object is replaced while wearing this Aphelion.\n",
+  "maxLevel": 1,
+  "items": [
+    "Boots"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [],
+  "discoverer": "JenoSnowconeIce",
+  "researchers": [],
+  "discoveredDate": "2025-06-06",
+  "discoveredBy": "JenoSnowconeIce on 06/06/25",
+  "runeTags": [
+    "Echoes",
+    "Chills",
+    "Kinesis",
+    "Tides",
+    "Mortus"
+  ],
+  "rune1": "Echoes",
+  "rune2": "Tides",
+  "rune3": "Chills",
+  "rune4": "Kinesis",
+  "rune5": "Mortus",
+  "costRule": "per-level"
+}

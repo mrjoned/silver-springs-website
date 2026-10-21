@@ -1,0 +1,28 @@
+{
+  "sourceRecordId": "recag0pAyjqv66VwK",
+  "draft": false,
+  "name": "Curse of Polymorphing",
+  "source": "Curse",
+  "category": "Curse",
+  "description": "While digging, this tool randomly changes which block set it is effective against.\n",
+  "maxLevel": 1,
+  "items": [
+    "Pickaxes",
+    "Axes",
+    "Shovels",
+    "Hoes"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [],
+  "discoverer": "",
+  "researchers": [],
+  "discoveredDate": "",
+  "discoveredBy": "",
+  "runeTags": [],
+  "rune1": "",
+  "rune2": "",
+  "rune3": "",
+  "rune4": "",
+  "rune5": "",
+  "costRule": "free"
+}

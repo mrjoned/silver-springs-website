@@ -1,0 +1,29 @@
+{
+  "sourceRecordId": "recuhZvRJxt3yqipl",
+  "draft": false,
+  "name": "Ragnarok",
+  "source": "Mythical",
+  "category": "Radial",
+  "description": "While airborne, right click to freeze and charge a mace throw, generating torque based on smash damage upon landing, then slam down to it, stunning enemies within 5 blocks. Standard attacks deal 25% of torque as chain lightning damage.\n",
+  "maxLevel": null,
+  "items": [
+    "Maces"
+  ],
+  "incompatibleRunecrafted": [
+    "Avalanche",
+    "Resonance",
+    "Will-o'-Wisp"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "",
+  "researchers": [],
+  "discoveredDate": "",
+  "discoveredBy": "",
+  "runeTags": [],
+  "rune1": "",
+  "rune2": "",
+  "rune3": "",
+  "rune4": "",
+  "rune5": "",
+  "costRule": "free"
+}

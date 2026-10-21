@@ -1,0 +1,28 @@
+{
+  "sourceRecordId": "reciSPhE2qqn5pSVk",
+  "draft": false,
+  "name": "Skewering",
+  "source": "Runecrafted",
+  "category": "Splashing",
+  "description": "Attacks gain +1 range and _pierce_ in a 3-prong cone behind the target for 35-75% damage. Throws bypass shields and _pierce_ up to 2-4 enemies for full damage. _Pierced_ enemies are briefly slowed.\n",
+  "maxLevel": 3,
+  "items": [
+    "Tridents"
+  ],
+  "incompatibleRunecrafted": [
+    "Chaining",
+    "Dreadnought"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "Schwump",
+  "researchers": [],
+  "discoveredDate": "2023-09-11",
+  "discoveredBy": "Schwump on 9/11/23 5:35 AM ",
+  "runeTags": [],
+  "rune1": "Tides",
+  "rune2": "Kinesis",
+  "rune3": "Gusts",
+  "rune4": "Mortus",
+  "rune5": "Chills",
+  "costRule": "per-level"
+}

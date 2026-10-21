@@ -1,0 +1,30 @@
+{
+  "sourceRecordId": "recOaDWqnvFRoL7cL",
+  "draft": false,
+  "name": "Fortify",
+  "source": "Runecrafted",
+  "category": "Parry",
+  "description": "Parries stack _fortification_ 3 times. Once stacked, you consume them to gain 3❤️ Absorption for 3 seconds.\n",
+  "maxLevel": 1,
+  "items": [
+    "Shields"
+  ],
+  "incompatibleRunecrafted": [
+    "Riposte",
+    "Voltaic"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "alfredodan",
+  "researchers": [
+    "JenoSnowconeIce"
+  ],
+  "discoveredDate": "2025-06-03",
+  "discoveredBy": "alfredodan and JenoSnowconeIce on 06/03/25",
+  "runeTags": [],
+  "rune1": "Moments",
+  "rune2": "Aegis",
+  "rune3": "Echoes",
+  "rune4": "Vitality",
+  "rune5": "Moments",
+  "costRule": "per-level"
+}

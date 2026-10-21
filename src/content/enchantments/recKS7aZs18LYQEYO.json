@@ -1,0 +1,28 @@
+{
+  "sourceRecordId": "recKS7aZs18LYQEYO",
+  "draft": false,
+  "name": "Hands-On Learning",
+  "source": "Runecrafted",
+  "category": "Surplus",
+  "description": "**Auto-harvesting** crops has a 33% chance to drop an experience orb.\n> Auto-harvesting: Right-click a fully grown crop to automatically harvest and replant it.\n",
+  "maxLevel": 1,
+  "items": [
+    "Hoes"
+  ],
+  "incompatibleRunecrafted": [
+    "Taste Test",
+    "Mulching"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "ChiknThighs",
+  "researchers": [],
+  "discoveredDate": "2023-09-04",
+  "discoveredBy": "ChiknThighs on 9/4/23 9:08 PM ",
+  "runeTags": [],
+  "rune1": "Stones",
+  "rune2": "Vitality",
+  "rune3": "Arcanum",
+  "rune4": "Arcanum",
+  "rune5": "Arcanum",
+  "costRule": "per-level"
+}

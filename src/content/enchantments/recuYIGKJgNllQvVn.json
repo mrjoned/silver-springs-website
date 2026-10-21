@@ -1,0 +1,32 @@
+{
+  "sourceRecordId": "recuYIGKJgNllQvVn",
+  "draft": false,
+  "name": "Bolt-action",
+  "source": "Runecrafted",
+  "category": "Reload",
+  "description": "Swinging with a round loaded pushes it to the _magazine_, which can hold 2 rounds. Upon firing, the most recent round in the _magazine_ is immediately reloaded.\n",
+  "maxLevel": 1,
+  "items": [
+    "Crossbows"
+  ],
+  "incompatibleRunecrafted": [
+    "Trueshot"
+  ],
+  "incompatibleVanilla": [
+    "Quick Charge"
+  ],
+  "discoverer": "Starmarsh",
+  "researchers": [],
+  "discoveredDate": "2025-05-29",
+  "discoveredBy": "Starmarsh on 05/29/25",
+  "runeTags": [
+    "Moments",
+    "Gusts"
+  ],
+  "rune1": "Moments",
+  "rune2": "Moments",
+  "rune3": "Gusts",
+  "rune4": "Gusts",
+  "rune5": "Gusts",
+  "costRule": "per-level"
+}

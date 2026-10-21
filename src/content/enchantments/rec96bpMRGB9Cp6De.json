@@ -1,0 +1,31 @@
+{
+  "sourceRecordId": "rec96bpMRGB9Cp6De",
+  "draft": false,
+  "name": "Deep Pockets",
+  "source": "Runecrafted",
+  "category": "Storage",
+  "description": "Right-clicking these leggings while wearing them opens their pockets, a storage inventory with 18 slots.\n",
+  "maxLevel": 1,
+  "items": [
+    "Leggings"
+  ],
+  "incompatibleRunecrafted": [
+    "Utility Belt"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "TheJ_Team",
+  "researchers": [],
+  "discoveredDate": "2023-08-29",
+  "discoveredBy": "TheJ_Team on 8/29/23 9:43 PM ",
+  "runeTags": [
+    "Arcanum",
+    "Void",
+    "Opulence"
+  ],
+  "rune1": "Arcanum",
+  "rune2": "Void",
+  "rune3": "Opulence",
+  "rune4": "Opulence",
+  "rune5": "Opulence",
+  "costRule": "per-level"
+}

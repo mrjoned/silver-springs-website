@@ -1,0 +1,27 @@
+{
+  "sourceRecordId": "recT6SXh0C4zDXUB3",
+  "draft": false,
+  "name": "Marking",
+  "source": "Runecrafted",
+  "category": "Focus",
+  "description": "Creatures view through this spyglass for 1 second glow and become magically tracked. Projectiles home in on tracked entities.\n",
+  "maxLevel": 1,
+  "items": [
+    "Spyglass"
+  ],
+  "incompatibleRunecrafted": [
+    "Shrink Ray"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "Maidl",
+  "researchers": [],
+  "discoveredDate": "2025-06-06",
+  "discoveredBy": "Maidl on 06/06/25",
+  "runeTags": [],
+  "rune1": "Vitality",
+  "rune2": "Moments",
+  "rune3": "Arcanum",
+  "rune4": "Gusts",
+  "rune5": "Kinesis",
+  "costRule": "per-level"
+}

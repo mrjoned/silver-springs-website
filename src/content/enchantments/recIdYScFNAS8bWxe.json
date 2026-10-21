@@ -1,0 +1,31 @@
+{
+  "sourceRecordId": "recIdYScFNAS8bWxe",
+  "draft": false,
+  "name": "Avatar of Bats",
+  "source": "Runecrafted",
+  "category": "Avatar",
+  "description": "While gliding, sneaking causes you to echolocate, highlighting mobs within 40 blocks and granting night vision for 10 seconds. \nWhile in light levels of 4 or less, mobs only detect you from 60-25% of their usual distance.\n",
+  "maxLevel": 1,
+  "items": [
+    "Elytra"
+  ],
+  "incompatibleRunecrafted": [
+    "Other Avatars"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "TroyTheCrafter",
+  "researchers": [],
+  "discoveredDate": "2023-09-01",
+  "discoveredBy": "TroyTheCrafter on 9/1/23, 6:45 AM",
+  "runeTags": [
+    "Gusts",
+    "Vitality",
+    "Void"
+  ],
+  "rune1": "Gusts",
+  "rune2": "Vitality",
+  "rune3": "Void",
+  "rune4": "Vitality",
+  "rune5": "Void",
+  "costRule": "per-level"
+}

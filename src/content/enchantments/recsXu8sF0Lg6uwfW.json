@@ -1,0 +1,46 @@
+{
+  "sourceRecordId": "recsXu8sF0Lg6uwfW",
+  "draft": false,
+  "name": "Extinction",
+  "source": "Runecrafted",
+  "category": "Damage",
+  "description": "Slain entities are marked for _extinction_, permanently granting 1 stack. Strikes deal +0.25 hearts damage per stack against that entity type, up to +5-10 ❤. \n- \tBosses grant 4 stacks and, at max level, the bonus damage to them is uncapped. Stacks have no effect in Trials.\n\nOnly one entity type can be marked at a time. A new type can be marked by gaining 5 _extinction_ stacks against it.\n",
+  "maxLevel": 3,
+  "items": [
+    "Maces",
+    "Swords",
+    "Axes",
+    "Tridents",
+    "Spears"
+  ],
+  "incompatibleRunecrafted": [
+    "Tempo",
+    "Exploit",
+    "Sundering",
+    "Windup",
+    "Momentum",
+    "Dynamo",
+    "Sweet Spot",
+    "Ballast"
+  ],
+  "incompatibleVanilla": [
+    "Sharpness",
+    "Bane of Arthropods",
+    "Smite",
+    "Impaling",
+    "Breach",
+    "Density",
+    "Cleaving"
+  ],
+  "discoverer": "TheJ_Team",
+  "researchers": [],
+  "discoveredDate": "2023-09-01",
+  "discoveredBy": "TheJ_Team on 9/1/23, 7:41 PM ",
+  "runeTags": [],
+  "rune1": "Mortus",
+  "rune2": "Mortus",
+  "rune3": "Mortus",
+  "rune4": "Mortus",
+  "rune5": "Void",
+  "costRule": "per-level"
+}

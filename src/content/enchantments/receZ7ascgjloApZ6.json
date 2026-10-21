@@ -1,0 +1,41 @@
+{
+  "sourceRecordId": "receZ7ascgjloApZ6",
+  "draft": false,
+  "name": "Bane of Arthropods",
+  "source": "Vanilla",
+  "category": "Damage",
+  "description": "Always slows for the full duration (1.5-3.5 seconds) and works against Shulkers.\n",
+  "maxLevel": 5,
+  "items": [
+    "Swords",
+    "Axes",
+    "Maces",
+    "Spears"
+  ],
+  "incompatibleRunecrafted": [
+    "Exploit",
+    "Extinction",
+    "Tempo",
+    "Dynamo",
+    "Momentum",
+    "Sweet Spot"
+  ],
+  "incompatibleVanilla": [
+    "Smite",
+    "Sharpness",
+    "Breach",
+    "Density",
+    "Cleaving"
+  ],
+  "discoverer": "",
+  "researchers": [],
+  "discoveredDate": "",
+  "discoveredBy": "",
+  "runeTags": [],
+  "rune1": "",
+  "rune2": "",
+  "rune3": "",
+  "rune4": "",
+  "rune5": "",
+  "costRule": "free"
+}

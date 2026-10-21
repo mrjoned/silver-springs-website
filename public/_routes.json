@@ -1,8 +1,6 @@
 {
   "version": 1,
   "include": [
-    "/api/enchantments",
-    "/api/enchantments/",
     "/api/calendar",
     "/api/calendar/"
   ],

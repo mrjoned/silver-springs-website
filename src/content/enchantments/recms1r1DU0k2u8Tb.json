@@ -1,0 +1,25 @@
+{
+  "sourceRecordId": "recms1r1DU0k2u8Tb",
+  "draft": false,
+  "name": "Soul Spark",
+  "source": "Runecrafted",
+  "category": "Uncategorized",
+  "description": "Lit fires convert to soul fire.\n",
+  "maxLevel": 1,
+  "items": [
+    "Flint and Steel"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [],
+  "discoverer": "Maidl",
+  "researchers": [],
+  "discoveredDate": "2023-09-03",
+  "discoveredBy": "Maidl on 9/3/23, 8:11 AM",
+  "runeTags": [],
+  "rune1": "Arcanum",
+  "rune2": "Vitality",
+  "rune3": "Mortus",
+  "rune4": "Cinders",
+  "rune5": "Cinders",
+  "costRule": "per-level"
+}

@@ -1,0 +1,4878 @@
+{
+  "base": "Silver Springs Runecrafted Enchantments",
+  "importedDate": "2026-10-20",
+  "tables": {
+    "enchantments": [
+      {
+        "id": "rec0nb65UWsNJCMSu",
+        "Category": "Curse",
+        "Item Types": [
+          "Swords",
+          "Axes",
+          "Maces",
+          "Spears"
+        ],
+        "Enchantment Names": "Curse of the Forbidden Ones",
+        "Source": "Curse",
+        "What it do": "Attacks deal +5❤️ to enemies with a forbidden name but -5❤️ damage otherwise.\n**Forbidden Names: Names containing \"Doug\", \"Greg\", \"Jacob\", Charolette\", \"Nathan\", \"Watson\", or \"broace\".**\n",
+        "Max Level": "1"
+      },
+      {
+        "id": "rec0q0FWWKOLacKrn",
+        "Category": "Spread",
+        "Item Types": [
+          "Crossbows"
+        ],
+        "Enchantment Names": "Tartarean Hellhound",
+        "Source": "Mythical",
+        "What it do": "All loaded projectiles are fired in a tight volley, with arrows fired as 2❤️ damage fangs.\n",
+        "Incompatible with (Runecrafted):": [
+          "Gatling",
+          "Cryovolcano"
+        ]
+      },
+      {
+        "id": "rec16wgA19yPcOWM3",
+        "Category": "Damage",
+        "Rune 1": "Moments",
+        "Item Types": [
+          "Swords"
+        ],
+        "Rune 4": "Mortus",
+        "Rune 3": "Moments",
+        "Enchantment Names": "Tempo",
+        "Source": "Runecrafted",
+        "Discoverer": "Maidl",
+        "Discovered Date": "2023-08-23",
+        "Incompatible with (Vanilla):": [
+          "Sharpness",
+          "Bane of Arthropods",
+          "Smite"
+        ],
+        "Rune 5": "Moments",
+        "What it do": "Charged attacks against full health entities or within 0.3 seconds of recharging deal +1-2 hearts of damage and recharge 10% faster. \n",
+        "Discovered by:": "Maidl on 8/23/23 1:35 AM",
+        "Incompatible with (Runecrafted):": [
+          "Extinction",
+          "Sweet Spot"
+        ],
+        "Max Level": "3",
+        "Rune 2": "Mortus"
+      },
+      {
+        "id": "rec1UGdS9Hsw55O55",
+        "Category": "Cutting",
+        "Rune 1": "Sparks",
+        "Item Types": [
+          "Shears"
+        ],
+        "Rune 4": "Void",
+        "Rune 3": "Cinders",
+        "Enchantment Names": "Wire Cutters",
+        "Source": "Runecrafted",
+        "Rune 5": "Opulence",
+        "What it do": "Explosive entities can be sheared to _defuse_ them, dropping their explosive as an item and pacifying them if applicable.\n",
+        "Incompatible with (Runecrafted):": [
+          "Mitosis",
+          "Tithing"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Kinesis"
+      },
+      {
+        "id": "rec1t4TJWTkoX6UkU",
+        "Category": "Aspect",
+        "Rune 1": "Mortus",
+        "Item Types": [
+          "Maces",
+          "Swords",
+          "Axes",
+          "Spears"
+        ],
+        "Rune 4": "Chills",
+        "Rune 3": "Chills",
+        "Enchantment Names": "Ice Aspect",
+        "Source": "Runecrafted",
+        "Incompatible with (Vanilla):": [
+          "Fire Aspect"
+        ],
+        "Rune 5": "Chills",
+        "What it do": "Attacks apply 4-8 seconds of freezing, stacking with each attack and capping at 20 seconds.\n",
+        "Discovered by:": "<none> on 12/25/16, 12:57 PM",
+        "Incompatible with (Runecrafted):": [
+          "Plague Aspect",
+          "Purity Aspect",
+          "Fire Aspect III"
+        ],
+        "Max Level": "3",
+        "Rune 2": "Echoes"
+      },
+      {
+        "id": "rec35dLnccNVRbwCg",
+        "Category": "Protection",
+        "Rune 1": "Kinesis",
+        "Item Types": [
+          "Helmets",
+          "Chestplates",
+          "Leggings",
+          "Boots"
+        ],
+        "Rune 4": "Vitality",
+        "Rune 3": "Kinesis",
+        "Enchantment Names": "Blast Protection V",
+        "Source": "Runecrafted",
+        "Discoverer": "Starmarsh",
+        "Runes": [
+          "Kinesis",
+          "Aegis",
+          "Vitality",
+          "Moments"
+        ],
+        "Discovered Date": "2023-09-04",
+        "Incompatible with (Vanilla):": [
+          "Protection",
+          "Fire Protection",
+          "Projectile Protection"
+        ],
+        "Rune 5": "Moments",
+        "What it do": "Blasts deal -8-40% damage and -15–75% knockback.\n> **Runecrafting Bonus**: Blasts instead deal -75% damage, then you siphon the shrapnel to form a 1❤ Absorption _blast shield_, granting knockback immunity and 25% damage reduction while the shield holds.\n",
+        "Discovered by:": "Starmarsh on 9/4/23, 12:13 AM",
+        "Incompatible with (Runecrafted):": [
+          "Headstart",
+          "Adrenaline Rush",
+          "Equilibrium",
+          "Lizard Tail"
+        ],
+        "Max Level": "5",
+        "Rune 2": "Aegis"
+      },
+      {
+        "id": "rec3AuBG5l7EyGvqR",
+        "Category": "Damage",
+        "Rune 1": "Kinesis",
+        "Item Types": [
+          "Spears"
+        ],
+        "Rune 4": "Mortus",
+        "Rune 3": "Kinesis",
+        "Enchantment Names": "Precision",
+        "Source": "Projects",
+        "Discoverer": "TheJ_Team",
+        "Researchers": [
+          "ElectricSparx"
+        ],
+        "Discovered Date": "2026-03-07",
+        "Incompatible with (Vanilla):": [
+          "Sharpness",
+          "Bane of Arthropods",
+          "Smite"
+        ],
+        "Rune 5": "Moments",
+        "What it do": "The spear enters a power phase 1.5 seconds into its charge which lasts 1 second and deals +2-4❤️ damage.\n",
+        "Incompatible with (Runecrafted):": [
+          "Extinction",
+          "Flurry"
+        ],
+        "Max Level": "3",
+        "Rune 2": "Moments"
+      },
+      {
+        "id": "rec3L4fndgAXKi4Pj",
+        "Category": "Dash",
+        "Rune 1": "Moments",
+        "Item Types": [
+          "Spears"
+        ],
+        "Rune 4": "Gusts",
+        "Rune 3": "Moments",
+        "Enchantment Names": "Vault",
+        "Source": "Runecrafted",
+        "Discoverer": "TheJ_Team",
+        "Researchers": [
+          "ElectricSparx"
+        ],
+        "Discovered Date": "2026-03-07",
+        "Incompatible with (Vanilla):": [
+          "Lunge"
+        ],
+        "Rune 5": "Gusts",
+        "What it do": "The first jump within 1 second of changing charge phases launches you forward.\n",
+        "Incompatible with (Runecrafted):": [
+          "Man-Eater",
+          "Skip"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Kinesis"
+      },
+      {
+        "id": "rec3zt7wEQzsNIZNy",
+        "Category": "Sweeping",
+        "Rune 1": "Mortus",
+        "Item Types": [
+          "Axes"
+        ],
+        "Rune 4": "Mortus",
+        "Rune 3": "Aegis",
+        "Enchantment Names": "Chainsaw",
+        "Source": "Runecrafted",
+        "Discoverer": "TroyTheCrafter",
+        "Runes": [
+          "Mortus",
+          "Echoes",
+          "Aegis",
+          "Moments"
+        ],
+        "Discovered Date": "2025-05-19",
+        "Rune 5": "Moments",
+        "What it do": "Each attack _revs the chainsaw_, up to 4 times, after which you _berserk_ for 2 seconds, over which you shred enemies in front of or around you for 12❤️ while gaining 40% speed and melee damage immunity.\n",
+        "Discovered by:": "TroyTheCrafter on 05/19/25",
+        "Incompatible with (Runecrafted):": [
+          "Howling",
+          "Tempest"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Echoes"
+      },
+      {
+        "id": "rec41wtE1wy80O2Pi",
+        "Category": "Avatar",
+        "Rune 1": "Vitality",
+        "Item Types": [
+          "Elytra"
+        ],
+        "Rune 4": "Cinders",
+        "Rune 3": "Gusts",
+        "Enchantment Names": "Avatar of Ender Dragons",
+        "Source": "Runecrafted",
+        "Discoverer": "TroyTheCrafter",
+        "Runes": [
+          "Vitality",
+          "Void",
+          "Gusts",
+          "Cinders",
+          "Arcanum"
+        ],
+        "Discovered Date": "2023-08-29",
+        "Rune 5": "Arcanum",
+        "What it do": "While gliding, sneaking causes you to shoot a dragon fireball, and colliding with terrain causes you to warp through it to the next open space.\nWhile gliding near an Ender Crystal, you regenerate health.\n",
+        "Discovered by:": "TroyTheCrafter on 8/29/23, 6:03 PM ",
+        "Incompatible with (Runecrafted):": [
+          "Other Avatars"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Void"
+      },
+      {
+        "id": "rec4BHVDwIsOBEKHT",
+        "Category": "Aspect",
+        "Rune 1": "Gusts",
+        "Item Types": [
+          "Bows"
+        ],
+        "Rune 4": "Tides",
+        "Rune 3": "Mortus",
+        "Enchantment Names": "Pestilence",
+        "Source": "Runecrafted",
+        "Incompatible with (Vanilla):": [
+          "Flame"
+        ],
+        "Rune 5": "Mortus",
+        "What it do": "Shots **Plague** enemies for 4-8 seconds. Plagued enemies have Wither I and on death will spread Plague stacks to the 1-3 closest enemies after a short delay.\n",
+        "Discovered by:": "N/A",
+        "Incompatible with (Runecrafted):": [
+          "Frost"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Echoes"
+      },
+      {
+        "id": "rec4CyfBeytoBYst7",
+        "Category": "Uncategorized",
+        "Item Types": [
+          "Crossbows"
+        ],
+        "Enchantment Names": "Multishot",
+        "Source": "Vanilla",
+        "Incompatible with (Vanilla):": [
+          "Piercing"
+        ],
+        "What it do": "Projectiles bypass invulnerability frames.\n",
+        "Max Level": "1"
+      },
+      {
+        "id": "rec54QJaG4y7tTo10",
+        "Category": "Protection",
+        "Rune 1": "Cinders",
+        "Item Types": [
+          "Helmets",
+          "Chestplates",
+          "Leggings",
+          "Boots"
+        ],
+        "Rune 4": "Cinders",
+        "Rune 3": "Aegis",
+        "Enchantment Names": "Fire Protection V",
+        "Source": "Runecrafted",
+        "Discoverer": "Maidl",
+        "Discovered Date": "2023-09-05",
+        "Incompatible with (Vanilla):": [
+          "Protection",
+          "Blast Protection",
+          "Projectile Protection"
+        ],
+        "Rune 5": "Moments",
+        "What it do": "Fire and lava deal 8-40% less damage and you burn for 15-75% less time. \n> **Runecrafting Bonus**: You take -25% damage from burning enemies, and their unarmed attacks no longer ignite you.\n",
+        "Discovered by:": "Maidl on 9/5/23 1:10 AM",
+        "Incompatible with (Runecrafted):": [
+          "Headstart",
+          "Adrenaline Rush",
+          "Equilibrium",
+          "Lizard Tail"
+        ],
+        "Max Level": "5",
+        "Rune 2": "Aegis"
+      },
+      {
+        "id": "rec5NoqqRVkUbS2Sg",
+        "Category": "Control",
+        "Rune 1": "Kinesis",
+        "Item Types": [
+          "Bows"
+        ],
+        "Rune 4": "Gusts",
+        "Rune 3": "Void",
+        "Enchantment Names": "Strafing",
+        "Source": "Runecrafted",
+        "Discoverer": "Maidl",
+        "Researchers": [
+          "ElectricSparx",
+          "Schwump"
+        ],
+        "Discovered Date": "2025-05-26",
+        "Incompatible with (Vanilla):": [
+          "Punch"
+        ],
+        "Rune 5": "Gusts",
+        "What it do": "You are slowed 60% less while drawing a shot.\n",
+        "Discovered by:": "Maidl, ElectricSparx, and Schwump on 05/26/25",
+        "Incompatible with (Runecrafted):": [
+          "Hair-Trigger"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Chills"
+      },
+      {
+        "id": "rec5niLSQ9ZuhIx9D",
+        "Category": "Protection",
+        "Rune 1": "Mortus",
+        "Item Types": [
+          "Leggings"
+        ],
+        "Rune 4": "Gusts",
+        "Rune 3": "Vitality",
+        "Enchantment Names": "Lizard Tail",
+        "Source": "Runecrafted",
+        "Discoverer": "TroyTheCrafter",
+        "Discovered Date": "2023-08-30",
+        "Incompatible with (Vanilla):": [
+          "Protection",
+          "Projectile Protection",
+          "Blast Protection",
+          "Fire Protection"
+        ],
+        "Rune 5": "Moments",
+        "What it do": "You survive death at 0.5 hearts, cleansing negative effects and shedding a decoy tail which draws in distractible enemies for 10 seconds, during which you stealth and gain 80% speed. This can’t occur again until you fully heal.\n",
+        "Discovered by:": "TroyTheCrafter on 8/30/23 12:12 PM",
+        "Max Level": "1",
+        "Rune 2": "Void"
+      },
+      {
+        "id": "rec6DHbA90WIb9JbV",
+        "Category": "Descent",
+        "Rune 1": "Arcanum",
+        "Item Types": [
+          "Boots"
+        ],
+        "Rune 4": "Aegis",
+        "Rune 3": "Stones",
+        "Enchantment Names": "Ground Pound",
+        "Source": "Runecrafted",
+        "Incompatible with (Vanilla):": [
+          "Feather Falling"
+        ],
+        "Rune 5": "Kinesis",
+        "What it do": "Fall damage is reduced by -25-50%. Double sneaking while airborne performs a rapid downward stomp. Upon landing, the shockwave deals 50% of the initial damage to enemies within 5 blocks.\n",
+        "Incompatible with (Runecrafted):": [
+          "Rocket Boosting"
+        ],
+        "Max Level": "2",
+        "Rune 2": "Gusts"
+      },
+      {
+        "id": "rec71FXAs1vQIATHS",
+        "Category": "Ammo",
+        "Item Types": [
+          "Bows"
+        ],
+        "Enchantment Names": "Tesseract",
+        "Source": "Mythical",
+        "Incompatible with (Vanilla):": [
+          "Infinity"
+        ],
+        "What it do": "While drawn, the bow pulls items to you and small entities into its tesseract. Mobs fired from the tesseract deal their attack damage as bonus damage. You can fire without any ammo available, releasing a 3❤️ base damage energy shot.\n",
+        "Incompatible with (Runecrafted):": [
+          "Slingshot"
+        ]
+      },
+      {
+        "id": "rec7RtmW3YvzInT9B",
+        "Category": "Control",
+        "Rune 1": "Tides",
+        "Item Types": [
+          "Tridents"
+        ],
+        "Rune 4": "Mortus",
+        "Rune 3": "Chills",
+        "Enchantment Names": "Beheld",
+        "Source": "Runecrafted",
+        "Discoverer": "Shotdown01",
+        "Researchers": [
+          "Starmarsh",
+          "TroyTheCrafter"
+        ],
+        "Runes": [
+          "Tides",
+          "Kinesis",
+          "Chills",
+          "Moments",
+          "Sparks"
+        ],
+        "Discovered Date": "2025-05-28",
+        "Rune 5": "Sparks",
+        "What it do": "Upon preparing a throw, enemies you _behold _are briefly slowed 40%._ _If they are below half health, they are **stunned** instead.\n",
+        "Discovered by:": "Shotdown01, Starmarsh, and TroyTheCrafter on 05/28/25",
+        "Incompatible with (Runecrafted):": [
+          "Cavitation",
+          "Undertow"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Kinesis"
+      },
+      {
+        "id": "rec7YNnMffiuMrE9s",
+        "Category": "Affinity",
+        "Rune 1": "Void",
+        "Item Types": [
+          "Helmets"
+        ],
+        "Rune 4": "Opulence",
+        "Rune 3": "Gusts",
+        "Enchantment Names": "Eldritch Inclination",
+        "Source": "Runecrafted",
+        "Discoverer": "Shotdown01",
+        "Runes": [
+          "Void"
+        ],
+        "Discovered Date": "2023-09-02",
+        "Incompatible with (Vanilla):": [
+          "Aqua Affinity"
+        ],
+        "Rune 5": "Moments",
+        "What it do": "When the Void damages you, it spits you back upwards and grants you 5 minutes of stacking Luck. You can anger Wardens one additional time before they unburrow.\n",
+        "Discovered by:": "Shotdown01 on 9/2/23, 4:41 PM",
+        "Max Level": "1",
+        "Rune 2": "Kinesis"
+      },
+      {
+        "id": "rec7ajcxjWyLc1I71",
+        "Category": "Control",
+        "Rune 1": "Tides",
+        "Item Types": [
+          "Tridents"
+        ],
+        "Rune 4": "Kinesis",
+        "Rune 3": "Tides",
+        "Enchantment Names": "Undertow",
+        "Source": "Runecrafted",
+        "Discoverer": "Frostearrific",
+        "Discovered Date": "2023-09-05",
+        "Rune 5": "Chills",
+        "What it do": "_Throws_ and _riptides_ create an undercurrent which pushes away enemies within 5 blocks and slows them by 40% for 1 second.\n",
+        "Discovered by:": "Frostearrific on 9/5/23 11:38 PM",
+        "Incompatible with (Runecrafted):": [
+          "Cavitation",
+          "Beheld"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Kinesis"
+      },
+      {
+        "id": "rec8MyWY9TNmCf5zK",
+        "Category": "Curse",
+        "Item Types": [
+          "Helmets",
+          "Chestplates",
+          "Leggings",
+          "Boots",
+          "Elytra",
+          "Shields",
+          "Swords",
+          "Axes",
+          "Tridents",
+          "Bows",
+          "Crossbows",
+          "Pickaxes",
+          "Shovels",
+          "Hoes",
+          "Fishing Rods",
+          "Flint and Steel",
+          "Shears",
+          "Maces",
+          "Spyglass",
+          "Spears"
+        ],
+        "Enchantment Names": "Curse of Vanishing",
+        "Source": "Curse",
+        "What it do": "This item disappears upon death rather than dropping.\n",
+        "Max Level": "1"
+      },
+      {
+        "id": "rec91CRcYqtJsCBcU",
+        "Category": "Spread",
+        "Item Types": [
+          "Crossbows"
+        ],
+        "Enchantment Names": "Cryovolcano",
+        "Source": "Mythical",
+        "What it do": "Shots fire a 9-block long and 4.5 block wide cylinder for 9❤️ damage, applying 9 seconds of freezing and burning.\n",
+        "Incompatible with (Runecrafted):": [
+          "Gatling",
+          "Tartean Hellhound"
+        ]
+      },
+      {
+        "id": "rec96bpMRGB9Cp6De",
+        "Category": "Storage",
+        "Rune 1": "Arcanum",
+        "Item Types": [
+          "Leggings"
+        ],
+        "Rune 4": "Opulence",
+        "Rune 3": "Opulence",
+        "Enchantment Names": "Deep Pockets",
+        "Source": "Runecrafted",
+        "Discoverer": "TheJ_Team",
+        "Runes": [
+          "Arcanum",
+          "Void",
+          "Opulence"
+        ],
+        "Discovered Date": "2023-08-29",
+        "Rune 5": "Opulence",
+        "What it do": "Right-clicking these leggings while wearing them opens their pockets, a storage inventory with 18 slots.\n",
+        "Discovered by:": "TheJ_Team on 8/29/23 9:43 PM ",
+        "Incompatible with (Runecrafted):": [
+          "Utility Belt"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Void"
+      },
+      {
+        "id": "rec9DHSoycG47ppB7",
+        "Category": "Sweeping",
+        "Item Types": [
+          "Swords"
+        ],
+        "Enchantment Names": "Sweeping Edge",
+        "Source": "Vanilla",
+        "What it do": "Sweeps even when no target is hit directly.\n",
+        "Incompatible with (Runecrafted):": [
+          "Howling",
+          "Coup de Grâce"
+        ],
+        "Max Level": "3"
+      },
+      {
+        "id": "rec9KzKNth5MI3IQc",
+        "Category": "Aphelion",
+        "Rune 1": "Vitality",
+        "Item Types": [
+          "Boots"
+        ],
+        "Rune 4": "Mortus",
+        "Rune 3": "Arcanum",
+        "Enchantment Names": "Aphelion of Earth",
+        "Source": "Runecrafted",
+        "Discoverer": "TheJ_Team",
+        "Researchers": [
+          "Winzor",
+          "ElectricSparx",
+          "Schwump"
+        ],
+        "Runes": [
+          "Arcanum",
+          "Mortus",
+          "Vitality",
+          "Void"
+        ],
+        "Discovered Date": "2025-06-07",
+        "Rune 5": "Vitality",
+        "What it do": "- **Eclipses** the R.E.D. armor. You instead can read curse books, _sacrificing_ health to cast powerful **eldritch spells** which mark targets and **corrupt **your next punch. You can punch marked enemies from any range to siphon the mark and refund part of the _sacrifice_.\n- Sneak-right-click with a curse book to morph it into a _cursed tome_ which can hold 5 curse books.\n- **Eclipse: **The behavior of the eclipsed object is replaced while wearing this Aphelion.\n",
+        "Discovered by:": "TheJ_Team, Winzor, ElectricSparx, and Schwump on 06/07/25",
+        "Max Level": "1",
+        "Rune 2": "Void"
+      },
+      {
+        "id": "recATX5E5wCd9H7N8",
+        "Category": "Paradigm",
+        "Rune 1": "Vitality",
+        "Item Types": [
+          "Helmets"
+        ],
+        "Rune 4": "Moments",
+        "Rune 3": "Cinders",
+        "Enchantment Names": "Paradigm of Lust",
+        "Source": "Runecrafted",
+        "Discoverer": "CubicBits",
+        "Discovered Date": "2023-09-10",
+        "Rune 5": "Mortus",
+        "What it do": "Enemies targeting a nearby spouse are **scorned**, letting you lunge at them from afar, _but_ if a spouse dies in combat you wither away unless you enact **reckless vengeance** against their killer.\n> **Scorned**: \n> - Swing at them while within 32 blocks to lunge. \n> - Your first strike sates 1 hunger and grants 50% attack speed for 7 seconds. - Your strikes heal the targeted spouse for 15% of damage dealt. \n> **Reckless Vengeance: **Gain +20% speed toward the target. You can only have one vengeance target at a time. The wither is only cleansed upon killing your target.\n",
+        "Discovered by:": "CubicBits on 9/10/23 4:19 PM",
+        "Incompatible with (Runecrafted):": [
+          "Other Paradigms"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Mortus"
+      },
+      {
+        "id": "recBkvJykturx05Yl",
+        "Category": "Focus",
+        "Rune 1": "Vitality",
+        "Item Types": [
+          "Spyglass"
+        ],
+        "Rune 4": "Cinders",
+        "Rune 3": "Vitality",
+        "Enchantment Names": "Shrink Ray",
+        "Source": "Runecrafted",
+        "Discoverer": "TheJ_Team",
+        "Researchers": [
+          "MrJoned",
+          "Schwump"
+        ],
+        "Discovered Date": "2025-05-17",
+        "Rune 5": "Void",
+        "What it do": "- Creatures viewed through this spyglass slowly shrink. Creatures shrunk to minimum size become passive.\n- Enemies with higher max health shrink slower.\n",
+        "Discovered by:": "MrJoned, Schwump, and TheJ_Team on 5/17/25",
+        "Incompatible with (Runecrafted):": [
+          "Marking"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Moments"
+      },
+      {
+        "id": "recCpjDiLQAeBTg3O",
+        "Category": "Protection",
+        "Rune 1": "Vitality",
+        "Item Types": [
+          "Boots"
+        ],
+        "Rune 4": "Mortus",
+        "Rune 3": "Aegis",
+        "Enchantment Names": "Headstart",
+        "Source": "Runecrafted",
+        "Discoverer": "Starmarsh",
+        "Discovered Date": "2023-09-07",
+        "Incompatible with (Vanilla):": [
+          "Protection",
+          "Blast Protection",
+          "Fire Protection",
+          "Projectile Protection"
+        ],
+        "Rune 5": "Gusts",
+        "What it do": "While above 75% health, you take -50% damage and gain a burst of speed when taking damage.\n",
+        "Discovered by:": "Starmarsh on 9/7/23 11:30 PM ",
+        "Max Level": "1",
+        "Rune 2": "Vitality"
+      },
+      {
+        "id": "recCydYjl2DcoU1uY",
+        "Category": "Control",
+        "Rune 1": "Moments",
+        "Item Types": [
+          "Bows"
+        ],
+        "Rune 4": "Moments",
+        "Rune 3": "Void",
+        "Enchantment Names": "Hair-Trigger",
+        "Source": "Runecrafted",
+        "Discoverer": "MrHollowPoint99",
+        "Discovered Date": "2023-09-01",
+        "Incompatible with (Vanilla):": [
+          "Punch"
+        ],
+        "Rune 5": "Gusts",
+        "What it do": "Being struck or taking fall damage while holding this bow in your main hand automatically fires a fully charged shot. Firing a damaging projectile puts Hair-Trigger on a 1-second cooldown. \n",
+        "Discovered by:": "MrHollowPoint99 on 9/1/23 5:23 AM",
+        "Incompatible with (Runecrafted):": [
+          "Strafing"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Mortus"
+      },
+      {
+        "id": "recD6QJ1hizz0OUTb",
+        "Category": "Curse",
+        "Item Types": [
+          "Helmets",
+          "Chestplates",
+          "Leggings",
+          "Boots"
+        ],
+        "Enchantment Names": "Curse of Binding",
+        "Source": "Curse",
+        "What it do": "Once equipped, items with this curse can only be unequipped via death.\n",
+        "Max Level": "1"
+      },
+      {
+        "id": "recDG50Mz6AktN7U7",
+        "Category": "Radial",
+        "Rune 1": "Kinesis",
+        "Item Types": [
+          "Maces"
+        ],
+        "Rune 4": "Sparks",
+        "Rune 3": "Echoes",
+        "Enchantment Names": "Resonance",
+        "Source": "Runecrafted",
+        "Discoverer": "skelud",
+        "Researchers": [
+          "Starmarsh"
+        ],
+        "Discovered Date": "2025-05-27",
+        "Rune 5": "Moments",
+        "What it do": "Smash attacks emit a sound wave which applies stacking _resonance_ to other enemies within 10 blocks, dealing 1❤️ sonic damage and 0.25 seconds stunning per stack.\n",
+        "Discovered by:": "skelud and Starmarsh on 05/27/25",
+        "Incompatible with (Runecrafted):": [
+          "Avalanche",
+          "Ragnarok",
+          "Will-o'-Wisp"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Echoes"
+      },
+      {
+        "id": "recDgFWspaV2evHRn",
+        "Category": "Cutting",
+        "Rune 1": "Moments",
+        "Item Types": [
+          "Shears"
+        ],
+        "Rune 4": "Opulence",
+        "Rune 3": "Arcanum",
+        "Enchantment Names": "Tithing",
+        "Source": "Runecrafted",
+        "Discoverer": "Maidl",
+        "Discovered Date": "2023-08-19",
+        "Rune 5": "Moments",
+        "What it do": "More entities can be sheared periodically for resources.\n- **Blazes:** Blaze Rods\n- **Chickens and Parrots:** Feathers\n- **Creepers:** Gunpowder\n- **Ghasts:** Ghast Tears\n- **Glow Squids: **Glow Ink\n- **Guardians: **Prismarine Shards and Crystals\n- **Magma Cubes: **Magma Cream\n- **Phantoms:** Phantom Membranes\n- **Shulkers:** Shulker Shells\n- **Skeletons:** Bone Meal\n- **Slimes:** Slime Balls\n- **Sniffers:** Moss\n- **Spiders and Striders:** String\n- **Squids: **Ink\n- **Wither Skeletons: **Coal\n",
+        "Discovered by:": "Maidl on 8/19/23 9:00 PM",
+        "Incompatible with (Runecrafted):": [
+          "Mitosis",
+          "Wire Cutters"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Vitality"
+      },
+      {
+        "id": "recEH40obpfnC74vz",
+        "Category": "Aphelion",
+        "Rune 1": "Void",
+        "Item Types": [
+          "Boots"
+        ],
+        "Rune 4": "Sparks",
+        "Rune 3": "Kinesis",
+        "Enchantment Names": "Aphelion of Jupiter",
+        "Source": "Runecrafted",
+        "Discoverer": "Frostearrific",
+        "Researchers": [
+          "TheJ_Team",
+          "TroyTheCrafter",
+          "Starmarsh"
+        ],
+        "Runes": [
+          "Arcanum",
+          "Gusts",
+          "Kinesis",
+          "Sparks",
+          "Void"
+        ],
+        "Discovered Date": "2025-05-30",
+        "Rune 5": "Arcanum",
+        "What it do": "**Eclipses** the Runic Tome. When you would cast the Void, Gusts, Kinesis, or Sparks spells, you instead cast **Great Red Spot**.\n- **Great Red Spot**: A large elliptical lightning storm forms around you for 25 seconds. It pulls in and suffocates enemies, increasing in intensity at the center, which instead deals more frequent void damage. Costs 125 XP.\n- **Eclipse**: The behavior of the eclipsed object is replaced while wearing this Aphelion.\n",
+        "Discovered by:": "Frostearrific, TheJ_Team, TroyTheCrafter, and Starmarsh on 05/30/25",
+        "Max Level": "1",
+        "Rune 2": "Gusts"
+      },
+      {
+        "id": "recEPX2jBtdxlJc17",
+        "Category": "Damage",
+        "Rune 1": "Mortus",
+        "Item Types": [
+          "Tridents"
+        ],
+        "Rune 4": "Kinesis",
+        "Rune 3": "Kinesis",
+        "Enchantment Names": "Ballast",
+        "Source": "Runecrafted",
+        "Discoverer": "TroyTheCrafter",
+        "Researchers": [
+          "Maidl"
+        ],
+        "Runes": [
+          "Mortus",
+          "Tides",
+          "Kinesis"
+        ],
+        "Discovered Date": "2025-06-08",
+        "Incompatible with (Vanilla):": [
+          "Impaling"
+        ],
+        "Rune 5": "Mortus",
+        "What it do": "- This trident attacks 10% slower for **1-2❤️ damage.**\n- Throws are _heavier_, falling faster but dealing **+2-♾️❤️ damage, **increasing linearly with distance fallen.\n",
+        "Incompatible with (Runecrafted):": [
+          "Extinction",
+          "Sundering",
+          "Windup"
+        ],
+        "Max Level": "3",
+        "Rune 2": "Tides"
+      },
+      {
+        "id": "recESl2V79KNJhJSt",
+        "Category": "Impetus",
+        "Rune 1": "Aegis",
+        "Item Types": [
+          "Leggings"
+        ],
+        "Rune 4": "Stones",
+        "Rune 3": "Sparks",
+        "Enchantment Names": "Impetus of Athena",
+        "Source": "Runecrafted",
+        "Discoverer": "TheJ_Team",
+        "Discovered Date": "2025-05-27",
+        "Rune 5": "Mortus",
+        "What it do": "You approach combat in 10-second _battle cycles, _each with 10 _Aegis_🛡️. You must use 1🛡️ to shoot or manually attack, or you can double tap movement keys while blocking to spend 🛡️ to execute _battle actions_:\n- W: (3🛡️) Enter **warfare stance** for 3 attacks.\n- A: (2🛡️) Stealth and prepare an **ambush**.\n- S: (2-4🛡️) Petrify those facing you with the Gorgon **stare.**\n- D: (4🛡️) Plant a **decoy trap zone** at the target area.\n\n- **Warfare Stance: **Strike in a cone behind the target, dealing +2-5❤️ base damage to all targets scaling with how unarmored each target is.\n- **Ambush: **Stealth and gain 20% speed for 3 seconds. If you exit stealth by attacking, you critically strike for 1.5x base damage and shred 50% of the target's armor for 5 seconds.\n- **Stare: **Stuns for 3 seconds, costing 2-4🛡️ for 1-3+ affected enemies. Players always cost 3🛡. Attacks which break petrification deal +2-5❤️ executing base damage, +2❤️ per parry this battle cycle.\n- **Decoy Trap Zone: **A temporary 4x4 zone centered on a 5❤️ decoy which is hidden from other players and attracts mobs. Enemies who enter the zone or hit the decoy are parried and automatically attacked by you, ignoring the range.\n",
+        "Discovered by:": "TheJ_Team on 05/27/25",
+        "Incompatible with (Runecrafted):": [
+          "Other Impetuses"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Moments"
+      },
+      {
+        "id": "recEWRdMx6p0aA5Mo",
+        "Category": "Descent",
+        "Rune 1": "Kinesis",
+        "Item Types": [
+          "Boots"
+        ],
+        "Rune 4": "Gusts",
+        "Rune 3": "Kinesis",
+        "Enchantment Names": "Rocket Boosting",
+        "Source": "Runecrafted",
+        "Discoverer": "MogTheDinosaur",
+        "Discovered Date": "2023-08-24",
+        "Incompatible with (Vanilla):": [
+          "Feather Falling"
+        ],
+        "Rune 5": "Kinesis",
+        "What it do": "Sneaking while jumping performs an upward rocket boost and resets accumulated fall distance. You can perform 2-3 rocket boosts before landing.\n> Fall damage is reduced by 2 hearts. \n",
+        "Discovered by:": "MogTheDinosaur on 8/24/23 5:16 PM",
+        "Incompatible with (Runecrafted):": [
+          "Ground Pound"
+        ],
+        "Max Level": "2",
+        "Rune 2": "Gusts"
+      },
+      {
+        "id": "recEZS1px8X95MjUy",
+        "Category": "Surplus",
+        "Rune 1": "Stones",
+        "Item Types": [
+          "Hoes"
+        ],
+        "Rune 4": "Vitality",
+        "Rune 3": "Opulence",
+        "Enchantment Names": "Mulching",
+        "Source": "Runecrafted",
+        "Discoverer": "JenoSnowconeIce",
+        "Researchers": [
+          "TroyTheCrafter"
+        ],
+        "Discovered Date": "2025-05-15",
+        "Rune 5": "Stones",
+        "What it do": "Surplus seeds and poisonous potatoes dropped by harvested crops are automatically composted.\n",
+        "Discovered by:": "JenoSnowconeIce and TroyTheCrafter on 5/15/25",
+        "Incompatible with (Runecrafted):": [
+          "Taste Test",
+          "Hands-On Learning"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Vitality"
+      },
+      {
+        "id": "recFBQpTmKHPzT7uP",
+        "Category": "Tackle",
+        "Rune 1": "Tides",
+        "Item Types": [
+          "Fishing Rods"
+        ],
+        "Rune 4": "Vitality",
+        "Rune 3": "Cinders",
+        "Enchantment Names": "Hot Rod",
+        "Source": "Runecrafted",
+        "Discoverer": "TroyTheCrafter",
+        "Discovered Date": "2023-09-09",
+        "Rune 5": "Opulence",
+        "What it do": "This rod _sears_ 30-50% of caught fish, doubling restored hunger and sell price, and can fish in lava, doubling the _sear_ chance.\n",
+        "Discovered by:": "TroyTheCrafter on 9/9/23 8:26 AM",
+        "Incompatible with (Runecrafted):": [
+          "Trawling"
+        ],
+        "Max Level": "3",
+        "Rune 2": "Cinders"
+      },
+      {
+        "id": "recGNl7mEvol1M3er",
+        "Category": "Radial",
+        "Rune 1": "Kinesis",
+        "Item Types": [
+          "Maces"
+        ],
+        "Rune 4": "Kinesis",
+        "Rune 3": "Chills",
+        "Enchantment Names": "Avalanche",
+        "Source": "Runecrafted",
+        "Discoverer": "TroyTheCrafter",
+        "Researchers": [
+          "skelud"
+        ],
+        "Runes": [
+          "Kinesis",
+          "Gusts",
+          "Chills"
+        ],
+        "Discovered Date": "2025-05-26",
+        "Rune 5": "Chills",
+        "What it do": "Upon ascending to the maximum height from this mace's boosting enchantment, it releases a sheet of ice which falls forward onto targets below, dealing 4♥️ freezing damage and 8 seconds of frostbite.\n",
+        "Discovered by:": "TroyTheCrafter and skelud on 05/26/25",
+        "Incompatible with (Runecrafted):": [
+          "Ragnarok",
+          "Resonance",
+          "Will-o'-Wisp"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Gusts"
+      },
+      {
+        "id": "recGVfa8jtTFX3Q7o",
+        "Category": "Damage",
+        "Rune 1": "Gusts",
+        "Item Types": [
+          "Maces"
+        ],
+        "Rune 4": "Sparks",
+        "Rune 3": "Sparks",
+        "Enchantment Names": "Dynamo",
+        "Source": "Runecrafted",
+        "Discoverer": "Maidl",
+        "Researchers": [
+          "skelud"
+        ],
+        "Runes": [
+          "Gusts",
+          "Kinesis",
+          "Sparks"
+        ],
+        "Discovered Date": "2025-05-24",
+        "Incompatible with (Vanilla):": [
+          "Breach",
+          "Density",
+          "Sharpness",
+          "Smite",
+          "Bane of Arthropods"
+        ],
+        "Rune 5": "Sparks",
+        "What it do": "Untargeted swings convert accumulated smash damage into an equivalent amount of _torque_. Standard mace attacks deal bonus lightning damage equal to 25-35% of _torque_.\n",
+        "Discovered by:": "Maidl and skelud on 05/24/25",
+        "Incompatible with (Runecrafted):": [
+          "Extinction"
+        ],
+        "Max Level": "3",
+        "Rune 2": "Kinesis"
+      },
+      {
+        "id": "recGwXEbIY9sz61Uc",
+        "Category": "Paradigm",
+        "Rune 1": "Opulence",
+        "Item Types": [
+          "Helmets"
+        ],
+        "Rune 4": "Moments",
+        "Rune 3": "Aegis",
+        "Enchantment Names": "Paradigm of Greed",
+        "Source": "Runecrafted",
+        "Discoverer": "skelud",
+        "Discovered Date": "2023-08-19",
+        "Rune 5": "Mortus",
+        "What it do": "You can form lifelong **contracts**_ _with humanoids with raw gold, _but_ if ever you don’t re-up their contract, they **betray** you.\n> **Contracts**: Contractors gain vanishing, unbreakable golden copies of your gear, reset to their standard max health, and unshakably follow you between worlds. You can contract 4 creatures, but not those with keywords.\n> **Betrayal**: Contractors who **betray** you gain attack damage, speed, knockback resistance, and their contract cannot be resumed.\n",
+        "Discovered by:": "skelud on 8/19/23 9:17 PM",
+        "Incompatible with (Runecrafted):": [
+          "Other Paradigms"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Vitality"
+      },
+      {
+        "id": "recHKGnuEDU6fjX63",
+        "Category": "Hazard",
+        "Rune 1": "Gusts",
+        "Item Types": [
+          "Helmets",
+          "Chestplates",
+          "Leggings",
+          "Boots"
+        ],
+        "Rune 4": "Kinesis",
+        "Rune 3": "Echoes",
+        "Enchantment Names": "Reverberating",
+        "Source": "Runecrafted",
+        "Discoverer": "Starmarsh",
+        "Discovered Date": "2023-08-27",
+        "Incompatible with (Vanilla):": [
+          "Thorns"
+        ],
+        "Rune 5": "Sparks",
+        "What it do": "You reflect a sonic wave at entities who shoot you which stuns them for 0.25-1 seconds upon arrival. \n",
+        "Discovered by:": "Starmarsh on 8/27/23 4:05 AM",
+        "Incompatible with (Runecrafted):": [
+          "Volatile"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Kinesis"
+      },
+      {
+        "id": "recHXKQIT2LfOq0V7",
+        "Category": "Splashing",
+        "Rune 1": "Mortus",
+        "Item Types": [
+          "Tridents"
+        ],
+        "Rune 4": "Cinders",
+        "Rune 3": "Tides",
+        "Enchantment Names": "Dreadnought",
+        "Source": "Runecrafted",
+        "Discoverer": "Onikary",
+        "Researchers": [
+          "Frostearrific",
+          "JenoSnowconeIce"
+        ],
+        "Runes": [
+          "Mortus",
+          "Echoes",
+          "Tides",
+          "Cinders",
+          "Kinesis"
+        ],
+        "Discovered Date": "2025-06-05",
+        "Rune 5": "Kinesis",
+        "What it do": "Strikes prepare a **_broadside cannon, _**up to 2-4 cannons. Thrown hits signal each cannon to fire an explosive cannonball **towards enemies** in the direction of the throw.\n",
+        "Discovered by:": "Onikary, Frostearrific, and JenoSnowconeIce on 06/05/25",
+        "Incompatible with (Runecrafted):": [
+          "Skewering",
+          "Chaining"
+        ],
+        "Max Level": "3",
+        "Rune 2": "Echoes"
+      },
+      {
+        "id": "recHeUsbHoi6JNtHp",
+        "Category": "Sweeping",
+        "Rune 1": "Mortus",
+        "Item Types": [
+          "Swords",
+          "Axes"
+        ],
+        "Rune 4": "Echoes",
+        "Rune 3": "Gusts",
+        "Enchantment Names": "Howling",
+        "Source": "Runecrafted",
+        "Incompatible with (Vanilla):": [
+          "Sweeping Edge"
+        ],
+        "Rune 5": "Mortus",
+        "What it do": "Charged attacks grant 1 stack, up to 4. At 4 stacks, right-click to consume all stacks and Howl, releasing a sonic wave that strikes enemies in a 6-block cylinder for 75% damage. If your offhand weapon is Howling, it also strikes them for 25% damage.\n",
+        "Incompatible with (Runecrafted):": [
+          "Chainsaw",
+          "Tempest",
+          "Coup de Grâce"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Echoes"
+      },
+      {
+        "id": "recIchA6m7OEDjErT",
+        "Category": "Impetus",
+        "Rune 1": "Sparks",
+        "Item Types": [
+          "Leggings"
+        ],
+        "Rune 4": "Arcanum",
+        "Rune 3": "Gusts",
+        "Enchantment Names": "Impetus of Artemis",
+        "Source": "Runecrafted",
+        "Discoverer": "Shotdown01",
+        "Researchers": [
+          "TheJ_Team"
+        ],
+        "Discovered Date": "2025-05-28",
+        "Rune 5": "Opulence",
+        "What it do": "- Double sneaking calls or dismisses your chosen **spirit** **mount**, defaulting to your **spirit** **wolf**.\n- While mounted, you apply **moonlight** to the closest enemy. **Moonlit** enemies periodically glow, take +2-4♥️ magic damage from headshots, and ranged kills collect their loot and heal your mount 1♥️.\n",
+        "Discovered by:": "Shotdown01 and TheJ_Team on 05/28/25",
+        "Incompatible with (Runecrafted):": [
+          "Other Impetuses"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Vitality"
+      },
+      {
+        "id": "recIdYScFNAS8bWxe",
+        "Category": "Avatar",
+        "Rune 1": "Gusts",
+        "Item Types": [
+          "Elytra"
+        ],
+        "Rune 4": "Vitality",
+        "Rune 3": "Void",
+        "Enchantment Names": "Avatar of Bats",
+        "Source": "Runecrafted",
+        "Discoverer": "TroyTheCrafter",
+        "Runes": [
+          "Gusts",
+          "Vitality",
+          "Void"
+        ],
+        "Discovered Date": "2023-09-01",
+        "Rune 5": "Void",
+        "What it do": "While gliding, sneaking causes you to echolocate, highlighting mobs within 40 blocks and granting night vision for 10 seconds. \nWhile in light levels of 4 or less, mobs only detect you from 60-25% of their usual distance.\n",
+        "Discovered by:": "TroyTheCrafter on 9/1/23, 6:45 AM",
+        "Incompatible with (Runecrafted):": [
+          "Other Avatars"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Vitality"
+      },
+      {
+        "id": "recIq9SXhqU1AfWYd",
+        "Category": "Safety",
+        "Rune 1": "Gusts",
+        "Item Types": [
+          "Elytra"
+        ],
+        "Rune 4": "Arcanum",
+        "Rune 3": "Mortus",
+        "Enchantment Names": "Wrapping",
+        "Source": "Runecrafted",
+        "Discoverer": "TheJ_Team",
+        "Discovered Date": "2023-09-04",
+        "Rune 5": "Gusts",
+        "What it do": "While gliding, taking Void damage wraps you around the world height limit.\n",
+        "Discovered by:": "TheJ_Team on 9/4/23, 11:47 AM",
+        "Incompatible with (Runecrafted):": [
+          "Airbag",
+          "Crash Landicoot"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Void"
+      },
+      {
+        "id": "recJ7VL0MHMWMeI4q",
+        "Category": "Tackle",
+        "Rune 1": "Tides",
+        "Item Types": [
+          "Fishing Rods"
+        ],
+        "Rune 4": "Vitality",
+        "Rune 3": "Opulence",
+        "Enchantment Names": "Trawling",
+        "Source": "Runecrafted",
+        "Discoverer": "Frostearrific",
+        "Discovered Date": "2023-08-23",
+        "Rune 5": "Vitality",
+        "What it do": "When catching fish, you may reel in up to 1-3 additional fish.\n",
+        "Discovered by:": "Frostearrific on 8/23/23 5:18 AM",
+        "Incompatible with (Runecrafted):": [
+          "Hot Rod"
+        ],
+        "Max Level": "3",
+        "Rune 2": "Tides"
+      },
+      {
+        "id": "recJgDneGhHGYyP9O",
+        "Category": "Traversal",
+        "Rune 1": "Gusts",
+        "Item Types": [
+          "Boots"
+        ],
+        "Rune 4": "Void",
+        "Rune 3": "Stones",
+        "Enchantment Names": "Noclip",
+        "Source": "Runecrafted",
+        "Discoverer": "skelud",
+        "Discovered Date": "2025-05-28",
+        "Incompatible with (Vanilla):": [
+          "Soul Speed"
+        ],
+        "Rune 5": "Gusts",
+        "What it do": "While sprinting, you can warp through 1-block thick walls.\n",
+        "Discovered by:": "skelud on 05/28/25",
+        "Incompatible with (Runecrafted):": [
+          "Coyote Time"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Gusts"
+      },
+      {
+        "id": "recKOo5SnwVp4fuZq",
+        "Category": "Curse",
+        "Item Types": [
+          "Helmets",
+          "Chestplates",
+          "Leggings",
+          "Boots"
+        ],
+        "Enchantment Names": "Curse of Belittling",
+        "Source": "Curse",
+        "What it do": "While worn, you are 12.5% smaller and lose 12.5% attack damage.\n",
+        "Max Level": "1"
+      },
+      {
+        "id": "recKS7aZs18LYQEYO",
+        "Category": "Surplus",
+        "Rune 1": "Stones",
+        "Item Types": [
+          "Hoes"
+        ],
+        "Rune 4": "Arcanum",
+        "Rune 3": "Arcanum",
+        "Enchantment Names": "Hands-On Learning",
+        "Source": "Runecrafted",
+        "Discoverer": "ChiknThighs",
+        "Discovered Date": "2023-09-04",
+        "Rune 5": "Arcanum",
+        "What it do": "**Auto-harvesting** crops has a 33% chance to drop an experience orb.\n> Auto-harvesting: Right-click a fully grown crop to automatically harvest and replant it.\n",
+        "Discovered by:": "ChiknThighs on 9/4/23 9:08 PM ",
+        "Incompatible with (Runecrafted):": [
+          "Taste Test",
+          "Mulching"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Vitality"
+      },
+      {
+        "id": "recKWxzQd2zOXm7m3",
+        "Category": "Curse",
+        "Item Types": [
+          "Boots"
+        ],
+        "Enchantment Names": "Curse of Ataxia",
+        "Source": "Curse",
+        "What it do": "While worn, you take triple fall damage.\n",
+        "Max Level": "1"
+      },
+      {
+        "id": "recKaSdnLsUfBlfyC",
+        "Category": "Sweeping",
+        "Rune 1": "Mortus",
+        "Item Types": [
+          "Axes"
+        ],
+        "Rune 4": "Mortus",
+        "Rune 3": "Kinesis",
+        "Enchantment Names": "Tempest",
+        "Source": "Runecrafted",
+        "Discoverer": "Maidl",
+        "Researchers": [
+          "ElectricSparx"
+        ],
+        "Discovered Date": "2025-06-04",
+        "Rune 5": "Mortus",
+        "What it do": "On-kill, gain a _tempest charge._ Right click to expend it to dash forward 5 blocks or to the first enemy, then slice for 2-4❤️ damage.\n",
+        "Discovered by:": "Maidl and ElectricSparx on 06/04/25",
+        "Incompatible with (Runecrafted):": [
+          "Howling",
+          "Chainsaw"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Gusts"
+      },
+      {
+        "id": "recKnKRzwuSBC0pUE",
+        "Category": "Avatar",
+        "Rune 1": "Vitality",
+        "Item Types": [
+          "Chestplates"
+        ],
+        "Rune 4": "Arcanum",
+        "Rune 3": "Gusts",
+        "Enchantment Names": "Avatar of Shulkers",
+        "Source": "Runecrafted",
+        "Runes": [
+          "Vitality",
+          "Aegis",
+          "Gusts",
+          "Arcanum",
+          "Kinesis"
+        ],
+        "Rune 5": "Kinesis",
+        "What it do": "You reflect projectiles and take -25% damage from them. \nSneak punching the block below you closes your shell until you stop sneaking. While your shell is closed, you take -25% damage and are immune to knockback, jumping teleports you to a random nearby location, and fired arrows become shulker bullets. If they hit a target who was already levitating, the levitation is cleansed instead, but the bullet and the target’s fall both deal 4x damage.\n",
+        "Incompatible with (Runecrafted):": [
+          "Other Avatars"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Aegis"
+      },
+      {
+        "id": "recLPSBlyEMjGw99b",
+        "Category": "Control",
+        "Rune 1": "Tides",
+        "Item Types": [
+          "Tridents"
+        ],
+        "Rune 4": "Kinesis",
+        "Rune 3": "Void",
+        "Enchantment Names": "Cavitation",
+        "Source": "Runecrafted",
+        "Discoverer": "Starmarsh",
+        "Runes": [
+          "Tides",
+          "Moments",
+          "Void",
+          "Kinesis",
+          "Sparks"
+        ],
+        "Discovered Date": "2023-09-09",
+        "Rune 5": "Sparks",
+        "What it do": "Collisions form a pressure bubble which collapses after 1 second, pulling in enemies within 5 blocks, briefly stunning and dealing 2.5 ❤ suffocation damage.\n",
+        "Discovered by:": "Starmarsh on 9/9/23 7:21 PM",
+        "Incompatible with (Runecrafted):": [
+          "Undertow",
+          "Beheld"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Moments"
+      },
+      {
+        "id": "recM7CvQ0Ynhp2Syt",
+        "Category": "Paradigm",
+        "Rune 1": "Arcanum",
+        "Item Types": [
+          "Helmets"
+        ],
+        "Rune 4": "Vitality",
+        "Rune 3": "Arcanum",
+        "Enchantment Names": "Paradigm of Acedia",
+        "Source": "Runecrafted",
+        "Discoverer": "ChiknThighs",
+        "Discovered Date": "2023-08-31",
+        "Rune 5": "Mortus",
+        "What it do": "Your tames’ and summons’ attacks benefit from combat enchantments on your held melee weapon, but your attacks no longer do.\n",
+        "Discovered by:": "ChiknThighs on 8/31/23 3:45 AM ",
+        "Incompatible with (Runecrafted):": [
+          "Other Paradigms"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Void"
+      },
+      {
+        "id": "recNgV9qrO2CgnLjZ",
+        "Category": "Timbre",
+        "Rune 1": "Gusts",
+        "Item Types": [
+          "Goat Horns"
+        ],
+        "Rune 4": "Stones",
+        "Rune 3": "Echoes",
+        "Enchantment Names": "Crescendo",
+        "Source": "Runecrafted",
+        "Discoverer": "Maidl",
+        "Researchers": [
+          "TroyTheCrafter",
+          "Starmarsh"
+        ],
+        "Runes": [
+          "Gusts",
+          "Echoes",
+          "Stones",
+          "Void"
+        ],
+        "Discovered Date": "2025-05-24",
+        "Rune 5": "Void",
+        "What it do": "Horn blows emit a sonic boom which moves forward 10 blocks, dealing 2♥️ sonic damage, vaporizing sediments and cobwebs, and breaking bamboo, flowers, and grasses.\n",
+        "Discovered by:": "Maidl, TroyTheCrafter, and Starmarsh on 05/24/25",
+        "Incompatible with (Runecrafted):": [
+          "Whistle Tone"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Echoes"
+      },
+      {
+        "id": "recNj0stBYOrIASMG",
+        "Category": "Travel",
+        "Item Types": [
+          "Boots"
+        ],
+        "Enchantment Names": "Frost Walker",
+        "Source": "Vanilla",
+        "Incompatible with (Vanilla):": [
+          "Depth Strider"
+        ],
+        "What it do": "You walk 25-50% faster on ice and snow blocks, and freeze the ground beneath you in a 3-4 block radius while walking, converting powdered snow to snow and temporarily converting water to frosted ice.\n",
+        "Max Level": "2"
+      },
+      {
+        "id": "recNv8FZm45GV0Mf4",
+        "Category": "Boosting",
+        "Rune 1": "Kinesis",
+        "Item Types": [
+          "Maces"
+        ],
+        "Rune 4": "Tides",
+        "Rune 3": "Gusts",
+        "Enchantment Names": "Effervescence",
+        "Source": "Runecrafted",
+        "Discoverer": "TroyTheCrafter",
+        "Researchers": [
+          "Frostearrific",
+          "Shotdown01"
+        ],
+        "Runes": [
+          "Kinesis",
+          "Tides",
+          "Gusts",
+          "Moments"
+        ],
+        "Discovered Date": "2025-05-28",
+        "Incompatible with (Vanilla):": [
+          "Wind Burst"
+        ],
+        "Rune 5": "Moments",
+        "What it do": "Smash attacks release a _bubble_ which envelops you for 4-8 seconds, blocking damage while you rise 4 blocks per second with increased aerial mobility. The bubble pops early if you sneak or it blocks 10♥️ damage.\n",
+        "Discovered by:": "TroyTheCrafter, Frostearrific, and Shotdown01 on 05/28/25",
+        "Incompatible with (Runecrafted):": [
+          "Subduction"
+        ],
+        "Max Level": "3",
+        "Rune 2": "Tides"
+      },
+      {
+        "id": "recODt1SdTfVdfp9N",
+        "Category": "Aphelion",
+        "Rune 1": "Gusts",
+        "Item Types": [
+          "Boots"
+        ],
+        "Rune 4": "Chills",
+        "Rune 3": "Chills",
+        "Enchantment Names": "Aphelion of Neptune",
+        "Source": "Runecrafted",
+        "Discoverer": "ggDrPepper",
+        "Researchers": [
+          "Frostearrific"
+        ],
+        "Runes": [
+          "Chills",
+          "Gusts",
+          "Kinesis"
+        ],
+        "Discovered Date": "2025-05-21",
+        "Rune 5": "Chills",
+        "What it do": "**Eclipses** the Grasshopper. It instead can be continuously charged, during which it creates an _icy jet stream_ in your target direction, freezing and pushing yourself along with any enemies and projectiles within.\n- **Eclipse: **The behavior of the eclipsed object is replaced while wearing this Aphelion.\n",
+        "Discovered by:": "ggDrPepper and Frostearrific on 05/21/25",
+        "Max Level": "1",
+        "Rune 2": "Kinesis"
+      },
+      {
+        "id": "recOI37Xb8hop2vHJ",
+        "Category": "Uncategorized",
+        "Item Types": [
+          "Tridents"
+        ],
+        "Enchantment Names": "Riptide",
+        "Source": "Vanilla",
+        "Incompatible with (Vanilla):": [
+          "Loyalty"
+        ],
+        "What it do": "Increased underwater mobility and compatibility with other enchantments. No longer exclusive with Channeling.\n",
+        "Max Level": "3"
+      },
+      {
+        "id": "recOVGkUzlrN4ZhSd",
+        "Category": "Safety",
+        "Rune 1": "Gusts",
+        "Item Types": [
+          "Elytra"
+        ],
+        "Rune 4": "Aegis",
+        "Rune 3": "Stones",
+        "Enchantment Names": "Airbag",
+        "Source": "Runecrafted",
+        "Discoverer": "TroyTheCrafter",
+        "Runes": [
+          "Aegis",
+          "Gusts",
+          "Stones"
+        ],
+        "Discovered Date": "2023-08-24",
+        "Rune 5": "Aegis",
+        "What it do": "While gliding, colliding with a wall deals 40-80% less damage and repulses you backwards.\n",
+        "Discovered by:": "TroyTheCrafter on 8/24/23 6:05 AM",
+        "Incompatible with (Runecrafted):": [
+          "Wrapping",
+          "Crash Landicoot"
+        ],
+        "Max Level": "2",
+        "Rune 2": "Gusts"
+      },
+      {
+        "id": "recOaDWqnvFRoL7cL",
+        "Category": "Parry",
+        "Rune 1": "Moments",
+        "Item Types": [
+          "Shields"
+        ],
+        "Rune 4": "Vitality",
+        "Rune 3": "Echoes",
+        "Enchantment Names": "Fortify",
+        "Source": "Runecrafted",
+        "Discoverer": "alfredodan",
+        "Researchers": [
+          "JenoSnowconeIce"
+        ],
+        "Discovered Date": "2025-06-03",
+        "Rune 5": "Moments",
+        "What it do": "Parries stack _fortification_ 3 times. Once stacked, you consume them to gain 3❤️ Absorption for 3 seconds.\n",
+        "Discovered by:": "alfredodan and JenoSnowconeIce on 06/03/25",
+        "Incompatible with (Runecrafted):": [
+          "Riposte",
+          "Voltaic"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Aegis"
+      },
+      {
+        "id": "recOjmU0O8vq4SGeh",
+        "Category": "Aphelion",
+        "Rune 1": "Echoes",
+        "Item Types": [
+          "Boots"
+        ],
+        "Rune 4": "Kinesis",
+        "Rune 3": "Chills",
+        "Enchantment Names": "Aphelion of Uranus",
+        "Source": "Runecrafted",
+        "Discoverer": "JenoSnowconeIce",
+        "Runes": [
+          "Echoes",
+          "Chills",
+          "Kinesis",
+          "Tides",
+          "Mortus"
+        ],
+        "Discovered Date": "2025-06-06",
+        "Rune 5": "Mortus",
+        "What it do": "**Eclipses **Howling. Your Howl instead requires 7 stacks and intiates an _icy riptide_, freezing enemies you pass through for 2 seconds and striking for 75% damage. If your offhand is Howling, it also strikes for 25% damage.\n- **Eclipse: **The behavior of the eclipsed object is replaced while wearing this Aphelion.\n",
+        "Discovered by:": "JenoSnowconeIce on 06/06/25",
+        "Max Level": "1",
+        "Rune 2": "Tides"
+      },
+      {
+        "id": "recPT8yHSWWTX8PJa",
+        "Category": "Loot",
+        "Item Types": [
+          "Spears"
+        ],
+        "Enchantment Names": "Cyclotron",
+        "Source": "Mythical",
+        "Discovered Date": "2026-03-07",
+        "Incompatible with (Vanilla):": [
+          "Looting"
+        ],
+        "What it do": "While charging `faster than 15 m/s`, slain enemy drops are atomized, often converting to _primordial dust_, which can then be crafted with `crystals` or socketing gems to duplicate them.\n\n`Faster than 15 m/s: Effects will play while you are charging fast enough to atomize items`\n`Crystals: Lapis Lazuli, Nether Quarts, Amethyst Shards, Prismarine Shards, Diamonds, and Emeralds.`\n",
+        "Incompatible with (Runecrafted):": [
+          "Bounty Hunter"
+        ]
+      },
+      {
+        "id": "recPiFIPnSP0MFG9b",
+        "Category": "Contraption",
+        "Rune 1": "Gusts",
+        "Item Types": [
+          "Crossbows"
+        ],
+        "Rune 4": "Kinesis",
+        "Rune 3": "Kinesis",
+        "Enchantment Names": "Snare",
+        "Source": "Runecrafted",
+        "Discoverer": "Maidl",
+        "Discovered Date": "2023-08-21",
+        "Rune 5": "Chills",
+        "What it do": "Projectile hits release ropes which pull in enemies within 5 blocks and slow them by 20% for 2 seconds.\n",
+        "Discovered by:": "Maidl on 8/21/23 5:17 AM",
+        "Incompatible with (Runecrafted):": [
+          "Flare",
+          "Smokescreen"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Sparks"
+      },
+      {
+        "id": "recQbMACoLLG0rFVx",
+        "Category": "Splashing",
+        "Rune 1": "Tides",
+        "Item Types": [
+          "Tridents"
+        ],
+        "Rune 4": "Tides",
+        "Rune 3": "Arcanum",
+        "Enchantment Names": "Chaining",
+        "Source": "Runecrafted",
+        "Discoverer": "TroyTheCrafter",
+        "Runes": [
+          "Tides",
+          "Mortus",
+          "Arcanum"
+        ],
+        "Discovered Date": "2023-09-07",
+        "Rune 5": "Mortus",
+        "What it do": "Impacts chain up to 3 times, auto-throwing at the nearest unchained enemy within 12 blocks for 35-75% of the original impact’s damage. \n",
+        "Discovered by:": "TroyTheCrafter on 9/7/23 11:21 PM",
+        "Incompatible with (Runecrafted):": [
+          "Skewering",
+          "Dreadnought"
+        ],
+        "Max Level": "3",
+        "Rune 2": "Mortus"
+      },
+      {
+        "id": "recQvePBD00uiL6IS",
+        "Category": "Paradigm",
+        "Rune 1": "Void",
+        "Item Types": [
+          "Helmets"
+        ],
+        "Rune 4": "Vitality",
+        "Rune 3": "Opulence",
+        "Enchantment Names": "Paradigm of Envy",
+        "Source": "Runecrafted",
+        "Discoverer": "Maidl",
+        "Discovered Date": "2023-09-04",
+        "Rune 5": "Void",
+        "What it do": "An item with a different Paradigm can be inserted into this one to gain only its positive effects, but your maximum health is reduced by 40%.\n",
+        "Discovered by:": "Maidl on 9/4/23, 6:08 AM",
+        "Incompatible with (Runecrafted):": [
+          "Other Paradigms"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Arcanum"
+      },
+      {
+        "id": "recRgGfDlw2VMlPZd",
+        "Category": "Paradigm",
+        "Rune 1": "Kinesis",
+        "Item Types": [
+          "Helmets"
+        ],
+        "Rune 4": "Mortus",
+        "Rune 3": "Mortus",
+        "Enchantment Names": "Paradigm of Vainglory",
+        "Source": "Runecrafted",
+        "Discoverer": "Frostearrific",
+        "Discovered Date": "2023-08-22",
+        "Rune 5": "Gusts",
+        "What it do": "Your swings fire as piercing waves, and you can hover at full health, _but_ you strike yourself, bypassing armor, when your waves miss.\n\n```\nWaves: Weapons with lower attack speed fire wider waves and ones with higher range fire faster moving waves.\n```\n\n```\nHover: Swing directly up to toggle the hover. It disables once you witness your health fall below full.\n```\n",
+        "Discovered by:": "skelud on 8/22/23 11:23 PM",
+        "Incompatible with (Runecrafted):": [
+          "Other Paradigms"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Void"
+      },
+      {
+        "id": "recRqfSONH0wLCEEd",
+        "Category": "Surplus",
+        "Rune 1": "Stones",
+        "Item Types": [
+          "Hoes"
+        ],
+        "Rune 4": "Vitality",
+        "Rune 3": "Opulence",
+        "Enchantment Names": "Taste Test",
+        "Source": "Runecrafted",
+        "Discoverer": "Frostearrific",
+        "Discovered Date": "2023-09-05",
+        "Rune 5": "Opulence",
+        "What it do": "**Auto-harvesting** crops refills a small amount of hunger. If your hunger is full, you gain saturation instead.\n> Auto-harvesting: Right-click a fully grown crop to automatically harvest and replant it.\n",
+        "Discovered by:": "Frostearrific on 9/5/23 4:03 AM ",
+        "Incompatible with (Runecrafted):": [
+          "Hands-On Learning",
+          "Mulching"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Vitality"
+      },
+      {
+        "id": "recSMHUoyFHUxmNr7",
+        "Category": "Damage",
+        "Rune 1": "Moments",
+        "Item Types": [
+          "Axes"
+        ],
+        "Rune 4": "Mortus",
+        "Rune 3": "Echoes",
+        "Enchantment Names": "Momentum",
+        "Source": "Runecrafted",
+        "Discoverer": "J1mbers",
+        "Researchers": [
+          "skelud",
+          "TroyTheCrafter"
+        ],
+        "Discovered Date": "2025-05-29",
+        "Incompatible with (Vanilla):": [
+          "Sharpness",
+          "Smite",
+          "Bane of Arthropods"
+        ],
+        "Rune 5": "Gusts",
+        "What it do": "**Well-timed **attacks deal +1❤️ damage and stack _momentum_, stacking infinitely for +4-8% attack speed per stack.\n",
+        "Discovered by:": "J1mbers, skelud, and TroyTheCrafter on 05/29/25",
+        "Incompatible with (Runecrafted):": [
+          "Extinction",
+          "Exploit"
+        ],
+        "Max Level": "3",
+        "Rune 2": "Mortus"
+      },
+      {
+        "id": "recT6SXh0C4zDXUB3",
+        "Category": "Focus",
+        "Rune 1": "Vitality",
+        "Item Types": [
+          "Spyglass"
+        ],
+        "Rune 4": "Gusts",
+        "Rune 3": "Arcanum",
+        "Enchantment Names": "Marking",
+        "Source": "Runecrafted",
+        "Discoverer": "Maidl",
+        "Discovered Date": "2025-06-06",
+        "Rune 5": "Kinesis",
+        "What it do": "Creatures view through this spyglass for 1 second glow and become magically tracked. Projectiles home in on tracked entities.\n",
+        "Discovered by:": "Maidl on 06/06/25",
+        "Incompatible with (Runecrafted):": [
+          "Shrink Ray"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Moments"
+      },
+      {
+        "id": "recT9aN9XJjpgWhdQ",
+        "Category": "Radial",
+        "Rune 1": "Mortus",
+        "Item Types": [
+          "Maces"
+        ],
+        "Rune 4": "Kinesis",
+        "Rune 3": "Cinders",
+        "Enchantment Names": "Will-o'-Wisp",
+        "Source": "Runecrafted",
+        "Discoverer": "Starmarsh",
+        "Researchers": [
+          "J1mbers"
+        ],
+        "Discovered Date": "2025-05-27",
+        "Rune 5": "Cinders",
+        "What it do": "Kills leave behind the victim's soul as an inert _cinder wisp_. Wisps explode when caught in a smash attack or explosion, igniting and dealing 5❤️ explosion damage in a 5-block radius.\n",
+        "Discovered by:": "Starmarsh and J1mbers on 05/27/25",
+        "Incompatible with (Runecrafted):": [
+          "Avalanche",
+          "Ragnarok",
+          "Resonance"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Vitality"
+      },
+      {
+        "id": "recTrjDR4Z3Ryw6Lq",
+        "Category": "Control",
+        "Rune 1": "Kinesis",
+        "Item Types": [
+          "Spears"
+        ],
+        "Rune 4": "Gusts",
+        "Rune 3": "Kinesis",
+        "Enchantment Names": "Fling",
+        "Source": "Runecrafted",
+        "Discoverer": "ElectricSparx",
+        "Researchers": [
+          "TheJ_Team"
+        ],
+        "Discovered Date": "2026-03-08",
+        "Incompatible with (Vanilla):": [
+          "Knockback"
+        ],
+        "Rune 5": "Sparks",
+        "What it do": "The first target you charge is _impaled_ for 2 seconds and held before you. Ending the charge flings the _impaled_ a distance and **stuns **them and enemies the collide with, both based on your speed.\n",
+        "Max Level": "1",
+        "Rune 2": "Moments"
+      },
+      {
+        "id": "recV6oFxEPlVXmx8e",
+        "Category": "Harvest",
+        "Rune 1": "Stones",
+        "Item Types": [
+          "Hoes"
+        ],
+        "Rune 4": "Arcanum",
+        "Rune 3": "Opulence",
+        "Enchantment Names": "Dowsing Thumb",
+        "Source": "Runecrafted",
+        "Discoverer": "TroyTheCrafter",
+        "Researchers": [
+          "Maidl",
+          "TheJ_Team"
+        ],
+        "Runes": [
+          "Stones",
+          "Vitality",
+          "Opulence",
+          "Arcanum"
+        ],
+        "Discovered Date": "2025-05-18",
+        "Rune 5": "Opulence",
+        "What it do": "This hoe _dowses _upon **harvesting**, occasionally finding raw ores or **occult materials**. Very rarely, you _strike it rich_, hitting a vein which ejects 8-12 stacks of raw copper, iron, or gold.\n- **Occult Materials**: Ominous bottles, rabbit's feet, crusted gems, and more.\n",
+        "Incompatible with (Runecrafted):": [
+          "Schrödinger's Thumb",
+          "Green Thumb"
+        ],
+        "Max Level": "2",
+        "Rune 2": "Vitality"
+      },
+      {
+        "id": "recVl6o6la83vvH41",
+        "Category": "Damage",
+        "Item Types": [
+          "Tridents"
+        ],
+        "Enchantment Names": "Impaling",
+        "Source": "Vanilla",
+        "What it do": "Now works vs. any mob in water/rain regardless of if it's aquatic\n",
+        "Incompatible with (Runecrafted):": [
+          "Windup",
+          "Sundering",
+          "Extinction",
+          "Ballast"
+        ],
+        "Max Level": "5"
+      },
+      {
+        "id": "recW1Bbys9MPSR0Gm",
+        "Category": "Trajectory",
+        "Item Types": [
+          "Tridents"
+        ],
+        "Enchantment Names": "Whirlpool",
+        "Source": "Mythical",
+        "Discovered Date": "2026-03-07",
+        "Incompatible with (Vanilla):": [
+          "Riptide",
+          "Loyalty"
+        ],
+        "What it do": "Throws fly straight and pull enemies, then slam down and form a suffocating whirlpool.\n"
+      },
+      {
+        "id": "recWHp9HhtlbHUyxf",
+        "Category": "Bashing",
+        "Rune 1": "Aegis",
+        "Item Types": [
+          "Shields"
+        ],
+        "Rune 4": "Gusts",
+        "Rune 3": "Kinesis",
+        "Enchantment Names": "Battering Ram",
+        "Source": "Runecrafted",
+        "Discoverer": "MogTheDinosaur",
+        "Runes": [
+          "Aegis",
+          "Kinesis",
+          "Gusts",
+          "Sparks"
+        ],
+        "Discovered Date": "2023-09-07",
+        "Rune 5": "Sparks",
+        "What it do": "Bashing causes you to rapidly dash forward, pushing all enemies you collide with along the dash, then stunning them for 1.5 seconds.\n",
+        "Discovered by:": "MogTheDinosaur on 9/7/23 8:50 PM ",
+        "Incompatible with (Runecrafted):": [
+          "Discus",
+          "Advance"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Aegis"
+      },
+      {
+        "id": "recWNSfUGyLOTTA0L",
+        "Category": "Aspect",
+        "Rune 1": "Mortus",
+        "Item Types": [
+          "Maces",
+          "Swords",
+          "Axes",
+          "Spears"
+        ],
+        "Rune 4": "Arcanum",
+        "Rune 3": "Vitality",
+        "Enchantment Names": "Purity Aspect",
+        "Source": "Runecrafted",
+        "Discoverer": "Benmanmen21",
+        "Discovered Date": "2023-09-01",
+        "Incompatible with (Vanilla):": [
+          "Fire Aspect"
+        ],
+        "Rune 5": "Moments",
+        "What it do": "Attacks reduce the duration of negative effects by 10-30% (minimum 1-3 seconds).\n",
+        "Discovered by:": "Benmanmen21 on 9/1/23, 7:57 AM",
+        "Incompatible with (Runecrafted):": [
+          "Ice Aspect",
+          "Plague Aspect",
+          "Fire Aspect III"
+        ],
+        "Max Level": "3",
+        "Rune 2": "Vitality"
+      },
+      {
+        "id": "recXEklkiybnriKCQ",
+        "Category": "Uncategorized",
+        "Item Types": [
+          "Tridents"
+        ],
+        "Enchantment Names": "Loyalty",
+        "Source": "Vanilla",
+        "Incompatible with (Vanilla):": [
+          "Riptide"
+        ],
+        "What it do": "Returns earlier and at a faster speed. Returns even if it falls in the void.\n",
+        "Max Level": "3"
+      },
+      {
+        "id": "recXMBtT4IUQHbqzb",
+        "Category": "Curse",
+        "Item Types": [
+          "Helmets"
+        ],
+        "Enchantment Names": "Curse of Galvanism",
+        "Source": "Curse",
+        "What it do": "While worn, you are far more likely to be struck by lightning during thunderstorms.\n",
+        "Max Level": "1"
+      },
+      {
+        "id": "recXUdCo5NUQyGZU9",
+        "Category": "Heroism",
+        "Rune 1": "Tides",
+        "Item Types": [
+          "Tridents"
+        ],
+        "Rune 4": "Sparks",
+        "Rune 3": "Mortus",
+        "Enchantment Names": "Heraclean",
+        "Source": "Runecrafted",
+        "Discoverer": "Starmarsh",
+        "Researchers": [
+          "Schwump"
+        ],
+        "Discovered Date": "2025-06-03",
+        "Incompatible with (Vanilla):": [
+          "Channeling"
+        ],
+        "Rune 5": "Opulence",
+        "What it do": "- While your world's overworld is thunderstorming, strikes that drop a **boss** below any 25% health threshold detonate a large, **stunning** _tempest flare_ for 10♥️ lightning damage. \n- Once per thunderstorm, each boss drops a **tempest chest** when slain, 10% of which contain their head. \n",
+        "Discovered by:": "Starmarsh and Schwump on 06/03/25",
+        "Max Level": "1",
+        "Rune 2": "Sparks"
+      },
+      {
+        "id": "recXpr7upXZYVPncH",
+        "Category": "Control",
+        "Rune 1": "Mortus",
+        "Item Types": [
+          "Swords"
+        ],
+        "Rune 4": "Kinesis",
+        "Rune 3": "Gusts",
+        "Enchantment Names": "Fencing",
+        "Source": "Runecrafted",
+        "Discoverer": "Maidl",
+        "Discovered Date": "2023-09-01",
+        "Incompatible with (Vanilla):": [
+          "Knockback"
+        ],
+        "Rune 5": "Aegis",
+        "What it do": "After an attack, you can double-tap a movement key to hop in that direction, during which you are invulnerable.\n",
+        "Discovered by:": "Maidl on 9/1/23 3:38 AM ",
+        "Incompatible with (Runecrafted):": [
+          "Ragdoll"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Gusts"
+      },
+      {
+        "id": "recXtaSUKBsqxWNXd",
+        "Category": "Parry",
+        "Rune 1": "Moments",
+        "Item Types": [
+          "Shields"
+        ],
+        "Rune 4": "Mortus",
+        "Rune 3": "Echoes",
+        "Enchantment Names": "Voltaic",
+        "Source": "Runecrafted",
+        "Discoverer": "TheJ_Team",
+        "Researchers": [
+          "Starmarsh"
+        ],
+        "Discovered Date": "2025-06-09",
+        "Rune 5": "Sparks",
+        "What it do": "**Parries** stack **_static_** 3 times. Once stacked, your next attack discharges in a cone, dealing 2❤️ damage and **stunning** for 2 seconds.\n",
+        "Incompatible with (Runecrafted):": [
+          "Riposte",
+          "Fortify"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Aegis"
+      },
+      {
+        "id": "recYFXZdWwI8BcAUU",
+        "Category": "Loot",
+        "Rune 1": "Vitality",
+        "Item Types": [
+          "Axes"
+        ],
+        "Rune 4": "Opulence",
+        "Rune 3": "Mortus",
+        "Enchantment Names": "Executioner",
+        "Source": "Runecrafted",
+        "Discoverer": "Maidl",
+        "Discovered Date": "2023-08-23",
+        "Incompatible with (Vanilla):": [
+          "Looting"
+        ],
+        "Rune 5": "Opulence",
+        "What it do": "Charged attacks immediately execute targets left below 5% health. Executed targets are 3.5x more likely to drop their head.\n",
+        "Discovered by:": "Maidl on 8/23/23 1:41 AM ",
+        "Incompatible with (Runecrafted):": [
+          "Bounty Hunter"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Void"
+      },
+      {
+        "id": "recZDhhIuAedqWrcV",
+        "Category": "Impetus",
+        "Rune 1": "Stones",
+        "Item Types": [
+          "Leggings"
+        ],
+        "Rune 4": "Opulence",
+        "Rune 3": "Sparks",
+        "Enchantment Names": "Impetus of Hephaestus",
+        "Source": "Runecrafted",
+        "Discoverer": "TheJ_Team",
+        "Discovered Date": "2025-05-28",
+        "Rune 5": "Kinesis",
+        "What it do": "You can **hand-forge** _artisan weapons_ using up to 2 materials and 1 gem. They're unenchantable and low durability, but deal high damage, apply bonus effects per-component, and 🔨**_strike the iron_**_ _every 10th hit, amplifying effects in +2 radius:\n- Gem: Stacks the gem's stat upon 🔨**_striking the iron_**.\n- Wood: Attacks 20% faster or 🔨**50% faster for 5 seconds.**\n- Stone: Attacks stun briefly or 🔨**for 2 seconds.**\n- Gold: Kills drop +3x of 🔨**+5x **loot.\n- Iron: Chains 2❤️ volcanic lightning or **🔨an 8❤️ eruption.**\n- Diamond: 🔨**Striking the iron **stacks forged gems stats twice.\n- Netherite: 3x durability. Can forge with 3 materials/gems.\n\n- **Hand-forge: **Right-click a weapon material onto a stick in your inventory to forge a sword, or shift-right-click to forge an axe. Further materials and gems can be right-clicked onto an artisan weapon to forge them in. Forged gems are dropped when the weapon breaks.\n",
+        "Discovered by:": "TheJ_Team on 05/28/25",
+        "Incompatible with (Runecrafted):": [
+          "Other Impetuses"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Cinders"
+      },
+      {
+        "id": "recZJxPp1K5arQzd0",
+        "Category": "Storage",
+        "Rune 1": "Opulence",
+        "Item Types": [
+          "Leggings"
+        ],
+        "Rune 4": "Void",
+        "Rune 3": "Sparks",
+        "Enchantment Names": "Utility Belt",
+        "Source": "Runecrafted",
+        "Discoverer": "Starmarsh",
+        "Discovered Date": "2023-09-01",
+        "Rune 5": "Opulence",
+        "What it do": "These leggings gain a _belt_, a 9-slot item inventory. Activating the leggings swaps the contents of their belt and your hotbar.\n",
+        "Discovered by:": "Starmarsh on 9/1/23 4:02 AM ",
+        "Incompatible with (Runecrafted):": [
+          "Deep Pockets"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Void"
+      },
+      {
+        "id": "recZQRMG5ClOqIJE8",
+        "Category": "Avatar",
+        "Rune 1": "Vitality",
+        "Item Types": [
+          "Chestplates"
+        ],
+        "Rune 4": "Stones",
+        "Rune 3": "Aegis",
+        "Enchantment Names": "Avatar of Iron Golems",
+        "Source": "Runecrafted",
+        "Discoverer": "Jeerood",
+        "Runes": [
+          "Vitality",
+          "Kinesis",
+          "Aegis",
+          "Stones"
+        ],
+        "Discovered Date": "2017-01-21",
+        "Rune 5": "Kinesis",
+        "What it do": "You take -50% knockback, deal +25% knockback. Gain +2❤️ max HP.\nYou can give zombie villagers a poppy to cure them without applying Weakness.\n",
+        "Discovered by:": "Jeerood on 1/21/17 1:15 PM",
+        "Incompatible with (Runecrafted):": [
+          "Other Avatars"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Kinesis"
+      },
+      {
+        "id": "recZQcdOepwtmmZA7",
+        "Category": "Dash",
+        "Item Types": [
+          "Spears"
+        ],
+        "Enchantment Names": "Man-Eater",
+        "Source": "Mythical",
+        "Discovered Date": "2026-03-07",
+        "Incompatible with (Vanilla):": [
+          "Lunge"
+        ],
+        "What it do": "Charges forcibly dash to Charybdis, briefly liquefying terrain. Jabs near the whirlpool pull in enemies and execute at 10% HP, sating 1 hunger.\n",
+        "Incompatible with (Runecrafted):": [
+          "Vault",
+          "Skip"
+        ]
+      },
+      {
+        "id": "recZo7dZVYxF7uX1r",
+        "Category": "Uncategorized",
+        "Rune 1": "Mortus",
+        "Item Types": [
+          "Helmets",
+          "Chestplates",
+          "Leggings",
+          "Boots",
+          "Elytra",
+          "Shields",
+          "Swords",
+          "Axes",
+          "Tridents",
+          "Bows",
+          "Crossbows",
+          "Pickaxes",
+          "Shovels",
+          "Hoes",
+          "Fishing Rods",
+          "Flint and Steel",
+          "Shears",
+          "Maces",
+          "Spears"
+        ],
+        "Rune 4": "Arcanum",
+        "Rune 3": "Arcanum",
+        "Enchantment Names": "Soulbound",
+        "Source": "Runecrafted",
+        "Rune 5": "Vitality",
+        "What it do": "This item returns to you after death, losing 1 Soulbound level in the process.\n",
+        "Max Level": "3",
+        "Rune 2": "Arcanum"
+      },
+      {
+        "id": "recaWBsvvv9kRQCKz",
+        "Category": "Parry",
+        "Rune 1": "Moments",
+        "Item Types": [
+          "Shields"
+        ],
+        "Rune 4": "Mortus",
+        "Rune 3": "Moments",
+        "Enchantment Names": "Riposte",
+        "Source": "Runecrafted",
+        "Rune 5": "Mortus",
+        "What it do": "After a **parry**, your next attack automatically critically strikes.\n> **Parry**: blocking <=0.3 seconds before a strike\n",
+        "Incompatible with (Runecrafted):": [
+          "Fortify",
+          "Voltaic"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Aegis"
+      },
+      {
+        "id": "recag0pAyjqv66VwK",
+        "Category": "Curse",
+        "Item Types": [
+          "Pickaxes",
+          "Axes",
+          "Shovels",
+          "Hoes"
+        ],
+        "Enchantment Names": "Curse of Polymorphing",
+        "Source": "Curse",
+        "What it do": "While digging, this tool randomly changes which block set it is effective against.\n",
+        "Max Level": "1"
+      },
+      {
+        "id": "recbdVS25Ll2Wi6So",
+        "Category": "Curse",
+        "Item Types": [
+          "Helmets"
+        ],
+        "Enchantment Names": "Curse of Asphyxiation",
+        "Source": "Curse",
+        "What it do": "While worn, you drown twice as fast.\n",
+        "Max Level": "1"
+      },
+      {
+        "id": "recbesvdzBoqIDLEz",
+        "Category": "Uncategorized",
+        "Rune 1": "Stones",
+        "Item Types": [
+          "Shears"
+        ],
+        "Rune 4": "Arcanum",
+        "Rune 3": "Cinders",
+        "Enchantment Names": "Seam Ripper",
+        "Source": "Runecrafted",
+        "Discoverer": "Starmarsh",
+        "Rune 5": "Void",
+        "What it do": "Right clicking in an open space rips open a temporary Nether portal. Doing this while sneaking opens an End portal instead.\n",
+        "Discovered by:": "Starmarsh ",
+        "Max Level": "1",
+        "Rune 2": "Arcanum"
+      },
+      {
+        "id": "recbucSljQa00QqXz",
+        "Category": "Sweeping",
+        "Rune 1": "Mortus",
+        "Item Types": [
+          "Swords"
+        ],
+        "Rune 4": "Mortus",
+        "Rune 3": "Kinesis",
+        "Enchantment Names": "Coup de Grâce",
+        "Source": "Runecrafted",
+        "Discoverer": "Starmarsh",
+        "Researchers": [
+          "beccc"
+        ],
+        "Runes": [
+          "Mortus",
+          "Echoes",
+          "Kinesis"
+        ],
+        "Discovered Date": "2025-06-09",
+        "Incompatible with (Vanilla):": [
+          "Sweeping Edge"
+        ],
+        "Rune 5": "Echoes",
+        "What it do": "Attacks stack **_judgement_** 3 times. Once stacked, right-clicking slams your sword down at the target area where it calls a **_divine strike,_** dealing 3-6❤️ execute damage to enemies and refunding 1 **_judgement_** per enemy slain.\n",
+        "Incompatible with (Runecrafted):": [
+          "Howling"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Echoes"
+      },
+      {
+        "id": "reccIOK8L6Fwaa8Xh",
+        "Category": "Avatar",
+        "Rune 1": "Vitality",
+        "Item Types": [
+          "Elytra"
+        ],
+        "Rune 4": "Mortus",
+        "Rune 3": "Gusts",
+        "Enchantment Names": "Avatar of Phantoms",
+        "Source": "Runecrafted",
+        "Discoverer": "Starmarsh",
+        "Runes": [
+          "Vitality",
+          "Void",
+          "Gusts",
+          "Mortus"
+        ],
+        "Discovered Date": "2023-08-30",
+        "Rune 5": "Gusts",
+        "What it do": "Every night you haven’t slept adds a Phantom to your Phantom Horde, up to 10.\nWhile gliding, colliding with an enemy deals 2-7 hearts of damage. When gliding at night, you summon your Phantom Horde, who fly with you and attack nearby enemies for the same damage.\n",
+        "Discovered by:": "Starmarsh on 8/30/23 11:28 PM",
+        "Incompatible with (Runecrafted):": [
+          "Other Avatars"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Void"
+      },
+      {
+        "id": "reccvyJkFgGJhdELJ",
+        "Category": "Loot",
+        "Rune 1": "Mortus",
+        "Item Types": [
+          "Maces"
+        ],
+        "Rune 4": "Opulence",
+        "Rune 3": "Stones",
+        "Enchantment Names": "Pestle",
+        "Source": "Runecrafted",
+        "Discoverer": "skelud",
+        "Researchers": [
+          "TroyTheCrafter"
+        ],
+        "Discovered Date": "2025-05-17",
+        "Incompatible with (Vanilla):": [
+          "Looting"
+        ],
+        "Rune 5": "Stones",
+        "What it do": "Slain enemies have a chance, scaling with overkill damage, to be crushed into _primordial dust_, which can be crafted with crystals and socketing gems to duplicate them.\n",
+        "Discovered by:": "skelud and TroyTheCrafter on 5/17/25",
+        "Max Level": "1",
+        "Rune 2": "Kinesis"
+      },
+      {
+        "id": "recd3JSJST8XBXhRi",
+        "Category": "Travel",
+        "Rune 1": "Stones",
+        "Item Types": [
+          "Leggings"
+        ],
+        "Rune 4": "Gusts",
+        "Rune 3": "Moments",
+        "Enchantment Names": "Blitz",
+        "Source": "Runecrafted",
+        "Runes": [
+          "Stones",
+          "Gusts",
+          "Moments"
+        ],
+        "Incompatible with (Vanilla):": [
+          "Swift Sneak"
+        ],
+        "Rune 5": "Gusts",
+        "What it do": "After sprinting while grounded for 1.5 seconds, you **Blitz**, gaining 20-40% speed until you stop sprinting.\n",
+        "Incompatible with (Runecrafted):": [
+          "Walkman"
+        ],
+        "Max Level": "2",
+        "Rune 2": "Gusts"
+      },
+      {
+        "id": "recdLaVPYsl07eHT6",
+        "Category": "Avatar",
+        "Rune 1": "Stones",
+        "Item Types": [
+          "Elytra"
+        ],
+        "Rune 4": "Gusts",
+        "Rune 3": "Stones",
+        "Enchantment Names": "Avatar of Bees",
+        "Source": "Runecrafted",
+        "Discoverer": "TroyTheCrafter",
+        "Runes": [
+          "Stones",
+          "Gusts",
+          "Vitality"
+        ],
+        "Discovered Date": "2023-09-11",
+        "Rune 5": "Vitality",
+        "What it do": "While gliding near the ground in the overworld, you can float indefinitely. Grants +1 block reach. Prevents bees from targeting you. \nEating honey while gliding causes you to release pollen for 5 seconds, bonemealing crops below you in a 3-block radius. \n",
+        "Discovered by:": "TroytheCrafter on 9/11/23 3:34 AM ",
+        "Incompatible with (Runecrafted):": [
+          "Other Avatars"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Gusts"
+      },
+      {
+        "id": "recdTNNFltnBiDNL3",
+        "Category": "Aphelion",
+        "Rune 1": "Aegis",
+        "Item Types": [
+          "Boots"
+        ],
+        "Rune 4": "Stones",
+        "Rune 3": "Void",
+        "Enchantment Names": "Aphelion of Saturn",
+        "Source": "Runecrafted",
+        "Discoverer": "Maidl",
+        "Researchers": [
+          "ElectricSparx"
+        ],
+        "Runes": [
+          "Aegis",
+          "Kinesis",
+          "Opulence",
+          "Stones",
+          "Void"
+        ],
+        "Discovered Date": "2025-05-25",
+        "Rune 5": "Kinesis",
+        "What it do": "**Eclipses **gem socketing. Instead, you form a rotating ring of moonlets upon entering combat. You have 6 moonlets 2❤️ which block hits from outside of your ring until destroyed. Your ring gains the following stats per socketed gem:\n- Agility: +25% rotation speed\n- Favor: +5% moonlet dodge chance\n- Haste: +0.25❤️ moonlet impact damage\n- Tenacity: +0.5 blocks moonlet knockback\n- Vigor: +0.5❤️ per moonlet\n\n- **Eclipse**: The behavior of the eclipsed object is replaced while wearing this Aphelion.\n\n",
+        "Discovered by:": "Maidl and ElectricSparx on 05/25/25",
+        "Max Level": "1",
+        "Rune 2": "Opulence"
+      },
+      {
+        "id": "recdhSaUsj5YQ2FhQ",
+        "Category": "Dash",
+        "Rune 1": "Kinesis",
+        "Item Types": [
+          "Spears"
+        ],
+        "Rune 4": "Stones",
+        "Rune 3": "Cinders",
+        "Enchantment Names": "Skip",
+        "Source": "Runecrafted",
+        "Discoverer": "TheJ_Team",
+        "Researchers": [
+          "ElectricSparx"
+        ],
+        "Discovered Date": "2026-03-08",
+        "Incompatible with (Vanilla):": [
+          "Lunge"
+        ],
+        "Rune 5": "Moments",
+        "What it do": "While charging, you can jump across liquids, briefly turning them to cobblestone as you land.\n",
+        "Incompatible with (Runecrafted):": [
+          "Vault",
+          "Man-Eater"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Tides"
+      },
+      {
+        "id": "recdp2xYUE9viByz8",
+        "Category": "Hazard",
+        "Rune 1": "Mortus",
+        "Item Types": [
+          "Helmets",
+          "Chestplates",
+          "Leggings",
+          "Boots"
+        ],
+        "Rune 4": "Cinders",
+        "Rune 3": "Moments",
+        "Enchantment Names": "Volatile",
+        "Source": "Runecrafted",
+        "Discoverer": "Starmarsh",
+        "Researchers": [
+          "beccc"
+        ],
+        "Discovered Date": "2025-06-06",
+        "Incompatible with (Vanilla):": [
+          "Thorns"
+        ],
+        "Rune 5": "Kinesis",
+        "What it do": "Taking at least 1❤️ damage at once lights your fuse for 2 seconds, ending in a fiery explosion which ignites and deals **1.5-6❤️ damage** to enemies within 5 blocks.\n",
+        "Discovered by:": "Starmarsh and beccc on 06/06/25",
+        "Incompatible with (Runecrafted):": [
+          "Reverberating"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Cinders"
+      },
+      {
+        "id": "recdyP9ZqxhT7rL1v",
+        "Category": "Avatar",
+        "Rune 1": "Vitality",
+        "Item Types": [
+          "Chestplates"
+        ],
+        "Rune 4": "Echoes",
+        "Rune 3": "Cinders",
+        "Enchantment Names": "Avatar of Wardens",
+        "Source": "Runecrafted",
+        "Discoverer": "Onikary",
+        "Researchers": [
+          "ElectricSparx",
+          "JinstoNim"
+        ],
+        "Runes": [
+          "Vitality",
+          "Echoes",
+          "Cinders",
+          "Stones"
+        ],
+        "Discovered Date": "2025-06-03",
+        "Rune 5": "Stones",
+        "What it do": "You gain +0.5 step height and can sense enemies via their **vibrations**, causing you to **anger**. Once fully angered, you gain the following effects:\n- +1♥️ attack damage and +10% speed\n- Right click periodically to release a 5♥️ **sonic boom**\n- Shift punch the block below you to _burrow_, healing 2♥️ and calming your anger\n",
+        "Discovered by:": "Onikary, ElectricSparx, and JinstoNim on 06/03/25",
+        "Incompatible with (Runecrafted):": [
+          "Other Avatars"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Echoes"
+      },
+      {
+        "id": "receZ7ascgjloApZ6",
+        "Category": "Damage",
+        "Item Types": [
+          "Swords",
+          "Axes",
+          "Maces",
+          "Spears"
+        ],
+        "Enchantment Names": "Bane of Arthropods",
+        "Source": "Vanilla",
+        "Incompatible with (Vanilla):": [
+          "Smite",
+          "Sharpness",
+          "Breach",
+          "Density",
+          "Cleaving"
+        ],
+        "What it do": "Always slows for the full duration (1.5-3.5 seconds) and works against Shulkers.\n",
+        "Incompatible with (Runecrafted):": [
+          "Exploit",
+          "Extinction",
+          "Tempo",
+          "Dynamo",
+          "Momentum",
+          "Sweet Spot"
+        ],
+        "Max Level": "5"
+      },
+      {
+        "id": "receiMFck03zGZre3",
+        "Category": "Impetus",
+        "Rune 1": "Void",
+        "Item Types": [
+          "Leggings"
+        ],
+        "Rune 4": "Mortus",
+        "Rune 3": "Void",
+        "Enchantment Names": "Impetus of Hades",
+        "Source": "Runecrafted",
+        "Discoverer": "TheJ_Team",
+        "Researchers": [
+          "TroyTheCrafter"
+        ],
+        "Discovered Date": "2025-05-26",
+        "Rune 5": "Arcanum",
+        "What it do": "- While sneaking, enemies only detect you while within 10 blocks and facing you.\n- You can double sneak while undetected or out of enemy sight to enter **chthonic form** for 4 seconds. Strikes that end **chthonic form** critically strike and deal +6♥️ magic damage.\n    - **Chthonic Form**: Stealth by descending into shadows, gaining +50% speed and +1 step height. Stealths end upon using items or dealing direct damage.\n",
+        "Discovered by:": "TheJ_Team and TroyTheCrafter on 05/26/25",
+        "Incompatible with (Runecrafted):": [
+          "Other Impetuses"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Sparks"
+      },
+      {
+        "id": "recfMZQc5TeqrgWao",
+        "Category": "Timbre",
+        "Rune 1": "Gusts",
+        "Item Types": [
+          "Goat Horns"
+        ],
+        "Rune 4": "Stones",
+        "Rune 3": "Echoes",
+        "Enchantment Names": "Whistle Tone",
+        "Source": "Runecrafted",
+        "Discoverer": "Starmarsh",
+        "Researchers": [
+          "UnloadingLime",
+          "TheJ_Team"
+        ],
+        "Discovered Date": "2025-05-26",
+        "Rune 5": "Kinesis",
+        "What it do": "Horn blows emit a sonic boom which expands to a 6-block radius, dealing 2❤️ sonic damage and detaching chorus flowers, amethyst clusters, pointed dripstone, and berries.\n",
+        "Discovered by:": "Starmarsh, UnloadingLime, and TheJ_Team on 05/26/25",
+        "Incompatible with (Runecrafted):": [
+          "Crescendo"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Echoes"
+      },
+      {
+        "id": "recgo09gNsugiYiKR",
+        "Category": "Aphelion",
+        "Rune 1": "Mortus",
+        "Item Types": [
+          "Boots"
+        ],
+        "Rune 4": "Gusts",
+        "Rune 3": "Vitality",
+        "Enchantment Names": "Aphelion of Mercury",
+        "Source": "Runecrafted",
+        "Discoverer": "Starmarsh",
+        "Runes": [
+          "Aegis",
+          "Gusts",
+          "Moments",
+          "Mortus",
+          "Vitality"
+        ],
+        "Discovered Date": "2025-05-25",
+        "Rune 5": "Moments",
+        "What it do": "**Eclipses** the Raceway Flag. You are instead immune to poison and gain _time dilation_ upon fully refilling your hunger, gaining 100% speed and immunity to hunger loss for 5 seconds.\n- **Eclipse: **The behavior of the eclipsed object is replaced while wearing this Aphelion.\n",
+        "Discovered by:": "Starmarsh on 05/25/25",
+        "Max Level": "1",
+        "Rune 2": "Aegis"
+      },
+      {
+        "id": "rechDKHBpcnOyZ5y8",
+        "Category": "Protection",
+        "Rune 1": "Mortus",
+        "Item Types": [
+          "Chestplates"
+        ],
+        "Rune 4": "Chills",
+        "Rune 3": "Vitality",
+        "Enchantment Names": "Adrenaline Rush",
+        "Source": "Runecrafted",
+        "Discoverer": "Starmarsh",
+        "Runes": [
+          "Aegis",
+          "Chills",
+          "Moments",
+          "Mortus",
+          "Vitality"
+        ],
+        "Discovered Date": "2023-09-03",
+        "Incompatible with (Vanilla):": [
+          "Protection",
+          "Blast Protection",
+          "Fire Protection",
+          "Projectile Protection"
+        ],
+        "Rune 5": "Moments",
+        "What it do": "You gain Adrenaline for 10 seconds when dropping to 25% health. This slows nearby enemies, cuts damage-over-time effects to half speed, and grants you +40-80% speed, damage and damage reduction. This can’t occur again until you fully heal.\n",
+        "Discovered by:": "Starmarsh on 9/3/23, 2:17 PM ",
+        "Max Level": "2",
+        "Rune 2": "Aegis"
+      },
+      {
+        "id": "rechky0g01mdTQaTn",
+        "Category": "Excavation",
+        "Rune 1": "Stones",
+        "Item Types": [
+          "Pickaxes",
+          "Axes",
+          "Shovels",
+          "Shears",
+          "Hoes"
+        ],
+        "Rune 4": "Kinesis",
+        "Rune 3": "Arcanum",
+        "Enchantment Names": "Magnetism",
+        "Source": "Runecrafted",
+        "Discoverer": "TroyTheCrafter",
+        "Discovered Date": "2023-08-31",
+        "Rune 5": "Opulence",
+        "What it do": "Drops from mined blocks are placed directly in your inventory. When mining an ore, the resources are siphoned from the entire vein, leaving behind cobbled blocks. \n",
+        "Discovered by:": "TroyTheCrafter on 8/31/23 11:40 PM",
+        "Incompatible with (Runecrafted):": [
+          "Aftershock"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Kinesis"
+      },
+      {
+        "id": "reciES6dYDQjJXnzb",
+        "Category": "Traversal",
+        "Rune 1": "Gusts",
+        "Item Types": [
+          "Boots"
+        ],
+        "Rune 4": "Void",
+        "Rune 3": "Gusts",
+        "Enchantment Names": "Coyote Time",
+        "Source": "Runecrafted",
+        "Discoverer": "TheJ_Team",
+        "Researchers": [
+          "Maidl",
+          "beccc",
+          "skelud"
+        ],
+        "Runes": [
+          "Gusts",
+          "Stones",
+          "Void",
+          "Moments"
+        ],
+        "Discovered Date": "2025-05-27",
+        "Incompatible with (Vanilla):": [
+          "Soul Speed"
+        ],
+        "Rune 5": "Moments",
+        "What it do": "While sprinting, you can run over open air for 1 second before falling.\n",
+        "Discovered by:": "TheJ_Team, Maidl, beccc, and skelud on 05/27/25",
+        "Incompatible with (Runecrafted):": [
+          "No Clip"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Stones"
+      },
+      {
+        "id": "reciSPhE2qqn5pSVk",
+        "Category": "Splashing",
+        "Rune 1": "Tides",
+        "Item Types": [
+          "Tridents"
+        ],
+        "Rune 4": "Mortus",
+        "Rune 3": "Gusts",
+        "Enchantment Names": "Skewering",
+        "Source": "Runecrafted",
+        "Discoverer": "Schwump",
+        "Discovered Date": "2023-09-11",
+        "Rune 5": "Chills",
+        "What it do": "Attacks gain +1 range and _pierce_ in a 3-prong cone behind the target for 35-75% damage. Throws bypass shields and _pierce_ up to 2-4 enemies for full damage. _Pierced_ enemies are briefly slowed.\n",
+        "Discovered by:": "Schwump on 9/11/23 5:35 AM ",
+        "Incompatible with (Runecrafted):": [
+          "Chaining",
+          "Dreadnought"
+        ],
+        "Max Level": "3",
+        "Rune 2": "Kinesis"
+      },
+      {
+        "id": "reciT1ReFV6ZbXuji",
+        "Category": "Loot",
+        "Rune 1": "Mortus",
+        "Item Types": [
+          "Swords",
+          "Axes",
+          "Tridents",
+          "Spears",
+          "Maces"
+        ],
+        "Rune 4": "Mortus",
+        "Rune 3": "Vitality",
+        "Enchantment Names": "Bounty Hunter",
+        "Source": "Runecrafted",
+        "Discoverer": "Brittt",
+        "Runes": [
+          "Mortus",
+          "Moments",
+          "Vitality",
+          "Opulence"
+        ],
+        "Discovered Date": "2023-09-01",
+        "Incompatible with (Vanilla):": [
+          "Looting"
+        ],
+        "Rune 5": "Opulence",
+        "What it do": "Rarely after killing an enemy with this weapon, it identifies a hostile bounty enemy nearby. Killing a bounty with this weapon grants 5000 to 10000 silver.\n",
+        "Discovered by:": "Brittt on 9/1/23 3:01 AM",
+        "Incompatible with (Runecrafted):": [
+          "Executioner",
+          "Ear Collector",
+          "Plundering",
+          "Cyclotron",
+          "Heartseeker",
+          "Pestle"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Moments"
+      },
+      {
+        "id": "recj0hcGAilmiAAAk",
+        "Category": "Paradigm",
+        "Rune 1": "Aegis",
+        "Item Types": [
+          "Helmets"
+        ],
+        "Rune 4": "Aegis",
+        "Rune 3": "Aegis",
+        "Enchantment Names": "Paradigm of Pride",
+        "Source": "Runecrafted",
+        "Discoverer": "Starmarsh",
+        "Discovered Date": "2023-08-21",
+        "Rune 5": "Mortus",
+        "What it do": "You ignore the first 1-5 hits from each enemy, but you take double damage from them otherwise.\n",
+        "Discovered by:": "Starmarsh on 8/21/23, 7:36 PM",
+        "Incompatible with (Runecrafted):": [
+          "Other Paradigms"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Aegis"
+      },
+      {
+        "id": "recj5NfNp20NOwRHP",
+        "Category": "Loot",
+        "Rune 1": "Tides",
+        "Item Types": [
+          "Tridents"
+        ],
+        "Rune 4": "Stones",
+        "Rune 3": "Opulence",
+        "Enchantment Names": "Plundering",
+        "Source": "Runecrafted",
+        "Discoverer": "skelud",
+        "Researchers": [
+          "TroyTheCrafter"
+        ],
+        "Discovered Date": "2025-05-21",
+        "Incompatible with (Vanilla):": [
+          "Looting"
+        ],
+        "Rune 5": "Kinesis",
+        "What it do": "Kills collect the victim's loot, and occasionally harvest 1 additional **scrap.**\n- **Scrap: **A multi-tier loot table. Common draws grant 4-16 leather, ink sacs, glow ink sacs, blaze rods, lily pads, strings, or slime balls. Rarer draws can give crusted gems or runes, grab bag items containing dyes, pottery sherds, or ores, and rarely netherite scraps.\n",
+        "Discovered by:": "skelud and TroyTheCrafter on 05/21/25",
+        "Incompatible with (Runecrafted):": [
+          "Bounty Hunter"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Mortus"
+      },
+      {
+        "id": "recjQhIVgSpYgX6fh",
+        "Category": "Damage",
+        "Rune 1": "Tides",
+        "Item Types": [
+          "Tridents"
+        ],
+        "Rune 4": "Kinesis",
+        "Rune 3": "Moments",
+        "Enchantment Names": "Windup",
+        "Source": "Runecrafted",
+        "Discoverer": "Starmarsh",
+        "Discovered Date": "2023-09-09",
+        "Incompatible with (Vanilla):": [
+          "Impaling"
+        ],
+        "Rune 5": "Mortus",
+        "What it do": "After preparing a throw, you can continue charging for 1.75-0.75 seconds to wind up a huge throw which deals +6 hearts of damage.\n",
+        "Discovered by:": "Starmarsh on 9/9/23, 3:37 AM",
+        "Incompatible with (Runecrafted):": [
+          "Extinction",
+          "Sundering",
+          "Ballast"
+        ],
+        "Max Level": "3",
+        "Rune 2": "Moments"
+      },
+      {
+        "id": "recjRgMEb0hiK7FUl",
+        "Category": "Curse",
+        "Item Types": [
+          "Swords",
+          "Axes",
+          "Maces",
+          "Spears"
+        ],
+        "Enchantment Names": "Curse of Bloodletting",
+        "Source": "Curse",
+        "What it do": "Attacks drain 0.5❤️ to deal +1❤️ damage.\n",
+        "Max Level": "1"
+      },
+      {
+        "id": "recjpiocy9oF523Eo",
+        "Category": "Impetus",
+        "Rune 1": "Sparks",
+        "Item Types": [
+          "Leggings"
+        ],
+        "Rune 4": "Moments",
+        "Rune 3": "Mortus",
+        "Enchantment Names": "Impetus of Hermes",
+        "Source": "Runecrafted",
+        "Discoverer": "TheJ_Team",
+        "Researchers": [
+          "UnloadingLime"
+        ],
+        "Discovered Date": "2025-05-26",
+        "Rune 5": "Void",
+        "What it do": "Upon **blinking**, you engage in _divine trickery_, a brief stealth that empowers your next attack +2♥️, and create a _shortcut_ for 4 seconds that you can enter once to return to the other end. If the shortcut expires unused, you engage in divine trickery once more.\n",
+        "Discovered by:": "TheJ_Team and UnloadingLime on 05/26/25",
+        "Incompatible with (Runecrafted):": [
+          "Other Impetuses"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Void"
+      },
+      {
+        "id": "reckKrRl5g3M2vdCP",
+        "Category": "Contraption",
+        "Rune 1": "Gusts",
+        "Item Types": [
+          "Crossbows"
+        ],
+        "Rune 4": "Moments",
+        "Rune 3": "Cinders",
+        "Enchantment Names": "Flare",
+        "Source": "Runecrafted",
+        "Discoverer": "Starmarsh",
+        "Discovered Date": "2023-09-04",
+        "Rune 5": "Void",
+        "What it do": "Landed projectiles become a flare, providing light which decays over 30 seconds. Enemies hit directly glow for 30 seconds instead.\n",
+        "Discovered by:": "Starmarsh on 9/4/23 7:20 PM ",
+        "Incompatible with (Runecrafted):": [
+          "Snare",
+          "Smokescreen"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Cinders"
+      },
+      {
+        "id": "reckcGnWwhEOGDWMT",
+        "Category": "Hazard",
+        "Item Types": [
+          "Helmets",
+          "Chestplates",
+          "Leggings",
+          "Boots"
+        ],
+        "Enchantment Names": "Thorns",
+        "Source": "Vanilla",
+        "What it do": "Always procs consistently, and damage now scales linearly with total level (across armor pieces) rather than proc chance\n",
+        "Incompatible with (Runecrafted):": [
+          "Reverberating",
+          "Volatile"
+        ],
+        "Max Level": "3"
+      },
+      {
+        "id": "reclG28sqAMVgNW0e",
+        "Category": "Aspect",
+        "Rune 1": "Mortus",
+        "Item Types": [
+          "Maces",
+          "Swords",
+          "Axes",
+          "Spears"
+        ],
+        "Rune 4": "Tides",
+        "Rune 3": "Mortus",
+        "Enchantment Names": "Plague Aspect",
+        "Source": "Runecrafted",
+        "Discoverer": "Maidl",
+        "Discovered Date": "2017-01-03",
+        "Incompatible with (Vanilla):": [
+          "Fire Aspect"
+        ],
+        "Rune 5": "Mortus",
+        "What it do": "Attacks **Plague**_ _enemies for 4-8 seconds. Plagued enemies have Wither I and on death will spread Plague stacks to the 1-3 closest enemies after a short delay.\n",
+        "Discovered by:": "Maidl on 1/3/17 4:23 PM",
+        "Incompatible with (Runecrafted):": [
+          "Ice Aspect",
+          "Purity Aspect",
+          "Fire Aspect III"
+        ],
+        "Max Level": "3",
+        "Rune 2": "Echoes"
+      },
+      {
+        "id": "recllC8F84pFkxUG1",
+        "Category": "Paradigm",
+        "Rune 1": "Gusts",
+        "Item Types": [
+          "Helmets"
+        ],
+        "Rune 4": "Kinesis",
+        "Rune 3": "Mortus",
+        "Enchantment Names": "Paradigm of Sloth",
+        "Source": "Runecrafted",
+        "Discoverer": "Starmarsh",
+        "Discovered Date": "2023-08-27",
+        "Rune 5": "Chills",
+        "What it do": "You can _lumber_, moving 10% slower and gaining slow, **massive attacks**, _but_ lumbering replaces sprinting.\n> You can perform massive attacks after sprinting for 1.5 seconds. They have -66% total attack speed but strike on any swing in a 5-block radius, applying 2.5x damage and a brief stun then 1 second of -20% speed.\n",
+        "Discovered by:": "Starmarsh on 8/27/23 4:11 AM",
+        "Incompatible with (Runecrafted):": [
+          "Other Paradigms"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Chills"
+      },
+      {
+        "id": "recmIgV09jSsiQ7jb",
+        "Category": "Aspect",
+        "Rune 1": "Cinders",
+        "Item Types": [
+          "Swords",
+          "Axes",
+          "Spears"
+        ],
+        "Rune 4": "Sparks",
+        "Rune 3": "Void",
+        "Enchantment Names": "Fire Aspect III",
+        "Source": "Runecrafted",
+        "Discoverer": "ChiknThighs",
+        "Discovered Date": "2023-09-08",
+        "Rune 5": "Cinders",
+        "What it do": "Attacks ignite the victim for 4-12 seconds. \n> **Runecrafting Bonus**: Right clicks act as if a Flint and Steel were used. Cuts healing of burning targets by 50%.\n",
+        "Discovered by:": "ChiknThighs on 9/8/23 3:35 AM",
+        "Incompatible with (Runecrafted):": [
+          "Ice Aspect",
+          "Plague Aspect",
+          "Purity Aspect"
+        ],
+        "Max Level": "3",
+        "Rune 2": "Vitality"
+      },
+      {
+        "id": "recms1r1DU0k2u8Tb",
+        "Category": "Uncategorized",
+        "Rune 1": "Arcanum",
+        "Item Types": [
+          "Flint and Steel"
+        ],
+        "Rune 4": "Cinders",
+        "Rune 3": "Mortus",
+        "Enchantment Names": "Soul Spark",
+        "Source": "Runecrafted",
+        "Discoverer": "Maidl",
+        "Discovered Date": "2023-09-03",
+        "Rune 5": "Cinders",
+        "What it do": "Lit fires convert to soul fire.\n",
+        "Discovered by:": "Maidl on 9/3/23, 8:11 AM",
+        "Max Level": "1",
+        "Rune 2": "Vitality"
+      },
+      {
+        "id": "recnDFuap3742Kpfi",
+        "Category": "Reload",
+        "Rune 1": "Gusts",
+        "Item Types": [
+          "Crossbows"
+        ],
+        "Rune 4": "Void",
+        "Rune 3": "Moments",
+        "Enchantment Names": "Trueshot",
+        "Source": "Runecrafted",
+        "Discoverer": "Maidl",
+        "Discovered Date": "2023-09-01",
+        "Incompatible with (Vanilla):": [
+          "Quick Charge"
+        ],
+        "Rune 5": "Mortus",
+        "What it do": "Fired projectiles instantly arrive at your targeted location.\n",
+        "Discovered by:": "Maidl on 9/1/23 4:07 AM",
+        "Incompatible with (Runecrafted):": [
+          "Bolt-action"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Arcanum"
+      },
+      {
+        "id": "recnIMT4SodygP58d",
+        "Category": "Control",
+        "Rune 1": "Mortus",
+        "Item Types": [
+          "Swords",
+          "Axes"
+        ],
+        "Rune 4": "Kinesis",
+        "Rune 3": "Kinesis",
+        "Enchantment Names": "Ragdoll",
+        "Source": "Runecrafted",
+        "Incompatible with (Vanilla):": [
+          "Knockback"
+        ],
+        "Rune 5": "Sparks",
+        "What it do": "The killing blow against an enemy deals triple knockback and ignores knockback resistance. Enemies hit by the flung body are stunned for 1 second.\n",
+        "Incompatible with (Runecrafted):": [
+          "Fencing",
+          "Bracing"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Kinesis"
+      },
+      {
+        "id": "recnomLoeF7GRsjb5",
+        "Category": "Harvest",
+        "Rune 1": "Stones",
+        "Item Types": [
+          "Hoes"
+        ],
+        "Rune 4": "Arcanum",
+        "Rune 3": "Void",
+        "Enchantment Names": "Schrödinger's Thumb",
+        "Source": "Runecrafted",
+        "Discoverer": "Frostearrific",
+        "Discovered Date": "2023-09-02",
+        "Rune 5": "Opulence",
+        "What it do": "**Auto-harvesting** crops has a 50-100% chance to spawn a bonus drop of any standard crop, rarely a golden apple or chorus flower, or extremely rarely an enchanted golden apple or Rune of Vitality.\n> Auto-harvesting: Right-click a fully grown crop to automatically harvest and replant it.\n",
+        "Discovered by:": "Frostearrific on 9/2/23, 11:46 AM",
+        "Incompatible with (Runecrafted):": [
+          "Green Thumb",
+          "Dowsing Thumb"
+        ],
+        "Max Level": "2",
+        "Rune 2": "Vitality"
+      },
+      {
+        "id": "reco5mNMCPcl3JEOo",
+        "Category": "Uncategorized",
+        "Rune 1": "Stones",
+        "Item Types": [
+          "Flint and Steel"
+        ],
+        "Rune 4": "Cinders",
+        "Rune 3": "Cinders",
+        "Enchantment Names": "Pilot Light",
+        "Source": "Runecrafted",
+        "Discoverer": "TheJ_Team",
+        "Discovered Date": "2023-09-05",
+        "Rune 5": "Cinders",
+        "What it do": "Right clicking on Furnaces, Blast Furnaces, and Smokers charges them with 4 Coal worth of fuel.\n",
+        "Discovered by:": "TheJ_Team on 9/5/23 11:55 PM ",
+        "Max Level": "1",
+        "Rune 2": "Kinesis"
+      },
+      {
+        "id": "recp0h4QrYKJFChl1",
+        "Category": "Paradigm",
+        "Rune 1": "Opulence",
+        "Item Types": [
+          "Helmets"
+        ],
+        "Rune 4": "Opulence",
+        "Rune 3": "Moments",
+        "Enchantment Names": "Paradigm of Gluttony",
+        "Source": "Runecrafted",
+        "Discoverer": "TroyTheCrafter",
+        "Discovered Date": "2023-08-20",
+        "Rune 5": "Void",
+        "What it do": "Your hunger bar acts as an additional secondary health bar, but consumed food is at best as filling as bread. \n> **On-Equip**: Consume half of your current hunger.\n",
+        "Discovered by:": "TroyTheCrafter on 8/20/23, 3:22 AM",
+        "Incompatible with (Runecrafted):": [
+          "Other Paradigms"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Void"
+      },
+      {
+        "id": "recpf7Z5Ra8BSmMnJ",
+        "Category": "Aspect",
+        "Rune 1": "Gusts",
+        "Item Types": [
+          "Bows"
+        ],
+        "Rune 4": "Chills",
+        "Rune 3": "Chills",
+        "Enchantment Names": "Frost",
+        "Source": "Runecrafted",
+        "Incompatible with (Vanilla):": [
+          "Flame"
+        ],
+        "Rune 5": "Chills",
+        "What it do": "Shots apply 8 seconds of freezing, stacking with each shot and capping at 20 seconds.\n",
+        "Discovered by:": "N/A",
+        "Incompatible with (Runecrafted):": [
+          "Pestilence"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Echoes"
+      },
+      {
+        "id": "recpjc1lR5pBbUERJ",
+        "Category": "Avatar",
+        "Rune 1": "Kinesis",
+        "Item Types": [
+          "Chestplates"
+        ],
+        "Rune 4": "Mortus",
+        "Rune 3": "Kinesis",
+        "Enchantment Names": "Avatar of Slimes",
+        "Source": "Runecrafted",
+        "Discoverer": "iClimaxx",
+        "Runes": [
+          "Kinesis",
+          "Aegis",
+          "Mortus",
+          "Vitality"
+        ],
+        "Discovered Date": "2017-02-02",
+        "Rune 5": "Vitality",
+        "What it do": "You jump higher, take -25% fall damage, and bounce back up after taking fall damage.\nUpon dropping to 75%, 50%, or 25% health, a slime splits off of you which provokes enemies. This can't occur again until you fully heal.\n\n",
+        "Discovered by:": "iClimaxx on 2/2/17, 3:08 PM",
+        "Incompatible with (Runecrafted):": [
+          "Other Avatars"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Aegis"
+      },
+      {
+        "id": "recpyz5PZizsz6sXD",
+        "Category": "Control",
+        "Rune 1": "Mortus",
+        "Item Types": [
+          "Axes"
+        ],
+        "Rune 4": "Aegis",
+        "Rune 3": "Mortus",
+        "Enchantment Names": "Bracing",
+        "Source": "Runecrafted",
+        "Discoverer": "ChiknThighs",
+        "Runes": [
+          "Moments",
+          "Mortus",
+          "Aegis"
+        ],
+        "Discovered Date": "2023-08-29",
+        "Incompatible with (Vanilla):": [
+          "Knockback"
+        ],
+        "Rune 5": "Aegis",
+        "What it do": "Every other charged attack grants 1 Absorption heart during the recharge. \n",
+        "Discovered by:": "ChiknThighs on 8/29/23 11:01 PM ",
+        "Incompatible with (Runecrafted):": [
+          "Ragdoll"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Moments"
+      },
+      {
+        "id": "recq8X8Gv3JUJzt1K",
+        "Category": "Travel",
+        "Rune 1": "Opulence",
+        "Item Types": [
+          "Leggings"
+        ],
+        "Rune 4": "Gusts",
+        "Rune 3": "Echoes",
+        "Enchantment Names": "Walkman",
+        "Source": "Runecrafted",
+        "Discoverer": "Starmarsh",
+        "Researchers": [
+          "Schwump",
+          "TheJ_Team"
+        ],
+        "Discovered Date": "2025-06-09",
+        "Incompatible with (Vanilla):": [
+          "Swift Sneak"
+        ],
+        "Rune 5": "Gusts",
+        "What it do": "A music disc can be inserted into these leggings to play it, or shift inserted to play it on loop. While they are playing music, you walk (not sprint) **10-20% faster.**\n",
+        "Incompatible with (Runecrafted):": [
+          "Blitz"
+        ],
+        "Max Level": "2",
+        "Rune 2": "Sparks"
+      },
+      {
+        "id": "recqFI6yWiVdYIMQ2",
+        "Category": "Trove",
+        "Rune 1": "Tides",
+        "Item Types": [
+          "Fishing Rods"
+        ],
+        "Rune 4": "Void",
+        "Rune 3": "Opulence",
+        "Enchantment Names": "Bottom Feeder",
+        "Source": "Runecrafted",
+        "Discoverer": "MareeAM",
+        "Runes": [
+          "Tides",
+          "Opulence",
+          "Void",
+          "Stones"
+        ],
+        "Discovered Date": "2023-09-09",
+        "Incompatible with (Vanilla):": [
+          "Luck of the Sea"
+        ],
+        "Rune 5": "Stones",
+        "What it do": "All caught trash and treasure is replaced by _scrap._\n- `Common: Leather, Ink Sacs, Glow Ink Sacs, String, Lily Pads, Blaze Rods: 4-16 per catch `\n- `Uncommon: \"Geode,\" \"Dye Trader Bag,\" \"Pottery Bag\"`\n- `Rare: Crusted Gem, Crusted Rune, \"Home Videos\"`\n- `Very Rare: 1-2 Netherite Scrap`\n",
+        "Discovered by:": "MareeAM on 9/9/23, 4:28 AM",
+        "Max Level": "1",
+        "Rune 2": "Tides"
+      },
+      {
+        "id": "recqHtEmL9H2vMKBR",
+        "Category": "Cutting",
+        "Rune 1": "Vitality",
+        "Item Types": [
+          "Shears"
+        ],
+        "Rune 4": "Vitality",
+        "Rune 3": "Arcanum",
+        "Enchantment Names": "Mitosis",
+        "Source": "Runecrafted",
+        "Discoverer": "Starmarsh",
+        "Discovered Date": "2023-08-20",
+        "Rune 5": "Vitality",
+        "What it do": "Adult entities with baby forms can be sheared to split them into two babies.\n",
+        "Discovered by:": "Starmarsh on 8/20/23, 7:10 AM",
+        "Incompatible with (Runecrafted):": [
+          "Tithing",
+          "Wire Cutters"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Arcanum"
+      },
+      {
+        "id": "recqKzGD7iAz6Qupn",
+        "Category": "Aphelion",
+        "Rune 1": "Gusts",
+        "Item Types": [
+          "Boots"
+        ],
+        "Rune 4": "Stones",
+        "Rune 3": "Kinesis",
+        "Enchantment Names": "Aphelion of Ceres",
+        "Source": "Runecrafted",
+        "Discoverer": "Maidl",
+        "Researchers": [
+          "ElectricSparx"
+        ],
+        "Runes": [
+          "Gusts",
+          "Kinesis",
+          "Stones",
+          "Void"
+        ],
+        "Discovered Date": "2025-06-07",
+        "Rune 5": "Void",
+        "What it do": "**Eclipses** Slingshot and Newton's Meteor. Blocks fired by Slingshots instead fire as meteors, and your meteors apply the damage and effects their block would when fired by a Slingshot, then crumble after 3 hits.\n- **Eclipse: **The behavior of the eclipsed object is replaced while wearing this Aphelion.\n",
+        "Discovered by:": "Maidl and ElectricSparx on 06/07/25",
+        "Max Level": "1",
+        "Rune 2": "Stones"
+      },
+      {
+        "id": "recqitlSl31SkvdOO",
+        "Category": "Protection",
+        "Rune 1": "Mortus",
+        "Item Types": [
+          "Helmets"
+        ],
+        "Rune 4": "Vitality",
+        "Rune 3": "Aegis",
+        "Enchantment Names": "Equilibrium",
+        "Source": "Runecrafted",
+        "Discoverer": "TroyTheCrafter",
+        "Discovered Date": "2023-09-02",
+        "Incompatible with (Vanilla):": [
+          "Protection",
+          "Blast Protection",
+          "Fire Protection",
+          "Projectile Protection"
+        ],
+        "Rune 5": "Gusts",
+        "What it do": "You equalize for 2 seconds upon dropping to 50% health, during which you are invulnerable, gain 40% speed, and heal for 15% health. This can’t occur again until you fully heal.\n",
+        "Discovered by:": "TroyTheCrafter on 9/2/23, 4:41 PM",
+        "Max Level": "1",
+        "Rune 2": "Aegis"
+      },
+      {
+        "id": "recqocC4VkJBMdDLZ",
+        "Category": "Damage",
+        "Rune 1": "Tides",
+        "Item Types": [
+          "Tridents"
+        ],
+        "Rune 4": "Kinesis",
+        "Rune 3": "Tides",
+        "Enchantment Names": "Sundering",
+        "Source": "Runecrafted",
+        "Discoverer": "Brittt",
+        "Discovered Date": "2023-09-09",
+        "Incompatible with (Vanilla):": [
+          "Impaling"
+        ],
+        "Rune 5": "Mortus",
+        "What it do": "Attacks deal +1❤ damage and _sunder_ enemies, stacking 3 times. Throws and riptides charge twice as fast while a nearby enemy is _sundered_, then expunge _sunder_ stacks on-impact, dealing +2-4❤ per stack.\n",
+        "Discovered by:": "Brittt on 9/9/23, 3:32 AM ",
+        "Incompatible with (Runecrafted):": [
+          "Extinction",
+          "Windup",
+          "Ballast"
+        ],
+        "Max Level": "3",
+        "Rune 2": "Echoes"
+      },
+      {
+        "id": "recrE5Yz6TjpOrDRs",
+        "Category": "Loot",
+        "Rune 1": "Mortus",
+        "Item Types": [
+          "Swords"
+        ],
+        "Rune 4": "Vitality",
+        "Rune 3": "Moments",
+        "Enchantment Names": "Ear Collector",
+        "Source": "Runecrafted",
+        "Discoverer": "TroyTheCrafter",
+        "Researchers": [
+          "Starmarsh"
+        ],
+        "Runes": [
+          "Mortus",
+          "Opulence",
+          "Moments",
+          "Vitality"
+        ],
+        "Discovered Date": "2025-06-05",
+        "Incompatible with (Vanilla):": [
+          "Looting"
+        ],
+        "Rune 5": "Opulence",
+        "What it do": "This sword collects an _ear_ stack to identify each of its victims, and upon exiting combat may attract a wandering guild trader who provides **items** in exchange for its _ears_.\n- **Items:** Wares include useful combat items, gems, rare gear, and other unique offers.\n",
+        "Discovered by:": "TroyTheCrafter and Starmarsh on 06/05/25",
+        "Incompatible with (Runecrafted):": [
+          "Bounty Hunter"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Opulence"
+      },
+      {
+        "id": "recrt5UAHTECOmr78",
+        "Category": "Spread",
+        "Rune 1": "Gusts",
+        "Item Types": [
+          "Crossbows"
+        ],
+        "Rune 4": "Gusts",
+        "Rune 3": "Echoes",
+        "Enchantment Names": "Gatling",
+        "Source": "Runecrafted",
+        "Discoverer": "skelud",
+        "Researchers": [
+          "MareeAM",
+          "ElectricSparx",
+          "JenoSnowconeIce"
+        ],
+        "Discovered Date": "2025-05-20",
+        "Rune 5": "Gusts",
+        "What it do": "The first loaded arrow which hits an enemy, and every other thereafter, grant +1 _clip size. _Firing a loaded arrow fires 1 additional arrow per _clip size_ in a rapid, narrow barrage.\n",
+        "Discovered by:": "skelud, MareeAM, ElectricSparx, and JenoSnowconeIce on 05/20/25",
+        "Incompatible with (Runecrafted):": [
+          "Tartean Hellhound",
+          "Cryovolcano"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Mortus"
+      },
+      {
+        "id": "recruUlSOIXdX6RcU",
+        "Category": "Damage",
+        "Rune 1": "Moments",
+        "Item Types": [
+          "Bows"
+        ],
+        "Rune 4": "Mortus",
+        "Rune 3": "Gusts",
+        "Enchantment Names": "Sniper",
+        "Source": "Runecrafted",
+        "Discoverer": "ChiknThighs",
+        "Discovered Date": "2023-08-30",
+        "Incompatible with (Vanilla):": [
+          "Power"
+        ],
+        "Rune 5": "Mortus",
+        "What it do": "Headshots deal +100-200% damage.\n",
+        "Discovered by:": "ChiknThighs on 8/30/23 4:18 AM",
+        "Incompatible with (Runecrafted):": [
+          "Whispering"
+        ],
+        "Max Level": "3",
+        "Rune 2": "Gusts"
+      },
+      {
+        "id": "recs4ZZy2hWrwAZjL",
+        "Category": "Paradigm",
+        "Rune 1": "Mortus",
+        "Item Types": [
+          "Helmets"
+        ],
+        "Rune 4": "Moments",
+        "Rune 3": "Mortus",
+        "Enchantment Names": "Paradigm of Wrath",
+        "Source": "Runecrafted",
+        "Discoverer": "skelud",
+        "Discovered Date": "2023-08-28",
+        "Rune 5": "Mortus",
+        "What it do": "You swing becomes a rapid **onslaught** using all melee hotbar weapons, _but_ your hotbar must _all_ be melee weapons for strikes to land.\n```\nOnslaught swings your weapons in sequence at 2x speed, ignoring mercy frames on landed hits.\n```\n",
+        "Discovered by:": "skelud on 8/28/23 9:09 PM",
+        "Incompatible with (Runecrafted):": [
+          "Other Paradigms"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Cinders"
+      },
+      {
+        "id": "recsEbrtxrK7wQHnt",
+        "Category": "Aphelion",
+        "Rune 1": "Void",
+        "Item Types": [
+          "Boots"
+        ],
+        "Rune 4": "Vitality",
+        "Rune 3": "Vitality",
+        "Enchantment Names": "Aphelion of Mars",
+        "Source": "Runecrafted",
+        "Discoverer": "TheJ_Team",
+        "Researchers": [
+          "TroyTheCrafter"
+        ],
+        "Runes": [
+          "Stones",
+          "Vitality",
+          "Void"
+        ],
+        "Discovered Date": "2025-05-24",
+        "Rune 5": "Void",
+        "What it do": "**Eclipses** Paradigm of Envy. You envy Avatars instead of Paradigms.\n- **Eclipse**: The behavior of the eclipsed object is replaced while wearing this Aphelion.\n",
+        "Discovered by:": "TheJ_Team and TroyTheCrafter on 05/24/25",
+        "Max Level": "1",
+        "Rune 2": "Stones"
+      },
+      {
+        "id": "recsMNcweYWDY8Pha",
+        "Category": "Ammo",
+        "Rune 1": "Arcanum",
+        "Item Types": [
+          "Bows"
+        ],
+        "Rune 4": "Stones",
+        "Rune 3": "Kinesis",
+        "Enchantment Names": "Slingshot",
+        "Source": "Runecrafted",
+        "Discoverer": "Starmarsh",
+        "Discovered Date": "2023-09-09",
+        "Incompatible with (Vanilla):": [
+          "Infinity"
+        ],
+        "Rune 5": "Stones",
+        "What it do": "This bow gains a sling, a 9-slot item inventory which can hold non-equipment items. Shooting without any arrows instead fires items from the sling, applying unique effects such as:\n- Blocks deal damage based on hardness.\n- Glass shatters, dealing 50% radial damage.\n- Light-emitting blocks make targets glow.\n- Food is fed to the target.\n",
+        "Discovered by:": "Starmarsh on 9/9/23 4:34 PM",
+        "Incompatible with (Runecrafted):": [
+          "Tesseract"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Void"
+      },
+      {
+        "id": "recsMp4QYWOKiXDl5",
+        "Category": "Uncategorized",
+        "Rune 1": "Arcanum",
+        "Item Types": [
+          "Pickaxes",
+          "Axes",
+          "Shovels"
+        ],
+        "Rune 4": "Cinders",
+        "Rune 3": "Cinders",
+        "Enchantment Names": "Kindle Touch",
+        "Source": "Runecrafted",
+        "Discoverer": "Shadow803",
+        "Discovered Date": "2017-01-24",
+        "Incompatible with (Vanilla):": [
+          "Silk Touch"
+        ],
+        "Rune 5": "Cinders",
+        "What it do": "Mined blocks drop the smelted version of the block instead of their normal drops.\n",
+        "Discovered by:": "Shadow803 on 1/24/17 1:45 PM",
+        "Max Level": "1",
+        "Rune 2": "Stones"
+      },
+      {
+        "id": "recsXu8sF0Lg6uwfW",
+        "Category": "Damage",
+        "Rune 1": "Mortus",
+        "Item Types": [
+          "Maces",
+          "Swords",
+          "Axes",
+          "Tridents",
+          "Spears"
+        ],
+        "Rune 4": "Mortus",
+        "Rune 3": "Mortus",
+        "Enchantment Names": "Extinction",
+        "Source": "Runecrafted",
+        "Discoverer": "TheJ_Team",
+        "Discovered Date": "2023-09-01",
+        "Incompatible with (Vanilla):": [
+          "Sharpness",
+          "Bane of Arthropods",
+          "Smite",
+          "Impaling",
+          "Breach",
+          "Density",
+          "Cleaving"
+        ],
+        "Rune 5": "Void",
+        "What it do": "Slain entities are marked for _extinction_, permanently granting 1 stack. Strikes deal +0.25 hearts damage per stack against that entity type, up to +5-10 ❤. \n- \tBosses grant 4 stacks and, at max level, the bonus damage to them is uncapped. Stacks have no effect in Trials.\n\nOnly one entity type can be marked at a time. A new type can be marked by gaining 5 _extinction_ stacks against it.\n",
+        "Discovered by:": "TheJ_Team on 9/1/23, 7:41 PM ",
+        "Incompatible with (Runecrafted):": [
+          "Tempo",
+          "Exploit",
+          "Sundering",
+          "Windup",
+          "Momentum",
+          "Dynamo",
+          "Sweet Spot",
+          "Ballast"
+        ],
+        "Max Level": "3",
+        "Rune 2": "Mortus"
+      },
+      {
+        "id": "recsvQ6aLRiqLacrI",
+        "Category": "Aphelion",
+        "Rune 1": "Mortus",
+        "Item Types": [
+          "Boots"
+        ],
+        "Rune 4": "Gusts",
+        "Rune 3": "Cinders",
+        "Enchantment Names": "Aphelion of Pluto",
+        "Source": "Runecrafted",
+        "Discoverer": "TheJ_Team",
+        "Researchers": [
+          "Autumn_Bun"
+        ],
+        "Runes": [
+          "Chills",
+          "Cinders",
+          "Gusts",
+          "Mortus"
+        ],
+        "Discovered Date": "2025-06-04",
+        "Rune 5": "Mortus",
+        "What it do": "**Eclipses** Cerberus. It instead starts as the sword **Charon**, which charges over 9 attacks, then transforms into **Pluto**, a loaded crossbow with the mythical spread enchantment **Cryovolcano**🌟. _Pluto_ fires once, then reforms into Charon. \n- **Charon**: 4.5 Attack Damage, 2 Attack Speed \n- **Cryovolcano**: Shots fire a 9-block long and 4.5-block wide cylinder for 9 damage, applying 9 seconds of freezing and burning.\n- **Eclipse: **The behavior of the eclipsed object is replaced while wearing this Aphelion.\n",
+        "Discovered by:": "TheJ_Team and Autumn_Bun on 06/04/25",
+        "Max Level": "1",
+        "Rune 2": "Chills"
+      },
+      {
+        "id": "rect4BaGevK8KEqzY",
+        "Category": "Loot",
+        "Rune 1": "Mortus",
+        "Item Types": [
+          "Spears"
+        ],
+        "Rune 4": "Opulence",
+        "Rune 3": "Vitality",
+        "Enchantment Names": "Heartseeker",
+        "Source": "Runecrafted",
+        "Discoverer": "TheJ_Team",
+        "Researchers": [
+          "ElectricSparx"
+        ],
+        "Discovered Date": "2026-03-09",
+        "Incompatible with (Vanilla):": [
+          "Looting"
+        ],
+        "Rune 5": "Gusts",
+        "What it do": "Enemies slain in one strike may drop their **heart**.\n",
+        "Incompatible with (Runecrafted):": [
+          "Bounty Hunter"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Moments"
+      },
+      {
+        "id": "rect4SXOf6OSuK2fY",
+        "Category": "Boosting",
+        "Rune 1": "Kinesis",
+        "Item Types": [
+          "Maces"
+        ],
+        "Rune 4": "Stones",
+        "Rune 3": "Kinesis",
+        "Enchantment Names": "Subduction",
+        "Source": "Runecrafted",
+        "Discoverer": "TheJ_Team",
+        "Researchers": [
+          "TroyTheCrafter"
+        ],
+        "Discovered Date": "2025-06-05",
+        "Incompatible with (Vanilla):": [
+          "Wind Burst"
+        ],
+        "Rune 5": "Moments",
+        "What it do": "Smash attacks subduct the ground, creating a stone spire which instantly lifts you **5-9 blocks,** crumbling after 4 seconds.\n",
+        "Discovered by:": "TheJ_Team and TroyTheCrafter on 06/05/25",
+        "Incompatible with (Runecrafted):": [
+          "Effervescence"
+        ],
+        "Max Level": "3",
+        "Rune 2": "Stones"
+      },
+      {
+        "id": "rect7vmhB6sKu85BE",
+        "Category": "Aphelion",
+        "Rune 1": "Cinders",
+        "Item Types": [
+          "Boots"
+        ],
+        "Rune 4": "Gusts",
+        "Rune 3": "Mortus",
+        "Enchantment Names": "Aphelion of Venus",
+        "Source": "Runecrafted",
+        "Discoverer": "TroyTheCrafter",
+        "Researchers": [
+          "UnloadingLime",
+          "Schwump",
+          "Shotdown01"
+        ],
+        "Runes": [
+          "Cinders",
+          "Chills",
+          "Gusts",
+          "Moments",
+          "Mortus"
+        ],
+        "Discovered Date": "2025-05-28",
+        "Rune 5": "Moments",
+        "What it do": "**Eclipses** Fire, Ice, and Plague Aspect. Applying those effects instead adds them to your **atmosphere** for 8 seconds.\n- **Eclipse**: The behavior of the eclipsed object is replaced while wearing this Aphelion.\n- **Atmosphere**: Enemies gain your atmosphere's effects only while within it. Its radius starts at 2 blocks and grows by 1 block every other attack.\n",
+        "Discovered by:": "TroyTheCrafter, UnloadingLime, Schwump, and Shotdown01 on 05/28/25",
+        "Max Level": "1",
+        "Rune 2": "Chills"
+      },
+      {
+        "id": "rectKPPzcu2bOoUVa",
+        "Category": "Safety",
+        "Rune 1": "Gusts",
+        "Item Types": [
+          "Elytra"
+        ],
+        "Rune 4": "Aegis",
+        "Rune 3": "Kinesis",
+        "Enchantment Names": "Crash Landicoot",
+        "Source": "Runecrafted",
+        "Discoverer": "MiniMinnow103",
+        "Researchers": [
+          "Maidl"
+        ],
+        "Runes": [
+          "Gusts",
+          "Stones",
+          "Kinesis",
+          "Aegis"
+        ],
+        "Discovered Date": "2025-06-06",
+        "Rune 5": "Mortus",
+        "What it do": "Crashing damage is reduced by 25-50%. Double sneaking towards solid ground initiates a rapid nosedive whose crash deals 50% of the initial damage to enemies in a 5-block radius.\n",
+        "Discovered by:": "MiniMinnow103 and Maidl on 06/06/25",
+        "Incompatible with (Runecrafted):": [
+          "Wrapping",
+          "Airbag"
+        ],
+        "Max Level": "2",
+        "Rune 2": "Stones"
+      },
+      {
+        "id": "rectl8F0BcgUH7ZVk",
+        "Category": "Damage",
+        "Rune 1": "Void",
+        "Item Types": [
+          "Swords"
+        ],
+        "Rune 4": "Mortus",
+        "Rune 3": "Void",
+        "Enchantment Names": "Sweet Spot",
+        "Source": "Runecrafted",
+        "Discoverer": "Starmarsh",
+        "Discovered Date": "2025-06-08",
+        "Incompatible with (Vanilla):": [
+          "Sharpness",
+          "Bane of Arthropods",
+          "Smite"
+        ],
+        "Rune 5": "Mortus",
+        "What it do": "Attacks have +1 range and deal +0.5-1❤️, doubled to +1-2❤️ against enemies within that bonus range _sweet spot._\n",
+        "Discovered by:": "Starmarsh on 06/08/25",
+        "Incompatible with (Runecrafted):": [
+          "Tempo",
+          "Extinction"
+        ],
+        "Max Level": "3",
+        "Rune 2": "Void"
+      },
+      {
+        "id": "recu3bK0qcWb1vUmE",
+        "Category": "Impetus",
+        "Rune 1": "Gusts",
+        "Item Types": [
+          "Leggings"
+        ],
+        "Rune 4": "Gusts",
+        "Rune 3": "Moments",
+        "Enchantment Names": "Impetus of Zeus",
+        "Source": "Runecrafted",
+        "Discoverer": "Maidl",
+        "Researchers": [
+          "ElectricSparx"
+        ],
+        "Discovered Date": "2025-05-31",
+        "Rune 5": "Sparks",
+        "What it do": "While gliding, you gather _static charge_, and temporarily slow down while aiming ranged weapons. At full charge, your next fired projectile **becomes lightning**.\n- **Becomes Lightning**: Lightning projectiles gain trueshot and strike lightning upon colliding. If it strikes an enemy, the lightning deals the same damage as the projectiles.\n",
+        "Discovered by:": "Maidl and ElectricSparx on 05/31/25",
+        "Incompatible with (Runecrafted):": [
+          "Other Impetuses"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Sparks"
+      },
+      {
+        "id": "recuCwKMq6ltZcxNN",
+        "Category": "Uncategorized",
+        "Rune 1": "Cinders",
+        "Item Types": [
+          "Spyglass"
+        ],
+        "Rune 4": "Moments",
+        "Rune 3": "Arcanum",
+        "Enchantment Names": "Kaleidoscope",
+        "Source": "Runecrafted",
+        "Rune 5": "Void",
+        "What it do": "Viewing a portal through this spyglass instantly transports you through it.\n",
+        "Max Level": "1",
+        "Rune 2": "Void"
+      },
+      {
+        "id": "recuGymsxfHju4rF8",
+        "Category": "Uncategorized",
+        "Rune 1": "Stones",
+        "Item Types": [
+          "Flint and Steel"
+        ],
+        "Rune 4": "Kinesis",
+        "Rune 3": "Kinesis",
+        "Enchantment Names": "Detonating",
+        "Source": "Runecrafted",
+        "Discoverer": "Maidl",
+        "Runes": [
+          "Stones",
+          "Cinders",
+          "Kinesis"
+        ],
+        "Discovered Date": "2023-09-09",
+        "Rune 5": "Kinesis",
+        "What it do": "Ignited TNT becomes a sticky blast charge which explodes in a 3x3x10 area in the ignition direction, leaving behind trace amounts of sand and gunpowder.\n",
+        "Discovered by:": "Maidl on 9/9/23, 6:40 AM",
+        "Max Level": "1",
+        "Rune 2": "Cinders"
+      },
+      {
+        "id": "recuUFCXenozMM1Ar",
+        "Category": "Traversal",
+        "Item Types": [
+          "Boots"
+        ],
+        "Enchantment Names": "Soul Speed",
+        "Source": "Vanilla",
+        "What it do": "Durability drain removed.\n",
+        "Incompatible with (Runecrafted):": [
+          "No Clip",
+          "Coyote Time"
+        ],
+        "Max Level": "3"
+      },
+      {
+        "id": "recuYIGKJgNllQvVn",
+        "Category": "Reload",
+        "Rune 1": "Moments",
+        "Item Types": [
+          "Crossbows"
+        ],
+        "Rune 4": "Gusts",
+        "Rune 3": "Gusts",
+        "Enchantment Names": "Bolt-action",
+        "Source": "Runecrafted",
+        "Discoverer": "Starmarsh",
+        "Runes": [
+          "Moments",
+          "Gusts"
+        ],
+        "Discovered Date": "2025-05-29",
+        "Incompatible with (Vanilla):": [
+          "Quick Charge"
+        ],
+        "Rune 5": "Gusts",
+        "What it do": "Swinging with a round loaded pushes it to the _magazine_, which can hold 2 rounds. Upon firing, the most recent round in the _magazine_ is immediately reloaded.\n",
+        "Discovered by:": "Starmarsh on 05/29/25",
+        "Incompatible with (Runecrafted):": [
+          "Trueshot"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Moments"
+      },
+      {
+        "id": "recudYTAZnhHq0jo4",
+        "Category": "Impetus",
+        "Rune 1": "Stones",
+        "Item Types": [
+          "Leggings"
+        ],
+        "Rune 4": "Kinesis",
+        "Rune 3": "Tides",
+        "Enchantment Names": "Impetus of Poseidon",
+        "Source": "Runecrafted",
+        "Discoverer": "TroyTheCrafter",
+        "Discovered Date": "2025-05-28",
+        "Rune 5": "Mortus",
+        "What it do": "- You can riptide while grounded without being wet.\n- Whenever your riptide, you _ride the wave_, always traveling the full distance, at constant speed, and with full control of your direction, striking all nearby enemies along the way.\n",
+        "Discovered by:": "TroyTheCrafter on 05/28/25",
+        "Incompatible with (Runecrafted):": [
+          "Other Impetuses"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Sparks"
+      },
+      {
+        "id": "recuhZvRJxt3yqipl",
+        "Category": "Radial",
+        "Item Types": [
+          "Maces"
+        ],
+        "Enchantment Names": "Ragnarok",
+        "Source": "Mythical",
+        "What it do": "While airborne, right click to freeze and charge a mace throw, generating torque based on smash damage upon landing, then slam down to it, stunning enemies within 5 blocks. Standard attacks deal 25% of torque as chain lightning damage.\n",
+        "Incompatible with (Runecrafted):": [
+          "Avalanche",
+          "Resonance",
+          "Will-o'-Wisp"
+        ]
+      },
+      {
+        "id": "recv511gAZf2mgXYK",
+        "Category": "Bashing",
+        "Rune 1": "Aegis",
+        "Item Types": [
+          "Shields"
+        ],
+        "Rune 4": "Mortus",
+        "Rune 3": "Kinesis",
+        "Enchantment Names": "Discus",
+        "Source": "Runecrafted",
+        "Discoverer": "TroyTheCrafter",
+        "Researchers": [
+          "TheJ_Team"
+        ],
+        "Runes": [
+          "Aegis",
+          "Kinesis",
+          "Mortus",
+          "Chills"
+        ],
+        "Discovered Date": "2025-05-28",
+        "Rune 5": "Chills",
+        "What it do": "**Bashing** throws your shield up to 10 blocks, striking the first enemy hit for 4♥️ damage and briefly slowing by 20% before returning.\n",
+        "Discovered by:": "TroyTheCrafter and TheJ_Team on 05/28/25",
+        "Incompatible with (Runecrafted):": [
+          "Battering Ram",
+          "Advance"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Aegis"
+      },
+      {
+        "id": "recvoPa8P6ipRCvF0",
+        "Category": "Impetus",
+        "Rune 1": "Echoes",
+        "Item Types": [
+          "Leggings"
+        ],
+        "Rune 4": "Moments",
+        "Rune 3": "Sparks",
+        "Enchantment Names": "Impetus of Hecate",
+        "Source": "Runecrafted",
+        "Discoverer": "TheJ_Team",
+        "Researchers": [
+          "Starmarsh"
+        ],
+        "Discovered Date": "2025-06-06",
+        "Rune 5": "Arcanum",
+        "What it do": "You have dominion over **_past_**,**_ present_**, and **_future_**, granting the following spell effects:\n- **Past**: You _reflect_ after every 3rd spell cast, causing your next spell tome swing to recast your last spell at no XP cost.\n- **Present**: You gain 25% runic spell power, and magic weapon kills collect loot and XP.\n- **Future**: You can sneak swing a spell tome to _scry_, casting its rightmost spell regardless of your current selection.\n",
+        "Discovered by:": "TheJ_Team and Starmarsh on 06/06/25",
+        "Incompatible with (Runecrafted):": [
+          "Other Impetuses"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Arcanum"
+      },
+      {
+        "id": "recwV7VV594pQVGev",
+        "Category": "Bashing",
+        "Rune 1": "Aegis",
+        "Item Types": [
+          "Shields"
+        ],
+        "Rune 4": "Gusts",
+        "Rune 3": "Kinesis",
+        "Enchantment Names": "Advance",
+        "Source": "Runecrafted",
+        "Discoverer": "TheJ_Team",
+        "Runes": [
+          "Aegis",
+          "Gusts",
+          "Kinesis"
+        ],
+        "Discovered Date": "2025-05-29",
+        "Rune 5": "Kinesis",
+        "What it do": "**Bashing **causes you to rapidly dash forward 5 blocks while creating a shockwave which deflects projectiles in a wide arc.\n",
+        "Discovered by:": "TheJ_Team on 05/29/25",
+        "Incompatible with (Runecrafted):": [
+          "Battering Ram",
+          "Discus"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Aegis"
+      },
+      {
+        "id": "recx3evNB7UajXbFv",
+        "Category": "Impetus",
+        "Rune 1": "Tides",
+        "Item Types": [
+          "Leggings"
+        ],
+        "Rune 4": "Opulence",
+        "Rune 3": "Sparks",
+        "Enchantment Names": "Impetus of Dionysus",
+        "Source": "Runecrafted",
+        "Discoverer": "TroyTheCrafter",
+        "Researchers": [
+          "Frostearrific"
+        ],
+        "Discovered Date": "2025-05-25",
+        "Rune 5": "Moments",
+        "What it do": "- You can hand-brew potions by inserting water or ingredients into bottles.\n- Your potions cause their targets **drunken revelry**, starting a _happy hour_ if applied repeatedly, during which 50% of used potions are not consumed.\n    - **Drunken Revelry**: Grants +1❤️ attack damage for 10 seconds, nauseating briefly if applied to yourself or for the full duration if applied to enemies. Nauseated mobs randomly lose focus upon attacking and fire projectiles inaccurately.\n",
+        "Discovered by:": "TroyTheCrafter and Frostearrific on 05/25/25",
+        "Incompatible with (Runecrafted):": [
+          "Other Impetuses"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Vitality"
+      },
+      {
+        "id": "recxPNX53CnX4skiM",
+        "Category": "Protection",
+        "Rune 1": "Gusts",
+        "Item Types": [
+          "Helmets",
+          "Chestplates",
+          "Leggings",
+          "Boots"
+        ],
+        "Rune 4": "Arcanum",
+        "Rune 3": "Aegis",
+        "Enchantment Names": "Projectile Protection V",
+        "Source": "Runecrafted",
+        "Discoverer": "Starmarsh",
+        "Discovered Date": "2023-09-10",
+        "Incompatible with (Vanilla):": [
+          "Protection",
+          "Blast Protection",
+          "Fire Protection"
+        ],
+        "Rune 5": "Moments",
+        "What it do": "Projectiles deal 8-40% less damage and apply `15-75%` less knockback. \n> **Runecrafting Bonus**: Negative potion effects from projectiles have -75% less duration.\n",
+        "Discovered by:": "Starmarsh on 9/10/23 11:16 PM",
+        "Incompatible with (Runecrafted):": [
+          "Headstart",
+          "Adrenaline Rush",
+          "Equilibrium",
+          "Lizard Tail"
+        ],
+        "Max Level": "5",
+        "Rune 2": "Kinesis"
+      },
+      {
+        "id": "recxTHMGh6aysJTs9",
+        "Category": "Yield",
+        "Rune 1": "Opulence",
+        "Item Types": [
+          "Pickaxes",
+          "Axes",
+          "Shovels",
+          "Shears"
+        ],
+        "Rune 4": "Stones",
+        "Rune 3": "Stones",
+        "Enchantment Names": "Transmuting",
+        "Source": "Runecrafted",
+        "Discoverer": "Starmarsh",
+        "Discovered Date": "2023-08-20",
+        "Incompatible with (Vanilla):": [
+          "Silk Touch",
+          "Fortune"
+        ],
+        "Rune 5": "Stones",
+        "What it do": "Sneak right clicking an **appropriate resource block** attunes to it. Mining other appropriate blocks converts their drops into those of the attuned block at the **equivalent exchange rate**.\n```\nPickaxes: All ores except Emerald and Ancient Debris.\nAxes: All logs.\nShovels: Mycelium, Podzol, Clay, Red Sand, Soul Sand, and Mud.\nShears: All leaves.\n```\n> For example, a Diamond sells for 8x as much as Raw Gold, so mining Gole Ore while attuned to Diamond Ore has a 1/8 chance to drop a diamond, while mining Diamond Ore while attuned to Gold Ore drops 8 Raw Gold.\n",
+        "Discovered by:": "Starmarsh on 8/20/23 7:15 AM",
+        "Max Level": "1",
+        "Rune 2": "Arcanum"
+      },
+      {
+        "id": "recxtKskkUP8HyX93",
+        "Category": "Damage",
+        "Item Types": [
+          "Bows"
+        ],
+        "Enchantment Names": "Whispering",
+        "Source": "Mythical",
+        "Incompatible with (Vanilla):": [
+          "Power"
+        ],
+        "What it do": "Shots deal +50% damage, collect loot, and don't cause vibrations. Shots overdrawn for 1 second _whisper_, homing in on enemies and dealing +25% sonic damage.\n",
+        "Incompatible with (Runecrafted):": [
+          "Sniper"
+        ]
+      },
+      {
+        "id": "recyLLJHpshIngKHb",
+        "Category": "Contraption",
+        "Rune 1": "Gusts",
+        "Item Types": [
+          "Crossbows"
+        ],
+        "Rune 4": "Void",
+        "Rune 3": "Gusts",
+        "Enchantment Names": "Smokescreen",
+        "Source": "Runecrafted",
+        "Discoverer": "Shotdown01",
+        "Researchers": [
+          "skelud"
+        ],
+        "Discovered Date": "2025-05-28",
+        "Rune 5": "Moments",
+        "What it do": "Grounded projectiles emit smoke for 10 seconds, preventing sight-reliant enemies from naturally detecting targets within. Enemies hit directly have their sight obscured for the same duration instead\n",
+        "Discovered by:": "Shotdown01 and skelud on 05/28/25",
+        "Incompatible with (Runecrafted):": [
+          "Flare",
+          "Snare"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Cinders"
+      },
+      {
+        "id": "recyaR0I04jzCzrKA",
+        "Category": "Curse",
+        "Item Types": [
+          "Pickaxes",
+          "Shovels",
+          "Hoes",
+          "Boots"
+        ],
+        "Enchantment Names": "Curse of the Farlands",
+        "Source": "Curse",
+        "What it do": "- When applied to a tool, breaking a block instead breaks a random adjacent block.\n- When applied to boots, your position periodically rounds.\n",
+        "Max Level": "1"
+      },
+      {
+        "id": "recyphMk42HHNDvcb",
+        "Category": "Harvest",
+        "Rune 1": "Stones",
+        "Item Types": [
+          "Hoes"
+        ],
+        "Rune 4": "Void",
+        "Rune 3": "Moments",
+        "Enchantment Names": "Green Thumb",
+        "Source": "Runecrafted",
+        "Discoverer": "TheFlamesOfHell",
+        "Discovered Date": "2017-01-03",
+        "Rune 5": "Vitality",
+        "What it do": "**Auto-harvesting** crops automatically regrows them by 2-3 growth stages, capped at 1 below their max growth stage.\n> Auto-harvesting: Right-click a fully grown crop to automatically harvest and replant it.\n",
+        "Discovered by:": "TheFlamesOfHell on 1/3/17 5:19 PM ",
+        "Incompatible with (Runecrafted):": [
+          "Schrödinger's Thumb",
+          "Dowsing Thumb"
+        ],
+        "Max Level": "2",
+        "Rune 2": "Vitality"
+      },
+      {
+        "id": "recz8Fa2IFuVakxqw",
+        "Category": "Damage",
+        "Rune 1": "Kinesis",
+        "Item Types": [
+          "Spears"
+        ],
+        "Rune 4": "Gusts",
+        "Rune 3": "Gusts",
+        "Enchantment Names": "Flurry",
+        "Source": "Runecrafted",
+        "Discoverer": "TheJ_Team",
+        "Discovered Date": "2026-03-08",
+        "Incompatible with (Vanilla):": [
+          "Sharpness",
+          "Bane of Arthropods",
+          "Smite"
+        ],
+        "Rune 5": "Gusts",
+        "What it do": "Charge strikes grant **+30-90% attack speed** on your next 3 jabs\n",
+        "Incompatible with (Runecrafted):": [
+          "Extinction",
+          "Precision"
+        ],
+        "Max Level": "3",
+        "Rune 2": "Mortus"
+      },
+      {
+        "id": "reczQrAkElKVByBh7",
+        "Category": "Uncategorized",
+        "Rune 1": "Arcanum",
+        "Item Types": [
+          "Helmets",
+          "Chestplates",
+          "Leggings",
+          "Boots",
+          "Elytra",
+          "Shields",
+          "Swords",
+          "Axes",
+          "Tridents",
+          "Bows",
+          "Crossbows",
+          "Pickaxes",
+          "Shovels",
+          "Hoes",
+          "Fishing Rods",
+          "Flint and Steel",
+          "Shears",
+          "Maces",
+          "Spears"
+        ],
+        "Rune 4": "Aegis",
+        "Rune 3": "Aegis",
+        "Enchantment Names": "Unbreaking IV",
+        "Source": "Runecrafted",
+        "Rune 5": "Aegis",
+        "What it do": "The item breaks 5x slower.\n> **Runecrafting Bonus**: The item is immune to destruction while dropped in the world. If the item would break, it instead drops to Unbreaking III and repairs 25% of its durability.\n",
+        "Max Level": "4",
+        "Rune 2": "Aegis"
+      },
+      {
+        "id": "reczgt7IPgUYCy1zb",
+        "Category": "Damage",
+        "Rune 1": "Mortus",
+        "Item Types": [
+          "Axes"
+        ],
+        "Rune 4": "Void",
+        "Rune 3": "Aegis",
+        "Enchantment Names": "Exploit",
+        "Source": "Runecrafted",
+        "Discoverer": "Starmarsh",
+        "Discovered Date": "2023-09-03",
+        "Incompatible with (Vanilla):": [
+          "Sharpness",
+          "Bane of Arthropods",
+          "Smite"
+        ],
+        "Rune 5": "Chills",
+        "What it do": "After attacking, if you lose no health while recharging, your next attack deals +2-4 hearts of armor-piercing damage and briefly slows the target.\n",
+        "Discovered by:": "Starmarsh on 9/3/23, 1:27 PM",
+        "Incompatible with (Runecrafted):": [
+          "Extinction",
+          "Momentum"
+        ],
+        "Max Level": "3",
+        "Rune 2": "Moments"
+      },
+      {
+        "id": "reczu9c8yxGHwv33V",
+        "Category": "Excavation",
+        "Rune 1": "Stones",
+        "Item Types": [
+          "Pickaxes",
+          "Axes",
+          "Shovels"
+        ],
+        "Rune 4": "Kinesis",
+        "Rune 3": "Moments",
+        "Enchantment Names": "Aftershock",
+        "Source": "Runecrafted",
+        "Discoverer": "TroyTheCrafter",
+        "Runes": [
+          "Kinesis",
+          "Stones",
+          "Moments"
+        ],
+        "Discovered Date": "2023-08-22",
+        "Rune 5": "Kinesis",
+        "What it do": "Briefly after breaking a block, an aftershock temporarily cracks blocks in a 3x3 area. If an aftershock hits a cracked block, it is broken instead. Breaking blocks while sneaking does not trigger aftershocks.\n",
+        "Discovered by:": "TroyTheCrafter on 8/22/23, 2:20 AM",
+        "Incompatible with (Runecrafted):": [
+          "Magnetism"
+        ],
+        "Max Level": "1",
+        "Rune 2": "Kinesis"
+      }
+    ],
+    "valor": [
+      {
+        "id": "rec073AdqNvsFqsFq",
+        "Acquisition (Non-Purchaseable)": "Rarely awarded after extended combat",
+        "Category": "Additional Charms",
+        "Name": "Sanguine Phial",
+        "Skill Requirements": "N/A",
+        "Description": "Grants stacks from kills in combat. Upon exiting combat, converts stacks to healing (0.1❤️ per stack). With 50+ stacks, also grants a random reward."
+      },
+      {
+        "id": "rec07dOxDCoZ4Ezk7",
+        "Cost": "8 Valor Badges",
+        "Category": "Relic",
+        "Name": "Guide to Terrestrial Taming",
+        "Skill Requirements": "125 Taming Skill",
+        "Description": "A skill book which allows you to tame and ride the following land creatures:\n- Sniffers: Spacebar to sniff, revealign treasures within 12 blocks. (❤️+ Torchflower Seeds)\n- Goat: Low fall damage. Spacebar to jump high. (❤️+ Wheat)\n- Panda: Spacebar to roll.(❤️+ Bamboo)\n- Polar Bear: Spacebar to swipe for 5❤️ damage. (❤️+ Cod)"
+      },
+      {
+        "id": "rec2bHnuYAMg6EZjx",
+        "Acquisition (Non-Purchaseable)": "Mineshaft loot",
+        "Category": "Additional Charms",
+        "Name": "Headlamp",
+        "Skill Requirements": "N/A",
+        "Description": "Emits a light at your head location, illuminating the area around you."
+      },
+      {
+        "id": "rec3qQnUiBmy6tYpZ",
+        "Cost": "12 Badges of Valor",
+        "Category": "Relic",
+        "Name": "G.A.M.M.A.",
+        "Skill Requirements": "N/A",
+        "Description": "A spear with the mythical loot enchant Cyclotron:\n- Cyclotron🌟: While charging faster than 15 m/s, slain enemy drops are atomized, often converting to primordial dust, which can then be crafted with crystals or socketing gems to duplicate them."
+      },
+      {
+        "id": "rec55ZQ2Rjfx7WZzS",
+        "Cost": "6 Valor Badges (Per Piece)",
+        "Category": "Armor",
+        "Name": "Abyssal",
+        "Skill Requirements": "N/A",
+        "Description": "Per Piece: +8 Mining Efficiency\n\nSet Bonus (3+ Pieces):\n- Grants permanent Night Vision.\n- Mining no longer causes vibrations.\n- Mining ore grants Abyssal Charge which can be spent by sneak jumping while looking down to Delve or up to Sense:\n- Delve: Blink to the next lowest area. Costs 1-25 Charge. (1 per block traveled, caps at 25)\n- Sense: Briefly reveal nearby ores. Costs 25 charge."
+      },
+      {
+        "id": "rec6MLpbECnc1gwGI",
+        "Cost": "5 Valor Badges",
+        "Category": "Charm",
+        "Name": "Bobblehead",
+        "Skill Requirements": "N/A",
+        "Description": "Gain the Luck effect permanently while wearing your own head."
+      },
+      {
+        "id": "rec6XKvRxfhijLBdV",
+        "Cost": "5 Valor Badges",
+        "Category": "Charm",
+        "Name": "Fish Tags",
+        "Skill Requirements": "N/A",
+        "Description": "Caught fish are tagged and released, instantly selling for slightly reduced silver and granting bonus experience based on the fish."
+      },
+      {
+        "id": "rec7CtYJJGGznk9Lp",
+        "Cost": "10 Valor Badges",
+        "Category": "Relic",
+        "Name": "Iron Cicada Wings",
+        "Skill Requirements": "N/A",
+        "Description": "A pair of elytra with 6 armor and 2 armor toughness."
+      },
+      {
+        "id": "rec7H0T4L3kt64SiM",
+        "Cost": "12 Valor Badges",
+        "Category": "Relic",
+        "Name": "Orbweaver",
+        "Skill Requirements": "N/A",
+        "Description": "Right click to launch a web which attaches to struck blocks or entities. Striking an entity pulls it towards you, while striking a block pulls you towards it.\n*1 second cooldown*"
+      },
+      {
+        "id": "rec8mOlIHmy0NsMfx",
+        "Cost": "1 Valor Badge",
+        "Category": "Service",
+        "Name": "Unsocket Armor",
+        "Skill Requirements": "N/A",
+        "Description": "Removes all socketed gems from an armor piece."
+      },
+      {
+        "id": "rec8si70AIVFvuPxe",
+        "Cost": "12 Valor Badges",
+        "Category": "Relic",
+        "Name": "Karru'Val",
+        "Skill Requirements": "N/A",
+        "Description": "A bow with the mythical damage enchantment Whispering🌟\n- Whispering: Shots deal +50% damage, collect loot, and don't cause vibrations. Shots overdrawn for 1 second whisper, homing in on enemies and dealing +25% sonic damage."
+      },
+      {
+        "id": "rec9HMZ8AYnyQIfov",
+        "Cost": "12 Valor Badges",
+        "Category": "Relic",
+        "Name": "Cerberus",
+        "Skill Requirements": "N/A",
+        "Description": "Cerberus is a crossbow, Hellhound's Maw, with the mythical spread enchant Tartarean Hellhound⭐, which transforms into Hellhound's Fang when swung.\n\n- Tartarean Hellhound: All loaded projectiles are fired in a tight volley, with arrows fired as 2❤️ damage fangs.\n- Hellhound's Fang deals 4❤️ base damage, and triples to projectiles loaded in Hellhound's Maw on every 3rd hit, up to 27 after 9 hits."
+      },
+      {
+        "id": "rec9VBfvAAT9sfpZl",
+        "Cost": "1 Valor Badge",
+        "Category": "Relic",
+        "Name": "Windup Key",
+        "Skill Requirements": "N/A",
+        "Description": "Right click an Iron Golem to ally it to you for 20 minutes. Can be used 4 times."
+      },
+      {
+        "id": "recDEDJzNs0nzMli8",
+        "Cost": "5 Valor Badges",
+        "Category": "Charm",
+        "Name": "Training Weight",
+        "Skill Requirements": "N/A",
+        "Description": "Items dropped by slain creatures are each converted to 1 XP."
+      },
+      {
+        "id": "recDxwPlTx3580sy6",
+        "Cost": "1250 Boardwalk Tickets",
+        "Category": "Charm",
+        "Name": "Balloon Animal",
+        "Skill Requirements": "N/A",
+        "Description": "When a tamed or summoned creature dies, it explodes, stunning enemies in a 5-block radius and dealing 10❤️ damage."
+      },
+      {
+        "id": "recFZ5NU6Ld2tMTgQ",
+        "Cost": "12 Valor Badges",
+        "Category": "Relic",
+        "Name": "Chimaera",
+        "Skill Requirements": "N/A",
+        "Description": "Chimaera is a bow which splits into a wood and stone sword when swung. Sneak-right-click while holding both to reform the bow. Each applies a mark which the other can redeem to grant a 40% speed burst and apply bonus effects:\n- Serpent's Fang🏹 redeems 2 seconds of venom.\n- Lion's Claw⚔️ redeems 2x damage.\n- Goat's Horn⚔️ redeems 2x knockback and a 1-second stun.\n\nVenom: a rapid poison which heals you for 50% of the damage dealt.\nStun: halts an entity, preventing movement, attacks, and shots. Direct strikes break enemies out of stuns."
+      },
+      {
+        "id": "recFmM5Z0hy5wMaoC",
+        "Cost": "4 Valor Badges",
+        "Category": "Service",
+        "Name": "Transmog Helmet",
+        "Skill Requirements": "N/A",
+        "Description": "Transmutes a regular helmet into a custom helmet which resembles any item."
+      },
+      {
+        "id": "recG4AXl3RVTkV8GX",
+        "Cost": "1 Valor Badge",
+        "Category": "Service",
+        "Name": "Elytra Mode",
+        "Skill Requirements": "N/A",
+        "Description": "Grants you Elytra Mode for 30 minutes."
+      },
+      {
+        "id": "recGQcObhA73Nf7wu",
+        "Acquisition (Non-Purchaseable)": "Discovering all Spawn Secrets",
+        "Category": "Additional Charms",
+        "Name": "Silver Springs Brochure",
+        "Skill Requirements": "N/A",
+        "Description": "Grants a 35% discount on all Silver Springs Village vendor purchases."
+      },
+      {
+        "id": "recGikXOY351wrqxl",
+        "Acquisition (Non-Purchaseable)": "Spooky Springs Halloween Event prize",
+        "Category": "Additional Charms",
+        "Name": "Pumpkin Mask",
+        "Skill Requirements": "N/A",
+        "Description": "Prevents Endermen from targeting you when looking at them. Reduces mob detection range by 20%."
+      },
+      {
+        "id": "recGjRFFOr5Su5H1b",
+        "Cost": "5 Valor Badges",
+        "Category": "Charm",
+        "Name": "Golf Club",
+        "Skill Requirements": "N/A",
+        "Description": "Your attacks gain range, ignore some mob knockback resist, and deal double knockback to small targets."
+      },
+      {
+        "id": "recH1CxFkxwpHYgUj",
+        "Cost": "4 Valor Badges",
+        "Category": "Relic",
+        "Name": "Atlas",
+        "Skill Requirements": "N/A",
+        "Description": "A book that can hold many maps. Sneak-right-click to open the Atlas. Right click a map stored in the Atlas to make the Atlas appear as that map when held."
+      },
+      {
+        "id": "recH3ELEL4rKOKP6j",
+        "Cost": "5 Valor Badges",
+        "Category": "Charm",
+        "Name": "Coffee Beans",
+        "Skill Requirements": "N/A",
+        "Description": "Gain speed, haste, and double experience during sunrise."
+      },
+      {
+        "id": "recKY7i2bwA6hmDU2",
+        "Cost": "1 Boundary Shard",
+        "Acquisition (Non-Purchaseable)": "Converted from Film Reels to Corrupted Footage through the Boundary Shard system",
+        "Category": "Additional Charms",
+        "Name": "Corrupted Footage",
+        "Skill Requirements": "N/A",
+        "Description": "Corrupted Tome casts follow a specific spell sequence unique to each footage reel, but with halved XP costs and spell cooldowns."
+      },
+      {
+        "id": "recLOPMygTPO408sQ",
+        "Cost": "8 Valor Badges",
+        "Category": "Relic",
+        "Name": "Guide to Hazardous Taming",
+        "Skill Requirements": "375 Taming Skill",
+        "Description": "A skill book which allows you to tame and ride the following dangerous creatures:\n- Slime: Landing deals area damage, absorbing smaller slimes to permanently increase size and jump height. (❤️+ Slimeballs)\n- Spider: Climb walls and walk through webs. (❤️+ String)\n- Hoglin: Spacebar to swing, knocking up and dealing 3❤️ damage. (❤️+ Crimson Fungus)\n- Ravager: Spacebar to roar, dealing 3❤️ damage and 5 blocks knockback in a 5-block radius. (❤️+ Emeralds)"
+      },
+      {
+        "id": "recLjuRr66LQCJVlG",
+        "Cost": "5 Valor Badges",
+        "Category": "Charm",
+        "Name": "Runic Compass",
+        "Skill Requirements": "N/A",
+        "Description": "Periodically, after slaying an enemy in a Rune Locale, the compass identifies a nearby empowered enemy who always drops a rune."
+      },
+      {
+        "id": "recLpjHHKu09E70sm",
+        "Cost": "12 Valor Badges",
+        "Category": "Relic",
+        "Name": "Messina",
+        "Skill Requirements": "N/A",
+        "Description": "Messina is a trident, Charybdis, with the mythical trajectory enchant Whirlpool🌟 whose throws leave Scylla in your hand.\n\n- Whirlpool🌟: Throws fly straight and pull enemies, then slam down and form a suffocating whirlpool.\n\n- Scylla is a diamond spear with no minimum attack range and with the mythical dash enchant Man-Eater🌟. Charybdis can be collected, replacing Scylla, once no enemies are in its whirlpool.\n\n- Man-Eater🌟: Charges forcibly dash to Charybdis, briefly liquefying terrain. Jabs near the whirlpool pull in enemies and execute at 10% HP, sating 1 hunger."
+      },
+      {
+        "id": "recNgKAZZOlhJzBx8",
+        "Cost": "6 Valor Badges (Per Piece)",
+        "Category": "Armor",
+        "Name": "Umbral",
+        "Skill Requirements": "N/A",
+        "Description": "Per Piece: +8% Sneaking Speed\n\nSet Bonus (3+ Pieces):\n- Grants permanent Night Vision.\n- While sneaking, enemies only detect you while facing you within 10 blocks.\n- Ranged strikes grant Umbral Charge and deal +2❤️ damage while undetected or striking from behind. At full charge, you can sneak then double step backwards to enter Shadow Form for 3 seconds."
+      },
+      {
+        "id": "recNkQCiQmsLJc3Vg",
+        "Acquisition (Non-Purchaseable)": "Scrap loot",
+        "Category": "Additional Charms",
+        "Name": "Film Reel",
+        "Skill Requirements": "N/A",
+        "Description": "Runic Tome casts follow a specific spell sequence unique to each Reel, but with halved XP costs and spell cooldowns.\n"
+      },
+      {
+        "id": "recOO6KIAhFKP0Rjh",
+        "Acquisition (Non-Purchaseable)": "Rarely replaces duped shiny gold coins",
+        "Category": "Additional Charms",
+        "Name": "Old Minting Press",
+        "Skill Requirements": "N/A",
+        "Description": "When a Shiny Gold Coin you flip duplicates, you have a 15% chance to receive a Mint Error Coin instead."
+      },
+      {
+        "id": "recQVYVz9V1Upnzob",
+        "Cost": "8 Valor Badges",
+        "Category": "Relic",
+        "Name": "Guide to Aqueous Taming",
+        "Skill Requirements": "250 Taming Skill",
+        "Description": "A skill book which allows you to tame and ride the following aquatic or liquid creatures:\n- Turtle: Grants increased oxygen (❤️+ Seagrass)\n- Dolphin: The fastest sea mount. (❤️+ Tropical Fish)\n- Guardian: Spacebar shoots a laser at your target. (❤️+ Prismarine Crystals)\n- Squid: Spacebar shoots ink, blinding enemies then dashing forward. (❤️+ Cod)"
+      },
+      {
+        "id": "recR1P6cI55dQMguc",
+        "Cost": "6 Valor Badges (Per Piece)",
+        "Category": "Armor",
+        "Name": "I.N.D.I.G.O.",
+        "Skill Requirements": "N/A",
+        "Description": "Per Piece: +25% Aerial Mobility, +2 Safe Fall Distance\n\nSet Bonus (3+ Pieces):\nSneaking while looking directly up or down adjusts your gravity between 2x or -0.1x. Gravity resets to 1x when you deal combat damage, exceed the world height limit, or begin gliding."
+      },
+      {
+        "id": "recR7uJEgNKzOCxy0",
+        "Cost": "5 Valor Badges",
+        "Category": "Charm",
+        "Name": "Hourglass Sands",
+        "Skill Requirements": "N/A",
+        "Description": "Cooldowns on utility items are reduced by 35%."
+      },
+      {
+        "id": "recRp2zEIBzfpEYVr",
+        "Cost": "1 Armor Stand + 1 Withered Heart",
+        "Category": "Artifact",
+        "Name": "Mob Scarecrow",
+        "Skill Requirements": "N/A",
+        "Description": "Creates a scarecrow which denies spawns in a 20 meter radius. Feeding more Withered Hearts increases this radius by 10, up to a maximum of 50 meters.\n\nNote: Some Withered Hearts may be lost when breaking a placed scarecrow."
+      },
+      {
+        "id": "recT1VtNjXRiutGga",
+        "Cost": "1 Valor Badge",
+        "Category": "Service",
+        "Name": "mcMMO XP Boost",
+        "Skill Requirements": "N/A",
+        "Description": "Doubles your mcMMO XP gains for 30 minutes."
+      },
+      {
+        "id": "recTF4CmLPczwaKne",
+        "Cost": "12 Valor Badges",
+        "Category": "Relic",
+        "Name": "Grasshopper",
+        "Skill Requirements": "N/A",
+        "Description": "Right click while near solid terrain to hop forward. Once airborne, you can right click again to reset your fall distance and briefly glide.\n\n1 second cooldown"
+      },
+      {
+        "id": "recTcTmAeSCni887R",
+        "Cost": "6 Valor Badges (Per Piece)",
+        "Category": "Armor",
+        "Name": "Ethereal",
+        "Skill Requirements": "N/A",
+        "Description": "Per Piece: +8% Sweeping Damage\n\nSet Bonus (3+ Pieces):\n- Grants permanent Night Vision.\n- Your sweeping damage bonuses apply to all sweeping enchants.\n- Strikes grant Ethereal Charge. At full charge, you become Ethereal, causing the next direct damage you take to be negated and trigger a 1-second stealth."
+      },
+      {
+        "id": "recWN5BVLtxIQ1MOJ",
+        "Cost": "5 Valor Badges",
+        "Category": "Charm",
+        "Name": "Prince Ruperts Drop",
+        "Skill Requirements": "N/A",
+        "Description": "Your hazard enchantments activate with massive power when struck from behind."
+      },
+      {
+        "id": "recXnBXw4jySa0aTb",
+        "Cost": "1 Valor Badge",
+        "Category": "Relic",
+        "Name": "Shiny Gold Coin",
+        "Skill Requirements": "N/A",
+        "Description": "Right click to flip the coin. With luck, the coin may duplicate."
+      },
+      {
+        "id": "recYONwPt3oJytJSo",
+        "Cost": "6 Valor Badges (Per Piece)",
+        "Category": "Armor",
+        "Name": "R.E.D.",
+        "Skill Requirements": "N/A",
+        "Description": "Per Piece: +1 Unarmed Attack Damage\n\nSet Bonus (3+ Pieces):\nYou can consume enchanted books to scan their compatible enchants into the R.E.D. database. Activate the helmet to select enchants from the database to apply on every other punch, or on any other piece to change your Stance, causing every 3rd enchanted punch to apply bonus enchants:\n- Chestplate: Applies one additional damage enchant.\n- Leggings: Applies one additional sweeping enchant.\n- Boots: Applies two additional aspect enchants."
+      },
+      {
+        "id": "recYS2dqsRUFk72Bk",
+        "Cost": "250 Crypt Trial Points",
+        "Category": "Charm",
+        "Name": "Metal Detector",
+        "Skill Requirements": "N/A",
+        "Description": "Junk items brushed out of suspicious sediments are replaced with scrap."
+      },
+      {
+        "id": "recYXpvZxbzSaejxn",
+        "Cost": "1 Water Bucket + 3 Twinkling Sea Crystals",
+        "Category": "Artifact",
+        "Name": "Infinite Bucket",
+        "Skill Requirements": "N/A",
+        "Description": "An infinite water bucket."
+      },
+      {
+        "id": "recZxnHDAbXnAYeXZ",
+        "Cost": "10 Valor Badges",
+        "Category": "Relic",
+        "Name": "Portable Hole",
+        "Skill Requirements": "N/A",
+        "Description": "Right clicking consumes 35 XP to carve an 8-block tunnel in the direction you're looking for 10 seconds\n*6 second cooldown*"
+      },
+      {
+        "id": "recbMEPcq2C64Jjvv",
+        "Cost": "250 Cultist Raid Trial Points",
+        "Category": "Relic",
+        "Name": "Runic Tome",
+        "Skill Requirements": "N/A",
+        "Description": "A spell tome with a 5-slot rune inventory. Sneak right click to open it, then right click an inserted rune to select it. Use the tome with the inventory closed to spend XP to cast that rune's spell. Use /rune to view the spell for each rune.\n- Boundary Shards can turn Runic Tomes into Corrupted Tomes. Use /lexicon boundaries for more details."
+      },
+      {
+        "id": "reccFxXTLVp8M50QX",
+        "Cost": "Your Sanity",
+        "Acquisition (Non-Purchaseable)": "Raceway Parkour Reward",
+        "Category": "Additional Charms",
+        "Name": "Checkered Flag",
+        "Skill Requirements": "N/A",
+        "Description": "Prevents the hunger effect from being applied and reduces exhaustion from movement by 50%.\n"
+      },
+      {
+        "id": "recdNcJ6jnPvzKUOp",
+        "Cost": "10 Valor Badges",
+        "Category": "Relic",
+        "Name": "Potion Launcher",
+        "Skill Requirements": "N/A",
+        "Description": "Contains a 9-slot item inventory which can hold potions. Once loaded, right clicking fires the leftmost potion in the inventory."
+      },
+      {
+        "id": "recdnq85ICLcG5RNS",
+        "Cost": "40,000 Silver",
+        "Acquisition (Non-Purchaseable)": "For purchase from one of the Silver Springs villager vendors.",
+        "Category": "Charm",
+        "Name": "Protein Powder",
+        "Skill Requirements": "N/A",
+        "Description": "Drinking potions with effects grants +2 hunger."
+      },
+      {
+        "id": "recfpwqOGSq2Wd4YO",
+        "Cost": "5 Valor Badges",
+        "Category": "Charm",
+        "Name": "Chicory",
+        "Skill Requirements": "N/A",
+        "Description": "Animals you breed drop 5x more average XP and can be bred again 35% sooner."
+      },
+      {
+        "id": "recgF3ytYh0aWCVCf",
+        "Cost": "5 Valor Badges",
+        "Category": "Charm",
+        "Name": "Adventurer's Tricorne",
+        "Skill Requirements": "N/A",
+        "Description": "Gain 500 Silver when opening loot chests of 250 Silver when slaying survival world bosses."
+      },
+      {
+        "id": "recgFPOFxhUZNHGGI",
+        "Cost": "6 Valor Badges",
+        "Category": "Service",
+        "Name": "Mark of the Cult",
+        "Skill Requirements": "N/A",
+        "Description": "Marks you as a target of the Runic Cultists. While in survival worlds, one of them will periodically hunt you down. Slaying them drops Runes, Bottles o' Enchanting, and Enchanted Books, which rarely may contain Runecrafted enchantments."
+      },
+      {
+        "id": "rechDkCPugS35XHdk",
+        "Cost": "12 Valor Badges",
+        "Category": "Relic",
+        "Name": "Supercell",
+        "Skill Requirements": "N/A",
+        "Description": "A mace with the mythical enchant Ragnarok🌟:\n- Ragnarok: While airborne, right click to freeze and charge a mace throw, generating torque based on smash damage upon landing, then slam down to it, stunning enemies within 5 blocks. Standard attacks deal 25% of torque as chain lightning damage."
+      },
+      {
+        "id": "rechNw0WOvMjAdoZM",
+        "Acquisition (Non-Purchaseable)": "Rarely drops from leaves.",
+        "Category": "Additional Charms",
+        "Name": "Juniper Sprig",
+        "Skill Requirements": "N/A",
+        "Description": "When taking poison or wither damage, you have a 10-50% chance based on your alchemy level (and luck) to cleanse the effect and gain brief regeneration."
+      },
+      {
+        "id": "recioPLP43Jv8YQbz",
+        "Cost": "5 Valor Badges",
+        "Category": "Charm",
+        "Name": "Spare Key",
+        "Skill Requirements": "N/A",
+        "Description": "Your first charm slot can be modified even while your charms case is locked."
+      },
+      {
+        "id": "reckKkKu5Af5asx6T",
+        "Acquisition (Non-Purchaseable)": "Rarely drops in place of heads",
+        "Category": "Additional Charms",
+        "Name": "Wishbone",
+        "Skill Requirements": "N/A",
+        "Description": "Guarantees the next enemy you kill will drop their head, then destroys itself."
+      },
+      {
+        "id": "reckqDpxJ1iWLf7Pu",
+        "Cost": "8 Valor Badges",
+        "Category": "Service",
+        "Name": "Bonus Charm Slot",
+        "Skill Requirements": "N/A",
+        "Description": "Grants you an additional charm slot. Can be purchased 2 times."
+      },
+      {
+        "id": "reclFaIRIKkWe1Xxa",
+        "Cost": "1 Stick + 1 Dragon's Breath",
+        "Category": "Artifact",
+        "Name": "Particle Wand",
+        "Skill Requirements": "N/A",
+        "Description": "Can be used to create particle effects in the world.\nLeft Click: Increase planned particle field radius\nSneak + Left Click: Decrease planned particle field radius\nRight Click: Cycle through various available particles\nSneak + Right Click: Confirm field creation\nCurrent Radius: Displays current particle field radius\nCurrent Particle: Displays your currently selected particle\n\nUsing on an entity attaches the field to that entity.\nPlaced fields can be recollected by using a stick on them."
+      },
+      {
+        "id": "reclqOo6a9iIf1vKT",
+        "Cost": "150 Greenhouse Trial Points",
+        "Category": "Charm",
+        "Name": "Chamomile Tea",
+        "Skill Requirements": "N/A",
+        "Description": "Phantoms no longer hunt you due to insomnia."
+      },
+      {
+        "id": "reclvRD134JNEwmTd",
+        "Cost": "1 Nether Star + 4 Rune of Sparks",
+        "Category": "Artifact",
+        "Name": "Polaris",
+        "Skill Requirements": "N/A",
+        "Description": "Charge with light sources, can then be used to place light blocks.\n\nLeft Click: Adjust brightness. Sneak to decrease\nRight Click: Place or absorb a light source.\nRight Click (Inventory): Insert light-emitting items to add charge. Shift click to insert full stacks.\nDouble Sneak: Visualize nearby lights."
+      },
+      {
+        "id": "recm7Xs9P3qjIQm8v",
+        "Cost": "1 Water Bottle + 1 Rune of Echoes",
+        "Category": "Artifact",
+        "Name": "Silence Tonic",
+        "Skill Requirements": "N/A",
+        "Description": "Use on an entity to silence them. Has 2 charges."
+      },
+      {
+        "id": "recpoh3zsoBDP4Cde",
+        "Acquisition (Non-Purchaseable)": "Scrap loot, suspicious sediments",
+        "Category": "Additional Charms",
+        "Name": "Time Capsule",
+        "Skill Requirements": "N/A",
+        "Description": "Continuously grows in value while in a locked charms case. Right click to open and claim prizes based on the accumulated value."
+      },
+      {
+        "id": "recrO1TdBhGsH3aNN",
+        "Cost": "12 Valor Badges",
+        "Category": "Relic",
+        "Name": "I.R.I.D.E.S.C.E.N.T.",
+        "Skill Requirements": "N/A",
+        "Description": "A bow with the mythical ammo enchant Tesseract🌟:\n- Tesseract: While drawn, the bow pulls items to you and small entities into its tesseract. Mobs fired from the tesseract deal their attack damage as bonus damage. You can fire without any ammo available, releasing a 3❤️ base damage energy shot."
+      },
+      {
+        "id": "recrmF1UAN9ASTPyi",
+        "Cost": "5 Valor Badges",
+        "Category": "Charm",
+        "Name": "Tip Jar",
+        "Skill Requirements": "N/A",
+        "Description": "Animals you feed will tip you silver in return based on the food's value."
+      },
+      {
+        "id": "recsaiNaITxqDrrXI",
+        "Cost": "5 Valor Badges",
+        "Category": "Charm",
+        "Name": "Pointy Hat",
+        "Skill Requirements": "N/A",
+        "Description": "Witches no longer naturally target you, and will offer you unique trades when interacted with."
+      },
+      {
+        "id": "recszK5i9AgxUSEpR",
+        "Cost": "0 Valor Badges",
+        "Category": "Service",
+        "Name": "Revert Transmog",
+        "Skill Requirements": "N/A",
+        "Description": "Transmutes a custom helmet back into a regular helmet."
+      },
+      {
+        "id": "rectOM7V1OXnhF8AS",
+        "Cost": "32 Blaze Rods + 1 Rune of Kinesis",
+        "Category": "Artifact",
+        "Name": "Quickfuse Dynamite",
+        "Skill Requirements": "N/A",
+        "Description": "Right Click to launch a piece of dynamite, which explodes after two seconds."
+      },
+      {
+        "id": "recuMSlliQXCx7AKe",
+        "Cost": "40,000 Silver",
+        "Acquisition (Non-Purchaseable)": "For purchase from one of the Silver Springs villager vendors.",
+        "Category": "Charm",
+        "Name": "Bread Bowl",
+        "Skill Requirements": "N/A",
+        "Description": "When eating soups, you also consume the bowl for +2 hunger."
+      },
+      {
+        "id": "recvC5QB783oBJUFm",
+        "Cost": "6 Valor Badges (Per Piece)",
+        "Category": "Armor",
+        "Name": "V.I.O.L.E.T.",
+        "Skill Requirements": "N/A",
+        "Description": "Per Piece: +0.5 Block Interaction Range\n\nSet Bonus (3+ Pieces):\n- You can sneak right click with a set piece on any block with an inventory to Tether to it. \n- Activating your chestplate opens the tethered inventory.\n- Activating the helmet cycles your inventory contents 1 row up.\n- Activating the boots cycles them 1 row down."
+      },
+      {
+        "id": "recy5tWNDG3A0EQpv",
+        "Cost": "5 Valor Badges",
+        "Category": "Charm",
+        "Name": "Fermentation Barrel",
+        "Skill Requirements": "N/A",
+        "Description": "Harvesting crops periodically grants a Potion of Luck II."
+      },
+      {
+        "id": "recye94JUy30DxWb6",
+        "Acquisition (Non-Purchaseable)": "Spooky Springs Halloween Event prize",
+        "Category": "Additional Charms",
+        "Name": "Treat Bag",
+        "Skill Requirements": "N/A",
+        "Description": "Hostile mobs have a 3.33% chance to drop treats. Eating treats grants 1 hunger."
+      }
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "rec07dOxDCoZ4Ezk7",
+  "draft": false,
+  "name": "Guide to Terrestrial Taming",
+  "category": "Relic",
+  "description": "A skill book which allows you to tame and ride the following land creatures:\n- Sniffers: Spacebar to sniff, revealign treasures within 12 blocks. (❤️+ Torchflower Seeds)\n- Goat: Low fall damage. Spacebar to jump high. (❤️+ Wheat)\n- Panda: Spacebar to roll.(❤️+ Bamboo)\n- Polar Bear: Spacebar to swipe for 5❤️ damage. (❤️+ Cod)",
+  "cost": "8 Valor Badges",
+  "skillRequirements": "125 Taming Skill",
+  "acquisition": "",
+  "order": 15,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}

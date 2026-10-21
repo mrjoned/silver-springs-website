@@ -1,0 +1,25 @@
+{
+  "sourceRecordId": "reco5mNMCPcl3JEOo",
+  "draft": false,
+  "name": "Pilot Light",
+  "source": "Runecrafted",
+  "category": "Uncategorized",
+  "description": "Right clicking on Furnaces, Blast Furnaces, and Smokers charges them with 4 Coal worth of fuel.\n",
+  "maxLevel": 1,
+  "items": [
+    "Flint and Steel"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [],
+  "discoverer": "TheJ_Team",
+  "researchers": [],
+  "discoveredDate": "2023-09-05",
+  "discoveredBy": "TheJ_Team on 9/5/23 11:55 PM ",
+  "runeTags": [],
+  "rune1": "Stones",
+  "rune2": "Kinesis",
+  "rune3": "Cinders",
+  "rune4": "Cinders",
+  "rune5": "Cinders",
+  "costRule": "per-level"
+}

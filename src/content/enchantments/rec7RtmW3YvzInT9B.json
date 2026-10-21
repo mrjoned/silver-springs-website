@@ -1,0 +1,37 @@
+{
+  "sourceRecordId": "rec7RtmW3YvzInT9B",
+  "draft": false,
+  "name": "Beheld",
+  "source": "Runecrafted",
+  "category": "Control",
+  "description": "Upon preparing a throw, enemies you _behold _are briefly slowed 40%._ _If they are below half health, they are **stunned** instead.\n",
+  "maxLevel": 1,
+  "items": [
+    "Tridents"
+  ],
+  "incompatibleRunecrafted": [
+    "Cavitation",
+    "Undertow"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "Shotdown01",
+  "researchers": [
+    "Starmarsh",
+    "TroyTheCrafter"
+  ],
+  "discoveredDate": "2025-05-28",
+  "discoveredBy": "Shotdown01, Starmarsh, and TroyTheCrafter on 05/28/25",
+  "runeTags": [
+    "Tides",
+    "Kinesis",
+    "Chills",
+    "Moments",
+    "Sparks"
+  ],
+  "rune1": "Tides",
+  "rune2": "Kinesis",
+  "rune3": "Chills",
+  "rune4": "Mortus",
+  "rune5": "Sparks",
+  "costRule": "per-level"
+}

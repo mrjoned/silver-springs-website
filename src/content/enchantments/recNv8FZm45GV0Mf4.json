@@ -1,0 +1,37 @@
+{
+  "sourceRecordId": "recNv8FZm45GV0Mf4",
+  "draft": false,
+  "name": "Effervescence",
+  "source": "Runecrafted",
+  "category": "Boosting",
+  "description": "Smash attacks release a _bubble_ which envelops you for 4-8 seconds, blocking damage while you rise 4 blocks per second with increased aerial mobility. The bubble pops early if you sneak or it blocks 10♥️ damage.\n",
+  "maxLevel": 3,
+  "items": [
+    "Maces"
+  ],
+  "incompatibleRunecrafted": [
+    "Subduction"
+  ],
+  "incompatibleVanilla": [
+    "Wind Burst"
+  ],
+  "discoverer": "TroyTheCrafter",
+  "researchers": [
+    "Frostearrific",
+    "Shotdown01"
+  ],
+  "discoveredDate": "2025-05-28",
+  "discoveredBy": "TroyTheCrafter, Frostearrific, and Shotdown01 on 05/28/25",
+  "runeTags": [
+    "Kinesis",
+    "Tides",
+    "Gusts",
+    "Moments"
+  ],
+  "rune1": "Kinesis",
+  "rune2": "Tides",
+  "rune3": "Gusts",
+  "rune4": "Tides",
+  "rune5": "Moments",
+  "costRule": "per-level"
+}

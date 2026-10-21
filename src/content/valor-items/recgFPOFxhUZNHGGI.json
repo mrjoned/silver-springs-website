@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recgFPOFxhUZNHGGI",
+  "draft": false,
+  "name": "Mark of the Cult",
+  "category": "Service",
+  "description": "Marks you as a target of the Runic Cultists. While in survival worlds, one of them will periodically hunt you down. Slaying them drops Runes, Bottles o' Enchanting, and Enchanted Books, which rarely may contain Runecrafted enchantments.",
+  "cost": "6 Valor Badges",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 43,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}

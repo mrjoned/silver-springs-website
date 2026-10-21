@@ -6,8 +6,8 @@
 - Node **24** selected by `.node-version`; Astro requires Node >=22.22.0.
 - Static Astro output, trailing-slash routes, directory output in `dist`.
 - Cloudflare Pages Git deployment: `npm run build`, output `dist`, framework Astro, repository root.
-- No Astro SSR adapter. The root `functions/api/` directory supplies the live enchantments and calendar APIs separately.
-- `public/_routes.json` is copied into `dist` and restricts function invocation to `/api/enchantments`, `/api/calendar`, and their trailing-slash variants.
+- No Astro SSR adapter. The root `functions/api/` directory supplies the live Google Calendar API separately.
+- `public/_routes.json` is copied into `dist` and restricts function invocation to `/api/calendar` and its trailing-slash variant.
 
 ## Preserved routes and components
 
@@ -17,7 +17,7 @@ The shared header/footer render through `SiteLayout.astro` on every main/article
 
 The longer authored pages are retained as checked-in HTML fragments under `src/content/pages/` and imported at build time through their Astro routes. `set:html` preserves the existing guide markup, embedded shopping planner, and its inline data. These fragments are repository-controlled content, not arbitrary HTML fetched from visitors.
 
-The five Hub tools and their own shell remain unchanged as static documents under `public/runecrafting-hub/tools/`. Their wrapper is an Astro page. This preserves their calculations, gem planning, incompatibility handling, and automatic height messaging.
+The five Hub tools are generated at their existing `.html` URLs from `src/catalog-templates/`; their shell remains under `public/runecrafting-hub/tools/`. Their wrapper is an Astro page. This preserves their calculations, gem planning, incompatibility handling, and automatic height messaging.
 
 `site.css` styles the homepage/community/archive pages; `chrome.css` styles the guide/Hub/map shells. The content guides retain their separately scoped stylesheet. This avoids homepage card and hero styles changing the tools.
 
@@ -31,11 +31,9 @@ All 49 imported post bodies and original URLs, and all 45 images in their origin
 
 ## Live data and remaining boundaries
 
-The Hub's `/api/enchantments` adapter reuses:
+The Valor and Runecrafting catalogs are editor-backed JSON files under `src/content/valor-items/` and `src/content/enchantments/`. See [CATALOGS.md](CATALOGS.md) for editing, validation, cost rules, and cart migration.
 
-`https://glistening-conkies-9b85d8.netlify.app/.netlify/functions/enchantments`
-
-The function validates the response, uses a ten-second timeout, and allows a short cache. The client loader at `public/assets/hub-data.js` falls back to `public/runecrafting-hub/tools/enchantments.json` on failure. The snapshot contains 172 enchantment records. Keep the original Netlify function/project running; Airtable credentials stay there. Relocating that integration entirely into Cloudflare is a separate step.
+The five Hub tools and Valor planner are generated from shared catalog entries/templates by Astro. `/api/enchantments` and the tool JSON URL are static outputs; no Airtable or Netlify request is needed. `public/_routes.json` now limits Pages Functions to the live calendar endpoint. The retained tools' URLs, layouts, compatibility logic, and gem calculations stay in place. The shopping cart migrates saved index-based entries to stable file IDs.
 
 The styled Month and Agenda calendar views load `/api/calendar?month=YYYY-MM`. `functions/api/calendar.js` reads the public Google Calendar through the Calendar API using the encrypted `GOOGLE_CALENDAR_API_KEY` binding. The calendar ID matches the existing embed: `silverspringsmrjoned@gmail.com`. Public event details must be enabled in Google Calendar. No OAuth or Google hosting service is needed.
 
@@ -47,7 +45,7 @@ The live map remains embedded from `https://map.sssminecraft.com/`. Atkinson Hyp
 
 ## Migration from the earlier plain-HTML ZIP
 
-Replace the old `public` folder entirely. Old `public/index.html`, `public/404.html`, and full page/article HTML must not remain: Astro generates those routes from `src`. The prebuild check reports conflicting public HTML. The only allowed public HTML documents are the six Hub documents under `public/runecrafting-hub/tools/`.
+Replace the old `public` folder entirely. Old `public/index.html`, `public/404.html`, and full page/article HTML must not remain: Astro generates those routes from `src`. The prebuild check reports conflicting public HTML. The only remaining public HTML document is the Hub shell under `public/runecrafting-hub/tools/`; Astro generates the five tool documents.
 
 Do not upload `node_modules`, `.astro`, or `dist`. The lockfile and Node version file are included. If the Cloudflare dashboard already defines `NODE_VERSION`, set it to `24`. Do not leave the earlier `exit 0` / `public` build settings in place.
 

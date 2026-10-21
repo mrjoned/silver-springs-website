@@ -1,0 +1,31 @@
+{
+  "sourceRecordId": "recjQhIVgSpYgX6fh",
+  "draft": false,
+  "name": "Windup",
+  "source": "Runecrafted",
+  "category": "Damage",
+  "description": "After preparing a throw, you can continue charging for 1.75-0.75 seconds to wind up a huge throw which deals +6 hearts of damage.\n",
+  "maxLevel": 3,
+  "items": [
+    "Tridents"
+  ],
+  "incompatibleRunecrafted": [
+    "Extinction",
+    "Sundering",
+    "Ballast"
+  ],
+  "incompatibleVanilla": [
+    "Impaling"
+  ],
+  "discoverer": "Starmarsh",
+  "researchers": [],
+  "discoveredDate": "2023-09-09",
+  "discoveredBy": "Starmarsh on 9/9/23, 3:37 AM",
+  "runeTags": [],
+  "rune1": "Tides",
+  "rune2": "Moments",
+  "rune3": "Moments",
+  "rune4": "Kinesis",
+  "rune5": "Mortus",
+  "costRule": "per-level"
+}

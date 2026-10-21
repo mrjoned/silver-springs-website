@@ -1,0 +1,36 @@
+{
+  "sourceRecordId": "recrE5Yz6TjpOrDRs",
+  "draft": false,
+  "name": "Ear Collector",
+  "source": "Runecrafted",
+  "category": "Loot",
+  "description": "This sword collects an _ear_ stack to identify each of its victims, and upon exiting combat may attract a wandering guild trader who provides **items** in exchange for its _ears_.\n- **Items:** Wares include useful combat items, gems, rare gear, and other unique offers.\n",
+  "maxLevel": 1,
+  "items": [
+    "Swords"
+  ],
+  "incompatibleRunecrafted": [
+    "Bounty Hunter"
+  ],
+  "incompatibleVanilla": [
+    "Looting"
+  ],
+  "discoverer": "TroyTheCrafter",
+  "researchers": [
+    "Starmarsh"
+  ],
+  "discoveredDate": "2025-06-05",
+  "discoveredBy": "TroyTheCrafter and Starmarsh on 06/05/25",
+  "runeTags": [
+    "Mortus",
+    "Opulence",
+    "Moments",
+    "Vitality"
+  ],
+  "rune1": "Mortus",
+  "rune2": "Opulence",
+  "rune3": "Moments",
+  "rune4": "Vitality",
+  "rune5": "Opulence",
+  "costRule": "per-level"
+}

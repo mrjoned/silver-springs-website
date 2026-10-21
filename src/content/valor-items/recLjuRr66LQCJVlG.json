@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recLjuRr66LQCJVlG",
+  "draft": false,
+  "name": "Runic Compass",
+  "category": "Charm",
+  "description": "Periodically, after slaying an enemy in a Rune Locale, the compass identifies a nearby empowered enemy who always drops a rune.",
+  "cost": "5 Valor Badges",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 35,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}

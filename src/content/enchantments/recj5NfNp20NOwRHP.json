@@ -1,0 +1,31 @@
+{
+  "sourceRecordId": "recj5NfNp20NOwRHP",
+  "draft": false,
+  "name": "Plundering",
+  "source": "Runecrafted",
+  "category": "Loot",
+  "description": "Kills collect the victim's loot, and occasionally harvest 1 additional **scrap.**\n- **Scrap: **A multi-tier loot table. Common draws grant 4-16 leather, ink sacs, glow ink sacs, blaze rods, lily pads, strings, or slime balls. Rarer draws can give crusted gems or runes, grab bag items containing dyes, pottery sherds, or ores, and rarely netherite scraps.\n",
+  "maxLevel": 1,
+  "items": [
+    "Tridents"
+  ],
+  "incompatibleRunecrafted": [
+    "Bounty Hunter"
+  ],
+  "incompatibleVanilla": [
+    "Looting"
+  ],
+  "discoverer": "skelud",
+  "researchers": [
+    "TroyTheCrafter"
+  ],
+  "discoveredDate": "2025-05-21",
+  "discoveredBy": "skelud and TroyTheCrafter on 05/21/25",
+  "runeTags": [],
+  "rune1": "Tides",
+  "rune2": "Mortus",
+  "rune3": "Opulence",
+  "rune4": "Stones",
+  "rune5": "Kinesis",
+  "costRule": "per-level"
+}

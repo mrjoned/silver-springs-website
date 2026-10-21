@@ -1,0 +1,33 @@
+{
+  "sourceRecordId": "recpyz5PZizsz6sXD",
+  "draft": false,
+  "name": "Bracing",
+  "source": "Runecrafted",
+  "category": "Control",
+  "description": "Every other charged attack grants 1 Absorption heart during the recharge. \n",
+  "maxLevel": 1,
+  "items": [
+    "Axes"
+  ],
+  "incompatibleRunecrafted": [
+    "Ragdoll"
+  ],
+  "incompatibleVanilla": [
+    "Knockback"
+  ],
+  "discoverer": "ChiknThighs",
+  "researchers": [],
+  "discoveredDate": "2023-08-29",
+  "discoveredBy": "ChiknThighs on 8/29/23 11:01 PM ",
+  "runeTags": [
+    "Moments",
+    "Mortus",
+    "Aegis"
+  ],
+  "rune1": "Mortus",
+  "rune2": "Moments",
+  "rune3": "Mortus",
+  "rune4": "Aegis",
+  "rune5": "Aegis",
+  "costRule": "per-level"
+}

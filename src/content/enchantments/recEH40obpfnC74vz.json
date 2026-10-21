@@ -1,0 +1,35 @@
+{
+  "sourceRecordId": "recEH40obpfnC74vz",
+  "draft": false,
+  "name": "Aphelion of Jupiter",
+  "source": "Runecrafted",
+  "category": "Aphelion",
+  "description": "**Eclipses** the Runic Tome. When you would cast the Void, Gusts, Kinesis, or Sparks spells, you instead cast **Great Red Spot**.\n- **Great Red Spot**: A large elliptical lightning storm forms around you for 25 seconds. It pulls in and suffocates enemies, increasing in intensity at the center, which instead deals more frequent void damage. Costs 125 XP.\n- **Eclipse**: The behavior of the eclipsed object is replaced while wearing this Aphelion.\n",
+  "maxLevel": 1,
+  "items": [
+    "Boots"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [],
+  "discoverer": "Frostearrific",
+  "researchers": [
+    "TheJ_Team",
+    "TroyTheCrafter",
+    "Starmarsh"
+  ],
+  "discoveredDate": "2025-05-30",
+  "discoveredBy": "Frostearrific, TheJ_Team, TroyTheCrafter, and Starmarsh on 05/30/25",
+  "runeTags": [
+    "Arcanum",
+    "Gusts",
+    "Kinesis",
+    "Sparks",
+    "Void"
+  ],
+  "rune1": "Void",
+  "rune2": "Gusts",
+  "rune3": "Kinesis",
+  "rune4": "Sparks",
+  "rune5": "Arcanum",
+  "costRule": "per-level"
+}

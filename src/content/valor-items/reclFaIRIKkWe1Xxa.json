@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "reclFaIRIKkWe1Xxa",
+  "draft": false,
+  "name": "Particle Wand",
+  "category": "Artifact",
+  "description": "Can be used to create particle effects in the world.\nLeft Click: Increase planned particle field radius\nSneak + Left Click: Decrease planned particle field radius\nRight Click: Cycle through various available particles\nSneak + Right Click: Confirm field creation\nCurrent Radius: Displays current particle field radius\nCurrent Particle: Displays your currently selected particle\n\nUsing on an entity attaches the field to that entity.\nPlaced fields can be recollected by using a stick on them.",
+  "cost": "1 Stick + 1 Dragon's Breath",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 49,
+  "relatedEnchantments": [],
+  "shop": "material"
+}

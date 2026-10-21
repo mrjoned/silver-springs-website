@@ -1,0 +1,35 @@
+{
+  "sourceRecordId": "recv511gAZf2mgXYK",
+  "draft": false,
+  "name": "Discus",
+  "source": "Runecrafted",
+  "category": "Bashing",
+  "description": "**Bashing** throws your shield up to 10 blocks, striking the first enemy hit for 4♥️ damage and briefly slowing by 20% before returning.\n",
+  "maxLevel": 1,
+  "items": [
+    "Shields"
+  ],
+  "incompatibleRunecrafted": [
+    "Battering Ram",
+    "Advance"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "TroyTheCrafter",
+  "researchers": [
+    "TheJ_Team"
+  ],
+  "discoveredDate": "2025-05-28",
+  "discoveredBy": "TroyTheCrafter and TheJ_Team on 05/28/25",
+  "runeTags": [
+    "Aegis",
+    "Kinesis",
+    "Mortus",
+    "Chills"
+  ],
+  "rune1": "Aegis",
+  "rune2": "Aegis",
+  "rune3": "Kinesis",
+  "rune4": "Mortus",
+  "rune5": "Chills",
+  "costRule": "per-level"
+}

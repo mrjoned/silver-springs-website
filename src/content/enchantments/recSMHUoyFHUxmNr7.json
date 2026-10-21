@@ -1,0 +1,35 @@
+{
+  "sourceRecordId": "recSMHUoyFHUxmNr7",
+  "draft": false,
+  "name": "Momentum",
+  "source": "Runecrafted",
+  "category": "Damage",
+  "description": "**Well-timed **attacks deal +1❤️ damage and stack _momentum_, stacking infinitely for +4-8% attack speed per stack.\n",
+  "maxLevel": 3,
+  "items": [
+    "Axes"
+  ],
+  "incompatibleRunecrafted": [
+    "Extinction",
+    "Exploit"
+  ],
+  "incompatibleVanilla": [
+    "Sharpness",
+    "Smite",
+    "Bane of Arthropods"
+  ],
+  "discoverer": "J1mbers",
+  "researchers": [
+    "skelud",
+    "TroyTheCrafter"
+  ],
+  "discoveredDate": "2025-05-29",
+  "discoveredBy": "J1mbers, skelud, and TroyTheCrafter on 05/29/25",
+  "runeTags": [],
+  "rune1": "Moments",
+  "rune2": "Mortus",
+  "rune3": "Echoes",
+  "rune4": "Mortus",
+  "rune5": "Gusts",
+  "costRule": "per-level"
+}

@@ -1,0 +1,42 @@
+{
+  "sourceRecordId": "rec35dLnccNVRbwCg",
+  "draft": false,
+  "name": "Blast Protection V",
+  "source": "Runecrafted",
+  "category": "Protection",
+  "description": "Blasts deal -8-40% damage and -15–75% knockback.\n> **Runecrafting Bonus**: Blasts instead deal -75% damage, then you siphon the shrapnel to form a 1❤ Absorption _blast shield_, granting knockback immunity and 25% damage reduction while the shield holds.\n",
+  "maxLevel": 5,
+  "items": [
+    "Helmets",
+    "Chestplates",
+    "Leggings",
+    "Boots"
+  ],
+  "incompatibleRunecrafted": [
+    "Headstart",
+    "Adrenaline Rush",
+    "Equilibrium",
+    "Lizard Tail"
+  ],
+  "incompatibleVanilla": [
+    "Protection",
+    "Fire Protection",
+    "Projectile Protection"
+  ],
+  "discoverer": "Starmarsh",
+  "researchers": [],
+  "discoveredDate": "2023-09-04",
+  "discoveredBy": "Starmarsh on 9/4/23, 12:13 AM",
+  "runeTags": [
+    "Kinesis",
+    "Aegis",
+    "Vitality",
+    "Moments"
+  ],
+  "rune1": "Kinesis",
+  "rune2": "Aegis",
+  "rune3": "Kinesis",
+  "rune4": "Vitality",
+  "rune5": "Moments",
+  "costRule": "once"
+}

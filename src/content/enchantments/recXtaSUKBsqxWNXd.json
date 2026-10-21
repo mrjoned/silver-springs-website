@@ -1,0 +1,30 @@
+{
+  "sourceRecordId": "recXtaSUKBsqxWNXd",
+  "draft": false,
+  "name": "Voltaic",
+  "source": "Runecrafted",
+  "category": "Parry",
+  "description": "**Parries** stack **_static_** 3 times. Once stacked, your next attack discharges in a cone, dealing 2❤️ damage and **stunning** for 2 seconds.\n",
+  "maxLevel": 1,
+  "items": [
+    "Shields"
+  ],
+  "incompatibleRunecrafted": [
+    "Riposte",
+    "Fortify"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "TheJ_Team",
+  "researchers": [
+    "Starmarsh"
+  ],
+  "discoveredDate": "2025-06-09",
+  "discoveredBy": "",
+  "runeTags": [],
+  "rune1": "Moments",
+  "rune2": "Aegis",
+  "rune3": "Echoes",
+  "rune4": "Mortus",
+  "rune5": "Sparks",
+  "costRule": "per-level"
+}

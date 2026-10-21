@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recsaiNaITxqDrrXI",
+  "draft": false,
+  "name": "Pointy Hat",
+  "category": "Charm",
+  "description": "Witches no longer naturally target you, and will offer you unique trades when interacted with.",
+  "cost": "5 Valor Badges",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 33,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}

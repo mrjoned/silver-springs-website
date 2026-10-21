@@ -1,0 +1,28 @@
+{
+  "sourceRecordId": "recyphMk42HHNDvcb",
+  "draft": false,
+  "name": "Green Thumb",
+  "source": "Runecrafted",
+  "category": "Harvest",
+  "description": "**Auto-harvesting** crops automatically regrows them by 2-3 growth stages, capped at 1 below their max growth stage.\n> Auto-harvesting: Right-click a fully grown crop to automatically harvest and replant it.\n",
+  "maxLevel": 2,
+  "items": [
+    "Hoes"
+  ],
+  "incompatibleRunecrafted": [
+    "Schrödinger's Thumb",
+    "Dowsing Thumb"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "TheFlamesOfHell",
+  "researchers": [],
+  "discoveredDate": "2017-01-03",
+  "discoveredBy": "TheFlamesOfHell on 1/3/17 5:19 PM ",
+  "runeTags": [],
+  "rune1": "Stones",
+  "rune2": "Vitality",
+  "rune3": "Moments",
+  "rune4": "Void",
+  "rune5": "Vitality",
+  "costRule": "per-level"
+}

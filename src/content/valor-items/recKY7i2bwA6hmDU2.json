@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recKY7i2bwA6hmDU2",
+  "draft": false,
+  "name": "Corrupted Footage",
+  "category": "Additional Charms",
+  "description": "Corrupted Tome casts follow a specific spell sequence unique to each footage reel, but with halved XP costs and spell cooldowns.",
+  "cost": "1 Boundary Shard",
+  "skillRequirements": "N/A",
+  "acquisition": "Converted from Film Reels to Corrupted Footage through the Boundary Shard system",
+  "order": 57,
+  "relatedEnchantments": [],
+  "shop": "reference"
+}

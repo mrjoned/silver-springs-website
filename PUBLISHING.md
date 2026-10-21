@@ -44,3 +44,7 @@ Saving in Pages CMS commits content to GitHub. Cloudflare then rebuilds the webs
 ## Checks
 
 Run `npm test` for the publishing and existing live-data checks, `npm run test:publishing` to test temporary CMS entries through a clean production build, and `npm run build` for Astro's production output. The integration check removes its temporary entries and rebuilds the original content afterward. First-use testing in the connected Pages CMS editor remains necessary after merge. A safe first check is to save an entry as a **draft** and confirm it stays off the website before publishing real content.
+
+## Game catalogs
+
+The Runecrafting and Valor Shop collections edit the catalogs used by the shopping cart, guide information, and Hub tools. See [CATALOGS.md](CATALOGS.md). Changes appear after the next successful Cloudflare deployment; they do not alter Minecraft server configuration.

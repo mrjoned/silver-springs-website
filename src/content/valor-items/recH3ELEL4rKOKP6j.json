@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recH3ELEL4rKOKP6j",
+  "draft": false,
+  "name": "Coffee Beans",
+  "category": "Charm",
+  "description": "Gain speed, haste, and double experience during sunrise.",
+  "cost": "5 Valor Badges",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 27,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}

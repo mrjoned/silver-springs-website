@@ -1,0 +1,27 @@
+{
+  "sourceRecordId": "recRgGfDlw2VMlPZd",
+  "draft": false,
+  "name": "Paradigm of Vainglory",
+  "source": "Runecrafted",
+  "category": "Paradigm",
+  "description": "Your swings fire as piercing waves, and you can hover at full health, _but_ you strike yourself, bypassing armor, when your waves miss.\n\n```\nWaves: Weapons with lower attack speed fire wider waves and ones with higher range fire faster moving waves.\n```\n\n```\nHover: Swing directly up to toggle the hover. It disables once you witness your health fall below full.\n```\n",
+  "maxLevel": 1,
+  "items": [
+    "Helmets"
+  ],
+  "incompatibleRunecrafted": [
+    "Other Paradigms"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "Frostearrific",
+  "researchers": [],
+  "discoveredDate": "2023-08-22",
+  "discoveredBy": "skelud on 8/22/23 11:23 PM",
+  "runeTags": [],
+  "rune1": "Kinesis",
+  "rune2": "Void",
+  "rune3": "Mortus",
+  "rune4": "Mortus",
+  "rune5": "Gusts",
+  "costRule": "per-level"
+}

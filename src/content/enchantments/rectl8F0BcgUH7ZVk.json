@@ -1,0 +1,32 @@
+{
+  "sourceRecordId": "rectl8F0BcgUH7ZVk",
+  "draft": false,
+  "name": "Sweet Spot",
+  "source": "Runecrafted",
+  "category": "Damage",
+  "description": "Attacks have +1 range and deal +0.5-1❤️, doubled to +1-2❤️ against enemies within that bonus range _sweet spot._\n",
+  "maxLevel": 3,
+  "items": [
+    "Swords"
+  ],
+  "incompatibleRunecrafted": [
+    "Tempo",
+    "Extinction"
+  ],
+  "incompatibleVanilla": [
+    "Sharpness",
+    "Bane of Arthropods",
+    "Smite"
+  ],
+  "discoverer": "Starmarsh",
+  "researchers": [],
+  "discoveredDate": "2025-06-08",
+  "discoveredBy": "Starmarsh on 06/08/25",
+  "runeTags": [],
+  "rune1": "Void",
+  "rune2": "Void",
+  "rune3": "Void",
+  "rune4": "Mortus",
+  "rune5": "Mortus",
+  "costRule": "per-level"
+}

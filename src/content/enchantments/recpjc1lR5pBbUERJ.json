@@ -1,0 +1,32 @@
+{
+  "sourceRecordId": "recpjc1lR5pBbUERJ",
+  "draft": false,
+  "name": "Avatar of Slimes",
+  "source": "Runecrafted",
+  "category": "Avatar",
+  "description": "You jump higher, take -25% fall damage, and bounce back up after taking fall damage.\nUpon dropping to 75%, 50%, or 25% health, a slime splits off of you which provokes enemies. This can't occur again until you fully heal.\n\n",
+  "maxLevel": 1,
+  "items": [
+    "Chestplates"
+  ],
+  "incompatibleRunecrafted": [
+    "Other Avatars"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "iClimaxx",
+  "researchers": [],
+  "discoveredDate": "2017-02-02",
+  "discoveredBy": "iClimaxx on 2/2/17, 3:08 PM",
+  "runeTags": [
+    "Kinesis",
+    "Aegis",
+    "Mortus",
+    "Vitality"
+  ],
+  "rune1": "Kinesis",
+  "rune2": "Aegis",
+  "rune3": "Kinesis",
+  "rune4": "Mortus",
+  "rune5": "Vitality",
+  "costRule": "per-level"
+}

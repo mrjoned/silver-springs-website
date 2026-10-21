@@ -1,0 +1,29 @@
+{
+  "sourceRecordId": "recYFXZdWwI8BcAUU",
+  "draft": false,
+  "name": "Executioner",
+  "source": "Runecrafted",
+  "category": "Loot",
+  "description": "Charged attacks immediately execute targets left below 5% health. Executed targets are 3.5x more likely to drop their head.\n",
+  "maxLevel": 1,
+  "items": [
+    "Axes"
+  ],
+  "incompatibleRunecrafted": [
+    "Bounty Hunter"
+  ],
+  "incompatibleVanilla": [
+    "Looting"
+  ],
+  "discoverer": "Maidl",
+  "researchers": [],
+  "discoveredDate": "2023-08-23",
+  "discoveredBy": "Maidl on 8/23/23 1:41 AM ",
+  "runeTags": [],
+  "rune1": "Vitality",
+  "rune2": "Void",
+  "rune3": "Mortus",
+  "rune4": "Opulence",
+  "rune5": "Opulence",
+  "costRule": "per-level"
+}

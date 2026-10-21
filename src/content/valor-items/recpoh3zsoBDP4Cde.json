@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recpoh3zsoBDP4Cde",
+  "draft": false,
+  "name": "Time Capsule",
+  "category": "Additional Charms",
+  "description": "Continuously grows in value while in a locked charms case. Right click to open and claim prizes based on the accumulated value.",
+  "cost": "",
+  "skillRequirements": "N/A",
+  "acquisition": "Scrap loot, suspicious sediments",
+  "order": 68,
+  "relatedEnchantments": [],
+  "shop": "reference"
+}

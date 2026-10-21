@@ -1,0 +1,30 @@
+{
+  "sourceRecordId": "recKaSdnLsUfBlfyC",
+  "draft": false,
+  "name": "Tempest",
+  "source": "Runecrafted",
+  "category": "Sweeping",
+  "description": "On-kill, gain a _tempest charge._ Right click to expend it to dash forward 5 blocks or to the first enemy, then slice for 2-4❤️ damage.\n",
+  "maxLevel": 1,
+  "items": [
+    "Axes"
+  ],
+  "incompatibleRunecrafted": [
+    "Howling",
+    "Chainsaw"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "Maidl",
+  "researchers": [
+    "ElectricSparx"
+  ],
+  "discoveredDate": "2025-06-04",
+  "discoveredBy": "Maidl and ElectricSparx on 06/04/25",
+  "runeTags": [],
+  "rune1": "Mortus",
+  "rune2": "Gusts",
+  "rune3": "Kinesis",
+  "rune4": "Mortus",
+  "rune5": "Mortus",
+  "costRule": "per-level"
+}

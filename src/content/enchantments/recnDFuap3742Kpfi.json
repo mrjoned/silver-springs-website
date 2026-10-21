@@ -1,0 +1,29 @@
+{
+  "sourceRecordId": "recnDFuap3742Kpfi",
+  "draft": false,
+  "name": "Trueshot",
+  "source": "Runecrafted",
+  "category": "Reload",
+  "description": "Fired projectiles instantly arrive at your targeted location.\n",
+  "maxLevel": 1,
+  "items": [
+    "Crossbows"
+  ],
+  "incompatibleRunecrafted": [
+    "Bolt-action"
+  ],
+  "incompatibleVanilla": [
+    "Quick Charge"
+  ],
+  "discoverer": "Maidl",
+  "researchers": [],
+  "discoveredDate": "2023-09-01",
+  "discoveredBy": "Maidl on 9/1/23 4:07 AM",
+  "runeTags": [],
+  "rune1": "Gusts",
+  "rune2": "Arcanum",
+  "rune3": "Moments",
+  "rune4": "Void",
+  "rune5": "Mortus",
+  "costRule": "per-level"
+}

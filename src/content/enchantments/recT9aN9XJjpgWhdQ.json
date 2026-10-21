@@ -1,0 +1,31 @@
+{
+  "sourceRecordId": "recT9aN9XJjpgWhdQ",
+  "draft": false,
+  "name": "Will-o'-Wisp",
+  "source": "Runecrafted",
+  "category": "Radial",
+  "description": "Kills leave behind the victim's soul as an inert _cinder wisp_. Wisps explode when caught in a smash attack or explosion, igniting and dealing 5❤️ explosion damage in a 5-block radius.\n",
+  "maxLevel": 1,
+  "items": [
+    "Maces"
+  ],
+  "incompatibleRunecrafted": [
+    "Avalanche",
+    "Ragnarok",
+    "Resonance"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "Starmarsh",
+  "researchers": [
+    "J1mbers"
+  ],
+  "discoveredDate": "2025-05-27",
+  "discoveredBy": "Starmarsh and J1mbers on 05/27/25",
+  "runeTags": [],
+  "rune1": "Mortus",
+  "rune2": "Vitality",
+  "rune3": "Cinders",
+  "rune4": "Kinesis",
+  "rune5": "Cinders",
+  "costRule": "per-level"
+}

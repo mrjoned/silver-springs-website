@@ -1,0 +1,27 @@
+{
+  "sourceRecordId": "recNj0stBYOrIASMG",
+  "draft": false,
+  "name": "Frost Walker",
+  "source": "Vanilla",
+  "category": "Travel",
+  "description": "You walk 25-50% faster on ice and snow blocks, and freeze the ground beneath you in a 3-4 block radius while walking, converting powdered snow to snow and temporarily converting water to frosted ice.\n",
+  "maxLevel": 2,
+  "items": [
+    "Boots"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [
+    "Depth Strider"
+  ],
+  "discoverer": "",
+  "researchers": [],
+  "discoveredDate": "",
+  "discoveredBy": "",
+  "runeTags": [],
+  "rune1": "",
+  "rune2": "",
+  "rune3": "",
+  "rune4": "",
+  "rune5": "",
+  "costRule": "free"
+}

@@ -1,0 +1,28 @@
+{
+  "sourceRecordId": "recjRgMEb0hiK7FUl",
+  "draft": false,
+  "name": "Curse of Bloodletting",
+  "source": "Curse",
+  "category": "Curse",
+  "description": "Attacks drain 0.5❤️ to deal +1❤️ damage.\n",
+  "maxLevel": 1,
+  "items": [
+    "Swords",
+    "Axes",
+    "Maces",
+    "Spears"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [],
+  "discoverer": "",
+  "researchers": [],
+  "discoveredDate": "",
+  "discoveredBy": "",
+  "runeTags": [],
+  "rune1": "",
+  "rune2": "",
+  "rune3": "",
+  "rune4": "",
+  "rune5": "",
+  "costRule": "free"
+}

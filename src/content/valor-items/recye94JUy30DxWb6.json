@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recye94JUy30DxWb6",
+  "draft": false,
+  "name": "Treat Bag",
+  "category": "Additional Charms",
+  "description": "Hostile mobs have a 3.33% chance to drop treats. Eating treats grants 1 hunger.",
+  "cost": "",
+  "skillRequirements": "N/A",
+  "acquisition": "Spooky Springs Halloween Event prize",
+  "order": 61,
+  "relatedEnchantments": [],
+  "shop": "reference"
+}

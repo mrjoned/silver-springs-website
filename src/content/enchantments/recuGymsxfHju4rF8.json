@@ -1,0 +1,29 @@
+{
+  "sourceRecordId": "recuGymsxfHju4rF8",
+  "draft": false,
+  "name": "Detonating",
+  "source": "Runecrafted",
+  "category": "Uncategorized",
+  "description": "Ignited TNT becomes a sticky blast charge which explodes in a 3x3x10 area in the ignition direction, leaving behind trace amounts of sand and gunpowder.\n",
+  "maxLevel": 1,
+  "items": [
+    "Flint and Steel"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [],
+  "discoverer": "Maidl",
+  "researchers": [],
+  "discoveredDate": "2023-09-09",
+  "discoveredBy": "Maidl on 9/9/23, 6:40 AM",
+  "runeTags": [
+    "Stones",
+    "Cinders",
+    "Kinesis"
+  ],
+  "rune1": "Stones",
+  "rune2": "Cinders",
+  "rune3": "Kinesis",
+  "rune4": "Kinesis",
+  "rune5": "Kinesis",
+  "costRule": "per-level"
+}

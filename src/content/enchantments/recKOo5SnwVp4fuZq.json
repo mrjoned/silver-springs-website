@@ -1,0 +1,28 @@
+{
+  "sourceRecordId": "recKOo5SnwVp4fuZq",
+  "draft": false,
+  "name": "Curse of Belittling",
+  "source": "Curse",
+  "category": "Curse",
+  "description": "While worn, you are 12.5% smaller and lose 12.5% attack damage.\n",
+  "maxLevel": 1,
+  "items": [
+    "Helmets",
+    "Chestplates",
+    "Leggings",
+    "Boots"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [],
+  "discoverer": "",
+  "researchers": [],
+  "discoveredDate": "",
+  "discoveredBy": "",
+  "runeTags": [],
+  "rune1": "",
+  "rune2": "",
+  "rune3": "",
+  "rune4": "",
+  "rune5": "",
+  "costRule": "free"
+}

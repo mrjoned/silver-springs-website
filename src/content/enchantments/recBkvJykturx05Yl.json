@@ -1,0 +1,30 @@
+{
+  "sourceRecordId": "recBkvJykturx05Yl",
+  "draft": false,
+  "name": "Shrink Ray",
+  "source": "Runecrafted",
+  "category": "Focus",
+  "description": "- Creatures viewed through this spyglass slowly shrink. Creatures shrunk to minimum size become passive.\n- Enemies with higher max health shrink slower.\n",
+  "maxLevel": 1,
+  "items": [
+    "Spyglass"
+  ],
+  "incompatibleRunecrafted": [
+    "Marking"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "TheJ_Team",
+  "researchers": [
+    "MrJoned",
+    "Schwump"
+  ],
+  "discoveredDate": "2025-05-17",
+  "discoveredBy": "MrJoned, Schwump, and TheJ_Team on 5/17/25",
+  "runeTags": [],
+  "rune1": "Vitality",
+  "rune2": "Moments",
+  "rune3": "Vitality",
+  "rune4": "Cinders",
+  "rune5": "Void",
+  "costRule": "per-level"
+}

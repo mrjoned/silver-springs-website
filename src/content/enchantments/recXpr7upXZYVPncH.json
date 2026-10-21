@@ -1,0 +1,29 @@
+{
+  "sourceRecordId": "recXpr7upXZYVPncH",
+  "draft": false,
+  "name": "Fencing",
+  "source": "Runecrafted",
+  "category": "Control",
+  "description": "After an attack, you can double-tap a movement key to hop in that direction, during which you are invulnerable.\n",
+  "maxLevel": 1,
+  "items": [
+    "Swords"
+  ],
+  "incompatibleRunecrafted": [
+    "Ragdoll"
+  ],
+  "incompatibleVanilla": [
+    "Knockback"
+  ],
+  "discoverer": "Maidl",
+  "researchers": [],
+  "discoveredDate": "2023-09-01",
+  "discoveredBy": "Maidl on 9/1/23 3:38 AM ",
+  "runeTags": [],
+  "rune1": "Mortus",
+  "rune2": "Gusts",
+  "rune3": "Gusts",
+  "rune4": "Kinesis",
+  "rune5": "Aegis",
+  "costRule": "per-level"
+}

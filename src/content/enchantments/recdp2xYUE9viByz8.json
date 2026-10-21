@@ -1,0 +1,34 @@
+{
+  "sourceRecordId": "recdp2xYUE9viByz8",
+  "draft": false,
+  "name": "Volatile",
+  "source": "Runecrafted",
+  "category": "Hazard",
+  "description": "Taking at least 1❤️ damage at once lights your fuse for 2 seconds, ending in a fiery explosion which ignites and deals **1.5-6❤️ damage** to enemies within 5 blocks.\n",
+  "maxLevel": 1,
+  "items": [
+    "Helmets",
+    "Chestplates",
+    "Leggings",
+    "Boots"
+  ],
+  "incompatibleRunecrafted": [
+    "Reverberating"
+  ],
+  "incompatibleVanilla": [
+    "Thorns"
+  ],
+  "discoverer": "Starmarsh",
+  "researchers": [
+    "beccc"
+  ],
+  "discoveredDate": "2025-06-06",
+  "discoveredBy": "Starmarsh and beccc on 06/06/25",
+  "runeTags": [],
+  "rune1": "Mortus",
+  "rune2": "Cinders",
+  "rune3": "Moments",
+  "rune4": "Cinders",
+  "rune5": "Kinesis",
+  "costRule": "per-level"
+}

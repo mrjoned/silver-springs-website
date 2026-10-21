@@ -1,0 +1,31 @@
+{
+  "sourceRecordId": "reckcGnWwhEOGDWMT",
+  "draft": false,
+  "name": "Thorns",
+  "source": "Vanilla",
+  "category": "Hazard",
+  "description": "Always procs consistently, and damage now scales linearly with total level (across armor pieces) rather than proc chance\n",
+  "maxLevel": 3,
+  "items": [
+    "Helmets",
+    "Chestplates",
+    "Leggings",
+    "Boots"
+  ],
+  "incompatibleRunecrafted": [
+    "Reverberating",
+    "Volatile"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "",
+  "researchers": [],
+  "discoveredDate": "",
+  "discoveredBy": "",
+  "runeTags": [],
+  "rune1": "",
+  "rune2": "",
+  "rune3": "",
+  "rune4": "",
+  "rune5": "",
+  "costRule": "free"
+}

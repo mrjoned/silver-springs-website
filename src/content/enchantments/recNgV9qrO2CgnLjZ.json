@@ -1,0 +1,35 @@
+{
+  "sourceRecordId": "recNgV9qrO2CgnLjZ",
+  "draft": false,
+  "name": "Crescendo",
+  "source": "Runecrafted",
+  "category": "Timbre",
+  "description": "Horn blows emit a sonic boom which moves forward 10 blocks, dealing 2♥️ sonic damage, vaporizing sediments and cobwebs, and breaking bamboo, flowers, and grasses.\n",
+  "maxLevel": 1,
+  "items": [
+    "Goat Horns"
+  ],
+  "incompatibleRunecrafted": [
+    "Whistle Tone"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "Maidl",
+  "researchers": [
+    "TroyTheCrafter",
+    "Starmarsh"
+  ],
+  "discoveredDate": "2025-05-24",
+  "discoveredBy": "Maidl, TroyTheCrafter, and Starmarsh on 05/24/25",
+  "runeTags": [
+    "Gusts",
+    "Echoes",
+    "Stones",
+    "Void"
+  ],
+  "rune1": "Gusts",
+  "rune2": "Echoes",
+  "rune3": "Echoes",
+  "rune4": "Stones",
+  "rune5": "Void",
+  "costRule": "per-level"
+}

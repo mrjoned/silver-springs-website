@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "rec55ZQ2Rjfx7WZzS",
+  "draft": false,
+  "name": "Abyssal",
+  "category": "Armor",
+  "description": "Per Piece: +8 Mining Efficiency\n\nSet Bonus (3+ Pieces):\n- Grants permanent Night Vision.\n- Mining no longer causes vibrations.\n- Mining ore grants Abyssal Charge which can be spent by sneak jumping while looking down to Delve or up to Sense:\n- Delve: Blink to the next lowest area. Costs 1-25 Charge. (1 per block traveled, caps at 25)\n- Sense: Briefly reveal nearby ores. Costs 25 charge.",
+  "cost": "6 Valor Badges (Per Piece)",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 17,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}

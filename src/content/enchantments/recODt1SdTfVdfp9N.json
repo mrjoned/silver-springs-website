@@ -1,0 +1,31 @@
+{
+  "sourceRecordId": "recODt1SdTfVdfp9N",
+  "draft": false,
+  "name": "Aphelion of Neptune",
+  "source": "Runecrafted",
+  "category": "Aphelion",
+  "description": "**Eclipses** the Grasshopper. It instead can be continuously charged, during which it creates an _icy jet stream_ in your target direction, freezing and pushing yourself along with any enemies and projectiles within.\n- **Eclipse: **The behavior of the eclipsed object is replaced while wearing this Aphelion.\n",
+  "maxLevel": 1,
+  "items": [
+    "Boots"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [],
+  "discoverer": "ggDrPepper",
+  "researchers": [
+    "Frostearrific"
+  ],
+  "discoveredDate": "2025-05-21",
+  "discoveredBy": "ggDrPepper and Frostearrific on 05/21/25",
+  "runeTags": [
+    "Chills",
+    "Gusts",
+    "Kinesis"
+  ],
+  "rune1": "Gusts",
+  "rune2": "Kinesis",
+  "rune3": "Chills",
+  "rune4": "Chills",
+  "rune5": "Chills",
+  "costRule": "per-level"
+}

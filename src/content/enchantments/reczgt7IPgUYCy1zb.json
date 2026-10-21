@@ -1,0 +1,32 @@
+{
+  "sourceRecordId": "reczgt7IPgUYCy1zb",
+  "draft": false,
+  "name": "Exploit",
+  "source": "Runecrafted",
+  "category": "Damage",
+  "description": "After attacking, if you lose no health while recharging, your next attack deals +2-4 hearts of armor-piercing damage and briefly slows the target.\n",
+  "maxLevel": 3,
+  "items": [
+    "Axes"
+  ],
+  "incompatibleRunecrafted": [
+    "Extinction",
+    "Momentum"
+  ],
+  "incompatibleVanilla": [
+    "Sharpness",
+    "Bane of Arthropods",
+    "Smite"
+  ],
+  "discoverer": "Starmarsh",
+  "researchers": [],
+  "discoveredDate": "2023-09-03",
+  "discoveredBy": "Starmarsh on 9/3/23, 1:27 PM",
+  "runeTags": [],
+  "rune1": "Mortus",
+  "rune2": "Moments",
+  "rune3": "Aegis",
+  "rune4": "Void",
+  "rune5": "Chills",
+  "costRule": "per-level"
+}

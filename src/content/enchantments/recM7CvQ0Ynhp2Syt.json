@@ -1,0 +1,27 @@
+{
+  "sourceRecordId": "recM7CvQ0Ynhp2Syt",
+  "draft": false,
+  "name": "Paradigm of Acedia",
+  "source": "Runecrafted",
+  "category": "Paradigm",
+  "description": "Your tames’ and summons’ attacks benefit from combat enchantments on your held melee weapon, but your attacks no longer do.\n",
+  "maxLevel": 1,
+  "items": [
+    "Helmets"
+  ],
+  "incompatibleRunecrafted": [
+    "Other Paradigms"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "ChiknThighs",
+  "researchers": [],
+  "discoveredDate": "2023-08-31",
+  "discoveredBy": "ChiknThighs on 8/31/23 3:45 AM ",
+  "runeTags": [],
+  "rune1": "Arcanum",
+  "rune2": "Void",
+  "rune3": "Arcanum",
+  "rune4": "Vitality",
+  "rune5": "Mortus",
+  "costRule": "per-level"
+}

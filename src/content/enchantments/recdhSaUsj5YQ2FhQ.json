@@ -1,0 +1,32 @@
+{
+  "sourceRecordId": "recdhSaUsj5YQ2FhQ",
+  "draft": false,
+  "name": "Skip",
+  "source": "Runecrafted",
+  "category": "Dash",
+  "description": "While charging, you can jump across liquids, briefly turning them to cobblestone as you land.\n",
+  "maxLevel": 1,
+  "items": [
+    "Spears"
+  ],
+  "incompatibleRunecrafted": [
+    "Vault",
+    "Man-Eater"
+  ],
+  "incompatibleVanilla": [
+    "Lunge"
+  ],
+  "discoverer": "TheJ_Team",
+  "researchers": [
+    "ElectricSparx"
+  ],
+  "discoveredDate": "2026-03-08",
+  "discoveredBy": "",
+  "runeTags": [],
+  "rune1": "Kinesis",
+  "rune2": "Tides",
+  "rune3": "Cinders",
+  "rune4": "Stones",
+  "rune5": "Moments",
+  "costRule": "per-level"
+}

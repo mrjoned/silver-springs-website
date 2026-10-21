@@ -1,0 +1,25 @@
+{
+  "sourceRecordId": "recbdVS25Ll2Wi6So",
+  "draft": false,
+  "name": "Curse of Asphyxiation",
+  "source": "Curse",
+  "category": "Curse",
+  "description": "While worn, you drown twice as fast.\n",
+  "maxLevel": 1,
+  "items": [
+    "Helmets"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [],
+  "discoverer": "",
+  "researchers": [],
+  "discoveredDate": "",
+  "discoveredBy": "",
+  "runeTags": [],
+  "rune1": "",
+  "rune2": "",
+  "rune3": "",
+  "rune4": "",
+  "rune5": "",
+  "costRule": "free"
+}

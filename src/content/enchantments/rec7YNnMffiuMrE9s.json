@@ -1,0 +1,29 @@
+{
+  "sourceRecordId": "rec7YNnMffiuMrE9s",
+  "draft": false,
+  "name": "Eldritch Inclination",
+  "source": "Runecrafted",
+  "category": "Affinity",
+  "description": "When the Void damages you, it spits you back upwards and grants you 5 minutes of stacking Luck. You can anger Wardens one additional time before they unburrow.\n",
+  "maxLevel": 1,
+  "items": [
+    "Helmets"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [
+    "Aqua Affinity"
+  ],
+  "discoverer": "Shotdown01",
+  "researchers": [],
+  "discoveredDate": "2023-09-02",
+  "discoveredBy": "Shotdown01 on 9/2/23, 4:41 PM",
+  "runeTags": [
+    "Void"
+  ],
+  "rune1": "Void",
+  "rune2": "Kinesis",
+  "rune3": "Gusts",
+  "rune4": "Opulence",
+  "rune5": "Moments",
+  "costRule": "per-level"
+}

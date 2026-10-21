@@ -1,0 +1,38 @@
+{
+  "sourceRecordId": "reciES6dYDQjJXnzb",
+  "draft": false,
+  "name": "Coyote Time",
+  "source": "Runecrafted",
+  "category": "Traversal",
+  "description": "While sprinting, you can run over open air for 1 second before falling.\n",
+  "maxLevel": 1,
+  "items": [
+    "Boots"
+  ],
+  "incompatibleRunecrafted": [
+    "No Clip"
+  ],
+  "incompatibleVanilla": [
+    "Soul Speed"
+  ],
+  "discoverer": "TheJ_Team",
+  "researchers": [
+    "Maidl",
+    "beccc",
+    "skelud"
+  ],
+  "discoveredDate": "2025-05-27",
+  "discoveredBy": "TheJ_Team, Maidl, beccc, and skelud on 05/27/25",
+  "runeTags": [
+    "Gusts",
+    "Stones",
+    "Void",
+    "Moments"
+  ],
+  "rune1": "Gusts",
+  "rune2": "Stones",
+  "rune3": "Gusts",
+  "rune4": "Void",
+  "rune5": "Moments",
+  "costRule": "per-level"
+}

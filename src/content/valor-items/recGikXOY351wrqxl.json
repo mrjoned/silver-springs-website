@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recGikXOY351wrqxl",
+  "draft": false,
+  "name": "Pumpkin Mask",
+  "category": "Additional Charms",
+  "description": "Prevents Endermen from targeting you when looking at them. Reduces mob detection range by 20%.",
+  "cost": "",
+  "skillRequirements": "N/A",
+  "acquisition": "Spooky Springs Halloween Event prize",
+  "order": 60,
+  "relatedEnchantments": [],
+  "shop": "reference"
+}

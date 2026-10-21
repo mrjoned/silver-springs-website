@@ -1,0 +1,34 @@
+{
+  "sourceRecordId": "recLPSBlyEMjGw99b",
+  "draft": false,
+  "name": "Cavitation",
+  "source": "Runecrafted",
+  "category": "Control",
+  "description": "Collisions form a pressure bubble which collapses after 1 second, pulling in enemies within 5 blocks, briefly stunning and dealing 2.5 ❤ suffocation damage.\n",
+  "maxLevel": 1,
+  "items": [
+    "Tridents"
+  ],
+  "incompatibleRunecrafted": [
+    "Undertow",
+    "Beheld"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "Starmarsh",
+  "researchers": [],
+  "discoveredDate": "2023-09-09",
+  "discoveredBy": "Starmarsh on 9/9/23 7:21 PM",
+  "runeTags": [
+    "Tides",
+    "Moments",
+    "Void",
+    "Kinesis",
+    "Sparks"
+  ],
+  "rune1": "Tides",
+  "rune2": "Moments",
+  "rune3": "Void",
+  "rune4": "Kinesis",
+  "rune5": "Sparks",
+  "costRule": "per-level"
+}

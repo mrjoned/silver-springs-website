@@ -1,0 +1,32 @@
+{
+  "sourceRecordId": "rec16wgA19yPcOWM3",
+  "draft": false,
+  "name": "Tempo",
+  "source": "Runecrafted",
+  "category": "Damage",
+  "description": "Charged attacks against full health entities or within 0.3 seconds of recharging deal +1-2 hearts of damage and recharge 10% faster. \n",
+  "maxLevel": 3,
+  "items": [
+    "Swords"
+  ],
+  "incompatibleRunecrafted": [
+    "Extinction",
+    "Sweet Spot"
+  ],
+  "incompatibleVanilla": [
+    "Sharpness",
+    "Bane of Arthropods",
+    "Smite"
+  ],
+  "discoverer": "Maidl",
+  "researchers": [],
+  "discoveredDate": "2023-08-23",
+  "discoveredBy": "Maidl on 8/23/23 1:35 AM",
+  "runeTags": [],
+  "rune1": "Moments",
+  "rune2": "Mortus",
+  "rune3": "Moments",
+  "rune4": "Mortus",
+  "rune5": "Moments",
+  "costRule": "per-level"
+}

@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recYXpvZxbzSaejxn",
+  "draft": false,
+  "name": "Infinite Bucket",
+  "category": "Artifact",
+  "description": "An infinite water bucket.",
+  "cost": "1 Water Bucket + 3 Twinkling Sea Crystals",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 46,
+  "relatedEnchantments": [],
+  "shop": "material"
+}

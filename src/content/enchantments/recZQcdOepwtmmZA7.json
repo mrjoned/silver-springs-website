@@ -1,0 +1,30 @@
+{
+  "sourceRecordId": "recZQcdOepwtmmZA7",
+  "draft": false,
+  "name": "Man-Eater",
+  "source": "Mythical",
+  "category": "Dash",
+  "description": "Charges forcibly dash to Charybdis, briefly liquefying terrain. Jabs near the whirlpool pull in enemies and execute at 10% HP, sating 1 hunger.\n",
+  "maxLevel": null,
+  "items": [
+    "Spears"
+  ],
+  "incompatibleRunecrafted": [
+    "Vault",
+    "Skip"
+  ],
+  "incompatibleVanilla": [
+    "Lunge"
+  ],
+  "discoverer": "",
+  "researchers": [],
+  "discoveredDate": "2026-03-07",
+  "discoveredBy": "",
+  "runeTags": [],
+  "rune1": "",
+  "rune2": "",
+  "rune3": "",
+  "rune4": "",
+  "rune5": "",
+  "costRule": "free"
+}

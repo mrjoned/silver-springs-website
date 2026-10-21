@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recRp2zEIBzfpEYVr",
+  "draft": false,
+  "name": "Mob Scarecrow",
+  "category": "Artifact",
+  "description": "Creates a scarecrow which denies spawns in a 20 meter radius. Feeding more Withered Hearts increases this radius by 10, up to a maximum of 50 meters.\n\nNote: Some Withered Hearts may be lost when breaking a placed scarecrow.",
+  "cost": "1 Armor Stand + 1 Withered Heart",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 47,
+  "relatedEnchantments": [],
+  "shop": "material"
+}

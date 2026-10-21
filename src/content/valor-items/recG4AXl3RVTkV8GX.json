@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recG4AXl3RVTkV8GX",
+  "draft": false,
+  "name": "Elytra Mode",
+  "category": "Service",
+  "description": "Grants you Elytra Mode for 30 minutes.",
+  "cost": "1 Valor Badge",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 42,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}

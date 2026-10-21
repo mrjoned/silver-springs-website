@@ -1,0 +1,28 @@
+{
+  "sourceRecordId": "recqHtEmL9H2vMKBR",
+  "draft": false,
+  "name": "Mitosis",
+  "source": "Runecrafted",
+  "category": "Cutting",
+  "description": "Adult entities with baby forms can be sheared to split them into two babies.\n",
+  "maxLevel": 1,
+  "items": [
+    "Shears"
+  ],
+  "incompatibleRunecrafted": [
+    "Tithing",
+    "Wire Cutters"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "Starmarsh",
+  "researchers": [],
+  "discoveredDate": "2023-08-20",
+  "discoveredBy": "Starmarsh on 8/20/23, 7:10 AM",
+  "runeTags": [],
+  "rune1": "Vitality",
+  "rune2": "Arcanum",
+  "rune3": "Arcanum",
+  "rune4": "Vitality",
+  "rune5": "Vitality",
+  "costRule": "per-level"
+}

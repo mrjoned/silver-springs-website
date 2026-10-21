@@ -1,0 +1,32 @@
+{
+  "sourceRecordId": "recQbMACoLLG0rFVx",
+  "draft": false,
+  "name": "Chaining",
+  "source": "Runecrafted",
+  "category": "Splashing",
+  "description": "Impacts chain up to 3 times, auto-throwing at the nearest unchained enemy within 12 blocks for 35-75% of the original impact’s damage. \n",
+  "maxLevel": 3,
+  "items": [
+    "Tridents"
+  ],
+  "incompatibleRunecrafted": [
+    "Skewering",
+    "Dreadnought"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "TroyTheCrafter",
+  "researchers": [],
+  "discoveredDate": "2023-09-07",
+  "discoveredBy": "TroyTheCrafter on 9/7/23 11:21 PM",
+  "runeTags": [
+    "Tides",
+    "Mortus",
+    "Arcanum"
+  ],
+  "rune1": "Tides",
+  "rune2": "Mortus",
+  "rune3": "Arcanum",
+  "rune4": "Tides",
+  "rune5": "Mortus",
+  "costRule": "per-level"
+}

@@ -1,125 +1,440 @@
 media:
   input: public/assets/uploads
   output: /assets/uploads
-  extensions: [jpg, jpeg, png, webp, gif]
+  extensions:
+  - jpg
+  - jpeg
+  - png
+  - webp
+  - gif
   rename: safe
-
 content:
-  - name: announcements
-    label: Announcements
-    type: collection
-    path: src/content/announcements
-    format: json
-    filename:
-      template: "{primary}.json"
-      field: create
-    subfolders: false
-    operations:
-      rename: false
-    view:
-      primary: title
-      fields: [title, date, draft]
-      sort: [date, title]
-      search: [title, excerpt, body]
-      default:
-        sort: date
-        order: desc
+- name: announcements
+  label: Announcements
+  type: collection
+  path: src/content/announcements
+  format: json
+  filename:
+    template: '{primary}.json'
+    field: create
+  subfolders: false
+  operations:
+    rename: false
+  view:
+    primary: title
     fields:
-      - name: title
-        label: Title
-        type: string
-        required: true
-      - name: date
-        label: Publication date
-        type: date
-        required: true
-        options:
-          time: true
-          format: "yyyy-MM-dd'T'HH:mm:ss.SSSSSSxxx"
-      - name: draft
-        label: Draft (hide from website)
-        type: boolean
-        default: true
-      - name: author
-        label: Author
-        type: string
-        default: Jonathan Hill
-      - name: topics
-        label: Topics
-        type: select
-        options:
-          multiple: true
-          values:
-            - name: gameplay
-              label: Gameplay
-            - name: runecrafting
-              label: Runecrafting
-            - name: valor-shop
-              label: Valor Shop
-            - name: event
-              label: Events
-            - name: build-contest
-              label: Build Contests
-            - name: weekend-rush
-              label: Rush Weekends
-            - name: faq
-              label: FAQ
-            - name: miscellaneous
-              label: Miscellaneous
-      - name: excerpt
-        label: Summary
-        type: text
-        description: Optional short summary for announcement cards. Leave blank to use the opening text.
-      - name: body
-        label: Announcement
-        type: rich-text
-        required: true
-        options:
-          format: html
-          switcher: true
-
-  - name: photos
-    label: Gallery
-    type: collection
-    path: src/content/photos
-    format: json
-    filename:
-      template: "{year}{month}{day}-{hour}{minute}{second}-{primary}.json"
-      field: create
-    subfolders: false
-    view:
-      primary: title
-      fields: [title, image, date, draft]
-      sort: [date, title, order]
-      default:
-        sort: date
-        order: desc
+    - title
+    - date
+    - draft
+    sort:
+    - date
+    - title
+    search:
+    - title
+    - excerpt
+    - body
+    default:
+      sort: date
+      order: desc
+  fields:
+  - name: title
+    label: Title
+    type: string
+    required: true
+  - name: date
+    label: Publication date
+    type: date
+    required: true
+    options:
+      time: true
+      format: yyyy-MM-dd'T'HH:mm:ss.SSSSSSxxx
+  - name: draft
+    label: Draft (hide from website)
+    type: boolean
+    default: true
+  - name: author
+    label: Author
+    type: string
+    default: Jonathan Hill
+  - name: topics
+    label: Topics
+    type: select
+    options:
+      multiple: true
+      values:
+      - name: gameplay
+        label: Gameplay
+      - name: runecrafting
+        label: Runecrafting
+      - name: valor-shop
+        label: Valor Shop
+      - name: event
+        label: Events
+      - name: build-contest
+        label: Build Contests
+      - name: weekend-rush
+        label: Rush Weekends
+      - name: faq
+        label: FAQ
+      - name: miscellaneous
+        label: Miscellaneous
+  - name: excerpt
+    label: Summary
+    type: text
+    description: Optional short summary for announcement cards. Leave blank to use the opening text.
+  - name: body
+    label: Announcement
+    type: rich-text
+    required: true
+    options:
+      format: html
+      switcher: true
+- name: photos
+  label: Gallery
+  type: collection
+  path: src/content/photos
+  format: json
+  filename:
+    template: '{year}{month}{day}-{hour}{minute}{second}-{primary}.json'
+    field: create
+  subfolders: false
+  view:
+    primary: title
     fields:
-      - name: title
-        label: Caption
-        type: string
-        required: true
-      - name: image
-        label: Photo
-        type: image
-        required: true
-      - name: alt
-        label: Image description
-        type: string
-        required: true
-        description: Briefly describe what is pictured for visitors using screen readers.
-      - name: date
-        label: Photo date
-        type: date
-        default: ""
-        options:
-          format: yyyy-MM-dd
-      - name: order
-        label: Display order
-        type: number
-        default: 0
-        description: Lower numbers appear first. Leave 0 to place a new photo before the imported collection.
-      - name: draft
-        label: Draft (hide from website)
-        type: boolean
-        default: true
+    - title
+    - image
+    - date
+    - draft
+    sort:
+    - date
+    - title
+    - order
+    default:
+      sort: date
+      order: desc
+  fields:
+  - name: title
+    label: Caption
+    type: string
+    required: true
+  - name: image
+    label: Photo
+    type: image
+    required: true
+  - name: alt
+    label: Image description
+    type: string
+    required: true
+    description: Briefly describe what is pictured for visitors using screen readers.
+  - name: date
+    label: Photo date
+    type: date
+    default: ''
+    options:
+      format: yyyy-MM-dd
+  - name: order
+    label: Display order
+    type: number
+    default: 0
+    description: Lower numbers appear first. Leave 0 to place a new photo before the imported collection.
+  - name: draft
+    label: Draft (hide from website)
+    type: boolean
+    default: true
+- name: enchantments
+  label: Runecrafting
+  type: collection
+  path: src/content/enchantments
+  format: json
+  filename:
+    template: '{year}{month}{day}-{hour}{minute}{second}-{primary}.json'
+    field: create
+  subfolders: false
+  operations:
+    rename: false
+  view:
+    primary: name
+    fields:
+    - name
+    - source
+    - category
+    - draft
+    search:
+    - name
+    - description
+    default:
+      sort: name
+      order: asc
+  fields:
+  - name: name
+    label: Enchantment name
+    type: string
+    required: true
+  - name: draft
+    label: Draft (hide from website and tools)
+    type: boolean
+    default: true
+  - name: source
+    label: Source
+    type: select
+    options:
+      values:
+      - Runecrafted
+      - Mythical
+      - Vanilla
+      - Curse
+      - Projects
+    required: true
+    description: Source controls rune costs. Runecrafted and Projects use recipes; Vanilla, Curse, and Mythical
+      have no rune cost.
+  - name: category
+    label: Category
+    type: string
+    required: true
+  - name: costRule
+    label: Rune cost calculation
+    type: select
+    required: true
+    default: per-level
+    options:
+      values:
+      - name: per-level
+        label: Recipe × selected level
+      - name: once
+        label: One recipe for a fixed upgrade
+      - name: free
+        label: No rune cost
+    description: Use one recipe for fixed Vanilla upgrades such as Unbreaking IV. Vanilla, Curse, and Mythical must
+      use No rune cost.
+  - name: description
+    label: Effect / description
+    type: text
+    required: true
+  - name: maxLevel
+    label: Maximum level
+    type: number
+    description: 1–10. Leave blank for an unlevelled Mythical effect.
+  - name: items
+    label: Compatible equipment
+    type: select
+    options:
+      values:
+      - Axes
+      - Boots
+      - Bows
+      - Chestplates
+      - Crossbows
+      - Elytra
+      - Fishing Rods
+      - Flint and Steel
+      - Goat Horns
+      - Helmets
+      - Hoes
+      - Leggings
+      - Maces
+      - Pickaxes
+      - Shears
+      - Shields
+      - Shovels
+      - Spears
+      - Spyglass
+      - Swords
+      - Tridents
+      multiple: true
+    required: true
+    default: []
+  - name: rune1
+    label: Recipe rune 1
+    type: select
+    options:
+      values: &id001
+      - Aegis
+      - Arcanum
+      - Chills
+      - Cinders
+      - Echoes
+      - Gusts
+      - Kinesis
+      - Moments
+      - Mortus
+      - Opulence
+      - Sparks
+      - Stones
+      - Tides
+      - Vitality
+      - Void
+    description: Recipe order is preserved. Repeated runes count separately. All five are required for Runecrafted
+      and Projects.
+    default: ''
+  - name: rune2
+    label: Recipe rune 2
+    type: select
+    options:
+      values: *id001
+    description: Recipe order is preserved. Repeated runes count separately. All five are required for Runecrafted
+      and Projects.
+    default: ''
+  - name: rune3
+    label: Recipe rune 3
+    type: select
+    options:
+      values: *id001
+    description: Recipe order is preserved. Repeated runes count separately. All five are required for Runecrafted
+      and Projects.
+    default: ''
+  - name: rune4
+    label: Recipe rune 4
+    type: select
+    options:
+      values: *id001
+    description: Recipe order is preserved. Repeated runes count separately. All five are required for Runecrafted
+      and Projects.
+    default: ''
+  - name: rune5
+    label: Recipe rune 5
+    type: select
+    options:
+      values: *id001
+    description: Recipe order is preserved. Repeated runes count separately. All five are required for Runecrafted
+      and Projects.
+    default: ''
+  - name: incompatibleRunecrafted
+    label: Incompatible Runecrafted enchantments / groups
+    type: string
+    list: true
+    default: []
+  - name: incompatibleVanilla
+    label: Incompatible Vanilla enchantments
+    type: string
+    list: true
+    default: []
+  - name: discoverer
+    label: Discoverer
+    type: string
+  - name: researchers
+    label: Researchers
+    type: string
+    list: true
+    default: []
+  - name: discoveredDate
+    label: Discovered date
+    type: date
+    options:
+      format: yyyy-MM-dd
+  - name: discoveredBy
+    label: Original discovery credit
+    type: text
+  - name: runeTags
+    label: Rune tags (reference metadata)
+    type: select
+    options:
+      values: *id001
+      multiple: true
+    default: []
+    description: Original Airtable tags. Recipes and totals use the five recipe slots above.
+  - name: sourceRecordId
+    label: Original Airtable record ID
+    type: string
+    readonly: true
+    hidden: true
+- name: valor_items
+  label: Valor Shop
+  type: collection
+  path: src/content/valor-items
+  format: json
+  filename:
+    template: '{year}{month}{day}-{hour}{minute}{second}-{primary}.json'
+    field: create
+  subfolders: false
+  operations:
+    rename: false
+  view:
+    primary: name
+    fields:
+    - name
+    - category
+    - cost
+    - draft
+    search:
+    - name
+    - description
+    default:
+      sort: name
+      order: asc
+  fields:
+  - name: name
+    label: Item name
+    type: string
+    required: true
+  - name: draft
+    label: Draft (hide from website and cart)
+    type: boolean
+    default: true
+  - name: category
+    label: Category
+    type: select
+    options:
+      values:
+      - Additional Charms
+      - Armor
+      - Artifact
+      - Charm
+      - Relic
+      - Service
+    required: true
+  - name: shop
+    label: Merchant / availability
+    type: select
+    options:
+      values:
+      - name: badge
+        label: Valor Shop — Valor Badges
+      - name: material
+        label: Artifact Trader — materials
+      - name: trial
+        label: Trial Shop — Trial Points
+      - name: boardwalk
+        label: Boardwalk — Tickets
+      - name: village
+        label: Village Vendors — Silver
+      - name: reference
+        label: Reference only — cannot add to cart
+    required: true
+    default: reference
+    description: Additional Charms must remain reference-only. Merchant selection controls cart grouping.
+  - name: cost
+    label: Price / conversion requirement
+    type: string
+    description: Use a number then a currency or material, e.g. 5 Valor Badges or 1 Stick + 1 Dragon's Breath. Armor
+      may end with (Per Piece). Reference-only costs never enter totals.
+  - name: description
+    label: Description / effect
+    type: text
+    required: true
+  - name: skillRequirements
+    label: Skill requirements
+    type: string
+    default: N/A
+  - name: acquisition
+    label: How to obtain
+    type: text
+  - name: order
+    label: Display order
+    type: number
+    default: 0
+  - name: relatedEnchantments
+    label: Related enchantments
+    type: reference
+    options:
+      collection: enchantments
+      multiple: true
+      search: name
+      value: '{path}'
+      label: '{primary}'
+    description: Optional links to Runecrafting entries. Publish linked enchantments before publishing this item.
+    default: []
+  - name: sourceRecordId
+    label: Original Airtable record ID
+    type: string
+    readonly: true
+    hidden: true

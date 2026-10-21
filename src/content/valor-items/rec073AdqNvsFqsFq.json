@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "rec073AdqNvsFqsFq",
+  "draft": false,
+  "name": "Sanguine Phial",
+  "category": "Additional Charms",
+  "description": "Grants stacks from kills in combat. Upon exiting combat, converts stacks to healing (0.1❤️ per stack). With 50+ stacks, also grants a random reward.",
+  "cost": "",
+  "skillRequirements": "N/A",
+  "acquisition": "Rarely awarded after extended combat",
+  "order": 56,
+  "relatedEnchantments": [],
+  "shop": "reference"
+}

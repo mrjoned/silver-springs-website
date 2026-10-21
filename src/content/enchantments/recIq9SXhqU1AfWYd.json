@@ -1,0 +1,28 @@
+{
+  "sourceRecordId": "recIq9SXhqU1AfWYd",
+  "draft": false,
+  "name": "Wrapping",
+  "source": "Runecrafted",
+  "category": "Safety",
+  "description": "While gliding, taking Void damage wraps you around the world height limit.\n",
+  "maxLevel": 1,
+  "items": [
+    "Elytra"
+  ],
+  "incompatibleRunecrafted": [
+    "Airbag",
+    "Crash Landicoot"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "TheJ_Team",
+  "researchers": [],
+  "discoveredDate": "2023-09-04",
+  "discoveredBy": "TheJ_Team on 9/4/23, 11:47 AM",
+  "runeTags": [],
+  "rune1": "Gusts",
+  "rune2": "Void",
+  "rune3": "Mortus",
+  "rune4": "Arcanum",
+  "rune5": "Gusts",
+  "costRule": "per-level"
+}

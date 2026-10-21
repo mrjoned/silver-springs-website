@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "rec7H0T4L3kt64SiM",
+  "draft": false,
+  "name": "Orbweaver",
+  "category": "Relic",
+  "description": "Right click to launch a web which attaches to struck blocks or entities. Striking an entity pulls it towards you, while striking a block pulls you towards it.\n*1 second cooldown*",
+  "cost": "12 Valor Badges",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 7,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}

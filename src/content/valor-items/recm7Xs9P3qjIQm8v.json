@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recm7Xs9P3qjIQm8v",
+  "draft": false,
+  "name": "Silence Tonic",
+  "category": "Artifact",
+  "description": "Use on an entity to silence them. Has 2 charges.",
+  "cost": "1 Water Bottle + 1 Rune of Echoes",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 50,
+  "relatedEnchantments": [],
+  "shop": "material"
+}

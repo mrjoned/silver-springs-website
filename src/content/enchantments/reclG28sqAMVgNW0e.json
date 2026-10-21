@@ -1,0 +1,34 @@
+{
+  "sourceRecordId": "reclG28sqAMVgNW0e",
+  "draft": false,
+  "name": "Plague Aspect",
+  "source": "Runecrafted",
+  "category": "Aspect",
+  "description": "Attacks **Plague**_ _enemies for 4-8 seconds. Plagued enemies have Wither I and on death will spread Plague stacks to the 1-3 closest enemies after a short delay.\n",
+  "maxLevel": 3,
+  "items": [
+    "Maces",
+    "Swords",
+    "Axes",
+    "Spears"
+  ],
+  "incompatibleRunecrafted": [
+    "Ice Aspect",
+    "Purity Aspect",
+    "Fire Aspect III"
+  ],
+  "incompatibleVanilla": [
+    "Fire Aspect"
+  ],
+  "discoverer": "Maidl",
+  "researchers": [],
+  "discoveredDate": "2017-01-03",
+  "discoveredBy": "Maidl on 1/3/17 4:23 PM",
+  "runeTags": [],
+  "rune1": "Mortus",
+  "rune2": "Echoes",
+  "rune3": "Mortus",
+  "rune4": "Tides",
+  "rune5": "Mortus",
+  "costRule": "per-level"
+}

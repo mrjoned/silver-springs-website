@@ -1,0 +1,30 @@
+{
+  "sourceRecordId": "recCpjDiLQAeBTg3O",
+  "draft": false,
+  "name": "Headstart",
+  "source": "Runecrafted",
+  "category": "Protection",
+  "description": "While above 75% health, you take -50% damage and gain a burst of speed when taking damage.\n",
+  "maxLevel": 1,
+  "items": [
+    "Boots"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [
+    "Protection",
+    "Blast Protection",
+    "Fire Protection",
+    "Projectile Protection"
+  ],
+  "discoverer": "Starmarsh",
+  "researchers": [],
+  "discoveredDate": "2023-09-07",
+  "discoveredBy": "Starmarsh on 9/7/23 11:30 PM ",
+  "runeTags": [],
+  "rune1": "Vitality",
+  "rune2": "Vitality",
+  "rune3": "Aegis",
+  "rune4": "Mortus",
+  "rune5": "Gusts",
+  "costRule": "per-level"
+}

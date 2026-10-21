@@ -1,0 +1,27 @@
+{
+  "sourceRecordId": "recZDhhIuAedqWrcV",
+  "draft": false,
+  "name": "Impetus of Hephaestus",
+  "source": "Runecrafted",
+  "category": "Impetus",
+  "description": "You can **hand-forge** _artisan weapons_ using up to 2 materials and 1 gem. They're unenchantable and low durability, but deal high damage, apply bonus effects per-component, and 🔨**_strike the iron_**_ _every 10th hit, amplifying effects in +2 radius:\n- Gem: Stacks the gem's stat upon 🔨**_striking the iron_**.\n- Wood: Attacks 20% faster or 🔨**50% faster for 5 seconds.**\n- Stone: Attacks stun briefly or 🔨**for 2 seconds.**\n- Gold: Kills drop +3x of 🔨**+5x **loot.\n- Iron: Chains 2❤️ volcanic lightning or **🔨an 8❤️ eruption.**\n- Diamond: 🔨**Striking the iron **stacks forged gems stats twice.\n- Netherite: 3x durability. Can forge with 3 materials/gems.\n\n- **Hand-forge: **Right-click a weapon material onto a stick in your inventory to forge a sword, or shift-right-click to forge an axe. Further materials and gems can be right-clicked onto an artisan weapon to forge them in. Forged gems are dropped when the weapon breaks.\n",
+  "maxLevel": 1,
+  "items": [
+    "Leggings"
+  ],
+  "incompatibleRunecrafted": [
+    "Other Impetuses"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "TheJ_Team",
+  "researchers": [],
+  "discoveredDate": "2025-05-28",
+  "discoveredBy": "TheJ_Team on 05/28/25",
+  "runeTags": [],
+  "rune1": "Stones",
+  "rune2": "Cinders",
+  "rune3": "Sparks",
+  "rune4": "Opulence",
+  "rune5": "Kinesis",
+  "costRule": "per-level"
+}

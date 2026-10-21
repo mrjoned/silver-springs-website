@@ -1,0 +1,32 @@
+{
+  "sourceRecordId": "reccIOK8L6Fwaa8Xh",
+  "draft": false,
+  "name": "Avatar of Phantoms",
+  "source": "Runecrafted",
+  "category": "Avatar",
+  "description": "Every night you haven’t slept adds a Phantom to your Phantom Horde, up to 10.\nWhile gliding, colliding with an enemy deals 2-7 hearts of damage. When gliding at night, you summon your Phantom Horde, who fly with you and attack nearby enemies for the same damage.\n",
+  "maxLevel": 1,
+  "items": [
+    "Elytra"
+  ],
+  "incompatibleRunecrafted": [
+    "Other Avatars"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "Starmarsh",
+  "researchers": [],
+  "discoveredDate": "2023-08-30",
+  "discoveredBy": "Starmarsh on 8/30/23 11:28 PM",
+  "runeTags": [
+    "Vitality",
+    "Void",
+    "Gusts",
+    "Mortus"
+  ],
+  "rune1": "Vitality",
+  "rune2": "Void",
+  "rune3": "Gusts",
+  "rune4": "Mortus",
+  "rune5": "Gusts",
+  "costRule": "per-level"
+}

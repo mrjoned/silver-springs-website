@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recR1P6cI55dQMguc",
+  "draft": false,
+  "name": "I.N.D.I.G.O.",
+  "category": "Armor",
+  "description": "Per Piece: +25% Aerial Mobility, +2 Safe Fall Distance\n\nSet Bonus (3+ Pieces):\nSneaking while looking directly up or down adjusts your gravity between 2x or -0.1x. Gravity resets to 1x when you deal combat damage, exceed the world height limit, or begin gliding.",
+  "cost": "6 Valor Badges (Per Piece)",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 19,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}

@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recYS2dqsRUFk72Bk",
+  "draft": false,
+  "name": "Metal Detector",
+  "category": "Charm",
+  "description": "Junk items brushed out of suspicious sediments are replaced with scrap.",
+  "cost": "250 Crypt Trial Points",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 32,
+  "relatedEnchantments": [],
+  "shop": "trial"
+}

@@ -1,0 +1,32 @@
+{
+  "sourceRecordId": "recsvQ6aLRiqLacrI",
+  "draft": false,
+  "name": "Aphelion of Pluto",
+  "source": "Runecrafted",
+  "category": "Aphelion",
+  "description": "**Eclipses** Cerberus. It instead starts as the sword **Charon**, which charges over 9 attacks, then transforms into **Pluto**, a loaded crossbow with the mythical spread enchantment **Cryovolcano**🌟. _Pluto_ fires once, then reforms into Charon. \n- **Charon**: 4.5 Attack Damage, 2 Attack Speed \n- **Cryovolcano**: Shots fire a 9-block long and 4.5-block wide cylinder for 9 damage, applying 9 seconds of freezing and burning.\n- **Eclipse: **The behavior of the eclipsed object is replaced while wearing this Aphelion.\n",
+  "maxLevel": 1,
+  "items": [
+    "Boots"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [],
+  "discoverer": "TheJ_Team",
+  "researchers": [
+    "Autumn_Bun"
+  ],
+  "discoveredDate": "2025-06-04",
+  "discoveredBy": "TheJ_Team and Autumn_Bun on 06/04/25",
+  "runeTags": [
+    "Chills",
+    "Cinders",
+    "Gusts",
+    "Mortus"
+  ],
+  "rune1": "Mortus",
+  "rune2": "Chills",
+  "rune3": "Cinders",
+  "rune4": "Gusts",
+  "rune5": "Mortus",
+  "costRule": "per-level"
+}

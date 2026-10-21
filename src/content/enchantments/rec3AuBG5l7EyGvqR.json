@@ -1,0 +1,34 @@
+{
+  "sourceRecordId": "rec3AuBG5l7EyGvqR",
+  "draft": false,
+  "name": "Precision",
+  "source": "Projects",
+  "category": "Damage",
+  "description": "The spear enters a power phase 1.5 seconds into its charge which lasts 1 second and deals +2-4❤️ damage.\n",
+  "maxLevel": 3,
+  "items": [
+    "Spears"
+  ],
+  "incompatibleRunecrafted": [
+    "Extinction",
+    "Flurry"
+  ],
+  "incompatibleVanilla": [
+    "Sharpness",
+    "Bane of Arthropods",
+    "Smite"
+  ],
+  "discoverer": "TheJ_Team",
+  "researchers": [
+    "ElectricSparx"
+  ],
+  "discoveredDate": "2026-03-07",
+  "discoveredBy": "",
+  "runeTags": [],
+  "rune1": "Kinesis",
+  "rune2": "Moments",
+  "rune3": "Kinesis",
+  "rune4": "Mortus",
+  "rune5": "Moments",
+  "costRule": "per-level"
+}

@@ -1,0 +1,33 @@
+{
+  "sourceRecordId": "rec3zt7wEQzsNIZNy",
+  "draft": false,
+  "name": "Chainsaw",
+  "source": "Runecrafted",
+  "category": "Sweeping",
+  "description": "Each attack _revs the chainsaw_, up to 4 times, after which you _berserk_ for 2 seconds, over which you shred enemies in front of or around you for 12❤️ while gaining 40% speed and melee damage immunity.\n",
+  "maxLevel": 1,
+  "items": [
+    "Axes"
+  ],
+  "incompatibleRunecrafted": [
+    "Howling",
+    "Tempest"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "TroyTheCrafter",
+  "researchers": [],
+  "discoveredDate": "2025-05-19",
+  "discoveredBy": "TroyTheCrafter on 05/19/25",
+  "runeTags": [
+    "Mortus",
+    "Echoes",
+    "Aegis",
+    "Moments"
+  ],
+  "rune1": "Mortus",
+  "rune2": "Echoes",
+  "rune3": "Aegis",
+  "rune4": "Mortus",
+  "rune5": "Moments",
+  "costRule": "per-level"
+}

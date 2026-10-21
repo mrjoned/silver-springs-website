@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recrmF1UAN9ASTPyi",
+  "draft": false,
+  "name": "Tip Jar",
+  "category": "Charm",
+  "description": "Animals you feed will tip you silver in return based on the food's value.",
+  "cost": "5 Valor Badges",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 37,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}

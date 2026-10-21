@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recNkQCiQmsLJc3Vg",
+  "draft": false,
+  "name": "Film Reel",
+  "category": "Additional Charms",
+  "description": "Runic Tome casts follow a specific spell sequence unique to each Reel, but with halved XP costs and spell cooldowns.\n",
+  "cost": "",
+  "skillRequirements": "N/A",
+  "acquisition": "Scrap loot",
+  "order": 54,
+  "relatedEnchantments": [],
+  "shop": "reference"
+}

@@ -1,0 +1,28 @@
+{
+  "sourceRecordId": "recPiFIPnSP0MFG9b",
+  "draft": false,
+  "name": "Snare",
+  "source": "Runecrafted",
+  "category": "Contraption",
+  "description": "Projectile hits release ropes which pull in enemies within 5 blocks and slow them by 20% for 2 seconds.\n",
+  "maxLevel": 1,
+  "items": [
+    "Crossbows"
+  ],
+  "incompatibleRunecrafted": [
+    "Flare",
+    "Smokescreen"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "Maidl",
+  "researchers": [],
+  "discoveredDate": "2023-08-21",
+  "discoveredBy": "Maidl on 8/21/23 5:17 AM",
+  "runeTags": [],
+  "rune1": "Gusts",
+  "rune2": "Sparks",
+  "rune3": "Kinesis",
+  "rune4": "Kinesis",
+  "rune5": "Chills",
+  "costRule": "per-level"
+}

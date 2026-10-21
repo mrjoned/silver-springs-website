@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recGjRFFOr5Su5H1b",
+  "draft": false,
+  "name": "Golf Club",
+  "category": "Charm",
+  "description": "Your attacks gain range, ignore some mob knockback resist, and deal double knockback to small targets.",
+  "cost": "5 Valor Badges",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 30,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}
