@@ -1,11 +1,10 @@
 {
-  "sourceRecordId": "rec91CRcYqtJsCBcU",
+  "name": "Cryovolcano🌟",
   "draft": false,
-  "name": "Cryovolcano",
   "source": "Mythical",
   "category": "Spread",
-  "description": "Shots fire a 9-block long and 4.5 block wide cylinder for 9❤️ damage, applying 9 seconds of freezing and burning.\n",
-  "maxLevel": null,
+  "costRule": "free",
+  "description": "Mythical enchantment discovered on the eclipsed form of the relic Cerberus. (Through Aphelion of Pluto)\nShots fire a 9-block long and 4.5 block wide cylinder for 9❤️ damage, applying 9 seconds of freezing and burning.",
   "items": [
     "Crossbows"
   ],
@@ -13,16 +12,6 @@
     "Gatling",
     "Tartean Hellhound"
   ],
-  "incompatibleVanilla": [],
-  "discoverer": "",
-  "researchers": [],
-  "discoveredDate": "",
-  "discoveredBy": "",
-  "runeTags": [],
-  "rune1": "",
-  "rune2": "",
-  "rune3": "",
-  "rune4": "",
-  "rune5": "",
-  "costRule": "free"
+  "discoveredDate": "2026-10-21",
+  "sourceRecordId": "rec91CRcYqtJsCBcU"
 }
