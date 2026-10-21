@@ -33,7 +33,7 @@ Do not rename catalog filenames: Pages CMS disables that operation. Change the d
 
 - Valor catalog cards, cart prices, merchant subtotals, combined requirements, and copied shopping lists.
 - Guide counts, Boardwalk/village prices, artifact exchanges, services, the Bonus Charm Slot card, and Additional Charm descriptions/acquisition details.
-- Enchantment Encyclopedia, Equipment Guide, Comparison, Rune Calculator, and Build Planner, including their embedded initial data and JSON catalog.
+- Lexicon, Equipment Guide, Comparison, Rune Calculator, and Build Planner, including their embedded initial data and JSON catalog.
 
 Authored gameplay instructions, gem rules, and server mechanics outside these two databases remain normal website content. Changing a catalog does not change in-game prices or mechanics.
 
