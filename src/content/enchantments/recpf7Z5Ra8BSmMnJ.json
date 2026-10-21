@@ -4,7 +4,7 @@
   "name": "Frost",
   "source": "Runecrafted",
   "category": "Aspect",
-  "description": "Shots apply 8 seconds of freezing, stacking with each shot and capping at 20 seconds.\n",
+  "description": "<p>Shots apply 8 seconds of freezing, stacking with each shot and capping at 20 seconds.</p>",
   "maxLevel": 1,
   "items": [
     "Bows"

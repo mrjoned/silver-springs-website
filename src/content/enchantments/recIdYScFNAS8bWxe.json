@@ -4,7 +4,7 @@
   "name": "Avatar of Bats",
   "source": "Runecrafted",
   "category": "Avatar",
-  "description": "While gliding, sneaking causes you to echolocate, highlighting mobs within 40 blocks and granting night vision for 10 seconds. \nWhile in light levels of 4 or less, mobs only detect you from 60-25% of their usual distance.\n",
+  "description": "<p>While gliding, sneaking causes you to echolocate, highlighting mobs within 40 blocks and granting night vision for 10 seconds.<br>While in light levels of 4 or less, mobs only detect you from 60-25% of their usual distance.</p>",
   "maxLevel": 1,
   "items": [
     "Elytra"

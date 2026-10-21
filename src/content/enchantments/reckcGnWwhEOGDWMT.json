@@ -4,7 +4,7 @@
   "name": "Thorns",
   "source": "Vanilla",
   "category": "Hazard",
-  "description": "Always procs consistently, and damage now scales linearly with total level (across armor pieces) rather than proc chance\n",
+  "description": "<p>Always procs consistently, and damage now scales linearly with total level (across armor pieces) rather than proc chance</p>",
   "maxLevel": 3,
   "items": [
     "Helmets",

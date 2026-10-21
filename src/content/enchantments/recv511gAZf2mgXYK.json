@@ -4,7 +4,7 @@
   "name": "Discus",
   "source": "Runecrafted",
   "category": "Bashing",
-  "description": "**Bashing** throws your shield up to 10 blocks, striking the first enemy hit for 4♥️ damage and briefly slowing by 20% before returning.\n",
+  "description": "<p><strong>Bashing</strong> throws your shield up to 10 blocks, striking the first enemy hit for 4♥️ damage and briefly slowing by 20% before returning.</p>",
   "maxLevel": 1,
   "items": [
     "Shields"

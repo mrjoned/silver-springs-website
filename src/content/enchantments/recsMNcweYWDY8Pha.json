@@ -4,7 +4,7 @@
   "name": "Slingshot",
   "source": "Runecrafted",
   "category": "Ammo",
-  "description": "This bow gains a sling, a 9-slot item inventory which can hold non-equipment items. Shooting without any arrows instead fires items from the sling, applying unique effects such as:\n- Blocks deal damage based on hardness.\n- Glass shatters, dealing 50% radial damage.\n- Light-emitting blocks make targets glow.\n- Food is fed to the target.\n",
+  "description": "<p>This bow gains a sling, a 9-slot item inventory which can hold non-equipment items. Shooting without any arrows instead fires items from the sling, applying unique effects such as:</p><ul><li>Blocks deal damage based on hardness.</li><li>Glass shatters, dealing 50% radial damage.</li><li>Light-emitting blocks make targets glow.</li><li>Food is fed to the target.</li></ul>",
   "maxLevel": 1,
   "items": [
     "Bows"

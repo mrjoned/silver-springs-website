@@ -4,7 +4,7 @@
   "name": "Crescendo",
   "source": "Runecrafted",
   "category": "Timbre",
-  "description": "Horn blows emit a sonic boom which moves forward 10 blocks, dealing 2♥️ sonic damage, vaporizing sediments and cobwebs, and breaking bamboo, flowers, and grasses.\n",
+  "description": "<p>Horn blows emit a sonic boom which moves forward 10 blocks, dealing 2♥️ sonic damage, vaporizing sediments and cobwebs, and breaking bamboo, flowers, and grasses.</p>",
   "maxLevel": 1,
   "items": [
     "Goat Horns"

@@ -4,7 +4,7 @@
   "name": "Impetus of Dionysus",
   "source": "Runecrafted",
   "category": "Impetus",
-  "description": "- You can hand-brew potions by inserting water or ingredients into bottles.\n- Your potions cause their targets **drunken revelry**, starting a _happy hour_ if applied repeatedly, during which 50% of used potions are not consumed.\n    - **Drunken Revelry**: Grants +1❤️ attack damage for 10 seconds, nauseating briefly if applied to yourself or for the full duration if applied to enemies. Nauseated mobs randomly lose focus upon attacking and fire projectiles inaccurately.\n",
+  "description": "<ul><li>You can hand-brew potions by inserting water or ingredients into bottles.</li><li>Your potions cause their targets <strong>drunken revelry</strong>, starting a <em>happy hour</em> if applied repeatedly, during which 50% of used potions are not consumed.<ul><li><strong>Drunken Revelry</strong>: Grants +1❤️ attack damage for 10 seconds, nauseating briefly if applied to yourself or for the full duration if applied to enemies. Nauseated mobs randomly lose focus upon attacking and fire projectiles inaccurately.</li></ul></li></ul>",
   "maxLevel": 1,
   "items": [
     "Leggings"

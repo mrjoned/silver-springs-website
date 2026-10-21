@@ -4,7 +4,7 @@
   "name": "Aphelion of Mercury",
   "source": "Runecrafted",
   "category": "Aphelion",
-  "description": "**Eclipses** the Raceway Flag. You are instead immune to poison and gain _time dilation_ upon fully refilling your hunger, gaining 100% speed and immunity to hunger loss for 5 seconds.\n- **Eclipse: **The behavior of the eclipsed object is replaced while wearing this Aphelion.\n",
+  "description": "<p><strong>Eclipses</strong> the Raceway Flag. You are instead immune to poison and gain <em>time dilation</em> upon fully refilling your hunger, gaining 100% speed and immunity to hunger loss for 5 seconds.</p><ul><li>**Eclipse: **The behavior of the eclipsed object is replaced while wearing this Aphelion.</li></ul>",
   "maxLevel": 1,
   "items": [
     "Boots"

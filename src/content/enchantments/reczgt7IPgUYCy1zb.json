@@ -4,7 +4,7 @@
   "name": "Exploit",
   "source": "Runecrafted",
   "category": "Damage",
-  "description": "After attacking, if you lose no health while recharging, your next attack deals +2-4 hearts of armor-piercing damage and briefly slows the target.\n",
+  "description": "<p>After attacking, if you lose no health while recharging, your next attack deals +2-4 hearts of armor-piercing damage and briefly slows the target.</p>",
   "maxLevel": 3,
   "items": [
     "Axes"

@@ -4,7 +4,7 @@
   "name": "Deep Pockets",
   "source": "Runecrafted",
   "category": "Storage",
-  "description": "Right-clicking these leggings while wearing them opens their pockets, a storage inventory with 18 slots.\n",
+  "description": "<p>Right-clicking these leggings while wearing them opens their pockets, a storage inventory with 18 slots.</p>",
   "maxLevel": 1,
   "items": [
     "Leggings"

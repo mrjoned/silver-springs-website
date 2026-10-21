@@ -4,7 +4,7 @@
   "name": "Ear Collector",
   "source": "Runecrafted",
   "category": "Loot",
-  "description": "This sword collects an _ear_ stack to identify each of its victims, and upon exiting combat may attract a wandering guild trader who provides **items** in exchange for its _ears_.\n- **Items:** Wares include useful combat items, gems, rare gear, and other unique offers.\n",
+  "description": "<p>This sword collects an <em>ear</em> stack to identify each of its victims, and upon exiting combat may attract a wandering guild trader who provides <strong>items</strong> in exchange for its <em>ears</em>.</p><ul><li><strong>Items:</strong> Wares include useful combat items, gems, rare gear, and other unique offers.</li></ul>",
   "maxLevel": 1,
   "items": [
     "Swords"

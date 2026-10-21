@@ -4,7 +4,7 @@
   "name": "Flare",
   "source": "Runecrafted",
   "category": "Contraption",
-  "description": "Landed projectiles become a flare, providing light which decays over 30 seconds. Enemies hit directly glow for 30 seconds instead.\n",
+  "description": "<p>Landed projectiles become a flare, providing light which decays over 30 seconds. Enemies hit directly glow for 30 seconds instead.</p>",
   "maxLevel": 1,
   "items": [
     "Crossbows"

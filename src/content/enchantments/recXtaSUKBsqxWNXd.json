@@ -4,7 +4,7 @@
   "name": "Voltaic",
   "source": "Runecrafted",
   "category": "Parry",
-  "description": "**Parries** stack **_static_** 3 times. Once stacked, your next attack discharges in a cone, dealing 2❤️ damage and **stunning** for 2 seconds.\n",
+  "description": "<p><strong>Parries</strong> stack <strong><em>static</em></strong> 3 times. Once stacked, your next attack discharges in a cone, dealing 2❤️ damage and <strong>stunning</strong> for 2 seconds.</p>",
   "maxLevel": 1,
   "items": [
     "Shields"

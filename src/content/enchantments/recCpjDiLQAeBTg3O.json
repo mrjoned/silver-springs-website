@@ -4,7 +4,7 @@
   "name": "Headstart",
   "source": "Runecrafted",
   "category": "Protection",
-  "description": "While above 75% health, you take -50% damage and gain a burst of speed when taking damage.\n",
+  "description": "<p>While above 75% health, you take -50% damage and gain a burst of speed when taking damage.</p>",
   "maxLevel": 1,
   "items": [
     "Boots"

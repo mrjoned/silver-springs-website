@@ -4,7 +4,7 @@
   "name": "Extinction",
   "source": "Runecrafted",
   "category": "Damage",
-  "description": "Slain entities are marked for _extinction_, permanently granting 1 stack. Strikes deal +0.25 hearts damage per stack against that entity type, up to +5-10 ❤. \n- \tBosses grant 4 stacks and, at max level, the bonus damage to them is uncapped. Stacks have no effect in Trials.\n\nOnly one entity type can be marked at a time. A new type can be marked by gaining 5 _extinction_ stacks against it.\n",
+  "description": "<p>Slain entities are marked for <em>extinction</em>, permanently granting 1 stack. Strikes deal +0.25 hearts damage per stack against that entity type, up to +5-10 ❤. </p><ul><li>Bosses grant 4 stacks and, at max level, the bonus damage to them is uncapped. Stacks have no effect in Trials.</li></ul><p>Only one entity type can be marked at a time. A new type can be marked by gaining 5 <em>extinction</em> stacks against it.</p>",
   "maxLevel": 3,
   "items": [
     "Maces",

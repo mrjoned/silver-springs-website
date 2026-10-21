@@ -4,7 +4,7 @@
   "name": "Aphelion of Earth",
   "source": "Runecrafted",
   "category": "Aphelion",
-  "description": "- **Eclipses** the R.E.D. armor. You instead can read curse books, _sacrificing_ health to cast powerful **eldritch spells** which mark targets and **corrupt **your next punch. You can punch marked enemies from any range to siphon the mark and refund part of the _sacrifice_.\n- Sneak-right-click with a curse book to morph it into a _cursed tome_ which can hold 5 curse books.\n- **Eclipse: **The behavior of the eclipsed object is replaced while wearing this Aphelion.\n",
+  "description": "<ul><li><strong>Eclipses</strong> the R.E.D. armor. You instead can read curse books, <em>sacrificing</em> health to cast powerful <strong>eldritch spells</strong> which mark targets and **corrupt **your next punch. You can punch marked enemies from any range to siphon the mark and refund part of the <em>sacrifice</em>.</li><li>Sneak-right-click with a curse book to morph it into a <em>cursed tome</em> which can hold 5 curse books.</li><li>**Eclipse: **The behavior of the eclipsed object is replaced while wearing this Aphelion.</li></ul>",
   "maxLevel": 1,
   "items": [
     "Boots"

@@ -4,7 +4,7 @@
   "name": "Will-o'-Wisp",
   "source": "Runecrafted",
   "category": "Radial",
-  "description": "Kills leave behind the victim's soul as an inert _cinder wisp_. Wisps explode when caught in a smash attack or explosion, igniting and dealing 5❤️ explosion damage in a 5-block radius.\n",
+  "description": "<p>Kills leave behind the victim&#39;s soul as an inert <em>cinder wisp</em>. Wisps explode when caught in a smash attack or explosion, igniting and dealing 5❤️ explosion damage in a 5-block radius.</p>",
   "maxLevel": 1,
   "items": [
     "Maces"

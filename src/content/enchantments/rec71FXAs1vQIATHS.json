@@ -4,7 +4,7 @@
   "name": "Tesseract",
   "source": "Mythical",
   "category": "Ammo",
-  "description": "While drawn, the bow pulls items to you and small entities into its tesseract. Mobs fired from the tesseract deal their attack damage as bonus damage. You can fire without any ammo available, releasing a 3❤️ base damage energy shot.\n",
+  "description": "<p>While drawn, the bow pulls items to you and small entities into its tesseract. Mobs fired from the tesseract deal their attack damage as bonus damage. You can fire without any ammo available, releasing a 3❤️ base damage energy shot.</p>",
   "maxLevel": null,
   "items": [
     "Bows"

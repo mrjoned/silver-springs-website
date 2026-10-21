@@ -4,7 +4,7 @@
   "name": "Undertow",
   "source": "Runecrafted",
   "category": "Control",
-  "description": "_Throws_ and _riptides_ create an undercurrent which pushes away enemies within 5 blocks and slows them by 40% for 1 second.\n",
+  "description": "<p><em>Throws</em> and <em>riptides</em> create an undercurrent which pushes away enemies within 5 blocks and slows them by 40% for 1 second.</p>",
   "maxLevel": 1,
   "items": [
     "Tridents"

@@ -4,7 +4,7 @@
   "name": "Green Thumb",
   "source": "Runecrafted",
   "category": "Harvest",
-  "description": "**Auto-harvesting** crops automatically regrows them by 2-3 growth stages, capped at 1 below their max growth stage.\n> Auto-harvesting: Right-click a fully grown crop to automatically harvest and replant it.\n",
+  "description": "<p><strong>Auto-harvesting</strong> crops automatically regrows them by 2-3 growth stages, capped at 1 below their max growth stage.</p><blockquote><p>Auto-harvesting: Right-click a fully grown crop to automatically harvest and replant it.</p></blockquote>",
   "maxLevel": 2,
   "items": [
     "Hoes"

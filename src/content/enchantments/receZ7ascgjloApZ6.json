@@ -4,7 +4,7 @@
   "name": "Bane of Arthropods",
   "source": "Vanilla",
   "category": "Damage",
-  "description": "Always slows for the full duration (1.5-3.5 seconds) and works against Shulkers.\n",
+  "description": "<p>Always slows for the full duration (1.5-3.5 seconds) and works against Shulkers.</p>",
   "maxLevel": 5,
   "items": [
     "Swords",

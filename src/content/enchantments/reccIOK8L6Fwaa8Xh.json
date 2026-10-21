@@ -4,7 +4,7 @@
   "name": "Avatar of Phantoms",
   "source": "Runecrafted",
   "category": "Avatar",
-  "description": "Every night you haven’t slept adds a Phantom to your Phantom Horde, up to 10.\nWhile gliding, colliding with an enemy deals 2-7 hearts of damage. When gliding at night, you summon your Phantom Horde, who fly with you and attack nearby enemies for the same damage.\n",
+  "description": "<p>Every night you haven’t slept adds a Phantom to your Phantom Horde, up to 10.<br>While gliding, colliding with an enemy deals 2-7 hearts of damage. When gliding at night, you summon your Phantom Horde, who fly with you and attack nearby enemies for the same damage.</p>",
   "maxLevel": 1,
   "items": [
     "Elytra"

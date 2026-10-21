@@ -4,7 +4,7 @@
   "name": "Paradigm of Greed",
   "source": "Runecrafted",
   "category": "Paradigm",
-  "description": "You can form lifelong **contracts**_ _with humanoids with raw gold, _but_ if ever you don’t re-up their contract, they **betray** you.\n> **Contracts**: Contractors gain vanishing, unbreakable golden copies of your gear, reset to their standard max health, and unshakably follow you between worlds. You can contract 4 creatures, but not those with keywords.\n> **Betrayal**: Contractors who **betray** you gain attack damage, speed, knockback resistance, and their contract cannot be resumed.\n",
+  "description": "<p>You can form lifelong <strong>contracts</strong>_ _with humanoids with raw gold, <em>but</em> if ever you don’t re-up their contract, they <strong>betray</strong> you.</p><blockquote><p><strong>Contracts</strong>: Contractors gain vanishing, unbreakable golden copies of your gear, reset to their standard max health, and unshakably follow you between worlds. You can contract 4 creatures, but not those with keywords.<br><strong>Betrayal</strong>: Contractors who <strong>betray</strong> you gain attack damage, speed, knockback resistance, and their contract cannot be resumed.</p></blockquote>",
   "maxLevel": 1,
   "items": [
     "Helmets"

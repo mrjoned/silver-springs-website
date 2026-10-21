@@ -4,7 +4,7 @@
   "name": "Whispering",
   "source": "Mythical",
   "category": "Damage",
-  "description": "Shots deal +50% damage, collect loot, and don't cause vibrations. Shots overdrawn for 1 second _whisper_, homing in on enemies and dealing +25% sonic damage.\n",
+  "description": "<p>Shots deal +50% damage, collect loot, and don&#39;t cause vibrations. Shots overdrawn for 1 second <em>whisper</em>, homing in on enemies and dealing +25% sonic damage.</p>",
   "maxLevel": null,
   "items": [
     "Bows"

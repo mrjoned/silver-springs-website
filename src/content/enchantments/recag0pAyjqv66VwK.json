@@ -4,7 +4,7 @@
   "name": "Curse of Polymorphing",
   "source": "Curse",
   "category": "Curse",
-  "description": "While digging, this tool randomly changes which block set it is effective against.\n",
+  "description": "<p>While digging, this tool randomly changes which block set it is effective against.</p>",
   "maxLevel": 1,
   "items": [
     "Pickaxes",

@@ -4,7 +4,7 @@
   "name": "Momentum",
   "source": "Runecrafted",
   "category": "Damage",
-  "description": "**Well-timed **attacks deal +1❤️ damage and stack _momentum_, stacking infinitely for +4-8% attack speed per stack.\n",
+  "description": "<p>**Well-timed **attacks deal +1❤️ damage and stack <em>momentum</em>, stacking infinitely for +4-8% attack speed per stack.</p>",
   "maxLevel": 3,
   "items": [
     "Axes"

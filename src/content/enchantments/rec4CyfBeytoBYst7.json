@@ -4,7 +4,7 @@
   "name": "Multishot",
   "source": "Vanilla",
   "category": "Uncategorized",
-  "description": "Projectiles bypass invulnerability frames.\n",
+  "description": "<p>Projectiles bypass invulnerability frames.</p>",
   "maxLevel": 1,
   "items": [
     "Crossbows"

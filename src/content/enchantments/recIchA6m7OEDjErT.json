@@ -4,7 +4,7 @@
   "name": "Impetus of Artemis",
   "source": "Runecrafted",
   "category": "Impetus",
-  "description": "- Double sneaking calls or dismisses your chosen **spirit** **mount**, defaulting to your **spirit** **wolf**.\n- While mounted, you apply **moonlight** to the closest enemy. **Moonlit** enemies periodically glow, take +2-4♥️ magic damage from headshots, and ranged kills collect their loot and heal your mount 1♥️.\n",
+  "description": "<ul><li>Double sneaking calls or dismisses your chosen <strong>spirit</strong> <strong>mount</strong>, defaulting to your <strong>spirit</strong> <strong>wolf</strong>.</li><li>While mounted, you apply <strong>moonlight</strong> to the closest enemy. <strong>Moonlit</strong> enemies periodically glow, take +2-4♥️ magic damage from headshots, and ranged kills collect their loot and heal your mount 1♥️.</li></ul>",
   "maxLevel": 1,
   "items": [
     "Leggings"

@@ -4,7 +4,7 @@
   "name": "Ice Aspect",
   "source": "Runecrafted",
   "category": "Aspect",
-  "description": "Attacks apply 4-8 seconds of freezing, stacking with each attack and capping at 20 seconds.\n",
+  "description": "<p>Attacks apply 4-8 seconds of freezing, stacking with each attack and capping at 20 seconds.</p>",
   "maxLevel": 3,
   "items": [
     "Maces",

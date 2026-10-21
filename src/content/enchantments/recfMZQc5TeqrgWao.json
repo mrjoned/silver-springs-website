@@ -4,7 +4,7 @@
   "name": "Whistle Tone",
   "source": "Runecrafted",
   "category": "Timbre",
-  "description": "Horn blows emit a sonic boom which expands to a 6-block radius, dealing 2❤️ sonic damage and detaching chorus flowers, amethyst clusters, pointed dripstone, and berries.\n",
+  "description": "<p>Horn blows emit a sonic boom which expands to a 6-block radius, dealing 2❤️ sonic damage and detaching chorus flowers, amethyst clusters, pointed dripstone, and berries.</p>",
   "maxLevel": 1,
   "items": [
     "Goat Horns"

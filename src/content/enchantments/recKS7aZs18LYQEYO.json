@@ -4,7 +4,7 @@
   "name": "Hands-On Learning",
   "source": "Runecrafted",
   "category": "Surplus",
-  "description": "**Auto-harvesting** crops has a 33% chance to drop an experience orb.\n> Auto-harvesting: Right-click a fully grown crop to automatically harvest and replant it.\n",
+  "description": "<p><strong>Auto-harvesting</strong> crops has a 33% chance to drop an experience orb.</p><blockquote><p>Auto-harvesting: Right-click a fully grown crop to automatically harvest and replant it.</p></blockquote>",
   "maxLevel": 1,
   "items": [
     "Hoes"

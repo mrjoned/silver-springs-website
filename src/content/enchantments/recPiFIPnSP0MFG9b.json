@@ -4,7 +4,7 @@
   "name": "Snare",
   "source": "Runecrafted",
   "category": "Contraption",
-  "description": "Projectile hits release ropes which pull in enemies within 5 blocks and slow them by 20% for 2 seconds.\n",
+  "description": "<p>Projectile hits release ropes which pull in enemies within 5 blocks and slow them by 20% for 2 seconds.</p>",
   "maxLevel": 1,
   "items": [
     "Crossbows"

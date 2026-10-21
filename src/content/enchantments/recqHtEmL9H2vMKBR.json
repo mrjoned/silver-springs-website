@@ -4,7 +4,7 @@
   "name": "Mitosis",
   "source": "Runecrafted",
   "category": "Cutting",
-  "description": "Adult entities with baby forms can be sheared to split them into two babies.\n",
+  "description": "<p>Adult entities with baby forms can be sheared to split them into two babies.</p>",
   "maxLevel": 1,
   "items": [
     "Shears"

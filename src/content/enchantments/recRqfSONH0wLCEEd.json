@@ -4,7 +4,7 @@
   "name": "Taste Test",
   "source": "Runecrafted",
   "category": "Surplus",
-  "description": "**Auto-harvesting** crops refills a small amount of hunger. If your hunger is full, you gain saturation instead.\n> Auto-harvesting: Right-click a fully grown crop to automatically harvest and replant it.\n",
+  "description": "<p><strong>Auto-harvesting</strong> crops refills a small amount of hunger. If your hunger is full, you gain saturation instead.</p><blockquote><p>Auto-harvesting: Right-click a fully grown crop to automatically harvest and replant it.</p></blockquote>",
   "maxLevel": 1,
   "items": [
     "Hoes"

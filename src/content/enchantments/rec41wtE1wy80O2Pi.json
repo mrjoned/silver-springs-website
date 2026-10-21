@@ -4,7 +4,7 @@
   "name": "Avatar of Ender Dragons",
   "source": "Runecrafted",
   "category": "Avatar",
-  "description": "While gliding, sneaking causes you to shoot a dragon fireball, and colliding with terrain causes you to warp through it to the next open space.\nWhile gliding near an Ender Crystal, you regenerate health.\n",
+  "description": "<p>While gliding, sneaking causes you to shoot a dragon fireball, and colliding with terrain causes you to warp through it to the next open space.<br>While gliding near an Ender Crystal, you regenerate health.</p>",
   "maxLevel": 1,
   "items": [
     "Elytra"

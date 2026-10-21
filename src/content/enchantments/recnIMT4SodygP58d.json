@@ -4,7 +4,7 @@
   "name": "Ragdoll",
   "source": "Runecrafted",
   "category": "Control",
-  "description": "The killing blow against an enemy deals triple knockback and ignores knockback resistance. Enemies hit by the flung body are stunned for 1 second.\n",
+  "description": "<p>The killing blow against an enemy deals triple knockback and ignores knockback resistance. Enemies hit by the flung body are stunned for 1 second.</p>",
   "maxLevel": 1,
   "items": [
     "Swords",

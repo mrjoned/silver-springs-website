@@ -4,7 +4,7 @@
   "name": "Aphelion of Mars",
   "source": "Runecrafted",
   "category": "Aphelion",
-  "description": "**Eclipses** Paradigm of Envy. You envy Avatars instead of Paradigms.\n- **Eclipse**: The behavior of the eclipsed object is replaced while wearing this Aphelion.\n",
+  "description": "<p><strong>Eclipses</strong> Paradigm of Envy. You envy Avatars instead of Paradigms.</p><ul><li><strong>Eclipse</strong>: The behavior of the eclipsed object is replaced while wearing this Aphelion.</li></ul>",
   "maxLevel": 1,
   "items": [
     "Boots"

@@ -4,7 +4,7 @@
   "name": "Paradigm of Acedia",
   "source": "Runecrafted",
   "category": "Paradigm",
-  "description": "Your tames’ and summons’ attacks benefit from combat enchantments on your held melee weapon, but your attacks no longer do.\n",
+  "description": "<p>Your tames’ and summons’ attacks benefit from combat enchantments on your held melee weapon, but your attacks no longer do.</p>",
   "maxLevel": 1,
   "items": [
     "Helmets"

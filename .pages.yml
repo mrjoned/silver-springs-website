@@ -208,7 +208,10 @@ content:
       use No rune cost.
   - name: description
     label: Effect / description
-    type: text
+    type: rich-text
+    options:
+      format: html
+      media: false
     required: true
   - name: maxLevel
     label: Maximum level

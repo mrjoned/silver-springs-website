@@ -4,7 +4,7 @@
   "name": "Paradigm of Sloth",
   "source": "Runecrafted",
   "category": "Paradigm",
-  "description": "You can _lumber_, moving 10% slower and gaining slow, **massive attacks**, _but_ lumbering replaces sprinting.\n> You can perform massive attacks after sprinting for 1.5 seconds. They have -66% total attack speed but strike on any swing in a 5-block radius, applying 2.5x damage and a brief stun then 1 second of -20% speed.\n",
+  "description": "<p>You can <em>lumber</em>, moving 10% slower and gaining slow, <strong>massive attacks</strong>, <em>but</em> lumbering replaces sprinting.</p><blockquote><p>You can perform massive attacks after sprinting for 1.5 seconds. They have -66% total attack speed but strike on any swing in a 5-block radius, applying 2.5x damage and a brief stun then 1 second of -20% speed.</p></blockquote>",
   "maxLevel": 1,
   "items": [
     "Helmets"

@@ -4,7 +4,7 @@
   "name": "Cyclotron",
   "source": "Mythical",
   "category": "Loot",
-  "description": "While charging `faster than 15 m/s`, slain enemy drops are atomized, often converting to _primordial dust_, which can then be crafted with `crystals` or socketing gems to duplicate them.\n\n`Faster than 15 m/s: Effects will play while you are charging fast enough to atomize items`\n`Crystals: Lapis Lazuli, Nether Quarts, Amethyst Shards, Prismarine Shards, Diamonds, and Emeralds.`\n",
+  "description": "<p>While charging <code>faster than 15 m/s</code>, slain enemy drops are atomized, often converting to <em>primordial dust</em>, which can then be crafted with <code>crystals</code> or socketing gems to duplicate them.</p><p><code>Faster than 15 m/s: Effects will play while you are charging fast enough to atomize items</code><br><code>Crystals: Lapis Lazuli, Nether Quarts, Amethyst Shards, Prismarine Shards, Diamonds, and Emeralds.</code></p>",
   "maxLevel": null,
   "items": [
     "Spears"

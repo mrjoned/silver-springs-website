@@ -4,7 +4,7 @@
   "name": "Dreadnought",
   "source": "Runecrafted",
   "category": "Splashing",
-  "description": "Strikes prepare a **_broadside cannon, _**up to 2-4 cannons. Thrown hits signal each cannon to fire an explosive cannonball **towards enemies** in the direction of the throw.\n",
+  "description": "<p>Strikes prepare a **_broadside cannon, _**up to 2-4 cannons. Thrown hits signal each cannon to fire an explosive cannonball <strong>towards enemies</strong> in the direction of the throw.</p>",
   "maxLevel": 3,
   "items": [
     "Tridents"

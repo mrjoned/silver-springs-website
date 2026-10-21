@@ -4,7 +4,7 @@
   "name": "Trawling",
   "source": "Runecrafted",
   "category": "Tackle",
-  "description": "When catching fish, you may reel in up to 1-3 additional fish.\n",
+  "description": "<p>When catching fish, you may reel in up to 1-3 additional fish.</p>",
   "maxLevel": 3,
   "items": [
     "Fishing Rods"

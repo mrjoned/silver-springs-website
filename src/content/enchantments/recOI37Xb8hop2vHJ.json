@@ -4,7 +4,7 @@
   "name": "Riptide",
   "source": "Vanilla",
   "category": "Uncategorized",
-  "description": "Increased underwater mobility and compatibility with other enchantments. No longer exclusive with Channeling.\n",
+  "description": "<p>Increased underwater mobility and compatibility with other enchantments. No longer exclusive with Channeling.</p>",
   "maxLevel": 3,
   "items": [
     "Tridents"

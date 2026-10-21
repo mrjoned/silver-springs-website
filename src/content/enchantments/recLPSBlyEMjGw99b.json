@@ -4,7 +4,7 @@
   "name": "Cavitation",
   "source": "Runecrafted",
   "category": "Control",
-  "description": "Collisions form a pressure bubble which collapses after 1 second, pulling in enemies within 5 blocks, briefly stunning and dealing 2.5 ❤ suffocation damage.\n",
+  "description": "<p>Collisions form a pressure bubble which collapses after 1 second, pulling in enemies within 5 blocks, briefly stunning and dealing 2.5 ❤ suffocation damage.</p>",
   "maxLevel": 1,
   "items": [
     "Tridents"

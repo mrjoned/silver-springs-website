@@ -4,7 +4,7 @@
   "name": "Eldritch Inclination",
   "source": "Runecrafted",
   "category": "Affinity",
-  "description": "When the Void damages you, it spits you back upwards and grants you 5 minutes of stacking Luck. You can anger Wardens one additional time before they unburrow.\n",
+  "description": "<p>When the Void damages you, it spits you back upwards and grants you 5 minutes of stacking Luck. You can anger Wardens one additional time before they unburrow.</p>",
   "maxLevel": 1,
   "items": [
     "Helmets"

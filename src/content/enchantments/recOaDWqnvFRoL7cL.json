@@ -4,7 +4,7 @@
   "name": "Fortify",
   "source": "Runecrafted",
   "category": "Parry",
-  "description": "Parries stack _fortification_ 3 times. Once stacked, you consume them to gain 3❤️ Absorption for 3 seconds.\n",
+  "description": "<p>Parries stack <em>fortification</em> 3 times. Once stacked, you consume them to gain 3❤️ Absorption for 3 seconds.</p>",
   "maxLevel": 1,
   "items": [
     "Shields"

@@ -4,7 +4,7 @@
   "name": "Paradigm of Vainglory",
   "source": "Runecrafted",
   "category": "Paradigm",
-  "description": "Your swings fire as piercing waves, and you can hover at full health, _but_ you strike yourself, bypassing armor, when your waves miss.\n\n```\nWaves: Weapons with lower attack speed fire wider waves and ones with higher range fire faster moving waves.\n```\n\n```\nHover: Swing directly up to toggle the hover. It disables once you witness your health fall below full.\n```\n",
+  "description": "<p>Your swings fire as piercing waves, and you can hover at full health, <em>but</em> you strike yourself, bypassing armor, when your waves miss.</p><pre><code>Waves: Weapons with lower attack speed fire wider waves and ones with higher range fire faster moving waves.</code></pre><pre><code>Hover: Swing directly up to toggle the hover. It disables once you witness your health fall below full.</code></pre>",
   "maxLevel": 1,
   "items": [
     "Helmets"

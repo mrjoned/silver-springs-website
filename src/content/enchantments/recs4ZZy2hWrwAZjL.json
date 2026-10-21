@@ -4,7 +4,7 @@
   "name": "Paradigm of Wrath",
   "source": "Runecrafted",
   "category": "Paradigm",
-  "description": "You swing becomes a rapid **onslaught** using all melee hotbar weapons, _but_ your hotbar must _all_ be melee weapons for strikes to land.\n```\nOnslaught swings your weapons in sequence at 2x speed, ignoring mercy frames on landed hits.\n```\n",
+  "description": "<p>You swing becomes a rapid <strong>onslaught</strong> using all melee hotbar weapons, <em>but</em> your hotbar must <em>all</em> be melee weapons for strikes to land.</p><pre><code>Onslaught swings your weapons in sequence at 2x speed, ignoring mercy frames on landed hits.</code></pre>",
   "maxLevel": 1,
   "items": [
     "Helmets"

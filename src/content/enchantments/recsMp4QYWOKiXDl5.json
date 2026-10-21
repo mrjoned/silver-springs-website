@@ -4,7 +4,7 @@
   "name": "Kindle Touch",
   "source": "Runecrafted",
   "category": "Uncategorized",
-  "description": "Mined blocks drop the smelted version of the block instead of their normal drops.\n",
+  "description": "<p>Mined blocks drop the smelted version of the block instead of their normal drops.</p>",
   "maxLevel": 1,
   "items": [
     "Pickaxes",

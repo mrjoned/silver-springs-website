@@ -4,7 +4,7 @@
   "name": "Blast Protection V",
   "source": "Runecrafted",
   "category": "Protection",
-  "description": "Blasts deal -8-40% damage and -15–75% knockback.\n> **Runecrafting Bonus**: Blasts instead deal -75% damage, then you siphon the shrapnel to form a 1❤ Absorption _blast shield_, granting knockback immunity and 25% damage reduction while the shield holds.\n",
+  "description": "<p>Blasts deal -8-40% damage and -15–75% knockback.</p><blockquote><p><strong>Runecrafting Bonus</strong>: Blasts instead deal -75% damage, then you siphon the shrapnel to form a 1❤ Absorption <em>blast shield</em>, granting knockback immunity and 25% damage reduction while the shield holds.</p></blockquote>",
   "maxLevel": 5,
   "items": [
     "Helmets",

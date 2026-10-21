@@ -4,7 +4,7 @@
   "name": "Schrödinger's Thumb",
   "source": "Runecrafted",
   "category": "Harvest",
-  "description": "**Auto-harvesting** crops has a 50-100% chance to spawn a bonus drop of any standard crop, rarely a golden apple or chorus flower, or extremely rarely an enchanted golden apple or Rune of Vitality.\n> Auto-harvesting: Right-click a fully grown crop to automatically harvest and replant it.\n",
+  "description": "<p><strong>Auto-harvesting</strong> crops has a 50-100% chance to spawn a bonus drop of any standard crop, rarely a golden apple or chorus flower, or extremely rarely an enchanted golden apple or Rune of Vitality.</p><blockquote><p>Auto-harvesting: Right-click a fully grown crop to automatically harvest and replant it.</p></blockquote>",
   "maxLevel": 2,
   "items": [
     "Hoes"

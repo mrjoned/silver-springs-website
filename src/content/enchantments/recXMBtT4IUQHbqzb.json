@@ -4,7 +4,7 @@
   "name": "Curse of Galvanism",
   "source": "Curse",
   "category": "Curse",
-  "description": "While worn, you are far more likely to be struck by lightning during thunderstorms.\n",
+  "description": "<p>While worn, you are far more likely to be struck by lightning during thunderstorms.</p>",
   "maxLevel": 1,
   "items": [
     "Helmets"

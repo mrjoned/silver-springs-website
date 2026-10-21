@@ -4,7 +4,7 @@
   "name": "Curse of Binding",
   "source": "Curse",
   "category": "Curse",
-  "description": "Once equipped, items with this curse can only be unequipped via death.\n",
+  "description": "<p>Once equipped, items with this curse can only be unequipped via death.</p>",
   "maxLevel": 1,
   "items": [
     "Helmets",

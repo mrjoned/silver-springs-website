@@ -4,7 +4,7 @@
   "name": "Advance",
   "source": "Runecrafted",
   "category": "Bashing",
-  "description": "**Bashing **causes you to rapidly dash forward 5 blocks while creating a shockwave which deflects projectiles in a wide arc.\n",
+  "description": "<p>**Bashing **causes you to rapidly dash forward 5 blocks while creating a shockwave which deflects projectiles in a wide arc.</p>",
   "maxLevel": 1,
   "items": [
     "Shields"

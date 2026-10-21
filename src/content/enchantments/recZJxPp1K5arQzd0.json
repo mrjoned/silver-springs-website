@@ -4,7 +4,7 @@
   "name": "Utility Belt",
   "source": "Runecrafted",
   "category": "Storage",
-  "description": "These leggings gain a _belt_, a 9-slot item inventory. Activating the leggings swaps the contents of their belt and your hotbar.\n",
+  "description": "<p>These leggings gain a <em>belt</em>, a 9-slot item inventory. Activating the leggings swaps the contents of their belt and your hotbar.</p>",
   "maxLevel": 1,
   "items": [
     "Leggings"

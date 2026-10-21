@@ -4,7 +4,7 @@
   "name": "Impetus of Hermes",
   "source": "Runecrafted",
   "category": "Impetus",
-  "description": "Upon **blinking**, you engage in _divine trickery_, a brief stealth that empowers your next attack +2♥️, and create a _shortcut_ for 4 seconds that you can enter once to return to the other end. If the shortcut expires unused, you engage in divine trickery once more.\n",
+  "description": "<p>Upon <strong>blinking</strong>, you engage in <em>divine trickery</em>, a brief stealth that empowers your next attack +2♥️, and create a <em>shortcut</em> for 4 seconds that you can enter once to return to the other end. If the shortcut expires unused, you engage in divine trickery once more.</p>",
   "maxLevel": 1,
   "items": [
     "Leggings"

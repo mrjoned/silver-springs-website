@@ -4,7 +4,7 @@
   "name": "Crash Landicoot",
   "source": "Runecrafted",
   "category": "Safety",
-  "description": "Crashing damage is reduced by 25-50%. Double sneaking towards solid ground initiates a rapid nosedive whose crash deals 50% of the initial damage to enemies in a 5-block radius.\n",
+  "description": "<p>Crashing damage is reduced by 25-50%. Double sneaking towards solid ground initiates a rapid nosedive whose crash deals 50% of the initial damage to enemies in a 5-block radius.</p>",
   "maxLevel": 2,
   "items": [
     "Elytra"

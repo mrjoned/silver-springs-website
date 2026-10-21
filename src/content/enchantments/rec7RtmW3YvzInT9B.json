@@ -4,7 +4,7 @@
   "name": "Beheld",
   "source": "Runecrafted",
   "category": "Control",
-  "description": "Upon preparing a throw, enemies you _behold _are briefly slowed 40%._ _If they are below half health, they are **stunned** instead.\n",
+  "description": "<p>Upon preparing a throw, enemies you _behold <em>are briefly slowed 40%.</em> _If they are below half health, they are <strong>stunned</strong> instead.</p>",
   "maxLevel": 1,
   "items": [
     "Tridents"

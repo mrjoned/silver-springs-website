@@ -4,7 +4,7 @@
   "name": "Avatar of Slimes",
   "source": "Runecrafted",
   "category": "Avatar",
-  "description": "You jump higher, take -25% fall damage, and bounce back up after taking fall damage.\nUpon dropping to 75%, 50%, or 25% health, a slime splits off of you which provokes enemies. This can't occur again until you fully heal.\n\n",
+  "description": "<p>You jump higher, take -25% fall damage, and bounce back up after taking fall damage.<br>Upon dropping to 75%, 50%, or 25% health, a slime splits off of you which provokes enemies. This can&#39;t occur again until you fully heal.</p>",
   "maxLevel": 1,
   "items": [
     "Chestplates"

@@ -4,7 +4,7 @@
   "name": "Mulching",
   "source": "Runecrafted",
   "category": "Surplus",
-  "description": "Surplus seeds and poisonous potatoes dropped by harvested crops are automatically composted.\n",
+  "description": "<p>Surplus seeds and poisonous potatoes dropped by harvested crops are automatically composted.</p>",
   "maxLevel": 1,
   "items": [
     "Hoes"

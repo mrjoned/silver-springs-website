@@ -4,7 +4,7 @@
   "name": "Fire Protection V",
   "source": "Runecrafted",
   "category": "Protection",
-  "description": "Fire and lava deal 8-40% less damage and you burn for 15-75% less time. \n> **Runecrafting Bonus**: You take -25% damage from burning enemies, and their unarmed attacks no longer ignite you.\n",
+  "description": "<p>Fire and lava deal 8-40% less damage and you burn for 15-75% less time. </p><blockquote><p><strong>Runecrafting Bonus</strong>: You take -25% damage from burning enemies, and their unarmed attacks no longer ignite you.</p></blockquote>",
   "maxLevel": 5,
   "items": [
     "Helmets",

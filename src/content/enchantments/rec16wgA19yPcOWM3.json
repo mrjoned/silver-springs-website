@@ -4,7 +4,7 @@
   "name": "Tempo",
   "source": "Runecrafted",
   "category": "Damage",
-  "description": "Charged attacks against full health entities or within 0.3 seconds of recharging deal +1-2 hearts of damage and recharge 10% faster. \n",
+  "description": "<p>Charged attacks against full health entities or within 0.3 seconds of recharging deal +1-2 hearts of damage and recharge 10% faster. </p>",
   "maxLevel": 3,
   "items": [
     "Swords"

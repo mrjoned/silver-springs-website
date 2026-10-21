@@ -4,7 +4,7 @@
   "name": "Soul Spark",
   "source": "Runecrafted",
   "category": "Uncategorized",
-  "description": "Lit fires convert to soul fire.\n",
+  "description": "<p>Lit fires convert to soul fire.</p>",
   "maxLevel": 1,
   "items": [
     "Flint and Steel"
