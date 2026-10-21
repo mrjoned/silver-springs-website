@@ -1,15 +1,19 @@
 {
-  "sourceRecordId": "rechDKHBpcnOyZ5y8",
-  "draft": false,
   "name": "Adrenaline Rush",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Protection",
-  "description": "<p>You gain Adrenaline for 10 seconds when dropping to 25% health. This slows nearby enemies, cuts damage-over-time effects to half speed, and grants you +40-80% speed, damage and damage reduction. This can’t occur again until you fully heal.</p>",
+  "costRule": "per-level",
+  "description": "<p>Gain 8 seconds of [gold]<em>adrenaline</em>[/gold]<em> </em>when dropping to 25% health, slowing nearby enemies, halving damage-over-time frequency, and gaining +<u>40-80%</u> speed, damage, and damage reduction, and -50% healing. This can't occur again until you fully heal.</p>",
   "maxLevel": 2,
   "items": [
     "Chestplates"
   ],
-  "incompatibleRunecrafted": [],
+  "rune1": "Mortus",
+  "rune2": "Aegis",
+  "rune3": "Vitality",
+  "rune4": "Chills",
+  "rune5": "Moments",
   "incompatibleVanilla": [
     "Protection",
     "Blast Protection",
@@ -17,7 +21,6 @@
     "Projectile Protection"
   ],
   "discoverer": "Starmarsh",
-  "researchers": [],
   "discoveredDate": "2023-09-03",
   "discoveredBy": "Starmarsh on 9/3/23, 2:17 PM ",
   "runeTags": [
@@ -27,10 +30,5 @@
     "Mortus",
     "Vitality"
   ],
-  "rune1": "Mortus",
-  "rune2": "Aegis",
-  "rune3": "Vitality",
-  "rune4": "Chills",
-  "rune5": "Moments",
-  "costRule": "per-level"
+  "sourceRecordId": "rechDKHBpcnOyZ5y8"
 }
