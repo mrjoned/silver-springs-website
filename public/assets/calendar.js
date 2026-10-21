@@ -9,13 +9,14 @@ function localKey(date){const p=Object.fromEntries(dateParts.formatToParts(date)
 function keyDate(key){return new Date(key+'T12:00:00Z')}
 function addDays(key,n){const d=keyDate(key);d.setUTCDate(d.getUTCDate()+n);return d.toISOString().slice(0,10)}
 const today=localKey(new Date());
-let selected=today,month=today.slice(0,7),view='month',data=null,events=[];
+let selected=today,month=today.slice(0,7),view='month',data=null,events=[],loading=false,requestVersion=0,lastAttempt=0;
 const monthLabel=document.getElementById('calendar-month');
 const days=document.getElementById('calendar-days');
 const selectedLabel=document.getElementById('selected-day');
 const dayEvents=document.getElementById('day-events');
 const previous=document.getElementById('calendar-prev'),next=document.getElementById('calendar-next');
 const status=document.getElementById('calendar-status');
+const syncLabel=document.getElementById('calendar-sync');
 
 function node(tag,className,text){const n=document.createElement(tag);if(className)n.className=className;if(text!==undefined)n.textContent=text;return n}
 function onDay(key){return events.filter(e=>e.first<=key&&key<=e.last)}
@@ -31,10 +32,16 @@ function details(e,agenda=false){
   body.append(node('h4','',e.title));
   if(!agenda)body.append(node('p','event-when',range(e)));
   if(e.description){
-    const links=e.description.match(/https?:\/\/[^\s]+/g)||[];
-    const text=e.description.replace(/https?:\/\/[^\s]+/g,'').replace(/More info here:\s*$/,'').trim();
+    const parsed=new DOMParser().parseFromString(e.description,'text/html');
+    parsed.querySelectorAll('script,style').forEach(n=>n.remove());
+    parsed.querySelectorAll('br').forEach(n=>n.replaceWith('\n'));
+    const text=parsed.body.textContent.trim();
     if(text)body.append(node('p','',text));
-    for(const url of links){const a=node('a','','Event details →');a.href=url.includes('/changelog-and-faq/rush-weekends')?'/content-overview/#sscc/vanilla/events':url;body.append(a)}
+    const links=new Set([...(text.match(/https?:\/\/[^\s<>"']+/g)||[]),...Array.from(parsed.querySelectorAll('a[href]'),a=>a.getAttribute('href'))]);
+    for(const url of links){
+      try{const target=new URL(url);if(!['http:','https:'].includes(target.protocol))continue;}catch{continue;}
+      const a=node('a','','Event details →');a.href=url.includes('/changelog-and-faq/rush-weekends')?'/content-overview/#sscc/vanilla/events':url;body.append(a);
+    }
   }
   if(e.location)body.append(node('p','',e.location));
   article.append(body);return article;
@@ -49,17 +56,16 @@ function renderDay(){
 
 function selectDay(key){
   selected=key;
-  if(key.slice(0,7)!==month){month=key.slice(0,7);render();return}
+  if(key.slice(0,7)!==month){month=key.slice(0,7);loadSchedule();return}
   days.querySelectorAll('[data-date]').forEach(b=>{const current=b.dataset.date===selected;b.classList.toggle('selected',current);b.setAttribute('aria-pressed',String(current))});renderDay();
 }
 
 function render(){
-  if(!data)return;
   const first=month+'-01',date=keyDate(first),monthEnd=new Date(Date.UTC(date.getUTCFullYear(),date.getUTCMonth()+1,0,12)).toISOString().slice(0,10);
   const title=monthFormat.format(date);monthLabel.textContent=title;
   document.getElementById('month-caption').textContent=title+' event calendar';
   document.getElementById('agenda-heading').textContent=title;
-  previous.disabled=month<=data.firstMonth;next.disabled=month>=data.lastMonth;
+  previous.disabled=month<='2000-01';next.disabled=month>='2099-12';
   const firstCell=addDays(first,-date.getUTCDay());
   const rows=Math.ceil((date.getUTCDay()+Number(monthEnd.slice(-2)))/7);
   days.replaceChildren();
@@ -75,7 +81,7 @@ function render(){
       button.append(node('span','day-number',String(Number(key.slice(-2)))));
       found.slice(0,2).forEach(e=>button.append(node('span','event-chip '+e.category,e.title)));
       if(found.length>2)button.append(node('span','event-more','+'+(found.length-2)+' more'));
-      button.disabled=key.slice(0,7)<data.firstMonth||key.slice(0,7)>data.lastMonth;
+      button.disabled=key.slice(0,7)<'2000-01'||key.slice(0,7)>'2099-12';
       button.addEventListener('click',()=>selectDay(key));td.append(button);tr.append(td);
     }
     days.append(tr);
@@ -83,22 +89,19 @@ function render(){
   renderDay();
   const agenda=document.getElementById('agenda-events');agenda.replaceChildren();
   const monthEvents=events.filter(e=>e.first<=monthEnd&&e.last>=first);
-  if(!monthEvents.length)agenda.append(node('p','bodytext','No events are listed for this month in the imported schedule. Check the live calendar for the latest additions.'));
+  if(!monthEvents.length)agenda.append(node('p','bodytext','No events are scheduled for this month. Check Discord for other community activities.'));
   monthEvents.forEach(e=>agenda.append(details(e,true)));
-  status.textContent='Showing the imported event schedule · October 2025–October 2027.';
+
 }
 
 function moveMonth(delta){
   const d=keyDate(month+'-01');d.setUTCMonth(d.getUTCMonth()+delta);const key=d.toISOString().slice(0,7);
-  if(!data||key<data.firstMonth||key>data.lastMonth)return;
-  month=key;selected=month+'-01';render();
+  if(key<'2000-01'||key>'2099-12')return;
+  month=key;selected=month+'-01';loadSchedule();
 }
 previous.addEventListener('click',()=>moveMonth(-1));next.addEventListener('click',()=>moveMonth(1));
 document.getElementById('calendar-today').addEventListener('click',()=>{
-  if(!data)return;
-  const key=today.slice(0,7);
-  if(key<data.firstMonth||key>data.lastMonth){setView('live');return}
-  selected=today;month=key;render();
+  selected=localKey(new Date());month=selected.slice(0,7);loadSchedule();
 });
 function setView(value){
   view=value;
@@ -112,11 +115,42 @@ function setView(value){
 }
 document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>setView(b.dataset.view)));
 
-fetch('/calendar/events.json').then(r=>{if(!r.ok)throw Error('Schedule unavailable');return r.json()}).then(d=>{
-  data=d;events=d.events.map(e=>({...e,first:e.allDay?e.start:localKey(new Date(e.start)),last:e.allDay?addDays(e.end,-1):localKey(new Date(new Date(e.end).getTime()-1))}));
-  if(month<data.firstMonth||month>data.lastMonth){month=data.firstMonth;selected=month+'-01'}
-  render();
-}).catch(()=>{
-  status.textContent='The imported schedule could not load. Use Live calendar to see the current schedule.';
-  status.classList.add('calendar-error');setView('live');
-});
+async function loadSchedule(){
+  const version=++requestVersion,requestedMonth=month;
+  lastAttempt=Date.now();loading=true;
+  if(data?.month!==month){
+    data=null;events=[];render();
+    dayEvents.replaceChildren(node('p','bodytext','Loading scheduled events…'));
+    document.getElementById('agenda-events').replaceChildren(node('p','bodytext','Loading scheduled events…'));
+  }
+  status.textContent='Refreshing Google Calendar…';
+  status.classList.remove('calendar-error');syncLabel.textContent='Syncing with Google Calendar';
+  const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),15000);
+  try{
+    const response=await fetch('/api/calendar?month='+requestedMonth,{signal:controller.signal});
+    if(!response.ok)throw Error('Calendar unavailable');
+    const result=await response.json();
+    if(result.source!=='google'||result.month!==requestedMonth||!Array.isArray(result.events))throw Error('Invalid calendar response');
+    if(version!==requestVersion)return;
+    const prepared=result.events.map(e=>({...e,first:e.allDay?e.start:localKey(new Date(e.start)),last:e.allDay?addDays(e.end,-1):localKey(new Date(new Date(e.end).getTime()-1))}));
+    data=result;events=prepared;render();
+    status.textContent='Synced with Google Calendar · Updates refresh automatically every five minutes.';
+    syncLabel.textContent='Live Google Calendar · Checked '+new Date().toLocaleTimeString('en-US',{timeZone:zone,hour:'numeric',minute:'2-digit'});
+  }catch{
+    if(version!==requestVersion)return;
+    status.classList.add('calendar-error');
+    if(data?.month===month){
+      status.textContent='Calendar refresh failed. Showing the last loaded events; check Live calendar for updates.';
+      syncLabel.textContent='Previously loaded schedule · Refresh unavailable';
+    }else{
+      status.textContent='The schedule could not load. Use Live calendar to see the current schedule.';
+      syncLabel.textContent='Calendar sync unavailable';
+      dayEvents.replaceChildren(node('p','bodytext','Schedule unavailable. Use Live calendar.'));
+      document.getElementById('agenda-events').replaceChildren(node('p','bodytext','Schedule unavailable. Use Live calendar.'));
+      setView('live');
+    }
+  }finally{clearTimeout(timeout);if(version===requestVersion)loading=false;}
+}
+loadSchedule();
+setInterval(()=>{if(!document.hidden&&!loading)loadSchedule();},300000);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&!loading&&Date.now()-lastAttempt>=300000)loadSchedule();});

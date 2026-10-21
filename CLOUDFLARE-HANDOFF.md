@@ -6,8 +6,8 @@
 - Node **24** selected by `.node-version`; Astro requires Node >=22.22.0.
 - Static Astro output, trailing-slash routes, directory output in `dist`.
 - Cloudflare Pages Git deployment: `npm run build`, output `dist`, framework Astro, repository root.
-- No Astro SSR adapter. The existing root `functions/api/enchantments.js` supplies the live Pages API route separately.
-- `public/_routes.json` is copied into `dist` and restricts function invocation to `/api/enchantments` and its trailing-slash variant.
+- No Astro SSR adapter. The root `functions/api/` directory supplies the live enchantments and calendar APIs separately.
+- `public/_routes.json` is copied into `dist` and restricts function invocation to `/api/enchantments`, `/api/calendar`, and their trailing-slash variants.
 
 ## Preserved routes and components
 
@@ -37,11 +37,11 @@ The Hub's `/api/enchantments` adapter reuses:
 
 The function validates the response, uses a ten-second timeout, and allows a short cache. The client loader at `public/assets/hub-data.js` falls back to `public/runecrafting-hub/tools/enchantments.json` on failure. The snapshot contains 172 enchantment records. Keep the original Netlify function/project running; Airtable credentials stay there. Relocating that integration entirely into Cloudflare is a separate step.
 
-The styled calendar reads `public/calendar/events.json`, imported October 20, 2026. It covers October 2025–October 2027 and handles recurrence exceptions, exclusive all-day end dates, and Chicago daylight-saving offsets. It is **not an automatic Google Calendar sync**. The **Live calendar** tab embeds the original live calendar already.
+The styled Month and Agenda calendar views load `/api/calendar?month=YYYY-MM`. `functions/api/calendar.js` reads the public Google Calendar through the Calendar API using the encrypted `GOOGLE_CALENDAR_API_KEY` binding. The calendar ID matches the existing embed: `silverspringsmrjoned@gmail.com`. Public event details must be enabled in Google Calendar. No OAuth or Google hosting service is needed.
 
-For a future live calendar import, the existing public ICS feed is:
+Google expands recurring events, including changed instances; cancelled events are excluded. The endpoint follows pagination, includes adjacent grid days, and caches successful responses for five minutes at the Cloudflare edge. It never returns raw upstream errors or key-bearing URLs. The client refreshes every five minutes while visible and checks again when a stale tab becomes visible. Changes can take roughly ten minutes to appear depending on cache/refresh timing. Timed events use America/Chicago; all-day end dates remain exclusive. Calendar descriptions are rendered as text with HTTP/HTTPS links.
 
-`https://calendar.google.com/calendar/ical/silverspringsmrjoned%40gmail.com/public/basic.ics`
+Failures retain a clearly marked previously loaded month or switch to the embedded Live calendar when no current month is available. The old `public/calendar/events.json` is retained as historical source data and is no longer loaded by the styled calendar. Astro preview does not run Pages Functions; verify the live endpoint after deploying to Cloudflare. For preview deployments, add the secret to Cloudflare's Preview environment separately.
 
 The live map remains embedded from `https://map.sssminecraft.com/`. Atkinson Hyperlegible uses Google Fonts. Four imported article videos use YouTube embeds. Discord links remain external. All displayed website images and the gallery viewer's open-image links use local assets; original gallery source URLs are retained only as provenance metadata.
 
@@ -53,6 +53,6 @@ Do not upload `node_modules`, `.astro`, or `dist`. The lockfile and Node version
 
 ## Checks and deployment state
 
-`npm run build` runs the stale-page check and Astro production build. `npm test` runs eight live-data/fallback checks without credentials or external calls. A separate output audit confirmed 65 HTML documents, all 49 original article bodies, identical retained tool files/assets, complete local navigation, and a valid generated archive search index.
+`npm run build` runs the stale-page check and Astro production build. `npm test` runs live-data/fallback, publishing, and calendar checks without credentials or external calls. A separate output audit confirmed 65 HTML documents, all 49 original article bodies, identical retained tool files/assets, complete local navigation, and a valid generated archive search index.
 
 The package does not include Git metadata, preview project IDs, credentials, or the preview host's configuration. No GitHub push, Cloudflare deployment, custom-domain change, DNS change, or Squarespace change has been performed. The existing visual preview remains unchanged; review the new Astro build on Cloudflare after upload.
