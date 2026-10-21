@@ -1,0 +1,32 @@
+{
+  "sourceRecordId": "recz8Fa2IFuVakxqw",
+  "draft": false,
+  "name": "Flurry",
+  "source": "Runecrafted",
+  "category": "Damage",
+  "description": "Charge strikes grant **+30-90% attack speed** on your next 3 jabs\n",
+  "maxLevel": 3,
+  "items": [
+    "Spears"
+  ],
+  "incompatibleRunecrafted": [
+    "Extinction",
+    "Precision"
+  ],
+  "incompatibleVanilla": [
+    "Sharpness",
+    "Bane of Arthropods",
+    "Smite"
+  ],
+  "discoverer": "TheJ_Team",
+  "researchers": [],
+  "discoveredDate": "2026-03-08",
+  "discoveredBy": "",
+  "runeTags": [],
+  "rune1": "Kinesis",
+  "rune2": "Mortus",
+  "rune3": "Gusts",
+  "rune4": "Gusts",
+  "rune5": "Gusts",
+  "costRule": "per-level"
+}

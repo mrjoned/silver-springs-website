@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recioPLP43Jv8YQbz",
+  "draft": false,
+  "name": "Spare Key",
+  "category": "Charm",
+  "description": "Your first charm slot can be modified even while your charms case is locked.",
+  "cost": "5 Valor Badges",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 36,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}

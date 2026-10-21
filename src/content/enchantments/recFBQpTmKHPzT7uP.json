@@ -1,0 +1,27 @@
+{
+  "sourceRecordId": "recFBQpTmKHPzT7uP",
+  "draft": false,
+  "name": "Hot Rod",
+  "source": "Runecrafted",
+  "category": "Tackle",
+  "description": "This rod _sears_ 30-50% of caught fish, doubling restored hunger and sell price, and can fish in lava, doubling the _sear_ chance.\n",
+  "maxLevel": 3,
+  "items": [
+    "Fishing Rods"
+  ],
+  "incompatibleRunecrafted": [
+    "Trawling"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "TroyTheCrafter",
+  "researchers": [],
+  "discoveredDate": "2023-09-09",
+  "discoveredBy": "TroyTheCrafter on 9/9/23 8:26 AM",
+  "runeTags": [],
+  "rune1": "Tides",
+  "rune2": "Cinders",
+  "rune3": "Cinders",
+  "rune4": "Vitality",
+  "rune5": "Opulence",
+  "costRule": "per-level"
+}

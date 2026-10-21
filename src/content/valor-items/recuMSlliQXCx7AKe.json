@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recuMSlliQXCx7AKe",
+  "draft": false,
+  "name": "Bread Bowl",
+  "category": "Charm",
+  "description": "When eating soups, you also consume the bowl for +2 hunger.",
+  "cost": "40,000 Silver",
+  "skillRequirements": "N/A",
+  "acquisition": "For purchase from one of the Silver Springs villager vendors.",
+  "order": 62,
+  "relatedEnchantments": [],
+  "shop": "village"
+}

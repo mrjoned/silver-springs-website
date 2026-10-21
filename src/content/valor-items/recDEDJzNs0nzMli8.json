@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recDEDJzNs0nzMli8",
+  "draft": false,
+  "name": "Training Weight",
+  "category": "Charm",
+  "description": "Items dropped by slain creatures are each converted to 1 XP.",
+  "cost": "5 Valor Badges",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 38,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}

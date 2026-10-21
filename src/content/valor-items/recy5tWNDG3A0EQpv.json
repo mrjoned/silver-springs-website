@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recy5tWNDG3A0EQpv",
+  "draft": false,
+  "name": "Fermentation Barrel",
+  "category": "Charm",
+  "description": "Harvesting crops periodically grants a Potion of Luck II.",
+  "cost": "5 Valor Badges",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 28,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}

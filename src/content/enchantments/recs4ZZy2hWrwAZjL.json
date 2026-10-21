@@ -1,0 +1,27 @@
+{
+  "sourceRecordId": "recs4ZZy2hWrwAZjL",
+  "draft": false,
+  "name": "Paradigm of Wrath",
+  "source": "Runecrafted",
+  "category": "Paradigm",
+  "description": "You swing becomes a rapid **onslaught** using all melee hotbar weapons, _but_ your hotbar must _all_ be melee weapons for strikes to land.\n```\nOnslaught swings your weapons in sequence at 2x speed, ignoring mercy frames on landed hits.\n```\n",
+  "maxLevel": 1,
+  "items": [
+    "Helmets"
+  ],
+  "incompatibleRunecrafted": [
+    "Other Paradigms"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "skelud",
+  "researchers": [],
+  "discoveredDate": "2023-08-28",
+  "discoveredBy": "skelud on 8/28/23 9:09 PM",
+  "runeTags": [],
+  "rune1": "Mortus",
+  "rune2": "Cinders",
+  "rune3": "Mortus",
+  "rune4": "Moments",
+  "rune5": "Mortus",
+  "costRule": "per-level"
+}

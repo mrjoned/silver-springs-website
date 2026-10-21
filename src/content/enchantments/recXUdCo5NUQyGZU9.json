@@ -1,0 +1,29 @@
+{
+  "sourceRecordId": "recXUdCo5NUQyGZU9",
+  "draft": false,
+  "name": "Heraclean",
+  "source": "Runecrafted",
+  "category": "Heroism",
+  "description": "- While your world's overworld is thunderstorming, strikes that drop a **boss** below any 25% health threshold detonate a large, **stunning** _tempest flare_ for 10♥️ lightning damage. \n- Once per thunderstorm, each boss drops a **tempest chest** when slain, 10% of which contain their head. \n",
+  "maxLevel": 1,
+  "items": [
+    "Tridents"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [
+    "Channeling"
+  ],
+  "discoverer": "Starmarsh",
+  "researchers": [
+    "Schwump"
+  ],
+  "discoveredDate": "2025-06-03",
+  "discoveredBy": "Starmarsh and Schwump on 06/03/25",
+  "runeTags": [],
+  "rune1": "Tides",
+  "rune2": "Sparks",
+  "rune3": "Mortus",
+  "rune4": "Sparks",
+  "rune5": "Opulence",
+  "costRule": "per-level"
+}

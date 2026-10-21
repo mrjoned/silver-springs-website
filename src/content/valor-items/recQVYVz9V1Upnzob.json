@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recQVYVz9V1Upnzob",
+  "draft": false,
+  "name": "Guide to Aqueous Taming",
+  "category": "Relic",
+  "description": "A skill book which allows you to tame and ride the following aquatic or liquid creatures:\n- Turtle: Grants increased oxygen (❤️+ Seagrass)\n- Dolphin: The fastest sea mount. (❤️+ Tropical Fish)\n- Guardian: Spacebar shoots a laser at your target. (❤️+ Prismarine Crystals)\n- Squid: Spacebar shoots ink, blinding enemies then dashing forward. (❤️+ Cod)",
+  "cost": "8 Valor Badges",
+  "skillRequirements": "250 Taming Skill",
+  "acquisition": "",
+  "order": 13,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}

@@ -1,0 +1,25 @@
+{
+  "sourceRecordId": "recbesvdzBoqIDLEz",
+  "draft": false,
+  "name": "Seam Ripper",
+  "source": "Runecrafted",
+  "category": "Uncategorized",
+  "description": "Right clicking in an open space rips open a temporary Nether portal. Doing this while sneaking opens an End portal instead.\n",
+  "maxLevel": 1,
+  "items": [
+    "Shears"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [],
+  "discoverer": "Starmarsh",
+  "researchers": [],
+  "discoveredDate": "",
+  "discoveredBy": "Starmarsh ",
+  "runeTags": [],
+  "rune1": "Stones",
+  "rune2": "Arcanum",
+  "rune3": "Cinders",
+  "rune4": "Arcanum",
+  "rune5": "Void",
+  "costRule": "per-level"
+}

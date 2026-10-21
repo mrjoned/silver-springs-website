@@ -1,0 +1,32 @@
+{
+  "sourceRecordId": "rec5NoqqRVkUbS2Sg",
+  "draft": false,
+  "name": "Strafing",
+  "source": "Runecrafted",
+  "category": "Control",
+  "description": "You are slowed 60% less while drawing a shot.\n",
+  "maxLevel": 1,
+  "items": [
+    "Bows"
+  ],
+  "incompatibleRunecrafted": [
+    "Hair-Trigger"
+  ],
+  "incompatibleVanilla": [
+    "Punch"
+  ],
+  "discoverer": "Maidl",
+  "researchers": [
+    "ElectricSparx",
+    "Schwump"
+  ],
+  "discoveredDate": "2025-05-26",
+  "discoveredBy": "Maidl, ElectricSparx, and Schwump on 05/26/25",
+  "runeTags": [],
+  "rune1": "Kinesis",
+  "rune2": "Chills",
+  "rune3": "Void",
+  "rune4": "Gusts",
+  "rune5": "Gusts",
+  "costRule": "per-level"
+}

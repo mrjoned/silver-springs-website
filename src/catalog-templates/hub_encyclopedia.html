@@ -1,0 +1,84 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Runecrafting Enchantment Encyclopedia</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet"><style>
+:root{color-scheme:dark;--pink:#e96aa9;--bg:#090a10;--card:#171923;--field:#11121b;--line:#343342;--text:#f7f4fa;--muted:#b8b5c5}*{box-sizing:border-box}body{margin:0;padding:clamp(12px,3vw,28px);background:var(--bg);color:var(--text);font-family:"Atkinson Hyperlegible",Verdana,Arial,sans-serif;line-height:1.5}.wrap{max-width:1450px;margin:auto}header{padding:12px 0 24px}h1{font-size:clamp(1.6rem,4vw,2.6rem);margin:0 0 7px}h2,h3,p{margin-top:0}.intro{color:var(--muted);max-width:780px}.pink{color:#ffb2d7}.controls{background:#171923;border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:22px;display:grid;grid-template-columns:2fr repeat(4,minmax(135px,1fr));gap:14px}.control label{display:block;font-size:.85rem;color:var(--muted);margin-bottom:6px}input,select{width:100%;padding:12px;border-radius:9px;border:1px solid #61546d;background:var(--field);color:white;font:inherit;min-height:46px}
+/* Custom dark dropdowns: consistent hover contrast in Firefox and other browsers. */
+.control select{display:none}
+.custom-select{position:relative}
+.custom-trigger{width:100%;display:flex;align-items:center;justify-content:space-between;gap:8px;text-align:left;background:#11121b;color:#fff;border:1px solid #61546d;font-weight:400;min-height:46px}
+.custom-trigger:hover,.custom-trigger[aria-expanded="true"]{background:#20222e;color:#fff;border-color:#e96aa9}
+.custom-trigger::after{content:"▾";color:#ffb2d7;flex:none}
+.custom-menu{position:absolute;top:calc(100% + 4px);left:0;right:0;z-index:20;max-height:270px;overflow:auto;background:#20222e;border:1px solid #61546d;border-radius:9px;padding:5px;box-shadow:0 12px 28px #000b}
+.custom-menu[hidden]{display:none}
+.custom-option{display:block;width:100%;min-height:36px;padding:8px 10px;background:transparent;border:0;border-radius:6px;text-align:left;color:#f7f4fa;font-weight:400}
+.custom-option:hover,.custom-option:focus-visible{background:#e96aa9;color:#090a10;outline:none}
+.custom-option[aria-selected="true"]{background:#322437;color:#fff}
+.custom-option[aria-selected="true"]:hover,.custom-option[aria-selected="true"]:focus-visible{background:#e96aa9;color:#090a10}
+input:focus-visible,select:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #ffb2d7;outline-offset:2px}.meta{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:15px;flex-wrap:wrap}.count{color:var(--muted)}button{font:inherit;cursor:pointer;border-radius:9px;padding:10px 15px;border:1px solid var(--pink);background:var(--pink);color:#fff;font-weight:700;min-height:44px}button:hover{background:#e96aa9}.secondary{background:transparent;border-color:#61546d}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:16px}.card{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:18px;min-width:0}.card h2{font-size:1.2rem;margin:0}.top{display:flex;justify-content:space-between;gap:10px;align-items:start}.source{font-size:.75rem;color:#ffb2d7;border:1px solid #67415b;border-radius:999px;padding:3px 8px;white-space:nowrap}.badges{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0}.tag{border:1px solid #61546d;border-radius:7px;padding:3px 8px;font-size:.79rem;color:#b8b5c5}.desc{white-space:pre-wrap;overflow-wrap:anywhere;color:#b8b5c5;font-size:.92rem;max-height:6.3em;overflow:hidden}.desc.expanded{max-height:none}.detail{margin-top:13px;border-top:1px solid var(--line);padding-top:12px}details summary{cursor:pointer;color:#ffb2d7;font-weight:700;min-height:38px;display:flex;align-items:center}.sub{font-size:.84rem;font-weight:700;color:#ffb2d7;margin:13px 0 7px}.chips{display:flex;flex-wrap:wrap;gap:6px}.chip{background:#322437;border:1px solid #67415b;color:#f5e4f5;border-radius:7px;padding:5px 8px;font-size:.82rem}.runes{display:flex;flex-wrap:wrap;gap:6px}.rune{background:#15263a;border:1px solid #61546d;border-radius:7px;padding:6px 9px;font-size:.83rem}.note{font-size:.82rem;color:var(--muted)}.empty{border:1px dashed #61546d;padding:28px;text-align:center;border-radius:12px;color:var(--muted)}.status{color:var(--muted);font-size:.83rem;margin-top:14px}.load{color:#ffb2d7}footer{padding:25px 0;color:var(--muted);font-size:.85rem}@media(max-width:850px){.controls{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:540px){.controls{grid-template-columns:1fr}.top{flex-wrap:wrap}.card{padding:15px}}
+
+/* Content Overview shared theme */
+:root{--bg:#090a10;--card:#171923;--field:#11121b;--line:#343342;--text:#f7f4fa;--muted:#b8b5c5;--pink:#e96aa9;--accent:#c48aff;color-scheme:dark}
+html{background:var(--bg)}body{background:var(--bg);color:var(--text);font:15px/1.6 "Atkinson Hyperlegible",Verdana,Arial,sans-serif}
+button,input,select,textarea{font-family:inherit}button,a,summary{touch-action:manipulation}
+button,input,select,textarea{min-height:42px}button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--accent)!important;outline-offset:3px}
+h1{font-size:clamp(28px,3.5vw,40px);line-height:1.15;letter-spacing:-.035em}h2,h3{letter-spacing:-.025em;line-height:1.3}
+.eyebrow{color:var(--accent);font-size:10px;letter-spacing:.16em;font-weight:800}
+main,.wrap{max-width:none}main{padding:22px 20px 40px}body:has(>.wrap){padding:22px 20px 40px}
+.panel,.controls,.card{border-radius:14px}.panel{box-shadow:0 12px 32px #00000012}
+.menu{background:#20222e}.empty{background:#11121b}.status,footer{color:var(--muted);font-size:12px}
+.pill,.tag,.chip,.rune-chip{border-color:#61546d}.pill.pink,.source{color:#ffb2d7}
+.groupbtn.active,.itembtn.active,.level[aria-pressed=true],.btn.pink,.load,.result button{color:#240e1c;font-weight:800}
+.itembtn.active small{color:#240e1c}.btn.pink:hover,.load:hover,.result button:hover{background:#ffb2d7}
+@media(max-width:600px){main{padding:18px 12px 30px}body:has(>.wrap){padding:18px 12px 30px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+</style><script src="/assets/hub-data.js"></script></head><body><main class="wrap"><header><div class="pink" style="font-weight:700;letter-spacing:.1em;font-size:.8rem">RUNECRAFTING REFERENCE</div><h1>Enchantment Encyclopedia</h1><p class="intro">Explore enchantments, discover what they do, filter by the runes you own, see where they belong, and check recipes and incompatibilities before planning your next build.</p></header><section class="controls" aria-label="Enchantment filters"><div class="control"><label for="search">Search enchantments</label><input id="search" type="search" placeholder="Search names or descriptions…" autocomplete="off"></div><div class="control"><label for="equipment">Equipment</label><select id="equipment"><option value="">All equipment</option></select></div><div class="control"><label for="source">Source</label><select id="source"><option value="">All sources</option></select></div><div class="control"><label for="category">Category</label><select id="category"><option value="">All categories</option></select></div><div class="control"><label for="rune">Rune used</label><select id="rune"><option value="">All runes</option></select></div></section><div class="meta"><div id="count" class="count" aria-live="polite"></div><button id="clear" class="secondary" type="button">Clear filters</button></div><section id="cards" class="grid" aria-label="Enchantment results"></section><p id="status" class="status" role="status">Loading bundled reference data…</p><footer>Enchantment information is provided by the same Airtable source used for the Runecrafting Build Planner. Changes to data may take a few minutes to appear.</footer></main><script>
+(()=>{'use strict';let DATA=__SSS_ENCHANTMENT_DATA__;const $=id=>document.getElementById(id);const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const desc=s=>esc(s||'No description available yet.').replace(/\*\*([^*\n]+)\*\*/g,'<strong>$1</strong>');const roman=/\s+([IVXLCDM]+)$/i;const base=s=>String(s||'').replace(roman,'').trim();const vanilla=new Set('silk touch|fortune|efficiency|unbreaking|mending|infinity|power|punch|flame|looting|sharpness|smite|bane of arthropods|fire aspect|knockback|sweeping edge|protection|fire protection|blast protection|projectile protection|feather falling|respiration|aqua affinity|depth strider|frost walker|soul speed|swift sneak|thorns|binding curse|vanishing curse|curse of binding|curse of vanishing|riptide|loyalty|channeling|impaling|multishot|piercing|quick charge|luck of the sea|lure|density|breach|wind burst'.split('|'));const listNames=e=>Array.isArray(e.incompatible)?e.incompatible:[];const grouped=names=>{const map=new Map();names.forEach(n=>{if(!n)return;const b=base(n),key=b.toLowerCase();if(!map.has(key))map.set(key,{b,plain:false,lv:[]});const v=map.get(key),match=String(n).match(roman);if(match)v.lv.push(match[1]);else v.plain=true});return [...map.values()].map(v=>v.plain&&v.lv.length?`${v.b} (including ${[...new Set(v.lv)].join(', ')})`:v.plain?v.b:v.lv.length?[...new Set(v.lv)].map(l=>v.b+' '+l).join(', '):v.b)};function conflicts(e){const names=[...listNames(e)];for(const other of DATA.enchantments){if(other.name===e.name||!other.items?.some(i=>e.items?.includes(i)))continue;const otherNames=listNames(other);const groupRule=(a,b)=>a.includes('Other Avatars')&&b.startsWith('Avatar of ')||a.includes('Other Impetuses')&&b.startsWith('Impetus of ')||a.includes('Other Paradigms')&&b.startsWith('Paradigm of ');if(otherNames.includes(e.name)||groupRule(otherNames,e.name)||groupRule(names,other.name)){names.push(other.name)}}return [...new Set(names.filter(n=>!/^Other (Avatars|Impetuses|Paradigms)$/.test(n)))].sort((a,b)=>a.localeCompare(b))}function chips(names){return `<div class="chips">${names.map(n=>`<span class="chip">${esc(n)}</span>`).join('')}</div>`}function card(e){const incompatible=conflicts(e),v=grouped(incompatible.filter(n=>vanilla.has(base(n).toLowerCase()))),r=grouped(incompatible.filter(n=>!vanilla.has(base(n).toLowerCase())));const runes=e.costMode==='free'||!e.runes?.length?'<p class="note">No rune cost</p>':`<div class="runes">${e.runes.map((n,i)=>`<span class="rune">${i+1}. ${esc(n)}</span>`).join('')}</div><p class="note">Rune sequence per level (when applicable).</p>`;return `<article class="card"><div class="top"><h2>${esc(e.name)}</h2><span class="source">${esc(e.source||'Unknown')}</span></div><div class="badges"><span class="tag">${esc(e.category||'Uncategorized')}</span>${e.maxLevel?`<span class="tag">Max level ${esc(e.maxLevel)}</span>`:''}</div><div class="desc expanded">${desc(e.description)}</div><details class="detail"><summary>Equipment, recipe &amp; incompatibilities</summary><div class="sub">Compatible equipment</div>${chips(e.items||[])}<div class="sub">Rune recipe</div>${runes}<div class="sub">Incompatibilities</div>${r.length?'<div class="note">Runecrafted</div>'+chips(r):''}${v.length?'<div class="note" style="margin-top:8px">Vanilla</div>'+chips(v):''}${!r.length&&!v.length?'<p class="note">No listed incompatibilities.</p>':''}</details></article>`}function options(id,values){const sel=$(id),old=sel.value;sel.innerHTML='<option value="">'+({equipment:'All equipment',source:'All sources',category:'All categories',rune:'All runes'}[id])+'</option>'+values.sort((a,b)=>a.localeCompare(b)).map(v=>`<option value="${esc(v)}">${esc(v)}</option>`).join('');sel.value=values.includes(old)?old:'';syncCustom(id)}const filterIds=['equipment','source','category','rune'];
+function closeMenus(except){
+  document.querySelectorAll('.custom-menu').forEach(menu=>{
+    if(menu.id!==except){menu.hidden=true;menu.previousElementSibling.setAttribute('aria-expanded','false')}
+  });
+}
+function syncCustom(id){
+  const select=$(id),root=select.parentElement.querySelector('.custom-select');
+  if(!root)return;
+  const trigger=root.querySelector('.custom-trigger'),menu=root.querySelector('.custom-menu');
+  trigger.textContent=select.selectedOptions[0]?.textContent||'Choose…';
+  menu.innerHTML=[...select.options].map(opt=>`<button type="button" class="custom-option" role="option" data-value="${esc(opt.value)}" aria-selected="${String(opt.value===select.value)}">${esc(opt.textContent)}</button>`).join('');
+}
+function initCustom(){
+  filterIds.forEach(id=>{
+    const select=$(id),root=document.createElement('div');
+    root.className='custom-select';
+    root.innerHTML=`<button type="button" class="custom-trigger" aria-haspopup="listbox" aria-expanded="false" aria-controls="${id}-menu"></button><div class="custom-menu" id="${id}-menu" role="listbox" aria-label="${esc(select.previousElementSibling.textContent)}" hidden></div>`;
+    select.after(root);
+    const trigger=root.querySelector('.custom-trigger'),menu=root.querySelector('.custom-menu');
+    trigger.addEventListener('click',()=>{
+      const open=menu.hidden;closeMenus();menu.hidden=!open;
+      trigger.setAttribute('aria-expanded',String(open));
+      if(open)menu.querySelector('[aria-selected="true"]')?.scrollIntoView({block:'nearest'});
+    });
+    menu.addEventListener('click',event=>{
+      const option=event.target.closest('.custom-option');
+      if(!option)return;
+      select.value=option.dataset.value;
+      syncCustom(id);closeMenus();select.dispatchEvent(new Event('change',{bubbles:true}));
+      trigger.focus();
+    });
+    trigger.addEventListener('keydown',event=>{
+      if(['ArrowDown','ArrowUp','Enter',' '].includes(event.key)){
+        event.preventDefault();menu.hidden=false;trigger.setAttribute('aria-expanded','true');
+        const options=[...menu.querySelectorAll('.custom-option')];
+        (options.find(x=>x.getAttribute('aria-selected')==='true')||options[0])?.focus();
+      }
+    });
+    menu.addEventListener('keydown',event=>{
+      const opts=[...menu.querySelectorAll('.custom-option')],i=opts.indexOf(document.activeElement);
+      if(event.key==='Escape'){event.preventDefault();closeMenus();trigger.focus()}
+      if(event.key==='ArrowDown'||event.key==='ArrowUp'){
+        event.preventDefault();opts[(i+(event.key==='ArrowDown'?1:-1)+opts.length)%opts.length]?.focus()
+      }
+    });
+    syncCustom(id);
+  });
+  document.addEventListener('click',event=>{if(!event.target.closest('.custom-select'))closeMenus()});
+}
+function render(){const q=$('search').value.trim().toLowerCase(),equipment=$('equipment').value,source=$('source').value,category=$('category').value,rune=$('rune').value;const matches=DATA.enchantments.filter(e=>(!q||(e.name+' '+(e.description||'')).toLowerCase().includes(q))&&(!equipment||e.items?.includes(equipment))&&(!source||e.source===source)&&(!category||e.category===category)&&(!rune||(e.runes||[]).some(n=>n===rune))).sort((a,b)=>a.name.localeCompare(b.name));$('count').textContent=`Showing ${matches.length} of ${DATA.enchantments.length} enchantments`;$('cards').innerHTML=matches.length?matches.map(card).join(''):'<div class="empty">No enchantments match your filters. Try clearing one or more filters.</div>'}function refresh(){options('equipment',[...new Set(DATA.enchantments.flatMap(e=>e.items||[]))]);options('source',[...new Set(DATA.enchantments.map(e=>e.source).filter(Boolean))]);options('category',[...new Set(DATA.enchantments.map(e=>e.category).filter(Boolean))]);options('rune',[...new Set(DATA.enchantments.filter(e=>e.costMode!=='free').flatMap(e=>e.runes||[]).filter(Boolean))]);render()}['search','equipment','source','category','rune'].forEach(id=>$(id).addEventListener(id==='search'?'input':'change',render));$('clear').addEventListener('click',()=>{$('search').value='';['equipment','source','category','rune'].forEach(id=>{$(id).value='';syncCustom(id)});render()});initCustom();refresh();$('status').textContent='Loading enchantment data…';window.SSSHubData.fetch().then(r=>{if(!r.ok)throw Error('Live endpoint unavailable');return r.json()}).then(live=>{if(!Array.isArray(live.enchantments))throw Error('Unexpected data');DATA=live;refresh();$('status').textContent=(live._dataSource==='live'?'Published enchantment catalog loaded.':'Showing bundled reference data.')}).catch(()=>{$('status').textContent='Showing bundled reference data. The published catalog could not be refreshed.'})})();
+</script></body></html>

@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recTcTmAeSCni887R",
+  "draft": false,
+  "name": "Ethereal",
+  "category": "Armor",
+  "description": "Per Piece: +8% Sweeping Damage\n\nSet Bonus (3+ Pieces):\n- Grants permanent Night Vision.\n- Your sweeping damage bonuses apply to all sweeping enchants.\n- Strikes grant Ethereal Charge. At full charge, you become Ethereal, causing the next direct damage you take to be negated and trigger a 1-second stealth.",
+  "cost": "6 Valor Badges (Per Piece)",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 18,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}

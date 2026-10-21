@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "rec8mOlIHmy0NsMfx",
+  "draft": false,
+  "name": "Unsocket Armor",
+  "category": "Service",
+  "description": "Removes all socketed gems from an armor piece.",
+  "cost": "1 Valor Badge",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 45,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}

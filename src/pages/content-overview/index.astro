@@ -1,6 +1,8 @@
 ---
 import SiteLayout from "../../layouts/SiteLayout.astro";
-import content from "../../content/pages/content-overview.html?raw";
+import rawContent from "../../content/pages/content-overview.html?raw";
+import { renderOverview } from '../../lib/site-catalogs.js';
+const content = renderOverview(rawContent);
 ---
 <SiteLayout title={"Custom Content & Guides"} description={"Silver Springs Survival custom content and player tools."} styles={["/assets/chrome.css", "/content-overview/styles.css"]} scripts={["/content-overview/behavior.js"]}>
   <Fragment set:html={content} />

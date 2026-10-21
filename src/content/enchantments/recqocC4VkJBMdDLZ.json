@@ -1,0 +1,31 @@
+{
+  "sourceRecordId": "recqocC4VkJBMdDLZ",
+  "draft": false,
+  "name": "Sundering",
+  "source": "Runecrafted",
+  "category": "Damage",
+  "description": "Attacks deal +1❤ damage and _sunder_ enemies, stacking 3 times. Throws and riptides charge twice as fast while a nearby enemy is _sundered_, then expunge _sunder_ stacks on-impact, dealing +2-4❤ per stack.\n",
+  "maxLevel": 3,
+  "items": [
+    "Tridents"
+  ],
+  "incompatibleRunecrafted": [
+    "Extinction",
+    "Windup",
+    "Ballast"
+  ],
+  "incompatibleVanilla": [
+    "Impaling"
+  ],
+  "discoverer": "Brittt",
+  "researchers": [],
+  "discoveredDate": "2023-09-09",
+  "discoveredBy": "Brittt on 9/9/23, 3:32 AM ",
+  "runeTags": [],
+  "rune1": "Tides",
+  "rune2": "Echoes",
+  "rune3": "Tides",
+  "rune4": "Kinesis",
+  "rune5": "Mortus",
+  "costRule": "per-level"
+}

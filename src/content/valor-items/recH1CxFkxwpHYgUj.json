@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recH1CxFkxwpHYgUj",
+  "draft": false,
+  "name": "Atlas",
+  "category": "Relic",
+  "description": "A book that can hold many maps. Sneak-right-click to open the Atlas. Right click a map stored in the Atlas to make the Atlas appear as that map when held.",
+  "cost": "4 Valor Badges",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 0,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}

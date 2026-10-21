@@ -1,0 +1,28 @@
+{
+  "sourceRecordId": "recyaR0I04jzCzrKA",
+  "draft": false,
+  "name": "Curse of the Farlands",
+  "source": "Curse",
+  "category": "Curse",
+  "description": "- When applied to a tool, breaking a block instead breaks a random adjacent block.\n- When applied to boots, your position periodically rounds.\n",
+  "maxLevel": 1,
+  "items": [
+    "Pickaxes",
+    "Shovels",
+    "Hoes",
+    "Boots"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [],
+  "discoverer": "",
+  "researchers": [],
+  "discoveredDate": "",
+  "discoveredBy": "",
+  "runeTags": [],
+  "rune1": "",
+  "rune2": "",
+  "rune3": "",
+  "rune4": "",
+  "rune5": "",
+  "costRule": "free"
+}

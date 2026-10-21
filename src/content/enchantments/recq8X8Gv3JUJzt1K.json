@@ -1,0 +1,32 @@
+{
+  "sourceRecordId": "recq8X8Gv3JUJzt1K",
+  "draft": false,
+  "name": "Walkman",
+  "source": "Runecrafted",
+  "category": "Travel",
+  "description": "A music disc can be inserted into these leggings to play it, or shift inserted to play it on loop. While they are playing music, you walk (not sprint) **10-20% faster.**\n",
+  "maxLevel": 2,
+  "items": [
+    "Leggings"
+  ],
+  "incompatibleRunecrafted": [
+    "Blitz"
+  ],
+  "incompatibleVanilla": [
+    "Swift Sneak"
+  ],
+  "discoverer": "Starmarsh",
+  "researchers": [
+    "Schwump",
+    "TheJ_Team"
+  ],
+  "discoveredDate": "2025-06-09",
+  "discoveredBy": "",
+  "runeTags": [],
+  "rune1": "Opulence",
+  "rune2": "Sparks",
+  "rune3": "Echoes",
+  "rune4": "Gusts",
+  "rune5": "Gusts",
+  "costRule": "per-level"
+}

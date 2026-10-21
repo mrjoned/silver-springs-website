@@ -1,0 +1,28 @@
+{
+  "sourceRecordId": "rec0nb65UWsNJCMSu",
+  "draft": false,
+  "name": "Curse of the Forbidden Ones",
+  "source": "Curse",
+  "category": "Curse",
+  "description": "Attacks deal +5❤️ to enemies with a forbidden name but -5❤️ damage otherwise.\n**Forbidden Names: Names containing \"Doug\", \"Greg\", \"Jacob\", Charolette\", \"Nathan\", \"Watson\", or \"broace\".**\n",
+  "maxLevel": 1,
+  "items": [
+    "Swords",
+    "Axes",
+    "Maces",
+    "Spears"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [],
+  "discoverer": "",
+  "researchers": [],
+  "discoveredDate": "",
+  "discoveredBy": "",
+  "runeTags": [],
+  "rune1": "",
+  "rune2": "",
+  "rune3": "",
+  "rune4": "",
+  "rune5": "",
+  "costRule": "free"
+}

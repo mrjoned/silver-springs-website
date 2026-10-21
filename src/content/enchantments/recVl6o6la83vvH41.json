@@ -1,0 +1,30 @@
+{
+  "sourceRecordId": "recVl6o6la83vvH41",
+  "draft": false,
+  "name": "Impaling",
+  "source": "Vanilla",
+  "category": "Damage",
+  "description": "Now works vs. any mob in water/rain regardless of if it's aquatic\n",
+  "maxLevel": 5,
+  "items": [
+    "Tridents"
+  ],
+  "incompatibleRunecrafted": [
+    "Windup",
+    "Sundering",
+    "Extinction",
+    "Ballast"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "",
+  "researchers": [],
+  "discoveredDate": "",
+  "discoveredBy": "",
+  "runeTags": [],
+  "rune1": "",
+  "rune2": "",
+  "rune3": "",
+  "rune4": "",
+  "rune5": "",
+  "costRule": "free"
+}

@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recNgKAZZOlhJzBx8",
+  "draft": false,
+  "name": "Umbral",
+  "category": "Armor",
+  "description": "Per Piece: +8% Sneaking Speed\n\nSet Bonus (3+ Pieces):\n- Grants permanent Night Vision.\n- While sneaking, enemies only detect you while facing you within 10 blocks.\n- Ranged strikes grant Umbral Charge and deal +2❤️ damage while undetected or striking from behind. At full charge, you can sneak then double step backwards to enter Shadow Form for 3 seconds.",
+  "cost": "6 Valor Badges (Per Piece)",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 21,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}

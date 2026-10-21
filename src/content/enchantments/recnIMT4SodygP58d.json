@@ -1,0 +1,31 @@
+{
+  "sourceRecordId": "recnIMT4SodygP58d",
+  "draft": false,
+  "name": "Ragdoll",
+  "source": "Runecrafted",
+  "category": "Control",
+  "description": "The killing blow against an enemy deals triple knockback and ignores knockback resistance. Enemies hit by the flung body are stunned for 1 second.\n",
+  "maxLevel": 1,
+  "items": [
+    "Swords",
+    "Axes"
+  ],
+  "incompatibleRunecrafted": [
+    "Fencing",
+    "Bracing"
+  ],
+  "incompatibleVanilla": [
+    "Knockback"
+  ],
+  "discoverer": "",
+  "researchers": [],
+  "discoveredDate": "",
+  "discoveredBy": "",
+  "runeTags": [],
+  "rune1": "Mortus",
+  "rune2": "Kinesis",
+  "rune3": "Kinesis",
+  "rune4": "Kinesis",
+  "rune5": "Sparks",
+  "costRule": "per-level"
+}

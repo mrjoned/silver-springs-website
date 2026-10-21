@@ -1,0 +1,28 @@
+{
+  "sourceRecordId": "recDgFWspaV2evHRn",
+  "draft": false,
+  "name": "Tithing",
+  "source": "Runecrafted",
+  "category": "Cutting",
+  "description": "More entities can be sheared periodically for resources.\n- **Blazes:** Blaze Rods\n- **Chickens and Parrots:** Feathers\n- **Creepers:** Gunpowder\n- **Ghasts:** Ghast Tears\n- **Glow Squids: **Glow Ink\n- **Guardians: **Prismarine Shards and Crystals\n- **Magma Cubes: **Magma Cream\n- **Phantoms:** Phantom Membranes\n- **Shulkers:** Shulker Shells\n- **Skeletons:** Bone Meal\n- **Slimes:** Slime Balls\n- **Sniffers:** Moss\n- **Spiders and Striders:** String\n- **Squids: **Ink\n- **Wither Skeletons: **Coal\n",
+  "maxLevel": 1,
+  "items": [
+    "Shears"
+  ],
+  "incompatibleRunecrafted": [
+    "Mitosis",
+    "Wire Cutters"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "Maidl",
+  "researchers": [],
+  "discoveredDate": "2023-08-19",
+  "discoveredBy": "Maidl on 8/19/23 9:00 PM",
+  "runeTags": [],
+  "rune1": "Moments",
+  "rune2": "Vitality",
+  "rune3": "Arcanum",
+  "rune4": "Opulence",
+  "rune5": "Moments",
+  "costRule": "per-level"
+}

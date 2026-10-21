@@ -1,0 +1,28 @@
+{
+  "sourceRecordId": "reckKrRl5g3M2vdCP",
+  "draft": false,
+  "name": "Flare",
+  "source": "Runecrafted",
+  "category": "Contraption",
+  "description": "Landed projectiles become a flare, providing light which decays over 30 seconds. Enemies hit directly glow for 30 seconds instead.\n",
+  "maxLevel": 1,
+  "items": [
+    "Crossbows"
+  ],
+  "incompatibleRunecrafted": [
+    "Snare",
+    "Smokescreen"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "Starmarsh",
+  "researchers": [],
+  "discoveredDate": "2023-09-04",
+  "discoveredBy": "Starmarsh on 9/4/23 7:20 PM ",
+  "runeTags": [],
+  "rune1": "Gusts",
+  "rune2": "Cinders",
+  "rune3": "Cinders",
+  "rune4": "Moments",
+  "rune5": "Void",
+  "costRule": "per-level"
+}

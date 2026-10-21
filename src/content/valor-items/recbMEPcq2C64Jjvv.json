@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recbMEPcq2C64Jjvv",
+  "draft": false,
+  "name": "Runic Tome",
+  "category": "Relic",
+  "description": "A spell tome with a 5-slot rune inventory. Sneak right click to open it, then right click an inserted rune to select it. Use the tome with the inventory closed to spend XP to cast that rune's spell. Use /rune to view the spell for each rune.\n- Boundary Shards can turn Runic Tomes into Corrupted Tomes. Use /lexicon boundaries for more details.",
+  "cost": "250 Cultist Raid Trial Points",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 10,
+  "relatedEnchantments": [],
+  "shop": "trial"
+}

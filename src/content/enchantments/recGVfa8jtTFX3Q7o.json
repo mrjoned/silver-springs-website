@@ -1,0 +1,39 @@
+{
+  "sourceRecordId": "recGVfa8jtTFX3Q7o",
+  "draft": false,
+  "name": "Dynamo",
+  "source": "Runecrafted",
+  "category": "Damage",
+  "description": "Untargeted swings convert accumulated smash damage into an equivalent amount of _torque_. Standard mace attacks deal bonus lightning damage equal to 25-35% of _torque_.\n",
+  "maxLevel": 3,
+  "items": [
+    "Maces"
+  ],
+  "incompatibleRunecrafted": [
+    "Extinction"
+  ],
+  "incompatibleVanilla": [
+    "Breach",
+    "Density",
+    "Sharpness",
+    "Smite",
+    "Bane of Arthropods"
+  ],
+  "discoverer": "Maidl",
+  "researchers": [
+    "skelud"
+  ],
+  "discoveredDate": "2025-05-24",
+  "discoveredBy": "Maidl and skelud on 05/24/25",
+  "runeTags": [
+    "Gusts",
+    "Kinesis",
+    "Sparks"
+  ],
+  "rune1": "Gusts",
+  "rune2": "Kinesis",
+  "rune3": "Sparks",
+  "rune4": "Sparks",
+  "rune5": "Sparks",
+  "costRule": "per-level"
+}

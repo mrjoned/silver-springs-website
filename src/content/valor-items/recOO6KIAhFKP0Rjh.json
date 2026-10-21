@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recOO6KIAhFKP0Rjh",
+  "draft": false,
+  "name": "Old Minting Press",
+  "category": "Additional Charms",
+  "description": "When a Shiny Gold Coin you flip duplicates, you have a 15% chance to receive a Mint Error Coin instead.",
+  "cost": "",
+  "skillRequirements": "N/A",
+  "acquisition": "Rarely replaces duped shiny gold coins",
+  "order": 65,
+  "relatedEnchantments": [],
+  "shop": "reference"
+}

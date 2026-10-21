@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recTF4CmLPczwaKne",
+  "draft": false,
+  "name": "Grasshopper",
+  "category": "Relic",
+  "description": "Right click while near solid terrain to hop forward. Once airborne, you can right click again to reset your fall distance and briefly glide.\n\n1 second cooldown",
+  "cost": "12 Valor Badges",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 1,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}

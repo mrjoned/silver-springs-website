@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "rec7CtYJJGGznk9Lp",
+  "draft": false,
+  "name": "Iron Cicada Wings",
+  "category": "Relic",
+  "description": "A pair of elytra with 6 armor and 2 armor toughness.",
+  "cost": "10 Valor Badges",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 5,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}

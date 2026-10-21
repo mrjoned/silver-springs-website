@@ -1,0 +1,30 @@
+{
+  "sourceRecordId": "rec5niLSQ9ZuhIx9D",
+  "draft": false,
+  "name": "Lizard Tail",
+  "source": "Runecrafted",
+  "category": "Protection",
+  "description": "You survive death at 0.5 hearts, cleansing negative effects and shedding a decoy tail which draws in distractible enemies for 10 seconds, during which you stealth and gain 80% speed. This can’t occur again until you fully heal.\n",
+  "maxLevel": 1,
+  "items": [
+    "Leggings"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [
+    "Protection",
+    "Projectile Protection",
+    "Blast Protection",
+    "Fire Protection"
+  ],
+  "discoverer": "TroyTheCrafter",
+  "researchers": [],
+  "discoveredDate": "2023-08-30",
+  "discoveredBy": "TroyTheCrafter on 8/30/23 12:12 PM",
+  "runeTags": [],
+  "rune1": "Mortus",
+  "rune2": "Void",
+  "rune3": "Vitality",
+  "rune4": "Gusts",
+  "rune5": "Moments",
+  "costRule": "per-level"
+}

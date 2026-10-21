@@ -1,0 +1,29 @@
+{
+  "sourceRecordId": "recJgDneGhHGYyP9O",
+  "draft": false,
+  "name": "Noclip",
+  "source": "Runecrafted",
+  "category": "Traversal",
+  "description": "While sprinting, you can warp through 1-block thick walls.\n",
+  "maxLevel": 1,
+  "items": [
+    "Boots"
+  ],
+  "incompatibleRunecrafted": [
+    "Coyote Time"
+  ],
+  "incompatibleVanilla": [
+    "Soul Speed"
+  ],
+  "discoverer": "skelud",
+  "researchers": [],
+  "discoveredDate": "2025-05-28",
+  "discoveredBy": "skelud on 05/28/25",
+  "runeTags": [],
+  "rune1": "Gusts",
+  "rune2": "Gusts",
+  "rune3": "Stones",
+  "rune4": "Void",
+  "rune5": "Gusts",
+  "costRule": "per-level"
+}

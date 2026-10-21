@@ -1,0 +1,37 @@
+{
+  "sourceRecordId": "recEPX2jBtdxlJc17",
+  "draft": false,
+  "name": "Ballast",
+  "source": "Runecrafted",
+  "category": "Damage",
+  "description": "- This trident attacks 10% slower for **1-2❤️ damage.**\n- Throws are _heavier_, falling faster but dealing **+2-♾️❤️ damage, **increasing linearly with distance fallen.\n",
+  "maxLevel": 3,
+  "items": [
+    "Tridents"
+  ],
+  "incompatibleRunecrafted": [
+    "Extinction",
+    "Sundering",
+    "Windup"
+  ],
+  "incompatibleVanilla": [
+    "Impaling"
+  ],
+  "discoverer": "TroyTheCrafter",
+  "researchers": [
+    "Maidl"
+  ],
+  "discoveredDate": "2025-06-08",
+  "discoveredBy": "",
+  "runeTags": [
+    "Mortus",
+    "Tides",
+    "Kinesis"
+  ],
+  "rune1": "Mortus",
+  "rune2": "Tides",
+  "rune3": "Kinesis",
+  "rune4": "Kinesis",
+  "rune5": "Mortus",
+  "costRule": "per-level"
+}

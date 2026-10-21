@@ -10,8 +10,10 @@
     "dev": "astro dev",
     "build": "node scripts/check-project.mjs && astro build --force",
     "preview": "astro preview",
-    "test": "node tests/data-connection.mjs && node tests/publishing.mjs && node tests/calendar.mjs",
-    "test:publishing": "node tests/publishing-build.mjs"
+    "test": "node tests/data-connection.mjs && node tests/publishing.mjs && node tests/calendar.mjs && node tests/game-catalogs.mjs",
+    "test:publishing": "node tests/publishing-build.mjs",
+    "test:catalogs": "node tests/catalog-build.mjs",
+    "audit:catalog-import": "node scripts/audit-catalog-import.mjs"
   },
   "dependencies": {
     "astro": "7.4.1"

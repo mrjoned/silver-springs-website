@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "rec6MLpbECnc1gwGI",
+  "draft": false,
+  "name": "Bobblehead",
+  "category": "Charm",
+  "description": "Gain the Luck effect permanently while wearing your own head.",
+  "cost": "5 Valor Badges",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 24,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}

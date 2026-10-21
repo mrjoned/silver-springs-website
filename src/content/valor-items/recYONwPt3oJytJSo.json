@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recYONwPt3oJytJSo",
+  "draft": false,
+  "name": "R.E.D.",
+  "category": "Armor",
+  "description": "Per Piece: +1 Unarmed Attack Damage\n\nSet Bonus (3+ Pieces):\nYou can consume enchanted books to scan their compatible enchants into the R.E.D. database. Activate the helmet to select enchants from the database to apply on every other punch, or on any other piece to change your Stance, causing every 3rd enchanted punch to apply bonus enchants:\n- Chestplate: Applies one additional damage enchant.\n- Leggings: Applies one additional sweeping enchant.\n- Boots: Applies two additional aspect enchants.",
+  "cost": "6 Valor Badges (Per Piece)",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 20,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}

@@ -1,0 +1,29 @@
+{
+  "sourceRecordId": "receiMFck03zGZre3",
+  "draft": false,
+  "name": "Impetus of Hades",
+  "source": "Runecrafted",
+  "category": "Impetus",
+  "description": "- While sneaking, enemies only detect you while within 10 blocks and facing you.\n- You can double sneak while undetected or out of enemy sight to enter **chthonic form** for 4 seconds. Strikes that end **chthonic form** critically strike and deal +6♥️ magic damage.\n    - **Chthonic Form**: Stealth by descending into shadows, gaining +50% speed and +1 step height. Stealths end upon using items or dealing direct damage.\n",
+  "maxLevel": 1,
+  "items": [
+    "Leggings"
+  ],
+  "incompatibleRunecrafted": [
+    "Other Impetuses"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "TheJ_Team",
+  "researchers": [
+    "TroyTheCrafter"
+  ],
+  "discoveredDate": "2025-05-26",
+  "discoveredBy": "TheJ_Team and TroyTheCrafter on 05/26/25",
+  "runeTags": [],
+  "rune1": "Void",
+  "rune2": "Sparks",
+  "rune3": "Void",
+  "rune4": "Mortus",
+  "rune5": "Arcanum",
+  "costRule": "per-level"
+}

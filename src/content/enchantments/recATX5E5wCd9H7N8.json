@@ -1,0 +1,27 @@
+{
+  "sourceRecordId": "recATX5E5wCd9H7N8",
+  "draft": false,
+  "name": "Paradigm of Lust",
+  "source": "Runecrafted",
+  "category": "Paradigm",
+  "description": "Enemies targeting a nearby spouse are **scorned**, letting you lunge at them from afar, _but_ if a spouse dies in combat you wither away unless you enact **reckless vengeance** against their killer.\n> **Scorned**: \n> - Swing at them while within 32 blocks to lunge. \n> - Your first strike sates 1 hunger and grants 50% attack speed for 7 seconds. - Your strikes heal the targeted spouse for 15% of damage dealt. \n> **Reckless Vengeance: **Gain +20% speed toward the target. You can only have one vengeance target at a time. The wither is only cleansed upon killing your target.\n",
+  "maxLevel": 1,
+  "items": [
+    "Helmets"
+  ],
+  "incompatibleRunecrafted": [
+    "Other Paradigms"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "CubicBits",
+  "researchers": [],
+  "discoveredDate": "2023-09-10",
+  "discoveredBy": "CubicBits on 9/10/23 4:19 PM",
+  "runeTags": [],
+  "rune1": "Vitality",
+  "rune2": "Mortus",
+  "rune3": "Cinders",
+  "rune4": "Moments",
+  "rune5": "Mortus",
+  "costRule": "per-level"
+}

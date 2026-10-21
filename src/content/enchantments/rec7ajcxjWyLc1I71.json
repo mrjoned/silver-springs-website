@@ -1,0 +1,28 @@
+{
+  "sourceRecordId": "rec7ajcxjWyLc1I71",
+  "draft": false,
+  "name": "Undertow",
+  "source": "Runecrafted",
+  "category": "Control",
+  "description": "_Throws_ and _riptides_ create an undercurrent which pushes away enemies within 5 blocks and slows them by 40% for 1 second.\n",
+  "maxLevel": 1,
+  "items": [
+    "Tridents"
+  ],
+  "incompatibleRunecrafted": [
+    "Cavitation",
+    "Beheld"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "Frostearrific",
+  "researchers": [],
+  "discoveredDate": "2023-09-05",
+  "discoveredBy": "Frostearrific on 9/5/23 11:38 PM",
+  "runeTags": [],
+  "rune1": "Tides",
+  "rune2": "Kinesis",
+  "rune3": "Tides",
+  "rune4": "Kinesis",
+  "rune5": "Chills",
+  "costRule": "per-level"
+}

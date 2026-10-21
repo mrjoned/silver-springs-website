@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recR7uJEgNKzOCxy0",
+  "draft": false,
+  "name": "Hourglass Sands",
+  "category": "Charm",
+  "description": "Cooldowns on utility items are reduced by 35%.",
+  "cost": "5 Valor Badges",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 31,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}

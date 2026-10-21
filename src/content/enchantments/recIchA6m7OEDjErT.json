@@ -1,0 +1,29 @@
+{
+  "sourceRecordId": "recIchA6m7OEDjErT",
+  "draft": false,
+  "name": "Impetus of Artemis",
+  "source": "Runecrafted",
+  "category": "Impetus",
+  "description": "- Double sneaking calls or dismisses your chosen **spirit** **mount**, defaulting to your **spirit** **wolf**.\n- While mounted, you apply **moonlight** to the closest enemy. **Moonlit** enemies periodically glow, take +2-4♥️ magic damage from headshots, and ranged kills collect their loot and heal your mount 1♥️.\n",
+  "maxLevel": 1,
+  "items": [
+    "Leggings"
+  ],
+  "incompatibleRunecrafted": [
+    "Other Impetuses"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "Shotdown01",
+  "researchers": [
+    "TheJ_Team"
+  ],
+  "discoveredDate": "2025-05-28",
+  "discoveredBy": "Shotdown01 and TheJ_Team on 05/28/25",
+  "runeTags": [],
+  "rune1": "Sparks",
+  "rune2": "Vitality",
+  "rune3": "Gusts",
+  "rune4": "Arcanum",
+  "rune5": "Opulence",
+  "costRule": "per-level"
+}

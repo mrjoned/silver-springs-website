@@ -1,0 +1,30 @@
+{
+  "sourceRecordId": "recEZS1px8X95MjUy",
+  "draft": false,
+  "name": "Mulching",
+  "source": "Runecrafted",
+  "category": "Surplus",
+  "description": "Surplus seeds and poisonous potatoes dropped by harvested crops are automatically composted.\n",
+  "maxLevel": 1,
+  "items": [
+    "Hoes"
+  ],
+  "incompatibleRunecrafted": [
+    "Taste Test",
+    "Hands-On Learning"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "JenoSnowconeIce",
+  "researchers": [
+    "TroyTheCrafter"
+  ],
+  "discoveredDate": "2025-05-15",
+  "discoveredBy": "JenoSnowconeIce and TroyTheCrafter on 5/15/25",
+  "runeTags": [],
+  "rune1": "Stones",
+  "rune2": "Vitality",
+  "rune3": "Opulence",
+  "rune4": "Vitality",
+  "rune5": "Stones",
+  "costRule": "per-level"
+}

@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "reckKkKu5Af5asx6T",
+  "draft": false,
+  "name": "Wishbone",
+  "category": "Additional Charms",
+  "description": "Guarantees the next enemy you kill will drop their head, then destroys itself.",
+  "cost": "",
+  "skillRequirements": "N/A",
+  "acquisition": "Rarely drops in place of heads",
+  "order": 58,
+  "relatedEnchantments": [],
+  "shop": "reference"
+}

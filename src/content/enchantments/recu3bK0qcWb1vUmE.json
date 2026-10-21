@@ -1,0 +1,29 @@
+{
+  "sourceRecordId": "recu3bK0qcWb1vUmE",
+  "draft": false,
+  "name": "Impetus of Zeus",
+  "source": "Runecrafted",
+  "category": "Impetus",
+  "description": "While gliding, you gather _static charge_, and temporarily slow down while aiming ranged weapons. At full charge, your next fired projectile **becomes lightning**.\n- **Becomes Lightning**: Lightning projectiles gain trueshot and strike lightning upon colliding. If it strikes an enemy, the lightning deals the same damage as the projectiles.\n",
+  "maxLevel": 1,
+  "items": [
+    "Leggings"
+  ],
+  "incompatibleRunecrafted": [
+    "Other Impetuses"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "Maidl",
+  "researchers": [
+    "ElectricSparx"
+  ],
+  "discoveredDate": "2025-05-31",
+  "discoveredBy": "Maidl and ElectricSparx on 05/31/25",
+  "runeTags": [],
+  "rune1": "Gusts",
+  "rune2": "Sparks",
+  "rune3": "Moments",
+  "rune4": "Gusts",
+  "rune5": "Sparks",
+  "costRule": "per-level"
+}

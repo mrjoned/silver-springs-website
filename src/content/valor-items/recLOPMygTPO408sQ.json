@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recLOPMygTPO408sQ",
+  "draft": false,
+  "name": "Guide to Hazardous Taming",
+  "category": "Relic",
+  "description": "A skill book which allows you to tame and ride the following dangerous creatures:\n- Slime: Landing deals area damage, absorbing smaller slimes to permanently increase size and jump height. (❤️+ Slimeballs)\n- Spider: Climb walls and walk through webs. (❤️+ String)\n- Hoglin: Spacebar to swing, knocking up and dealing 3❤️ damage. (❤️+ Crimson Fungus)\n- Ravager: Spacebar to roar, dealing 3❤️ damage and 5 blocks knockback in a 5-block radius. (❤️+ Emeralds)",
+  "cost": "8 Valor Badges",
+  "skillRequirements": "375 Taming Skill",
+  "acquisition": "",
+  "order": 14,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}

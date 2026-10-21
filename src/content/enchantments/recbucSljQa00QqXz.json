@@ -1,0 +1,35 @@
+{
+  "sourceRecordId": "recbucSljQa00QqXz",
+  "draft": false,
+  "name": "Coup de Grâce",
+  "source": "Runecrafted",
+  "category": "Sweeping",
+  "description": "Attacks stack **_judgement_** 3 times. Once stacked, right-clicking slams your sword down at the target area where it calls a **_divine strike,_** dealing 3-6❤️ execute damage to enemies and refunding 1 **_judgement_** per enemy slain.\n",
+  "maxLevel": 1,
+  "items": [
+    "Swords"
+  ],
+  "incompatibleRunecrafted": [
+    "Howling"
+  ],
+  "incompatibleVanilla": [
+    "Sweeping Edge"
+  ],
+  "discoverer": "Starmarsh",
+  "researchers": [
+    "beccc"
+  ],
+  "discoveredDate": "2025-06-09",
+  "discoveredBy": "",
+  "runeTags": [
+    "Mortus",
+    "Echoes",
+    "Kinesis"
+  ],
+  "rune1": "Mortus",
+  "rune2": "Echoes",
+  "rune3": "Kinesis",
+  "rune4": "Mortus",
+  "rune5": "Echoes",
+  "costRule": "per-level"
+}

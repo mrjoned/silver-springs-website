@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recvC5QB783oBJUFm",
+  "draft": false,
+  "name": "V.I.O.L.E.T.",
+  "category": "Armor",
+  "description": "Per Piece: +0.5 Block Interaction Range\n\nSet Bonus (3+ Pieces):\n- You can sneak right click with a set piece on any block with an inventory to Tether to it. \n- Activating your chestplate opens the tethered inventory.\n- Activating the helmet cycles your inventory contents 1 row up.\n- Activating the boots cycles them 1 row down.",
+  "cost": "6 Valor Badges (Per Piece)",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 22,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}

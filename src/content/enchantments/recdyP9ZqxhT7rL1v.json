@@ -1,0 +1,35 @@
+{
+  "sourceRecordId": "recdyP9ZqxhT7rL1v",
+  "draft": false,
+  "name": "Avatar of Wardens",
+  "source": "Runecrafted",
+  "category": "Avatar",
+  "description": "You gain +0.5 step height and can sense enemies via their **vibrations**, causing you to **anger**. Once fully angered, you gain the following effects:\n- +1♥️ attack damage and +10% speed\n- Right click periodically to release a 5♥️ **sonic boom**\n- Shift punch the block below you to _burrow_, healing 2♥️ and calming your anger\n",
+  "maxLevel": 1,
+  "items": [
+    "Chestplates"
+  ],
+  "incompatibleRunecrafted": [
+    "Other Avatars"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "Onikary",
+  "researchers": [
+    "ElectricSparx",
+    "JinstoNim"
+  ],
+  "discoveredDate": "2025-06-03",
+  "discoveredBy": "Onikary, ElectricSparx, and JinstoNim on 06/03/25",
+  "runeTags": [
+    "Vitality",
+    "Echoes",
+    "Cinders",
+    "Stones"
+  ],
+  "rune1": "Vitality",
+  "rune2": "Echoes",
+  "rune3": "Cinders",
+  "rune4": "Echoes",
+  "rune5": "Stones",
+  "costRule": "per-level"
+}

@@ -1,0 +1,33 @@
+{
+  "sourceRecordId": "rec41wtE1wy80O2Pi",
+  "draft": false,
+  "name": "Avatar of Ender Dragons",
+  "source": "Runecrafted",
+  "category": "Avatar",
+  "description": "While gliding, sneaking causes you to shoot a dragon fireball, and colliding with terrain causes you to warp through it to the next open space.\nWhile gliding near an Ender Crystal, you regenerate health.\n",
+  "maxLevel": 1,
+  "items": [
+    "Elytra"
+  ],
+  "incompatibleRunecrafted": [
+    "Other Avatars"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "TroyTheCrafter",
+  "researchers": [],
+  "discoveredDate": "2023-08-29",
+  "discoveredBy": "TroyTheCrafter on 8/29/23, 6:03 PM ",
+  "runeTags": [
+    "Vitality",
+    "Void",
+    "Gusts",
+    "Cinders",
+    "Arcanum"
+  ],
+  "rune1": "Vitality",
+  "rune2": "Void",
+  "rune3": "Gusts",
+  "rune4": "Cinders",
+  "rune5": "Arcanum",
+  "costRule": "per-level"
+}

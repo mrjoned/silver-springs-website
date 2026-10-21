@@ -1,0 +1,30 @@
+{
+  "sourceRecordId": "recyLLJHpshIngKHb",
+  "draft": false,
+  "name": "Smokescreen",
+  "source": "Runecrafted",
+  "category": "Contraption",
+  "description": "Grounded projectiles emit smoke for 10 seconds, preventing sight-reliant enemies from naturally detecting targets within. Enemies hit directly have their sight obscured for the same duration instead\n",
+  "maxLevel": 1,
+  "items": [
+    "Crossbows"
+  ],
+  "incompatibleRunecrafted": [
+    "Flare",
+    "Snare"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "Shotdown01",
+  "researchers": [
+    "skelud"
+  ],
+  "discoveredDate": "2025-05-28",
+  "discoveredBy": "Shotdown01 and skelud on 05/28/25",
+  "runeTags": [],
+  "rune1": "Gusts",
+  "rune2": "Cinders",
+  "rune3": "Gusts",
+  "rune4": "Void",
+  "rune5": "Moments",
+  "costRule": "per-level"
+}

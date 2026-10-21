@@ -1,0 +1,31 @@
+{
+  "sourceRecordId": "rect4BaGevK8KEqzY",
+  "draft": false,
+  "name": "Heartseeker",
+  "source": "Runecrafted",
+  "category": "Loot",
+  "description": "Enemies slain in one strike may drop their **heart**.\n",
+  "maxLevel": 1,
+  "items": [
+    "Spears"
+  ],
+  "incompatibleRunecrafted": [
+    "Bounty Hunter"
+  ],
+  "incompatibleVanilla": [
+    "Looting"
+  ],
+  "discoverer": "TheJ_Team",
+  "researchers": [
+    "ElectricSparx"
+  ],
+  "discoveredDate": "2026-03-09",
+  "discoveredBy": "",
+  "runeTags": [],
+  "rune1": "Mortus",
+  "rune2": "Moments",
+  "rune3": "Vitality",
+  "rune4": "Opulence",
+  "rune5": "Gusts",
+  "costRule": "per-level"
+}

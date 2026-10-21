@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "rectOM7V1OXnhF8AS",
+  "draft": false,
+  "name": "Quickfuse Dynamite",
+  "category": "Artifact",
+  "description": "Right Click to launch a piece of dynamite, which explodes after two seconds.",
+  "cost": "32 Blaze Rods + 1 Rune of Kinesis",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 48,
+  "relatedEnchantments": [],
+  "shop": "material"
+}

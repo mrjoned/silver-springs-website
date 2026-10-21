@@ -1,0 +1,29 @@
+{
+  "sourceRecordId": "recvoPa8P6ipRCvF0",
+  "draft": false,
+  "name": "Impetus of Hecate",
+  "source": "Runecrafted",
+  "category": "Impetus",
+  "description": "You have dominion over **_past_**,**_ present_**, and **_future_**, granting the following spell effects:\n- **Past**: You _reflect_ after every 3rd spell cast, causing your next spell tome swing to recast your last spell at no XP cost.\n- **Present**: You gain 25% runic spell power, and magic weapon kills collect loot and XP.\n- **Future**: You can sneak swing a spell tome to _scry_, casting its rightmost spell regardless of your current selection.\n",
+  "maxLevel": 1,
+  "items": [
+    "Leggings"
+  ],
+  "incompatibleRunecrafted": [
+    "Other Impetuses"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "TheJ_Team",
+  "researchers": [
+    "Starmarsh"
+  ],
+  "discoveredDate": "2025-06-06",
+  "discoveredBy": "TheJ_Team and Starmarsh on 06/06/25",
+  "runeTags": [],
+  "rune1": "Echoes",
+  "rune2": "Arcanum",
+  "rune3": "Sparks",
+  "rune4": "Moments",
+  "rune5": "Arcanum",
+  "costRule": "per-level"
+}

@@ -1,0 +1,29 @@
+{
+  "sourceRecordId": "recsMNcweYWDY8Pha",
+  "draft": false,
+  "name": "Slingshot",
+  "source": "Runecrafted",
+  "category": "Ammo",
+  "description": "This bow gains a sling, a 9-slot item inventory which can hold non-equipment items. Shooting without any arrows instead fires items from the sling, applying unique effects such as:\n- Blocks deal damage based on hardness.\n- Glass shatters, dealing 50% radial damage.\n- Light-emitting blocks make targets glow.\n- Food is fed to the target.\n",
+  "maxLevel": 1,
+  "items": [
+    "Bows"
+  ],
+  "incompatibleRunecrafted": [
+    "Tesseract"
+  ],
+  "incompatibleVanilla": [
+    "Infinity"
+  ],
+  "discoverer": "Starmarsh",
+  "researchers": [],
+  "discoveredDate": "2023-09-09",
+  "discoveredBy": "Starmarsh on 9/9/23 4:34 PM",
+  "runeTags": [],
+  "rune1": "Arcanum",
+  "rune2": "Void",
+  "rune3": "Kinesis",
+  "rune4": "Stones",
+  "rune5": "Stones",
+  "costRule": "per-level"
+}

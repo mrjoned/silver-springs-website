@@ -1,0 +1,32 @@
+{
+  "sourceRecordId": "recwV7VV594pQVGev",
+  "draft": false,
+  "name": "Advance",
+  "source": "Runecrafted",
+  "category": "Bashing",
+  "description": "**Bashing **causes you to rapidly dash forward 5 blocks while creating a shockwave which deflects projectiles in a wide arc.\n",
+  "maxLevel": 1,
+  "items": [
+    "Shields"
+  ],
+  "incompatibleRunecrafted": [
+    "Battering Ram",
+    "Discus"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "TheJ_Team",
+  "researchers": [],
+  "discoveredDate": "2025-05-29",
+  "discoveredBy": "TheJ_Team on 05/29/25",
+  "runeTags": [
+    "Aegis",
+    "Gusts",
+    "Kinesis"
+  ],
+  "rune1": "Aegis",
+  "rune2": "Aegis",
+  "rune3": "Kinesis",
+  "rune4": "Gusts",
+  "rune5": "Kinesis",
+  "costRule": "per-level"
+}

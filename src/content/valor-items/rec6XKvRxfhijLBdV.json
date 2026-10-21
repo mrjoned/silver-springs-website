@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "rec6XKvRxfhijLBdV",
+  "draft": false,
+  "name": "Fish Tags",
+  "category": "Charm",
+  "description": "Caught fish are tagged and released, instantly selling for slightly reduced silver and granting bonus experience based on the fish.",
+  "cost": "5 Valor Badges",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 29,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}

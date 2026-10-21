@@ -1,0 +1,28 @@
+{
+  "sourceRecordId": "rec1UGdS9Hsw55O55",
+  "draft": false,
+  "name": "Wire Cutters",
+  "source": "Runecrafted",
+  "category": "Cutting",
+  "description": "Explosive entities can be sheared to _defuse_ them, dropping their explosive as an item and pacifying them if applicable.\n",
+  "maxLevel": 1,
+  "items": [
+    "Shears"
+  ],
+  "incompatibleRunecrafted": [
+    "Mitosis",
+    "Tithing"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "",
+  "researchers": [],
+  "discoveredDate": "",
+  "discoveredBy": "",
+  "runeTags": [],
+  "rune1": "Sparks",
+  "rune2": "Kinesis",
+  "rune3": "Cinders",
+  "rune4": "Void",
+  "rune5": "Opulence",
+  "costRule": "per-level"
+}

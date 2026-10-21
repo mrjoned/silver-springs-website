@@ -1,0 +1,37 @@
+{
+  "sourceRecordId": "rec54QJaG4y7tTo10",
+  "draft": false,
+  "name": "Fire Protection V",
+  "source": "Runecrafted",
+  "category": "Protection",
+  "description": "Fire and lava deal 8-40% less damage and you burn for 15-75% less time. \n> **Runecrafting Bonus**: You take -25% damage from burning enemies, and their unarmed attacks no longer ignite you.\n",
+  "maxLevel": 5,
+  "items": [
+    "Helmets",
+    "Chestplates",
+    "Leggings",
+    "Boots"
+  ],
+  "incompatibleRunecrafted": [
+    "Headstart",
+    "Adrenaline Rush",
+    "Equilibrium",
+    "Lizard Tail"
+  ],
+  "incompatibleVanilla": [
+    "Protection",
+    "Blast Protection",
+    "Projectile Protection"
+  ],
+  "discoverer": "Maidl",
+  "researchers": [],
+  "discoveredDate": "2023-09-05",
+  "discoveredBy": "Maidl on 9/5/23 1:10 AM",
+  "runeTags": [],
+  "rune1": "Cinders",
+  "rune2": "Aegis",
+  "rune3": "Aegis",
+  "rune4": "Cinders",
+  "rune5": "Moments",
+  "costRule": "once"
+}

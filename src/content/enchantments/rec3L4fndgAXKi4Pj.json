@@ -1,0 +1,32 @@
+{
+  "sourceRecordId": "rec3L4fndgAXKi4Pj",
+  "draft": false,
+  "name": "Vault",
+  "source": "Runecrafted",
+  "category": "Dash",
+  "description": "The first jump within 1 second of changing charge phases launches you forward.\n",
+  "maxLevel": 1,
+  "items": [
+    "Spears"
+  ],
+  "incompatibleRunecrafted": [
+    "Man-Eater",
+    "Skip"
+  ],
+  "incompatibleVanilla": [
+    "Lunge"
+  ],
+  "discoverer": "TheJ_Team",
+  "researchers": [
+    "ElectricSparx"
+  ],
+  "discoveredDate": "2026-03-07",
+  "discoveredBy": "",
+  "runeTags": [],
+  "rune1": "Moments",
+  "rune2": "Kinesis",
+  "rune3": "Moments",
+  "rune4": "Gusts",
+  "rune5": "Gusts",
+  "costRule": "per-level"
+}

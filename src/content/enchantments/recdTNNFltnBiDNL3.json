@@ -1,0 +1,33 @@
+{
+  "sourceRecordId": "recdTNNFltnBiDNL3",
+  "draft": false,
+  "name": "Aphelion of Saturn",
+  "source": "Runecrafted",
+  "category": "Aphelion",
+  "description": "**Eclipses **gem socketing. Instead, you form a rotating ring of moonlets upon entering combat. You have 6 moonlets 2❤️ which block hits from outside of your ring until destroyed. Your ring gains the following stats per socketed gem:\n- Agility: +25% rotation speed\n- Favor: +5% moonlet dodge chance\n- Haste: +0.25❤️ moonlet impact damage\n- Tenacity: +0.5 blocks moonlet knockback\n- Vigor: +0.5❤️ per moonlet\n\n- **Eclipse**: The behavior of the eclipsed object is replaced while wearing this Aphelion.\n\n",
+  "maxLevel": 1,
+  "items": [
+    "Boots"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [],
+  "discoverer": "Maidl",
+  "researchers": [
+    "ElectricSparx"
+  ],
+  "discoveredDate": "2025-05-25",
+  "discoveredBy": "Maidl and ElectricSparx on 05/25/25",
+  "runeTags": [
+    "Aegis",
+    "Kinesis",
+    "Opulence",
+    "Stones",
+    "Void"
+  ],
+  "rune1": "Aegis",
+  "rune2": "Opulence",
+  "rune3": "Void",
+  "rune4": "Stones",
+  "rune5": "Kinesis",
+  "costRule": "per-level"
+}

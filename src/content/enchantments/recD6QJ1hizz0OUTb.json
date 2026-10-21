@@ -1,0 +1,28 @@
+{
+  "sourceRecordId": "recD6QJ1hizz0OUTb",
+  "draft": false,
+  "name": "Curse of Binding",
+  "source": "Curse",
+  "category": "Curse",
+  "description": "Once equipped, items with this curse can only be unequipped via death.\n",
+  "maxLevel": 1,
+  "items": [
+    "Helmets",
+    "Chestplates",
+    "Leggings",
+    "Boots"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [],
+  "discoverer": "",
+  "researchers": [],
+  "discoveredDate": "",
+  "discoveredBy": "",
+  "runeTags": [],
+  "rune1": "",
+  "rune2": "",
+  "rune3": "",
+  "rune4": "",
+  "rune5": "",
+  "costRule": "free"
+}

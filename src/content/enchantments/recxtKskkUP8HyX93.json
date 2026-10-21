@@ -1,0 +1,29 @@
+{
+  "sourceRecordId": "recxtKskkUP8HyX93",
+  "draft": false,
+  "name": "Whispering",
+  "source": "Mythical",
+  "category": "Damage",
+  "description": "Shots deal +50% damage, collect loot, and don't cause vibrations. Shots overdrawn for 1 second _whisper_, homing in on enemies and dealing +25% sonic damage.\n",
+  "maxLevel": null,
+  "items": [
+    "Bows"
+  ],
+  "incompatibleRunecrafted": [
+    "Sniper"
+  ],
+  "incompatibleVanilla": [
+    "Power"
+  ],
+  "discoverer": "",
+  "researchers": [],
+  "discoveredDate": "",
+  "discoveredBy": "",
+  "runeTags": [],
+  "rune1": "",
+  "rune2": "",
+  "rune3": "",
+  "rune4": "",
+  "rune5": "",
+  "costRule": "free"
+}

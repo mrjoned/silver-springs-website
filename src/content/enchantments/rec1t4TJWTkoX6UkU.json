@@ -1,0 +1,34 @@
+{
+  "sourceRecordId": "rec1t4TJWTkoX6UkU",
+  "draft": false,
+  "name": "Ice Aspect",
+  "source": "Runecrafted",
+  "category": "Aspect",
+  "description": "Attacks apply 4-8 seconds of freezing, stacking with each attack and capping at 20 seconds.\n",
+  "maxLevel": 3,
+  "items": [
+    "Maces",
+    "Swords",
+    "Axes",
+    "Spears"
+  ],
+  "incompatibleRunecrafted": [
+    "Plague Aspect",
+    "Purity Aspect",
+    "Fire Aspect III"
+  ],
+  "incompatibleVanilla": [
+    "Fire Aspect"
+  ],
+  "discoverer": "",
+  "researchers": [],
+  "discoveredDate": "",
+  "discoveredBy": "<none> on 12/25/16, 12:57 PM",
+  "runeTags": [],
+  "rune1": "Mortus",
+  "rune2": "Echoes",
+  "rune3": "Chills",
+  "rune4": "Chills",
+  "rune5": "Chills",
+  "costRule": "per-level"
+}

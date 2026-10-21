@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recszK5i9AgxUSEpR",
+  "draft": false,
+  "name": "Revert Transmog",
+  "category": "Service",
+  "description": "Transmutes a custom helmet back into a regular helmet.",
+  "cost": "0 Valor Badges",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 41,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}

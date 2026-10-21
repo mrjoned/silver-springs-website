@@ -1,0 +1,31 @@
+{
+  "sourceRecordId": "rect4SXOf6OSuK2fY",
+  "draft": false,
+  "name": "Subduction",
+  "source": "Runecrafted",
+  "category": "Boosting",
+  "description": "Smash attacks subduct the ground, creating a stone spire which instantly lifts you **5-9 blocks,** crumbling after 4 seconds.\n",
+  "maxLevel": 3,
+  "items": [
+    "Maces"
+  ],
+  "incompatibleRunecrafted": [
+    "Effervescence"
+  ],
+  "incompatibleVanilla": [
+    "Wind Burst"
+  ],
+  "discoverer": "TheJ_Team",
+  "researchers": [
+    "TroyTheCrafter"
+  ],
+  "discoveredDate": "2025-06-05",
+  "discoveredBy": "TheJ_Team and TroyTheCrafter on 06/05/25",
+  "runeTags": [],
+  "rune1": "Kinesis",
+  "rune2": "Stones",
+  "rune3": "Kinesis",
+  "rune4": "Stones",
+  "rune5": "Moments",
+  "costRule": "per-level"
+}

@@ -1,0 +1,25 @@
+{
+  "sourceRecordId": "recXMBtT4IUQHbqzb",
+  "draft": false,
+  "name": "Curse of Galvanism",
+  "source": "Curse",
+  "category": "Curse",
+  "description": "While worn, you are far more likely to be struck by lightning during thunderstorms.\n",
+  "maxLevel": 1,
+  "items": [
+    "Helmets"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [],
+  "discoverer": "",
+  "researchers": [],
+  "discoveredDate": "",
+  "discoveredBy": "",
+  "runeTags": [],
+  "rune1": "",
+  "rune2": "",
+  "rune3": "",
+  "rune4": "",
+  "rune5": "",
+  "costRule": "free"
+}

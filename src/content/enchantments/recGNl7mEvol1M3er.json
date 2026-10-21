@@ -1,0 +1,35 @@
+{
+  "sourceRecordId": "recGNl7mEvol1M3er",
+  "draft": false,
+  "name": "Avalanche",
+  "source": "Runecrafted",
+  "category": "Radial",
+  "description": "Upon ascending to the maximum height from this mace's boosting enchantment, it releases a sheet of ice which falls forward onto targets below, dealing 4♥️ freezing damage and 8 seconds of frostbite.\n",
+  "maxLevel": 1,
+  "items": [
+    "Maces"
+  ],
+  "incompatibleRunecrafted": [
+    "Ragnarok",
+    "Resonance",
+    "Will-o'-Wisp"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "TroyTheCrafter",
+  "researchers": [
+    "skelud"
+  ],
+  "discoveredDate": "2025-05-26",
+  "discoveredBy": "TroyTheCrafter and skelud on 05/26/25",
+  "runeTags": [
+    "Kinesis",
+    "Gusts",
+    "Chills"
+  ],
+  "rune1": "Kinesis",
+  "rune2": "Gusts",
+  "rune3": "Chills",
+  "rune4": "Kinesis",
+  "rune5": "Chills",
+  "costRule": "per-level"
+}

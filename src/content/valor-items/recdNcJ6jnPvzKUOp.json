@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recdNcJ6jnPvzKUOp",
+  "draft": false,
+  "name": "Potion Launcher",
+  "category": "Relic",
+  "description": "Contains a 9-slot item inventory which can hold potions. Once loaded, right clicking fires the leftmost potion in the inventory.",
+  "cost": "10 Valor Badges",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 9,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}

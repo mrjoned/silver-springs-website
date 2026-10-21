@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "reccFxXTLVp8M50QX",
+  "draft": false,
+  "name": "Checkered Flag",
+  "category": "Additional Charms",
+  "description": "Prevents the hunger effect from being applied and reduces exhaustion from movement by 50%.\n",
+  "cost": "Your Sanity",
+  "skillRequirements": "N/A",
+  "acquisition": "Raceway Parkour Reward",
+  "order": 63,
+  "relatedEnchantments": [],
+  "shop": "reference"
+}

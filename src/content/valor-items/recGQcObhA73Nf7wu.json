@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recGQcObhA73Nf7wu",
+  "draft": false,
+  "name": "Silver Springs Brochure",
+  "category": "Additional Charms",
+  "description": "Grants a 35% discount on all Silver Springs Village vendor purchases.",
+  "cost": "",
+  "skillRequirements": "N/A",
+  "acquisition": "Discovering all Spawn Secrets",
+  "order": 67,
+  "relatedEnchantments": [],
+  "shop": "reference"
+}

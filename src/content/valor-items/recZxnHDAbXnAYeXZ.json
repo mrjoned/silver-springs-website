@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recZxnHDAbXnAYeXZ",
+  "draft": false,
+  "name": "Portable Hole",
+  "category": "Relic",
+  "description": "Right clicking consumes 35 XP to carve an 8-block tunnel in the direction you're looking for 10 seconds\n*6 second cooldown*",
+  "cost": "10 Valor Badges",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 8,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}

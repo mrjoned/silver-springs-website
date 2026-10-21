@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "rec2bHnuYAMg6EZjx",
+  "draft": false,
+  "name": "Headlamp",
+  "category": "Additional Charms",
+  "description": "Emits a light at your head location, illuminating the area around you.",
+  "cost": "",
+  "skillRequirements": "N/A",
+  "acquisition": "Mineshaft loot",
+  "order": 64,
+  "relatedEnchantments": [],
+  "shop": "reference"
+}

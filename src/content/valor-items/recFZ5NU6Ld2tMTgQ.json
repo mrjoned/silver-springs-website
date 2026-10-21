@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recFZ5NU6Ld2tMTgQ",
+  "draft": false,
+  "name": "Chimaera",
+  "category": "Relic",
+  "description": "Chimaera is a bow which splits into a wood and stone sword when swung. Sneak-right-click while holding both to reform the bow. Each applies a mark which the other can redeem to grant a 40% speed burst and apply bonus effects:\n- Serpent's Fang🏹 redeems 2 seconds of venom.\n- Lion's Claw⚔️ redeems 2x damage.\n- Goat's Horn⚔️ redeems 2x knockback and a 1-second stun.\n\nVenom: a rapid poison which heals you for 50% of the damage dealt.\nStun: halts an entity, preventing movement, attacks, and shots. Direct strikes break enemies out of stuns.",
+  "cost": "12 Valor Badges",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 3,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}

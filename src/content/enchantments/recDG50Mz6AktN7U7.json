@@ -1,0 +1,31 @@
+{
+  "sourceRecordId": "recDG50Mz6AktN7U7",
+  "draft": false,
+  "name": "Resonance",
+  "source": "Runecrafted",
+  "category": "Radial",
+  "description": "Smash attacks emit a sound wave which applies stacking _resonance_ to other enemies within 10 blocks, dealing 1❤️ sonic damage and 0.25 seconds stunning per stack.\n",
+  "maxLevel": 1,
+  "items": [
+    "Maces"
+  ],
+  "incompatibleRunecrafted": [
+    "Avalanche",
+    "Ragnarok",
+    "Will-o'-Wisp"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "skelud",
+  "researchers": [
+    "Starmarsh"
+  ],
+  "discoveredDate": "2025-05-27",
+  "discoveredBy": "skelud and Starmarsh on 05/27/25",
+  "runeTags": [],
+  "rune1": "Kinesis",
+  "rune2": "Echoes",
+  "rune3": "Echoes",
+  "rune4": "Sparks",
+  "rune5": "Moments",
+  "costRule": "per-level"
+}

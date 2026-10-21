@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "rechNw0WOvMjAdoZM",
+  "draft": false,
+  "name": "Juniper Sprig",
+  "category": "Additional Charms",
+  "description": "When taking poison or wither damage, you have a 10-50% chance based on your alchemy level (and luck) to cleanse the effect and gain brief regeneration.",
+  "cost": "",
+  "skillRequirements": "N/A",
+  "acquisition": "Rarely drops from leaves.",
+  "order": 59,
+  "relatedEnchantments": [],
+  "shop": "reference"
+}

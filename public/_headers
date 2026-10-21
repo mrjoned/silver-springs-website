@@ -1,0 +1,13 @@
+/api/enchantments
+  Content-Type: application/json; charset=utf-8
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Content-Type-Options: nosniff
+
+/api/enchantments/
+  Content-Type: application/json; charset=utf-8
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Content-Type-Options: nosniff
+
+/runecrafting-hub/tools/enchantments.json
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Content-Type-Options: nosniff

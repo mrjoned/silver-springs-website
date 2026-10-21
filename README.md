@@ -9,3 +9,7 @@ Use Pages CMS to publish announcements and add Gallery photos. See [PUBLISHING.m
 ## Development
 
 Run `npm ci`, then `npm run dev`. Use `npm test` for the publishing and live-data checks, `npm run test:publishing` to test new CMS entries through a clean production build, and `npm run build` to generate the website in `dist/`.
+
+## Game catalogs
+
+Manage Valor Shop and Runecrafting entries in Pages CMS. See [CATALOGS.md](CATALOGS.md) for the shared data model, price/recipe rules, cart migration, and tests.

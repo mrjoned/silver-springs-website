@@ -1,0 +1,31 @@
+{
+  "sourceRecordId": "recgo09gNsugiYiKR",
+  "draft": false,
+  "name": "Aphelion of Mercury",
+  "source": "Runecrafted",
+  "category": "Aphelion",
+  "description": "**Eclipses** the Raceway Flag. You are instead immune to poison and gain _time dilation_ upon fully refilling your hunger, gaining 100% speed and immunity to hunger loss for 5 seconds.\n- **Eclipse: **The behavior of the eclipsed object is replaced while wearing this Aphelion.\n",
+  "maxLevel": 1,
+  "items": [
+    "Boots"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [],
+  "discoverer": "Starmarsh",
+  "researchers": [],
+  "discoveredDate": "2025-05-25",
+  "discoveredBy": "Starmarsh on 05/25/25",
+  "runeTags": [
+    "Aegis",
+    "Gusts",
+    "Moments",
+    "Mortus",
+    "Vitality"
+  ],
+  "rune1": "Mortus",
+  "rune2": "Aegis",
+  "rune3": "Vitality",
+  "rune4": "Gusts",
+  "rune5": "Moments",
+  "costRule": "per-level"
+}

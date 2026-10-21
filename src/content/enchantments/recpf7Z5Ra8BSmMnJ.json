@@ -1,0 +1,29 @@
+{
+  "sourceRecordId": "recpf7Z5Ra8BSmMnJ",
+  "draft": false,
+  "name": "Frost",
+  "source": "Runecrafted",
+  "category": "Aspect",
+  "description": "Shots apply 8 seconds of freezing, stacking with each shot and capping at 20 seconds.\n",
+  "maxLevel": 1,
+  "items": [
+    "Bows"
+  ],
+  "incompatibleRunecrafted": [
+    "Pestilence"
+  ],
+  "incompatibleVanilla": [
+    "Flame"
+  ],
+  "discoverer": "",
+  "researchers": [],
+  "discoveredDate": "",
+  "discoveredBy": "N/A",
+  "runeTags": [],
+  "rune1": "Gusts",
+  "rune2": "Echoes",
+  "rune3": "Chills",
+  "rune4": "Chills",
+  "rune5": "Chills",
+  "costRule": "per-level"
+}

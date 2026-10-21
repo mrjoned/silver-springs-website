@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "reclvRD134JNEwmTd",
+  "draft": false,
+  "name": "Polaris",
+  "category": "Artifact",
+  "description": "Charge with light sources, can then be used to place light blocks.\n\nLeft Click: Adjust brightness. Sneak to decrease\nRight Click: Place or absorb a light source.\nRight Click (Inventory): Insert light-emitting items to add charge. Shift click to insert full stacks.\nDouble Sneak: Visualize nearby lights.",
+  "cost": "1 Nether Star + 4 Rune of Sparks",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 51,
+  "relatedEnchantments": [],
+  "shop": "material"
+}

@@ -1,0 +1,32 @@
+{
+  "sourceRecordId": "recqKzGD7iAz6Qupn",
+  "draft": false,
+  "name": "Aphelion of Ceres",
+  "source": "Runecrafted",
+  "category": "Aphelion",
+  "description": "**Eclipses** Slingshot and Newton's Meteor. Blocks fired by Slingshots instead fire as meteors, and your meteors apply the damage and effects their block would when fired by a Slingshot, then crumble after 3 hits.\n- **Eclipse: **The behavior of the eclipsed object is replaced while wearing this Aphelion.\n",
+  "maxLevel": 1,
+  "items": [
+    "Boots"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [],
+  "discoverer": "Maidl",
+  "researchers": [
+    "ElectricSparx"
+  ],
+  "discoveredDate": "2025-06-07",
+  "discoveredBy": "Maidl and ElectricSparx on 06/07/25",
+  "runeTags": [
+    "Gusts",
+    "Kinesis",
+    "Stones",
+    "Void"
+  ],
+  "rune1": "Gusts",
+  "rune2": "Stones",
+  "rune3": "Kinesis",
+  "rune4": "Stones",
+  "rune5": "Void",
+  "costRule": "per-level"
+}

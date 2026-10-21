@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recT1VtNjXRiutGga",
+  "draft": false,
+  "name": "mcMMO XP Boost",
+  "category": "Service",
+  "description": "Doubles your mcMMO XP gains for 30 minutes.",
+  "cost": "1 Valor Badge",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 44,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}

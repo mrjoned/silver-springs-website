@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recXnBXw4jySa0aTb",
+  "draft": false,
+  "name": "Shiny Gold Coin",
+  "category": "Relic",
+  "description": "Right click to flip the coin. With luck, the coin may duplicate.",
+  "cost": "1 Valor Badge",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 11,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}

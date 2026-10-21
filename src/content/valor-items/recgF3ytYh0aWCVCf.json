@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recgF3ytYh0aWCVCf",
+  "draft": false,
+  "name": "Adventurer's Tricorne",
+  "category": "Charm",
+  "description": "Gain 500 Silver when opening loot chests of 250 Silver when slaying survival world bosses.",
+  "cost": "5 Valor Badges",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 23,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}

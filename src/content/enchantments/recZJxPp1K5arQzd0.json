@@ -1,0 +1,27 @@
+{
+  "sourceRecordId": "recZJxPp1K5arQzd0",
+  "draft": false,
+  "name": "Utility Belt",
+  "source": "Runecrafted",
+  "category": "Storage",
+  "description": "These leggings gain a _belt_, a 9-slot item inventory. Activating the leggings swaps the contents of their belt and your hotbar.\n",
+  "maxLevel": 1,
+  "items": [
+    "Leggings"
+  ],
+  "incompatibleRunecrafted": [
+    "Deep Pockets"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "Starmarsh",
+  "researchers": [],
+  "discoveredDate": "2023-09-01",
+  "discoveredBy": "Starmarsh on 9/1/23 4:02 AM ",
+  "runeTags": [],
+  "rune1": "Opulence",
+  "rune2": "Void",
+  "rune3": "Sparks",
+  "rune4": "Void",
+  "rune5": "Opulence",
+  "costRule": "per-level"
+}

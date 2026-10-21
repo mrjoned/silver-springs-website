@@ -1,0 +1,27 @@
+{
+  "sourceRecordId": "recllC8F84pFkxUG1",
+  "draft": false,
+  "name": "Paradigm of Sloth",
+  "source": "Runecrafted",
+  "category": "Paradigm",
+  "description": "You can _lumber_, moving 10% slower and gaining slow, **massive attacks**, _but_ lumbering replaces sprinting.\n> You can perform massive attacks after sprinting for 1.5 seconds. They have -66% total attack speed but strike on any swing in a 5-block radius, applying 2.5x damage and a brief stun then 1 second of -20% speed.\n",
+  "maxLevel": 1,
+  "items": [
+    "Helmets"
+  ],
+  "incompatibleRunecrafted": [
+    "Other Paradigms"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "Starmarsh",
+  "researchers": [],
+  "discoveredDate": "2023-08-27",
+  "discoveredBy": "Starmarsh on 8/27/23 4:11 AM",
+  "runeTags": [],
+  "rune1": "Gusts",
+  "rune2": "Chills",
+  "rune3": "Mortus",
+  "rune4": "Kinesis",
+  "rune5": "Chills",
+  "costRule": "per-level"
+}

@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "reckqDpxJ1iWLf7Pu",
+  "draft": false,
+  "name": "Bonus Charm Slot",
+  "category": "Service",
+  "description": "Grants you an additional charm slot. Can be purchased 2 times.",
+  "cost": "8 Valor Badges",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 39,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}

@@ -1,0 +1,32 @@
+{
+  "sourceRecordId": "recqFI6yWiVdYIMQ2",
+  "draft": false,
+  "name": "Bottom Feeder",
+  "source": "Runecrafted",
+  "category": "Trove",
+  "description": "All caught trash and treasure is replaced by _scrap._\n- `Common: Leather, Ink Sacs, Glow Ink Sacs, String, Lily Pads, Blaze Rods: 4-16 per catch `\n- `Uncommon: \"Geode,\" \"Dye Trader Bag,\" \"Pottery Bag\"`\n- `Rare: Crusted Gem, Crusted Rune, \"Home Videos\"`\n- `Very Rare: 1-2 Netherite Scrap`\n",
+  "maxLevel": 1,
+  "items": [
+    "Fishing Rods"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [
+    "Luck of the Sea"
+  ],
+  "discoverer": "MareeAM",
+  "researchers": [],
+  "discoveredDate": "2023-09-09",
+  "discoveredBy": "MareeAM on 9/9/23, 4:28 AM",
+  "runeTags": [
+    "Tides",
+    "Opulence",
+    "Void",
+    "Stones"
+  ],
+  "rune1": "Tides",
+  "rune2": "Tides",
+  "rune3": "Opulence",
+  "rune4": "Void",
+  "rune5": "Stones",
+  "costRule": "per-level"
+}

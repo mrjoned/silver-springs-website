@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "rec9VBfvAAT9sfpZl",
+  "draft": false,
+  "name": "Windup Key",
+  "category": "Relic",
+  "description": "Right click an Iron Golem to ally it to you for 20 minutes. Can be used 4 times.",
+  "cost": "1 Valor Badge",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 16,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}

@@ -1,0 +1,36 @@
+{
+  "sourceRecordId": "rechDKHBpcnOyZ5y8",
+  "draft": false,
+  "name": "Adrenaline Rush",
+  "source": "Runecrafted",
+  "category": "Protection",
+  "description": "You gain Adrenaline for 10 seconds when dropping to 25% health. This slows nearby enemies, cuts damage-over-time effects to half speed, and grants you +40-80% speed, damage and damage reduction. This can’t occur again until you fully heal.\n",
+  "maxLevel": 2,
+  "items": [
+    "Chestplates"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [
+    "Protection",
+    "Blast Protection",
+    "Fire Protection",
+    "Projectile Protection"
+  ],
+  "discoverer": "Starmarsh",
+  "researchers": [],
+  "discoveredDate": "2023-09-03",
+  "discoveredBy": "Starmarsh on 9/3/23, 2:17 PM ",
+  "runeTags": [
+    "Aegis",
+    "Chills",
+    "Moments",
+    "Mortus",
+    "Vitality"
+  ],
+  "rune1": "Mortus",
+  "rune2": "Aegis",
+  "rune3": "Vitality",
+  "rune4": "Chills",
+  "rune5": "Moments",
+  "costRule": "per-level"
+}

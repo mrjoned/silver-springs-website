@@ -1,0 +1,29 @@
+{
+  "sourceRecordId": "reccvyJkFgGJhdELJ",
+  "draft": false,
+  "name": "Pestle",
+  "source": "Runecrafted",
+  "category": "Loot",
+  "description": "Slain enemies have a chance, scaling with overkill damage, to be crushed into _primordial dust_, which can be crafted with crystals and socketing gems to duplicate them.\n",
+  "maxLevel": 1,
+  "items": [
+    "Maces"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [
+    "Looting"
+  ],
+  "discoverer": "skelud",
+  "researchers": [
+    "TroyTheCrafter"
+  ],
+  "discoveredDate": "2025-05-17",
+  "discoveredBy": "skelud and TroyTheCrafter on 5/17/25",
+  "runeTags": [],
+  "rune1": "Mortus",
+  "rune2": "Kinesis",
+  "rune3": "Stones",
+  "rune4": "Opulence",
+  "rune5": "Stones",
+  "costRule": "per-level"
+}

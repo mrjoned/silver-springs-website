@@ -1,0 +1,37 @@
+{
+  "sourceRecordId": "recxPNX53CnX4skiM",
+  "draft": false,
+  "name": "Projectile Protection V",
+  "source": "Runecrafted",
+  "category": "Protection",
+  "description": "Projectiles deal 8-40% less damage and apply `15-75%` less knockback. \n> **Runecrafting Bonus**: Negative potion effects from projectiles have -75% less duration.\n",
+  "maxLevel": 5,
+  "items": [
+    "Helmets",
+    "Chestplates",
+    "Leggings",
+    "Boots"
+  ],
+  "incompatibleRunecrafted": [
+    "Headstart",
+    "Adrenaline Rush",
+    "Equilibrium",
+    "Lizard Tail"
+  ],
+  "incompatibleVanilla": [
+    "Protection",
+    "Blast Protection",
+    "Fire Protection"
+  ],
+  "discoverer": "Starmarsh",
+  "researchers": [],
+  "discoveredDate": "2023-09-10",
+  "discoveredBy": "Starmarsh on 9/10/23 11:16 PM",
+  "runeTags": [],
+  "rune1": "Gusts",
+  "rune2": "Kinesis",
+  "rune3": "Aegis",
+  "rune4": "Arcanum",
+  "rune5": "Moments",
+  "costRule": "once"
+}

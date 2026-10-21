@@ -1,0 +1,29 @@
+{
+  "sourceRecordId": "rec4BHVDwIsOBEKHT",
+  "draft": false,
+  "name": "Pestilence",
+  "source": "Runecrafted",
+  "category": "Aspect",
+  "description": "Shots **Plague** enemies for 4-8 seconds. Plagued enemies have Wither I and on death will spread Plague stacks to the 1-3 closest enemies after a short delay.\n",
+  "maxLevel": 1,
+  "items": [
+    "Bows"
+  ],
+  "incompatibleRunecrafted": [
+    "Frost"
+  ],
+  "incompatibleVanilla": [
+    "Flame"
+  ],
+  "discoverer": "",
+  "researchers": [],
+  "discoveredDate": "",
+  "discoveredBy": "N/A",
+  "runeTags": [],
+  "rune1": "Gusts",
+  "rune2": "Echoes",
+  "rune3": "Mortus",
+  "rune4": "Tides",
+  "rune5": "Mortus",
+  "costRule": "per-level"
+}

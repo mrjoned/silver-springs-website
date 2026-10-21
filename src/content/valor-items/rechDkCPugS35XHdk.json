@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "rechDkCPugS35XHdk",
+  "draft": false,
+  "name": "Supercell",
+  "category": "Relic",
+  "description": "A mace with the mythical enchant Ragnarok🌟:\n- Ragnarok: While airborne, right click to freeze and charge a mace throw, generating torque based on smash damage upon landing, then slam down to it, stunning enemies within 5 blocks. Standard attacks deal 25% of torque as chain lightning damage.",
+  "cost": "12 Valor Badges",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 12,
+  "relatedEnchantments": [],
+  "shop": "badge"
+}

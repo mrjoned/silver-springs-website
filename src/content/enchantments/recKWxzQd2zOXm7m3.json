@@ -1,0 +1,25 @@
+{
+  "sourceRecordId": "recKWxzQd2zOXm7m3",
+  "draft": false,
+  "name": "Curse of Ataxia",
+  "source": "Curse",
+  "category": "Curse",
+  "description": "While worn, you take triple fall damage.\n",
+  "maxLevel": 1,
+  "items": [
+    "Boots"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [],
+  "discoverer": "",
+  "researchers": [],
+  "discoveredDate": "",
+  "discoveredBy": "",
+  "runeTags": [],
+  "rune1": "",
+  "rune2": "",
+  "rune3": "",
+  "rune4": "",
+  "rune5": "",
+  "costRule": "free"
+}

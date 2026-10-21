@@ -1,0 +1,29 @@
+{
+  "sourceRecordId": "rec71FXAs1vQIATHS",
+  "draft": false,
+  "name": "Tesseract",
+  "source": "Mythical",
+  "category": "Ammo",
+  "description": "While drawn, the bow pulls items to you and small entities into its tesseract. Mobs fired from the tesseract deal their attack damage as bonus damage. You can fire without any ammo available, releasing a 3❤️ base damage energy shot.\n",
+  "maxLevel": null,
+  "items": [
+    "Bows"
+  ],
+  "incompatibleRunecrafted": [
+    "Slingshot"
+  ],
+  "incompatibleVanilla": [
+    "Infinity"
+  ],
+  "discoverer": "",
+  "researchers": [],
+  "discoveredDate": "",
+  "discoveredBy": "",
+  "runeTags": [],
+  "rune1": "",
+  "rune2": "",
+  "rune3": "",
+  "rune4": "",
+  "rune5": "",
+  "costRule": "free"
+}

@@ -1,0 +1,25 @@
+{
+  "sourceRecordId": "recuCwKMq6ltZcxNN",
+  "draft": false,
+  "name": "Kaleidoscope",
+  "source": "Runecrafted",
+  "category": "Uncategorized",
+  "description": "Viewing a portal through this spyglass instantly transports you through it.\n",
+  "maxLevel": 1,
+  "items": [
+    "Spyglass"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [],
+  "discoverer": "",
+  "researchers": [],
+  "discoveredDate": "",
+  "discoveredBy": "",
+  "runeTags": [],
+  "rune1": "Cinders",
+  "rune2": "Void",
+  "rune3": "Arcanum",
+  "rune4": "Moments",
+  "rune5": "Void",
+  "costRule": "per-level"
+}

@@ -1,0 +1,29 @@
+{
+  "sourceRecordId": "recEWRdMx6p0aA5Mo",
+  "draft": false,
+  "name": "Rocket Boosting",
+  "source": "Runecrafted",
+  "category": "Descent",
+  "description": "Sneaking while jumping performs an upward rocket boost and resets accumulated fall distance. You can perform 2-3 rocket boosts before landing.\n> Fall damage is reduced by 2 hearts. \n",
+  "maxLevel": 2,
+  "items": [
+    "Boots"
+  ],
+  "incompatibleRunecrafted": [
+    "Ground Pound"
+  ],
+  "incompatibleVanilla": [
+    "Feather Falling"
+  ],
+  "discoverer": "MogTheDinosaur",
+  "researchers": [],
+  "discoveredDate": "2023-08-24",
+  "discoveredBy": "MogTheDinosaur on 8/24/23 5:16 PM",
+  "runeTags": [],
+  "rune1": "Kinesis",
+  "rune2": "Gusts",
+  "rune3": "Kinesis",
+  "rune4": "Gusts",
+  "rune5": "Kinesis",
+  "costRule": "per-level"
+}

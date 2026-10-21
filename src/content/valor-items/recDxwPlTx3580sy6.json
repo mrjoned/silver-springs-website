@@ -1,0 +1,13 @@
+{
+  "sourceRecordId": "recDxwPlTx3580sy6",
+  "draft": false,
+  "name": "Balloon Animal",
+  "category": "Charm",
+  "description": "When a tamed or summoned creature dies, it explodes, stunning enemies in a 5-block radius and dealing 10❤️ damage.",
+  "cost": "1250 Boardwalk Tickets",
+  "skillRequirements": "N/A",
+  "acquisition": "",
+  "order": 55,
+  "relatedEnchantments": [],
+  "shop": "boardwalk"
+}

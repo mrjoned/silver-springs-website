@@ -1,0 +1,27 @@
+{
+  "sourceRecordId": "recudYTAZnhHq0jo4",
+  "draft": false,
+  "name": "Impetus of Poseidon",
+  "source": "Runecrafted",
+  "category": "Impetus",
+  "description": "- You can riptide while grounded without being wet.\n- Whenever your riptide, you _ride the wave_, always traveling the full distance, at constant speed, and with full control of your direction, striking all nearby enemies along the way.\n",
+  "maxLevel": 1,
+  "items": [
+    "Leggings"
+  ],
+  "incompatibleRunecrafted": [
+    "Other Impetuses"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "TroyTheCrafter",
+  "researchers": [],
+  "discoveredDate": "2025-05-28",
+  "discoveredBy": "TroyTheCrafter on 05/28/25",
+  "runeTags": [],
+  "rune1": "Stones",
+  "rune2": "Sparks",
+  "rune3": "Tides",
+  "rune4": "Kinesis",
+  "rune5": "Mortus",
+  "costRule": "per-level"
+}

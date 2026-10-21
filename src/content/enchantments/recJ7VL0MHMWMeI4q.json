@@ -1,0 +1,27 @@
+{
+  "sourceRecordId": "recJ7VL0MHMWMeI4q",
+  "draft": false,
+  "name": "Trawling",
+  "source": "Runecrafted",
+  "category": "Tackle",
+  "description": "When catching fish, you may reel in up to 1-3 additional fish.\n",
+  "maxLevel": 3,
+  "items": [
+    "Fishing Rods"
+  ],
+  "incompatibleRunecrafted": [
+    "Hot Rod"
+  ],
+  "incompatibleVanilla": [],
+  "discoverer": "Frostearrific",
+  "researchers": [],
+  "discoveredDate": "2023-08-23",
+  "discoveredBy": "Frostearrific on 8/23/23 5:18 AM",
+  "runeTags": [],
+  "rune1": "Tides",
+  "rune2": "Tides",
+  "rune3": "Opulence",
+  "rune4": "Vitality",
+  "rune5": "Vitality",
+  "costRule": "per-level"
+}

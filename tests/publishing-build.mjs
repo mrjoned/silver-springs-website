@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { writeFile, readFile, rm, access } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
-import { rmSync } from 'node:fs';
+import { rmSync, unlinkSync, existsSync } from 'node:fs';
 
 const root = new URL('../', import.meta.url);
 const fixtures = [
@@ -19,6 +19,13 @@ function build() {
   rmSync(new URL('dist/', root), { recursive: true, force: true });
   try { execFileSync(process.execPath, ['node_modules/astro/bin/astro.mjs', 'build', '--force'], { cwd: root, stdio: 'pipe' }); }
   catch (error) { throw new Error([error.stdout?.toString(), error.stderr?.toString()].filter(Boolean).join('\n') || error.message); }
+}
+for (const [path, expected] of fixtures) {
+  try {
+    const previous = JSON.parse(await readFile(new URL(path, root), 'utf8'));
+    assert.equal(previous.title, expected.title, 'Refusing to replace an unrelated file at '+path);
+    await rm(new URL(path, root));
+  } catch (error) { if (error.code !== 'ENOENT') throw error; }
 }
 const created = [];
 try {
@@ -42,7 +49,7 @@ try {
   assert.equal(photos[0].name, 'CMS gallery build check');
   console.log('Build integration passed: a new post updates homepage/archive/routes, drafts stay hidden, and a new photo updates the grid/count/year filter/viewer metadata.');
 } finally {
-  for (const path of created) await rm(new URL(path, root));
+  for (const path of created) unlinkSync(new URL(path, root));
   build();
   await assert.rejects(access(new URL('dist/changelog-and-faq/cms-publishing-check/index.html', root)));
 }
