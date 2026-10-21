@@ -208,6 +208,7 @@ content:
       use No rune cost.
   - name: description
     label: Effect / description
+    description: "Colors: [red]text[/red]. Also gold, yellow, green, aqua, blue, purple, pink, gray, white. Colors appear on the website; tags remain visible in this editor."
     type: rich-text
     options:
       format: html

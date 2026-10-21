@@ -1,1 +1,11 @@
 .sss-richtext{white-space:normal!important}.sss-richtext p{margin:0 0 .65em}.sss-richtext p:last-child{margin-bottom:0}.sss-richtext strong{font-weight:700}.sss-richtext em{font-style:italic}.sss-richtext u{text-decoration:underline}.sss-richtext ul,.sss-richtext ol{padding-left:1.4em}.sss-richtext blockquote{margin:.6em 0;padding-left:1em;border-left:2px solid #b888b8}
+.sss-richtext .sss-color-red{color:#ff7777}
+.sss-richtext .sss-color-gold{color:#ffbb55}
+.sss-richtext .sss-color-yellow{color:#ffff77}
+.sss-richtext .sss-color-green{color:#77ee88}
+.sss-richtext .sss-color-aqua{color:#66eeee}
+.sss-richtext .sss-color-blue{color:#88aaff}
+.sss-richtext .sss-color-purple{color:#cc99ff}
+.sss-richtext .sss-color-pink{color:#ff99cc}
+.sss-richtext .sss-color-gray{color:#bbbbbb}
+.sss-richtext .sss-color-white{color:#ffffff}

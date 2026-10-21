@@ -36,3 +36,19 @@ const chainsaw=enchantments.find(e=>e.name==='Chainsaw');
 assert.match(format(chainsaw.description),/<em>revs the chainsaw<\/em>/);
 assert.match(format(chainsaw.description),/<em>berserk<\/em>/);
 console.log('Description formatting passed: full catalog, emphasis, bold, code, lists, line breaks, quotes, links, and hostile markup.');
+
+for (const color of ['red','gold','yellow','green','aqua','blue','purple','pink','gray','white']) {
+ assert.match(format(`<p>[${color}]colored text[/${color}]</p>`), new RegExp(`<span class="sss-color-${color}">colored text</span>`));
+}
+assert.match(format('<p>[red]<strong>Fire</strong> and <em>burning</em>[/red]</p>'), /<span class="sss-color-red"><strong>Fire<\/strong> and <em>burning<\/em><\/span>/);
+assert.match(format('[aqua]**Freezing**[/aqua]'), /sss-color-aqua/);
+assert.match(format('<p>[red]fire [gold]burst[/gold][/red]</p>'), /sss-color-red.*sss-color-gold/);
+assert.match(format('[RED]Fire[/RED]'), /sss-color-red/);
+assert(!format('`[red]code[/red]`').includes('sss-color'));
+assert(!format('<pre><code>[red]code[/red]</code></pre>').includes('sss-color'));
+assert(!format('[red]unclosed').includes('sss-color'));
+assert(!format('[red]mismatch[/blue]').includes('sss-color'));
+assert(!format('<p>[red]one</p><p>two[/red]</p>').includes('sss-color'));
+assert(!format('[custom]unknown[/custom]').includes('sss-color'));
+assert(!format('[Link](https://example.com/[red]x[/red])').includes('sss-color'));
+console.log('Color tags passed: ten colors, rich text, nesting, code, links and malformed tags.');
