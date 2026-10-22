@@ -4,7 +4,7 @@
   "source": "Runecrafted",
   "category": "Protection",
   "costRule": "per-level",
-  "description": "<p>Gain 8 seconds of [gold]<em>adrenaline</em>[/gold]<em> </em>when dropping to 25% health, slowing nearby enemies, halving damage-over-time frequency, and gaining [effect:speed]+<strong><u>40-80%</u></strong>[/effect] speed, damage, and damage reduction, and -50% healing. This can't occur again until you fully heal.</p>",
+  "description": "<p>Gain 8 seconds of [gold]<em>adrenaline</em>[/gold]<em> </em>when dropping to 25% health, slowing nearby enemies, halving damage-over-time frequency, and gaining +[effect:speed]<strong><u>40-80%</u></strong>[/effect] speed, damage, and damage reduction, and -50% healing. This can't occur again until you fully heal.</p>",
   "effects": [
     {
       "key": "speed",
