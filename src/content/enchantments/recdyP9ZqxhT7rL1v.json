@@ -1,18 +1,28 @@
 {
-  "sourceRecordId": "recdyP9ZqxhT7rL1v",
-  "draft": false,
   "name": "Avatar of Wardens",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Avatar",
-  "description": "<p>You gain +0.5 step height and can sense enemies via their <strong>vibrations</strong>, causing you to <strong>anger</strong>. Once fully angered, you gain the following effects:</p><ul><li>+1♥️ attack damage and +10% speed</li><li>Right click periodically to release a 5♥️ <strong>sonic boom</strong></li><li>Shift punch the block below you to <em>burrow</em>, healing 2♥️ and calming your anger</li></ul>",
+  "costRule": "per-level",
+  "description": "<p>You gain +0.5 step height and can sense enemies via their [blue]vibrations[/blue], causing you to [effect:wardenanger][dark-red]anger[/dark-red][/effect]. Once fully angered, you gain the following effects:</p><ul><li><p>+1♥️ attack damage and +10% speed</p></li><li><p>Right click periodically to release a 5♥️ [blue]sonic boom[/blue]</p></li><li><p>Shift punch the block below you to <em>burrow</em>, healing 2♥️ and calming your [dark-red]anger[/dark-red]</p></li></ul><p></p>",
+  "effects": [
+    {
+      "key": "wardenanger",
+      "explanation": "You can gain anger every 3 seconds, stacking 4 times."
+    }
+  ],
   "maxLevel": 1,
   "items": [
     "Chestplates"
   ],
+  "rune1": "Vitality",
+  "rune2": "Echoes",
+  "rune3": "Cinders",
+  "rune4": "Echoes",
+  "rune5": "Stones",
   "incompatibleRunecrafted": [
     "Other Avatars"
   ],
-  "incompatibleVanilla": [],
   "discoverer": "Onikary",
   "researchers": [
     "ElectricSparx",
@@ -26,10 +36,5 @@
     "Cinders",
     "Stones"
   ],
-  "rune1": "Vitality",
-  "rune2": "Echoes",
-  "rune3": "Cinders",
-  "rune4": "Echoes",
-  "rune5": "Stones",
-  "costRule": "per-level"
+  "sourceRecordId": "recdyP9ZqxhT7rL1v"
 }
