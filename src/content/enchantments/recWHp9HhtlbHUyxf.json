@@ -4,7 +4,7 @@
   "source": "Runecrafted",
   "category": "Bashing",
   "costRule": "per-level",
-  "description": "<p>[term:bashing]<strong>Bashing</strong>[/term] causes you to rapidly dash forward, pushing all enemies you collide with along the dash, then [effect:stun][dark-gray]stunning[/dark-gray][/effect] them for 1.5 seconds.</p>",
+  "description": "<p>[term:bashing]<strong>Bashing</strong>[/term] causes you to rapidly dash forward, pushing all enemies you collide with along the dash, then [term:stun][dark-gray]stunning[/dark-gray][/term] them for 1.5 seconds.</p>",
   "maxLevel": 1,
   "items": [
     "Shields"
