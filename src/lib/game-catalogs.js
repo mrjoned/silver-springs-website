@@ -68,7 +68,8 @@ export function makeGameCatalogs(enchantmentRows,valorRows,glossaryRows=[]) {
     const keys=new Set();
     for(const effect of e.effects){
       assert(effect && /^[a-z][a-z0-9-]*$/.test(effect.key) && !keys.has(effect.key),e.name+' needs unique effect keys');keys.add(effect.key);
-      assert(text(effect.label)&&effect.label.trim(),e.name+' effect needs a label');
+      effect.label ??= '';
+      assert(text(effect.label),e.name+' effect has an invalid label');
       assert(Array.isArray(effect.levels)&&effect.levels.length>0,e.name+' effect needs level values');
       const levels=new Set();
       for(const row of effect.levels){

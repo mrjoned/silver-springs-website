@@ -88,3 +88,16 @@ for(const name of [undefined,'','   ']){
  assert(!output.includes('undefined'));
 }
 console.log('Glossary names are optional; empty names render explanation-only tooltips.');
+
+for(const label of [undefined,'','   ']){
+ const entry=structuredClone(one);
+ entry.effects[0].label=label;
+ const catalog=makeGameCatalogs([entry],[]);
+ const output=format('[effect:speed]speed[/effect]',enchantmentData(catalog).enchantments[0]);
+ assert.match(output,/data-explanation="Level I: 40%\nLevel II: 80%"/);
+ assert(!output.includes('undefined'));
+}
+assert.match(tip,/data-explanation="Speed bonus\nLevel I: 40%\nLevel II: 80%"/);
+const invalidLabel=structuredClone(one);invalidLabel.effects[0].label=123;
+assert.throws(()=>makeGameCatalogs([invalidLabel],[]),/invalid label/);
+console.log('Effect labels are optional; unlabeled tooltips start directly with level values.');
