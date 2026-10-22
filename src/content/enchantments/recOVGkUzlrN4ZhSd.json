@@ -1,21 +1,24 @@
 {
-  "sourceRecordId": "recOVGkUzlrN4ZhSd",
-  "draft": false,
   "name": "Airbag",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Safety",
-  "description": "<p>While gliding, colliding with a wall deals 40-80% less damage and repulses you backwards.</p>",
+  "costRule": "per-level",
+  "description": "<p>While gliding, colliding with a wall deals <strong><u>40-80% less damage</u></strong> and repulses you backwards.</p>",
   "maxLevel": 2,
   "items": [
     "Elytra"
   ],
+  "rune1": "Gusts",
+  "rune2": "Gusts",
+  "rune3": "Stones",
+  "rune4": "Aegis",
+  "rune5": "Aegis",
   "incompatibleRunecrafted": [
     "Wrapping",
     "Crash Landicoot"
   ],
-  "incompatibleVanilla": [],
   "discoverer": "TroyTheCrafter",
-  "researchers": [],
   "discoveredDate": "2023-08-24",
   "discoveredBy": "TroyTheCrafter on 8/24/23 6:05 AM",
   "runeTags": [
@@ -23,10 +26,5 @@
     "Gusts",
     "Stones"
   ],
-  "rune1": "Gusts",
-  "rune2": "Gusts",
-  "rune3": "Stones",
-  "rune4": "Aegis",
-  "rune5": "Aegis",
-  "costRule": "per-level"
+  "sourceRecordId": "recOVGkUzlrN4ZhSd"
 }
