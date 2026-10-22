@@ -1,16 +1,19 @@
 {
-  "sourceRecordId": "recsvQ6aLRiqLacrI",
-  "draft": false,
   "name": "Aphelion of Pluto",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Aphelion",
-  "description": "<p><strong>Eclipses</strong> Cerberus. It instead starts as the sword <strong>Charon</strong>, which charges over 9 attacks, then transforms into <strong>Pluto</strong>, a loaded crossbow with the mythical spread enchantment <strong>Cryovolcano</strong>🌟. <em>Pluto</em> fires once, then reforms into Charon. </p><ul><li><strong>Charon</strong>: 4.5 Attack Damage, 2 Attack Speed </li><li><strong>Cryovolcano</strong>: Shots fire a 9-block long and 4.5-block wide cylinder for 9 damage, applying 9 seconds of freezing and burning.</li><li>**Eclipse: **The behavior of the eclipsed object is replaced while wearing this Aphelion.</li></ul>",
+  "costRule": "per-level",
+  "description": "<p>[term:eclipse][blue]<strong><u>Eclipses</u></strong>[/blue][/term] Cerberus. It instead starts as the sword <strong>Charon</strong>, which charges over 9 attacks, then transforms into [red]P[/red][gold]l[/gold][yellow]u[/yellow][grey]t[/grey][aqua]o[/aqua], a loaded crossbow with the mythical spread enchantment <strong>Cryovolcano</strong>🌟. <em>Pluto</em> fires once, then reforms into <em>Charon</em>.</p><ul><li><p><strong>Charon</strong>: 4.5 Attack Damage, 2 Attack Speed</p></li><li><p><strong>Cryovolcano</strong>: Shots fire a 9-block long and 4.5-block wide cylinder for 9 damage, applying 9 seconds of freezing and burning.</p></li></ul><p></p>",
   "maxLevel": 1,
   "items": [
     "Boots"
   ],
-  "incompatibleRunecrafted": [],
-  "incompatibleVanilla": [],
+  "rune1": "Mortus",
+  "rune2": "Chills",
+  "rune3": "Cinders",
+  "rune4": "Gusts",
+  "rune5": "Mortus",
   "discoverer": "TheJ_Team",
   "researchers": [
     "Autumn_Bun"
@@ -23,10 +26,5 @@
     "Gusts",
     "Mortus"
   ],
-  "rune1": "Mortus",
-  "rune2": "Chills",
-  "rune3": "Cinders",
-  "rune4": "Gusts",
-  "rune5": "Mortus",
-  "costRule": "per-level"
+  "sourceRecordId": "recsvQ6aLRiqLacrI"
 }
