@@ -4,7 +4,7 @@
   "source": "Runecrafted",
   "category": "Aphelion",
   "costRule": "per-level",
-  "description": "<p>[blue]<strong><u>Eclipses</u></strong>[/blue] Paradigm of Envy. You envy Avatars instead of Paradigms.</p><ul><li><p><strong>Eclipse</strong>: The behavior of the eclipsed object is replaced while wearing this Aphelion.</p></li></ul><p>[gray]<em>At its loneliest, barren and longing.</em>[/gray]</p>",
+  "description": "<p>[term:eclipse][blue]<strong><u>Eclipses</u></strong>[/blue][/term] Paradigm of Envy. You envy Avatars instead of Paradigms.</p><p>[gray]<em>At its loneliest, barren and longing.</em>[/gray]</p>",
   "maxLevel": 1,
   "items": [
     "Boots"
