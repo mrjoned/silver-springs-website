@@ -1,20 +1,29 @@
 {
-  "sourceRecordId": "recpjc1lR5pBbUERJ",
-  "draft": false,
   "name": "Avatar of Slimes",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Avatar",
-  "description": "<p>You jump higher, take -25% fall damage, and bounce back up after taking fall damage.<br>Upon dropping to 75%, 50%, or 25% health, a slime splits off of you which provokes enemies. This can&#39;t occur again until you fully heal.</p>",
+  "costRule": "per-level",
+  "description": "<ul><li><p>You jump higher, take -25% fall damage, and [effect:slimebounce][dark-gray]bounce back up[/dark-gray][/effect] after taking fall damage.</p></li><li><p>Upon dropping to 75%, 50%, or 25% health, a slime splits off of you which provokes enemies. This can't occur again until you fully heal.</p></li></ul><p></p>",
+  "effects": [
+    {
+      "key": "slimebounce",
+      "explanation": "Disabled by sneaking."
+    }
+  ],
   "maxLevel": 1,
   "items": [
     "Chestplates"
   ],
+  "rune1": "Kinesis",
+  "rune2": "Aegis",
+  "rune3": "Kinesis",
+  "rune4": "Mortus",
+  "rune5": "Vitality",
   "incompatibleRunecrafted": [
     "Other Avatars"
   ],
-  "incompatibleVanilla": [],
   "discoverer": "iClimaxx",
-  "researchers": [],
   "discoveredDate": "2017-02-02",
   "discoveredBy": "iClimaxx on 2/2/17, 3:08 PM",
   "runeTags": [
@@ -23,10 +32,5 @@
     "Mortus",
     "Vitality"
   ],
-  "rune1": "Kinesis",
-  "rune2": "Aegis",
-  "rune3": "Kinesis",
-  "rune4": "Mortus",
-  "rune5": "Vitality",
-  "costRule": "per-level"
+  "sourceRecordId": "recpjc1lR5pBbUERJ"
 }
