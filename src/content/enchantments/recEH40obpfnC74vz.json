@@ -4,7 +4,7 @@
   "source": "Runecrafted",
   "category": "Aphelion",
   "costRule": "per-level",
-  "description": "<p>[blue]<strong><u>Eclipses</u></strong>[/blue] the Runic Tome. When you would cast the Void, Gusts, Kinesis, or Sparks spells, you instead cast <strong><u>Great Red Spot</u></strong>.</p><ul><li><p><strong>Great Red Spot</strong>: A large elliptical lightning storm forms around you for 25 seconds. It pulls in and suffocates enemies, increasing in intensity at the center, which instead deals more frequent void damage. Costs 125 XP.</p></li><li><p><strong>Eclipse</strong>: The behavior of the eclipsed object is replaced while wearing this Aphelion.</p></li></ul><p>[gray]<em>At giant's reach, a crimson storm older than magic.</em>[/gray]</p>",
+  "description": "<p>[blue]<strong><u>Eclipses</u></strong>[/blue] the Runic Tome. When you would cast the Void, Gusts, Kinesis, or Sparks spells, you instead cast [term:greatredspot]<strong><u>Great Red Spot</u></strong>[/term].</p><p>[gray]<em>At giant's reach, a crimson storm older than magic.</em>[/gray]</p>",
   "maxLevel": 1,
   "items": [
     "Boots"
