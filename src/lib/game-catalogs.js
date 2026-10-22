@@ -1,4 +1,4 @@
-import { readdirSync, readFileSync } from 'node:fs';
+import { readdirSync, readFileSync, existsSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
 import { resolve } from 'node:path';
 
@@ -33,9 +33,16 @@ export function parseCost(cost) {
   });
 }
 export function loadGameCatalogs(base=root) {
-  return makeGameCatalogs(readEntries('enchantments',base),readEntries('valor-items',base));
+  return makeGameCatalogs(readEntries('enchantments',base),readEntries('valor-items',base),existsSync(new URL('src/content/glossary/',base))?readEntries('glossary',base):[]);
 }
-export function makeGameCatalogs(enchantmentRows,valorRows) {
+export function makeGameCatalogs(enchantmentRows,valorRows,glossaryRows=[]) {
+  const glossary=publishedEntries(glossaryRows,'glossary');
+  const termKeys=new Set();
+  for(const term of glossary){
+    assert(/^[a-z][a-z0-9-]*$/.test(term.key),'invalid glossary key');
+    assert(!termKeys.has(term.key),'duplicate glossary key '+term.key);termKeys.add(term.key);
+    assert(term.description.trim(),term.name+' needs an explanation');
+  }
   const enchantments=publishedEntries(enchantmentRows,'enchantments');
   for(const e of enchantments) {
     if(e.maxLevel===undefined||e.maxLevel==='')e.maxLevel=null;
@@ -50,6 +57,21 @@ export function makeGameCatalogs(enchantmentRows,valorRows) {
     assert(e.items.length>0,e.name+' needs compatible equipment');
     for(let i=1;i<=5;i++) assert(e['rune'+i]===''||RUNE_NAMES.includes(e['rune'+i]),e.name+' has an invalid rune '+i);
     if(e.costRule!=='free')for(let i=1;i<=5;i++)assert(e['rune'+i],e.name+' needs all five recipe runes');
+  }
+  for(const e of enchantments){
+    e.effects ??= [];
+    assert(Array.isArray(e.effects),e.name+' has an invalid effects list');
+    const keys=new Set();
+    for(const effect of e.effects){
+      assert(effect && /^[a-z][a-z0-9-]*$/.test(effect.key) && !keys.has(effect.key),e.name+' needs unique effect keys');keys.add(effect.key);
+      assert(text(effect.label)&&effect.label.trim(),e.name+' effect needs a label');
+      assert(Array.isArray(effect.levels)&&effect.levels.length>0,e.name+' effect needs level values');
+      const levels=new Set();
+      for(const row of effect.levels){
+        assert(Number.isInteger(row.level)&&row.level>=1&&row.level<=(e.maxLevel||10)&&!levels.has(row.level),e.name+' effect has invalid or repeated levels');levels.add(row.level);
+        assert(text(row.value)&&row.value.trim(),e.name+' effect needs a value');
+      }
+    }
   }
   enchantments.sort((a,b)=>a.name.localeCompare(b.name,'en'));
   const valor=publishedEntries(valorRows,'valor-items');
@@ -68,15 +90,15 @@ export function makeGameCatalogs(enchantmentRows,valorRows) {
     if(e.shop!=='reference')parseCost(e.cost);
   }
   valor.sort((a,b)=>a.order-b.order||a.name.localeCompare(b.name,'en'));
-  return { enchantments, valor };
+  return { enchantments, valor, glossary };
 }
 export function enchantmentData(catalog=loadGameCatalogs()) {
   const enchantments=catalog.enchantments.map(e=>({
-    id:e.id,name:e.name,runes:[1,2,3,4,5].map(i=>e['rune'+i]).filter(Boolean),items:e.items,maxLevel:e.maxLevel,
+    id:e.id,name:e.name,effects:e.effects||[],runes:[1,2,3,4,5].map(i=>e['rune'+i]).filter(Boolean),items:e.items,maxLevel:e.maxLevel,
     incompatible:[...new Set([...e.incompatibleRunecrafted,...e.incompatibleVanilla])],description:e.description,
     source:e.source,category:e.category,costMode:e.costRule==='free'?'free':'runes',costRule:e.costRule
   }));
-  return {enchantments,items:[...new Set(enchantments.flatMap(e=>e.items))].sort(),_dataSource:'repository'};
+  return {enchantments,glossary:catalog.glossary||[],items:[...new Set(enchantments.flatMap(e=>e.items))].sort(),_dataSource:'repository'};
 }
 export function valorData(catalog=loadGameCatalogs()) {
   return catalog.valor.map(e=>({Id:e.id,Name:e.name,Category:e.category,Description:e.description,Cost:e.cost,'Skill Requirements':e.skillRequirements,'Acquisition (Non-Purchaseable)':e.acquisition,Shop:e.shop,RelatedEnchantments:e.relatedEnchantments.map(id=>catalog.enchantments.find(e=>e.id===id).name)}));

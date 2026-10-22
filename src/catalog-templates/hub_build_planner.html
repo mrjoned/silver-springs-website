@@ -205,7 +205,7 @@ main,.wrap{max-width:none}main{padding:22px 20px 40px}body:has(>.wrap){padding:2
   const runeNames = ['Aegis','Arcanum','Chills','Cinders','Echoes','Gusts','Kinesis','Moments','Mortus','Opulence','Sparks','Stones','Tides','Vitality','Void'];
   const state = { items: [], nextId: 1 };
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const formatDescription = window.SSSDescriptions.format;
+  const formatDescription = (value,e) => window.SSSDescriptions.format(value,e,DATA.glossary);
   const makeOptions = (list, selected, placeholder) =>
     (placeholder ? `<option value="">${esc(placeholder)}</option>` : '') +
     list.map(v => `<option value="${esc(v)}" ${String(v)===String(selected)?'selected':''}>${esc(v)}</option>`).join('');
@@ -408,7 +408,7 @@ main,.wrap{max-width:none}main{padding:22px 20px 40px}body:has(>.wrap){padding:2
             <div class="rcp-field"><label>Enchantment</label><div class="rcp-select-with-info"><select data-action="enchant" data-item="${item.id}" data-index="${j}">${makeEnchantOptions(suggestions(item,j),entry.name)}</select>${e ? `<button type="button" class="rcp-info-toggle" data-action="toggle-description" data-item="${item.id}" data-index="${j}" aria-label="${entry.showDescription ? 'Hide' : 'Show'} description for ${esc(e.name)}" title="${entry.showDescription ? 'Hide' : 'Show'} enchantment description" aria-expanded="${!!entry.showDescription}" aria-controls="${descriptionId}">ⓘ</button>` : ''}</div>${e ? `<div class="rcp-small">Category: ${esc(categoryName(e))} · ${esc(costLabel)}</div>` : `<div class="rcp-small">Choose an enchantment to see its category and rune cost.</div>`}</div>
             ${levelControl}
             <button type="button" class="rcp-remove" aria-label="Remove enchantment" title="Remove enchantment" data-action="remove-enchant" data-item="${item.id}" data-index="${j}">×</button>
-          </div>${e && entry.showDescription ? `<div class="rcp-description" id="${descriptionId}" role="region" aria-label="Description of ${esc(e.name)}"><div class="rcp-description-title">${esc(e.name)} — Description</div><div class="rcp-description-body sss-richtext">${formatDescription(e.description)}</div>${incompatibilityMarkup(e)}</div>` : ''}</div>`;
+          </div>${e && entry.showDescription ? `<div class="rcp-description" id="${descriptionId}" role="region" aria-label="Description of ${esc(e.name)}"><div class="rcp-description-title">${esc(e.name)} — Description</div><div class="rcp-description-body sss-richtext">${formatDescription(e.description,e)}</div>${incompatibilityMarkup(e)}</div>` : ''}</div>`;
         }).join('');
         return `<article class="rcp-item">
           <div class="rcp-item-head"><h3>${esc(item.type)}</h3><div class="rcp-head-actions"><button type="button" class="rcp-button secondary" data-action="toggle-type" data-item="${item.id}" aria-expanded="${!!item.editingType}">${item.editingType ? 'Cancel' : 'Change'}</button><button type="button" class="rcp-button danger" data-action="remove-item" data-item="${item.id}">Remove</button></div></div>
@@ -437,7 +437,7 @@ main,.wrap{max-width:none}main{padding:22px 20px 40px}body:has(>.wrap){padding:2
       const enchants=item.enchants.map(entry=>({entry,e:DATA.enchantments.find(e=>e.name===entry.name)})).filter(x=>x.e);
       return `<article class="rcp-review-gear"><h4>${esc(item.type)}</h4>${enchants.length?enchants.map(({entry,e})=>{
         const suffix=hasFixedRomanLevel(e)||e.source==='Mythical'?'':` ${entry.level>1?'Level '+entry.level:'Level I'}`;
-        return `<div class="rcp-review-enchant"><div class="rcp-review-enchant-title">${esc(e.name)}${esc(suffix)}</div><div class="rcp-small">${esc(categoryName(e))} · ${e.costMode==='free'?'No rune cost':'Runecrafted'}</div><div class="rcp-review-description sss-richtext">${formatDescription(e.description)}</div>${incompatibilityMarkup(e)}</div>`;
+        return `<div class="rcp-review-enchant"><div class="rcp-review-enchant-title">${esc(e.name)}${esc(suffix)}</div><div class="rcp-small">${esc(categoryName(e))} · ${e.costMode==='free'?'No rune cost':'Runecrafted'}</div><div class="rcp-review-description sss-richtext">${formatDescription(e.description,e)}</div>${incompatibilityMarkup(e)}</div>`;
       }).join(''):'<p class="rcp-muted">No enchantments selected for this equipment.</p>'}${hasGemSockets(item)?gemSummary([item],'Planned Gems'):''}</article>`;
     }).join('');
     const totals=buildRuneTotals();

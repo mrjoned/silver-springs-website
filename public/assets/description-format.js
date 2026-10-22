@@ -72,14 +72,69 @@
     }
     return output.join('');
   }
+  function explain(html, entry={}, glossary=[]) {
+    const parts=html.split(/(<[^>]*>)/g), out=[];
+    let pending=null, skip=0;
+    const roman=n=>['','I','II','III','IV','V','VI','VII','VIII','IX','X'][n]||String(n);
+    for(const part of parts){
+      if(part.startsWith('<')){
+        if(/^<(?:a|code|pre)\b/i.test(part)){skip++;pending=null;}
+        if(/^<\/(?:a|code|pre)>/i.test(part))skip=Math.max(0,skip-1);
+        if(/^<\/?(?:p|div|li|ul|ol|blockquote|table|tr|td|th|hr)\b/i.test(part))pending=null;
+        out.push(part);continue;
+      }
+      if(skip){out.push(part);continue;}
+      for(const token of part.split(/(\[(?:effect|term):[a-z][a-z0-9-]*\]|\[\/(?:effect|term)\])/g)){
+        const start=/^\[(effect|term):([a-z][a-z0-9-]*)\]$/.exec(token);
+        if(start){pending={type:start[1],key:start[2],index:out.length};out.push(token);continue;}
+        if(pending && token==='[/'+pending.type+']'){
+          let detail='';
+          if(pending.type==='effect'){
+            const effect=(entry.effects||[]).find(e=>e.key===pending.key);
+            if(effect)detail=effect.label+'\n'+[...(effect.levels||[])].sort((a,b)=>a.level-b.level).map(r=>'Level '+roman(r.level)+': '+r.value).join('\n');
+          } else {
+            const term=(glossary||[]).find(t=>!t.draft&&t.key===pending.key);
+            if(term)detail=term.name+'\n'+term.description;
+          }
+          if(detail){out[pending.index]='<span class="sss-explanation" tabindex="0" role="button" aria-expanded="false" data-explanation="'+escape(detail)+'">';out.push('</span>');}
+          else out.push(token);
+          pending=null;
+        }else out.push(token);
+      }
+    }
+    return out.join('');
+  }
+  // One shared popup, outside clipped cards, for mouse, keyboard and touch.
+  if(typeof document!=='undefined'){
+    let popup,active,hideTimer;
+    const close=()=>{if(active){active.removeAttribute('aria-describedby');active.setAttribute('aria-expanded','false');}active=null;if(popup)popup.hidden=true;};
+    const show=el=>{
+      clearTimeout(hideTimer);close();active=el;
+      if(!popup){popup=document.createElement('div');popup.id='sss-description-tooltip';popup.className='sss-tooltip';popup.setAttribute('role','tooltip');document.body.append(popup);
+        popup.addEventListener('pointerenter',()=>clearTimeout(hideTimer));popup.addEventListener('pointerleave',()=>{hideTimer=setTimeout(close,150);});}
+      popup.textContent=el.dataset.explanation;popup.hidden=false;el.setAttribute('aria-describedby',popup.id);el.setAttribute('aria-expanded','true');
+      const r=el.getBoundingClientRect(),p=popup.getBoundingClientRect();
+      popup.style.left=Math.max(8,Math.min(r.left,window.innerWidth-p.width-8))+'px';
+      popup.style.top=Math.max(8,r.bottom+p.height+12<window.innerHeight?r.bottom+8:r.top-p.height-8)+'px';
+    };
+    const target=e=>e.target.closest?.('.sss-explanation');
+    document.addEventListener('pointerover',e=>{const el=target(e);if(el&&el!==active&&e.pointerType!=='touch')show(el);});
+    document.addEventListener('pointerout',e=>{if(target(e)&&!target(e).contains(e.relatedTarget))hideTimer=setTimeout(close,150);});
+    document.addEventListener('focusin',e=>{const el=target(e);if(el)show(el);});
+    document.addEventListener('focusout',e=>{if(target(e))close();});
+    document.addEventListener('click',e=>{const el=target(e);if(el)show(el);else if(!popup?.contains(e.target))close();});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')close();else if((e.key==='Enter'||e.key===' ')&&target(e)){e.preventDefault();show(target(e));}});
+    document.addEventListener('scroll',close,true);window.addEventListener('resize',close);
+  }
   const parser = new window.marked.Marked({gfm:true,breaks:true,renderer});
   const cache = new Map();
   window.SSSDescriptions = {
-    format(value) {
+    format(value, entry={}, glossary=[]) {
       const text=String(value||'No description available yet.');
-      if(cache.has(text))return cache.get(text);
-      const result=colorize(parser.parse(text));
-      if(cache.size>=500)cache.clear();cache.set(text,result);
+      const key=JSON.stringify([text,entry.effects||[],glossary]);
+      if(cache.has(key))return cache.get(key);
+      const result=explain(colorize(parser.parse(text)),entry,glossary);
+      if(cache.size>=500)cache.clear();cache.set(key,result);
       return result;
     }
   };
