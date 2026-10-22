@@ -1,20 +1,23 @@
 {
-  "sourceRecordId": "recdLaVPYsl07eHT6",
-  "draft": false,
   "name": "Avatar of Bees",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Avatar",
-  "description": "<p>While gliding near the ground in the overworld, you can float indefinitely. Grants +1 block reach. Prevents bees from targeting you.<br>Eating honey while gliding causes you to release pollen for 5 seconds, bonemealing crops below you in a 3-block radius. </p>",
+  "costRule": "per-level",
+  "description": "<ul><li><p>While gliding, you float while near the ground and can eat honey to release pollen for 5 seconds, growing crops below you in a 3-block radius.</p></li><li><p>You gain +1 block interaction range, and bees no longer target you.</p></li></ul><p></p>",
   "maxLevel": 1,
   "items": [
     "Elytra"
   ],
+  "rune1": "Stones",
+  "rune2": "Gusts",
+  "rune3": "Stones",
+  "rune4": "Gusts",
+  "rune5": "Vitality",
   "incompatibleRunecrafted": [
     "Other Avatars"
   ],
-  "incompatibleVanilla": [],
   "discoverer": "TroyTheCrafter",
-  "researchers": [],
   "discoveredDate": "2023-09-11",
   "discoveredBy": "TroytheCrafter on 9/11/23 3:34 AM ",
   "runeTags": [
@@ -22,10 +25,5 @@
     "Gusts",
     "Vitality"
   ],
-  "rune1": "Stones",
-  "rune2": "Gusts",
-  "rune3": "Stones",
-  "rune4": "Gusts",
-  "rune5": "Vitality",
-  "costRule": "per-level"
+  "sourceRecordId": "recdLaVPYsl07eHT6"
 }
