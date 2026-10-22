@@ -109,3 +109,24 @@ for(const source of ['[gradient:bad:red]x[/gradient]','[gradient:red:blue]unclos
  assert(!format(source).includes('class="sss-gradient'),source);
 }
 console.log('Gradients passed: formatting, glossary/effect tooltips, invalid colors, code and malformed tags.');
+
+for(const levels of [undefined,[]]){
+ const entry=structuredClone(one);
+ entry.effects=[{key:'duration',explanation:'20 seconds',levels}];
+ const saved=enchantmentData(makeGameCatalogs([entry],[])).enchantments[0];
+ assert.match(format('[effect:duration][blue]temporarily[/blue][/effect]',saved),/data-explanation="20 seconds"/);
+ assert.match(format('[effect:duration][blue]temporarily[/blue][/effect]',saved),/sss-color-blue/);
+}
+const combined=structuredClone(one);
+combined.effects[0].explanation='Applies while active.';
+assert.match(format('[effect:speed]speed[/effect]',enchantmentData(makeGameCatalogs([combined],[])).enchantments[0]),/data-explanation="Speed bonus\nApplies while active\.\nLevel I: 40%\nLevel II: 80%"/);
+for(const explanation of [undefined,'','   ']){
+ const entry=structuredClone(one);entry.effects=[{key:'empty',label:'Heading only',explanation}];
+ assert.throws(()=>makeGameCatalogs([entry],[]),/needs an explanation or level values/);
+ assert(!format('[effect:empty]empty[/effect]',entry).includes('data-explanation'));
+}
+const unsafeExplanation=structuredClone(one);
+unsafeExplanation.effects=[{key:'plain',explanation:'<script>alert(1)</script> "quoted"'}];
+const safeTip=format('[effect:plain]text[/effect]',unsafeExplanation);
+assert(!safeTip.includes('<script>'));assert(safeTip.includes('&lt;script&gt;'));
+console.log('Unified tooltips passed: explanation-only, combined content, empty rejection and safe plain text.');

@@ -70,7 +70,11 @@ export function makeGameCatalogs(enchantmentRows,valorRows,glossaryRows=[]) {
       assert(effect && /^[a-z][a-z0-9-]*$/.test(effect.key) && !keys.has(effect.key),e.name+' needs unique effect keys');keys.add(effect.key);
       effect.label ??= '';
       assert(text(effect.label),e.name+' effect has an invalid label');
-      assert(Array.isArray(effect.levels)&&effect.levels.length>0,e.name+' effect needs level values');
+      effect.explanation ??= '';
+      effect.levels ??= [];
+      assert(text(effect.explanation),e.name+' tooltip has an invalid explanation');
+      assert(Array.isArray(effect.levels),e.name+' tooltip has invalid level values');
+      assert(effect.explanation.trim()||effect.levels.length>0,e.name+' tooltip '+effect.key+' needs an explanation or level values');
       const levels=new Set();
       for(const row of effect.levels){
         assert(Number.isInteger(row.level)&&row.level>=1&&row.level<=(e.maxLevel||10)&&!levels.has(row.level),e.name+' effect has invalid or repeated levels');levels.add(row.level);
