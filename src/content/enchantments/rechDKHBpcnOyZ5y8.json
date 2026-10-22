@@ -8,7 +8,6 @@
   "effects": [
     {
       "key": "speed",
-      "label": "Bonus Speed, Damage, and Damage Reduction",
       "levels": [
         {
           "level": 1,
