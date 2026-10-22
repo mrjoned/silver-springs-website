@@ -1,20 +1,29 @@
 {
-  "sourceRecordId": "reccIOK8L6Fwaa8Xh",
-  "draft": false,
   "name": "Avatar of Phantoms",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Avatar",
-  "description": "<p>Every night you haven’t slept adds a Phantom to your Phantom Horde, up to 10.<br>While gliding, colliding with an enemy deals 2-7 hearts of damage. When gliding at night, you summon your Phantom Horde, who fly with you and attack nearby enemies for the same damage.</p>",
+  "costRule": "per-level",
+  "description": "<ul><li><p>Your insomnia no longer spawns Phantoms. Sleepless night add a Phantom to your [blue]<em>Phantom Horde</em>[/blue], up to 10.</p></li><li><p>While gliding, you [brown]<em>bite</em>[/brown] enemies you collide with for [effect:phantomhorde][dark-gray]3-5❤️[/dark-gray][/effect]</p></li></ul><p></p>",
+  "effects": [
+    {
+      "key": "phantomhorde",
+      "explanation": "Scales with Phantom Horde size, capped after 5 days. This base damage scales from 0.65x - 1.35x based on velocity."
+    }
+  ],
   "maxLevel": 1,
   "items": [
     "Elytra"
   ],
+  "rune1": "Vitality",
+  "rune2": "Void",
+  "rune3": "Gusts",
+  "rune4": "Mortus",
+  "rune5": "Gusts",
   "incompatibleRunecrafted": [
     "Other Avatars"
   ],
-  "incompatibleVanilla": [],
   "discoverer": "Starmarsh",
-  "researchers": [],
   "discoveredDate": "2023-08-30",
   "discoveredBy": "Starmarsh on 8/30/23 11:28 PM",
   "runeTags": [
@@ -23,10 +32,5 @@
     "Gusts",
     "Mortus"
   ],
-  "rune1": "Vitality",
-  "rune2": "Void",
-  "rune3": "Gusts",
-  "rune4": "Mortus",
-  "rune5": "Gusts",
-  "costRule": "per-level"
+  "sourceRecordId": "reccIOK8L6Fwaa8Xh"
 }
