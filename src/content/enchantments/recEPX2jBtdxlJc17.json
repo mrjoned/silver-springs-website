@@ -1,14 +1,42 @@
 {
-  "sourceRecordId": "recEPX2jBtdxlJc17",
-  "draft": false,
   "name": "Ballast",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Damage",
-  "description": "<ul><li>This trident attacks 10% slower for <strong>1-2❤️ damage.</strong></li><li>Throws are <em>heavier</em>, falling faster but dealing **+2-♾️❤️ damage, **increasing linearly with distance fallen.</li></ul>",
+  "costRule": "per-level",
+  "description": "<ul><li><p>This trident attacks 10% slower for +[effect:ballastdmg][dark-gray]1-2❤️ damage[/dark-gray][/effect]<strong>.</strong></p></li><li><p>Throws are [dark-red]<em>heavier</em>[/dark-red], falling faster but dealing [effect:ballastfalldmg][dark-gray]+2-♾️❤️ damage[/dark-gray], increasing linearly with distance fallen.</p></li></ul><p></p>",
+  "effects": [
+    {
+      "key": "ballastdmg",
+      "levels": [
+        {
+          "level": 1,
+          "value": "1❤️ damage"
+        },
+        {
+          "level": 2,
+          "value": "1.5❤️ damage"
+        },
+        {
+          "level": 3,
+          "value": "2❤️ damage"
+        }
+      ]
+    },
+    {
+      "key": "ballastfalldmg",
+      "explanation": "2-4❤️ by rank"
+    }
+  ],
   "maxLevel": 3,
   "items": [
     "Tridents"
   ],
+  "rune1": "Mortus",
+  "rune2": "Tides",
+  "rune3": "Kinesis",
+  "rune4": "Kinesis",
+  "rune5": "Mortus",
   "incompatibleRunecrafted": [
     "Extinction",
     "Sundering",
@@ -22,16 +50,10 @@
     "Maidl"
   ],
   "discoveredDate": "2025-06-08",
-  "discoveredBy": "",
   "runeTags": [
     "Mortus",
     "Tides",
     "Kinesis"
   ],
-  "rune1": "Mortus",
-  "rune2": "Tides",
-  "rune3": "Kinesis",
-  "rune4": "Kinesis",
-  "rune5": "Mortus",
-  "costRule": "per-level"
+  "sourceRecordId": "recEPX2jBtdxlJc17"
 }
