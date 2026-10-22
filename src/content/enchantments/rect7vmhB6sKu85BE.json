@@ -1,16 +1,25 @@
 {
-  "sourceRecordId": "rect7vmhB6sKu85BE",
-  "draft": false,
   "name": "Aphelion of Venus",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Aphelion",
-  "description": "<p><strong>Eclipses</strong> Fire, Ice, and Plague Aspect. Applying those effects instead adds them to your <strong>atmosphere</strong> for 8 seconds.</p><ul><li><strong>Eclipse</strong>: The behavior of the eclipsed object is replaced while wearing this Aphelion.</li><li><strong>Atmosphere</strong>: Enemies gain your atmosphere&#39;s effects only while within it. Its radius starts at 2 blocks and grows by 1 block every other attack.</li></ul>",
+  "costRule": "per-level",
+  "description": "<p>[term:eclipse][blue]<strong><u>Eclipses</u></strong>[/blue][/term] Fire, Ice, and Plague Aspect. Applying those effects instead adds them to your [effect:atmosphere][dark-gray]<u>atmosphere</u>[/dark-gray][/effect] for 8 seconds.</p><p>[dark-gray]<em>At a tragic juncture, noxious and suffocating.</em>[/dark-gray]</p>",
+  "effects": [
+    {
+      "key": "atmosphere",
+      "explanation": "Enemies gain your atmosphere's effects only while within it. Its radius starts at 2 blocks and grows by 1 block every other attack."
+    }
+  ],
   "maxLevel": 1,
   "items": [
     "Boots"
   ],
-  "incompatibleRunecrafted": [],
-  "incompatibleVanilla": [],
+  "rune1": "Cinders",
+  "rune2": "Chills",
+  "rune3": "Mortus",
+  "rune4": "Gusts",
+  "rune5": "Moments",
   "discoverer": "TroyTheCrafter",
   "researchers": [
     "UnloadingLime",
@@ -26,10 +35,5 @@
     "Moments",
     "Mortus"
   ],
-  "rune1": "Cinders",
-  "rune2": "Chills",
-  "rune3": "Mortus",
-  "rune4": "Gusts",
-  "rune5": "Moments",
-  "costRule": "per-level"
+  "sourceRecordId": "rect7vmhB6sKu85BE"
 }
