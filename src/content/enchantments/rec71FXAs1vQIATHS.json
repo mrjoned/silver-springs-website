@@ -1,11 +1,16 @@
 {
-  "sourceRecordId": "rec71FXAs1vQIATHS",
-  "draft": false,
   "name": "Tesseract",
+  "draft": false,
   "source": "Mythical",
   "category": "Ammo",
-  "description": "<p>While drawn, the bow pulls items to you and small entities into its tesseract. Mobs fired from the tesseract deal their attack damage as bonus damage. You can fire without any ammo available, releasing a 3❤️ base damage energy shot.</p>",
-  "maxLevel": null,
+  "costRule": "free",
+  "description": "<p>While drawn, the bow pulls items to you and small entities into its [effect:tesseract][dark-gray]tesseract[/dark-gray][/effect]. Mobs fired from the tesseract deal their attack damage as bonus damage. You can fire without any ammo available, releasing a 3❤️ base damage energy shot.<br><br>Found on the Valor Relic: [gradient:purple:green]I.R.I.D.E.S.C.E.N.T.[/gradient]</p>",
+  "effects": [
+    {
+      "key": "tesseract",
+      "explanation": "An 18-slot item inventory which can hold projectiles or absorbed mobs, who become spawn eggs. Their spawn eggs cannot be removed from the Tesseract except by being fired."
+    }
+  ],
   "items": [
     "Bows"
   ],
@@ -15,15 +20,6 @@
   "incompatibleVanilla": [
     "Infinity"
   ],
-  "discoverer": "",
-  "researchers": [],
-  "discoveredDate": "",
-  "discoveredBy": "",
-  "runeTags": [],
-  "rune1": "",
-  "rune2": "",
-  "rune3": "",
-  "rune4": "",
-  "rune5": "",
-  "costRule": "free"
+  "discoveredDate": "2026-10-22",
+  "sourceRecordId": "rec71FXAs1vQIATHS"
 }
