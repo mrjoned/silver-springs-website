@@ -1,19 +1,23 @@
 {
-  "sourceRecordId": "rec7RtmW3YvzInT9B",
-  "draft": false,
   "name": "Beheld",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Control",
-  "description": "<p>Upon preparing a throw, enemies you _behold <em>are briefly slowed 40%.</em> _If they are below half health, they are <strong>stunned</strong> instead.</p>",
+  "costRule": "per-level",
+  "description": "<p>Upon preparing a throw, enemies you [gold]<em>behold</em>[/gold] are briefly slowed 40%<em>.</em> If they are below half health, they are [term:stun][dark-gray]stunned[/dark-gray][/term] instead.</p>",
   "maxLevel": 1,
   "items": [
     "Tridents"
   ],
+  "rune1": "Tides",
+  "rune2": "Kinesis",
+  "rune3": "Chills",
+  "rune4": "Mortus",
+  "rune5": "Sparks",
   "incompatibleRunecrafted": [
     "Cavitation",
     "Undertow"
   ],
-  "incompatibleVanilla": [],
   "discoverer": "Shotdown01",
   "researchers": [
     "Starmarsh",
@@ -28,10 +32,5 @@
     "Moments",
     "Sparks"
   ],
-  "rune1": "Tides",
-  "rune2": "Kinesis",
-  "rune3": "Chills",
-  "rune4": "Mortus",
-  "rune5": "Sparks",
-  "costRule": "per-level"
+  "sourceRecordId": "rec7RtmW3YvzInT9B"
 }
