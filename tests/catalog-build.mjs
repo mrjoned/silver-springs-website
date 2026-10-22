@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync, unlinkSync, existsSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 const tools=['hub_build_planner','hub_comparison','hub_encyclopedia','hub_equipment_guide','hub_rune_calculator'];
@@ -30,6 +31,16 @@ try{
  assert(!payload.enchantments.some(e=>e.name==='Hidden catalog integration enchantment'));
  assert.deepEqual(JSON.parse(read('dist/runecrafting-hub/tools/enchantments.json')),payload);
  for(const tool of tools){const html=read('dist/runecrafting-hub/tools/'+tool+'.html');assert(html.includes('Published glossary explanation.'));assert(!html.includes('Hidden glossary term'));assert(html.includes('Catalog integration enchantment'));assert(!html.includes('Hidden catalog integration enchantment'));assert(!html.includes('__SSS_'));}
+ for(const tool of tools){
+  const html=read('dist/runecrafting-hub/tools/'+tool+'.html');
+  for(const asset of ['description-format.js','description-format.css','hub-data.js']){
+   const path='/assets/'+asset;
+   if(!read('src/catalog-templates/'+tool+'.html').includes(path))continue;
+   const hash=createHash('sha256').update(readFileSync('public'+path)).digest('hex').slice(0,12);
+   assert(html.includes(path+'?v='+hash),tool+' must reference the current '+asset);
+   assert(!html.includes(path+'"'),tool+' must not retain an unversioned '+asset);
+  }
+ }
  const shop=read('dist/valor-shop/index.html');assert(shop.includes('Catalog integration artifact'));assert(shop.includes('2 Sticks + 3 Rune of Echoes'));assert(!shop.includes('Hidden catalog integration artifact'));
  const overview=read('dist/content-overview/index.html');assert(overview.includes('Catalog integration artifact'));assert(overview.includes('2 Sticks + 3 Rune of Echoes'));assert(!overview.includes('__SSS_'));assert(!overview.includes('srcdoc='));
  const routes=JSON.parse(read('dist/_routes.json'));assert(routes.include.includes('/api/calendar'));assert(!routes.include.some(p=>p.includes('enchantments')));

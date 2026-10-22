@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 import { readdirSync, readFileSync, existsSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
 import { resolve } from 'node:path';
@@ -116,7 +117,11 @@ export function valorData(catalog=loadGameCatalogs()) {
 export const scriptJSON = value => JSON.stringify(value).replace(/</g,'\\u003c').replace(/>/g,'\\u003e').replace(/&/g,'\\u0026').replace(/\u2028/g,'\\u2028').replace(/\u2029/g,'\\u2029');
 export function renderTool(name,catalog=loadGameCatalogs(),template) {
   assert(/^hub_(build_planner|comparison|encyclopedia|equipment_guide|rune_calculator)\.html$/.test(name),'unknown Hub tool');
-  return (template??readFileSync(new URL('src/catalog-templates/'+name,root),'utf8')).replace('__SSS_ENCHANTMENT_DATA__',()=>scriptJSON(enchantmentData(catalog)));
+  return (template??readFileSync(new URL('src/catalog-templates/'+name,root),'utf8')).replace('__SSS_ENCHANTMENT_DATA__',()=>scriptJSON(enchantmentData(catalog)))
+    .replace(/(src|href)="(\/assets\/(?:description-format\.(?:js|css)|hub-data\.js))"/g,(_,attr,path)=>{
+      const version=createHash('sha256').update(readFileSync(new URL('public'+path,root))).digest('hex').slice(0,12);
+      return attr+'="'+path+'?v='+version+'"';
+    });
 }
 export function renderValorShop(catalog=loadGameCatalogs(),template,legacyIds) {
   const legacy=legacyIds??JSON.parse(readFileSync(new URL('src/catalog-templates/valor-legacy-ids.json',root),'utf8'));
