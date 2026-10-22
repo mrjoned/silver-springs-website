@@ -16,7 +16,7 @@ const archiveJSON = JSON.stringify(searchIndex).replace(/</g, '\\u003c');
     </div></section>
     <section class="wrap news-highlights" id="news-highlights">
       {latest ? <article class="featured-post"><div class="eyebrow">Latest announcement</div><div class="featured-date"><time datetime={latest.dateISO}>{latest.dateLabel}</time></div>
-        <h2><a href={latest.path}>{latest.title}</a></h2><p>{latest.excerpt}</p><PostTags topics={latest.topics} /><a class="textlink" href={latest.path}>Read the announcement →</a>
+        <h2><a href={latest.path}>{latest.title}</a></h2><div class="announcement-summary" set:html={latest.excerptHtml} /><PostTags topics={latest.topics} /><a class="textlink" href={latest.path}>Read the announcement →</a>
       </article> : <article class="featured-post"><h2>More stories to come.</h2><p>Check Discord for the latest from Silver Springs.</p></article>}
       <aside class="news-connect"><div class="eyebrow">Stay in the loop</div><h3>Discord gets it first.</h3><p>We share updates on Discord first, then bring them to the website when available.</p><a class="textlink" href="https://discord.gg/r22U3prgPE">Join the community ↗</a><div class="news-shortcuts"><a href="/calendar/">Check the event calendar →</a><a href="/content-overview/">Explore the gameplay guides →</a></div></aside>
     </section>
@@ -32,7 +32,7 @@ const archiveJSON = JSON.stringify(searchIndex).replace(/</g, '\\u003c');
       <div id="news-posts">
         {posts.map((post) => <article class="archive-card" data-post={post.id}>
           <div class="archive-date"><time datetime={post.dateISO}>{post.dateLabel}</time></div>
-          <div class="archive-card-body"><PostTags topics={post.topics} /><h3><a href={post.path}>{post.title}</a></h3><p>{post.excerpt}</p><a class="textlink" href={post.path}>Read the full post →</a></div>
+          <div class="archive-card-body"><PostTags topics={post.topics} /><h3><a href={post.path}>{post.title}</a></h3><div class="announcement-summary" set:html={post.excerptHtml} /><a class="textlink" href={post.path}>Read the full post →</a></div>
         </article>)}
       </div>
       <div id="news-empty" hidden><h3>No posts found.</h3><p>Try another topic, year, or search term.</p></div>
@@ -42,3 +42,7 @@ const archiveJSON = JSON.stringify(searchIndex).replace(/</g, '\\u003c');
     <script is:inline type="application/json" id="news-data" set:html={archiveJSON}></script>
   </main>
 </SiteLayout>
+
+<style is:global>
+.announcement-summary p{margin:0 0 .65em}.announcement-summary > :last-child{margin-bottom:0}.announcement-summary ul,.announcement-summary ol{padding-left:1.4em}.announcement-summary a{text-decoration:underline}
+</style>

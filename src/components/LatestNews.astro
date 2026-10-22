@@ -10,10 +10,14 @@ import { posts } from '../lib/posts.js';
     {posts.slice(0, 2).map((post) => <article>
       <time datetime={post.dateISO}>{post.dateLabel.toUpperCase()}</time>
       <h3><a href={post.path}>{post.title}</a></h3>
-      <p>{post.excerpt}</p>
+      <div class="announcement-summary" set:html={post.excerptHtml} />
       <a class="textlink" href={post.path}>Read the announcement →</a>
     </article>)}
     <article><div class="eyebrow">Guides & player tools</div><h3>Your next project starts here.</h3><p>Our Custom Content Overview and Runecrafting Hub bring the guides and planning tools together.</p><a class="textlink" href="/content-overview/">Explore the guides →</a></article>
   </div>
   <div class="discordnote"><span>Updates reach Discord first. Website announcements follow when available.</span><a href="https://discord.gg/r22U3prgPE">Keep up with the community on Discord ↗</a></div>
 </section>
+
+<style is:global>
+.announcement-summary p{margin:0 0 .65em}.announcement-summary > :last-child{margin-bottom:0}.announcement-summary ul,.announcement-summary ol{padding-left:1.4em}.announcement-summary a{text-decoration:underline}
+</style>
