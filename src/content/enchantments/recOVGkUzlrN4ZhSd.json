@@ -8,7 +8,6 @@
   "effects": [
     {
       "key": "reduction",
-      "label": "Damage Reduction",
       "levels": [
         {
           "level": 1,
