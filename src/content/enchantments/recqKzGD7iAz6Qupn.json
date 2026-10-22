@@ -1,16 +1,19 @@
 {
-  "sourceRecordId": "recqKzGD7iAz6Qupn",
-  "draft": false,
   "name": "Aphelion of Ceres",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Aphelion",
-  "description": "<p><strong>Eclipses</strong> Slingshot and Newton&#39;s Meteor. Blocks fired by Slingshots instead fire as meteors, and your meteors apply the damage and effects their block would when fired by a Slingshot, then crumble after 3 hits.</p><ul><li>**Eclipse: **The behavior of the eclipsed object is replaced while wearing this Aphelion.</li></ul>",
+  "costRule": "per-level",
+  "description": "<p><strong>Eclipses</strong> Slingshot and Newton's Meteor. Blocks fired by Slingshots instead fire as meteors, and your meteors apply the damage and effects their block would when fired by a Slingshot, then crumble after 3 hits.</p><p>The behavior of the eclipsed object is replaced while wearing this Aphelion.</p><p>[gray]<em>At home's comfort, guiding the flock.</em>[/gray]</p>",
   "maxLevel": 1,
   "items": [
     "Boots"
   ],
-  "incompatibleRunecrafted": [],
-  "incompatibleVanilla": [],
+  "rune1": "Gusts",
+  "rune2": "Stones",
+  "rune3": "Kinesis",
+  "rune4": "Stones",
+  "rune5": "Void",
   "discoverer": "Maidl",
   "researchers": [
     "ElectricSparx"
@@ -23,10 +26,5 @@
     "Stones",
     "Void"
   ],
-  "rune1": "Gusts",
-  "rune2": "Stones",
-  "rune3": "Kinesis",
-  "rune4": "Stones",
-  "rune5": "Void",
-  "costRule": "per-level"
+  "sourceRecordId": "recqKzGD7iAz6Qupn"
 }
