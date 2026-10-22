@@ -1,0 +1,5 @@
+{
+  "key": "stun",
+  "description": "Halts an enemy, preventing movement, attacks, and shots. Direct strikes break enemies out of stuns.",
+  "draft": false
+}
