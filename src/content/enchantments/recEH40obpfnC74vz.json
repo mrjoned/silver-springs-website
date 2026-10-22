@@ -4,7 +4,7 @@
   "source": "Runecrafted",
   "category": "Aphelion",
   "costRule": "per-level",
-  "description": "<p>[blue]<strong><u>Eclipses</u></strong>[/blue] the Runic Tome. When you would cast the Void, Gusts, Kinesis, or Sparks spells, you instead cast [term:greatredspot]<strong><u>Great Red Spot</u></strong>[/term].</p><p>[gray]<em>At giant's reach, a crimson storm older than magic.</em>[/gray]</p>",
+  "description": "<p>[term:eclipse][blue]<strong><u>Eclipses</u></strong>[/blue][/term] the Runic Tome. When you would cast the Void, Gusts, Kinesis, or Sparks spells, you instead cast [term:greatredspot]<strong><u>Great Red Spot</u></strong>[/term].</p><p>[gray]<em>At giant's reach, a crimson storm older than magic.</em>[/gray]</p>",
   "maxLevel": 1,
   "items": [
     "Boots"
