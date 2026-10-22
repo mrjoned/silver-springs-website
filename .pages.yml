@@ -227,9 +227,9 @@ content:
       required: true
       pattern: '^[a-z][a-z0-9-]*$'
     - name: label
-      label: Effect label
+      label: Effect label (optional)
       type: string
-      required: true
+      description: Leave blank to show only the values by level in the tooltip.
     - name: levels
       label: Values by level
       type: object
