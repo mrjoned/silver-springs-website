@@ -4,7 +4,7 @@
   "source": "Runecrafted",
   "category": "Aphelion",
   "costRule": "per-level",
-  "description": "<p>[term:eclipse][blue]<strong><u>Eclipses</u></strong>[/blue][/term] Slingshot and Newton's Meteor. Blocks fired by Slingshots instead fire as meteors, and your meteors apply the damage and effects their block would when fired by a Slingshot, then crumble after 3 hits.</p><p>[gray]<em>At home's comfort, guiding the flock.</em>[/gray]</p>",
+  "description": "<p>[term:eclipse][blue]<strong><u>Eclipses</u></strong>[/blue][/term] Slingshot and Newton's Meteor. Blocks fired by Slingshots instead fire as meteors, and your meteors apply the damage and effects their block would when fired by a Slingshot, then crumble after 3 hits.</p><p>[dark-gray]<em>At home's comfort, guiding the flock.</em>[/dark-gray]</p>",
   "maxLevel": 1,
   "items": [
     "Boots"
