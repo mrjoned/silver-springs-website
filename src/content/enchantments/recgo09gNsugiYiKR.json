@@ -1,18 +1,20 @@
 {
-  "sourceRecordId": "recgo09gNsugiYiKR",
-  "draft": false,
   "name": "Aphelion of Mercury",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Aphelion",
-  "description": "<p><strong>Eclipses</strong> the Raceway Flag. You are instead immune to poison and gain <em>time dilation</em> upon fully refilling your hunger, gaining 100% speed and immunity to hunger loss for 5 seconds.</p><ul><li>**Eclipse: **The behavior of the eclipsed object is replaced while wearing this Aphelion.</li></ul>",
+  "costRule": "per-level",
+  "description": "<p>[term:eclipse][blue]<strong><u>Eclipses</u></strong>[/blue][/term] the Raceway Flag. You are instead immune to poison and gain <em>time dilation</em> upon fully refilling your hunger, gaining 100% speed and immunity to hunger loss for 5 seconds.<br>[gray]<em>At gravity's brim, racing against a slowing clock.</em>[/gray]</p>",
   "maxLevel": 1,
   "items": [
     "Boots"
   ],
-  "incompatibleRunecrafted": [],
-  "incompatibleVanilla": [],
+  "rune1": "Mortus",
+  "rune2": "Aegis",
+  "rune3": "Vitality",
+  "rune4": "Gusts",
+  "rune5": "Moments",
   "discoverer": "Starmarsh",
-  "researchers": [],
   "discoveredDate": "2025-05-25",
   "discoveredBy": "Starmarsh on 05/25/25",
   "runeTags": [
@@ -22,10 +24,5 @@
     "Mortus",
     "Vitality"
   ],
-  "rune1": "Mortus",
-  "rune2": "Aegis",
-  "rune3": "Vitality",
-  "rune4": "Gusts",
-  "rune5": "Moments",
-  "costRule": "per-level"
+  "sourceRecordId": "recgo09gNsugiYiKR"
 }
