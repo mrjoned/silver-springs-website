@@ -4,7 +4,7 @@
   "source": "Runecrafted",
   "category": "Avatar",
   "costRule": "per-level",
-  "description": "<ul><li><p>While gliding, sneaking causes you to <em>echolocate</em>, highlighting mobs within 40 blocks and granting night vision for 10 seconds.</p></li><li><p>While in light levels of 4 or less, mobs only detect you from [effect:detection][dark-gray]60-25%[dark-gray][/effect] of their usual distance.</p></li></ul><p></p>",
+  "description": "<ul><li><p>While gliding, sneaking causes you to <em>echolocate</em>, highlighting mobs within 40 blocks and granting night vision for 10 seconds.</p></li><li><p>While in light levels of 4 or less, mobs only detect you from [effect:detection][dark-gray]60-25%[/dark-gray][/effect] of their usual distance.</p></li></ul><p></p>",
   "effects": [
     {
       "key": "detection",
