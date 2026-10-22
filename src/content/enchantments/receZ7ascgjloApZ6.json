@@ -1,10 +1,37 @@
 {
-  "sourceRecordId": "receZ7ascgjloApZ6",
-  "draft": false,
   "name": "Bane of Arthropods",
+  "draft": false,
   "source": "Vanilla",
   "category": "Damage",
-  "description": "<p>Always slows for the full duration (1.5-3.5 seconds) and works against Shulkers.</p>",
+  "costRule": "free",
+  "description": "<p>[term:arcanumbonus][purple]Arcanum Bonuses[/purple][/term]:</p><ul><li><p>Additionally applies to Shulkers.</p></li><li><p>Always slows for its full duration of [effect:bane][dark-gray]1.5-3.5 seconds[/dark-gray][/effect].</p></li></ul><p></p>",
+  "effects": [
+    {
+      "key": "bane",
+      "levels": [
+        {
+          "level": 1,
+          "value": "1.5 seconds"
+        },
+        {
+          "level": 2,
+          "value": "2 seconds"
+        },
+        {
+          "level": 3,
+          "value": "2.5 seconds"
+        },
+        {
+          "level": 4,
+          "value": "3 seconds"
+        },
+        {
+          "level": 5,
+          "value": "3.5 seconds"
+        }
+      ]
+    }
+  ],
   "maxLevel": 5,
   "items": [
     "Swords",
@@ -27,15 +54,6 @@
     "Density",
     "Cleaving"
   ],
-  "discoverer": "",
-  "researchers": [],
-  "discoveredDate": "",
-  "discoveredBy": "",
-  "runeTags": [],
-  "rune1": "",
-  "rune2": "",
-  "rune3": "",
-  "rune4": "",
-  "rune5": "",
-  "costRule": "free"
+  "discoveredDate": "2026-10-21",
+  "sourceRecordId": "receZ7ascgjloApZ6"
 }
