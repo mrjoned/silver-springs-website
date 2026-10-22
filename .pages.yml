@@ -214,6 +214,34 @@ content:
       format: html
       media: false
     required: true
+  - name: effects
+    label: Level effects
+    type: object
+    list: true
+    default: []
+    description: "Reference an effect with [effect:speed]display text[/effect] in the description."
+    fields:
+    - name: key
+      label: Effect key (e.g. speed)
+      type: string
+      required: true
+      pattern: '^[a-z][a-z0-9-]*$'
+    - name: label
+      label: Effect label
+      type: string
+      required: true
+    - name: levels
+      label: Values by level
+      type: object
+      list: true
+      fields:
+      - name: level
+        type: number
+        required: true
+      - name: value
+        label: Value (e.g. 40% or 5 seconds)
+        type: string
+        required: true
   - name: maxLevel
     label: Maximum level
     type: number
@@ -442,3 +470,33 @@ content:
     type: string
     readonly: true
     hidden: true
+
+- name: glossary
+  label: Runecrafting Glossary
+  type: collection
+  path: src/content/glossary
+  format: json
+  filename:
+    template: '{primary}.json'
+    field: create
+  view:
+    primary: key
+    fields: [key, name, draft]
+  fields:
+  - name: key
+    label: Term key (e.g. freezing)
+    type: string
+    required: true
+    pattern: '^[a-z][a-z0-9-]*$'
+  - name: name
+    label: Display name
+    type: string
+    required: true
+  - name: description
+    label: Explanation
+    type: text
+    required: true
+  - name: draft
+    label: Draft (hide explanation)
+    type: boolean
+    default: false
