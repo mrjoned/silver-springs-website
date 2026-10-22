@@ -1,6 +1,7 @@
 {
-  "id": "689a138f889ba67da0d34b51",
-  "title": "⚒️Build Contest &amp; General Updates",
+  "title": "⚒️Build Contest & General Updates",
+  "date": "2025-08-11T16:06:00.000000+00:00",
+  "draft": false,
   "author": "Jonathan Hill",
   "topics": [
     "build-contest",
@@ -8,7 +9,5 @@
     "gameplay"
   ],
   "excerpt": "Hey everyone, been a while! Today we've got a new build contest kicking off, and a few general updates. 🍻Build Contest: Tavern",
-  "date": "2025-08-11T11:06:10.121000-05:00",
-  "draft": false,
-  "body": "\n  \n  <p>Hey everyone, been a while! Today we&#x27;ve got a new build contest kicking off, and a few general updates. </p><h4>🍻Build Contest: Tavern</h4><p class=\"post-small\">A place for drinking, stories, perhaps sparring? Rustic inn, pirate bar, snowy lodge - whatever &quot;tavern&quot; means to you.</p><ul><li><p>📅<strong>Due Date</strong>: Thursday, August 21, 2025 1:59 AM CDT</p><ul><li><pre><code>This event is also listed on the <a href=\"/calendar/\">calendar</a>.</code></pre></li></ul></li><li><p><strong>✏️Prize Info</strong>: ⁠<a href=\"/changelog-and-faq/build-contest-overview/\">⚒ Build Contest Overview</a></p></li><li><p>🏆<strong>Special Prize</strong>: Entrants for the top 3 submissions earn <strong>+1 charm slot</strong> and a free <strong>Fermentation Barrel</strong> charm.</p></li></ul><h4>📝General Updates</h4><ul><li><p>🎃Pumpkins can now be carved in a stonecutter. This does not drop seeds like carving by hand does.</p></li><li><p> 🟩Slime and magma cube heads now drop more reliably. This also fixes them never dropping from the <em>Wishbone</em> charm.</p></li><li><p> 💎<strong>Boundary Shards</strong> can no longer be used in uncorruptible locales and don&#x27;t get you stuck in the disenchant mode once used at the Arcanum.</p></li><li><p> 🌍Recasting <em>Aphelion of Earth</em>&#x27;s spell for <em>Curse of the Forbidden Ones</em> now moves the existing obelisk without resetting sacrifice progress. This is generally useful, but notably also makes it usable on <em>Corrupted Footage</em> charms.</p></li></ul><h2>🫶</h2>\n\n\n  \n\n\n\n\n\n\n\n\n\n"
+  "body": "<p>Hey everyone, been a while! Today we've got a new build contest kicking off, and a few general updates.</p><h4>🍻Build Contest: Tavern</h4><p>A place for drinking, stories, perhaps sparring? Rustic inn, pirate bar, snowy lodge - whatever \"tavern\" means to you.</p><ul><li><p>📅<strong>Due Date</strong>: Thursday, August 21, 2025 1:59 AM CDT</p><ul><li><p></p></li></ul><pre><code>This event is also listed on the calendar.</code></pre></li><li><p><strong>✏️Prize Info</strong>: ⁠<a href=\"/changelog-and-faq/build-contest-overview/\">⚒ Build Contest Overview</a></p></li><li><p>🏆<strong>Special Prize</strong>: Entrants for the top 3 submissions earn <strong>+1 charm slot</strong> and a free <strong>Fermentation Barrel</strong> charm.</p></li></ul><h4>📝General Updates</h4><ul><li><p>🎃Pumpkins can now be carved in a stonecutter. This does not drop seeds like carving by hand does.</p></li><li><p>🟩Slime and magma cube heads now drop more reliably. This also fixes them never dropping from the <em>Wishbone</em> charm.</p></li><li><p>💎<strong>Boundary Shards</strong> can no longer be used in uncorruptible locales and don't get you stuck in the disenchant mode once used at the Arcanum.</p></li><li><p>🌍Recasting <em>Aphelion of Earth</em>'s spell for <em>Curse of the Forbidden Ones</em> now moves the existing obelisk without resetting sacrifice progress. This is generally useful, but notably also makes it usable on <em>Corrupted Footage</em> charms.</p></li></ul><h2>🫶</h2><p></p>"
 }
