@@ -95,7 +95,11 @@
           let detail='';
           if(pending.type==='effect'){
             const effect=(entry.effects||[]).find(e=>e.key===pending.key);
-            if(effect)detail=(effect.label?.trim()?effect.label.trim()+'\n':'')+[...(effect.levels||[])].sort((a,b)=>a.level-b.level).map(r=>'Level '+roman(r.level)+': '+r.value).join('\n');
+            if(effect){
+              const rows=[...(effect.levels||[])].sort((a,b)=>a.level-b.level).map(r=>'Level '+roman(r.level)+': '+r.value).join('\n');
+              const explanation=effect.explanation?.trim()||'';
+              if(explanation||rows)detail=[effect.label?.trim(),explanation,rows].filter(Boolean).join('\n');
+            }
           } else {
             const term=(glossary||[]).find(t=>!t.draft&&t.key===pending.key);
             if(term)detail=(term.name?.trim()?term.name.trim()+'\n':'')+term.description;

@@ -215,25 +215,30 @@ content:
       media: false
     required: true
   - name: effects
-    label: Level effects
+    label: Tooltips
     type: object
     list: true
     default: []
-    description: "Reference an effect with [effect:speed]display text[/effect] in the description."
+    description: "Use [effect:speed]display text[/effect] in the description. Add an explanation, values by level, or both. Existing effect tags still work."
     fields:
     - name: key
-      label: Effect key (e.g. speed)
+      label: Tooltip key (e.g. speed)
       type: string
       required: true
       pattern: '^[a-z][a-z0-9-]*$'
     - name: label
-      label: Effect label (optional)
+      label: Heading (optional)
       type: string
-      description: Leave blank to show only the values by level in the tooltip.
+      description: Leave blank to show the explanation and/or level values without a heading.
+    - name: explanation
+      label: Explanation (optional)
+      type: text
+      description: Plain-text information shown above any level values.
     - name: levels
-      label: Values by level
+      label: Values by level (optional)
       type: object
       list: true
+      default: []
       fields:
       - name: level
         type: number
