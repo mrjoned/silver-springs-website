@@ -94,7 +94,7 @@
             if(effect)detail=effect.label+'\n'+[...(effect.levels||[])].sort((a,b)=>a.level-b.level).map(r=>'Level '+roman(r.level)+': '+r.value).join('\n');
           } else {
             const term=(glossary||[]).find(t=>!t.draft&&t.key===pending.key);
-            if(term)detail=term.name+'\n'+term.description;
+            if(term)detail=(term.name?.trim()?term.name.trim()+'\n':'')+term.description;
           }
           if(detail){out[pending.index]='<span class="sss-explanation" tabindex="0" role="button" aria-expanded="false" data-explanation="'+escape(detail)+'">';out.push('</span>');}
           else out.push(token);

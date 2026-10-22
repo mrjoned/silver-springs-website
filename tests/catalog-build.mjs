@@ -6,7 +6,7 @@ const build=()=>{try{execFileSync(process.execPath,['node_modules/astro/bin/astr
 const read=p=>readFileSync(p,'utf8');
 const enchant={name:'Fixture',source:'Runecrafted',category:'Damage',description:'Fixture',draft:false,maxLevel:2,items:['Swords'],costRule:'per-level',rune1:'Aegis',rune2:'Aegis',rune3:'Chills',rune4:'Chills',rune5:'Void',incompatibleRunecrafted:[],incompatibleVanilla:[],runeTags:[],researchers:[]};
 const fixtures=[
- ['src/content/glossary/catalog-integration-term.json',{key:'catalog-integration-term',name:'Catalog integration term',description:'Published glossary explanation.',draft:false}],
+ ['src/content/glossary/catalog-integration-term.json',{key:'catalog-integration-term',description:'Published glossary explanation.',draft:false}],
  ['src/content/glossary/catalog-integration-hidden.json',{key:'catalog-integration-hidden',name:'Hidden glossary term',draft:true}],
  ['src/content/enchantments/catalog-integration-new.json',{...enchant,sourceRecordId:'',name:'Catalog integration enchantment',draft:false,description:'A temporary effect from the CMS catalog.'}],
  ['src/content/enchantments/catalog-integration-draft.json',{name:'Hidden catalog integration enchantment',draft:true}],
