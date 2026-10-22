@@ -4,7 +4,7 @@
   "source": "Runecrafted",
   "category": "Bashing",
   "costRule": "per-level",
-  "description": "<p><strong>Bashing </strong>causes you to rapidly dash forward 5 blocks while creating a shockwave which deflects projectiles in a wide arc.</p>",
+  "description": "<p>[term:bashing]<strong>Bashing</strong>[/term]<strong> </strong>causes you to rapidly dash forward 5 blocks while creating a shockwave which deflects projectiles in a wide arc.</p>",
   "maxLevel": 1,
   "items": [
     "Shields"
