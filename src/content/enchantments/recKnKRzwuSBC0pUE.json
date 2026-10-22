@@ -1,22 +1,23 @@
 {
-  "sourceRecordId": "recKnKRzwuSBC0pUE",
-  "draft": false,
   "name": "Avatar of Shulkers",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Avatar",
-  "description": "<p>You reflect projectiles and take -25% damage from them.<br>Sneak punching the block below you closes your shell until you stop sneaking. While your shell is closed, you take -25% damage and are immune to knockback, jumping teleports you to a random nearby location, and fired arrows become shulker bullets. If they hit a target who was already levitating, the levitation is cleansed instead, but the bullet and the target’s fall both deal 4x damage.</p>",
+  "costRule": "per-level",
+  "description": "<p>You reflect projectiles and take -25% damage from them. Punch the block below you while sneaking to <em>close your shell</em> until you stop sneaking. While your shell is closed:</p><ul><li><p>You take -25% damage.</p></li><li><p>Jumping blinks you to a random nearby location.</p></li><li><p>Fired arrows become Shulker bullets. If the target already had levitation, it is cleansed and the resulting fall deals 4x damage.</p></li></ul><p></p>",
   "maxLevel": 1,
   "items": [
     "Chestplates"
   ],
+  "rune1": "Vitality",
+  "rune2": "Aegis",
+  "rune3": "Gusts",
+  "rune4": "Arcanum",
+  "rune5": "Kinesis",
   "incompatibleRunecrafted": [
     "Other Avatars"
   ],
-  "incompatibleVanilla": [],
-  "discoverer": "",
-  "researchers": [],
-  "discoveredDate": "",
-  "discoveredBy": "",
+  "discoveredDate": "2026-10-21",
   "runeTags": [
     "Vitality",
     "Aegis",
@@ -24,10 +25,5 @@
     "Arcanum",
     "Kinesis"
   ],
-  "rune1": "Vitality",
-  "rune2": "Aegis",
-  "rune3": "Gusts",
-  "rune4": "Arcanum",
-  "rune5": "Kinesis",
-  "costRule": "per-level"
+  "sourceRecordId": "recKnKRzwuSBC0pUE"
 }
