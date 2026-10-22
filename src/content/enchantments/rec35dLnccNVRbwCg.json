@@ -1,10 +1,62 @@
 {
-  "sourceRecordId": "rec35dLnccNVRbwCg",
-  "draft": false,
   "name": "Blast Protection V",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Protection",
-  "description": "<p>Blasts deal -8-40% damage and -15–75% knockback.</p><blockquote><p><strong>Runecrafting Bonus</strong>: Blasts instead deal -75% damage, then you siphon the shrapnel to form a 1❤ Absorption <em>blast shield</em>, granting knockback immunity and 25% damage reduction while the shield holds.</p></blockquote>",
+  "costRule": "once",
+  "description": "<p>Blasts deal -[effect:blastdr][dark-gray]8-40%[/dark-gray][/effect] damage and -[effect:blastkb][dark-gray]15–75%[/dark-gray][/effect] knockback.</p><ul><li><p>[pink]<strong>Runecrafting Bonus</strong>[/pink]: Blasts instead deal -75% damage, then you siphon the shrapnel to form a 1❤ Absorption blast shield, granting knockback immunity and 25% damage reduction while the shield holds.</p></li></ul><p></p>",
+  "effects": [
+    {
+      "key": "blastdr",
+      "levels": [
+        {
+          "level": 1,
+          "value": "8% damage"
+        },
+        {
+          "level": 2,
+          "value": "16% damage"
+        },
+        {
+          "level": 3,
+          "value": "24% damage"
+        },
+        {
+          "level": 4,
+          "value": "32% damage"
+        },
+        {
+          "level": 5,
+          "value": "40% damage"
+        }
+      ]
+    },
+    {
+      "key": "blastkb",
+      "levels": [
+        {
+          "level": 1,
+          "value": "15% knockback"
+        },
+        {
+          "level": 2,
+          "value": "30% knockback"
+        },
+        {
+          "level": 3,
+          "value": "45% knockback"
+        },
+        {
+          "level": 4,
+          "value": "60% knockback"
+        },
+        {
+          "level": 5,
+          "value": "75% knockback"
+        }
+      ]
+    }
+  ],
   "maxLevel": 5,
   "items": [
     "Helmets",
@@ -12,6 +64,11 @@
     "Leggings",
     "Boots"
   ],
+  "rune1": "Kinesis",
+  "rune2": "Aegis",
+  "rune3": "Kinesis",
+  "rune4": "Vitality",
+  "rune5": "Moments",
   "incompatibleRunecrafted": [
     "Headstart",
     "Adrenaline Rush",
@@ -24,7 +81,6 @@
     "Projectile Protection"
   ],
   "discoverer": "Starmarsh",
-  "researchers": [],
   "discoveredDate": "2023-09-04",
   "discoveredBy": "Starmarsh on 9/4/23, 12:13 AM",
   "runeTags": [
@@ -33,10 +89,5 @@
     "Vitality",
     "Moments"
   ],
-  "rune1": "Kinesis",
-  "rune2": "Aegis",
-  "rune3": "Kinesis",
-  "rune4": "Vitality",
-  "rune5": "Moments",
-  "costRule": "once"
+  "sourceRecordId": "rec35dLnccNVRbwCg"
 }
