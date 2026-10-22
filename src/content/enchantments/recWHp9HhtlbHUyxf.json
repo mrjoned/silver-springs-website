@@ -1,21 +1,24 @@
 {
-  "sourceRecordId": "recWHp9HhtlbHUyxf",
-  "draft": false,
   "name": "Battering Ram",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Bashing",
-  "description": "<p>Bashing causes you to rapidly dash forward, pushing all enemies you collide with along the dash, then stunning them for 1.5 seconds.</p>",
+  "costRule": "per-level",
+  "description": "<p>[term:bashing]<strong>Bashing</strong>[/term] causes you to rapidly dash forward, pushing all enemies you collide with along the dash, then [effect:stun][dark-gray]stunning[/dark-gray][/effect] them for 1.5 seconds.</p>",
   "maxLevel": 1,
   "items": [
     "Shields"
   ],
+  "rune1": "Aegis",
+  "rune2": "Aegis",
+  "rune3": "Kinesis",
+  "rune4": "Gusts",
+  "rune5": "Sparks",
   "incompatibleRunecrafted": [
     "Discus",
     "Advance"
   ],
-  "incompatibleVanilla": [],
   "discoverer": "MogTheDinosaur",
-  "researchers": [],
   "discoveredDate": "2023-09-07",
   "discoveredBy": "MogTheDinosaur on 9/7/23 8:50 PM ",
   "runeTags": [
@@ -24,10 +27,5 @@
     "Gusts",
     "Sparks"
   ],
-  "rune1": "Aegis",
-  "rune2": "Aegis",
-  "rune3": "Kinesis",
-  "rune4": "Gusts",
-  "rune5": "Sparks",
-  "costRule": "per-level"
+  "sourceRecordId": "recWHp9HhtlbHUyxf"
 }
