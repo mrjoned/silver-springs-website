@@ -4,7 +4,7 @@
   "source": "Runecrafted",
   "category": "Aphelion",
   "costRule": "per-level",
-  "description": "<p>[term:eclipse][blue]<strong><u>Eclipses</u></strong>[/blue][/term] the Grasshopper. It instead can be continuously charged, during which it creates an [aqua]<em>icy jet stream</em>[/aqua] in your target direction, freezing and pushing yourself along with any enemies and projectiles within.</p><p>[gray]<em>At the forecast periphery, frigid and untamed.</em>[/gray]</p>",
+  "description": "<p>[term:eclipse][blue]<strong><u>Eclipses</u></strong>[/blue][/term] the Grasshopper. It instead can be continuously charged, during which it creates an [aqua]<em>icy jet stream</em>[/aqua] in your target direction, freezing and pushing yourself along with any enemies and projectiles within.</p><p>[dark-gray]<em>At the forecast periphery, frigid and untamed.</em>[/dark-gray]</p>",
   "maxLevel": 1,
   "items": [
     "Boots"
