@@ -80,8 +80,11 @@ content:
         label: Miscellaneous
   - name: excerpt
     label: Summary
-    type: text
-    description: Optional short summary for announcement cards. Leave blank to use the opening text.
+    type: rich-text
+    options:
+      format: html
+      switcher: true
+    description: Optional formatted summary for announcement cards. Leave blank to use the opening text.
   - name: body
     label: Announcement
     type: rich-text

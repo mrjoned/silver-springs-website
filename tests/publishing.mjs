@@ -33,3 +33,14 @@ assert.equal(photos[2].year, 'more');
 assert.equal(photos[0].source, photos[0].src);
 assert.throws(() => makePhotos([photo('missing-description', { alt: '' })]), /description/);
 console.log('Publishing checks passed: draft exclusion, newest-post order, Chicago dates, stable URLs, automatic summaries, new-photo ordering, and year filters.');
+
+const rich=makePosts([post('encoded-title','2026-10-20',{title:'Build &amp; Updates',excerpt:'<p>Meet <strong>friends</strong> &amp; <em>explore</em>.</p>'})])[0];
+assert.equal(rich.title,'Build & Updates');
+assert.equal(rich.excerpt,'Meet friends & explore.');
+assert.match(rich.excerptHtml,/<strong>friends<\/strong>/);
+assert.equal(rich.path,'/changelog-and-faq/encoded-title/');
+assert(!rich.search.includes('&amp;'));
+const plain=makePosts([post('plain-summary','2026-10-20',{excerpt:'A & B < 3'})])[0];
+assert.equal(plain.excerptHtml,'<p>A &amp; B &lt; 3</p>');
+assert.equal(posts[0].excerptHtml,'<p>Hello Silver Springs &amp; friends.</p>');
+console.log('Announcement summaries preserve rich text, metadata stays plain, and encoded titles decode without URL changes.');
