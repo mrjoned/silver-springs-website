@@ -42,7 +42,7 @@
       return '<div class="sss-richtext-table"><table><thead><tr>'+header.map(t=>cell(t,'th')).join('')+'</tr></thead><tbody>'+rows.map(row=>'<tr>'+row.map(t=>cell(t,'td')).join('')+'</tr>').join('')+'</tbody></table></div>';
     }
   };
-  const colors = new Set(['red','gold','yellow','green','aqua','blue','purple','pink','gray','white']);
+  const colors = new Set(['red','gold','yellow','green','aqua','blue','purple','pink','gray','white','brown','orange','dark-red','dark-gray','dark-green']);
   // Process text nodes only, leaving HTML attributes and code samples untouched.
   function colorize(html) {
     const parts = html.split(/(<[^>]*>)/g);
@@ -57,15 +57,19 @@
         continue;
       }
       if (codeDepth) { output.push(part); continue; }
-      for (const token of part.split(/(\[\/?[a-z]+\])/gi)) {
-        const match = /^\[(\/?)([a-z]+)\]$/i.exec(token);
+      for (const token of part.split(/(\[\/?[a-z-]+(?::[a-z-]+:[a-z-]+)?\])/gi)) {
+        const match = /^\[(\/?)([a-z-]+)(?::([a-z-]+):([a-z-]+))?\]$/i.exec(token);
         const color = match?.[2].toLowerCase();
-        if (!colors.has(color)) { output.push(token); continue; }
+        const gradient = color === 'gradient';
+        const from = match?.[3]?.toLowerCase(), to = match?.[4]?.toLowerCase();
+        if (!match || (gradient ? (match[1] ? !!from : !colors.has(from)||!colors.has(to)) : !colors.has(color)||!!from)) { output.push(token); continue; }
         if (!match[1]) {
-          stack.push({color, index:output.length}); output.push(token);
+          stack.push({color, from, to, index:output.length}); output.push(token);
         } else if (stack.length && stack[stack.length-1].color === color) {
           const opening = stack.pop();
-          output[opening.index] = '<span class="sss-color-' + color + '">';
+          output[opening.index] = gradient
+            ? '<span class="sss-gradient sss-gradient-from-'+opening.from+' sss-gradient-to-'+opening.to+'">'
+            : '<span class="sss-color-' + color + '">';
           output.push('</span>');
         } else { output.push(token); }
       }

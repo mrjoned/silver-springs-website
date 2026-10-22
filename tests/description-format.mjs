@@ -37,7 +37,7 @@ assert.match(format(chainsaw.description),/<em>revs the chainsaw<\/em>/);
 assert.match(format(chainsaw.description),/<em>berserk<\/em>/);
 console.log('Description formatting passed: full catalog, emphasis, bold, code, lists, line breaks, quotes, links, and hostile markup.');
 
-for (const color of ['red','gold','yellow','green','aqua','blue','purple','pink','gray','white']) {
+for (const color of ['red','gold','yellow','green','aqua','blue','purple','pink','gray','white','brown','orange','dark-red','dark-gray','dark-green']) {
  assert.match(format(`<p>[${color}]colored text[/${color}]</p>`), new RegExp(`<span class="sss-color-${color}">colored text</span>`));
 }
 assert.match(format('<p>[red]<strong>Fire</strong> and <em>burning</em>[/red]</p>'), /<span class="sss-color-red"><strong>Fire<\/strong> and <em>burning<\/em><\/span>/);
@@ -51,7 +51,7 @@ assert(!format('[red]mismatch[/blue]').includes('sss-color'));
 assert(!format('<p>[red]one</p><p>two[/red]</p>').includes('sss-color'));
 assert(!format('[custom]unknown[/custom]').includes('sss-color'));
 assert(!format('[Link](https://example.com/[red]x[/red])').includes('sss-color'));
-console.log('Color tags passed: ten colors, rich text, nesting, code, links and malformed tags.');
+console.log('Color tags passed: fifteen colors, rich text, nesting, code, links and malformed tags.');
 
 const effects={effects:[{key:'speed',label:'Speed bonus',levels:[{level:2,value:'80%'},{level:1,value:'40%'}]}]};
 const glossary=[{key:'freezing',name:'Freezing',description:'A shared explanation.',draft:false}];
@@ -101,3 +101,11 @@ assert.match(tip,/data-explanation="Speed bonus\nLevel I: 40%\nLevel II: 80%"/);
 const invalidLabel=structuredClone(one);invalidLabel.effects[0].label=123;
 assert.throws(()=>makeGameCatalogs([invalidLabel],[]),/invalid label/);
 console.log('Effect labels are optional; unlabeled tooltips start directly with level values.');
+
+assert.match(format('[gradient:orange:gold]**Fancy item**[/gradient]'), /class="sss-gradient sss-gradient-from-orange sss-gradient-to-gold"><strong>Fancy item<\/strong><\/span>/);
+assert.match(format('[effect:speed][gradient:dark-green:green]speed[/gradient][/effect]',effects), /data-explanation=.*sss-gradient/s);
+assert.match(format('[term:freezing][gradient:blue:aqua]Freezing[/gradient][/term]',{},glossary), /data-explanation=.*sss-gradient/s);
+for(const source of ['[gradient:bad:red]x[/gradient]','[gradient:red:blue]unclosed','[gradient:red:blue]x[/red]','[red:blue:green]x[/red]','[gradient:red:blue]x[/gradient:red:blue]','`[gradient:red:blue]code[/gradient]`','<p>[gradient:red:blue]one</p><p>two[/gradient]</p>']){
+ assert(!format(source).includes('class="sss-gradient'),source);
+}
+console.log('Gradients passed: formatting, glossary/effect tooltips, invalid colors, code and malformed tags.');
