@@ -1,16 +1,19 @@
 {
-  "sourceRecordId": "recsEbrtxrK7wQHnt",
-  "draft": false,
   "name": "Aphelion of Mars",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Aphelion",
-  "description": "<p><strong>Eclipses</strong> Paradigm of Envy. You envy Avatars instead of Paradigms.</p><ul><li><strong>Eclipse</strong>: The behavior of the eclipsed object is replaced while wearing this Aphelion.</li></ul>",
+  "costRule": "per-level",
+  "description": "<p>[blue]<strong><u>Eclipses</u></strong>[/blue] Paradigm of Envy. You envy Avatars instead of Paradigms.</p><ul><li><p><strong>Eclipse</strong>: The behavior of the eclipsed object is replaced while wearing this Aphelion.</p></li></ul><p>[gray]<em>At its loneliest, barren and longing.</em>[/gray]</p>",
   "maxLevel": 1,
   "items": [
     "Boots"
   ],
-  "incompatibleRunecrafted": [],
-  "incompatibleVanilla": [],
+  "rune1": "Void",
+  "rune2": "Stones",
+  "rune3": "Vitality",
+  "rune4": "Vitality",
+  "rune5": "Void",
   "discoverer": "TheJ_Team",
   "researchers": [
     "TroyTheCrafter"
@@ -22,10 +25,5 @@
     "Vitality",
     "Void"
   ],
-  "rune1": "Void",
-  "rune2": "Stones",
-  "rune3": "Vitality",
-  "rune4": "Vitality",
-  "rune5": "Void",
-  "costRule": "per-level"
+  "sourceRecordId": "recsEbrtxrK7wQHnt"
 }
