@@ -1,20 +1,23 @@
 {
-  "sourceRecordId": "recZQRMG5ClOqIJE8",
-  "draft": false,
   "name": "Avatar of Iron Golems",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Avatar",
-  "description": "<p>You take -50% knockback, deal +25% knockback. Gain +2❤️ max HP.<br>You can give zombie villagers a poppy to cure them without applying Weakness.</p>",
+  "costRule": "per-level",
+  "description": "<ul><li><p>Gain +2❤️ max health and +20% knockback resistance. 75% of your knockback strength is instead dealt as a knockup.</p></li><li><p>You can give zombie villagers a poppy to cure them without applying Weakness.</p></li></ul><p></p>",
   "maxLevel": 1,
   "items": [
     "Chestplates"
   ],
+  "rune1": "Vitality",
+  "rune2": "Kinesis",
+  "rune3": "Aegis",
+  "rune4": "Stones",
+  "rune5": "Kinesis",
   "incompatibleRunecrafted": [
     "Other Avatars"
   ],
-  "incompatibleVanilla": [],
   "discoverer": "Jeerood",
-  "researchers": [],
   "discoveredDate": "2017-01-21",
   "discoveredBy": "Jeerood on 1/21/17 1:15 PM",
   "runeTags": [
@@ -23,10 +26,5 @@
     "Aegis",
     "Stones"
   ],
-  "rune1": "Vitality",
-  "rune2": "Kinesis",
-  "rune3": "Aegis",
-  "rune4": "Stones",
-  "rune5": "Kinesis",
-  "costRule": "per-level"
+  "sourceRecordId": "recZQRMG5ClOqIJE8"
 }
