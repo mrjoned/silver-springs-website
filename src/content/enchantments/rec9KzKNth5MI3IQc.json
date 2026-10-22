@@ -4,7 +4,7 @@
   "source": "Runecrafted",
   "category": "Aphelion",
   "costRule": "per-level",
-  "description": "<ul><li><p>[term:eclipse][blue]<strong><u>Eclipses</u></strong>[/blue][/term] the R.E.D. armor. You instead can read curse books, [red]<em>sacrificing</em>[/red] health to cast powerful [term:eldritchspells]<strong><u>eldritch spells</u></strong>[/term] which mark targets and [term:corrupt]<strong><u>corrupt</u></strong>[/term] your next punch. You can punch marked enemies from any range to siphon the mark and refund part of the [red]<em>sacrifice</em>[/red].</p></li><li><p>Sneak-right-click with a curse book to morph it into a [red]<em>cursed tome</em>[/red] which can hold 5 curse books.</p></li></ul><p>[gray]<em>At wit's end lie horrors of our own making</em>[/gray]</p>",
+  "description": "<ul><li><p>[term:eclipse][blue]<strong><u>Eclipses</u></strong>[/blue][/term] the R.E.D. armor. You instead can read curse books, [red]<em>sacrificing</em>[/red] health to cast powerful [term:eldritchspells]<strong><u>eldritch spells</u></strong>[/term] which mark targets and [term:corrupt]<strong><u>corrupt</u></strong>[/term] your next punch. You can punch marked enemies from any range to siphon the mark and refund part of the [red]<em>sacrifice</em>[/red].</p></li><li><p>Sneak-right-click with a curse book to morph it into a [red]<em>cursed tome</em>[/red] which can hold 5 curse books.</p></li></ul><p>[gray]<em>At wit's end lie horrors of our own making.</em>[/gray]</p>",
   "maxLevel": 1,
   "items": [
     "Boots"
