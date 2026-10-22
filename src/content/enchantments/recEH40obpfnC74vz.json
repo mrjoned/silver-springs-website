@@ -1,16 +1,19 @@
 {
-  "sourceRecordId": "recEH40obpfnC74vz",
-  "draft": false,
   "name": "Aphelion of Jupiter",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Aphelion",
-  "description": "<p><strong>Eclipses</strong> the Runic Tome. When you would cast the Void, Gusts, Kinesis, or Sparks spells, you instead cast <strong>Great Red Spot</strong>.</p><ul><li><strong>Great Red Spot</strong>: A large elliptical lightning storm forms around you for 25 seconds. It pulls in and suffocates enemies, increasing in intensity at the center, which instead deals more frequent void damage. Costs 125 XP.</li><li><strong>Eclipse</strong>: The behavior of the eclipsed object is replaced while wearing this Aphelion.</li></ul>",
+  "costRule": "per-level",
+  "description": "<p>[blue]<strong><u>Eclipses</u></strong>[/blue] the Runic Tome. When you would cast the Void, Gusts, Kinesis, or Sparks spells, you instead cast <strong><u>Great Red Spot</u></strong>.</p><ul><li><p><strong>Great Red Spot</strong>: A large elliptical lightning storm forms around you for 25 seconds. It pulls in and suffocates enemies, increasing in intensity at the center, which instead deals more frequent void damage. Costs 125 XP.</p></li><li><p><strong>Eclipse</strong>: The behavior of the eclipsed object is replaced while wearing this Aphelion.</p></li></ul><p>[gray]<em>At giant's reach, a crimson storm older than magic.</em>[/gray]</p>",
   "maxLevel": 1,
   "items": [
     "Boots"
   ],
-  "incompatibleRunecrafted": [],
-  "incompatibleVanilla": [],
+  "rune1": "Void",
+  "rune2": "Gusts",
+  "rune3": "Kinesis",
+  "rune4": "Sparks",
+  "rune5": "Arcanum",
   "discoverer": "Frostearrific",
   "researchers": [
     "TheJ_Team",
@@ -26,10 +29,5 @@
     "Sparks",
     "Void"
   ],
-  "rune1": "Void",
-  "rune2": "Gusts",
-  "rune3": "Kinesis",
-  "rune4": "Sparks",
-  "rune5": "Arcanum",
-  "costRule": "per-level"
+  "sourceRecordId": "recEH40obpfnC74vz"
 }
