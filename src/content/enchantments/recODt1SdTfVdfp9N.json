@@ -1,16 +1,19 @@
 {
-  "sourceRecordId": "recODt1SdTfVdfp9N",
-  "draft": false,
   "name": "Aphelion of Neptune",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Aphelion",
-  "description": "<p><strong>Eclipses</strong> the Grasshopper. It instead can be continuously charged, during which it creates an <em>icy jet stream</em> in your target direction, freezing and pushing yourself along with any enemies and projectiles within.</p><ul><li>**Eclipse: **The behavior of the eclipsed object is replaced while wearing this Aphelion.</li></ul>",
+  "costRule": "per-level",
+  "description": "<p>[term:eclipse][blue]<strong><u>Eclipses</u></strong>[/blue][/term] the Grasshopper. It instead can be continuously charged, during which it creates an <em>icy jet stream</em> in your target direction, freezing and pushing yourself along with any enemies and projectiles within.</p><p>[gray]<em>At the forecast periphery, frigid and untamed.</em>[/gray]</p>",
   "maxLevel": 1,
   "items": [
     "Boots"
   ],
-  "incompatibleRunecrafted": [],
-  "incompatibleVanilla": [],
+  "rune1": "Gusts",
+  "rune2": "Kinesis",
+  "rune3": "Chills",
+  "rune4": "Chills",
+  "rune5": "Chills",
   "discoverer": "ggDrPepper",
   "researchers": [
     "Frostearrific"
@@ -22,10 +25,5 @@
     "Gusts",
     "Kinesis"
   ],
-  "rune1": "Gusts",
-  "rune2": "Kinesis",
-  "rune3": "Chills",
-  "rune4": "Chills",
-  "rune5": "Chills",
-  "costRule": "per-level"
+  "sourceRecordId": "recODt1SdTfVdfp9N"
 }
