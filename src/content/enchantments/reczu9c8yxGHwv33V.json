@@ -4,7 +4,7 @@
   "source": "Runecrafted",
   "category": "Excavation",
   "costRule": "per-level",
-  "description": "<p>Briefly after breaking a block, an aftershock <strong><u>temporarily</u></strong> cracks blocks in a 3x3 area. If an aftershock hits a cracked block, it is broken instead. Breaking blocks while sneaking does not trigger aftershocks.</p>",
+  "description": "<p>Briefly after breaking a block, an aftershock [term:aftershock-temp]<strong><u>temporarily</u></strong>[/term] cracks blocks in a 3x3 area. If an aftershock hits a cracked block, it is broken instead. Breaking blocks while sneaking does not trigger aftershocks.</p>",
   "maxLevel": 1,
   "items": [
     "Pickaxes",
