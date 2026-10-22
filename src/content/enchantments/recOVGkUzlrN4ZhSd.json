@@ -4,7 +4,23 @@
   "source": "Runecrafted",
   "category": "Safety",
   "costRule": "per-level",
-  "description": "<p>While gliding, colliding with a wall deals <strong><u>40-80% less damage</u></strong> and repulses you backwards.</p>",
+  "description": "<p>While gliding, colliding with a wall deals [effect:reduction]<strong><u>40-80% less damage</u></strong>[/effect] and repulses you backwards.</p>",
+  "effects": [
+    {
+      "key": "reduction",
+      "label": "Damage Reduction",
+      "levels": [
+        {
+          "level": 1,
+          "value": "40%"
+        },
+        {
+          "level": 2,
+          "value": "80%"
+        }
+      ]
+    }
+  ],
   "maxLevel": 2,
   "items": [
     "Elytra"
