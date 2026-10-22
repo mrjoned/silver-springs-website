@@ -4,17 +4,7 @@
   "source": "Runecrafted",
   "category": "Aphelion",
   "costRule": "per-level",
-  "description": "<p>[term:eclipse][blue]<strong><u>Eclipses</u></strong>[/blue][/term] gem socketing. Instead, you form a rotating [brown]<em>ring of moonlets</em>[/brown] upon entering combat. You have 6 moonlets [effect:saturnhearts][dark-gray]<u>2❤️</u>[/dark-gray][/effect] which block hits from outside of your ring until destroyed. Your ring gains the following stats per socketed gem:</p><ul><li><p>[green]Agility[/green]: +25% rotation speed</p></li><li><p>[orange]Favor[/orange]: +5% moonlet [effect:saturndodgechance][dark-gray]<u>dodge chance</u>[/dark-gray][/effect]</p></li><li><p>[dark-gray]Haste[/dark-gray]: +0.25❤️ moonlet impact damage</p></li><li><p>[white]Tenacity[/white]: +0.5 blocks moonlet knockback</p></li><li><p>[dark-red]Vigor[/dark-red]: +0.5❤️ per moonlet</p></li></ul><p>[dark-gray]<em>At all costs, forgoing substance for allies.</em>[/dark-gray]</p>",
-  "effects": [
-    {
-      "key": "saturnhearts",
-      "label": "Moonlet health scales with how fully socketed your armor is."
-    },
-    {
-      "key": "saturndodgechance",
-      "label": "Allows moonlets to block attacks without themselves taking damage."
-    }
-  ],
+  "description": "<p>[term:eclipse][blue]<strong><u>Eclipses</u></strong>[/blue][/term] gem socketing. Instead, you form a rotating [brown]<em>ring of moonlets</em>[/brown] upon entering combat. You have 6 moonlets [term:saturnhearts][dark-gray]<u>2❤️</u>[/dark-gray][/term] which block hits from outside of your ring until destroyed. Your ring gains the following stats per socketed gem:</p><ul><li><p>[green]Agility[/green]: +25% rotation speed</p></li><li><p>[orange]Favor[/orange]: +5% moonlet [term:saturndodgechance][dark-gray]<u>dodge chance</u>[/dark-gray][/term]</p></li><li><p>[dark-gray]Haste[/dark-gray]: +0.25❤️ moonlet impact damage</p></li><li><p>[white]Tenacity[/white]: +0.5 blocks moonlet knockback</p></li><li><p>[dark-red]Vigor[/dark-red]: +0.5❤️ per moonlet</p></li></ul><p>[dark-gray]<em>At all costs, forgoing substance for allies.</em>[/dark-gray]</p>",
   "maxLevel": 1,
   "items": [
     "Boots"
