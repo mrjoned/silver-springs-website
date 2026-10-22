@@ -1,20 +1,29 @@
 {
-  "sourceRecordId": "recIdYScFNAS8bWxe",
-  "draft": false,
   "name": "Avatar of Bats",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Avatar",
-  "description": "<p>While gliding, sneaking causes you to echolocate, highlighting mobs within 40 blocks and granting night vision for 10 seconds.<br>While in light levels of 4 or less, mobs only detect you from 60-25% of their usual distance.</p>",
+  "costRule": "per-level",
+  "description": "<ul><li><p>While gliding, sneaking causes you to <em>echolocate</em>, highlighting mobs within 40 blocks and granting night vision for 10 seconds.</p></li><li><p>While in light levels of 4 or less, mobs only detect you from [effect:detection][dark-gray]60-25%[dark-gray][/effect] of their usual distance.</p></li></ul><p></p>",
+  "effects": [
+    {
+      "key": "detection",
+      "explanation": "Scales down based on light level."
+    }
+  ],
   "maxLevel": 1,
   "items": [
     "Elytra"
   ],
+  "rune1": "Gusts",
+  "rune2": "Vitality",
+  "rune3": "Void",
+  "rune4": "Vitality",
+  "rune5": "Void",
   "incompatibleRunecrafted": [
     "Other Avatars"
   ],
-  "incompatibleVanilla": [],
   "discoverer": "TroyTheCrafter",
-  "researchers": [],
   "discoveredDate": "2023-09-01",
   "discoveredBy": "TroyTheCrafter on 9/1/23, 6:45 AM",
   "runeTags": [
@@ -22,10 +31,5 @@
     "Vitality",
     "Void"
   ],
-  "rune1": "Gusts",
-  "rune2": "Vitality",
-  "rune3": "Void",
-  "rune4": "Vitality",
-  "rune5": "Void",
-  "costRule": "per-level"
+  "sourceRecordId": "recIdYScFNAS8bWxe"
 }
