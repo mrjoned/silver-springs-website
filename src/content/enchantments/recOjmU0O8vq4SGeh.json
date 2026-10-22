@@ -1,18 +1,20 @@
 {
-  "sourceRecordId": "recOjmU0O8vq4SGeh",
-  "draft": false,
   "name": "Aphelion of Uranus",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Aphelion",
-  "description": "<p>**Eclipses **Howling. Your Howl instead requires 7 stacks and intiates an <em>icy riptide</em>, freezing enemies you pass through for 2 seconds and striking for 75% damage. If your offhand is Howling, it also strikes for 25% damage.</p><ul><li>**Eclipse: **The behavior of the eclipsed object is replaced while wearing this Aphelion.</li></ul>",
+  "costRule": "per-level",
+  "description": "<p>[term:eclipse][blue]<strong><u>Eclipses</u></strong>[/blue][/term] Howling. Your Howl instead requires 7 stacks and initiates an [aqua]<em>icy riptide</em>[/aqua], freezing enemies you pass through for 2 seconds and striking for 75% damage. If your offhand is Howling, it also strikes for 25% damage.</p><p>[dark-gray]<em>At death's icy door, readying its final wail.</em>[/dark-gray]</p>",
   "maxLevel": 1,
   "items": [
     "Boots"
   ],
-  "incompatibleRunecrafted": [],
-  "incompatibleVanilla": [],
+  "rune1": "Echoes",
+  "rune2": "Tides",
+  "rune3": "Chills",
+  "rune4": "Kinesis",
+  "rune5": "Mortus",
   "discoverer": "JenoSnowconeIce",
-  "researchers": [],
   "discoveredDate": "2025-06-06",
   "discoveredBy": "JenoSnowconeIce on 06/06/25",
   "runeTags": [
@@ -22,10 +24,5 @@
     "Tides",
     "Mortus"
   ],
-  "rune1": "Echoes",
-  "rune2": "Tides",
-  "rune3": "Chills",
-  "rune4": "Kinesis",
-  "rune5": "Mortus",
-  "costRule": "per-level"
+  "sourceRecordId": "recOjmU0O8vq4SGeh"
 }
