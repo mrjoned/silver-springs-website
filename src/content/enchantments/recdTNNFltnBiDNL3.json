@@ -1,16 +1,25 @@
 {
-  "sourceRecordId": "recdTNNFltnBiDNL3",
-  "draft": false,
   "name": "Aphelion of Saturn",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Aphelion",
-  "description": "<p>**Eclipses **gem socketing. Instead, you form a rotating ring of moonlets upon entering combat. You have 6 moonlets 2❤️ which block hits from outside of your ring until destroyed. Your ring gains the following stats per socketed gem:</p><ul><li><p>Agility: +25% rotation speed</p></li><li><p>Favor: +5% moonlet dodge chance</p></li><li><p>Haste: +0.25❤️ moonlet impact damage</p></li><li><p>Tenacity: +0.5 blocks moonlet knockback</p></li><li><p>Vigor: +0.5❤️ per moonlet</p></li><li><p><strong>Eclipse</strong>: The behavior of the eclipsed object is replaced while wearing this Aphelion.</p></li></ul>",
+  "costRule": "per-level",
+  "description": "<p>[term:eclipse][blue]<strong><u>Eclipses</u></strong>[/blue][/term] gem socketing. Instead, you form a rotating [brown]<em>ring of moonlets</em>[/brown] upon entering combat. You have 6 moonlets [effect:saturnhearts][dark-gray]<u>2❤️</u>[/dark-gray][/effect] which block hits from outside of your ring until destroyed. Your ring gains the following stats per socketed gem:</p><ul><li><p>[green]Agility[/green]: +25% rotation speed</p></li><li><p>[orange]Favor[/orange]: +5% moonlet dodge chance</p></li><li><p>[dark-gray]Haste[/dark-gray]: +0.25❤️ moonlet impact damage</p></li><li><p>[white]Tenacity[/white]: +0.5 blocks moonlet knockback</p></li><li><p>[dark-red]Vigor[/dark-red]: +0.5❤️ per moonlet</p></li></ul><p>[dark-gray]<em>At all costs, forgoing substance for allies.</em>[/dark-gray]</p>",
+  "effects": [
+    {
+      "key": "saturnhearts",
+      "label": "Moonlet health scales with how fully socketed your armor is."
+    }
+  ],
   "maxLevel": 1,
   "items": [
     "Boots"
   ],
-  "incompatibleRunecrafted": [],
-  "incompatibleVanilla": [],
+  "rune1": "Aegis",
+  "rune2": "Opulence",
+  "rune3": "Void",
+  "rune4": "Stones",
+  "rune5": "Kinesis",
   "discoverer": "Maidl",
   "researchers": [
     "ElectricSparx"
@@ -24,10 +33,5 @@
     "Stones",
     "Void"
   ],
-  "rune1": "Aegis",
-  "rune2": "Opulence",
-  "rune3": "Void",
-  "rune4": "Stones",
-  "rune5": "Kinesis",
-  "costRule": "per-level"
+  "sourceRecordId": "recdTNNFltnBiDNL3"
 }
