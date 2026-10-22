@@ -489,9 +489,9 @@ content:
     required: true
     pattern: '^[a-z][a-z0-9-]*$'
   - name: name
-    label: Display name
+    label: Display name (optional)
     type: string
-    required: true
+    description: Leave blank to show only the explanation in the tooltip.
   - name: description
     label: Explanation
     type: text

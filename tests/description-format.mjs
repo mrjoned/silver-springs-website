@@ -79,3 +79,12 @@ const invalid=structuredClone(one);invalid.effects[0].levels.push({level:2,value
 assert.throws(()=>makeGameCatalogs([invalid],[]),/invalid or repeated levels/);
 assert.throws(()=>makeGameCatalogs([one],[],[...glossary,...glossary]),/duplicate/);
 console.log('Glossary and level effects passed: context, colors, keyboard markup, escaping, drafts, and validation.');
+
+for(const name of [undefined,'','   ']){
+ const term={key:'no-heading',name,description:'Explanation only.',draft:false};
+ const built=makeGameCatalogs([],[],[term]);
+ const output=format('[term:no-heading]word[/term]',{},built.glossary);
+ assert.match(output,/data-explanation="Explanation only\."/);
+ assert(!output.includes('undefined'));
+}
+console.log('Glossary names are optional; empty names render explanation-only tooltips.');

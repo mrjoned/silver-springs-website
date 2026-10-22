@@ -36,12 +36,16 @@ export function loadGameCatalogs(base=root) {
   return makeGameCatalogs(readEntries('enchantments',base),readEntries('valor-items',base),existsSync(new URL('src/content/glossary/',base))?readEntries('glossary',base):[]);
 }
 export function makeGameCatalogs(enchantmentRows,valorRows,glossaryRows=[]) {
-  const glossary=publishedEntries(glossaryRows,'glossary');
+  const glossary=glossaryRows.filter(term=>{
+    assert(typeof term.draft==='boolean','glossary/'+term.id+' needs a Draft value');
+    return !term.draft;
+  }).map(term=>({...term,name:term.name??''}));
   const termKeys=new Set();
   for(const term of glossary){
     assert(/^[a-z][a-z0-9-]*$/.test(term.key),'invalid glossary key');
     assert(!termKeys.has(term.key),'duplicate glossary key '+term.key);termKeys.add(term.key);
-    assert(term.description.trim(),term.name+' needs an explanation');
+    assert(text(term.name),'glossary/'+term.key+' has an invalid display name');
+    assert(text(term.description)&&term.description.trim(),term.key+' needs an explanation');
   }
   const enchantments=publishedEntries(enchantmentRows,'enchantments');
   for(const e of enchantments) {
