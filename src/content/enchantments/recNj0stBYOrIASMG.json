@@ -1,27 +1,23 @@
 {
-  "sourceRecordId": "recNj0stBYOrIASMG",
-  "draft": false,
   "name": "Frost Walker",
+  "draft": false,
   "source": "Vanilla",
   "category": "Travel",
-  "description": "<p>You walk 25-50% faster on ice and snow blocks, and freeze the ground beneath you in a 3-4 block radius while walking, converting powdered snow to snow and temporarily converting water to frosted ice.</p>",
+  "costRule": "free",
+  "description": "<p>[term:arcanumbonus][purple]Arcanum Bonuses[/purple][/term]:</p><ul><li><p>Grants +[effect:speed][dark-gray]25-50% speed[/dark-gray][/effect] while walking on snow or ice blocks.</p></li><li><p>Permanent freezes nearby powder snow into solid snow.</p></li></ul><p></p>",
+  "effects": [
+    {
+      "key": "speed",
+      "explanation": "Level I: 25% speed\nLevel II: 50% speed"
+    }
+  ],
   "maxLevel": 2,
   "items": [
     "Boots"
   ],
-  "incompatibleRunecrafted": [],
   "incompatibleVanilla": [
     "Depth Strider"
   ],
-  "discoverer": "",
-  "researchers": [],
-  "discoveredDate": "",
-  "discoveredBy": "",
-  "runeTags": [],
-  "rune1": "",
-  "rune2": "",
-  "rune3": "",
-  "rune4": "",
-  "rune5": "",
-  "costRule": "free"
+  "discoveredDate": "2026-10-23",
+  "sourceRecordId": "recNj0stBYOrIASMG"
 }
