@@ -1,14 +1,25 @@
 {
-  "sourceRecordId": "rect4BaGevK8KEqzY",
-  "draft": false,
   "name": "Heartseeker",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Loot",
-  "description": "<p>Enemies slain in one strike may drop their <strong>heart</strong>.</p>",
+  "costRule": "per-level",
+  "description": "<p>Enemies slain in one strike may drop their [effect:heart][dark-gray]heart[/dark-gray][/effect].</p>",
+  "effects": [
+    {
+      "key": "heart",
+      "explanation": "Edible, granting immense saturation and a burst of speed. Undead mobs rarely drop a Withered Heart instead, and oceanic mobs a Heart of the Sea."
+    }
+  ],
   "maxLevel": 1,
   "items": [
     "Spears"
   ],
+  "rune1": "Mortus",
+  "rune2": "Moments",
+  "rune3": "Vitality",
+  "rune4": "Opulence",
+  "rune5": "Gusts",
   "incompatibleRunecrafted": [
     "Bounty Hunter"
   ],
@@ -20,12 +31,5 @@
     "ElectricSparx"
   ],
   "discoveredDate": "2026-03-09",
-  "discoveredBy": "",
-  "runeTags": [],
-  "rune1": "Mortus",
-  "rune2": "Moments",
-  "rune3": "Vitality",
-  "rune4": "Opulence",
-  "rune5": "Gusts",
-  "costRule": "per-level"
+  "sourceRecordId": "rect4BaGevK8KEqzY"
 }
