@@ -4,7 +4,7 @@
   "source": "Runecrafted",
   "category": "Damage",
   "costRule": "per-level",
-  "description": "<p>After attacking, if you lose no health while [effect:recharge][dark-gray]recharging[dark-gray][/effect], your next attack deals +[effect:hearts][dark-gray]2-4❤️[/dark-gray][/effect] of armor-piercing damage and briefly slows the target.</p>",
+  "description": "<p>After attacking, if you lose no health while [effect:recharge][dark-gray]recharging[/dark-gray][/effect], your next attack deals +[effect:hearts][dark-gray]2-4❤️[/dark-gray][/effect] of armor-piercing damage and briefly slows the target.</p>",
   "effects": [
     {
       "key": "recharge",
