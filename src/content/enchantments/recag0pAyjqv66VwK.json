@@ -1,10 +1,10 @@
 {
-  "sourceRecordId": "recag0pAyjqv66VwK",
-  "draft": false,
   "name": "Curse of Polymorphing",
+  "draft": false,
   "source": "Curse",
   "category": "Curse",
-  "description": "<p>While digging, this tool randomly changes which block set it is effective against.</p>",
+  "costRule": "free",
+  "description": "<p>While digging, this tool randomly changes which block set it is effective against.</p><ul><li><p>[term:curse][red]Curse Spell[/red][/term]: [dark-red]Sacrifice 2.5❤️[/dark-red] to <em>morph</em> into a Deep One for 30 seconds, during which all punches are [term:corrupt][dark-gray]corrupted[/dark-gray][/term].</p></li></ul><p></p>",
   "maxLevel": 1,
   "items": [
     "Pickaxes",
@@ -12,17 +12,6 @@
     "Shovels",
     "Hoes"
   ],
-  "incompatibleRunecrafted": [],
-  "incompatibleVanilla": [],
-  "discoverer": "",
-  "researchers": [],
-  "discoveredDate": "",
-  "discoveredBy": "",
-  "runeTags": [],
-  "rune1": "",
-  "rune2": "",
-  "rune3": "",
-  "rune4": "",
-  "rune5": "",
-  "costRule": "free"
+  "discoveredDate": "2026-10-22",
+  "sourceRecordId": "recag0pAyjqv66VwK"
 }
