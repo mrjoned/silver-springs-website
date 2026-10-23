@@ -55,6 +55,7 @@ export function makePhotos(entries) {
       id: slug,
       src: data.image,
       source: data.image,
+      showOnHomepage: data.showOnHomepage === true,
       name: data.title,
       alt: data.alt,
       date,

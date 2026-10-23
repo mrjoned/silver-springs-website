@@ -1,0 +1,29 @@
+---
+import { photos } from '../lib/photos.js';
+const selected = photos.filter(photo => photo.showOnHomepage);
+---
+{selected.length > 0 && <section class="wrap community">
+  <div class="sectionhead">
+    <div><div class="eyebrow">Gallery</div><h2>Around Silver Springs</h2></div>
+    <p>A few photos of the server and community!</p>
+  </div>
+  <div class="carousel" role="region" aria-roledescription="carousel" aria-label="Silver Springs community photos">
+    <div class="carousel-track" tabindex="0" aria-label="Photo gallery. Use left and right arrow keys to browse.">
+      {selected.map((photo, index) => <figure class="slide" role="group" aria-roledescription="slide" aria-label={`${index + 1} of ${selected.length}`}>
+        <img src={photo.src} alt={photo.alt} loading="lazy" />
+        <figcaption>{photo.name}</figcaption>
+      </figure>)}
+    </div>
+    <div class="carousel-controls">
+      <div class="slidebuttons">
+        <button class="gallery-prev" aria-label="Previous photo" disabled={selected.length < 2}>←</button>
+        <button class="gallery-next" aria-label="Next photo" disabled={selected.length < 2}>→</button>
+      </div>
+      <span class="gallery-count" aria-live="polite" aria-atomic="true">1 / {selected.length}</span>
+      <div class="gallery-dots" aria-label="Choose a photo">
+        {selected.map((photo, index) => <button aria-label={`Show photo ${index + 1}`} aria-current={String(index === 0)} data-slide={index}></button>)}
+      </div>
+      <a class="textlink" href="/gallery/">See the full gallery ↗</a>
+    </div>
+  </div>
+</section>}

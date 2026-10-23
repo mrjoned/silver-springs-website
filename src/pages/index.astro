@@ -1,5 +1,6 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
+import HomepageGallery from '../components/HomepageGallery.astro';
 import LatestNews from '../components/LatestNews.astro';
 import beforeNews from '../content/pages/home-before-news.html?raw';
 import afterNews from '../content/pages/home-after-news.html?raw';
@@ -8,6 +9,7 @@ import afterNews from '../content/pages/home-after-news.html?raw';
   <main id="main">
     <Fragment set:html={beforeNews} />
     <LatestNews />
+    <HomepageGallery />
     <Fragment set:html={afterNews} />
   </main>
 </SiteLayout>

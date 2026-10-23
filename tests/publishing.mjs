@@ -44,3 +44,15 @@ const plain=makePosts([post('plain-summary','2026-10-20',{excerpt:'A & B < 3'})]
 assert.equal(plain.excerptHtml,'<p>A &amp; B &lt; 3</p>');
 assert.equal(posts[0].excerptHtml,'<p>Hello Silver Springs &amp; friends.</p>');
 console.log('Announcement summaries preserve rich text, metadata stays plain, and encoded titles decode without URL changes.');
+
+const carouselPhotos = makePhotos([
+  photo('selected-later', { showOnHomepage: true, order: 2 }),
+  photo('gallery-only', { showOnHomepage: false }),
+  photo('selected-first', { showOnHomepage: true, order: 1 }),
+  photo('legacy-photo'),
+  photo('selected-draft', { showOnHomepage: true, draft: true })
+]);
+assert.equal(carouselPhotos.length, 4, 'Full gallery keeps unselected published photos');
+assert.deepEqual(carouselPhotos.filter(p => p.showOnHomepage).map(p => p.id), ['selected-first', 'selected-later']);
+assert.equal(makePhotos([photo('default')])[0].showOnHomepage, false);
+console.log('Homepage photo selection respects drafts and display order without hiding full-gallery photos.');

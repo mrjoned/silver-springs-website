@@ -107,6 +107,7 @@ content:
     - title
     - image
     - date
+    - showOnHomepage
     - draft
     sort:
     - date
@@ -139,7 +140,12 @@ content:
     label: Display order
     type: number
     default: 0
-    description: Lower numbers appear first. Leave 0 to place a new photo before the imported collection.
+    description: Lower numbers appear first in the gallery and homepage carousel. Leave 0 to place a new photo before the imported collection.
+  - name: showOnHomepage
+    label: Show on homepage
+    type: boolean
+    default: false
+    description: Include this photo in the homepage carousel. Draft photos remain hidden everywhere.
   - name: draft
     label: Draft (hide from website)
     type: boolean

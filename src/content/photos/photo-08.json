@@ -4,5 +4,6 @@
   "alt": "Silver Springs community photo 8",
   "date": "2023-07-28",
   "order": 8,
-  "draft": false
+  "draft": false,
+  "showOnHomepage": true
 }
