@@ -11,7 +11,21 @@
       "explanation": "Bosses grant 4 stacks and, at max level, the bonus damage to them is uncapped. Stacks have no effect in Trials."
     },
     {
-      "key": "hearts"
+      "key": "hearts",
+      "levels": [
+        {
+          "level": 1,
+          "value": "5❤️"
+        },
+        {
+          "level": 2,
+          "value": "7.5❤️"
+        },
+        {
+          "level": 3,
+          "value": "10❤️"
+        }
+      ]
     }
   ],
   "maxLevel": 3,
