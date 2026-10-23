@@ -1,20 +1,29 @@
 {
-  "sourceRecordId": "recqFI6yWiVdYIMQ2",
-  "draft": false,
   "name": "Bottom Feeder",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Trove",
-  "description": "<p>All caught trash and treasure is replaced by <em>scrap.</em></p><ul><li><code>Common: Leather, Ink Sacs, Glow Ink Sacs, String, Lily Pads, Blaze Rods: 4-16 per catch </code></li><li><code>Uncommon: &quot;Geode,&quot; &quot;Dye Trader Bag,&quot; &quot;Pottery Bag&quot;</code></li><li><code>Rare: Crusted Gem, Crusted Rune, &quot;Home Videos&quot;</code></li><li><code>Very Rare: 1-2 Netherite Scrap</code></li></ul>",
+  "costRule": "per-level",
+  "description": "<p>All caught trash and treasure is replaced by [effect:scrap][gradient:dark-green:aqua]<em>scrap</em>[/gradient][/effect]<em>.</em></p>",
+  "effects": [
+    {
+      "key": "scrap",
+      "explanation": "A multi-tier loot table. Common draws grant 4-16 leather, ink sacs, glow ink sacs, blaze rods, lily pads, strings, or slime balls. Rarer draws can give crusted gems or runes, grab bag items containing dyes, pottery sherds, or ores, and rarely netherite scraps."
+    }
+  ],
   "maxLevel": 1,
   "items": [
     "Fishing Rods"
   ],
-  "incompatibleRunecrafted": [],
+  "rune1": "Tides",
+  "rune2": "Tides",
+  "rune3": "Opulence",
+  "rune4": "Void",
+  "rune5": "Stones",
   "incompatibleVanilla": [
     "Luck of the Sea"
   ],
   "discoverer": "MareeAM",
-  "researchers": [],
   "discoveredDate": "2023-09-09",
   "discoveredBy": "MareeAM on 9/9/23, 4:28 AM",
   "runeTags": [
@@ -23,10 +32,5 @@
     "Void",
     "Stones"
   ],
-  "rune1": "Tides",
-  "rune2": "Tides",
-  "rune3": "Opulence",
-  "rune4": "Void",
-  "rune5": "Stones",
-  "costRule": "per-level"
+  "sourceRecordId": "recqFI6yWiVdYIMQ2"
 }
