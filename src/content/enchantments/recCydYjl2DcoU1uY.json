@@ -1,14 +1,19 @@
 {
-  "sourceRecordId": "recCydYjl2DcoU1uY",
-  "draft": false,
   "name": "Hair-Trigger",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Control",
-  "description": "<p>Being struck or taking fall damage while holding this bow in your main hand automatically fires a fully charged shot. Firing a damaging projectile puts Hair-Trigger on a 1-second cooldown. </p>",
+  "costRule": "per-level",
+  "description": "<p>Being struck or taking fall damage while holding this bow in your main hand automatically fires a fully charged shot.</p>",
   "maxLevel": 1,
   "items": [
     "Bows"
   ],
+  "rune1": "Moments",
+  "rune2": "Mortus",
+  "rune3": "Void",
+  "rune4": "Moments",
+  "rune5": "Gusts",
   "incompatibleRunecrafted": [
     "Strafing"
   ],
@@ -16,14 +21,7 @@
     "Punch"
   ],
   "discoverer": "MrHollowPoint99",
-  "researchers": [],
   "discoveredDate": "2023-09-01",
   "discoveredBy": "MrHollowPoint99 on 9/1/23 5:23 AM",
-  "runeTags": [],
-  "rune1": "Moments",
-  "rune2": "Mortus",
-  "rune3": "Void",
-  "rune4": "Moments",
-  "rune5": "Gusts",
-  "costRule": "per-level"
+  "sourceRecordId": "recCydYjl2DcoU1uY"
 }
