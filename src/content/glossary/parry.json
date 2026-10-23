@@ -1,0 +1,5 @@
+{
+  "key": "parry",
+  "description": "Blocking a strike within 0.3 seconds of raising your shield. If the attack was melee this stuns the target for 1 second.",
+  "draft": false
+}
