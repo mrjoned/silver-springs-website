@@ -1,10 +1,10 @@
 {
-  "name": "Cyclotron",
+  "name": "Cyclotron🌟",
   "draft": false,
   "source": "Mythical",
   "category": "Loot",
   "costRule": "free",
-  "description": "<p>While charging [effect:fast][dark-gray]faster than 15 m/s[/dark-gray][/effect], slain enemy drops are atomized, often converting to [gold]<em>primordial dust</em>[/gold], which can then be crafted with [effect:crystal][dark-gray]crystals[/dark-gray][/effect] or socketing gems to duplicate them.</p>",
+  "description": "<p>Mythical Enchantment discovered on the relic [gradient:gold:green]G.A.M.M.A.[/gradient]</p><p>While charging [effect:fast][dark-gray]faster than 15 m/s[/dark-gray][/effect], slain enemy drops are atomized, often converting to [gold]<em>primordial dust</em>[/gold], which can then be crafted with [effect:crystal][dark-gray]crystals[/dark-gray][/effect] or socketing gems to duplicate them.</p>",
   "effects": [
     {
       "key": "fast",
