@@ -1,14 +1,42 @@
 {
-  "sourceRecordId": "reczgt7IPgUYCy1zb",
-  "draft": false,
   "name": "Exploit",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Damage",
-  "description": "<p>After attacking, if you lose no health while recharging, your next attack deals +2-4 hearts of armor-piercing damage and briefly slows the target.</p>",
+  "costRule": "per-level",
+  "description": "<p>After attacking, if you lose no health while [effect:recharge][dark-gray]recharging[dark-gray][/effect], your next attack deals +[effect:hearts][dark-gray]2-4❤️[/dark-gray][/effect] of armor-piercing damage and briefly slows the target.</p>",
+  "effects": [
+    {
+      "key": "recharge",
+      "explanation": "The period when regaining your attack strength after a swing."
+    },
+    {
+      "key": "hearts",
+      "levels": [
+        {
+          "level": 1,
+          "value": "2❤️"
+        },
+        {
+          "level": 2,
+          "value": "3❤️"
+        },
+        {
+          "level": 3,
+          "value": "4❤️"
+        }
+      ]
+    }
+  ],
   "maxLevel": 3,
   "items": [
     "Axes"
   ],
+  "rune1": "Mortus",
+  "rune2": "Moments",
+  "rune3": "Aegis",
+  "rune4": "Void",
+  "rune5": "Chills",
   "incompatibleRunecrafted": [
     "Extinction",
     "Momentum"
@@ -19,14 +47,7 @@
     "Smite"
   ],
   "discoverer": "Starmarsh",
-  "researchers": [],
   "discoveredDate": "2023-09-03",
   "discoveredBy": "Starmarsh on 9/3/23, 1:27 PM",
-  "runeTags": [],
-  "rune1": "Mortus",
-  "rune2": "Moments",
-  "rune3": "Aegis",
-  "rune4": "Void",
-  "rune5": "Chills",
-  "costRule": "per-level"
+  "sourceRecordId": "reczgt7IPgUYCy1zb"
 }
