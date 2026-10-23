@@ -1,21 +1,43 @@
 {
-  "sourceRecordId": "recQbMACoLLG0rFVx",
-  "draft": false,
   "name": "Chaining",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Splashing",
-  "description": "<p>Impacts chain up to 3 times, auto-throwing at the nearest unchained enemy within 12 blocks for 35-75% of the original impact’s damage. </p>",
+  "costRule": "per-level",
+  "description": "<p>Thrown hits [blue]<em>chain</em>[/blue] up to 3 times, auto-throwing or riptiding at the nearest unchained enemy within 12 blocks for [effect:percent][dark-gray]35-75%[/dark-gray][/effect] of the first hit's damage.</p>",
+  "effects": [
+    {
+      "key": "percent",
+      "levels": [
+        {
+          "level": 1,
+          "value": "35%"
+        },
+        {
+          "level": 2,
+          "value": "55%"
+        },
+        {
+          "level": 3,
+          "value": "75%"
+        }
+      ]
+    }
+  ],
   "maxLevel": 3,
   "items": [
     "Tridents"
   ],
+  "rune1": "Tides",
+  "rune2": "Mortus",
+  "rune3": "Arcanum",
+  "rune4": "Tides",
+  "rune5": "Mortus",
   "incompatibleRunecrafted": [
     "Skewering",
     "Dreadnought"
   ],
-  "incompatibleVanilla": [],
   "discoverer": "TroyTheCrafter",
-  "researchers": [],
   "discoveredDate": "2023-09-07",
   "discoveredBy": "TroyTheCrafter on 9/7/23 11:21 PM",
   "runeTags": [
@@ -23,10 +45,5 @@
     "Mortus",
     "Arcanum"
   ],
-  "rune1": "Tides",
-  "rune2": "Mortus",
-  "rune3": "Arcanum",
-  "rune4": "Tides",
-  "rune5": "Mortus",
-  "costRule": "per-level"
+  "sourceRecordId": "recQbMACoLLG0rFVx"
 }
