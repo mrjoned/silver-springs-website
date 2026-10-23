@@ -1,15 +1,29 @@
 {
-  "sourceRecordId": "recXUdCo5NUQyGZU9",
-  "draft": false,
   "name": "Heraclean",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Heroism",
-  "description": "<ul><li>While your world&#39;s overworld is thunderstorming, strikes that drop a <strong>boss</strong> below any 25% health threshold detonate a large, <strong>stunning</strong> <em>tempest flare</em> for 10♥️ lightning damage. </li><li>Once per thunderstorm, each boss drops a <strong>tempest chest</strong> when slain, 10% of which contain their head.</li></ul>",
+  "costRule": "per-level",
+  "description": "<ul><li><p>While your world's overworld is thunderstorming, strikes that drop a [effect:boss][dark-gray]boss[/dark-gray][/effect] below any 25% health threshold detonate a large, [term:stun][dark-gray]stunning[/dark-gray][/term] [gold]<em>tempest flare</em>[/gold] for 10♥️ lightning damage.</p></li><li><p>Once per thunderstorm, each boss drops a [effect:tempest][blue]tempest chest[/blue][/effect] when slain, 10% of which contain their head.</p></li></ul><p></p>",
+  "effects": [
+    {
+      "key": "boss",
+      "explanation": "Ender Dragon, Wither, or Warden"
+    },
+    {
+      "key": "tempest",
+      "explanation": "Common: Squid & Glow Squid Ink, Prismarine Shards & Crystals, Weathered Copper\nUncommon: Potions of Luck, Bottles o' Enchanting, Nautilus Shell, Enchanted Books\nRare: Head of slain boss, Heart of the Sea, Twinkling Sea Crystals"
+    }
+  ],
   "maxLevel": 1,
   "items": [
     "Tridents"
   ],
-  "incompatibleRunecrafted": [],
+  "rune1": "Tides",
+  "rune2": "Sparks",
+  "rune3": "Mortus",
+  "rune4": "Sparks",
+  "rune5": "Opulence",
   "incompatibleVanilla": [
     "Channeling"
   ],
@@ -19,11 +33,11 @@
   ],
   "discoveredDate": "2025-06-03",
   "discoveredBy": "Starmarsh and Schwump on 06/03/25",
-  "runeTags": [],
-  "rune1": "Tides",
-  "rune2": "Sparks",
-  "rune3": "Mortus",
-  "rune4": "Sparks",
-  "rune5": "Opulence",
-  "costRule": "per-level"
+  "runeTags": [
+    "Tides",
+    "Sparks",
+    "Mortus",
+    "Opulence"
+  ],
+  "sourceRecordId": "recXUdCo5NUQyGZU9"
 }
