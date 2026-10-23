@@ -1,19 +1,23 @@
 {
-  "sourceRecordId": "recrt5UAHTECOmr78",
-  "draft": false,
   "name": "Gatling",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Spread",
-  "description": "<p>The first loaded arrow which hits an enemy, and every other thereafter, grant +1 _clip size. _Firing a loaded arrow fires 1 additional arrow per <em>clip size</em> in a rapid, narrow barrage.</p>",
+  "costRule": "per-level",
+  "description": "<p>The first loaded arrow which hits an enemy, and every other thereafter, grant +1 <em>clip size</em>. Firing a loaded arrow fires 1 additional arrow per <em>clip size</em> in a rapid, narrow barrage.</p>",
   "maxLevel": 1,
   "items": [
     "Crossbows"
   ],
+  "rune1": "Gusts",
+  "rune2": "Mortus",
+  "rune3": "Echoes",
+  "rune4": "Gusts",
+  "rune5": "Gusts",
   "incompatibleRunecrafted": [
     "Tartean Hellhound",
     "Cryovolcano"
   ],
-  "incompatibleVanilla": [],
   "discoverer": "skelud",
   "researchers": [
     "MareeAM",
@@ -22,11 +26,5 @@
   ],
   "discoveredDate": "2025-05-20",
   "discoveredBy": "skelud, MareeAM, ElectricSparx, and JenoSnowconeIce on 05/20/25",
-  "runeTags": [],
-  "rune1": "Gusts",
-  "rune2": "Mortus",
-  "rune3": "Echoes",
-  "rune4": "Gusts",
-  "rune5": "Gusts",
-  "costRule": "per-level"
+  "sourceRecordId": "recrt5UAHTECOmr78"
 }
