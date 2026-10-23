@@ -1,31 +1,51 @@
 {
-  "sourceRecordId": "recmIgV09jSsiQ7jb",
-  "draft": false,
   "name": "Fire Aspect III",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Aspect",
-  "description": "<p>Attacks ignite the victim for 4-12 seconds. </p><blockquote><p><strong>Runecrafting Bonus</strong>: Right clicks act as if a Flint and Steel were used. Cuts healing of burning targets by 50%.</p></blockquote>",
+  "costRule": "once",
+  "description": "<p>Attacks ignite the victim for [effect:seconds][dark-gray]4-12 seconds[/dark-gray][/effect].</p><ul><li><p>[pink]<strong>Runecrafting Bonus</strong>[/pink]: Ignited entities have -50% healing while burning. Right clicks [effect:ignite][dark-gray]ignite blocks[/dark-gray][/effect].</p></li></ul><p></p>",
+  "effects": [
+    {
+      "key": "seconds",
+      "levels": [
+        {
+          "level": 1,
+          "value": "4 seconds"
+        },
+        {
+          "level": 2,
+          "value": "8 seconds"
+        },
+        {
+          "level": 3,
+          "value": "12 seconds"
+        }
+      ]
+    },
+    {
+      "key": "ignite",
+      "explanation": "This can be used to light campfires or TNT, and to place fires."
+    }
+  ],
   "maxLevel": 3,
   "items": [
     "Swords",
     "Axes",
     "Spears"
   ],
-  "incompatibleRunecrafted": [
-    "Ice Aspect",
-    "Plague Aspect",
-    "Purity Aspect"
-  ],
-  "incompatibleVanilla": [],
-  "discoverer": "ChiknThighs",
-  "researchers": [],
-  "discoveredDate": "2023-09-08",
-  "discoveredBy": "ChiknThighs on 9/8/23 3:35 AM",
-  "runeTags": [],
   "rune1": "Cinders",
   "rune2": "Vitality",
   "rune3": "Void",
   "rune4": "Sparks",
   "rune5": "Cinders",
-  "costRule": "once"
+  "incompatibleRunecrafted": [
+    "Ice Aspect",
+    "Plague Aspect",
+    "Purity Aspect"
+  ],
+  "discoverer": "ChiknThighs",
+  "discoveredDate": "2023-09-08",
+  "discoveredBy": "ChiknThighs on 9/8/23 3:35 AM",
+  "sourceRecordId": "recmIgV09jSsiQ7jb"
 }
