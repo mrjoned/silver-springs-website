@@ -1,14 +1,19 @@
 {
-  "sourceRecordId": "recbucSljQa00QqXz",
-  "draft": false,
   "name": "Coup de Grâce",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Sweeping",
-  "description": "<p>Attacks stack <strong><em>judgement</em></strong> 3 times. Once stacked, right-clicking slams your sword down at the target area where it calls a <strong><em>divine strike,</em></strong> dealing 3-6❤️ execute damage to enemies and refunding 1 <strong><em>judgement</em></strong> per enemy slain.</p>",
+  "costRule": "per-level",
+  "description": "<p>Attacks stack [orange]<em>judgement</em>[/orange] 3 times. Once stacked, right-clicking slams your sword down at the target area where it calls a [orange]<em>divine strike</em>[/orange]<strong><em>,</em></strong> dealing 3-6❤️ execute damage to enemies and refunding 1 [orange]<em>judgement</em>[/orange] per enemy slain.</p>",
   "maxLevel": 1,
   "items": [
     "Swords"
   ],
+  "rune1": "Mortus",
+  "rune2": "Echoes",
+  "rune3": "Kinesis",
+  "rune4": "Mortus",
+  "rune5": "Echoes",
   "incompatibleRunecrafted": [
     "Howling"
   ],
@@ -20,16 +25,10 @@
     "beccc"
   ],
   "discoveredDate": "2025-06-09",
-  "discoveredBy": "",
   "runeTags": [
     "Mortus",
     "Echoes",
     "Kinesis"
   ],
-  "rune1": "Mortus",
-  "rune2": "Echoes",
-  "rune3": "Kinesis",
-  "rune4": "Mortus",
-  "rune5": "Echoes",
-  "costRule": "per-level"
+  "sourceRecordId": "recbucSljQa00QqXz"
 }
