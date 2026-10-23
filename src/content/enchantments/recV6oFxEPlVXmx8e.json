@@ -1,36 +1,34 @@
 {
-  "sourceRecordId": "recV6oFxEPlVXmx8e",
-  "draft": false,
   "name": "Dowsing Thumb",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Harvest",
-  "description": "<p>This hoe _dowses _upon <strong>harvesting</strong>, occasionally finding raw ores or <strong>occult materials</strong>. Very rarely, you <em>strike it rich</em>, hitting a vein which ejects 8-12 stacks of raw copper, iron, or gold.</p><ul><li><strong>Occult Materials</strong>: Ominous bottles, rabbit&#39;s feet, crusted gems, and more.</li></ul>",
+  "costRule": "per-level",
+  "description": "<p>This hoe [green]<em>dowses</em>[/green] upon<strong> </strong>[term:harvest][dark-gray]harvesting[/dark-gray][/term], occasionally finding raw ores or [term:occultmats][dark-gray]occult materials[/dark-gray][/term]. Very rarely, you [gold]<em>strike it rich</em>[/gold], hitting a vein which ejects 8-12 stacks of raw copper, iron, or gold.</p>",
   "maxLevel": 2,
   "items": [
     "Hoes"
-  ],
-  "incompatibleRunecrafted": [
-    "Schrödinger's Thumb",
-    "Green Thumb"
-  ],
-  "incompatibleVanilla": [],
-  "discoverer": "TroyTheCrafter",
-  "researchers": [
-    "Maidl",
-    "TheJ_Team"
-  ],
-  "discoveredDate": "2025-05-18",
-  "discoveredBy": "",
-  "runeTags": [
-    "Stones",
-    "Vitality",
-    "Opulence",
-    "Arcanum"
   ],
   "rune1": "Stones",
   "rune2": "Vitality",
   "rune3": "Opulence",
   "rune4": "Arcanum",
   "rune5": "Opulence",
-  "costRule": "per-level"
+  "incompatibleRunecrafted": [
+    "Schrödinger's Thumb",
+    "Green Thumb"
+  ],
+  "discoverer": "TroyTheCrafter",
+  "researchers": [
+    "Maidl",
+    "TheJ_Team"
+  ],
+  "discoveredDate": "2025-05-18",
+  "runeTags": [
+    "Stones",
+    "Vitality",
+    "Opulence",
+    "Arcanum"
+  ],
+  "sourceRecordId": "recV6oFxEPlVXmx8e"
 }
