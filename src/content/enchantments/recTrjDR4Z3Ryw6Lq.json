@@ -1,15 +1,19 @@
 {
-  "sourceRecordId": "recTrjDR4Z3Ryw6Lq",
-  "draft": false,
   "name": "Fling",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Control",
-  "description": "<p>The first target you charge is <em>impaled</em> for 2 seconds and held before you. Ending the charge flings the <em>impaled</em> a distance and **stuns **them and enemies the collide with, both based on your speed.</p>",
+  "costRule": "per-level",
+  "description": "<p>The first target you charge is <em>impaled</em> for 2 seconds and held before you. Ending the charge flings the <em>impaled</em> a distance and [term:stun][dark-gray]stuns[/dark-gray][term] them and enemies the collide with, both based on your speed.</p>",
   "maxLevel": 1,
   "items": [
     "Spears"
   ],
-  "incompatibleRunecrafted": [],
+  "rune1": "Kinesis",
+  "rune2": "Moments",
+  "rune3": "Kinesis",
+  "rune4": "Gusts",
+  "rune5": "Sparks",
   "incompatibleVanilla": [
     "Knockback"
   ],
@@ -18,12 +22,5 @@
     "TheJ_Team"
   ],
   "discoveredDate": "2026-03-08",
-  "discoveredBy": "",
-  "runeTags": [],
-  "rune1": "Kinesis",
-  "rune2": "Moments",
-  "rune3": "Kinesis",
-  "rune4": "Gusts",
-  "rune5": "Sparks",
-  "costRule": "per-level"
+  "sourceRecordId": "recTrjDR4Z3Ryw6Lq"
 }
