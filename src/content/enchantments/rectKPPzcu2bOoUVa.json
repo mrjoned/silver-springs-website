@@ -1,19 +1,38 @@
 {
-  "sourceRecordId": "rectKPPzcu2bOoUVa",
-  "draft": false,
   "name": "Crash Landicoot",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Safety",
-  "description": "<p>Crashing damage is reduced by 25-50%. Double sneaking towards solid ground initiates a rapid nosedive whose crash deals 50% of the initial damage to enemies in a 5-block radius.</p>",
+  "costRule": "per-level",
+  "description": "<p>Crashing damage is reduced by [effect:percent][dark-gray]25-50%[/dark-gray][/effect]. Double sneaking towards solid ground initiates a rapid nosedive whose crash deals 50% of the initial damage to enemies in a 5-block radius.</p>",
+  "effects": [
+    {
+      "key": "percent",
+      "levels": [
+        {
+          "level": 1,
+          "value": "25%"
+        },
+        {
+          "level": 2,
+          "value": "50%"
+        }
+      ]
+    }
+  ],
   "maxLevel": 2,
   "items": [
     "Elytra"
   ],
+  "rune1": "Gusts",
+  "rune2": "Stones",
+  "rune3": "Kinesis",
+  "rune4": "Aegis",
+  "rune5": "Mortus",
   "incompatibleRunecrafted": [
     "Wrapping",
     "Airbag"
   ],
-  "incompatibleVanilla": [],
   "discoverer": "MiniMinnow103",
   "researchers": [
     "Maidl"
@@ -26,10 +45,5 @@
     "Kinesis",
     "Aegis"
   ],
-  "rune1": "Gusts",
-  "rune2": "Stones",
-  "rune3": "Kinesis",
-  "rune4": "Aegis",
-  "rune5": "Mortus",
-  "costRule": "per-level"
+  "sourceRecordId": "rectKPPzcu2bOoUVa"
 }
