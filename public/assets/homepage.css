@@ -1,0 +1,15 @@
+/* Homepage layout */
+
+.home-hero .hero-content{text-align:center;padding:65px 0 110px}
+.home-hero h1{max-width:1050px;margin:0 auto 25px;font-size:clamp(44px,6.3vw,84px);line-height:1.08;letter-spacing:-.035em}
+.home-hero .welcome-line{display:block;font-size:clamp(23px,2.5vw,34px);letter-spacing:.01em;margin-bottom:16px}
+.home-hero h1 em{display:block}
+.home-hero .hero-tagline{font-size:clamp(19px,2.25vw,29px);line-height:1.35;max-width:850px;margin:0 auto;color:#f4eff3}
+.home-hero .actions{justify-content:center;margin-top:32px}
+.home-hero .ipnote{font-size:22px;font-weight:700;letter-spacing:.02em;margin-top:18px;color:var(--pink)}
+.home-hero .hero-caption{font-size:12px}
+.home-hero:after{background:linear-gradient(0deg,#100f14 0%,#100f1499 42%,#100f1480 100%)}
+@media(max-width:600px){.home-hero .hero-content{padding:55px 0 100px}.home-hero h1{font-size:46px}.home-hero .welcome-line{font-size:24px}.home-hero .hero-tagline{font-size:21px;max-width:340px}.home-hero .hero-caption{right:17px;bottom:42px;font-size:10px}.home-hero .ipnote{font-size:21px}.home-hero .actions{gap:12px}}
+
+#news .discordnote{justify-content:flex-start;gap:.6rem 1rem;flex-wrap:wrap}#news .discordnote a{margin-left:0}
+.about-community-photo{display:block;width:100%;height:auto;border-radius:12px;margin-top:24px;border:1px solid #49404f}

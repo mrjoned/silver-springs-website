@@ -3,7 +3,7 @@ import { posts } from '../lib/posts.js';
 ---
 <section class="wrap" id="news">
   <div class="sectionhead">
-    <div><div class="eyebrow">Around the server</div><h2>The latest from Silver Springs.</h2></div>
+    <div><div class="eyebrow">Around the server</div><h2>Latest updates</h2></div>
     <a class="textlink" href="/changelog-and-faq/">All website updates →</a>
   </div>
   <div class="news">
@@ -13,9 +13,9 @@ import { posts } from '../lib/posts.js';
       <div class="announcement-summary" set:html={post.excerptHtml} />
       <a class="textlink" href={post.path}>Read the announcement →</a>
     </article>)}
-    <article><div class="eyebrow">Guides & player tools</div><h3>Your next project starts here.</h3><p>Our Custom Content Overview and Runecrafting Hub bring the guides and planning tools together.</p><a class="textlink" href="/content-overview/">Explore the guides →</a></article>
+    <article><h3>What’s coming up?</h3><p>There’s always something on the calendar, from weekly Rush events to resource world resets every other week, plus the occasional special event!</p><a class="textlink" href="/calendar/">Check the calendar →</a></article>
   </div>
-  <div class="discordnote"><span>Updates reach Discord first. Website announcements follow when available.</span><a href="https://discord.gg/r22U3prgPE">Keep up with the community on Discord ↗</a></div>
+  <div class="discordnote"><span>We post updates on Discord first.</span><a href="https://discord.gg/r22U3prgPE">Visit our Discord ↗</a></div>
 </section>
 
 <style is:global>
