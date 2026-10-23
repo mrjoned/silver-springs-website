@@ -1,14 +1,25 @@
 {
-  "sourceRecordId": "recz8Fa2IFuVakxqw",
-  "draft": false,
   "name": "Flurry",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Damage",
-  "description": "<p>Charge strikes grant <strong>+30-90% attack speed</strong> on your next 3 jabs</p>",
+  "costRule": "per-level",
+  "description": "<p>Charge strikes grant [effect:as][dark-gray]+30-90% attack speed[/dark-gray][/effect] on your next 3 jabs</p>",
+  "effects": [
+    {
+      "key": "as",
+      "explanation": "Level I: 30% attack speed\nLevel II: 60% attack speed\nLevel III: 90% attack speed"
+    }
+  ],
   "maxLevel": 3,
   "items": [
     "Spears"
   ],
+  "rune1": "Kinesis",
+  "rune2": "Mortus",
+  "rune3": "Gusts",
+  "rune4": "Gusts",
+  "rune5": "Gusts",
   "incompatibleRunecrafted": [
     "Extinction",
     "Precision"
@@ -19,14 +30,6 @@
     "Smite"
   ],
   "discoverer": "TheJ_Team",
-  "researchers": [],
   "discoveredDate": "2026-03-08",
-  "discoveredBy": "",
-  "runeTags": [],
-  "rune1": "Kinesis",
-  "rune2": "Mortus",
-  "rune3": "Gusts",
-  "rune4": "Gusts",
-  "rune5": "Gusts",
-  "costRule": "per-level"
+  "sourceRecordId": "recz8Fa2IFuVakxqw"
 }
