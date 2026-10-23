@@ -1,10 +1,16 @@
 {
-  "sourceRecordId": "rec8MyWY9TNmCf5zK",
-  "draft": false,
   "name": "Curse of Vanishing",
+  "draft": false,
   "source": "Curse",
   "category": "Curse",
-  "description": "<p>This item disappears upon death rather than dropping.</p>",
+  "costRule": "free",
+  "description": "<p>This item disappears upon death rather than dropping.</p><ul><li><p>[term:curse][red]Curse Spell[/red][/term]: [dark-red]Sacrifice 1❤️[/dark-red] to release a cylindrical void that extends forward 10 blocks over 1 second, making enemies [effect:liminal][dark-gray]liminal[/dark-gray][/effect]. If a liminal enemy rematerializes inside a block or another enemy, they both take 8❤️ damage.</p></li></ul><p></p>",
+  "effects": [
+    {
+      "key": "liminal",
+      "explanation": "Liminal enemies are erased from existence for up to 2 seconds based on their distance from you, after which they rematerialize in the same relative location."
+    }
+  ],
   "maxLevel": 1,
   "items": [
     "Helmets",
@@ -28,17 +34,6 @@
     "Spyglass",
     "Spears"
   ],
-  "incompatibleRunecrafted": [],
-  "incompatibleVanilla": [],
-  "discoverer": "",
-  "researchers": [],
-  "discoveredDate": "",
-  "discoveredBy": "",
-  "runeTags": [],
-  "rune1": "",
-  "rune2": "",
-  "rune3": "",
-  "rune4": "",
-  "rune5": "",
-  "costRule": "free"
+  "discoveredDate": "2026-10-22",
+  "sourceRecordId": "rec8MyWY9TNmCf5zK"
 }
