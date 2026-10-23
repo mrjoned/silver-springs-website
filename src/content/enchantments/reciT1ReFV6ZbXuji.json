@@ -1,10 +1,10 @@
 {
-  "sourceRecordId": "reciT1ReFV6ZbXuji",
-  "draft": false,
   "name": "Bounty Hunter",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Loot",
-  "description": "<p>Rarely after killing an enemy with this weapon, it identifies a hostile bounty enemy nearby. Killing a bounty with this weapon grants 5000 to 10000 silver.</p>",
+  "costRule": "per-level",
+  "description": "<p>Rarely after killing an enemy with this weapon, it identifies a hostile [effect:bounty][dark-gray]bounty enemy[/dark-gray][/effect] nearby. Killing a bounty with this weapon grants 5000 to 10000 silver.</p>",
   "maxLevel": 1,
   "items": [
     "Swords",
@@ -13,6 +13,11 @@
     "Spears",
     "Maces"
   ],
+  "rune1": "Mortus",
+  "rune2": "Moments",
+  "rune3": "Vitality",
+  "rune4": "Mortus",
+  "rune5": "Opulence",
   "incompatibleRunecrafted": [
     "Executioner",
     "Ear Collector",
@@ -25,7 +30,6 @@
     "Looting"
   ],
   "discoverer": "Brittt",
-  "researchers": [],
   "discoveredDate": "2023-09-01",
   "discoveredBy": "Brittt on 9/1/23 3:01 AM",
   "runeTags": [
@@ -34,10 +38,5 @@
     "Vitality",
     "Opulence"
   ],
-  "rune1": "Mortus",
-  "rune2": "Moments",
-  "rune3": "Vitality",
-  "rune4": "Mortus",
-  "rune5": "Opulence",
-  "costRule": "per-level"
+  "sourceRecordId": "reciT1ReFV6ZbXuji"
 }
