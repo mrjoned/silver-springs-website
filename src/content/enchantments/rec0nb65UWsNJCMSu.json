@@ -1,10 +1,20 @@
 {
-  "sourceRecordId": "rec0nb65UWsNJCMSu",
-  "draft": false,
   "name": "Curse of the Forbidden Ones",
+  "draft": false,
   "source": "Curse",
   "category": "Curse",
-  "description": "<p>Attacks deal +5❤️ to enemies with a forbidden name but -5❤️ damage otherwise.<br><strong>Forbidden Names: Names containing &quot;Doug&quot;, &quot;Greg&quot;, &quot;Jacob&quot;, Charolette&quot;, &quot;Nathan&quot;, &quot;Watson&quot;, or &quot;broace&quot;.</strong></p>",
+  "costRule": "free",
+  "description": "<p>Attacks deal +5❤️ to enemies with a [effect:name][dark-gray]forbidden name[/dark-gray][/effect], but -5❤️ damage otherwise.</p><ul><li><p>[term:curse][red]Curse Spell[/red][/term]: [dark-red]Sacrifice 1❤️[/dark-red] to form Dead Obelisk in front of you. [effect:sacrifice][dark-gray]Sacrificing[/dark-gray][/effect] 10❤️ or 4 enemies near the obelisk awakens it as an allied Abomination.</p></li></ul><p></p>",
+  "effects": [
+    {
+      "key": "name",
+      "explanation": "Names containing \"Doug\", \"Greg\", \"Jacob\", Charolette\", \"Nathan\", \"Watson\", or \"broace\"."
+    },
+    {
+      "key": "sacrifice",
+      "explanation": "These sacrifices can be mixed. For example, sacrificing 5❤️ and 2 enemies awakens the Abomination."
+    }
+  ],
   "maxLevel": 1,
   "items": [
     "Swords",
@@ -12,17 +22,6 @@
     "Maces",
     "Spears"
   ],
-  "incompatibleRunecrafted": [],
-  "incompatibleVanilla": [],
-  "discoverer": "",
-  "researchers": [],
-  "discoveredDate": "",
-  "discoveredBy": "",
-  "runeTags": [],
-  "rune1": "",
-  "rune2": "",
-  "rune3": "",
-  "rune4": "",
-  "rune5": "",
-  "costRule": "free"
+  "discoveredDate": "2026-10-22",
+  "sourceRecordId": "rec0nb65UWsNJCMSu"
 }
