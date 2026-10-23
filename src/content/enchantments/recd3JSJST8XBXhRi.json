@@ -1,33 +1,45 @@
 {
-  "sourceRecordId": "recd3JSJST8XBXhRi",
-  "draft": false,
   "name": "Blitz",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Travel",
-  "description": "<p>After sprinting while grounded for 1.5 seconds, you <strong>Blitz</strong>, gaining 20-40% speed until you stop sprinting.</p>",
+  "costRule": "per-level",
+  "description": "<p>After sprinting while grounded for 1.5 seconds, you [gold]<em>blitz</em>[/gold], gaining [effect:speed][dark-gray]20-40% speed[/dark-gray][/effect] until you stop sprinting.</p>",
+  "effects": [
+    {
+      "key": "speed",
+      "levels": [
+        {
+          "level": 1,
+          "value": "20% speed"
+        },
+        {
+          "level": 2,
+          "value": "40% speed"
+        }
+      ]
+    }
+  ],
   "maxLevel": 2,
   "items": [
     "Leggings"
-  ],
-  "incompatibleRunecrafted": [
-    "Walkman"
-  ],
-  "incompatibleVanilla": [
-    "Swift Sneak"
-  ],
-  "discoverer": "",
-  "researchers": [],
-  "discoveredDate": "",
-  "discoveredBy": "",
-  "runeTags": [
-    "Stones",
-    "Gusts",
-    "Moments"
   ],
   "rune1": "Stones",
   "rune2": "Gusts",
   "rune3": "Moments",
   "rune4": "Gusts",
   "rune5": "Gusts",
-  "costRule": "per-level"
+  "incompatibleRunecrafted": [
+    "Walkman"
+  ],
+  "incompatibleVanilla": [
+    "Swift Sneak"
+  ],
+  "discoveredDate": "2026-10-22",
+  "runeTags": [
+    "Stones",
+    "Gusts",
+    "Moments"
+  ],
+  "sourceRecordId": "recd3JSJST8XBXhRi"
 }
