@@ -1,25 +1,14 @@
 {
-  "sourceRecordId": "recbdVS25Ll2Wi6So",
-  "draft": false,
   "name": "Curse of Asphyxiation",
+  "draft": false,
   "source": "Curse",
   "category": "Curse",
-  "description": "<p>While worn, you drown twice as fast.</p>",
+  "costRule": "free",
+  "description": "<p>While worn, you drown twice as fast.</p><ul><li><p>[term:curse][red]Curse Spell[/red][/term]: [dark-red]Sacrifice 1.5❤️[/dark-red] to release dark tendrils which latch onto enemies, dealing 4❤️ suffocation damage and draining 6 seconds of oxygen.</p></li></ul><p></p>",
   "maxLevel": 1,
   "items": [
     "Helmets"
   ],
-  "incompatibleRunecrafted": [],
-  "incompatibleVanilla": [],
-  "discoverer": "",
-  "researchers": [],
-  "discoveredDate": "",
-  "discoveredBy": "",
-  "runeTags": [],
-  "rune1": "",
-  "rune2": "",
-  "rune3": "",
-  "rune4": "",
-  "rune5": "",
-  "costRule": "free"
+  "discoveredDate": "2026-10-22",
+  "sourceRecordId": "recbdVS25Ll2Wi6So"
 }
