@@ -1,19 +1,46 @@
 {
-  "sourceRecordId": "recHXKQIT2LfOq0V7",
-  "draft": false,
   "name": "Dreadnought",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Splashing",
-  "description": "<p>Strikes prepare a **_broadside cannon, _**up to 2-4 cannons. Thrown hits signal each cannon to fire an explosive cannonball <strong>towards enemies</strong> in the direction of the throw.</p>",
+  "costRule": "per-level",
+  "description": "<p>Strikes prepare a [dark-red]<em>broadside cannon</em>[/dark-red], up to [effect:cannons][dark-gray]2-4 cannons[/dark-gray][/effect]. Thrown hits signal each cannon to fire an explosive cannonball [effect:enemies][dark-gray]towards enemies[/dark-gray][/effect] in the direction of the throw.</p>",
+  "effects": [
+    {
+      "key": "cannons",
+      "levels": [
+        {
+          "level": 1,
+          "value": "2 cannons"
+        },
+        {
+          "level": 2,
+          "value": "3 cannons"
+        },
+        {
+          "level": 3,
+          "value": "4 cannons"
+        }
+      ]
+    },
+    {
+      "key": "enemies",
+      "explanation": "Each enemy is targeted by up to 1 cannon. If your cannons outnumber enemies, additional cannons will fire in a random spread towards the group."
+    }
+  ],
   "maxLevel": 3,
   "items": [
     "Tridents"
   ],
+  "rune1": "Mortus",
+  "rune2": "Echoes",
+  "rune3": "Tides",
+  "rune4": "Cinders",
+  "rune5": "Kinesis",
   "incompatibleRunecrafted": [
     "Skewering",
     "Chaining"
   ],
-  "incompatibleVanilla": [],
   "discoverer": "Onikary",
   "researchers": [
     "Frostearrific",
@@ -28,10 +55,5 @@
     "Cinders",
     "Kinesis"
   ],
-  "rune1": "Mortus",
-  "rune2": "Echoes",
-  "rune3": "Tides",
-  "rune4": "Cinders",
-  "rune5": "Kinesis",
-  "costRule": "per-level"
+  "sourceRecordId": "recHXKQIT2LfOq0V7"
 }
