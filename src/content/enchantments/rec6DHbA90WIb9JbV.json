@@ -1,29 +1,31 @@
 {
-  "sourceRecordId": "rec6DHbA90WIb9JbV",
-  "draft": false,
   "name": "Ground Pound",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Descent",
-  "description": "<p>Fall damage is reduced by -25-50%. Double sneaking while airborne performs a rapid downward stomp. Upon landing, the shockwave deals 50% of the initial damage to enemies within 5 blocks.</p>",
+  "costRule": "per-level",
+  "description": "<p>Fall damage is reduced by [effect:percent][dark-gray]25-50%[/dark-gray][/effect]. Double sneaking while airborne performs a rapid downward [blue]<em>stomp</em>[/blue]. Upon landing, the shockwave deals 50% of the initial damage to enemies within 5 blocks.</p>",
+  "effects": [
+    {
+      "key": "percent",
+      "explanation": "Level I: 25%\nLevel II: 50%"
+    }
+  ],
   "maxLevel": 2,
   "items": [
     "Boots"
   ],
+  "rune1": "Arcanum",
+  "rune2": "Gusts",
+  "rune3": "Stones",
+  "rune4": "Aegis",
+  "rune5": "Kinesis",
   "incompatibleRunecrafted": [
     "Rocket Boosting"
   ],
   "incompatibleVanilla": [
     "Feather Falling"
   ],
-  "discoverer": "",
-  "researchers": [],
-  "discoveredDate": "",
-  "discoveredBy": "",
-  "runeTags": [],
-  "rune1": "Arcanum",
-  "rune2": "Gusts",
-  "rune3": "Stones",
-  "rune4": "Aegis",
-  "rune5": "Kinesis",
-  "costRule": "per-level"
+  "discoveredDate": "2026-10-23",
+  "sourceRecordId": "rec6DHbA90WIb9JbV"
 }
