@@ -1,10 +1,19 @@
 {
-  "sourceRecordId": "recsXu8sF0Lg6uwfW",
-  "draft": false,
   "name": "Extinction",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Damage",
-  "description": "<p>Slain entities are marked for <em>extinction</em>, permanently granting 1 stack. Strikes deal +0.25 hearts damage per stack against that entity type, up to +5-10 ❤. </p><ul><li>Bosses grant 4 stacks and, at max level, the bonus damage to them is uncapped. Stacks have no effect in Trials.</li></ul><p>Only one entity type can be marked at a time. A new type can be marked by gaining 5 <em>extinction</em> stacks against it.</p>",
+  "costRule": "per-level",
+  "description": "<ul><li><p>Slain entities are marked for [dark-red]<em>extinction</em>[/dark-red], permanently granting [effect:stack][dark-gray]1 stack[/dark-gray][/effect]. Strikes deal +0.25 hearts damage per stack against that entity type, up to +[effect:hearts][dark-gray]5-10 ❤[/dark-gray][/effect].</p></li><li><p>Only one entity type can be marked at a time. A new type can be marked by gaining 5 [dark-red]<em>extinction</em>[/dark-red] stacks against it.</p></li></ul><p></p>",
+  "effects": [
+    {
+      "key": "stack",
+      "explanation": "Bosses grant 4 stacks and, at max level, the bonus damage to them is uncapped. Stacks have no effect in Trials."
+    },
+    {
+      "key": "hearts"
+    }
+  ],
   "maxLevel": 3,
   "items": [
     "Maces",
@@ -13,6 +22,11 @@
     "Tridents",
     "Spears"
   ],
+  "rune1": "Mortus",
+  "rune2": "Mortus",
+  "rune3": "Mortus",
+  "rune4": "Mortus",
+  "rune5": "Void",
   "incompatibleRunecrafted": [
     "Tempo",
     "Exploit",
@@ -33,14 +47,7 @@
     "Cleaving"
   ],
   "discoverer": "TheJ_Team",
-  "researchers": [],
   "discoveredDate": "2023-09-01",
   "discoveredBy": "TheJ_Team on 9/1/23, 7:41 PM ",
-  "runeTags": [],
-  "rune1": "Mortus",
-  "rune2": "Mortus",
-  "rune3": "Mortus",
-  "rune4": "Mortus",
-  "rune5": "Void",
-  "costRule": "per-level"
+  "sourceRecordId": "recsXu8sF0Lg6uwfW"
 }
