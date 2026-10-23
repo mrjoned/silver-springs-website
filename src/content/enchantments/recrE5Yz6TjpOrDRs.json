@@ -1,14 +1,25 @@
 {
-  "sourceRecordId": "recrE5Yz6TjpOrDRs",
-  "draft": false,
   "name": "Ear Collector",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Loot",
-  "description": "<p>This sword collects an <em>ear</em> stack to identify each of its victims, and upon exiting combat may attract a wandering guild trader who provides <strong>items</strong> in exchange for its <em>ears</em>.</p><ul><li><strong>Items:</strong> Wares include useful combat items, gems, rare gear, and other unique offers.</li></ul>",
+  "costRule": "per-level",
+  "description": "<p>This sword collects an [brown]<em>ear</em>[/brown] stack to identify each of its victims, and upon exiting combat may attract a wandering guild trader who provides [effect:items][dark-gray]items[/dark-gray][/effect] in exchange for its [brown]<em>ears</em>[/brown].</p>",
+  "effects": [
+    {
+      "key": "items",
+      "explanation": "Wares include useful combat items, gems, rare gear, and other unique offers."
+    }
+  ],
   "maxLevel": 1,
   "items": [
     "Swords"
   ],
+  "rune1": "Mortus",
+  "rune2": "Opulence",
+  "rune3": "Moments",
+  "rune4": "Vitality",
+  "rune5": "Opulence",
   "incompatibleRunecrafted": [
     "Bounty Hunter"
   ],
@@ -27,10 +38,5 @@
     "Moments",
     "Vitality"
   ],
-  "rune1": "Mortus",
-  "rune2": "Opulence",
-  "rune3": "Moments",
-  "rune4": "Vitality",
-  "rune5": "Opulence",
-  "costRule": "per-level"
+  "sourceRecordId": "recrE5Yz6TjpOrDRs"
 }
