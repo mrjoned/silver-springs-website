@@ -1,15 +1,19 @@
 {
-  "sourceRecordId": "recqitlSl31SkvdOO",
-  "draft": false,
   "name": "Equilibrium",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Protection",
-  "description": "<p>You equalize for 2 seconds upon dropping to 50% health, during which you are invulnerable, gain 40% speed, and heal for 15% health. This can’t occur again until you fully heal.</p>",
+  "costRule": "per-level",
+  "description": "<p>You [green]<em>equalize</em>[/green] for 2 seconds upon dropping to 50% health, during which you are invulnerable, gain 40% speed, and heal for 15% max health. This can’t occur again until you fully heal.</p>",
   "maxLevel": 1,
   "items": [
     "Helmets"
   ],
-  "incompatibleRunecrafted": [],
+  "rune1": "Mortus",
+  "rune2": "Aegis",
+  "rune3": "Aegis",
+  "rune4": "Vitality",
+  "rune5": "Gusts",
   "incompatibleVanilla": [
     "Protection",
     "Blast Protection",
@@ -17,14 +21,7 @@
     "Projectile Protection"
   ],
   "discoverer": "TroyTheCrafter",
-  "researchers": [],
   "discoveredDate": "2023-09-02",
   "discoveredBy": "TroyTheCrafter on 9/2/23, 4:41 PM",
-  "runeTags": [],
-  "rune1": "Mortus",
-  "rune2": "Aegis",
-  "rune3": "Aegis",
-  "rune4": "Vitality",
-  "rune5": "Gusts",
-  "costRule": "per-level"
+  "sourceRecordId": "recqitlSl31SkvdOO"
 }
