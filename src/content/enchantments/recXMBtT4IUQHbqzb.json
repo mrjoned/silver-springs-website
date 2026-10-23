@@ -1,25 +1,14 @@
 {
-  "sourceRecordId": "recXMBtT4IUQHbqzb",
-  "draft": false,
   "name": "Curse of Galvanism",
+  "draft": false,
   "source": "Curse",
   "category": "Curse",
-  "description": "<p>While worn, you are far more likely to be struck by lightning during thunderstorms.</p>",
+  "costRule": "free",
+  "description": "<p>You are far more likely to be struck by lightning during thunderstorms.</p><ul><li><p>[term:curse][red]Curse Spell[/red][/term]: [dark-red]Sacrifice 1❤️[/dark-red] to incur Ythogtha's wrath. His eye appears above you and slowly opens, after which a powerful lightning strike occurs at your location, dealing 10❤️ damage in a large radius.</p></li></ul><p></p>",
   "maxLevel": 1,
   "items": [
     "Helmets"
   ],
-  "incompatibleRunecrafted": [],
-  "incompatibleVanilla": [],
-  "discoverer": "",
-  "researchers": [],
-  "discoveredDate": "",
-  "discoveredBy": "",
-  "runeTags": [],
-  "rune1": "",
-  "rune2": "",
-  "rune3": "",
-  "rune4": "",
-  "rune5": "",
-  "costRule": "free"
+  "discoveredDate": "2026-10-22",
+  "sourceRecordId": "recXMBtT4IUQHbqzb"
 }
