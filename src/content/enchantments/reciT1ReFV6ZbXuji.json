@@ -5,6 +5,12 @@
   "category": "Loot",
   "costRule": "per-level",
   "description": "<p>Rarely after killing an enemy with this weapon, it identifies a hostile [effect:bounty][dark-gray]bounty enemy[/dark-gray][/effect] nearby. Killing a bounty with this weapon grants 5000 to 10000 silver.</p>",
+  "effects": [
+    {
+      "key": "bounty",
+      "explanation": "Empowered mobs with increased health, equipment, and effects."
+    }
+  ],
   "maxLevel": 1,
   "items": [
     "Swords",
