@@ -4,7 +4,7 @@
   "source": "Runecrafted",
   "category": "Damage",
   "costRule": "per-level",
-  "description": "<ul><li><p>This trident attacks 10% slower for +[effect:ballastdmg][dark-gray]1-2❤️ damage[/dark-gray][/effect]<strong>.</strong></p></li><li><p>Throws are [dark-red]<em>heavier</em>[/dark-red], falling faster but dealing [effect:ballastfalldmg][dark-gray]+2-♾️❤️ damage[/dark-gray], increasing linearly with distance fallen.</p></li></ul><p></p>",
+  "description": "<ul><li><p>This trident attacks 10% slower for +[effect:ballastdmg][dark-gray]1-2❤️ damage[/dark-gray][/effect]<strong>.</strong></p></li><li><p>Throws are [dark-red]<em>heavier</em>[/dark-red], falling faster but dealing [effect:ballastfalldmg][dark-gray]+2-♾️❤️ damage[/dark-gray][/effect], increasing linearly with distance fallen.</p></li></ul><p></p>",
   "effects": [
     {
       "key": "ballastdmg",
