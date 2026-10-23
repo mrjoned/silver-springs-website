@@ -4,7 +4,7 @@
   "source": "Runecrafted",
   "category": "Control",
   "costRule": "per-level",
-  "description": "<p>The first target you charge is <em>impaled</em> for 2 seconds and held before you. Ending the charge flings the <em>impaled</em> a distance and [term:stun][dark-gray]stuns[/dark-gray][term] them and enemies the collide with, both based on your speed.</p>",
+  "description": "<p>The first target you charge is <em>impaled</em> for 2 seconds and held before you. Ending the charge flings the <em>impaled</em> a distance and [term:stun][dark-gray]stuns[/dark-gray][/term] them and enemies the collide with, both based on your speed.</p>",
   "maxLevel": 1,
   "items": [
     "Spears"
