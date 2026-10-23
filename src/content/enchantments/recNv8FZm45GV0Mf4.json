@@ -1,14 +1,19 @@
 {
-  "sourceRecordId": "recNv8FZm45GV0Mf4",
-  "draft": false,
   "name": "Effervescence",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Boosting",
-  "description": "<p>Smash attacks release a <em>bubble</em> which envelops you for 4-8 seconds, blocking damage while you rise 4 blocks per second with increased aerial mobility. The bubble pops early if you sneak or it blocks 10♥️ damage.</p>",
+  "costRule": "per-level",
+  "description": "<p>Smash attacks release a [aqua]<em>bubble</em>[/aqua] which envelops you for [effect:seconds][dark-gray]4-8 seconds[/dark-gray][/effect], blocking damage while you rise 4 blocks per second with increased aerial mobility. The [aqua]<em>bubble</em>[/aqua] pops early if you sneak or it blocks 10♥️ damage.</p>",
   "maxLevel": 3,
   "items": [
     "Maces"
   ],
+  "rune1": "Kinesis",
+  "rune2": "Tides",
+  "rune3": "Gusts",
+  "rune4": "Tides",
+  "rune5": "Moments",
   "incompatibleRunecrafted": [
     "Subduction"
   ],
@@ -28,10 +33,5 @@
     "Gusts",
     "Moments"
   ],
-  "rune1": "Kinesis",
-  "rune2": "Tides",
-  "rune3": "Gusts",
-  "rune4": "Tides",
-  "rune5": "Moments",
-  "costRule": "per-level"
+  "sourceRecordId": "recNv8FZm45GV0Mf4"
 }
