@@ -1,28 +1,31 @@
 {
-  "sourceRecordId": "recyphMk42HHNDvcb",
-  "draft": false,
   "name": "Green Thumb",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Harvest",
-  "description": "<p><strong>Auto-harvesting</strong> crops automatically regrows them by 2-3 growth stages, capped at 1 below their max growth stage.</p><blockquote><p>Auto-harvesting: Right-click a fully grown crop to automatically harvest and replant it.</p></blockquote>",
+  "costRule": "per-level",
+  "description": "<p>[term:autoharvest][dark-gray]Auto-harvesting[/dark-gray][/term] crops automatically regrows them by [effect:stages][dark-gray]2-3 growth stages[/dark-gray][/effect], capped at 1 below their max growth stage.</p>",
+  "effects": [
+    {
+      "key": "stages",
+      "explanation": "Level I: 2 stages\nLevel II: 3 stages"
+    }
+  ],
   "maxLevel": 2,
   "items": [
     "Hoes"
   ],
-  "incompatibleRunecrafted": [
-    "Schrödinger's Thumb",
-    "Dowsing Thumb"
-  ],
-  "incompatibleVanilla": [],
-  "discoverer": "TheFlamesOfHell",
-  "researchers": [],
-  "discoveredDate": "2017-01-03",
-  "discoveredBy": "TheFlamesOfHell on 1/3/17 5:19 PM ",
-  "runeTags": [],
   "rune1": "Stones",
   "rune2": "Vitality",
   "rune3": "Moments",
   "rune4": "Void",
   "rune5": "Vitality",
-  "costRule": "per-level"
+  "incompatibleRunecrafted": [
+    "Schrödinger's Thumb",
+    "Dowsing Thumb"
+  ],
+  "discoverer": "TheFlamesOfHell",
+  "discoveredDate": "2017-01-03",
+  "discoveredBy": "TheFlamesOfHell on 1/3/17 5:19 PM ",
+  "sourceRecordId": "recyphMk42HHNDvcb"
 }
