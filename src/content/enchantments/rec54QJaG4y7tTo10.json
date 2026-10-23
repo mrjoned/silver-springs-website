@@ -1,10 +1,62 @@
 {
-  "sourceRecordId": "rec54QJaG4y7tTo10",
-  "draft": false,
   "name": "Fire Protection V",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Protection",
-  "description": "<p>Fire and lava deal 8-40% less damage and you burn for 15-75% less time. </p><blockquote><p><strong>Runecrafting Bonus</strong>: You take -25% damage from burning enemies, and their unarmed attacks no longer ignite you.</p></blockquote>",
+  "costRule": "once",
+  "description": "<p>Fire and lava deal [effect:dmg][dark-gray]8-40% less damage[/dark-gray][/effect] and you burn for [effect:time][dark-gray]15-75% less time[/dark-gray][/effect].</p><ul><li><p>[pink]<strong>Runecrafting Bonus</strong>[/pink]: You take -25% damage from burning enemies, and their unarmed attacks no longer ignite you.</p></li></ul><p></p>",
+  "effects": [
+    {
+      "key": "dmg",
+      "levels": [
+        {
+          "level": 1,
+          "value": "8% less damage"
+        },
+        {
+          "level": 2,
+          "value": "16% less damage"
+        },
+        {
+          "level": 3,
+          "value": "24% less damage"
+        },
+        {
+          "level": 4,
+          "value": "32% less damage"
+        },
+        {
+          "level": 5,
+          "value": "40% less damage"
+        }
+      ]
+    },
+    {
+      "key": "time",
+      "levels": [
+        {
+          "level": 1,
+          "value": "15% less time"
+        },
+        {
+          "level": 2,
+          "value": "30% less time"
+        },
+        {
+          "level": 3,
+          "value": "45% less time"
+        },
+        {
+          "level": 4,
+          "value": "60% less time"
+        },
+        {
+          "level": 5,
+          "value": "75% less time"
+        }
+      ]
+    }
+  ],
   "maxLevel": 5,
   "items": [
     "Helmets",
@@ -12,6 +64,11 @@
     "Leggings",
     "Boots"
   ],
+  "rune1": "Cinders",
+  "rune2": "Aegis",
+  "rune3": "Aegis",
+  "rune4": "Cinders",
+  "rune5": "Moments",
   "incompatibleRunecrafted": [
     "Headstart",
     "Adrenaline Rush",
@@ -24,14 +81,7 @@
     "Projectile Protection"
   ],
   "discoverer": "Maidl",
-  "researchers": [],
   "discoveredDate": "2023-09-05",
   "discoveredBy": "Maidl on 9/5/23 1:10 AM",
-  "runeTags": [],
-  "rune1": "Cinders",
-  "rune2": "Aegis",
-  "rune3": "Aegis",
-  "rune4": "Cinders",
-  "rune5": "Moments",
-  "costRule": "once"
+  "sourceRecordId": "rec54QJaG4y7tTo10"
 }
