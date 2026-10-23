@@ -1,29 +1,26 @@
 {
-  "sourceRecordId": "recpf7Z5Ra8BSmMnJ",
-  "draft": false,
   "name": "Frost",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Aspect",
-  "description": "<p>Shots apply 8 seconds of freezing, stacking with each shot and capping at 20 seconds.</p>",
+  "costRule": "per-level",
+  "description": "<p>Shots apply [aqua]<em>freezing</em>[/aqua] for 8 seconds, stacking with each shot up to 20 seconds.</p>",
   "maxLevel": 1,
   "items": [
     "Bows"
   ],
+  "rune1": "Gusts",
+  "rune2": "Echoes",
+  "rune3": "Chills",
+  "rune4": "Chills",
+  "rune5": "Chills",
   "incompatibleRunecrafted": [
     "Pestilence"
   ],
   "incompatibleVanilla": [
     "Flame"
   ],
-  "discoverer": "",
-  "researchers": [],
-  "discoveredDate": "",
+  "discoveredDate": "2026-10-23",
   "discoveredBy": "N/A",
-  "runeTags": [],
-  "rune1": "Gusts",
-  "rune2": "Echoes",
-  "rune3": "Chills",
-  "rune4": "Chills",
-  "rune5": "Chills",
-  "costRule": "per-level"
+  "sourceRecordId": "recpf7Z5Ra8BSmMnJ"
 }
