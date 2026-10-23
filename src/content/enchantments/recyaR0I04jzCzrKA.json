@@ -1,10 +1,10 @@
 {
-  "sourceRecordId": "recyaR0I04jzCzrKA",
-  "draft": false,
   "name": "Curse of the Farlands",
+  "draft": false,
   "source": "Curse",
   "category": "Curse",
-  "description": "<ul><li>When applied to a tool, breaking a block instead breaks a random adjacent block.</li><li>When applied to boots, your position periodically rounds.</li></ul>",
+  "costRule": "free",
+  "description": "<ul><li><p>When applied to a tool, breaking a block instead breaks a random adjacent block.</p></li><li><p>When applied to boots, your position periodically rounds.</p></li><li><p>[term:curse][red]Curse Spell[/red][/term]: [dark-red]Sacrifice 2.5❤️[/dark-red] to <em>stretch</em> spacetime in the target cardinal direction for 30 seconds, during which punches and curses cast in that direction have infinite range.</p></li></ul><p></p>",
   "maxLevel": 1,
   "items": [
     "Pickaxes",
@@ -12,17 +12,6 @@
     "Hoes",
     "Boots"
   ],
-  "incompatibleRunecrafted": [],
-  "incompatibleVanilla": [],
-  "discoverer": "",
-  "researchers": [],
-  "discoveredDate": "",
-  "discoveredBy": "",
-  "runeTags": [],
-  "rune1": "",
-  "rune2": "",
-  "rune3": "",
-  "rune4": "",
-  "rune5": "",
-  "costRule": "free"
+  "discoveredDate": "2026-10-22",
+  "sourceRecordId": "recyaR0I04jzCzrKA"
 }
