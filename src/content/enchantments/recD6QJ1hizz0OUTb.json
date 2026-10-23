@@ -1,10 +1,10 @@
 {
-  "sourceRecordId": "recD6QJ1hizz0OUTb",
-  "draft": false,
   "name": "Curse of Binding",
+  "draft": false,
   "source": "Curse",
   "category": "Curse",
-  "description": "<p>Once equipped, items with this curse can only be unequipped via death.</p>",
+  "costRule": "free",
+  "description": "<p>Once equipped, items with this curse can only be unequipped via death.</p><ul><li><p>[term:curse][red]Curse Spell[/red][/term]: [dark-red]Sacrifice 2❤️[/dark-red] to afflict beheld enemies with a psychic virus which binds them in place for 5 seconds. Unarmed kills spread the virus.</p></li></ul><p></p>",
   "maxLevel": 1,
   "items": [
     "Helmets",
@@ -12,17 +12,6 @@
     "Leggings",
     "Boots"
   ],
-  "incompatibleRunecrafted": [],
-  "incompatibleVanilla": [],
-  "discoverer": "",
-  "researchers": [],
-  "discoveredDate": "",
-  "discoveredBy": "",
-  "runeTags": [],
-  "rune1": "",
-  "rune2": "",
-  "rune3": "",
-  "rune4": "",
-  "rune5": "",
-  "costRule": "free"
+  "discoveredDate": "2026-10-22",
+  "sourceRecordId": "recD6QJ1hizz0OUTb"
 }
