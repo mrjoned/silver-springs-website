@@ -1,18 +1,28 @@
 {
-  "sourceRecordId": "recNgV9qrO2CgnLjZ",
-  "draft": false,
   "name": "Crescendo",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Timbre",
-  "description": "<p>Horn blows emit a sonic boom which moves forward 10 blocks, dealing 2♥️ sonic damage, vaporizing sediments and cobwebs, and breaking bamboo, flowers, and grasses.</p>",
+  "costRule": "per-level",
+  "description": "<p>Horn blows emit a sonic boom which moves forward 10 blocks, dealing 2♥️ sonic damage, [effect:vaporize][dark-gray]vaporizing[/dark-gray][/effect] sediments and cobwebs, and breaking bamboo, flowers, and grasses.</p>",
+  "effects": [
+    {
+      "key": "vaporize",
+      "explanation": "Vaporized blocks don't leave behind drops."
+    }
+  ],
   "maxLevel": 1,
   "items": [
     "Goat Horns"
   ],
+  "rune1": "Gusts",
+  "rune2": "Echoes",
+  "rune3": "Echoes",
+  "rune4": "Stones",
+  "rune5": "Void",
   "incompatibleRunecrafted": [
     "Whistle Tone"
   ],
-  "incompatibleVanilla": [],
   "discoverer": "Maidl",
   "researchers": [
     "TroyTheCrafter",
@@ -26,10 +36,5 @@
     "Stones",
     "Void"
   ],
-  "rune1": "Gusts",
-  "rune2": "Echoes",
-  "rune3": "Echoes",
-  "rune4": "Stones",
-  "rune5": "Void",
-  "costRule": "per-level"
+  "sourceRecordId": "recNgV9qrO2CgnLjZ"
 }
