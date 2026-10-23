@@ -1,11 +1,20 @@
 {
-  "sourceRecordId": "recPT8yHSWWTX8PJa",
-  "draft": false,
   "name": "Cyclotron",
+  "draft": false,
   "source": "Mythical",
   "category": "Loot",
-  "description": "<p>While charging <code>faster than 15 m/s</code>, slain enemy drops are atomized, often converting to <em>primordial dust</em>, which can then be crafted with <code>crystals</code> or socketing gems to duplicate them.</p><p><code>Faster than 15 m/s: Effects will play while you are charging fast enough to atomize items</code><br><code>Crystals: Lapis Lazuli, Nether Quarts, Amethyst Shards, Prismarine Shards, Diamonds, and Emeralds.</code></p>",
-  "maxLevel": null,
+  "costRule": "free",
+  "description": "<p>While charging [effect:fast][dark-gray]faster than 15 m/s[/dark-gray][/effect], slain enemy drops are atomized, often converting to [gold]<em>primordial dust</em>[/gold], which can then be crafted with [effect:crystal][dark-gray]crystals[/dark-gray][/effect] or socketing gems to duplicate them.</p>",
+  "effects": [
+    {
+      "key": "fast",
+      "explanation": "Effects will play while you are charging fast enough to atomize enemies."
+    },
+    {
+      "key": "crystal",
+      "explanation": "Lapis Lazuli, Nether Quartz, Amethyst Shards, Prismarine Shards, Diamonds, and Emeralds."
+    }
+  ],
   "items": [
     "Spears"
   ],
@@ -15,15 +24,6 @@
   "incompatibleVanilla": [
     "Looting"
   ],
-  "discoverer": "",
-  "researchers": [],
   "discoveredDate": "2026-03-07",
-  "discoveredBy": "",
-  "runeTags": [],
-  "rune1": "",
-  "rune2": "",
-  "rune3": "",
-  "rune4": "",
-  "rune5": "",
-  "costRule": "free"
+  "sourceRecordId": "recPT8yHSWWTX8PJa"
 }
