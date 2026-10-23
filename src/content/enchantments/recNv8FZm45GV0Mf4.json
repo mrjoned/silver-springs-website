@@ -5,6 +5,12 @@
   "category": "Boosting",
   "costRule": "per-level",
   "description": "<p>Smash attacks release a [aqua]<em>bubble</em>[/aqua] which envelops you for [effect:seconds][dark-gray]4-8 seconds[/dark-gray][/effect], blocking damage while you rise 4 blocks per second with increased aerial mobility. The [aqua]<em>bubble</em>[/aqua] pops early if you sneak or it blocks 10♥️ damage.</p>",
+  "effects": [
+    {
+      "key": "seconds",
+      "explanation": "Level I: 4 seconds\nLevel II: 6 seconds\nLevel III: 8 seconds"
+    }
+  ],
   "maxLevel": 3,
   "items": [
     "Maces"
