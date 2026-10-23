@@ -1,10 +1,10 @@
 {
-  "sourceRecordId": "recjRgMEb0hiK7FUl",
-  "draft": false,
   "name": "Curse of Bloodletting",
+  "draft": false,
   "source": "Curse",
   "category": "Curse",
-  "description": "<p>Attacks drain 0.5❤️ to deal +1❤️ damage.</p>",
+  "costRule": "free",
+  "description": "<p>Attacks drain 0.5❤️ to deal +1❤️ damage.</p><ul><li><p>[term:curse][red]Curse Spell[/red][/term]: [dark-red]Sacrifice 2.5❤️[/dark-red] to become <em>aware</em> for 30 seconds, during which you read other curses faster and without paying a sacrifice, and harvest slain enemies' souls, healing 1❤️.</p></li></ul><p></p>",
   "maxLevel": 1,
   "items": [
     "Swords",
@@ -12,17 +12,6 @@
     "Maces",
     "Spears"
   ],
-  "incompatibleRunecrafted": [],
-  "incompatibleVanilla": [],
-  "discoverer": "",
-  "researchers": [],
-  "discoveredDate": "",
-  "discoveredBy": "",
-  "runeTags": [],
-  "rune1": "",
-  "rune2": "",
-  "rune3": "",
-  "rune4": "",
-  "rune5": "",
-  "costRule": "free"
+  "discoveredDate": "2026-10-22",
+  "sourceRecordId": "recjRgMEb0hiK7FUl"
 }
