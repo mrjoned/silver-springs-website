@@ -1,14 +1,25 @@
 {
-  "sourceRecordId": "recpyz5PZizsz6sXD",
-  "draft": false,
   "name": "Bracing",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Control",
-  "description": "<p>Every other charged attack grants 1 Absorption heart during the recharge. </p>",
+  "costRule": "per-level",
+  "description": "<p>Every other charged attack grants 1 Absorption❤️ during the [effect:recharge][dark-gray]recharge[/dark-gray][/effect].</p>",
+  "effects": [
+    {
+      "key": "recharge",
+      "explanation": "The period when regaining your attack strength after a swing."
+    }
+  ],
   "maxLevel": 1,
   "items": [
     "Axes"
   ],
+  "rune1": "Mortus",
+  "rune2": "Moments",
+  "rune3": "Mortus",
+  "rune4": "Aegis",
+  "rune5": "Aegis",
   "incompatibleRunecrafted": [
     "Ragdoll"
   ],
@@ -16,7 +27,6 @@
     "Knockback"
   ],
   "discoverer": "ChiknThighs",
-  "researchers": [],
   "discoveredDate": "2023-08-29",
   "discoveredBy": "ChiknThighs on 8/29/23 11:01 PM ",
   "runeTags": [
@@ -24,10 +34,5 @@
     "Mortus",
     "Aegis"
   ],
-  "rune1": "Mortus",
-  "rune2": "Moments",
-  "rune3": "Mortus",
-  "rune4": "Aegis",
-  "rune5": "Aegis",
-  "costRule": "per-level"
+  "sourceRecordId": "recpyz5PZizsz6sXD"
 }
