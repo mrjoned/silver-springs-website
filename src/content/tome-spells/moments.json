@@ -1,6 +1,6 @@
 {
   "rune": "Moments",
-  "standardSpell": "Accelerate time\n\nAccelerates nearby furnaces, brewing stands, grass spread, and copper oxidation.\n\nAlso speeds animal aging and Copper Golem oxidation. Golems require repeated casts.",
-  "corruptedSpell": "",
+  "standardSpell": "Accelerates time in the target area, aging up baby animals, speeding up furnaces and brewing stands, and triggering random block updates.",
+  "corruptedSpell": "Form a zone which slows time for 8 seconds, then stuns enemies within for 3 seconds. Strikes which end this stun deal +2.5❤️ damage.",
   "draft": false
 }
