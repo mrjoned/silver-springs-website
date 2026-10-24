@@ -1,6 +1,6 @@
 {
   "rune": "Echoes",
-  "standardSpell": "Sonic shriek\n\nReleases a shriek that deals 3.5❤️ sonic damage to nearby enemies and launches you backwards.",
-  "corruptedSpell": "",
+  "standardSpell": "Releases a shriek that deals 3.5❤️ sonic damage to nearby enemies and launches you backwards.",
+  "corruptedSpell": "Distills dropped items in the target area into experience, scaling with the item's rarity and number of enchantments.",
   "draft": false
 }
