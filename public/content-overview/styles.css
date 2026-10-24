@@ -24,3 +24,9 @@
 #ss-custom-content .overview-page .hero{display:block}
 #ss-custom-content #sscc-toast{z-index:20;max-width:calc(100vw - 32px);overflow-wrap:anywhere}
 @media(max-width:600px){#ss-custom-content .sscc-navigation{padding:9px 10px;gap:8px}#ss-custom-content .sscc-navigation .discord-link{font-size:11px}#ss-custom-content .tabs a{padding:7px 9px}}
+
+/* Minecraft item artwork supplied for the Overview cards. */
+#ss-custom-content .feature .art .item-icon { width: 112px; height: 112px; object-fit: contain; image-rendering: pixelated; }
+#ss-custom-content .crossed-swords { position: relative; display: block; width: 128px; height: 128px; }
+#ss-custom-content .crossed-swords img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; image-rendering: pixelated; }
+#ss-custom-content .crossed-swords img:first-child { transform: scaleX(-1); }
