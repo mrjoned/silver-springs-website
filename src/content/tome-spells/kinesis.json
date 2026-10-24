@@ -1,6 +1,6 @@
 {
   "rune": "Kinesis",
-  "standardSpell": "Gravity well\n\nA gravity well gathers targets, then launches them where you look.",
-  "corruptedSpell": "",
+  "standardSpell": "Creates a gravity well that pulls enemies towards the cast location for 2 seconds, then launches all of them in the direction you're facing.",
+  "corruptedSpell": "Invoke an ascended state, continually draining XP to float and gain 50% spell power.",
   "draft": false
 }
