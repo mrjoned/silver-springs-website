@@ -1,6 +1,6 @@
 {
   "rune": "Tides",
-  "standardSpell": "Tidal wave\n\nPushes targets with a tidal wave and wets blocks.",
-  "corruptedSpell": "",
+  "standardSpell": "Creates a wave of water which pushes enemies back and extinguishes fires, turns dirt to mud, cools lava to magma, and wets concrete powder, spongers, and farmland.",
+  "corruptedSpell": "Absorbs water in the target area, extinguishing you and drying out enemies, slightly shrinking them.",
   "draft": false
 }
