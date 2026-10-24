@@ -1,6 +1,6 @@
 {
   "rune": "Sparks",
-  "standardSpell": "Branching lightning\n\nCreates three branching lightning bolts that seek out enemies within 12 blocks. Each bolt can chain up to 3 times, dealing 3❤️ lightning damage.",
-  "corruptedSpell": "",
+  "standardSpell": "Creates three branching lightning bolts that seek out enemies within 12 blocks. Each bolt can chain up to 3 times, dealing 3❤️ lightning damage.",
+  "corruptedSpell": "Charges at the target area, then strikes for 5❤️ lightning damage. The area remains charged for 10 seconds, periodically stunning enemies and siphoning their speed to you.",
   "draft": false
 }
