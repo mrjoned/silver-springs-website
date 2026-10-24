@@ -1,6 +1,6 @@
 {
   "rune": "Stones",
-  "standardSpell": "Stone prison\n\nEncases targets in blocks and stuns them.",
-  "corruptedSpell": "",
+  "standardSpell": "Pulls grounded enemies into the earth, encasing and stunning them for 2 seconds. Flying enemies are pulled toward the ground.",
+  "corruptedSpell": "Decays the ground at the target area, deleting a downward column of blocks for 8 seconds.",
   "draft": false
 }
