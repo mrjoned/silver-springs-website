@@ -8,8 +8,12 @@
 .home-hero .actions{justify-content:center;margin-top:32px}
 .home-hero .ipnote{font-size:22px;font-weight:700;letter-spacing:.02em;margin-top:18px;color:var(--pink)}
 .home-hero .hero-caption{font-size:12px}
-.home-hero:after{background:linear-gradient(0deg,#100f14 0%,#100f1499 42%,#100f1480 100%)}
+.home-hero:after{background:linear-gradient(0deg,#100f14 0%,#100f1440 42%,#100f1433 100%)}
 @media(max-width:600px){.home-hero .hero-content{padding:55px 0 100px}.home-hero h1{font-size:46px}.home-hero .welcome-line{font-size:24px}.home-hero .hero-tagline{font-size:21px;max-width:340px}.home-hero .hero-caption{right:17px;bottom:42px;font-size:10px}.home-hero .ipnote{font-size:21px}.home-hero .actions{gap:12px}}
 
 #news .discordnote{justify-content:flex-start;gap:.6rem 1rem;flex-wrap:wrap}#news .discordnote a{margin-left:0}
 .about-community-photo{display:block;width:100%;height:auto;border-radius:12px;margin-top:24px;border:1px solid #49404f}
+.home-hero .hero-content h1,.home-hero .hero-tagline,.home-hero .ipnote{text-shadow:0 2px 8px #000c}
+.home-hero .actions a.btn{background:#211c29;border-color:#8c7188;color:#fff}
+.home-hero .actions a.btn:hover{background:#352c40;border-color:var(--pink)}
+.home-hero .actions button svg{flex-shrink:0;vertical-align:middle}

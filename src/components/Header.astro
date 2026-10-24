@@ -25,7 +25,6 @@ const around = [
     <details class="navgroup">
       <summary>Get to know us <span aria-hidden="true">⌄</span></summary>
       <div class="navdrop">
-        <a href="/about-us/#main">Our community</a>
         {community.map(({ href, label }) => <a href={href} aria-current={active(href) ? 'page' : undefined}>{label}</a>)}
       </div>
     </details>
