@@ -1,6 +1,6 @@
 {
   "rune": "Void",
-  "standardSpell": "Portals\n\nPortal-gun spell.",
-  "corruptedSpell": "",
+  "standardSpell": "Creates a pair of temporary end gateways between your location and a target location, allowing instant travel between the two points for 10 seconds.",
+  "corruptedSpell": "Fade from existence for 4 seconds, stealthing and becoming silent. Upon exiting stealth, deal 5❤️ magic damage to nearby enemies.\n",
   "draft": false
 }
