@@ -2,7 +2,9 @@
 import SiteLayout from "../../layouts/SiteLayout.astro";
 import rawContent from "../../content/pages/content-overview.html?raw";
 import { renderOverview } from '../../lib/site-catalogs.js';
-const content = renderOverview(rawContent);
+import { renderTomeSpells } from '../../lib/tome-spells.js';
+const spells = import.meta.glob('../../content/tome-spells/*.json', { eager: true, import: 'default' });
+const content = renderOverview(rawContent.replace('__SSS_TOME_SPELL_TABLE__', renderTomeSpells(Object.values(spells))));
 ---
 <SiteLayout title={"Custom Content & Guides"} description={"Silver Springs Survival custom content and player tools."} styles={["/assets/chrome.css", "/content-overview/styles.css"]} scripts={["/content-overview/behavior.js"]}>
   <Fragment set:html={content} />
