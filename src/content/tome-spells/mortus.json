@@ -1,6 +1,6 @@
 {
   "rune": "Mortus",
-  "standardSpell": "Wave of death\n\nA death wave plagues enemies and marks them for bonus damage from your next spell.",
-  "corruptedSpell": "",
+  "standardSpell": "Creates a wave of death that plagues and marks enemies for 8 seconds. Marked enemies take 2❤️ additional damage from the next magic attack against them.",
+  "corruptedSpell": "Bends the will of a targeted undead enemy, temporarily allying them to you.",
   "draft": false
 }
