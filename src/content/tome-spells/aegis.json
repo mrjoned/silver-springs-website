@@ -1,6 +1,6 @@
 {
   "rune": "Aegis",
-  "standardSpell": "Orbiting shields\n\nThree orbiting shields, each blocking one hit.\n\nIn PvP arenas: 5-second duration and 10-second cooldown.",
-  "corruptedSpell": "",
+  "standardSpell": "Creates a ring of 3 rotating shields that can each block one hit before breaking. The shields despawn after 10 seconds or upon exiting combat.",
+  "corruptedSpell": "Shreds armor from enemies in the target area and forms a shield of sculk scaling in power with the amount of armor stolen.",
   "draft": false
 }
