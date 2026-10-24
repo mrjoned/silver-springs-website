@@ -1,6 +1,6 @@
 {
   "rune": "Gusts",
-  "standardSpell": "Wind wall\n\nA wind wall deflects projectiles before destroying them.",
-  "corruptedSpell": "",
+  "standardSpell": "Creates a wall of wind for 5 seconds. The wall fully reflects projectiles for the first second, and otherwise destroys them.",
+  "corruptedSpell": "Creates a wind stream in the target direction, pushing entities along it for 1.5 seconds.",
   "draft": false
 }
