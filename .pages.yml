@@ -514,3 +514,34 @@ content:
     label: Draft (hide explanation)
     type: boolean
     default: false
+
+- name: tome_spells
+  label: Runic Tome Codex
+  type: collection
+  path: src/content/tome-spells
+  format: json
+  subfolders: false
+  view:
+    primary: rune
+    fields: [rune, draft]
+    sort: [rune]
+    default:
+      sort: rune
+      order: asc
+  fields:
+  - name: rune
+    label: Rune
+    type: string
+    required: true
+  - name: standardSpell
+    label: Standard spell
+    type: text
+    description: Spell name and description. Line breaks are preserved.
+  - name: corruptedSpell
+    label: Corrupted spell
+    type: text
+    description: Leave blank until confirmed. The website will direct players to /rune.
+  - name: draft
+    label: Draft (hide from website)
+    type: boolean
+    default: true

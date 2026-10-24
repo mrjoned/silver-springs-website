@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import { renderTomeSpells } from '../src/lib/tome-spells.js';
+const html = renderTomeSpells([{rune:'Void',standardSpell:'Portals',corruptedSpell:'Changed spell'}, {rune:'Aegis',standardSpell:'<shield>\nBlock hits'}, {rune:'Hidden',draft:true}]);
+assert(html.indexOf('Aegis') < html.indexOf('Void'));
+assert(html.includes('&lt;shield&gt;<br>Block hits'));
+assert(html.includes('Changed spell'));
+assert(html.includes('Check <code>/rune</code> in-game.'));
+assert(!html.includes('Hidden'));
+assert.throws(()=>renderTomeSpells([{}]), /rune name/);
+console.log('Tome Codex: edits, ordering, draft exclusion, escaping, and missing-spell fallback passed.');
