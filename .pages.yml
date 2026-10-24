@@ -520,6 +520,9 @@ content:
   type: collection
   path: src/content/tome-spells
   format: json
+  filename:
+    template: '{primary}.json'
+    field: create
   subfolders: false
   view:
     primary: rune
