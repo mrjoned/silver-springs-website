@@ -1,6 +1,6 @@
 {
   "rune": "Cinders",
-  "standardSpell": "Flamethrower\n\nShort-range fire streams burn enemies and reduce healing.",
-  "corruptedSpell": "",
+  "standardSpell": "Spews a short, wide cone of fire in front of you, dealing up to 10❤️ fire damage over 3 seconds, which reduces the healing of targets by 50%.",
+  "corruptedSpell": "Launches a dragon fireball that creates an expanding soul fire cloud, igniting enemies and applying a severe healing reduction.",
   "draft": false
 }
