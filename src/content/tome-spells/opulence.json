@@ -1,6 +1,6 @@
 {
   "rune": "Opulence",
-  "standardSpell": "Golden distraction\n\nRains gold nuggets that distract mobs and break aggression.",
-  "corruptedSpell": "",
+  "standardSpell": "Rains gold nuggets at the target area for 10 seconds, drawing the attention of enemies.",
+  "corruptedSpell": "Transmutes dropped items in the target area into gold nuggets, scaling with the item's rarity and number of enchantments.",
   "draft": false
 }
