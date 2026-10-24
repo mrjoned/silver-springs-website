@@ -3,12 +3,14 @@ import SiteLayout from '../layouts/SiteLayout.astro';
 import HomepageGallery from '../components/HomepageGallery.astro';
 import LatestNews from '../components/LatestNews.astro';
 import beforeNews from '../content/pages/home-before-news.html?raw';
+import guides from '../content/pages/home-guides.html?raw';
 import afterNews from '../content/pages/home-after-news.html?raw';
 ---
 <SiteLayout title="Silver Springs Survival" description="Discover Silver Springs Survival: community builds, custom enchantments, and your next Minecraft adventure." styles={['/assets/site.css', '/assets/homepage.css']}>
   <main id="main">
     <Fragment set:html={beforeNews} />
     <LatestNews />
+    <Fragment set:html={guides} />
     <HomepageGallery />
     <Fragment set:html={afterNews} />
   </main>
