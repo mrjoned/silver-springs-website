@@ -1,6 +1,6 @@
 {
   "rune": "Vitality",
-  "standardSpell": "Growth & healing\n\nHeals nearby players, boosts crop growth, and makes animals breed.",
-  "corruptedSpell": "",
+  "standardSpell": "Grants brief, strong regeneration to the caster and nearby allies, grows crops, and causes animals to begin breeding.",
+  "corruptedSpell": "Releases a corrupted heart which floats forward and beats every second, dealing sonic damage and healing the caster 0.2❤️ per enemy struck.",
   "draft": false
 }
