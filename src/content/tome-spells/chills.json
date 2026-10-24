@@ -1,6 +1,6 @@
 {
   "rune": "Chills",
-  "standardSpell": "Freezing projectile\n\nA freezing projectile: water becomes ice, lava becomes obsidian, and snow falls. Freezes hostile mobs; some become friendly snow golems on death.",
-  "corruptedSpell": "",
+  "standardSpell": "Launches a projectile that freezes an area, slowing enemies and turning water to ice, lava to obsidian, ice to packed ice, and spawning snow layers.",
+  "corruptedSpell": "Deeply freezes the target area, stunning enemies by encasing them in ice. Strikes which end this stun deal +2.5❤️ damage.",
   "draft": false
 }
