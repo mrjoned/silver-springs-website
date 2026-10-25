@@ -1,14 +1,29 @@
 {
-  "sourceRecordId": "rectl8F0BcgUH7ZVk",
-  "draft": false,
   "name": "Sweet Spot",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Damage",
-  "description": "<p>Attacks have +1 range and deal +0.5-1❤️, doubled to +1-2❤️ against enemies within that bonus range <em>sweet spot.</em></p>",
+  "costRule": "per-level",
+  "description": "<p>Attacks have +1 range and deal +[effect:base][dark-gray]0.5-1❤️[/dark-gray][/effect], doubled to +[effect:double][dark-gray]1-2❤️[/dark-gray][/effect] against enemies within that bonus range [gold]<em>sweet spot</em>[/gold]<em>.</em></p>",
+  "effects": [
+    {
+      "key": "base",
+      "explanation": "Level I: 0.5❤️\nLevel II: 0.75❤️\nLevel III: 1❤️"
+    },
+    {
+      "key": "double",
+      "explanation": "Level I: 1❤️\nLevel II: 1.5❤️\nLevel III: 2❤️"
+    }
+  ],
   "maxLevel": 3,
   "items": [
     "Swords"
   ],
+  "rune1": "Void",
+  "rune2": "Void",
+  "rune3": "Void",
+  "rune4": "Mortus",
+  "rune5": "Mortus",
   "incompatibleRunecrafted": [
     "Tempo",
     "Extinction"
@@ -19,14 +34,7 @@
     "Smite"
   ],
   "discoverer": "Starmarsh",
-  "researchers": [],
   "discoveredDate": "2025-06-08",
   "discoveredBy": "Starmarsh on 06/08/25",
-  "runeTags": [],
-  "rune1": "Void",
-  "rune2": "Void",
-  "rune3": "Void",
-  "rune4": "Mortus",
-  "rune5": "Mortus",
-  "costRule": "per-level"
+  "sourceRecordId": "rectl8F0BcgUH7ZVk"
 }
