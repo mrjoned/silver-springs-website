@@ -1,29 +1,41 @@
 {
-  "sourceRecordId": "recIchA6m7OEDjErT",
-  "draft": false,
   "name": "Impetus of Artemis",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Impetus",
-  "description": "<ul><li>Double sneaking calls or dismisses your chosen <strong>spirit</strong> <strong>mount</strong>, defaulting to your <strong>spirit</strong> <strong>wolf</strong>.</li><li>While mounted, you apply <strong>moonlight</strong> to the closest enemy. <strong>Moonlit</strong> enemies periodically glow, take +2-4♥️ magic damage from headshots, and ranged kills collect their loot and heal your mount 1♥️.</li></ul>",
+  "costRule": "per-level",
+  "description": "<ul><li><p>Double sneaking calls or dismisses your chosen [effect:spiritmount][aqua]spirit mount[/aqua][/effect], defaulting to your [effect:spiritwolf][aqua]spirit wolf[/aqua][/effect].</p></li><li><p>While mounted, you apply [gradient:pink:white]mo[/gradient][gradient:white:purple]on[/gradient][gradient:purple:white]lig[/gradient][gradient:white:pink]ht[/gradient] to the closest enemy. [gradient:pink:white]Mo[/gradient][gradient:white:purple]on[/gradient][gradient:purple:white]lit[/gradient] enemies periodically glow, take [effect:hearts][dark-gray]+2-4♥️[/dark-gray][/effect] magic damage from headshots, and ranged kills collect their loot and heal your mount 1♥️.</p></li></ul><p>[dark-gray]<em>\"Let moonlight carry you on your midnight hunt.\"</em>[/dark-gray]</p>",
+  "effects": [
+    {
+      "key": "spiritmount",
+      "explanation": "Shoot an owned mount to mark it as your spirit. While it's called, shooting it unmarks it and shooting a different mount makes it your new spirit mount. If your spirit mount is killed, it can be called again after one Minecraft day."
+    },
+    {
+      "key": "spiritwolf",
+      "explanation": "A large, mountable wolf tamed to you. Shooting your spirit wolf changes its coat."
+    },
+    {
+      "key": "hearts",
+      "explanation": "2❤️ normally, increased to 4❤️ during a full moon."
+    }
+  ],
   "maxLevel": 1,
   "items": [
     "Leggings"
   ],
+  "rune1": "Sparks",
+  "rune2": "Vitality",
+  "rune3": "Gusts",
+  "rune4": "Arcanum",
+  "rune5": "Opulence",
   "incompatibleRunecrafted": [
     "Other Impetuses"
   ],
-  "incompatibleVanilla": [],
   "discoverer": "Shotdown01",
   "researchers": [
     "TheJ_Team"
   ],
   "discoveredDate": "2025-05-28",
   "discoveredBy": "Shotdown01 and TheJ_Team on 05/28/25",
-  "runeTags": [],
-  "rune1": "Sparks",
-  "rune2": "Vitality",
-  "rune3": "Gusts",
-  "rune4": "Arcanum",
-  "rune5": "Opulence",
-  "costRule": "per-level"
+  "sourceRecordId": "recIchA6m7OEDjErT"
 }
