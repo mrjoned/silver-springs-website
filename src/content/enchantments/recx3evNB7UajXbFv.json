@@ -4,7 +4,7 @@
   "source": "Runecrafted",
   "category": "Impetus",
   "costRule": "per-level",
-  "description": "<ul><li><p>You can hand-brew potions by [effect:insert][dark-gray]inserting[/dark-gray][/effect] water or ingredients into bottles.</p></li><li><p>Your potions cause their targets [effect:drunk][purple]drunken revelry[/purple][/effect], starting a <em>happy hour</em> if applied repeatedly, during which 50% of used potions are not consumed.</p></li></ul><p>[dark-gray]<em>\"Revel with them in the last art of euphoria.\"</em>[/dark-gray]</p>",
+  "description": "<ul><li><p>You can hand-brew potions by [effect:insert][dark-gray]inserting[/dark-gray][/effect] water or ingredients into bottles.</p></li><li><p>Your potions cause their targets [effect:drunk][pink]drunken revelry[/pink][/effect], starting a <em>happy hour</em> if applied repeatedly, during which 50% of used potions are not consumed.</p></li></ul><p>[dark-gray]<em>\"Revel with them in the last art of euphoria.\"</em>[/dark-gray]</p>",
   "effects": [
     {
       "key": "insert",
