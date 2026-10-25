@@ -1,10 +1,16 @@
 {
-  "sourceRecordId": "reckcGnWwhEOGDWMT",
-  "draft": false,
   "name": "Thorns",
+  "draft": false,
   "source": "Vanilla",
   "category": "Hazard",
-  "description": "<p>Always procs consistently, and damage now scales linearly with total level (across armor pieces) rather than proc chance</p>",
+  "costRule": "free",
+  "description": "<p>[term:arcanumbonus][purple]Arcanum Bonuses[/purple][/term]:</p><p>Always activates and deals consistent damage, [effect:dmg][dark-gray]0.13-0.25❤️ damage[/dark-gray][/effect] per piece of armor with Thorns.</p>",
+  "effects": [
+    {
+      "key": "dmg",
+      "explanation": "Level I: 0.13❤️ damage\nLevel II: 0.19❤️ damage\nLevel III: 0.25❤️ damage"
+    }
+  ],
   "maxLevel": 3,
   "items": [
     "Helmets",
@@ -16,16 +22,6 @@
     "Reverberating",
     "Volatile"
   ],
-  "incompatibleVanilla": [],
-  "discoverer": "",
-  "researchers": [],
-  "discoveredDate": "",
-  "discoveredBy": "",
-  "runeTags": [],
-  "rune1": "",
-  "rune2": "",
-  "rune3": "",
-  "rune4": "",
-  "rune5": "",
-  "costRule": "free"
+  "discoveredDate": "2026-10-25",
+  "sourceRecordId": "reckcGnWwhEOGDWMT"
 }
