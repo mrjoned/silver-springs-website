@@ -1,10 +1,10 @@
 {
-  "sourceRecordId": "recuUFCXenozMM1Ar",
-  "draft": false,
   "name": "Soul Speed",
+  "draft": false,
   "source": "Vanilla",
   "category": "Traversal",
-  "description": "<p>Durability drain removed.</p>",
+  "costRule": "free",
+  "description": "<p>[term:arcanumbonus][purple]Arcanum Bonuses[/purple][/term]:</p><p>No longer consumes durability.</p>",
   "maxLevel": 3,
   "items": [
     "Boots"
@@ -13,16 +13,6 @@
     "No Clip",
     "Coyote Time"
   ],
-  "incompatibleVanilla": [],
-  "discoverer": "",
-  "researchers": [],
-  "discoveredDate": "",
-  "discoveredBy": "",
-  "runeTags": [],
-  "rune1": "",
-  "rune2": "",
-  "rune3": "",
-  "rune4": "",
-  "rune5": "",
-  "costRule": "free"
+  "discoveredDate": "2026-10-25",
+  "sourceRecordId": "recuUFCXenozMM1Ar"
 }
