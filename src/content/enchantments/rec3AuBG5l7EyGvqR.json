@@ -1,7 +1,7 @@
 {
   "name": "Precision",
   "draft": false,
-  "source": "Projects",
+  "source": "Runecrafted",
   "category": "Damage",
   "costRule": "per-level",
   "description": "<p>The spear enters a <em>power phase</em> 1.5 seconds into its charge which lasts 1 second and deals +[effect:hearts][dark-gray]2-4❤️[/dark-gray][/effect] damage.</p>",
