@@ -1,27 +1,35 @@
 {
-  "sourceRecordId": "recATX5E5wCd9H7N8",
-  "draft": false,
   "name": "Paradigm of Lust",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Paradigm",
-  "description": "<p>Enemies targeting a nearby spouse are <strong>scorned</strong>, letting you lunge at them from afar, <em>but</em> if a spouse dies in combat you wither away unless you enact <strong>reckless vengeance</strong> against their killer.</p><blockquote><p><strong>Scorned</strong>: </p><ul><li>Swing at them while within 32 blocks to lunge. </li><li>Your first strike sates 1 hunger and grants 50% attack speed for 7 seconds. - Your strikes heal the targeted spouse for 15% of damage dealt.<br>**Reckless Vengeance: **Gain +20% speed toward the target. You can only have one vengeance target at a time. The wither is only cleansed upon killing your target.</li></ul></blockquote>",
+  "costRule": "per-level",
+  "description": "<p>Enemies targeting a nearby spouse are [effect:scorn][dark-gray]scorned[/dark-gray][/effect], letting you lunge at them from afar, [dark-red]<em>but</em>[/dark-red] if a spouse dies in combat you wither away unless you enact [effect:vengeance][dark-gray]reckless vengeance[/dark-gray][/effect] against their killer.</p>",
+  "effects": [
+    {
+      "key": "scorn",
+      "label": "Versus scorned targets:",
+      "explanation": "- Swing at them while within 32 blocks to lunge.\n- Your first strike sates 1 hunger and grants 50% attack speed for 7 seconds.\n- Your strikes heal the targeted spouse for 15% of damage dealt."
+    },
+    {
+      "key": "vengeance",
+      "explanation": "Gain +20% speed toward your vengeance target. You can only have one vengeance target at a time. The wither is only cleansed upon killing your target."
+    }
+  ],
   "maxLevel": 1,
   "items": [
     "Helmets"
   ],
-  "incompatibleRunecrafted": [
-    "Other Paradigms"
-  ],
-  "incompatibleVanilla": [],
-  "discoverer": "CubicBits",
-  "researchers": [],
-  "discoveredDate": "2023-09-10",
-  "discoveredBy": "CubicBits on 9/10/23 4:19 PM",
-  "runeTags": [],
   "rune1": "Vitality",
   "rune2": "Mortus",
   "rune3": "Cinders",
   "rune4": "Moments",
   "rune5": "Mortus",
-  "costRule": "per-level"
+  "incompatibleRunecrafted": [
+    "Other Paradigms"
+  ],
+  "discoverer": "CubicBits",
+  "discoveredDate": "2023-09-10",
+  "discoveredBy": "CubicBits on 9/10/23 4:19 PM",
+  "sourceRecordId": "recATX5E5wCd9H7N8"
 }
