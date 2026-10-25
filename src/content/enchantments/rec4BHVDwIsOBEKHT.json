@@ -1,29 +1,36 @@
 {
-  "sourceRecordId": "rec4BHVDwIsOBEKHT",
-  "draft": false,
   "name": "Pestilence",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Aspect",
-  "description": "<p>Shots <strong>Plague</strong> enemies for 4-8 seconds. Plagued enemies have Wither I and on death will spread Plague stacks to the 1-3 closest enemies after a short delay.</p>",
+  "costRule": "per-level",
+  "description": "<p>Shots [dark-red]<em>plague</em>[/dark-red] enemies for 8 seconds, stacking 3 times. [dark-red]<em>Plagued</em>[/dark-red] enemies have [effect:wither][dark-gray]Wither I-III[/dark-gray][/effect] and spread the [dark-red]<em>plague</em>[/dark-red] to the nearest [effect:enemies][dark-gray]1-3 enemies[/dark-gray][/effect] within 8 blocks on death.</p>",
+  "effects": [
+    {
+      "key": "wither",
+      "explanation": "Tier equals Plague stacks."
+    },
+    {
+      "key": "enemies",
+      "explanation": "Number of spreads equals Plague stacks."
+    }
+  ],
   "maxLevel": 1,
   "items": [
     "Bows"
   ],
+  "rune1": "Gusts",
+  "rune2": "Echoes",
+  "rune3": "Mortus",
+  "rune4": "Tides",
+  "rune5": "Mortus",
   "incompatibleRunecrafted": [
     "Frost"
   ],
   "incompatibleVanilla": [
     "Flame"
   ],
-  "discoverer": "",
-  "researchers": [],
-  "discoveredDate": "",
+  "discoveredDate": "2026-10-25",
   "discoveredBy": "N/A",
-  "runeTags": [],
-  "rune1": "Gusts",
-  "rune2": "Echoes",
-  "rune3": "Mortus",
-  "rune4": "Tides",
-  "rune5": "Mortus",
-  "costRule": "per-level"
+  "sourceRecordId": "rec4BHVDwIsOBEKHT"
 }
