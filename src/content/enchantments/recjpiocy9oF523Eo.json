@@ -1,29 +1,27 @@
 {
-  "sourceRecordId": "recjpiocy9oF523Eo",
-  "draft": false,
   "name": "Impetus of Hermes",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Impetus",
-  "description": "<p>Upon <strong>blinking</strong>, you engage in <em>divine trickery</em>, a brief stealth that empowers your next attack +2♥️, and create a <em>shortcut</em> for 4 seconds that you can enter once to return to the other end. If the shortcut expires unused, you engage in divine trickery once more.</p>",
+  "costRule": "per-level",
+  "description": "<p>Upon [term:blink][dark-gray]blinking[/dark-gray][/term], you engage in [dark-green]<em>divine trickery</em>[/dark-green], a brief [term:stealth][dark-gray]stealth[/dark-gray][/term] that empowers your next attack +2♥️, and create a [blue]<em>shortcut</em>[/blue] for 4 seconds that you can enter once to return to the other end. If the shortcut expires unused, you engage in [dark-green]<em>divine trickery</em>[/dark-green] once more.</p>",
   "maxLevel": 1,
   "items": [
     "Leggings"
   ],
+  "rune1": "Sparks",
+  "rune2": "Void",
+  "rune3": "Mortus",
+  "rune4": "Moments",
+  "rune5": "Void",
   "incompatibleRunecrafted": [
     "Other Impetuses"
   ],
-  "incompatibleVanilla": [],
   "discoverer": "TheJ_Team",
   "researchers": [
     "UnloadingLime"
   ],
   "discoveredDate": "2025-05-26",
   "discoveredBy": "TheJ_Team and UnloadingLime on 05/26/25",
-  "runeTags": [],
-  "rune1": "Sparks",
-  "rune2": "Void",
-  "rune3": "Mortus",
-  "rune4": "Moments",
-  "rune5": "Void",
-  "costRule": "per-level"
+  "sourceRecordId": "recjpiocy9oF523Eo"
 }
