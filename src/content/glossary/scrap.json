@@ -1,0 +1,5 @@
+{
+  "key": "scrap",
+  "description": "A multi-tier loot table. Common draws grant 4-16 leather, ink sacs, glow ink sacs, blaze rods, lily pads, strings, or slime balls. Rarer draws can give crusted gems or runes, grab bag items containing dyes, pottery sherds, or ores, and rarely netherite scraps.",
+  "draft": false
+}
