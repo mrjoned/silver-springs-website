@@ -4,7 +4,7 @@
   "source": "Runecrafted",
   "category": "Aphelion",
   "costRule": "per-level",
-  "description": "<p>[term:eclipse][blue]<strong><u>Eclipses</u></strong>[/blue][/term] Howling. Your Howl instead requires 7 stacks and initiates an [aqua]<em>icy riptide</em>[/aqua], freezing enemies you pass through for 2 seconds and striking for 75% damage. If your offhand is Howling, it also strikes for 25% damage.</p><p>[dark-gray]<em>At death's icy door, readying its final wail.</em>[/dark-gray]</p>",
+  "description": "<p>[term:eclipse][blue]Eclipses[/blue][/term] Howling. Your Howl instead requires 7 stacks and initiates an [aqua]<em>icy riptide</em>[/aqua], freezing enemies you pass through for 2 seconds and striking for 75% damage. If your offhand is Howling, it also strikes for 25% damage.</p><p>[dark-gray]<em>At death's icy door, readying its final wail.</em>[/dark-gray]</p>",
   "maxLevel": 1,
   "items": [
     "Boots"
