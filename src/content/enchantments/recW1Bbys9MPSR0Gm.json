@@ -1,28 +1,17 @@
 {
-  "sourceRecordId": "recW1Bbys9MPSR0Gm",
-  "draft": false,
   "name": "Whirlpool",
+  "draft": false,
   "source": "Mythical",
   "category": "Trajectory",
-  "description": "<p>Throws fly straight and pull enemies, then slam down and form a suffocating whirlpool.</p>",
-  "maxLevel": null,
+  "costRule": "free",
+  "description": "<p>Throws fly straight and pull enemies, then slam down and form a suffocating whirlpool.</p><p>A mythical enchantment found on the relic [blue]Charybdis[/blue].</p><p>[dark-green]Messina[/dark-green] is a trident, [blue]Charybdis[/blue], whose throws leave [orange]Scylla[/orange] in your hand.</p>",
   "items": [
     "Tridents"
   ],
-  "incompatibleRunecrafted": [],
   "incompatibleVanilla": [
     "Riptide",
     "Loyalty"
   ],
-  "discoverer": "",
-  "researchers": [],
   "discoveredDate": "2026-03-07",
-  "discoveredBy": "",
-  "runeTags": [],
-  "rune1": "",
-  "rune2": "",
-  "rune3": "",
-  "rune4": "",
-  "rune5": "",
-  "costRule": "free"
+  "sourceRecordId": "recW1Bbys9MPSR0Gm"
 }
