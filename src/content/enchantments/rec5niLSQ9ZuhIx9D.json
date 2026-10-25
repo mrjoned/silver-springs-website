@@ -1,15 +1,29 @@
 {
-  "sourceRecordId": "rec5niLSQ9ZuhIx9D",
-  "draft": false,
   "name": "Lizard Tail",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Protection",
-  "description": "<p>You survive death at 0.5 hearts, cleansing negative effects and shedding a decoy tail which draws in distractible enemies for 10 seconds, during which you stealth and gain 80% speed. This can’t occur again until you fully heal.</p>",
+  "costRule": "per-level",
+  "description": "<p>You survive death at 0.5❤️, cleansing [effect:neg][dark-gray]negative effects[/dark-gray][/effect] and shedding a [green]<em>decoy tail</em>[/green] which draws in [effect:distract][dark-gray]distractible[/dark-gray][/effect] enemies for 6 seconds, during which you [term:stealth][dark-gray]stealth[/dark-gray][/term] and gain 80% speed. This can’t occur again until you fully heal.</p>",
+  "effects": [
+    {
+      "key": "neg",
+      "explanation": "Fire, freezing, wither, poison, slowness, mining fatigue, weakness, hunger, and levitation."
+    },
+    {
+      "key": "distract",
+      "explanation": "Piglin brutes are steadfast and cannot be distracted."
+    }
+  ],
   "maxLevel": 1,
   "items": [
     "Leggings"
   ],
-  "incompatibleRunecrafted": [],
+  "rune1": "Mortus",
+  "rune2": "Void",
+  "rune3": "Vitality",
+  "rune4": "Gusts",
+  "rune5": "Moments",
   "incompatibleVanilla": [
     "Protection",
     "Projectile Protection",
@@ -17,14 +31,7 @@
     "Fire Protection"
   ],
   "discoverer": "TroyTheCrafter",
-  "researchers": [],
   "discoveredDate": "2023-08-30",
   "discoveredBy": "TroyTheCrafter on 8/30/23 12:12 PM",
-  "runeTags": [],
-  "rune1": "Mortus",
-  "rune2": "Void",
-  "rune3": "Vitality",
-  "rune4": "Gusts",
-  "rune5": "Moments",
-  "costRule": "per-level"
+  "sourceRecordId": "rec5niLSQ9ZuhIx9D"
 }
