@@ -1,0 +1,14 @@
+import fs from 'node:fs';
+import vm from 'node:vm';
+import assert from 'node:assert/strict';
+const source=fs.readFileSync('src/catalog-templates/hub_build_planner.html','utf8');
+const start=source.indexOf('  function snapshot()'),end=source.indexOf('  function saveCurrent()',start);
+const context={state:{items:[],nextId:1},DATA:{items:['Swords'],enchantments:[{name:'Test 🌟',items:['Swords'],maxLevel:2}]},initGems:item=>Object.assign(item,{gems:['','','',''],armorBase:'',toughnessBase:'',preservation:0,fortitude:0}),namesConflict:(a,b)=>a.name===b?.name,maxFor:e=>e.maxLevel,hasGemSockets:()=>false,render:()=>{},notice:message=>context.message=message,confirm:()=>true};
+vm.createContext(context);vm.runInContext(source.slice(start,end),context);
+const build={version:1,items:[{type:'Swords',enchants:[{name:'Test 🌟',level:9},{name:'Removed',level:1}]}]};
+assert(context.loadBuild(build));assert.equal(context.state.items[0].enchants[0].level,2);assert.match(context.message,/Removed/);assert.match(context.message,/adjusted/);
+const saved=context.snapshot();context.state.items=[];assert(context.loadBuild(saved));assert.equal(context.state.items[0].enchants[0].name,'Test 🌟');
+assert.throws(()=>context.loadBuild({version:2,items:[]}));
+const before=context.state.items;context.confirm=()=>false;assert.equal(context.loadBuild(saved),false);assert.equal(context.state.items,before);
+const token=Buffer.from(JSON.stringify(saved),'utf8').toString('base64url');assert.deepEqual(JSON.parse(Buffer.from(token,'base64url').toString('utf8')),JSON.parse(JSON.stringify(saved)));
+console.log('Planner sharing: Unicode round-trip, catalog adjustments, invalid version, and replacement cancellation passed.');
