@@ -1,0 +1,14 @@
+{
+  "name": "Lunge",
+  "draft": false,
+  "source": "Vanilla",
+  "category": "Travel",
+  "costRule": "free",
+  "description": "<p>Launches you forward when you jab with a spear, using hunger and durability. Higher levels give a stronger lunge.</p>",
+  "maxLevel": 3,
+  "items": [
+    "Spears"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": []
+}

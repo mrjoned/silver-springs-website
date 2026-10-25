@@ -1,0 +1,14 @@
+{
+  "name": "Feather Falling",
+  "draft": false,
+  "source": "Vanilla",
+  "category": "Protection",
+  "costRule": "free",
+  "description": "<p>Reduces damage from falls and ender pearl teleports.</p>",
+  "maxLevel": 4,
+  "items": [
+    "Boots"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": []
+}

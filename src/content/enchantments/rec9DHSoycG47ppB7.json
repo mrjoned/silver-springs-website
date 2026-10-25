@@ -1,7 +1,7 @@
 {
   "name": "Sweeping Edge",
   "draft": false,
-  "source": "Vanilla",
+  "source": "Enhanced Vanilla",
   "category": "Sweeping",
   "costRule": "free",
   "description": "<p>[term:arcanumbonus][purple]Arcanum Bonuses[/purple][/term]:</p><p>Performs a sweep attack at the target area even on missed attacks.</p>",

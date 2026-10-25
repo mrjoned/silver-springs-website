@@ -1,0 +1,16 @@
+{
+  "name": "Depth Strider",
+  "draft": false,
+  "source": "Vanilla",
+  "category": "Travel",
+  "costRule": "free",
+  "description": "<p>Move faster through water.</p>",
+  "maxLevel": 3,
+  "items": [
+    "Boots"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [
+    "Frost Walker"
+  ]
+}

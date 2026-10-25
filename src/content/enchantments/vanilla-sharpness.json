@@ -1,0 +1,22 @@
+{
+  "name": "Sharpness",
+  "draft": false,
+  "source": "Vanilla",
+  "category": "Damage",
+  "costRule": "free",
+  "description": "<p>Increases melee damage against targets.</p>",
+  "maxLevel": 5,
+  "items": [
+    "Axes",
+    "Spears",
+    "Swords"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [
+    "Smite",
+    "Bane Of Arthropods",
+    "Impaling",
+    "Density",
+    "Breach"
+  ]
+}

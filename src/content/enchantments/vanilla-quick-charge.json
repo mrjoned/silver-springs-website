@@ -1,0 +1,14 @@
+{
+  "name": "Quick Charge",
+  "draft": false,
+  "source": "Vanilla",
+  "category": "Utility",
+  "costRule": "free",
+  "description": "<p>Loads a crossbow faster.</p>",
+  "maxLevel": 3,
+  "items": [
+    "Crossbows"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": []
+}

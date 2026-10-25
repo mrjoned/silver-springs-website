@@ -1,7 +1,7 @@
 {
   "name": "Frost Walker",
   "draft": false,
-  "source": "Vanilla",
+  "source": "Enhanced Vanilla",
   "category": "Travel",
   "costRule": "free",
   "description": "<p>[term:arcanumbonus][purple]Arcanum Bonuses[/purple][/term]:</p><ul><li><p>Grants +[effect:speed][dark-gray]25-50% speed[/dark-gray][/effect] while walking on snow or ice blocks.</p></li><li><p>Permanent freezes nearby powder snow into solid snow.</p></li></ul><p></p>",

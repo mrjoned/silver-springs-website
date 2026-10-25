@@ -1,7 +1,7 @@
 {
   "name": "Bane of Arthropods",
   "draft": false,
-  "source": "Vanilla",
+  "source": "Enhanced Vanilla",
   "category": "Damage",
   "costRule": "free",
   "description": "<p>[term:arcanumbonus][purple]Arcanum Bonuses[/purple][/term]:</p><ul><li><p>Additionally applies to Shulkers.</p></li><li><p>Always slows for its full duration of [effect:bane][dark-gray]1.5-3.5 seconds[/dark-gray][/effect].</p></li></ul><p></p>",

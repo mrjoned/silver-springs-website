@@ -1,0 +1,14 @@
+{
+  "name": "Wind Burst",
+  "draft": false,
+  "source": "Vanilla",
+  "category": "Travel",
+  "costRule": "free",
+  "description": "<p>A successful mace smash attack launches you back into the air. Higher levels launch you farther.</p>",
+  "maxLevel": 3,
+  "items": [
+    "Maces"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": []
+}

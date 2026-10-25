@@ -1,7 +1,7 @@
 {
   "name": "Multishot",
   "draft": false,
-  "source": "Vanilla",
+  "source": "Enhanced Vanilla",
   "category": "Uncategorized",
   "costRule": "free",
   "description": "<p>[term:arcanumbonus][purple]Arcanum Bonuses[/purple][/term]:</p><p>Projectiles do not apply invulnerability frames, allowing all multishot projectiles to hit the same target.</p>",

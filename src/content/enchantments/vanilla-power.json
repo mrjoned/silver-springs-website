@@ -1,0 +1,14 @@
+{
+  "name": "Power",
+  "draft": false,
+  "source": "Vanilla",
+  "category": "Damage",
+  "costRule": "free",
+  "description": "<p>Increases damage dealt by arrows fired from a bow.</p>",
+  "maxLevel": 5,
+  "items": [
+    "Bows"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": []
+}

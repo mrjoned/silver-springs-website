@@ -1,0 +1,14 @@
+{
+  "name": "Respiration",
+  "draft": false,
+  "source": "Vanilla",
+  "category": "Utility",
+  "costRule": "free",
+  "description": "<p>Lets you stay underwater longer before running out of air.</p>",
+  "maxLevel": 3,
+  "items": [
+    "Helmets"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": []
+}

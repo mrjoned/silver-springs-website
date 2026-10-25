@@ -190,11 +190,12 @@ content:
       values:
       - Runecrafted
       - Mythical
+      - Enhanced Vanilla
       - Vanilla
       - Curse
       - Projects
     required: true
-    description: Source controls rune costs. Runecrafted and Projects use recipes; Vanilla, Curse, and Mythical
+    description: Source controls rune costs. Runecrafted and Projects use recipes; Vanilla, Enhanced Vanilla, Curse, and Mythical
       have no rune cost.
   - name: category
     label: Category
@@ -213,7 +214,7 @@ content:
         label: One recipe for a fixed upgrade
       - name: free
         label: No rune cost
-    description: Use one recipe for fixed Vanilla upgrades such as Unbreaking IV. Vanilla, Curse, and Mythical must
+    description: Use one recipe for fixed Vanilla upgrades such as Unbreaking IV. Vanilla, Enhanced Vanilla, Curse, and Mythical must
       use No rune cost.
   - name: description
     label: Effect / description

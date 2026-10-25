@@ -1,0 +1,23 @@
+{
+  "name": "Smite",
+  "draft": false,
+  "source": "Vanilla",
+  "category": "Damage",
+  "costRule": "free",
+  "description": "<p>Increases melee damage against undead mobs.</p>",
+  "maxLevel": 5,
+  "items": [
+    "Axes",
+    "Maces",
+    "Spears",
+    "Swords"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [
+    "Sharpness",
+    "Bane Of Arthropods",
+    "Impaling",
+    "Density",
+    "Breach"
+  ]
+}

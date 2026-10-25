@@ -1,0 +1,21 @@
+{
+  "name": "Protection",
+  "draft": false,
+  "source": "Vanilla",
+  "category": "Protection",
+  "costRule": "free",
+  "description": "<p>Reduces most incoming damage while the armor is equipped.</p>",
+  "maxLevel": 4,
+  "items": [
+    "Boots",
+    "Chestplates",
+    "Helmets",
+    "Leggings"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [
+    "Blast Protection",
+    "Fire Protection",
+    "Projectile Protection"
+  ]
+}

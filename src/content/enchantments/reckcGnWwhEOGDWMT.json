@@ -1,7 +1,7 @@
 {
   "name": "Thorns",
   "draft": false,
-  "source": "Vanilla",
+  "source": "Enhanced Vanilla",
   "category": "Hazard",
   "costRule": "free",
   "description": "<p>[term:arcanumbonus][purple]Arcanum Bonuses[/purple][/term]:</p><p>Always activates and deals consistent damage, [effect:dmg][dark-gray]0.13-0.25❤️ damage[/dark-gray][/effect] per piece of armor with Thorns.</p>",

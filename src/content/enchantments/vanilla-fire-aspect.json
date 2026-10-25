@@ -1,0 +1,16 @@
+{
+  "name": "Fire Aspect",
+  "draft": false,
+  "source": "Vanilla",
+  "category": "Damage",
+  "costRule": "free",
+  "description": "<p>Sets targets on fire when you hit them.</p>",
+  "maxLevel": 2,
+  "items": [
+    "Maces",
+    "Spears",
+    "Swords"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": []
+}

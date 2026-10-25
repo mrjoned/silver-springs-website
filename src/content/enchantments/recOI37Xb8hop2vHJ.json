@@ -1,7 +1,7 @@
 {
   "name": "Riptide",
   "draft": false,
-  "source": "Vanilla",
+  "source": "Enhanced Vanilla",
   "category": "Trajectory",
   "costRule": "free",
   "description": "<p>[term:arcanumbonus][purple]Arcanum Bonuses[/purple][/term]:</p><ul><li><p>Propels you faster while in water.</p></li><li><p>Grants brief invulnerability upon colliding during a riptide.</p></li><li><p>No longer exclusive with Channeling, which activates upon your first riptide collision during a thunderstorm.</p></li></ul><p></p>",

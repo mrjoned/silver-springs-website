@@ -1,0 +1,14 @@
+{
+  "name": "Lure",
+  "draft": false,
+  "source": "Vanilla",
+  "category": "Utility",
+  "costRule": "free",
+  "description": "<p>Shortens the wait for a bite while fishing.</p>",
+  "maxLevel": 3,
+  "items": [
+    "Fishing Rods"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": []
+}

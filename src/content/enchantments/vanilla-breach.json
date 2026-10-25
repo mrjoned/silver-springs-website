@@ -1,0 +1,20 @@
+{
+  "name": "Breach",
+  "draft": false,
+  "source": "Vanilla",
+  "category": "Damage",
+  "costRule": "free",
+  "description": "<p>Reduces how much the target’s armor protects them from mace attacks.</p>",
+  "maxLevel": 4,
+  "items": [
+    "Maces"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [
+    "Sharpness",
+    "Smite",
+    "Bane of Arthropods",
+    "Impaling",
+    "Density"
+  ]
+}
