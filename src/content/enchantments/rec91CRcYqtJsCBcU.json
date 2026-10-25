@@ -4,7 +4,7 @@
   "source": "Mythical",
   "category": "Spread",
   "costRule": "free",
-  "description": "<p>Mythical enchantment discovered on the eclipsed form of the relic Cerberus. (Through Aphelion of Pluto)<br>\nShots fire a 9-block long and 4.5 block wide cylinder for 9❤️ damage, applying 9 seconds of freezing and burning.</p>\n",
+  "description": "<p>Shots fire a 9-block long and 4.5 block wide cylinder for 9❤️ damage, applying 9 seconds of freezing and burning.</p><p>Mythical enchantment discovered on the [term:eclipse][blue]eclipsed[/blue][/term] form of the relic [dark-red]Cerberus[/dark-red]. (Through [blue]Aphelion of Pluto[/blue])</p>",
   "items": [
     "Crossbows"
   ],
