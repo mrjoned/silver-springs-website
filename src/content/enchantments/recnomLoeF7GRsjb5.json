@@ -4,7 +4,13 @@
   "source": "Runecrafted",
   "category": "Harvest",
   "costRule": "per-level",
-  "description": "<p>[term:harvest][dark-gray]Harvesting[/dark-gray][/term] crops has a [effect:percent][dark-gray]50-100% chance[/dark-gray][/effect] to spawn a [yellow]<em>bonus drop</em>[/yellow] of any standard crop, rarely a golden apple or chorus flower, or extremely rarely an enchanted golden apple or Rune of Vitality.</p>",
+  "description": "<p>[term:harvest][dark-gray]Harvesting[/dark-gray][/term] crops has a [effect:percent][dark-gray]50-100% chance[/dark-gray][/effect] to spawn a [gold]<em>bonus drop</em>[/gold] of any standard crop, rarely a golden apple or chorus flower, or extremely rarely an enchanted golden apple or Rune of Vitality.</p>",
+  "effects": [
+    {
+      "key": "percent",
+      "explanation": "Level I: 50% chance\nLevel II: 100% chance"
+    }
+  ],
   "maxLevel": 2,
   "items": [
     "Hoes"
