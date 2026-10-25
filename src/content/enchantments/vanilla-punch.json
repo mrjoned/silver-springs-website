@@ -1,0 +1,14 @@
+{
+  "name": "Punch",
+  "draft": false,
+  "source": "Vanilla",
+  "category": "Utility",
+  "costRule": "free",
+  "description": "<p>Arrows fired from a bow knock targets farther back.</p>",
+  "maxLevel": 2,
+  "items": [
+    "Bows"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": []
+}

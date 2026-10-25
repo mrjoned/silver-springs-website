@@ -1,0 +1,15 @@
+{
+  "name": "Knockback",
+  "draft": false,
+  "source": "Vanilla",
+  "category": "Utility",
+  "costRule": "free",
+  "description": "<p>Pushes targets farther away when you hit them.</p>",
+  "maxLevel": 2,
+  "items": [
+    "Spears",
+    "Swords"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": []
+}

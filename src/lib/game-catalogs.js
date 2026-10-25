@@ -4,7 +4,7 @@ import { pathToFileURL } from 'node:url';
 import { resolve } from 'node:path';
 
 export const RUNE_NAMES = ['Aegis','Arcanum','Chills','Cinders','Echoes','Gusts','Kinesis','Moments','Mortus','Opulence','Sparks','Stones','Tides','Vitality','Void'];
-export const SOURCES = ['Runecrafted','Mythical','Vanilla','Curse','Projects'];
+export const SOURCES = ['Runecrafted','Mythical','Enhanced Vanilla','Vanilla','Curse','Projects'];
 export const SHOPS = ['badge','material','trial','boardwalk','village','reference'];
 // Astro bundles this module into dist before prerendering. Resolve the source checkout from the build working directory.
 const root = pathToFileURL(resolve(process.cwd())+'/');
@@ -54,7 +54,7 @@ export function makeGameCatalogs(enchantmentRows,valorRows,glossaryRows=[]) {
     for(const key of ['items','incompatibleRunecrafted','incompatibleVanilla','runeTags','researchers'])if(e[key]===undefined||e[key]===null)e[key]=[];
     for(let i=1;i<=5;i++)if(e['rune'+i]===undefined||e['rune'+i]===null)e['rune'+i]='';
     assert(['free','once','per-level'].includes(e.costRule),e.name+' needs a rune cost rule');
-    if(['Vanilla','Curse','Mythical'].includes(e.source))assert(e.costRule==='free',e.name+' must have no rune cost for its source');
+    if(['Vanilla','Enhanced Vanilla','Curse','Mythical'].includes(e.source))assert(e.costRule==='free',e.name+' must have no rune cost for its source');
     assert(SOURCES.includes(e.source),e.name+' has an invalid source');
     assert(text(e.category)&&e.category,e.name+' needs a category');
     assert(e.maxLevel===null||Number.isInteger(e.maxLevel)&&e.maxLevel>=1&&e.maxLevel<=10,e.name+' needs a max level from 1–10 (or blank for an unlevelled effect)');
@@ -108,6 +108,21 @@ export function enchantmentData(catalog=loadGameCatalogs()) {
     incompatible:[...new Set([...e.incompatibleRunecrafted,...e.incompatibleVanilla])],description:e.description,
     source:e.source,category:e.category,costMode:e.costRule==='free'?'free':'runes',costRule:e.costRule
   }));
+  // Fixed upgrades replace their base enchantment on a piece of equipment.
+  // Resolve base-name rules to upgrades too, consistently for all five tools.
+  const upgrades = enchantments.filter(e=>e.costRule==='once').map(upgrade=>({
+    upgrade, base: enchantments.find(e=>e.name===upgrade.name.replace(/\s+[IVXLCDM]+$/,''))
+  })).filter(pair=>pair.base);
+  for(const {upgrade,base} of upgrades){
+    upgrade.incompatible.push(base.name);
+    base.incompatible.push(upgrade.name);
+  }
+  for(const e of enchantments){
+    for(const {upgrade,base} of upgrades){
+      if(e.name!==upgrade.name && e.incompatible.includes(base.name))e.incompatible.push(upgrade.name);
+    }
+    e.incompatible=[...new Set(e.incompatible.filter(name=>name!==e.name))];
+  }
   return {enchantments,glossary:catalog.glossary||[],items:[...new Set(enchantments.flatMap(e=>e.items))].sort(),_dataSource:'repository'};
 }
 export function valorData(catalog=loadGameCatalogs()) {

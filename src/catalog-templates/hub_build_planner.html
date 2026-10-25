@@ -273,7 +273,7 @@ main,.wrap{max-width:none}main{padding:22px 20px 40px}body:has(>.wrap){padding:2
   };
   // Display direct incompatibility rules even when the other enchantment is
   // vanilla and not included as a selectable entry in the Airtable catalog.
-  const vanillaNames = new Set(['silk touch','fortune','efficiency','unbreaking','mending','infinity','power','punch','flame','looting','sharpness','smite','bane of arthropods','fire aspect','knockback','sweeping edge','protection','fire protection','blast protection','projectile protection','feather falling','respiration','aqua affinity','depth strider','frost walker','soul speed','swift sneak','thorns','binding curse','vanishing curse','curse of binding','curse of vanishing','riptide','loyalty','channeling','impaling','multishot','piercing','quick charge','luck of the sea','lure','density','breach','wind burst']);
+  const vanillaNames = new Set(['silk touch','fortune','efficiency','unbreaking','mending','infinity','power','punch','flame','looting','sharpness','smite','bane of arthropods','fire aspect','knockback','sweeping edge','protection','fire protection','blast protection','projectile protection','feather falling','respiration','aqua affinity','depth strider','frost walker','soul speed','swift sneak','thorns','binding curse','vanishing curse','curse of binding','curse of vanishing','riptide','loyalty','channeling','impaling','multishot','piercing','quick charge','luck of the sea','lure','density','breach','wind burst','lunge']);
   const vanillaBase = name => name.toLowerCase().replace(/\s+[ivxlcdm]+$/i,'').trim();
   const incompatibleNamesFor = e => {
     const resolved = DATA.enchantments.filter(other => other.name !== e.name &&

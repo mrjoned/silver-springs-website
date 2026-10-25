@@ -1,0 +1,32 @@
+{
+  "name": "Unbreaking",
+  "draft": false,
+  "source": "Vanilla",
+  "category": "Utility",
+  "costRule": "free",
+  "description": "<p>Gives the item a chance to avoid losing durability when used.</p>",
+  "maxLevel": 3,
+  "items": [
+    "Axes",
+    "Boots",
+    "Bows",
+    "Chestplates",
+    "Crossbows",
+    "Elytra",
+    "Fishing Rods",
+    "Flint and Steel",
+    "Helmets",
+    "Hoes",
+    "Leggings",
+    "Maces",
+    "Pickaxes",
+    "Shears",
+    "Shields",
+    "Shovels",
+    "Spears",
+    "Swords",
+    "Tridents"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": []
+}

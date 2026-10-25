@@ -1,0 +1,21 @@
+{
+  "name": "Projectile Protection",
+  "draft": false,
+  "source": "Vanilla",
+  "category": "Protection",
+  "costRule": "free",
+  "description": "<p>Reduces damage from projectiles such as arrows and thrown tridents.</p>",
+  "maxLevel": 4,
+  "items": [
+    "Boots",
+    "Chestplates",
+    "Helmets",
+    "Leggings"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [
+    "Protection",
+    "Blast Protection",
+    "Fire Protection"
+  ]
+}

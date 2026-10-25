@@ -1,0 +1,16 @@
+{
+  "name": "Piercing",
+  "draft": false,
+  "source": "Vanilla",
+  "category": "Trajectory",
+  "costRule": "free",
+  "description": "<p>Crossbow arrows can pass through multiple targets and shields. Each level adds another target they can pass through.</p>",
+  "maxLevel": 4,
+  "items": [
+    "Crossbows"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [
+    "Multishot"
+  ]
+}

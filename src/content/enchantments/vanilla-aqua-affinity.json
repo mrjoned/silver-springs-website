@@ -1,0 +1,14 @@
+{
+  "name": "Aqua Affinity",
+  "draft": false,
+  "source": "Vanilla",
+  "category": "Utility",
+  "costRule": "free",
+  "description": "<p>Mine underwater without the usual underwater mining speed penalty.</p>",
+  "maxLevel": 1,
+  "items": [
+    "Helmets"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": []
+}

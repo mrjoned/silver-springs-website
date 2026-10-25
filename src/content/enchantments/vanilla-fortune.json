@@ -1,0 +1,19 @@
+{
+  "name": "Fortune",
+  "draft": false,
+  "source": "Vanilla",
+  "category": "Utility",
+  "costRule": "free",
+  "description": "<p>Increases drops from blocks that support Fortune, such as ores.</p>",
+  "maxLevel": 3,
+  "items": [
+    "Axes",
+    "Hoes",
+    "Pickaxes",
+    "Shovels"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [
+    "Silk Touch"
+  ]
+}

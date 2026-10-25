@@ -1,0 +1,19 @@
+{
+  "name": "Silk Touch",
+  "draft": false,
+  "source": "Vanilla",
+  "category": "Utility",
+  "costRule": "free",
+  "description": "<p>Lets suitable blocks drop themselves instead of their usual drops.</p>",
+  "maxLevel": 1,
+  "items": [
+    "Axes",
+    "Hoes",
+    "Pickaxes",
+    "Shovels"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [
+    "Fortune"
+  ]
+}

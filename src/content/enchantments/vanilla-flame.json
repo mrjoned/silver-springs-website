@@ -1,0 +1,14 @@
+{
+  "name": "Flame",
+  "draft": false,
+  "source": "Vanilla",
+  "category": "Damage",
+  "costRule": "free",
+  "description": "<p>Fired arrows set targets on fire.</p>",
+  "maxLevel": 1,
+  "items": [
+    "Bows"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": []
+}

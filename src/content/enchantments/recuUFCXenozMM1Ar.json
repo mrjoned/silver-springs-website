@@ -1,7 +1,7 @@
 {
   "name": "Soul Speed",
   "draft": false,
-  "source": "Vanilla",
+  "source": "Enhanced Vanilla",
   "category": "Traversal",
   "costRule": "free",
   "description": "<p>[term:arcanumbonus][purple]Arcanum Bonuses[/purple][/term]:</p><p>No longer consumes durability.</p>",

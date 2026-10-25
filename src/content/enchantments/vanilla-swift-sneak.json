@@ -1,0 +1,14 @@
+{
+  "name": "Swift Sneak",
+  "draft": false,
+  "source": "Vanilla",
+  "category": "Travel",
+  "costRule": "free",
+  "description": "<p>Move faster while sneaking.</p>",
+  "maxLevel": 3,
+  "items": [
+    "Leggings"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": []
+}

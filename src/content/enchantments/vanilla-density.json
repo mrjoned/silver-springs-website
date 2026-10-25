@@ -1,0 +1,20 @@
+{
+  "name": "Density",
+  "draft": false,
+  "source": "Vanilla",
+  "category": "Damage",
+  "costRule": "free",
+  "description": "<p>Adds extra damage to mace smash attacks based on how far you fall.</p>",
+  "maxLevel": 5,
+  "items": [
+    "Maces"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [
+    "Sharpness",
+    "Smite",
+    "Bane of Arthropods",
+    "Impaling",
+    "Breach"
+  ]
+}

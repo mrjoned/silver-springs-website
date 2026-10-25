@@ -1,0 +1,14 @@
+{
+  "name": "Luck of the Sea",
+  "draft": false,
+  "source": "Vanilla",
+  "category": "Utility",
+  "costRule": "free",
+  "description": "<p>Improves the chance of fishing up treasure and reduces junk catches. Treasure still requires suitable open water.</p>",
+  "maxLevel": 3,
+  "items": [
+    "Fishing Rods"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": []
+}

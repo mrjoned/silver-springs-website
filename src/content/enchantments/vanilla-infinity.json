@@ -1,0 +1,16 @@
+{
+  "name": "Infinity",
+  "draft": false,
+  "source": "Vanilla",
+  "category": "Utility",
+  "costRule": "free",
+  "description": "<p>Fire ordinary arrows without consuming them, as long as you have an arrow in your inventory. Special arrows are still consumed.</p>",
+  "maxLevel": 1,
+  "items": [
+    "Bows"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": [
+    "Mending"
+  ]
+}

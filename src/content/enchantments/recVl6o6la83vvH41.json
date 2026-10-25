@@ -1,7 +1,7 @@
 {
   "name": "Impaling",
   "draft": false,
-  "source": "Vanilla",
+  "source": "Enhanced Vanilla",
   "category": "Damage",
   "costRule": "free",
   "description": "<p>[term:arcanumbonus][purple]Arcanum Bonuses[/purple][/term]:</p><p>Additionally applies to Drowned, and to any target in water or rain, not just aquatic mobs.</p>",

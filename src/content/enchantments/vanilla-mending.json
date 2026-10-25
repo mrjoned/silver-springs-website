@@ -1,0 +1,32 @@
+{
+  "name": "Mending",
+  "draft": false,
+  "source": "Vanilla",
+  "category": "Utility",
+  "costRule": "free",
+  "description": "<p>Uses collected experience to repair this item while it is held or equipped.</p>",
+  "maxLevel": 1,
+  "items": [
+    "Axes",
+    "Boots",
+    "Bows",
+    "Chestplates",
+    "Crossbows",
+    "Elytra",
+    "Fishing Rods",
+    "Flint and Steel",
+    "Helmets",
+    "Hoes",
+    "Leggings",
+    "Maces",
+    "Pickaxes",
+    "Shears",
+    "Shields",
+    "Shovels",
+    "Spears",
+    "Swords",
+    "Tridents"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": []
+}

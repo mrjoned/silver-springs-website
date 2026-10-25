@@ -1,0 +1,14 @@
+{
+  "name": "Channeling",
+  "draft": false,
+  "source": "Vanilla",
+  "category": "Utility",
+  "costRule": "free",
+  "description": "<p>Calls down lightning when a thrown trident hits an exposed target during a thunderstorm. On this server it also works with Riptide, as described in the Riptide entry.</p>",
+  "maxLevel": 1,
+  "items": [
+    "Tridents"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": []
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Looting",
+  "draft": false,
+  "source": "Vanilla",
+  "category": "Utility",
+  "costRule": "free",
+  "description": "<p>Increases eligible mob drops and the chance of certain rare drops.</p>",
+  "maxLevel": 3,
+  "items": [
+    "Spears",
+    "Swords"
+  ],
+  "incompatibleRunecrafted": [],
+  "incompatibleVanilla": []
+}
