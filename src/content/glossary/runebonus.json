@@ -1,0 +1,5 @@
+{
+  "key": "runebonus",
+  "description": "A bonus applied when equipped with the max level of this enchantment, which is only accessible by Runecrafting it and applying it to an item with the maximum vanilla level of the enchantment.",
+  "draft": false
+}
