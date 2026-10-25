@@ -1,10 +1,20 @@
 {
-  "sourceRecordId": "recxTHMGh6aysJTs9",
-  "draft": false,
   "name": "Transmuting",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Yield",
-  "description": "<p>Sneak right clicking an <strong>appropriate resource block</strong> attunes to it. Mining other appropriate blocks converts their drops into those of the attuned block at the <strong>equivalent exchange rate</strong>.</p><pre><code>Pickaxes: All ores except Emerald and Ancient Debris.\nAxes: All logs.\nShovels: Mycelium, Podzol, Clay, Red Sand, Soul Sand, and Mud.\nShears: All leaves.</code></pre><blockquote><p>For example, a Diamond sells for 8x as much as Raw Gold, so mining Gole Ore while attuned to Diamond Ore has a 1/8 chance to drop a diamond, while mining Diamond Ore while attuned to Gold Ore drops 8 Raw Gold.</p></blockquote>",
+  "costRule": "per-level",
+  "description": "<p>Sneak right clicking an [effect:block][dark-gray]appropriate resource block[/dark-gray][/effect] attunes to it. Mining other [effect:block][dark-gray]appropriate blocks[/dark-gray][/effect] converts their drops into those of the attuned block at the [effect:equiv][dark-gray]equivalent exchange[/dark-gray][/effect] rate.</p>",
+  "effects": [
+    {
+      "key": "block",
+      "explanation": "Pickaxes: All ores except Emerald and Ancient Debris.\nAxes: All Logs.\nShovels: Mycelium, Podzol, Clay, Rooted Dirt, Red Sand, Soul Sand, Gravel, and Mud.\nShears: All Leaves."
+    },
+    {
+      "key": "equiv",
+      "explanation": "For example, a Diamond sells for 8x as much as a Raw Gold, so mining Gole Ore while attuned to Diamond Ore has a 1/8 chance to drop a diamond, while mining Diamond Ore while attuned to Gold Ore drops 8 Raw Gold."
+    }
+  ],
   "maxLevel": 1,
   "items": [
     "Pickaxes",
@@ -12,20 +22,17 @@
     "Shovels",
     "Shears"
   ],
-  "incompatibleRunecrafted": [],
-  "incompatibleVanilla": [
-    "Silk Touch",
-    "Fortune"
-  ],
-  "discoverer": "Starmarsh",
-  "researchers": [],
-  "discoveredDate": "2023-08-20",
-  "discoveredBy": "Starmarsh on 8/20/23 7:15 AM",
-  "runeTags": [],
   "rune1": "Opulence",
   "rune2": "Arcanum",
   "rune3": "Stones",
   "rune4": "Stones",
   "rune5": "Stones",
-  "costRule": "per-level"
+  "incompatibleVanilla": [
+    "Silk Touch",
+    "Fortune"
+  ],
+  "discoverer": "Starmarsh",
+  "discoveredDate": "2023-08-20",
+  "discoveredBy": "Starmarsh on 8/20/23 7:15 AM",
+  "sourceRecordId": "recxTHMGh6aysJTs9"
 }
