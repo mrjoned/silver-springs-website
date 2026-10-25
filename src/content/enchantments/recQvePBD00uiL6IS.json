@@ -1,27 +1,24 @@
 {
-  "sourceRecordId": "recQvePBD00uiL6IS",
-  "draft": false,
   "name": "Paradigm of Envy",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Paradigm",
-  "description": "<p>An item with a different Paradigm can be inserted into this one to gain only its positive effects, but your maximum health is reduced by 40%.</p>",
+  "costRule": "per-level",
+  "description": "<p>An item with a different Paradigm can be [term:insert][dark-gray]inserted[/dark-gray][/term] into this one to gain only its positive effects, [dark-red]<em>but</em>[/dark-red] your maximum health is reduced by 40%.</p>",
   "maxLevel": 1,
   "items": [
     "Helmets"
   ],
-  "incompatibleRunecrafted": [
-    "Other Paradigms"
-  ],
-  "incompatibleVanilla": [],
-  "discoverer": "Maidl",
-  "researchers": [],
-  "discoveredDate": "2023-09-04",
-  "discoveredBy": "Maidl on 9/4/23, 6:08 AM",
-  "runeTags": [],
   "rune1": "Void",
   "rune2": "Arcanum",
   "rune3": "Opulence",
   "rune4": "Vitality",
   "rune5": "Void",
-  "costRule": "per-level"
+  "incompatibleRunecrafted": [
+    "Other Paradigms"
+  ],
+  "discoverer": "Maidl",
+  "discoveredDate": "2023-09-04",
+  "discoveredBy": "Maidl on 9/4/23, 6:08 AM",
+  "sourceRecordId": "recQvePBD00uiL6IS"
 }
