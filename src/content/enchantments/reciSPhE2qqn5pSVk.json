@@ -1,28 +1,35 @@
 {
-  "sourceRecordId": "reciSPhE2qqn5pSVk",
-  "draft": false,
   "name": "Skewering",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Splashing",
-  "description": "<p>Attacks gain +1 range and <em>pierce</em> in a 3-prong cone behind the target for 35-75% damage. Throws bypass shields and <em>pierce</em> up to 2-4 enemies for full damage. <em>Pierced</em> enemies are briefly slowed.</p>",
+  "costRule": "per-level",
+  "description": "<p>Attacks gain +1 range and [dark-green]<em>pierce</em>[/dark-green] in a 3-prong cone behind the target for [effect:percent][dark-gray]35-75% damage[/dark-gray][/effect]. Throws bypass shields and [dark-green]<em>pierce</em>[/dark-green] +[effect:enemies][dark-gray]2-4 enemies[/dark-gray][/effect]. [dark-green]<em>Pierced</em>[/dark-green] enemies are briefly slowed.</p>",
+  "effects": [
+    {
+      "key": "percent",
+      "explanation": "Level I: 35%\nLevel II: 55%\nLevel III: 75%"
+    },
+    {
+      "key": "enemies",
+      "explanation": "Level I: 2 enemies\nLevel II: 3 enemies\nLevel III: 4 enemies"
+    }
+  ],
   "maxLevel": 3,
   "items": [
     "Tridents"
   ],
-  "incompatibleRunecrafted": [
-    "Chaining",
-    "Dreadnought"
-  ],
-  "incompatibleVanilla": [],
-  "discoverer": "Schwump",
-  "researchers": [],
-  "discoveredDate": "2023-09-11",
-  "discoveredBy": "Schwump on 9/11/23 5:35 AM ",
-  "runeTags": [],
   "rune1": "Tides",
   "rune2": "Kinesis",
   "rune3": "Gusts",
   "rune4": "Mortus",
   "rune5": "Chills",
-  "costRule": "per-level"
+  "incompatibleRunecrafted": [
+    "Chaining",
+    "Dreadnought"
+  ],
+  "discoverer": "Schwump",
+  "discoveredDate": "2023-09-11",
+  "discoveredBy": "Schwump on 9/11/23 5:35 AM ",
+  "sourceRecordId": "reciSPhE2qqn5pSVk"
 }
