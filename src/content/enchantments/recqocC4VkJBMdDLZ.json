@@ -1,14 +1,25 @@
 {
-  "sourceRecordId": "recqocC4VkJBMdDLZ",
-  "draft": false,
   "name": "Sundering",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Damage",
-  "description": "<p>Attacks deal +1❤ damage and <em>sunder</em> enemies, stacking 3 times. Throws and riptides charge twice as fast while a nearby enemy is <em>sundered</em>, then expunge <em>sunder</em> stacks on-impact, dealing +2-4❤ per stack.</p>",
+  "costRule": "per-level",
+  "description": "<p>Attacks deal +1❤️ damage and stack [blue]<em>sunder</em>[/blue] on enemies 3 times. Throws and riptides charge twice as fast while a nearby enemy is [blue]<em>sundered</em>[/blue] and expunge the stacks on-hit, dealing +[effect:hearts][dark-gray]2-4❤️[/dark-gray][/effect] damage per stack.</p>",
+  "effects": [
+    {
+      "key": "hearts",
+      "explanation": "Level I: 2❤️\nLevel II: 3❤️\nLevel III: 4❤️"
+    }
+  ],
   "maxLevel": 3,
   "items": [
     "Tridents"
   ],
+  "rune1": "Tides",
+  "rune2": "Echoes",
+  "rune3": "Tides",
+  "rune4": "Kinesis",
+  "rune5": "Mortus",
   "incompatibleRunecrafted": [
     "Extinction",
     "Windup",
@@ -18,14 +29,7 @@
     "Impaling"
   ],
   "discoverer": "Brittt",
-  "researchers": [],
   "discoveredDate": "2023-09-09",
   "discoveredBy": "Brittt on 9/9/23, 3:32 AM ",
-  "runeTags": [],
-  "rune1": "Tides",
-  "rune2": "Echoes",
-  "rune3": "Tides",
-  "rune4": "Kinesis",
-  "rune5": "Mortus",
-  "costRule": "per-level"
+  "sourceRecordId": "recqocC4VkJBMdDLZ"
 }
