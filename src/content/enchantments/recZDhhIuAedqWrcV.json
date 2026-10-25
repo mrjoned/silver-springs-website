@@ -1,27 +1,38 @@
 {
-  "sourceRecordId": "recZDhhIuAedqWrcV",
-  "draft": false,
   "name": "Impetus of Hephaestus",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Impetus",
-  "description": "<p>You can <strong>hand-forge</strong> <em>artisan weapons</em> using up to 2 materials and 1 gem. They&#39;re unenchantable and low durability, but deal high damage, apply bonus effects per-component, and 🔨**<em>strike the iron</em>**_ _every 10th hit, amplifying effects in +2 radius:</p><ul><li><p>Gem: Stacks the gem&#39;s stat upon 🔨**<em>striking the iron</em>**.</p></li><li><p>Wood: Attacks 20% faster or 🔨<strong>50% faster for 5 seconds.</strong></p></li><li><p>Stone: Attacks stun briefly or 🔨<strong>for 2 seconds.</strong></p></li><li><p>Gold: Kills drop +3x of 🔨**+5x **loot.</p></li><li><p>Iron: Chains 2❤️ volcanic lightning or <strong>🔨an 8❤️ eruption.</strong></p></li><li><p>Diamond: 🔨**Striking the iron **stacks forged gems stats twice.</p></li><li><p>Netherite: 3x durability. Can forge with 3 materials/gems.</p></li><li><p>**Hand-forge: **Right-click a weapon material onto a stick in your inventory to forge a sword, or shift-right-click to forge an axe. Further materials and gems can be right-clicked onto an artisan weapon to forge them in. Forged gems are dropped when the weapon breaks.</p></li></ul>",
+  "costRule": "per-level",
+  "description": "<p>You can [effect:hand][dark-gray]hand-forge[/dark-gray][/effect] <em>artisan weapons</em> using up to [red]2 materials[/red]/[blue]1 gem[/blue]. They're unenchantable and low durability, but deal high damage, apply [gradient:blue:red]bonus effects[/gradient], and [effect:strike][orange]🔨strike the iron[/orange][/effect] every 10th hit:</p><ul><li><p>[blue]Gem[/blue]: 🔨[effect:stack][orange]Stack[/orange][/effect] the gem's stat.</p></li><li><p>[red]Wood[/red]: Attacks 20% faster or [orange]🔨50% faster for 5 seconds[orange].</p></li><li><p>[red]Stone[/red]: Attacks apply a brief or [orange]🔨2 second [term:stun]stun[/orange][/term]<strong>.</strong></p></li><li><p>[red]Gold[/red]: Kills drop +3x of [orange]🔨+5x[/orange] loot.</p></li><li><p>[red]Iron[/red]: Chain 2❤️ volcanic lightning or [orange]🔨an 8❤️ eruption[/orange]<strong>.</strong></p></li><li><p>[red]Diamond[/red]: [orange]🔨Stack forged gems stats twice[/orange].</p></li><li><p>[red]Netherite[/red]: 3x durability. Can forge with 3 [red]materials[/red] and [blue]gems[/blue].</p></li></ul><p>[dark-gray]\"Show them that practice make more than perfect.\"[/dark-gray]</p>",
+  "effects": [
+    {
+      "key": "hand",
+      "explanation": "Right-click a weapon material onto a stick in your inventory to forge a sword, or shift right click to forge an axe. Further materials and gems can be right-clicked onto an artisan weapon to forge them in. Artisan weapons can contain 2 materials and 1 gem by default. Forged gems are dropped when the weapon breaks."
+    },
+    {
+      "key": "strike",
+      "explanation": "Strikes in +2 radius."
+    },
+    {
+      "key": "stack",
+      "explanation": "Luck stacks up to 8 times. Attacks with non-artisan weapons cause stacks to decay."
+    }
+  ],
   "maxLevel": 1,
   "items": [
     "Leggings"
   ],
-  "incompatibleRunecrafted": [
-    "Other Impetuses"
-  ],
-  "incompatibleVanilla": [],
-  "discoverer": "TheJ_Team",
-  "researchers": [],
-  "discoveredDate": "2025-05-28",
-  "discoveredBy": "TheJ_Team on 05/28/25",
-  "runeTags": [],
   "rune1": "Stones",
   "rune2": "Cinders",
   "rune3": "Sparks",
   "rune4": "Opulence",
   "rune5": "Kinesis",
-  "costRule": "per-level"
+  "incompatibleRunecrafted": [
+    "Other Impetuses"
+  ],
+  "discoverer": "TheJ_Team",
+  "discoveredDate": "2025-05-28",
+  "discoveredBy": "TheJ_Team on 05/28/25",
+  "sourceRecordId": "recZDhhIuAedqWrcV"
 }
