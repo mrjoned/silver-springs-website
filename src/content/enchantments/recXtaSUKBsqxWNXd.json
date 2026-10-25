@@ -1,30 +1,27 @@
 {
-  "sourceRecordId": "recXtaSUKBsqxWNXd",
-  "draft": false,
   "name": "Voltaic",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Parry",
-  "description": "<p><strong>Parries</strong> stack <strong><em>static</em></strong> 3 times. Once stacked, your next attack discharges in a cone, dealing 2❤️ damage and <strong>stunning</strong> for 2 seconds.</p>",
+  "costRule": "per-level",
+  "description": "<p>[term:parry][dark-gray]Parries[/dark-gray][/term] stack [yellow]<em>static</em>[/yellow] 3 times. Once stacked, your next attack discharges in a cone, dealing 2❤️ damage and [term:stun][dark-gray]stunning[/dark-gray][/term] for 2 seconds.</p>",
   "maxLevel": 1,
   "items": [
     "Shields"
   ],
-  "incompatibleRunecrafted": [
-    "Riposte",
-    "Fortify"
-  ],
-  "incompatibleVanilla": [],
-  "discoverer": "TheJ_Team",
-  "researchers": [
-    "Starmarsh"
-  ],
-  "discoveredDate": "2025-06-09",
-  "discoveredBy": "",
-  "runeTags": [],
   "rune1": "Moments",
   "rune2": "Aegis",
   "rune3": "Echoes",
   "rune4": "Mortus",
   "rune5": "Sparks",
-  "costRule": "per-level"
+  "incompatibleRunecrafted": [
+    "Riposte",
+    "Fortify"
+  ],
+  "discoverer": "TheJ_Team",
+  "researchers": [
+    "Starmarsh"
+  ],
+  "discoveredDate": "2025-06-09",
+  "sourceRecordId": "recXtaSUKBsqxWNXd"
 }
