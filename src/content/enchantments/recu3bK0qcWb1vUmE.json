@@ -1,29 +1,33 @@
 {
-  "sourceRecordId": "recu3bK0qcWb1vUmE",
-  "draft": false,
   "name": "Impetus of Zeus",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Impetus",
-  "description": "<p>While gliding, you gather <em>static charge</em>, and temporarily slow down while aiming ranged weapons. At full charge, your next fired projectile <strong>becomes lightning</strong>.</p><ul><li><strong>Becomes Lightning</strong>: Lightning projectiles gain trueshot and strike lightning upon colliding. If it strikes an enemy, the lightning deals the same damage as the projectiles.</li></ul>",
+  "costRule": "per-level",
+  "description": "<p>While gliding, you gather [yellow]<em>static charge</em>[/yellow], and temporarily slow down while aiming a ranged weapon or spyglass. At full charge, your next fired projectile [effect:lightning][yellow]becomes lightning[/yellow][/effect].</p><p>[dark-gray]\"Strike them down, for they are beneath me.\"[/dark-gray]</p>",
+  "effects": [
+    {
+      "key": "lightning",
+      "explanation": "Lightning projectiles gain trueshot and strike lightning upon colliding. If it strikes an enemy, the lightning deals the same damage as the projectiles."
+    }
+  ],
   "maxLevel": 1,
   "items": [
     "Leggings"
   ],
+  "rune1": "Gusts",
+  "rune2": "Sparks",
+  "rune3": "Moments",
+  "rune4": "Gusts",
+  "rune5": "Sparks",
   "incompatibleRunecrafted": [
     "Other Impetuses"
   ],
-  "incompatibleVanilla": [],
   "discoverer": "Maidl",
   "researchers": [
     "ElectricSparx"
   ],
   "discoveredDate": "2025-05-31",
   "discoveredBy": "Maidl and ElectricSparx on 05/31/25",
-  "runeTags": [],
-  "rune1": "Gusts",
-  "rune2": "Sparks",
-  "rune3": "Moments",
-  "rune4": "Gusts",
-  "rune5": "Sparks",
-  "costRule": "per-level"
+  "sourceRecordId": "recu3bK0qcWb1vUmE"
 }
