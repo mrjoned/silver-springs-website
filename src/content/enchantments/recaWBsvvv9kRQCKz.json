@@ -1,28 +1,23 @@
 {
-  "sourceRecordId": "recaWBsvvv9kRQCKz",
-  "draft": false,
   "name": "Riposte",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Parry",
-  "description": "<p>After a <strong>parry</strong>, your next attack automatically critically strikes.</p><blockquote><p><strong>Parry</strong>: blocking &lt;=0.3 seconds before a strike</p></blockquote>",
+  "costRule": "per-level",
+  "description": "<p>After [term:parry][dark-gray]parrying[/dark-gray][/term], your next attack automatically critically strikes.</p>",
   "maxLevel": 1,
   "items": [
     "Shields"
   ],
-  "incompatibleRunecrafted": [
-    "Fortify",
-    "Voltaic"
-  ],
-  "incompatibleVanilla": [],
-  "discoverer": "",
-  "researchers": [],
-  "discoveredDate": "",
-  "discoveredBy": "",
-  "runeTags": [],
   "rune1": "Moments",
   "rune2": "Aegis",
   "rune3": "Moments",
   "rune4": "Mortus",
   "rune5": "Mortus",
-  "costRule": "per-level"
+  "incompatibleRunecrafted": [
+    "Fortify",
+    "Voltaic"
+  ],
+  "discoveredDate": "2026-10-25",
+  "sourceRecordId": "recaWBsvvv9kRQCKz"
 }
