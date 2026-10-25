@@ -1,0 +1,5 @@
+{
+  "key": "stealth",
+  "description": "Stealthed units are fully invisible and can't be targeted by enemies. Stealths end upon using items or dealing direct damage.",
+  "draft": false
+}
