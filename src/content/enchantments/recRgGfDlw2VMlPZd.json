@@ -7,7 +7,7 @@
   "description": "<p>Your swings fire as [effect:wave][dark-gray]piercing waves[/dark-gray][/effect], and you can [effect:hover][dark-gray]hover[/dark-gray][/effect] at full health, [dark-red]<em>but</em>[/dark-red] you strike yourself, bypassing armor, when your waves miss.</p>",
   "effects": [
     {
-      "key": "waves",
+      "key": "wave",
       "explanation": "Weapons with lower attack speed fire wider waves and ones with higher range fire waves which travel faster."
     },
     {
