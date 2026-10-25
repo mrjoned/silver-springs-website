@@ -1,10 +1,10 @@
 {
-  "sourceRecordId": "recVl6o6la83vvH41",
-  "draft": false,
   "name": "Impaling",
+  "draft": false,
   "source": "Vanilla",
   "category": "Damage",
-  "description": "<p>Now works vs. any mob in water/rain regardless of if it&#39;s aquatic</p>",
+  "costRule": "free",
+  "description": "<p>[term:arcanumbonus][purple]Arcanum Bonuses[/purple][/term]:</p><p>Additionally applies to Drowned, and to any target in water or rain, not just aquatic mobs.</p>",
   "maxLevel": 5,
   "items": [
     "Tridents"
@@ -15,16 +15,6 @@
     "Extinction",
     "Ballast"
   ],
-  "incompatibleVanilla": [],
-  "discoverer": "",
-  "researchers": [],
-  "discoveredDate": "",
-  "discoveredBy": "",
-  "runeTags": [],
-  "rune1": "",
-  "rune2": "",
-  "rune3": "",
-  "rune4": "",
-  "rune5": "",
-  "costRule": "free"
+  "discoveredDate": "2026-10-24",
+  "sourceRecordId": "recVl6o6la83vvH41"
 }
