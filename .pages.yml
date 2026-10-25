@@ -348,12 +348,10 @@ content:
     label: Incompatible Runecrafted enchantments / groups
     type: string
     list: true
-    default: []
   - name: incompatibleVanilla
     label: Incompatible Vanilla enchantments
     type: string
     list: true
-    default: []
   - name: discoverer
     label: Discoverer
     type: string
