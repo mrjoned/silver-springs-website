@@ -1,30 +1,34 @@
 {
-  "sourceRecordId": "recKaSdnLsUfBlfyC",
-  "draft": false,
   "name": "Tempest",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Sweeping",
-  "description": "<p>On-kill, gain a <em>tempest charge.</em> Right click to expend it to dash forward 5 blocks or to the first enemy, then slice for 2-4❤️ damage.</p>",
+  "costRule": "per-level",
+  "description": "<p>On-kill, gain a [aqua]<em>tempest charge</em>[/aqua]<em>.</em> Right click to expend it to dash forward 5 blocks or to the first enemy, then slice for [effect:dmg][dark-gray]2-4❤️ damage[/dark-gray][/effect].</p>",
+  "effects": [
+    {
+      "key": "dmg",
+      "explanation": "Increases by 1❤️ per cleave performed this combat."
+    }
+  ],
   "maxLevel": 1,
   "items": [
     "Axes"
   ],
+  "rune1": "Mortus",
+  "rune2": "Gusts",
+  "rune3": "Kinesis",
+  "rune4": "Mortus",
+  "rune5": "Mortus",
   "incompatibleRunecrafted": [
     "Howling",
     "Chainsaw"
   ],
-  "incompatibleVanilla": [],
   "discoverer": "Maidl",
   "researchers": [
     "ElectricSparx"
   ],
   "discoveredDate": "2025-06-04",
   "discoveredBy": "Maidl and ElectricSparx on 06/04/25",
-  "runeTags": [],
-  "rune1": "Mortus",
-  "rune2": "Gusts",
-  "rune3": "Kinesis",
-  "rune4": "Mortus",
-  "rune5": "Mortus",
-  "costRule": "per-level"
+  "sourceRecordId": "recKaSdnLsUfBlfyC"
 }
