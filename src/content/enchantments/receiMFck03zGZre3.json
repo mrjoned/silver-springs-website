@@ -1,29 +1,33 @@
 {
-  "sourceRecordId": "receiMFck03zGZre3",
-  "draft": false,
   "name": "Impetus of Hades",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Impetus",
-  "description": "<ul><li>While sneaking, enemies only detect you while within 10 blocks and facing you.</li><li>You can double sneak while undetected or out of enemy sight to enter <strong>chthonic form</strong> for 4 seconds. Strikes that end <strong>chthonic form</strong> critically strike and deal +6♥️ magic damage.<ul><li><strong>Chthonic Form</strong>: Stealth by descending into shadows, gaining +50% speed and +1 step height. Stealths end upon using items or dealing direct damage.</li></ul></li></ul>",
+  "costRule": "per-level",
+  "description": "<ul><li><p>While sneaking, enemies only detect you while within 10 blocks and facing you.</p></li><li><p>You can double sneak while undetected or out of enemy sight to enter [effect:form][purple]chthonic form[/purple][/effect] for 4 seconds. Strikes that end [purple]<em>chthonic form</em>[purple] critically strike and deal +6♥️ magic damage.</p></li></ul><p>[dark-gray]<em>\"Become kin with darkness. Deliver them to me.\"</em>[/dark-gray]</p>",
+  "effects": [
+    {
+      "key": "form",
+      "explanation": "Stealth by descending into shadows, gaining +50% speed and +1 step height. Stealths end upon using items or dealing direct damage."
+    }
+  ],
   "maxLevel": 1,
   "items": [
     "Leggings"
   ],
+  "rune1": "Void",
+  "rune2": "Sparks",
+  "rune3": "Void",
+  "rune4": "Mortus",
+  "rune5": "Arcanum",
   "incompatibleRunecrafted": [
     "Other Impetuses"
   ],
-  "incompatibleVanilla": [],
   "discoverer": "TheJ_Team",
   "researchers": [
     "TroyTheCrafter"
   ],
   "discoveredDate": "2025-05-26",
   "discoveredBy": "TheJ_Team and TroyTheCrafter on 05/26/25",
-  "runeTags": [],
-  "rune1": "Void",
-  "rune2": "Sparks",
-  "rune3": "Void",
-  "rune4": "Mortus",
-  "rune5": "Arcanum",
-  "costRule": "per-level"
+  "sourceRecordId": "receiMFck03zGZre3"
 }
