@@ -162,6 +162,16 @@ main,.wrap{max-width:none}main{padding:22px 20px 40px}body:has(>.wrap){padding:2
 #runecrafting-planner .rcp-gem-total{display:flex;justify-content:space-between;gap:10px;border:1px solid var(--rcp-line);border-radius:9px;padding:10px;background:#171923}
 #runecrafting-planner .rcp-gem-summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
 @media(max-width:420px){#runecrafting-planner .rcp-gem-slots{grid-template-columns:1fr}}
+
+#runecrafting-planner select[hidden]{display:none}
+#runecrafting-planner .rcp-custom{position:relative;min-width:0;flex:1}
+#runecrafting-planner .rcp-trigger{width:100%;padding:10px;border:1px solid #61546d;border-radius:8px;background:#11121b;color:#f7f4fa;font:inherit;text-align:left;cursor:pointer}
+#runecrafting-planner .rcp-menu{position:absolute;top:calc(100% + 5px);left:0;width:100%;min-width:150px;max-height:300px;overflow:auto;background:#171923;border:1px solid #61546d;border-radius:9px;box-shadow:0 12px 30px #0008;padding:5px;z-index:50}
+#runecrafting-planner .rcp-menu button{display:block;width:100%;border:0;border-radius:5px;padding:9px 10px;background:transparent;color:#f7f4fa;font:inherit;text-align:left;cursor:pointer}
+#runecrafting-planner .rcp-menu button[aria-selected=true]{background:#322437}
+#runecrafting-planner .rcp-menu button:hover,#runecrafting-planner .rcp-menu button:focus-visible{background:#493352;color:#fff;outline:2px solid #c48aff;outline-offset:-2px}
+#runecrafting-planner .rcp-option-group{padding:8px 10px 4px;color:#c48aff;font-size:.78rem;font-weight:bold}
+#runecrafting-planner .rcp-trigger:focus-visible{outline:2px solid #c48aff;outline-offset:2px}
 </style>
   <div class="rcp-shell">
     <div class="rcp-top">
@@ -375,6 +385,7 @@ main,.wrap{max-width:none}main{padding:22px 20px 40px}body:has(>.wrap){padding:2
     const item={id:state.nextId++, type, enchants:[], editingType:false}; initGems(item); state.items.push(item);
     render();
     $('rcp-new-type').value = '';
+    enhanceSelects();
     $('rcp-add-item').disabled = true;
   }
   function addEnchant(itemId) {
@@ -385,6 +396,55 @@ main,.wrap{max-width:none}main{padding:22px 20px 40px}body:has(>.wrap){padding:2
     item.enchants.push({name:'', level:1});
     render();
   }
+  let menuId = 0;
+  function enhanceSelects() {
+    root.querySelectorAll('select').forEach(select => {
+      let wrap = select.nextElementSibling;
+      if (!wrap?.classList.contains('rcp-custom')) {
+        wrap = document.createElement('div'); wrap.className = 'rcp-custom';
+        const id = 'rcp-menu-' + ++menuId;
+        wrap.innerHTML = `<button type="button" class="rcp-trigger" aria-haspopup="listbox" aria-expanded="false" aria-controls="${id}"></button><div class="rcp-menu" id="${id}" role="listbox" hidden></div>`;
+        select.after(wrap); select.hidden = true;
+        const trigger = wrap.firstElementChild, menu = wrap.lastElementChild;
+        const close = () => {menu.hidden = true; trigger.setAttribute('aria-expanded','false');};
+        const open = () => {
+          root.querySelectorAll('.rcp-menu').forEach(m => {m.hidden=true;m.previousElementSibling.setAttribute('aria-expanded','false');});
+          menu.hidden=false;trigger.setAttribute('aria-expanded','true');
+          (menu.querySelector('[aria-selected="true"]:not(:disabled)') || menu.querySelector('button:not(:disabled)'))?.focus();
+        };
+        trigger.onclick = () => menu.hidden ? open() : close();
+        trigger.onkeydown = ev => {if(['ArrowDown','ArrowUp'].includes(ev.key)){ev.preventDefault();open();}};
+        menu.onclick = ev => {
+          const option=ev.target.closest('[data-option]'); if(!option || option.disabled)return;
+          const identity = select.id ? '#'+select.id : `select[data-action="${select.dataset.action}"][data-item="${select.dataset.item}"][data-index="${select.dataset.index}"]`;
+          select.selectedIndex=Number(option.dataset.option); close();
+          select.dispatchEvent(new Event('change',{bubbles:true}));
+          enhanceSelects(); root.querySelector(identity)?.nextElementSibling?.querySelector('button')?.focus();
+        };
+        menu.onkeydown = ev => {
+          const options=[...menu.querySelectorAll('button:not(:disabled)')], i=options.indexOf(document.activeElement);
+          if(ev.key==='Escape'){ev.preventDefault();close();trigger.focus();}
+          if(ev.key==='Tab')close();
+          if(['ArrowDown','ArrowUp','Home','End'].includes(ev.key)){
+            ev.preventDefault(); const next=ev.key==='Home'?0:ev.key==='End'?options.length-1:(i+(ev.key==='ArrowDown'?1:-1)+options.length)%options.length; options[next]?.focus();
+          }
+        };
+        wrap.onfocusout = ev => {if(!wrap.contains(ev.relatedTarget))close();};
+      }
+      const trigger=wrap.firstElementChild,menu=wrap.lastElementChild;
+      const label=select.labels?.[0]?.textContent || select.closest('.rcp-field')?.querySelector('label')?.textContent || 'Choose an option';
+      trigger.textContent=(select.selectedOptions[0]?.textContent || 'Choose…')+' ▾';
+      trigger.setAttribute('aria-label',label+': '+(select.selectedOptions[0]?.textContent||'')); trigger.disabled=select.disabled;
+      menu.setAttribute('aria-label',label);
+      let group='';menu.innerHTML=[...select.options].map((opt,i)=>{
+        const name=opt.parentElement.tagName==='OPTGROUP'?opt.parentElement.label:'';
+        const heading=name!==group&&name?`<div class="rcp-option-group">${esc(name)}</div>`:'';group=name;
+        return heading+`<button type="button" role="option" data-option="${i}" aria-selected="${opt.selected}" ${opt.disabled||opt.parentElement.disabled?'disabled':''}>${esc(opt.textContent)}</button>`;
+      }).join('');
+    });
+  }
+  document.addEventListener('click',ev=>{if(!ev.target.closest('.rcp-custom'))root.querySelectorAll('.rcp-menu').forEach(m=>{m.hidden=true;m.previousElementSibling.setAttribute('aria-expanded','false');});});
+
   function render() {
     const equipmentSelect = $('rcp-new-type');
     const previousEquipment = equipmentSelect.value;
@@ -419,6 +479,7 @@ main,.wrap{max-width:none}main{padding:22px 20px 40px}body:has(>.wrap){padding:2
         </article>`;
       }).join('');
     }
+    enhanceSelects();
     renderTotals();
     if (state.reviewOpen) renderReview();
   }
