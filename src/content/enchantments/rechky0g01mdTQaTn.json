@@ -1,10 +1,10 @@
 {
-  "sourceRecordId": "rechky0g01mdTQaTn",
-  "draft": false,
   "name": "Magnetism",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Excavation",
-  "description": "<p>Drops from mined blocks are placed directly in your inventory. When mining an ore, the resources are siphoned from the entire vein, leaving behind cobbled blocks. </p>",
+  "costRule": "per-level",
+  "description": "<p>Drops from blocks are placed directly in your inventory. When mining an ore, the resources are siphoned from the entire vein, leaving behind cobbled blocks.</p>",
   "maxLevel": 1,
   "items": [
     "Pickaxes",
@@ -13,19 +13,16 @@
     "Shears",
     "Hoes"
   ],
-  "incompatibleRunecrafted": [
-    "Aftershock"
-  ],
-  "incompatibleVanilla": [],
-  "discoverer": "TroyTheCrafter",
-  "researchers": [],
-  "discoveredDate": "2023-08-31",
-  "discoveredBy": "TroyTheCrafter on 8/31/23 11:40 PM",
-  "runeTags": [],
   "rune1": "Stones",
   "rune2": "Kinesis",
   "rune3": "Arcanum",
   "rune4": "Kinesis",
   "rune5": "Opulence",
-  "costRule": "per-level"
+  "incompatibleRunecrafted": [
+    "Aftershock"
+  ],
+  "discoverer": "TroyTheCrafter",
+  "discoveredDate": "2023-08-31",
+  "discoveredBy": "TroyTheCrafter on 8/31/23 11:40 PM",
+  "sourceRecordId": "rechky0g01mdTQaTn"
 }
