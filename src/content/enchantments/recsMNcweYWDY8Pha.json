@@ -1,14 +1,25 @@
 {
-  "sourceRecordId": "recsMNcweYWDY8Pha",
-  "draft": false,
   "name": "Slingshot",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Ammo",
-  "description": "<p>This bow gains a sling, a 9-slot item inventory which can hold non-equipment items. Shooting without any arrows instead fires items from the sling, applying unique effects such as:</p><ul><li>Blocks deal damage based on hardness.</li><li>Glass shatters, dealing 50% radial damage.</li><li>Light-emitting blocks make targets glow.</li><li>Food is fed to the target.</li></ul>",
+  "costRule": "per-level",
+  "description": "<p>This bow gains a [brown]<em>sling</em>[/brown], a 9-slot [effect:inv][dark-gray]item inventory[/dark-gray][/effect] which can hold non-equipment items. Shooting without any arrows instead fires items from the [brown]<em>sling</em>[/brown], applying unique effects such as:</p><ul><li><p>Blocks deal damage based on hardness.</p></li><li><p>Glass shatters, dealing 50% radial damage.</p></li><li><p>Light-emitting blocks make targets glow.</p></li><li><p>Food is fed to the target.</p></li></ul><p></p>",
+  "effects": [
+    {
+      "key": "inv",
+      "explanation": "Open the item's inventory by right clicking it in your inventory."
+    }
+  ],
   "maxLevel": 1,
   "items": [
     "Bows"
   ],
+  "rune1": "Arcanum",
+  "rune2": "Void",
+  "rune3": "Kinesis",
+  "rune4": "Stones",
+  "rune5": "Stones",
   "incompatibleRunecrafted": [
     "Tesseract"
   ],
@@ -16,14 +27,7 @@
     "Infinity"
   ],
   "discoverer": "Starmarsh",
-  "researchers": [],
   "discoveredDate": "2023-09-09",
   "discoveredBy": "Starmarsh on 9/9/23 4:34 PM",
-  "runeTags": [],
-  "rune1": "Arcanum",
-  "rune2": "Void",
-  "rune3": "Kinesis",
-  "rune4": "Stones",
-  "rune5": "Stones",
-  "costRule": "per-level"
+  "sourceRecordId": "recsMNcweYWDY8Pha"
 }
