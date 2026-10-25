@@ -4,7 +4,7 @@
   "source": "Runecrafted",
   "category": "Protection",
   "costRule": "once",
-  "description": "<p>Blasts deal -[effect:blastdr][dark-gray]8-40%[/dark-gray][/effect] damage and -[effect:blastkb][dark-gray]15–75%[/dark-gray][/effect] knockback.</p><ul><li><p>[pink]<strong>Runecrafting Bonus</strong>[/pink]: Blasts instead deal -75% damage, then you siphon the shrapnel to form a 1❤ Absorption blast shield, granting knockback immunity and 25% damage reduction while the shield holds.</p></li></ul><p></p>",
+  "description": "<p>Blasts deal -[effect:blastdr][dark-gray]8-40%[/dark-gray][/effect] damage and -[effect:blastkb][dark-gray]15–75%[/dark-gray][/effect] knockback.</p><ul><li><p>[term:runebonus][pink]<strong>Runecrafting Bonus</strong>[/pink][/term]: Blasts instead deal -75% damage, then you siphon the shrapnel to form a 1❤ Absorption blast shield, granting knockback immunity and 25% damage reduction while the shield holds.</p></li></ul><p></p>",
   "effects": [
     {
       "key": "blastdr",
