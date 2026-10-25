@@ -4,7 +4,7 @@
   "source": "Mythical",
   "category": "Dash",
   "costRule": "free",
-  "description": "<p>A mythical enchant discovered on the relic [orange]Scylla[/orange]. </p><p>Charges forcibly dash to Charybdis, briefly liquefying terrain. Jabs near the whirlpool pull in enemies and execute at 10% HP, sating 1 hunger.</p>",
+  "description": "<p>Charges forcibly dash to Charybdis, briefly liquefying terrain. Jabs near the whirlpool pull in enemies and execute at 10% HP, sating 1 hunger.</p><p>A mythical enchant discovered on the relic [orange]Scylla[/orange].</p><p>[dark-green]Messina[/dark-green] is a trident, [blue]Charybdis[/blue], whose throws leave [orange]Scylla[/orange] in your hand.</p>",
   "items": [
     "Spears"
   ],
