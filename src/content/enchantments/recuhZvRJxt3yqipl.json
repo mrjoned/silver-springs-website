@@ -1,11 +1,16 @@
 {
-  "sourceRecordId": "recuhZvRJxt3yqipl",
-  "draft": false,
   "name": "Ragnarok",
+  "draft": false,
   "source": "Mythical",
   "category": "Radial",
-  "description": "<p>While airborne, right click to freeze and charge a mace throw, generating torque based on smash damage upon landing, then slam down to it, stunning enemies within 5 blocks. Standard attacks deal 25% of torque as chain lightning damage.</p>",
-  "maxLevel": null,
+  "costRule": "free",
+  "description": "<p>While airborne, right click to lock in place and charge a mace throw that generates [effect:torque][dark-gray]torque[/dark-gray][/effect] based on smash damage upon landing, then slam down to it, [term:stun][dark-gray]stunning[/dark-gray][/term] enemies within 5 blocks. Standard attacks deal 25% of torque as chain lightning damage.</p><p>Mythical enchantment discovered on the relic [gradient:gold:aqua]Supercell[/gradient].</p>",
+  "effects": [
+    {
+      "key": "torque",
+      "explanation": "Torque persists for 4 standard attacks, refreshing whenever torque is generated."
+    }
+  ],
   "items": [
     "Maces"
   ],
@@ -14,16 +19,6 @@
     "Resonance",
     "Will-o'-Wisp"
   ],
-  "incompatibleVanilla": [],
-  "discoverer": "",
-  "researchers": [],
-  "discoveredDate": "",
-  "discoveredBy": "",
-  "runeTags": [],
-  "rune1": "",
-  "rune2": "",
-  "rune3": "",
-  "rune4": "",
-  "rune5": "",
-  "costRule": "free"
+  "discoveredDate": "2026-10-25",
+  "sourceRecordId": "recuhZvRJxt3yqipl"
 }
