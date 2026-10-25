@@ -1,14 +1,25 @@
 {
-  "sourceRecordId": "recEWRdMx6p0aA5Mo",
-  "draft": false,
   "name": "Rocket Boosting",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Descent",
-  "description": "<p>Sneaking while jumping performs an upward rocket boost and resets accumulated fall distance. You can perform 2-3 rocket boosts before landing.</p><blockquote><p>Fall damage is reduced by 2 hearts. </p></blockquote>",
+  "costRule": "per-level",
+  "description": "<p>Sneaking or jumping while airborne performs an upward [orange]<em>rocket boost</em>[/orange] and resets accumulated fall distance. You can perform [effect:boosts][dark-gray]2-3 rocket boosts[/dark-gray][/effect] before landing.</p><p>You fall +4 blocks before taking fall damage.</p>",
+  "effects": [
+    {
+      "key": "boosts",
+      "explanation": "Level I: 2 rocket boosts\nLevel II: 3 rocket boosts"
+    }
+  ],
   "maxLevel": 2,
   "items": [
     "Boots"
   ],
+  "rune1": "Kinesis",
+  "rune2": "Gusts",
+  "rune3": "Kinesis",
+  "rune4": "Gusts",
+  "rune5": "Kinesis",
   "incompatibleRunecrafted": [
     "Ground Pound"
   ],
@@ -16,14 +27,7 @@
     "Feather Falling"
   ],
   "discoverer": "MogTheDinosaur",
-  "researchers": [],
   "discoveredDate": "2023-08-24",
   "discoveredBy": "MogTheDinosaur on 8/24/23 5:16 PM",
-  "runeTags": [],
-  "rune1": "Kinesis",
-  "rune2": "Gusts",
-  "rune3": "Kinesis",
-  "rune4": "Gusts",
-  "rune5": "Kinesis",
-  "costRule": "per-level"
+  "sourceRecordId": "recEWRdMx6p0aA5Mo"
 }
