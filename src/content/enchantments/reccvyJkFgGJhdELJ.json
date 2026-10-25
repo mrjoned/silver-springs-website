@@ -1,15 +1,25 @@
 {
-  "sourceRecordId": "reccvyJkFgGJhdELJ",
-  "draft": false,
   "name": "Pestle",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Loot",
-  "description": "<p>Slain enemies have a chance, scaling with overkill damage, to be crushed into <em>primordial dust</em>, which can be crafted with crystals and socketing gems to duplicate them.</p>",
+  "costRule": "per-level",
+  "description": "<p>Slain enemies have a chance, scaling with overkill damage, to be crushed into [gold]<em>primordial dust</em>[/gold], which can be crafted with [effect:cry][dark-gray]crystals[/dark-gray][/effect] and socketing gems to duplicate them.</p>",
+  "effects": [
+    {
+      "key": "cry",
+      "explanation": "Lapis Lazuli, Nether Quartz, Amethyst Shards, Prismarine Shards, Diamonds, and Emeralds."
+    }
+  ],
   "maxLevel": 1,
   "items": [
     "Maces"
   ],
-  "incompatibleRunecrafted": [],
+  "rune1": "Mortus",
+  "rune2": "Kinesis",
+  "rune3": "Stones",
+  "rune4": "Opulence",
+  "rune5": "Stones",
   "incompatibleVanilla": [
     "Looting"
   ],
@@ -19,11 +29,5 @@
   ],
   "discoveredDate": "2025-05-17",
   "discoveredBy": "skelud and TroyTheCrafter on 5/17/25",
-  "runeTags": [],
-  "rune1": "Mortus",
-  "rune2": "Kinesis",
-  "rune3": "Stones",
-  "rune4": "Opulence",
-  "rune5": "Stones",
-  "costRule": "per-level"
+  "sourceRecordId": "reccvyJkFgGJhdELJ"
 }
