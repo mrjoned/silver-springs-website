@@ -1,10 +1,24 @@
 {
-  "sourceRecordId": "recxPNX53CnX4skiM",
-  "draft": false,
   "name": "Projectile Protection V",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Protection",
-  "description": "<p>Projectiles deal 8-40% less damage and apply <code>15-75%</code> less knockback. </p><blockquote><p><strong>Runecrafting Bonus</strong>: Negative potion effects from projectiles have -75% less duration.</p></blockquote>",
+  "costRule": "once",
+  "description": "<p>Projectiles deal [effect:dmg][dark-gray]8-40% less damage[/dark-gray][/effect] and apply [effect:kb][dark-gray]15-75% less knockback[/dark-gray][/effect].</p><ul><li><p>[pink]<strong>Runecrafting Bonus</strong>[/pink]: [effect:potion][dark-gray]Negative potion effects[/dark-gray][/effect] from projectiles have -75% less duration.</p></li></ul><p></p>",
+  "effects": [
+    {
+      "key": "dmg",
+      "explanation": "Level I: 8% less damage\nLevel II: 16% less damage\nLevel III: 24% less damage\nLevel IV: 32% less damage\nLevel V: 40% less damage"
+    },
+    {
+      "key": "kb",
+      "explanation": "Level I: 15% less knockback\nLevel II: 30% less knockback\nLevel III: 45% less knockback\nLevel IV: 60% less knockback\nLevel V: 75% less knockback"
+    },
+    {
+      "key": "potion",
+      "explanation": "Wither, poison, slowness, mining fatigue, weakness, hunger, and levitation."
+    }
+  ],
   "maxLevel": 5,
   "items": [
     "Helmets",
@@ -12,6 +26,11 @@
     "Leggings",
     "Boots"
   ],
+  "rune1": "Gusts",
+  "rune2": "Kinesis",
+  "rune3": "Aegis",
+  "rune4": "Arcanum",
+  "rune5": "Moments",
   "incompatibleRunecrafted": [
     "Headstart",
     "Adrenaline Rush",
@@ -24,14 +43,7 @@
     "Fire Protection"
   ],
   "discoverer": "Starmarsh",
-  "researchers": [],
   "discoveredDate": "2023-09-10",
   "discoveredBy": "Starmarsh on 9/10/23 11:16 PM",
-  "runeTags": [],
-  "rune1": "Gusts",
-  "rune2": "Kinesis",
-  "rune3": "Aegis",
-  "rune4": "Arcanum",
-  "rune5": "Moments",
-  "costRule": "once"
+  "sourceRecordId": "recxPNX53CnX4skiM"
 }
