@@ -4,7 +4,7 @@
   "source": "Runecrafted",
   "category": "Impetus",
   "costRule": "per-level",
-  "description": "<p>You have dominion over [dark-gray]past[/dark-gray], [brown]present[/brown], and [gray]future[/gray], granting the following spell effects:</p><ul><li><p>[dark-gray]Past[/dark-gray]: You <em>reflect</em> after every 3rd spell cast, causing your next spell tome swing to recast your last spell at no XP cost.</p></li><li><p>[brown]Present[/brown]: You gain 25% runic spell power, and [effect:mag][dark-gray]magic weapon[/dark-gray][/effect] kills collect loot and XP.</p></li><li><p>[gray]Future[/gray]: You can sneak swing a spell tome to <em>scry</em>, casting its rightmost spell regardless of your current selection.</p></li></ul><p>[dark-gray]\"Three paths, intertwined. Master this, master them.\"[/dark-gray]</p>",
+  "description": "<p>You have dominion over [gold]past[/gold], [orange]present[/orange], and [yellow]future[/yellow], granting the following spell effects:</p><ul><li><p>[gold]Past[/gold]: You <em>reflect</em> after every 3rd spell cast, causing your next spell tome swing to recast your last spell at no XP cost.</p></li><li><p>[orange]Present[/orange]: You gain 25% runic spell power, and [effect:mag][dark-gray]magic weapon[/dark-gray][/effect] kills collect loot and XP.</p></li><li><p>[yellow]Future[/yellow]: You can sneak swing a spell tome to <em>scry</em>, casting its rightmost spell regardless of your current selection.</p></li></ul><p>[dark-gray]\"Three paths, intertwined. Master this, master them.\"[/dark-gray]</p>",
   "effects": [
     {
       "key": "mag",
