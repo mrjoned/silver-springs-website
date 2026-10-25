@@ -1,27 +1,30 @@
 {
-  "sourceRecordId": "recFBQpTmKHPzT7uP",
-  "draft": false,
   "name": "Hot Rod",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Tackle",
-  "description": "<p>This rod <em>sears</em> 30-50% of caught fish, doubling restored hunger and sell price, and can fish in lava, doubling the <em>sear</em> chance.</p>",
+  "costRule": "per-level",
+  "description": "<p>This rod [orange]<em>sears</em>[/orange] [effect:percent][dark-gray]30-50%[/dark-gray][/effect] of caught fish, doubling restored hunger and sell price, and can fish in lava, doubling the <em>sear</em> chance.</p>",
+  "effects": [
+    {
+      "key": "percent",
+      "explanation": "Level I: 30%\nLevel II: 40%\nLevel III: 50%"
+    }
+  ],
   "maxLevel": 3,
   "items": [
     "Fishing Rods"
   ],
-  "incompatibleRunecrafted": [
-    "Trawling"
-  ],
-  "incompatibleVanilla": [],
-  "discoverer": "TroyTheCrafter",
-  "researchers": [],
-  "discoveredDate": "2023-09-09",
-  "discoveredBy": "TroyTheCrafter on 9/9/23 8:26 AM",
-  "runeTags": [],
   "rune1": "Tides",
   "rune2": "Cinders",
   "rune3": "Cinders",
   "rune4": "Vitality",
   "rune5": "Opulence",
-  "costRule": "per-level"
+  "incompatibleRunecrafted": [
+    "Trawling"
+  ],
+  "discoverer": "TroyTheCrafter",
+  "discoveredDate": "2023-09-09",
+  "discoveredBy": "TroyTheCrafter on 9/9/23 8:26 AM",
+  "sourceRecordId": "recFBQpTmKHPzT7uP"
 }
