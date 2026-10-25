@@ -1,27 +1,17 @@
 {
-  "sourceRecordId": "recOI37Xb8hop2vHJ",
-  "draft": false,
   "name": "Riptide",
+  "draft": false,
   "source": "Vanilla",
-  "category": "Uncategorized",
-  "description": "<p>Increased underwater mobility and compatibility with other enchantments. No longer exclusive with Channeling.</p>",
+  "category": "Trajectory",
+  "costRule": "free",
+  "description": "<p>[term:arcanumbonus][purple]Arcanum Bonuses[/purple][/term]:</p><ul><li><p>Propels you faster while in water.</p></li><li><p>Grants brief invulnerability upon colliding during a riptide.</p></li><li><p>No longer exclusive with Channeling, which activates upon your first riptide collision during a thunderstorm.</p></li></ul><p></p>",
   "maxLevel": 3,
   "items": [
     "Tridents"
   ],
-  "incompatibleRunecrafted": [],
   "incompatibleVanilla": [
     "Loyalty"
   ],
-  "discoverer": "",
-  "researchers": [],
-  "discoveredDate": "",
-  "discoveredBy": "",
-  "runeTags": [],
-  "rune1": "",
-  "rune2": "",
-  "rune3": "",
-  "rune4": "",
-  "rune5": "",
-  "costRule": "free"
+  "discoveredDate": "2026-10-25",
+  "sourceRecordId": "recOI37Xb8hop2vHJ"
 }
