@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';
+import {activeEvents,eventInstant} from '../src/lib/active-events.js';
+const event={id:'halloween',title:'Spooky Springs',category:'community',allDay:true,start:'2026-10-20',end:'2026-11-02'};
+const now=Date.parse('2026-10-25T12:00:00Z');
+assert.equal(activeEvents([event],now).length,1);
+assert.equal(activeEvents([event],Date.parse('2026-10-20T04:59:59Z')).length,0);
+assert.equal(activeEvents([event],Date.parse('2026-10-20T05:00:00Z')).length,1);
+assert.equal(activeEvents([event],Date.parse('2026-11-02T06:00:00Z')).length,0);
+assert.equal(eventInstant('2026-11-02',true),Date.parse('2026-11-02T06:00:00Z'));
+assert.equal(eventInstant('2027-03-15',true),Date.parse('2027-03-15T05:00:00Z'));
+assert.equal(activeEvents([{...event,category:'reset'},{...event,category:'rush'},{...event,title:'Resource Reset'}],now).length,0);
+assert.equal(activeEvents([{...event,start:'2026-10-26'}],now).length,0);
+assert.equal(activeEvents([{...event,end:'2026-10-24'}],now).length,0);
+assert.equal(activeEvents([{...event,allDay:false,start:'2026-10-25T06:00:00-05:00',end:'2026-10-25T08:00:00-05:00'}],now).length,1);
+assert.equal(activeEvents([event,{...event,id:'second',title:'Build Contest'}],now).length,2);
+console.log('Active events: active-only filtering, exclusions, multiple events, timed/all-day boundaries and DST passed.');
