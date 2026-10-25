@@ -4,7 +4,7 @@
   "source": "Runecrafted",
   "category": "Protection",
   "costRule": "once",
-  "description": "<p>Fire and lava deal [effect:dmg][dark-gray]8-40% less damage[/dark-gray][/effect] and you burn for [effect:time][dark-gray]15-75% less time[/dark-gray][/effect].</p><ul><li><p>[pink]<strong>Runecrafting Bonus</strong>[/pink]: You take -25% damage from burning enemies, and their unarmed attacks no longer ignite you.</p></li></ul><p></p>",
+  "description": "<p>Fire and lava deal [effect:dmg][dark-gray]8-40% less damage[/dark-gray][/effect] and you burn for [effect:time][dark-gray]15-75% less time[/dark-gray][/effect].</p><ul><li><p>[term:runebonus][pink]<strong>Runecrafting Bonus</strong>[/pink][/term]: You take -25% damage from burning enemies, and their unarmed attacks no longer ignite you.</p></li></ul><p></p>",
   "effects": [
     {
       "key": "dmg",
