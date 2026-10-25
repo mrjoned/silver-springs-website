@@ -5,6 +5,12 @@
   "category": "Storage",
   "costRule": "per-level",
   "description": "<p>These leggings gain a [brown]<em>belt</em>[/brown], a 9-slot item inventory. [effect:act][dark-gray]Activating[/dark-gray][/effect] the leggings swaps the contents of their [brown]<em>belt</em>[/brown] and your hotbar.</p>",
+  "effects": [
+    {
+      "key": "act",
+      "explanation": "Shift right click on the item within your inventory."
+    }
+  ],
   "maxLevel": 1,
   "items": [
     "Leggings"
