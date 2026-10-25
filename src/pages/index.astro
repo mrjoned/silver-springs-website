@@ -1,14 +1,19 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
 import HomepageGallery from '../components/HomepageGallery.astro';
+import RushBanner from '../components/RushBanner.astro';
 import LatestNews from '../components/LatestNews.astro';
 import beforeNews from '../content/pages/home-before-news.html?raw';
 import guides from '../content/pages/home-guides.html?raw';
 import afterNews from '../content/pages/home-after-news.html?raw';
+const quickStart = beforeNews.indexOf('<div class="wrap quick">');
+if (quickStart < 0) throw new Error('Homepage quick links marker missing');
 ---
 <SiteLayout title="Silver Springs Survival" description="Discover Silver Springs Survival: community builds, custom enchantments, and your next Minecraft adventure." styles={['/assets/site.css', '/assets/homepage.css']}>
   <main id="main">
-    <Fragment set:html={beforeNews} />
+    <Fragment set:html={beforeNews.slice(0, quickStart)} />
+    <RushBanner />
+    <Fragment set:html={beforeNews.slice(quickStart)} />
     <LatestNews />
     <Fragment set:html={guides} />
     <HomepageGallery />

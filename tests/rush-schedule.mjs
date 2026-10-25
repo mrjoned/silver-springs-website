@@ -1,0 +1,17 @@
+import assert from 'node:assert/strict';
+import {rushAt,countdown} from '../src/lib/rush-schedule.js';
+const at=s=>rushAt(Date.parse(s));
+assert.equal(at('2026-10-24T06:59:59Z').active,false);
+assert.equal(at('2026-10-24T07:00:00Z').name,'Parkour Rush');
+assert.equal(at('2026-10-24T07:00:00Z').active,true);
+assert.equal(at('2026-10-26T06:59:59Z').active,true);
+assert.equal(at('2026-10-26T07:00:00Z').name,'Void Rush');
+assert.equal(at('2026-10-26T07:00:00Z').active,false);
+const fall=at('2026-11-01T12:00:00Z');assert.equal(fall.name,'Void Rush');assert.equal(fall.end-fall.start,49*3600000);
+const spring=at('2027-03-14T12:00:00Z');assert.equal(spring.end-spring.start,47*3600000);
+assert.equal(at('2026-12-26T08:00:00Z').name,'Parkour Rush');
+assert.equal(at('2026-11-21T08:00:00Z').name,'Lunch Rush');
+assert.equal(at('2026-11-28T08:00:00Z').name,'Rune Rush');
+assert.equal(at('2026-12-05T08:00:00Z').name,'River Rush');
+assert.equal(countdown(90061000),'1d 1h 1m 1s');
+console.log('Rush schedule: boundaries, nine-week rotation, daylight saving changes and countdown passed.');
