@@ -1,14 +1,25 @@
 {
-  "sourceRecordId": "recq8X8Gv3JUJzt1K",
-  "draft": false,
   "name": "Walkman",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Travel",
-  "description": "<p>A music disc can be inserted into these leggings to play it, or shift inserted to play it on loop. While they are playing music, you walk (not sprint) <strong>10-20% faster.</strong></p>",
+  "costRule": "per-level",
+  "description": "<p>A music disc can be [term:insert][dark-gray]inserted[/dark-gray][/term] into these leggings to play it, or shift inserted to play it on loop. While they are playing music, you walk (not sprint) [effect:percent][dark-gray]10-20% faster[/dark-gray][/effect]<strong>.</strong></p>",
+  "effects": [
+    {
+      "key": "percent",
+      "explanation": "Level I: 10% faster\nLevel II: 20% faster"
+    }
+  ],
   "maxLevel": 2,
   "items": [
     "Leggings"
   ],
+  "rune1": "Opulence",
+  "rune2": "Sparks",
+  "rune3": "Echoes",
+  "rune4": "Gusts",
+  "rune5": "Gusts",
   "incompatibleRunecrafted": [
     "Blitz"
   ],
@@ -21,12 +32,5 @@
     "TheJ_Team"
   ],
   "discoveredDate": "2025-06-09",
-  "discoveredBy": "",
-  "runeTags": [],
-  "rune1": "Opulence",
-  "rune2": "Sparks",
-  "rune3": "Echoes",
-  "rune4": "Gusts",
-  "rune5": "Gusts",
-  "costRule": "per-level"
+  "sourceRecordId": "recq8X8Gv3JUJzt1K"
 }
