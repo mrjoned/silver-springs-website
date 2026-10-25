@@ -641,8 +641,14 @@ main,.wrap{max-width:none}main{padding:22px 20px 40px}body:has(>.wrap){padding:2
   }catch(e){notice(e.message);}};
   $('rcp-export-build').onclick=()=>{const url=URL.createObjectURL(new Blob([JSON.stringify(snapshot(),null,2)],{type:'application/json'}));const link=document.createElement('a');link.href=url;link.download='silver-springs-build.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
   $('rcp-import-build').onchange=async ev=>{const file=ev.target.files[0];if(!file)return;try{if(file.size>200000)throw Error('Build file is too large.');if(loadBuild(JSON.parse(await file.text())))$('rcp-build-dialog').close();}catch(e){notice(e.message);}ev.target.value='';};
-  $('rcp-share-build').onclick=async()=>{try{if(!state.items.length)return notice('Add equipment before sharing.');const bytes=new TextEncoder().encode(JSON.stringify(snapshot()));const encoded=btoa(Array.from(bytes,b=>String.fromCharCode(b)).join('')).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');const url=new URL('/runecrafting-hub/tools/hub_build_planner.html',location.origin);url.hash='build='+encoded;await navigator.clipboard.writeText(url.href);notice('Build link copied! Anyone with the link can open their own copy.');}catch(e){notice('Could not copy the link. You can export a build file from My Builds instead.');}};
-  function openSharedBuild(){if(!location.hash.startsWith('#build='))return;try{const encoded=location.hash.slice(7);if(encoded.length>270000)throw Error('Build link is too large.');const bytes=Uint8Array.from(atob(encoded.replace(/-/g,'+').replace(/_/g,'/')),c=>c.charCodeAt(0));loadBuild(JSON.parse(new TextDecoder().decode(bytes)));}catch(e){notice('Unable to open shared build: '+e.message);}}
+  $('rcp-share-build').onclick=async()=>{
+    const button=$('rcp-share-build');if(!state.items.length)return notice('Add equipment before sharing.');button.disabled=true;notice('Creating share link…');
+    try{const response=await fetch('/api/builds',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(snapshot())});const result=await response.json();if(!response.ok)throw Error(result.error||'Unable to share build.');
+      try{await navigator.clipboard.writeText(result.url);notice('Short build link copied! Anyone with the link can open their own copy.');}
+      catch{notice('Your build link: '+result.url);}
+    }catch(e){notice(e.message+' You can still export a file from My Builds.');}finally{button.disabled=false;}
+  };
+  async function openSharedBuild(){if(location.hash.startsWith('#shared=')){try{const id=location.hash.slice(8);if(!/^[a-f0-9]{24}$/.test(id))throw Error('Invalid build link.');const response=await fetch('/api/builds/'+id);const build=await response.json();if(!response.ok)throw Error(build.error);loadBuild(build);}catch(e){notice('Unable to open shared build: '+e.message);}return;}if(!location.hash.startsWith('#build='))return;try{const encoded=location.hash.slice(7);if(encoded.length>270000)throw Error('Build link is too large.');const bytes=Uint8Array.from(atob(encoded.replace(/-/g,'+').replace(/_/g,'/')),c=>c.charCodeAt(0));loadBuild(JSON.parse(new TextDecoder().decode(bytes)));}catch(e){notice('Unable to open shared build: '+e.message);}}
 
   render();
   window.SSSHubData.fetch()

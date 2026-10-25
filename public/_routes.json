@@ -2,7 +2,10 @@
   "version": 1,
   "include": [
     "/api/calendar",
-    "/api/calendar/"
+    "/api/calendar/",
+    "/api/builds",
+    "/api/builds/*",
+    "/b/*"
   ],
   "exclude": []
 }
