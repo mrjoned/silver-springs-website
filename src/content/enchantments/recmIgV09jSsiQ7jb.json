@@ -4,7 +4,7 @@
   "source": "Runecrafted",
   "category": "Aspect",
   "costRule": "once",
-  "description": "<p>Attacks ignite the victim for [effect:seconds][dark-gray]4-12 seconds[/dark-gray][/effect].</p><ul><li><p>[pink]<strong>Runecrafting Bonus</strong>[/pink]: Ignited entities have -50% healing while burning. Right clicks [effect:ignite][dark-gray]ignite blocks[/dark-gray][/effect].</p></li></ul><p></p>",
+  "description": "<p>Attacks ignite the victim for [effect:seconds][dark-gray]4-12 seconds[/dark-gray][/effect].</p><ul><li><p>[term:runebonus][pink]<strong>Runecrafting Bonus</strong>[/pink][/term]: Ignited entities have -50% healing while burning. Right clicks [effect:ignite][dark-gray]ignite blocks[/dark-gray][/effect].</p></li></ul><p></p>",
   "effects": [
     {
       "key": "seconds",
