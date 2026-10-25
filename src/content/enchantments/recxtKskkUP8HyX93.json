@@ -1,11 +1,10 @@
 {
-  "sourceRecordId": "recxtKskkUP8HyX93",
-  "draft": false,
   "name": "Whispering",
+  "draft": false,
   "source": "Mythical",
   "category": "Damage",
-  "description": "<p>Shots deal +50% damage, collect loot, and don&#39;t cause vibrations. Shots overdrawn for 1 second <em>whisper</em>, homing in on enemies and dealing +25% sonic damage.</p>",
-  "maxLevel": null,
+  "costRule": "free",
+  "description": "<p>Shots deal +50% damage, collect loot, and don't cause vibrations. Shots overdrawn for 1 second <em>whisper</em>, homing in on enemies and dealing +25% sonic damage.</p><p>Mythical enchantment discovered on the relic [aqua]Karru'Val[/aqua].</p>",
   "items": [
     "Bows"
   ],
@@ -15,15 +14,6 @@
   "incompatibleVanilla": [
     "Power"
   ],
-  "discoverer": "",
-  "researchers": [],
-  "discoveredDate": "",
-  "discoveredBy": "",
-  "runeTags": [],
-  "rune1": "",
-  "rune2": "",
-  "rune3": "",
-  "rune4": "",
-  "rune5": "",
-  "costRule": "free"
+  "discoveredDate": "2026-10-25",
+  "sourceRecordId": "recxtKskkUP8HyX93"
 }
