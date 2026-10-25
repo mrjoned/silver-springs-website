@@ -4,7 +4,7 @@
   "source": "Runecrafted",
   "category": "Tackle",
   "costRule": "per-level",
-  "description": "<p>This rod [orange]<em>sears</em>[/orange] [effect:percent][dark-gray]30-50%[/dark-gray][/effect] of caught fish, doubling restored hunger and sell price, and can fish in lava, doubling the <em>sear</em> chance.</p>",
+  "description": "<p>This rod [orange]<em>sears</em>[/orange] [effect:percent][dark-gray]30-50%[/dark-gray][/effect] of caught fish, doubling restored hunger and sell price, and can fish in lava, doubling the [orange]<em>sear</em>[/orange] chance.</p>",
   "effects": [
     {
       "key": "percent",
