@@ -1,14 +1,25 @@
 {
-  "sourceRecordId": "recjQhIVgSpYgX6fh",
-  "draft": false,
   "name": "Windup",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Damage",
-  "description": "<p>After preparing a throw, you can continue charging for 1.75-0.75 seconds to wind up a huge throw which deals +6 hearts of damage.</p>",
+  "costRule": "per-level",
+  "description": "<p>After preparing a throw, you can continue charging for [effect:sec][dark-gray]1.75-0.75 seconds[/dark-gray][/effect] to wind up a huge throw which deals +6❤️ of damage.</p>",
+  "effects": [
+    {
+      "key": "sec",
+      "explanation": "Level I: 1.75 seconds\nLevel II: 1.25 seconds\nLevel III: 0.75 seconds"
+    }
+  ],
   "maxLevel": 3,
   "items": [
     "Tridents"
   ],
+  "rune1": "Tides",
+  "rune2": "Moments",
+  "rune3": "Moments",
+  "rune4": "Kinesis",
+  "rune5": "Mortus",
   "incompatibleRunecrafted": [
     "Extinction",
     "Sundering",
@@ -18,14 +29,7 @@
     "Impaling"
   ],
   "discoverer": "Starmarsh",
-  "researchers": [],
   "discoveredDate": "2023-09-09",
   "discoveredBy": "Starmarsh on 9/9/23, 3:37 AM",
-  "runeTags": [],
-  "rune1": "Tides",
-  "rune2": "Moments",
-  "rune3": "Moments",
-  "rune4": "Kinesis",
-  "rune5": "Mortus",
-  "costRule": "per-level"
+  "sourceRecordId": "recjQhIVgSpYgX6fh"
 }
