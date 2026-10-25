@@ -9,6 +9,9 @@
   "items": [
     "Tridents"
   ],
+  "incompatibleRunecrafted": [
+    "Whirlpool🌟"
+  ],
   "incompatibleVanilla": [
     "Loyalty"
   ],
