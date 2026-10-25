@@ -1,28 +1,25 @@
 {
-  "sourceRecordId": "recRqfSONH0wLCEEd",
-  "draft": false,
   "name": "Taste Test",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Surplus",
-  "description": "<p><strong>Auto-harvesting</strong> crops refills a small amount of hunger. If your hunger is full, you gain saturation instead.</p><blockquote><p>Auto-harvesting: Right-click a fully grown crop to automatically harvest and replant it.</p></blockquote>",
+  "costRule": "per-level",
+  "description": "<p>[effect:harvest][dark-gray]Harvesting[/dark-gray][/effect] crops refills a small amount of hunger. If your hunger is full, you gain saturation instead.</p>",
   "maxLevel": 1,
   "items": [
     "Hoes"
   ],
-  "incompatibleRunecrafted": [
-    "Hands-On Learning",
-    "Mulching"
-  ],
-  "incompatibleVanilla": [],
-  "discoverer": "Frostearrific",
-  "researchers": [],
-  "discoveredDate": "2023-09-05",
-  "discoveredBy": "Frostearrific on 9/5/23 4:03 AM ",
-  "runeTags": [],
   "rune1": "Stones",
   "rune2": "Vitality",
   "rune3": "Opulence",
   "rune4": "Vitality",
   "rune5": "Opulence",
-  "costRule": "per-level"
+  "incompatibleRunecrafted": [
+    "Hands-On Learning",
+    "Mulching"
+  ],
+  "discoverer": "Frostearrific",
+  "discoveredDate": "2023-09-05",
+  "discoveredBy": "Frostearrific on 9/5/23 4:03 AM ",
+  "sourceRecordId": "recRqfSONH0wLCEEd"
 }
