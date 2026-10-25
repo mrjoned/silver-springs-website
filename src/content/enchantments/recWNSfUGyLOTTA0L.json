@@ -1,10 +1,20 @@
 {
-  "sourceRecordId": "recWNSfUGyLOTTA0L",
-  "draft": false,
   "name": "Purity Aspect",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Aspect",
-  "description": "<p>Attacks reduce the duration of negative effects by 10-30% (minimum 1-3 seconds).</p>",
+  "costRule": "per-level",
+  "description": "<p>Attacks reduce the duration of [green]<em>negative effects</em>[/green] by [effect:percent][dark-gray]10-30%[/dark-gray][/effect] (minimum [effect:seconds][dark-gray]1-3 seconds[/dark-gray][/effect]).</p>",
+  "effects": [
+    {
+      "key": "percent",
+      "explanation": "Level I: 10%\nLevel II: 20%\nLevel III: 30%"
+    },
+    {
+      "key": "seconds",
+      "explanation": "Level I: 1 second\nLevel II: 2 seconds\nLevel III: 3 seconds"
+    }
+  ],
   "maxLevel": 3,
   "items": [
     "Maces",
@@ -12,6 +22,11 @@
     "Axes",
     "Spears"
   ],
+  "rune1": "Mortus",
+  "rune2": "Vitality",
+  "rune3": "Vitality",
+  "rune4": "Arcanum",
+  "rune5": "Moments",
   "incompatibleRunecrafted": [
     "Ice Aspect",
     "Plague Aspect",
@@ -21,14 +36,7 @@
     "Fire Aspect"
   ],
   "discoverer": "Benmanmen21",
-  "researchers": [],
   "discoveredDate": "2023-09-01",
   "discoveredBy": "Benmanmen21 on 9/1/23, 7:57 AM",
-  "runeTags": [],
-  "rune1": "Mortus",
-  "rune2": "Vitality",
-  "rune3": "Vitality",
-  "rune4": "Arcanum",
-  "rune5": "Moments",
-  "costRule": "per-level"
+  "sourceRecordId": "recWNSfUGyLOTTA0L"
 }
