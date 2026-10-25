@@ -172,7 +172,7 @@ main,.wrap{max-width:none}main{padding:22px 20px 40px}body:has(>.wrap){padding:2
 #runecrafting-planner .rcp-menu button:hover,#runecrafting-planner .rcp-menu button:focus-visible{background:#493352;color:#fff;outline:2px solid #c48aff;outline-offset:-2px}
 #runecrafting-planner .rcp-option-group{padding:8px 10px 4px;color:#c48aff;font-size:.78rem;font-weight:bold}
 #runecrafting-planner .rcp-trigger:focus-visible{outline:2px solid #c48aff;outline-offset:2px}
-</style>
+#runecrafting-planner .rcp-build-actions{display:flex;gap:8px;flex-wrap:wrap}#runecrafting-planner dialog{background:#171923;color:#f7f4fa;border:1px solid #61546d;border-radius:12px;max-width:700px;width:90%;max-height:85vh;overflow:auto}#runecrafting-planner dialog::backdrop{background:#000a}#runecrafting-planner .rcp-saved-row{padding:12px 0;border-bottom:1px solid #343342;display:flex;gap:8px;flex-wrap:wrap;align-items:center}#runecrafting-planner .rcp-saved-row strong{flex:1 1 180px}</style>
   <div class="rcp-shell">
     <div class="rcp-top">
       <div>
@@ -199,9 +199,9 @@ main,.wrap{max-width:none}main{padding:22px 20px 40px}body:has(>.wrap){padding:2
       <p class="rcp-muted" id="rcp-summary-note">Your totals update as you change your build.</p>
       <div id="rcp-runes" class="rcp-runes"></div><div id="rcp-gem-totals" class="rcp-gem-summary"></div>
       <div class="rcp-actions">
-        <button class="rcp-button" type="button" id="rcp-copy">Copy rune &amp; gem list</button>
+        <button class="rcp-button" type="button" id="rcp-copy">Copy List</button><div class="rcp-build-actions"><button class="rcp-button" type="button" id="rcp-save-build">Save Build</button><button class="rcp-button" type="button" id="rcp-my-builds">My Builds</button><button class="rcp-button" type="button" id="rcp-share-build">Share Build</button></div>
       </div>
-      <p class="rcp-small" id="rcp-copy-status" role="status"></p>
+      <p class="rcp-small" id="rcp-copy-status" role="status"></p><p id="rcp-build-status" role="status"></p><dialog id="rcp-build-dialog" aria-labelledby="rcp-build-title"><h3 id="rcp-build-title">My Builds</h3><p>Saved in this browser. Export your current build to back it up or move it to another device.</p><div id="rcp-saved-rows"></div><button class="rcp-button" id="rcp-export-build" type="button">Export current build</button><label>Import build file<input id="rcp-import-build" type="file" accept=".json,application/json"></label><button class="rcp-button secondary" id="rcp-close-builds" type="button">Close</button></dialog>
     </section>
   </div>
 </div>
@@ -595,6 +595,55 @@ main,.wrap{max-width:none}main{padding:22px 20px 40px}body:has(>.wrap){padding:2
     try { document.execCommand('copy'); status.textContent='Rune & gem list copied!'; } catch(e) { status.textContent='Copy was blocked by your browser. You can select and copy the totals manually.'; }
     ta.remove();
   }
+  const savedKey='sss-planner-builds-v1';
+  const notice=message=>$('rcp-build-status').textContent=message;
+  function snapshot(){return {version:1,items:state.items.map(({type,enchants,gems,armorBase,toughnessBase,preservation,fortitude})=>({type,enchants:enchants.map(({name,level})=>({name,level})),gems,armorBase,toughnessBase,preservation,fortitude}))};}
+  function readSaves(){const records=JSON.parse(localStorage.getItem(savedKey)||'[]');if(!Array.isArray(records))throw Error('Saved builds could not be read.');return records;}
+  function writeSaves(records){localStorage.setItem(savedKey,JSON.stringify(records));}
+  function loadBuild(build){
+    if(build?.version!==1||!Array.isArray(build.items)||build.items.length>100)throw Error('This is not a supported build file.');
+    const warnings=[],items=[];
+    for(const row of build.items){
+      if(!row||!DATA.items.includes(row.type)){warnings.push('Skipped unavailable equipment.');continue;}
+      if(!Array.isArray(row.enchants)||row.enchants.length>100)throw Error('Invalid enchantment list.');
+      const item={id:items.length+1,type:row.type,enchants:[],editingType:false};initGems(item);
+      for(const entry of row.enchants){
+        if(!entry?.name)continue;
+        const e=DATA.enchantments.find(e=>e.name===entry.name&&e.items.includes(row.type));
+        if(!e){warnings.push(`${entry.name}: no longer available for ${row.type}.`);continue;}
+        if(item.enchants.some(other=>namesConflict(e,DATA.enchantments.find(x=>x.name===other.name)))){warnings.push(`${entry.name}: conflicts with another enchantment.`);continue;}
+        const level=Math.max(1,Math.min(maxFor(e),Math.floor(Number(entry.level)||1)));
+        if(level!==entry.level)warnings.push(`${entry.name}: level adjusted to ${level}.`);
+        item.enchants.push({name:e.name,level,showDescription:false});
+      }
+      if(hasGemSockets(item)){
+        item.gems=Array.from({length:4},(_,i)=>{const gem=row.gems?.[i]||'';if(gem&&!STAT_GEMS.some(g=>g.name===gem)){warnings.push(`Skipped unknown gem: ${gem}.`);return '';}return gem;});
+        for(const [key,cap] of [['armorBase',ARMOR_CAPS[item.type]],['toughnessBase',2]])item[key]=row[key]===''||row[key]==null?'':Math.max(0,Math.min(cap,Number(row[key])||0));
+        for(const key of ['preservation','fortitude'])item[key]=Math.max(0,Math.min(armorRoom(item,key),Math.floor(Number(row[key])||0)));
+      }
+      items.push(item);
+    }
+    if(state.items.length&&!confirm('Replace the current build? Save it first if you want to keep it.'))return false;
+    state.items=items;state.nextId=items.length+1;render();notice(warnings.length?'Build loaded with changes: '+warnings.join(' '):'Build loaded.');return true;
+  }
+  function saveCurrent(){try{if(!state.items.length)return notice('Add equipment before saving.');const name=prompt('Name this build:');if(!name?.trim())return;const records=readSaves();records.push({id:crypto.randomUUID(),name:name.trim().slice(0,100),build:snapshot()});writeSaves(records);notice('Build saved in this browser.');}catch(e){notice('Could not save in this browser. Use Export in My Builds to keep a file backup.');}}
+  function showSaves(){try{const records=readSaves();$('rcp-saved-rows').innerHTML=records.length?records.map((r,i)=>`<div class="rcp-saved-row"><strong>${esc(r.name)}</strong> ${['Load','Rename','Duplicate','Delete'].map(action=>`<button type="button" class="rcp-button secondary" data-saved-action="${action}" data-saved-index="${i}">${action}</button>`).join('')}</div>`).join(''):'<p>No saved builds yet.</p>';}catch(e){$('rcp-saved-rows').textContent='Browser saves are unavailable. You can still export or import a build.';}}
+  $('rcp-save-build').onclick=saveCurrent;
+  $('rcp-my-builds').onclick=()=>{showSaves();$('rcp-build-dialog').showModal();};
+  $('rcp-close-builds').onclick=()=>$('rcp-build-dialog').close();
+  $('rcp-saved-rows').onclick=ev=>{const button=ev.target.closest('[data-saved-action]');if(!button)return;try{const records=readSaves(),i=Number(button.dataset.savedIndex),record=records[i];if(!record)return;
+    switch(button.dataset.savedAction){
+      case 'Load':if(loadBuild(record.build))$('rcp-build-dialog').close();return;
+      case 'Rename':{const name=prompt('Build name:',record.name);if(!name?.trim())return;record.name=name.trim().slice(0,100);break;}
+      case 'Duplicate':records.push({...record,id:crypto.randomUUID(),name:record.name+' (copy)'});break;
+      case 'Delete':if(!confirm(`Delete saved build “${record.name}”?`))return;records.splice(i,1);break;
+    }writeSaves(records);showSaves();
+  }catch(e){notice(e.message);}};
+  $('rcp-export-build').onclick=()=>{const url=URL.createObjectURL(new Blob([JSON.stringify(snapshot(),null,2)],{type:'application/json'}));const link=document.createElement('a');link.href=url;link.download='silver-springs-build.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
+  $('rcp-import-build').onchange=async ev=>{const file=ev.target.files[0];if(!file)return;try{if(file.size>200000)throw Error('Build file is too large.');if(loadBuild(JSON.parse(await file.text())))$('rcp-build-dialog').close();}catch(e){notice(e.message);}ev.target.value='';};
+  $('rcp-share-build').onclick=async()=>{try{if(!state.items.length)return notice('Add equipment before sharing.');const bytes=new TextEncoder().encode(JSON.stringify(snapshot()));const encoded=btoa(Array.from(bytes,b=>String.fromCharCode(b)).join('')).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');const url=new URL('/runecrafting-hub/tools/hub_build_planner.html',location.origin);url.hash='build='+encoded;await navigator.clipboard.writeText(url.href);notice('Build link copied! Anyone with the link can open their own copy.');}catch(e){notice('Could not copy the link. You can export a build file from My Builds instead.');}};
+  function openSharedBuild(){if(!location.hash.startsWith('#build='))return;try{const encoded=location.hash.slice(7);if(encoded.length>270000)throw Error('Build link is too large.');const bytes=Uint8Array.from(atob(encoded.replace(/-/g,'+').replace(/_/g,'/')),c=>c.charCodeAt(0));loadBuild(JSON.parse(new TextDecoder().decode(bytes)));}catch(e){notice('Unable to open shared build: '+e.message);}}
+
   render();
   window.SSSHubData.fetch()
     .then(async response => { if (!response.ok) throw new Error('Live data unavailable'); return response.json(); })
@@ -607,7 +656,7 @@ main,.wrap{max-width:none}main{padding:22px 20px 40px}body:has(>.wrap){padding:2
       render();
       console.info('Runecrafting Planner: '+(live._dataSource==='repository'?'published catalog':'bundled reference data')+' loaded');
     })
-    .catch(error => { console.warn('Runecrafting Planner: using bundled backup data', error); });
+    .catch(error => { console.warn('Runecrafting Planner: using bundled backup data', error); }).finally(openSharedBuild);
 })();
 </script>
 </body></html>
