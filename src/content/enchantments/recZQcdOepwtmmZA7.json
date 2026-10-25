@@ -1,11 +1,10 @@
 {
-  "sourceRecordId": "recZQcdOepwtmmZA7",
-  "draft": false,
   "name": "Man-Eater",
+  "draft": false,
   "source": "Mythical",
   "category": "Dash",
-  "description": "<p>Charges forcibly dash to Charybdis, briefly liquefying terrain. Jabs near the whirlpool pull in enemies and execute at 10% HP, sating 1 hunger.</p>",
-  "maxLevel": null,
+  "costRule": "free",
+  "description": "<p>A mythical enchant discovered on the relic [orange]Scylla[/orange]. </p><p>Charges forcibly dash to Charybdis, briefly liquefying terrain. Jabs near the whirlpool pull in enemies and execute at 10% HP, sating 1 hunger.</p>",
   "items": [
     "Spears"
   ],
@@ -16,15 +15,6 @@
   "incompatibleVanilla": [
     "Lunge"
   ],
-  "discoverer": "",
-  "researchers": [],
   "discoveredDate": "2026-03-07",
-  "discoveredBy": "",
-  "runeTags": [],
-  "rune1": "",
-  "rune2": "",
-  "rune3": "",
-  "rune4": "",
-  "rune5": "",
-  "costRule": "free"
+  "sourceRecordId": "recZQcdOepwtmmZA7"
 }
