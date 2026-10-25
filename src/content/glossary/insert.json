@@ -1,0 +1,5 @@
+{
+  "key": "insert",
+  "description": "Right-click on the item in your inventory while holding a valid item on your cursor. Right-click on it again to remove or swap the inserted item.",
+  "draft": false
+}
