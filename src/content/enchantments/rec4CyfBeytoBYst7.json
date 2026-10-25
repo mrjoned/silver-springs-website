@@ -1,27 +1,17 @@
 {
-  "sourceRecordId": "rec4CyfBeytoBYst7",
-  "draft": false,
   "name": "Multishot",
+  "draft": false,
   "source": "Vanilla",
   "category": "Uncategorized",
-  "description": "<p>Projectiles bypass invulnerability frames.</p>",
+  "costRule": "free",
+  "description": "<p>[term:arcanumbonus][purple]Arcanum Bonuses[/purple][/term]:</p><p>Projectiles do not apply invulnerability frames, allowing all multishot projectiles to hit the same target.</p>",
   "maxLevel": 1,
   "items": [
     "Crossbows"
   ],
-  "incompatibleRunecrafted": [],
   "incompatibleVanilla": [
     "Piercing"
   ],
-  "discoverer": "",
-  "researchers": [],
-  "discoveredDate": "",
-  "discoveredBy": "",
-  "runeTags": [],
-  "rune1": "",
-  "rune2": "",
-  "rune3": "",
-  "rune4": "",
-  "rune5": "",
-  "costRule": "free"
+  "discoveredDate": "2026-10-25",
+  "sourceRecordId": "rec4CyfBeytoBYst7"
 }
