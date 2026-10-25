@@ -1,14 +1,25 @@
 {
-  "sourceRecordId": "rec3AuBG5l7EyGvqR",
-  "draft": false,
   "name": "Precision",
+  "draft": false,
   "source": "Projects",
   "category": "Damage",
-  "description": "<p>The spear enters a power phase 1.5 seconds into its charge which lasts 1 second and deals +2-4❤️ damage.</p>",
+  "costRule": "per-level",
+  "description": "<p>The spear enters a <em>power phase</em> 1.5 seconds into its charge which lasts 1 second and deals +[effect:hearts][dark-gray]2-4❤️[/dark-gray][/effect] damage.</p>",
+  "effects": [
+    {
+      "key": "hearts",
+      "explanation": "Level I: 2❤️\nLevel II: 3❤️\nLevel III: 4❤️"
+    }
+  ],
   "maxLevel": 3,
   "items": [
     "Spears"
   ],
+  "rune1": "Kinesis",
+  "rune2": "Moments",
+  "rune3": "Kinesis",
+  "rune4": "Mortus",
+  "rune5": "Moments",
   "incompatibleRunecrafted": [
     "Extinction",
     "Flurry"
@@ -23,12 +34,5 @@
     "ElectricSparx"
   ],
   "discoveredDate": "2026-03-07",
-  "discoveredBy": "",
-  "runeTags": [],
-  "rune1": "Kinesis",
-  "rune2": "Moments",
-  "rune3": "Kinesis",
-  "rune4": "Mortus",
-  "rune5": "Moments",
-  "costRule": "per-level"
+  "sourceRecordId": "rec3AuBG5l7EyGvqR"
 }
