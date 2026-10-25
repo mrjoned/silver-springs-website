@@ -1,0 +1,20 @@
+<aside class="wrap rush-banner" aria-label="Rush Weekend">
+  <div class="rush-info"><span class="rush-dot" aria-hidden="true"></span><div><strong data-rush-title>Rush Weekends</strong><p data-rush-date>Every Saturday at 2 AM through Monday at 1:59 AM Central time.</p></div></div>
+  <div class="rush-right"><span data-rush-countdown></span><a href="/content-overview/#sscc/vanilla/events">About Rush Weekends →</a></div>
+</aside>
+<script>
+import {rushAt,countdown} from '../lib/rush-schedule.js';
+const banner=document.querySelector('.rush-banner');
+if(banner){
+ const title=banner.querySelector('[data-rush-title]')!,date=banner.querySelector('[data-rush-date]')!,timer=banner.querySelector('[data-rush-countdown]')!;
+ const local=new Intl.DateTimeFormat(undefined,{weekday:'short',month:'short',day:'numeric',hour:'numeric',minute:'2-digit',timeZoneName:'short'});
+ let previous='';
+ function update(){const now=Date.now(),rush=rushAt(now),key=rush.name+String(rush.active);if(key!==previous){title.textContent=`${rush.active?'Active':'Upcoming'} Rush: ${rush.name}`;banner!.classList.toggle('is-active',rush.active);date.textContent=`${rush.active?'Ends':'Starts'} ${local.format(new Date(rush.target))} · your local time`;previous=key;}timer.textContent=`${rush.active?'Ends':'Starts'} in ${countdown(rush.target-now)}`;}
+ update();setInterval(update,1000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)update();});
+}
+</script>
+<style>
+.rush-banner{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:18px 22px;margin-top:22px;margin-bottom:0;border:1px solid #514357;border-radius:12px;background:#1b1724;color:#f7f4fa;box-sizing:border-box}
+.rush-info{display:flex;align-items:center;gap:13px}.rush-dot{width:9px;height:9px;flex-shrink:0;border-radius:50%;background:#b7a0c9}.is-active .rush-dot{background:#8de4b2;box-shadow:0 0 12px #8de4b244}.rush-info strong{font-size:1.05rem}.rush-info p{margin:4px 0 0;color:#c8c0d0;font-size:.85rem}.rush-right{display:flex;flex-direction:column;gap:5px;text-align:right}.rush-right span{font-variant-numeric:tabular-nums;font-size:.9rem;color:#f6c8e1}.rush-right a{font-size:.82rem;color:#ffb2d7;text-decoration:none}.rush-right a:hover{text-decoration:underline}
+@media(max-width:650px){.rush-banner{margin:18px 17px 0;width:auto;flex-direction:column;align-items:flex-start;padding:16px}.rush-right{text-align:left;gap:8px}}
+</style>
