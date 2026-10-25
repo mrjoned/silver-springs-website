@@ -1,14 +1,25 @@
 {
-  "sourceRecordId": "rect4SXOf6OSuK2fY",
-  "draft": false,
   "name": "Subduction",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Boosting",
-  "description": "<p>Smash attacks subduct the ground, creating a stone spire which instantly lifts you <strong>5-9 blocks,</strong> crumbling after 4 seconds.</p>",
+  "costRule": "per-level",
+  "description": "<p>Smash attacks [brown]<em>subduct</em>[/brown] the ground, creating a stone spire which instantly lifts you [effect:blocks][dark-gray]5-9 blocks[/dark-gray][/effect]<strong>,</strong> crumbling after 4 seconds.</p>",
+  "effects": [
+    {
+      "key": "blocks",
+      "explanation": "Level I: 5 blocks\nLevel II: 7 blocks\nLevel III: 9 blocks"
+    }
+  ],
   "maxLevel": 3,
   "items": [
     "Maces"
   ],
+  "rune1": "Kinesis",
+  "rune2": "Stones",
+  "rune3": "Kinesis",
+  "rune4": "Stones",
+  "rune5": "Moments",
   "incompatibleRunecrafted": [
     "Effervescence"
   ],
@@ -21,11 +32,5 @@
   ],
   "discoveredDate": "2025-06-05",
   "discoveredBy": "TheJ_Team and TroyTheCrafter on 06/05/25",
-  "runeTags": [],
-  "rune1": "Kinesis",
-  "rune2": "Stones",
-  "rune3": "Kinesis",
-  "rune4": "Stones",
-  "rune5": "Moments",
-  "costRule": "per-level"
+  "sourceRecordId": "rect4SXOf6OSuK2fY"
 }
