@@ -4,7 +4,7 @@
   "source": "Runecrafted",
   "category": "Impetus",
   "costRule": "per-level",
-  "description": "<p>Upon [term:blink][dark-gray]blinking[/dark-gray][/term], you engage in [dark-green]<em>divine trickery</em>[/dark-green], a brief [term:stealth][dark-gray]stealth[/dark-gray][/term] that empowers your next attack +2♥️, and create a [blue]<em>shortcut</em>[/blue] for 4 seconds that you can enter once to return to the other end. If the shortcut expires unused, you engage in [dark-green]<em>divine trickery</em>[/dark-green] once more.</p>",
+  "description": "<p>Upon [term:blink][dark-gray]blinking[/dark-gray][/term], you engage in [dark-green]<em>divine trickery</em>[/dark-green], a brief [term:stealth][dark-gray]stealth[/dark-gray][/term] that empowers your next attack +2♥️, and create a [blue]<em>shortcut</em>[/blue] for 4 seconds that you can enter once to return to the other end. If the shortcut expires unused, you engage in [dark-green]<em>divine trickery</em>[/dark-green] once more.</p><p>[dark-gray]<em>\"The most sublime victory delivers them bewilderment.\"</em>[/dark-gray]</p>",
   "maxLevel": 1,
   "items": [
     "Leggings"
