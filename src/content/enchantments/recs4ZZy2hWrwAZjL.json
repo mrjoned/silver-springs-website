@@ -1,27 +1,30 @@
 {
-  "sourceRecordId": "recs4ZZy2hWrwAZjL",
-  "draft": false,
   "name": "Paradigm of Wrath",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Paradigm",
-  "description": "<p>You swing becomes a rapid <strong>onslaught</strong> using all melee hotbar weapons, <em>but</em> your hotbar must <em>all</em> be melee weapons for strikes to land.</p><pre><code>Onslaught swings your weapons in sequence at 2x speed, ignoring mercy frames on landed hits.</code></pre>",
+  "costRule": "per-level",
+  "description": "<p>You swing becomes a rapid [effect:onslaught][dark-gray]onslaught[/dark-gray][/effect] using all melee hotbar weapons, [dark-red]<em>but</em>[/dark-red] your hotbar must <em>all</em> be melee weapons for strikes to land.</p>",
+  "effects": [
+    {
+      "key": "onslaught",
+      "explanation": "Swing your weapons in sequence at 2x speed, ignoring mercy frames on landed hits."
+    }
+  ],
   "maxLevel": 1,
   "items": [
     "Helmets"
   ],
-  "incompatibleRunecrafted": [
-    "Other Paradigms"
-  ],
-  "incompatibleVanilla": [],
-  "discoverer": "skelud",
-  "researchers": [],
-  "discoveredDate": "2023-08-28",
-  "discoveredBy": "skelud on 8/28/23 9:09 PM",
-  "runeTags": [],
   "rune1": "Mortus",
   "rune2": "Cinders",
   "rune3": "Mortus",
   "rune4": "Moments",
   "rune5": "Mortus",
-  "costRule": "per-level"
+  "incompatibleRunecrafted": [
+    "Other Paradigms"
+  ],
+  "discoverer": "skelud",
+  "discoveredDate": "2023-08-28",
+  "discoveredBy": "skelud on 8/28/23 9:09 PM",
+  "sourceRecordId": "recs4ZZy2hWrwAZjL"
 }
