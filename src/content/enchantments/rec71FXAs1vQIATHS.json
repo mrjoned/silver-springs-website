@@ -4,7 +4,7 @@
   "source": "Mythical",
   "category": "Ammo",
   "costRule": "free",
-  "description": "<p>While drawn, the bow pulls items to you and small entities into its [effect:tesseract][dark-gray]tesseract[/dark-gray][/effect]. Mobs fired from the tesseract deal their attack damage as bonus damage. You can fire without any ammo available, releasing a 3❤️ base damage energy shot.<br><br>Found on the Valor Relic: [gradient:purple:green]I.R.I.D.E.S.C.E.N.T.[/gradient]</p>",
+  "description": "<p>While drawn, the bow pulls items to you and small entities into its [effect:tesseract][dark-gray]tesseract[/dark-gray][/effect]. Mobs fired from the tesseract deal their attack damage as bonus damage. You can fire without any ammo available, releasing a 3❤️ base damage energy shot.<br><br>Mythical enchantment discovered on the Relic: [gradient:purple:green]I.R.I.D.E.S.C.E.N.T.[/gradient]</p>",
   "effects": [
     {
       "key": "tesseract",
