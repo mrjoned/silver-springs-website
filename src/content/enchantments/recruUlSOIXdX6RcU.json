@@ -1,14 +1,25 @@
 {
-  "sourceRecordId": "recruUlSOIXdX6RcU",
-  "draft": false,
   "name": "Sniper",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Damage",
-  "description": "<p>Headshots deal +100-200% damage.</p>",
+  "costRule": "per-level",
+  "description": "<p>Headshots deal +[effect:dmg][dark-gray]100-200% damage[/dark-gray][/effect].</p>",
+  "effects": [
+    {
+      "key": "dmg",
+      "explanation": "Level I: 100% damage\nLevel II: 150% damage\nLevel III: 200% damage"
+    }
+  ],
   "maxLevel": 3,
   "items": [
     "Bows"
   ],
+  "rune1": "Moments",
+  "rune2": "Gusts",
+  "rune3": "Gusts",
+  "rune4": "Mortus",
+  "rune5": "Mortus",
   "incompatibleRunecrafted": [
     "Whispering"
   ],
@@ -16,14 +27,7 @@
     "Power"
   ],
   "discoverer": "ChiknThighs",
-  "researchers": [],
   "discoveredDate": "2023-08-30",
   "discoveredBy": "ChiknThighs on 8/30/23 4:18 AM",
-  "runeTags": [],
-  "rune1": "Moments",
-  "rune2": "Gusts",
-  "rune3": "Gusts",
-  "rune4": "Mortus",
-  "rune5": "Mortus",
-  "costRule": "per-level"
+  "sourceRecordId": "recruUlSOIXdX6RcU"
 }
