@@ -4,7 +4,7 @@
   "source": "Runecrafted",
   "category": "Aphelion",
   "costRule": "per-level",
-  "description": "<p>[term:eclipse][blue]<strong><u>Eclipses</u></strong>[/blue][/term] the Raceway Flag. You are instead immune to poison and gain <em>time dilation</em> upon fully refilling your hunger, gaining 100% speed and immunity to hunger loss for 5 seconds.<br>[dark-gray]<em>At gravity's brim, racing against a slowing clock.</em>[/dark-gray]</p>",
+  "description": "<p>[term:eclipse][blue]Eclipses[/blue][/term] the Raceway Flag. You are instead immune to poison and gain <em>time dilation</em> upon fully refilling your hunger, gaining 100% speed and immunity to hunger loss for 5 seconds.<br>[dark-gray]<em>At gravity's brim, racing against a slowing clock.</em>[/dark-gray]</p><p></p>",
   "maxLevel": 1,
   "items": [
     "Boots"
