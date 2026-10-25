@@ -4,13 +4,7 @@
   "source": "Runecrafted",
   "category": "Trove",
   "costRule": "per-level",
-  "description": "<p>All caught trash and treasure is replaced by [effect:scrap][gradient:dark-green:aqua]<em>scrap</em>[/gradient][/effect]<em>.</em></p>",
-  "effects": [
-    {
-      "key": "scrap",
-      "explanation": "A multi-tier loot table. Common draws grant 4-16 leather, ink sacs, glow ink sacs, blaze rods, lily pads, strings, or slime balls. Rarer draws can give crusted gems or runes, grab bag items containing dyes, pottery sherds, or ores, and rarely netherite scraps."
-    }
-  ],
+  "description": "<p>All caught trash and treasure is replaced by [term:scrap][gradient:dark-green:aqua]<em>scrap</em>[/gradient][/term]<em>.</em></p>",
   "maxLevel": 1,
   "items": [
     "Fishing Rods"
