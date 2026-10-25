@@ -1,15 +1,20 @@
 {
-  "sourceRecordId": "recHeUsbHoi6JNtHp",
-  "draft": false,
   "name": "Howling",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Sweeping",
-  "description": "<p>Charged attacks grant 1 stack, up to 4. At 4 stacks, right-click to consume all stacks and Howl, releasing a sonic wave that strikes enemies in a 6-block cylinder for 75% damage. If your offhand weapon is Howling, it also strikes them for 25% damage.</p>",
+  "costRule": "per-level",
+  "description": "<p>Attacks stack 5% attack speed up to 4 times. While stacked, you can right click to consume them to [blue]<em>howl</em>[/blue], releasing a wave which strikes enemies in a 6-block cylinder for 75% damage. If your offhand is Howling, it also strikes for 25% damage.</p>",
   "maxLevel": 1,
   "items": [
     "Swords",
     "Axes"
   ],
+  "rune1": "Mortus",
+  "rune2": "Echoes",
+  "rune3": "Gusts",
+  "rune4": "Echoes",
+  "rune5": "Mortus",
   "incompatibleRunecrafted": [
     "Chainsaw",
     "Tempest",
@@ -18,15 +23,6 @@
   "incompatibleVanilla": [
     "Sweeping Edge"
   ],
-  "discoverer": "",
-  "researchers": [],
-  "discoveredDate": "",
-  "discoveredBy": "",
-  "runeTags": [],
-  "rune1": "Mortus",
-  "rune2": "Echoes",
-  "rune3": "Gusts",
-  "rune4": "Echoes",
-  "rune5": "Mortus",
-  "costRule": "per-level"
+  "discoveredDate": "2026-10-24",
+  "sourceRecordId": "recHeUsbHoi6JNtHp"
 }
