@@ -1,10 +1,16 @@
 {
-  "sourceRecordId": "recHKGnuEDU6fjX63",
-  "draft": false,
   "name": "Reverberating",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Hazard",
-  "description": "<p>You reflect a sonic wave at entities who shoot you which stuns them for 0.25-1 seconds upon arrival. </p>",
+  "costRule": "per-level",
+  "description": "<p>You reflect a sonic wave at entities who shoot you which [term:stun][dark-gray]stuns[/dark-gray][/term] them for [effect:seconds][dark-gray]0.25-1 seconds[/dark-gray][/effect] upon arrival.</p>",
+  "effects": [
+    {
+      "key": "seconds",
+      "explanation": "Level I: 0.25\nLevel II: 0.5 seconds\nLevel III 0.75 seconds\nLevel IV: 1 seconds"
+    }
+  ],
   "maxLevel": 1,
   "items": [
     "Helmets",
@@ -12,6 +18,11 @@
     "Leggings",
     "Boots"
   ],
+  "rune1": "Gusts",
+  "rune2": "Kinesis",
+  "rune3": "Echoes",
+  "rune4": "Kinesis",
+  "rune5": "Sparks",
   "incompatibleRunecrafted": [
     "Volatile"
   ],
@@ -19,14 +30,7 @@
     "Thorns"
   ],
   "discoverer": "Starmarsh",
-  "researchers": [],
   "discoveredDate": "2023-08-27",
   "discoveredBy": "Starmarsh on 8/27/23 4:05 AM",
-  "runeTags": [],
-  "rune1": "Gusts",
-  "rune2": "Kinesis",
-  "rune3": "Echoes",
-  "rune4": "Kinesis",
-  "rune5": "Sparks",
-  "costRule": "per-level"
+  "sourceRecordId": "recHKGnuEDU6fjX63"
 }
