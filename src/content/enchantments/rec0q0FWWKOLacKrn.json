@@ -1,11 +1,10 @@
 {
-  "sourceRecordId": "rec0q0FWWKOLacKrn",
+  "name": "Tartarean Hellhound🌟",
   "draft": false,
-  "name": "Tartarean Hellhound",
   "source": "Mythical",
   "category": "Spread",
-  "description": "<p>All loaded projectiles are fired in a tight volley, with arrows fired as 2❤️ damage fangs.</p>",
-  "maxLevel": null,
+  "costRule": "free",
+  "description": "<p>All loaded projectiles are fired in a tight volley, with arrows fired as 2❤️ damage <em>fangs</em>.</p><p>Mythical enchantment discovered on the relic [dark-red]Cerberus[/dark-red].</p>",
   "items": [
     "Crossbows"
   ],
@@ -13,16 +12,6 @@
     "Gatling",
     "Cryovolcano"
   ],
-  "incompatibleVanilla": [],
-  "discoverer": "",
-  "researchers": [],
-  "discoveredDate": "",
-  "discoveredBy": "",
-  "runeTags": [],
-  "rune1": "",
-  "rune2": "",
-  "rune3": "",
-  "rune4": "",
-  "rune5": "",
-  "costRule": "free"
+  "discoveredDate": "2026-10-25",
+  "sourceRecordId": "rec0q0FWWKOLacKrn"
 }
