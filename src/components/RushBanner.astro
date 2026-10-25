@@ -1,8 +1,16 @@
-<aside class="wrap rush-banner" aria-label="Rush Weekend">
+<div class="wrap weekend-strip">
+<aside class="rush-banner" aria-label="Rush Weekend">
   <div class="rush-info"><span class="rush-dot" aria-hidden="true"></span><div><strong data-rush-title>Rush Weekends</strong><p data-rush-date>Every Saturday at 2 AM through Monday at 1:59 AM Central time.</p></div></div>
   <div class="rush-right"><span data-rush-countdown></span><a href="/content-overview/#sscc/vanilla/events">About Rush Weekends →</a></div>
 </aside>
+<aside class="event-banner" aria-label="Ongoing events" hidden>
+  <strong>Happening now</strong>
+  <div data-active-events></div>
+  <a href="/calendar/">View event calendar →</a>
+</aside>
+</div>
 <script>
+import {activeEvents} from '../lib/active-events.js';
 import {rushAt,countdown} from '../lib/rush-schedule.js';
 const banner=document.querySelector('.rush-banner');
 if(banner){
@@ -12,9 +20,65 @@ if(banner){
  function update(){const now=Date.now(),rush=rushAt(now),key=rush.name+String(rush.active);if(key!==previous){title.textContent=`${rush.active?'Active':'Upcoming'} Rush: ${rush.name}`;banner!.classList.toggle('is-active',rush.active);date.textContent=`${rush.active?'Ends':'Starts'} ${local.format(new Date(rush.target))} · your local time`;previous=key;}timer.textContent=`${rush.active?'Ends':'Starts'} in ${countdown(rush.target-now)}`;}
  update();setInterval(update,1000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)update();});
 }
+
+const eventPanel=document.querySelector<HTMLElement>('.event-banner');
+const eventList=document.querySelector<HTMLElement>('[data-active-events]');
+if(eventPanel && eventList){
+ let events: any[] = [], zone='America/Chicago', lastSignature='', busy=false, lastFetch=0;
+ const localEnd=new Intl.DateTimeFormat(undefined,{month:'short',day:'numeric',hour:'numeric',minute:'2-digit',timeZoneName:'short'});
+ function renderEvents(){
+   const current=activeEvents(events,Date.now(),zone);
+   const signature=JSON.stringify(current.map(e=>[e.id,e.title,e.endMs]));
+   eventPanel!.hidden=current.length===0;
+   if(signature===lastSignature)return;
+   lastSignature=signature;eventList!.replaceChildren();
+   for(const event of current){
+     const item=document.createElement('div');
+     item.className='active-event';
+     const name=document.createElement('p');name.textContent=event.title;
+     const end=document.createElement('small');
+     end.textContent='Ends '+localEnd.format(new Date(event.endMs))+' · your local time';
+     item.append(name,end);eventList!.append(item);
+   }
+ }
+ async function refreshEvents(){
+   if(busy)return;busy=true;lastFetch=Date.now();
+   const abort=new AbortController(),timeout=setTimeout(()=>abort.abort(),15000);
+   try {
+     const central=new Intl.DateTimeFormat('en-US',{timeZone:'America/Chicago',year:'numeric',month:'2-digit'});
+     const parts=central.formatToParts(new Date());
+     const month=parts.find(p=>p.type==='year')!.value+'-'+parts.find(p=>p.type==='month')!.value;
+     const response=await fetch('/api/calendar?month='+month,{signal:abort.signal});
+     if(!response.ok)throw new Error('Calendar unavailable');
+     const data=await response.json();
+     if(data.source!=='google'||!Array.isArray(data.events))throw new Error('Invalid calendar');
+     events=data.events;zone=data.timeZone||'America/Chicago';renderEvents();
+   }catch{events=[];renderEvents();}
+   finally{clearTimeout(timeout);busy=false;}
+ }
+ refreshEvents();
+ setInterval(renderEvents,1000);
+ setInterval(()=>{if(!document.hidden)refreshEvents();},300000);
+ document.addEventListener('visibilitychange',()=>{
+   if(!document.hidden){renderEvents();if(Date.now()-lastFetch>=300000)refreshEvents();}
+ });
+}
 </script>
 <style>
-.rush-banner{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:18px 22px 26px;margin-top:22px;margin-bottom:0;border:1px solid #514357;border-radius:12px;background:#1b1724;color:#f7f4fa;box-sizing:border-box}
+.weekend-strip{display:grid;gap:16px;margin-top:22px}
+.weekend-strip:has(.event-banner:not([hidden])){grid-template-columns:1fr 1fr}
+.event-banner{padding:18px 22px 26px;border:1px solid #4d6259;border-radius:12px;background:#16231e;color:#f7f4fa;min-width:0}
+.event-banner[hidden]{display:none}
+.event-banner strong{font-size:1.05rem}
+.event-banner :global(.active-event){margin:8px 0 12px}
+.event-banner :global(p){margin:0 0 4px;overflow-wrap:anywhere}
+.event-banner :global(small){color:#c8d0cb;font-size:.85rem}
+.event-banner a{color:#a7e5c4;font-size:.82rem;text-decoration:none}
+.event-banner a:hover{text-decoration:underline}
+@media(min-width:801px){.weekend-strip:has(.event-banner:not([hidden])) .rush-banner{flex-direction:column;align-items:flex-start;justify-content:center}.weekend-strip:has(.event-banner:not([hidden])) .rush-right{text-align:left}}
+@media(max-width:800px){.weekend-strip:has(.event-banner:not([hidden])){grid-template-columns:1fr}}
+
+.rush-banner{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:18px 22px 26px;margin:0;min-width:0;border:1px solid #514357;border-radius:12px;background:#1b1724;color:#f7f4fa;box-sizing:border-box}
 .rush-info{display:flex;align-items:center;gap:13px}.rush-dot{width:9px;height:9px;flex-shrink:0;border-radius:50%;background:#b7a0c9}.is-active .rush-dot{background:#8de4b2;box-shadow:0 0 12px #8de4b244}.rush-info strong{font-size:1.05rem}.rush-info p{margin:4px 0 0;color:#c8c0d0;font-size:.85rem}.rush-right{display:flex;flex-direction:column;gap:5px;text-align:right}.rush-right span{font-variant-numeric:tabular-nums;font-size:.9rem;color:#f6c8e1}.rush-right a{font-size:.82rem;color:#ffb2d7;text-decoration:none}.rush-right a:hover{text-decoration:underline}
-@media(max-width:650px){.rush-banner{margin:18px 17px 0;width:auto;flex-direction:column;align-items:flex-start;padding:16px 16px 24px}.rush-right{text-align:left;gap:8px}}
+@media(max-width:650px){.weekend-strip{margin:18px 17px 0;width:auto}.rush-banner{width:auto;flex-direction:column;align-items:flex-start;padding:16px 16px 24px}.rush-right{text-align:left;gap:8px}}
 </style>
