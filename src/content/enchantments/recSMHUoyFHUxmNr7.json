@@ -1,14 +1,29 @@
 {
-  "sourceRecordId": "recSMHUoyFHUxmNr7",
-  "draft": false,
   "name": "Momentum",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Damage",
-  "description": "<p>**Well-timed **attacks deal +1❤️ damage and stack <em>momentum</em>, stacking infinitely for +4-8% attack speed per stack.</p>",
+  "costRule": "per-level",
+  "description": "<p>[effect:time][dark-gray]Well-timed[/dark-gray][/effect] attacks deal +1❤️ damage and stack [gold]<em>momentum</em>[/gold], stacking infinitely for +[effect:percent][dark-gray]4-8% attack speed[/dark-gray][/effect] per stack.</p>",
+  "effects": [
+    {
+      "key": "time",
+      "explanation": "A charged attack made within 0.3 seconds of your attack recharging."
+    },
+    {
+      "key": "percent",
+      "explanation": "Level I: 4% attack speed\nLevel II: 6% attack speed\nLevel III: 8% attack speed"
+    }
+  ],
   "maxLevel": 3,
   "items": [
     "Axes"
   ],
+  "rune1": "Moments",
+  "rune2": "Mortus",
+  "rune3": "Echoes",
+  "rune4": "Mortus",
+  "rune5": "Gusts",
   "incompatibleRunecrafted": [
     "Extinction",
     "Exploit"
@@ -25,11 +40,5 @@
   ],
   "discoveredDate": "2025-05-29",
   "discoveredBy": "J1mbers, skelud, and TroyTheCrafter on 05/29/25",
-  "runeTags": [],
-  "rune1": "Moments",
-  "rune2": "Mortus",
-  "rune3": "Echoes",
-  "rune4": "Mortus",
-  "rune5": "Gusts",
-  "costRule": "per-level"
+  "sourceRecordId": "recSMHUoyFHUxmNr7"
 }
