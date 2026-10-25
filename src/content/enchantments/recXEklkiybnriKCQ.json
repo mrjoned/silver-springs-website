@@ -1,27 +1,23 @@
 {
-  "sourceRecordId": "recXEklkiybnriKCQ",
-  "draft": false,
   "name": "Loyalty",
+  "draft": false,
   "source": "Vanilla",
   "category": "Uncategorized",
-  "description": "<p>Returns earlier and at a faster speed. Returns even if it falls in the void.</p>",
+  "costRule": "free",
+  "description": "<p>[term:arcanumbonus][purple]Arcanum Bonuses[/purple][/term]:</p><p>Tridents now returns faster, with a max flight time of [effect:sec][dark-gray]2-1.6 seconds[/dark-gray][/effect].</p>",
+  "effects": [
+    {
+      "key": "sec",
+      "explanation": "Level I: 2 seconds\nLevel II: 1.8 seconds\nLevel III: 1.6 seconds"
+    }
+  ],
   "maxLevel": 3,
   "items": [
     "Tridents"
   ],
-  "incompatibleRunecrafted": [],
   "incompatibleVanilla": [
     "Riptide"
   ],
-  "discoverer": "",
-  "researchers": [],
-  "discoveredDate": "",
-  "discoveredBy": "",
-  "runeTags": [],
-  "rune1": "",
-  "rune2": "",
-  "rune3": "",
-  "rune4": "",
-  "rune5": "",
-  "costRule": "free"
+  "discoveredDate": "2026-10-25",
+  "sourceRecordId": "recXEklkiybnriKCQ"
 }
