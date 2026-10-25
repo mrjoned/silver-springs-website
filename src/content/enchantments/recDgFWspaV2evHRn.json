@@ -1,28 +1,31 @@
 {
-  "sourceRecordId": "recDgFWspaV2evHRn",
-  "draft": false,
   "name": "Tithing",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Cutting",
-  "description": "<p>More entities can be sheared periodically for resources.</p><ul><li><strong>Blazes:</strong> Blaze Rods</li><li><strong>Chickens and Parrots:</strong> Feathers</li><li><strong>Creepers:</strong> Gunpowder</li><li><strong>Ghasts:</strong> Ghast Tears</li><li>**Glow Squids: **Glow Ink</li><li>**Guardians: **Prismarine Shards and Crystals</li><li>**Magma Cubes: **Magma Cream</li><li><strong>Phantoms:</strong> Phantom Membranes</li><li><strong>Shulkers:</strong> Shulker Shells</li><li><strong>Skeletons:</strong> Bone Meal</li><li><strong>Slimes:</strong> Slime Balls</li><li><strong>Sniffers:</strong> Moss</li><li><strong>Spiders and Striders:</strong> String</li><li>**Squids: **Ink</li><li>**Wither Skeletons: **Coal</li></ul>",
+  "costRule": "per-level",
+  "description": "<p>More entities can be sheared periodically for [effect:res][dark-gray]resources[/dark-gray][/effect].</p>",
+  "effects": [
+    {
+      "key": "res",
+      "explanation": "- Blaze: 1 Blaze Rod\n- Bogged: 1-3 Bone Meals\n- Breeze: 1 Breeze Rod\n- Cave Spider: 1-2 Strings\n- Chicken: 1-2 Feathers\n- Creaking: 1-2 Resin Clumps\n- Creeper: 1-2 Gunpowders\n- Elder Guardian: 1-2 Prismarine Shards, 1 Prismarine Crystals\n- Ghast: 1 Ghast Tear\n- Glow Squid: 1 Glow Ink Sac\n- Guardian: 1-2 Prismarine Shards, 1 Prismarine Crystals\n- Magma Cube: 1 Magma Cream\n- Parched: 1-3 Bone Meals\n- Parrot: 1-2 Feathers\n- Phantom: 1 Phantom Membrane\n- Shulker: 1 Shulker Shells\n- Skeleton: 1-3 Bone Meals\n- Slime: 1 Slime Ball\n- Sniffer: 1-2 Moss Blocks\n- Spider: 1-2 Strings\n- Squid: 1 Ink Sac\n- Stray: 1-3 Bone Meals\n- Strider: 1-2 Strings\n- Wither Skeletons: 1 Coal"
+    }
+  ],
   "maxLevel": 1,
   "items": [
     "Shears"
   ],
-  "incompatibleRunecrafted": [
-    "Mitosis",
-    "Wire Cutters"
-  ],
-  "incompatibleVanilla": [],
-  "discoverer": "Maidl",
-  "researchers": [],
-  "discoveredDate": "2023-08-19",
-  "discoveredBy": "Maidl on 8/19/23 9:00 PM",
-  "runeTags": [],
   "rune1": "Moments",
   "rune2": "Vitality",
   "rune3": "Arcanum",
   "rune4": "Opulence",
   "rune5": "Moments",
-  "costRule": "per-level"
+  "incompatibleRunecrafted": [
+    "Mitosis",
+    "Wire Cutters"
+  ],
+  "discoverer": "Maidl",
+  "discoveredDate": "2023-08-19",
+  "discoveredBy": "Maidl on 8/19/23 9:00 PM",
+  "sourceRecordId": "recDgFWspaV2evHRn"
 }
