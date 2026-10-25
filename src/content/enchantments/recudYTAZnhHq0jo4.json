@@ -4,7 +4,7 @@
   "source": "Runecrafted",
   "category": "Impetus",
   "costRule": "per-level",
-  "description": "<ul><li><p>You can riptide while grounded without being wet.</p></li><li><p>Whenever your riptide, you [blue]<em>ride the wave</em>[/blue], always traveling the full distance, at constant speed, and with full control of your direction, striking all nearby enemies along the way.</p></li></ul><p></p>",
+  "description": "<ul><li><p>You can riptide while grounded without being wet.</p></li><li><p>Whenever your riptide, you [blue]<em>ride the wave</em>[/blue], always traveling the full distance, at constant speed, and with full control of your direction, striking all nearby enemies along the way.</p></li></ul><p>[dark-gray]<em>\"Walk the earth and bring unto them my current.\"</em>[/dark-gray]</p>",
   "maxLevel": 1,
   "items": [
     "Leggings"
