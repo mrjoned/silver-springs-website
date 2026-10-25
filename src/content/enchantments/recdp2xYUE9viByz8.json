@@ -1,10 +1,16 @@
 {
-  "sourceRecordId": "recdp2xYUE9viByz8",
-  "draft": false,
   "name": "Volatile",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Hazard",
-  "description": "<p>Taking at least 1❤️ damage at once lights your fuse for 2 seconds, ending in a fiery explosion which ignites and deals <strong>1.5-6❤️ damage</strong> to enemies within 5 blocks.</p>",
+  "costRule": "per-level",
+  "description": "<p>Taking at least 1❤️ damage at once lights your fuse for 2 seconds, ending in a fiery explosion which ignites and deals [effect:dmg][dark-gray]1.5-6❤️ damage[/dark-gray][/effect] to enemies within 5 blocks.</p>",
+  "effects": [
+    {
+      "key": "dmg",
+      "explanation": "Level I: 1.5❤️ damage\nLevel II: 3❤️ damage\nLevel III: 4.5❤️ damage\nLevel IV: 6❤️ damage"
+    }
+  ],
   "maxLevel": 1,
   "items": [
     "Helmets",
@@ -12,6 +18,11 @@
     "Leggings",
     "Boots"
   ],
+  "rune1": "Mortus",
+  "rune2": "Cinders",
+  "rune3": "Moments",
+  "rune4": "Cinders",
+  "rune5": "Kinesis",
   "incompatibleRunecrafted": [
     "Reverberating"
   ],
@@ -24,11 +35,5 @@
   ],
   "discoveredDate": "2025-06-06",
   "discoveredBy": "Starmarsh and beccc on 06/06/25",
-  "runeTags": [],
-  "rune1": "Mortus",
-  "rune2": "Cinders",
-  "rune3": "Moments",
-  "rune4": "Cinders",
-  "rune5": "Kinesis",
-  "costRule": "per-level"
+  "sourceRecordId": "recdp2xYUE9viByz8"
 }
