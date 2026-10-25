@@ -1,27 +1,24 @@
 {
-  "sourceRecordId": "recp0h4QrYKJFChl1",
-  "draft": false,
   "name": "Paradigm of Gluttony",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Paradigm",
-  "description": "<p>Your hunger bar acts as an additional secondary health bar, but consumed food is at best as filling as bread. </p><blockquote><p><strong>On-Equip</strong>: Consume half of your current hunger.</p></blockquote>",
+  "costRule": "per-level",
+  "description": "<p>Your hunger bar acts as a bonus secondary health bar, [dark-red]<em>but</em>[/dark-red] consumed food is at best as filling as bread.</p><ul><li><p>[dark-gray]On-Equip[/dark-gray]: Consume half of your current hunger.</p></li></ul><p></p>",
   "maxLevel": 1,
   "items": [
     "Helmets"
   ],
-  "incompatibleRunecrafted": [
-    "Other Paradigms"
-  ],
-  "incompatibleVanilla": [],
-  "discoverer": "TroyTheCrafter",
-  "researchers": [],
-  "discoveredDate": "2023-08-20",
-  "discoveredBy": "TroyTheCrafter on 8/20/23, 3:22 AM",
-  "runeTags": [],
   "rune1": "Opulence",
   "rune2": "Void",
   "rune3": "Moments",
   "rune4": "Opulence",
   "rune5": "Void",
-  "costRule": "per-level"
+  "incompatibleRunecrafted": [
+    "Other Paradigms"
+  ],
+  "discoverer": "TroyTheCrafter",
+  "discoveredDate": "2023-08-20",
+  "discoveredBy": "TroyTheCrafter on 8/20/23, 3:22 AM",
+  "sourceRecordId": "recp0h4QrYKJFChl1"
 }
