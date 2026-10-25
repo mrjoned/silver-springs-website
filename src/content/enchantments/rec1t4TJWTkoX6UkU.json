@@ -1,10 +1,16 @@
 {
-  "sourceRecordId": "rec1t4TJWTkoX6UkU",
-  "draft": false,
   "name": "Ice Aspect",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Aspect",
-  "description": "<p>Attacks apply 4-8 seconds of freezing, stacking with each attack and capping at 20 seconds.</p>",
+  "costRule": "per-level",
+  "description": "<p>Attacks apply [aqua]<em>freezing</em>[/aqua] for [effect:seconds][dark-gray]4-8 seconds[/dark-gray][/effect], stacking with each attack and capping at 20 seconds.</p>",
+  "effects": [
+    {
+      "key": "seconds",
+      "explanation": "Level I: 4 seconds\nLevel II: 6 seconds\nLevel III: 8 seconds"
+    }
+  ],
   "maxLevel": 3,
   "items": [
     "Maces",
@@ -12,6 +18,11 @@
     "Axes",
     "Spears"
   ],
+  "rune1": "Mortus",
+  "rune2": "Echoes",
+  "rune3": "Chills",
+  "rune4": "Chills",
+  "rune5": "Chills",
   "incompatibleRunecrafted": [
     "Plague Aspect",
     "Purity Aspect",
@@ -20,15 +31,7 @@
   "incompatibleVanilla": [
     "Fire Aspect"
   ],
-  "discoverer": "",
-  "researchers": [],
-  "discoveredDate": "",
+  "discoveredDate": "2026-10-24",
   "discoveredBy": "<none> on 12/25/16, 12:57 PM",
-  "runeTags": [],
-  "rune1": "Mortus",
-  "rune2": "Echoes",
-  "rune3": "Chills",
-  "rune4": "Chills",
-  "rune5": "Chills",
-  "costRule": "per-level"
+  "sourceRecordId": "rec1t4TJWTkoX6UkU"
 }
