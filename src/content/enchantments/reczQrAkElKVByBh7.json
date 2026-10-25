@@ -1,10 +1,10 @@
 {
-  "sourceRecordId": "reczQrAkElKVByBh7",
-  "draft": false,
   "name": "Unbreaking IV",
+  "draft": false,
   "source": "Runecrafted",
   "category": "Uncategorized",
-  "description": "<p>The item breaks 5x slower.</p><blockquote><p><strong>Runecrafting Bonus</strong>: The item is immune to destruction while dropped in the world. If the item would break, it instead drops to Unbreaking III and repairs 25% of its durability.</p></blockquote>",
+  "costRule": "once",
+  "description": "<p>The item breaks 5x slower.</p><ul><li><p>[term:runebonus][pink]<strong>Runecrafting Bonus</strong>[/pink][/term]: The item is immune to destruction while dropped in the world. If the item would break, it instead drops to Unbreaking III and repairs 25% of its durability</p></li></ul><p></p>",
   "maxLevel": 4,
   "items": [
     "Helmets",
@@ -27,17 +27,11 @@
     "Maces",
     "Spears"
   ],
-  "incompatibleRunecrafted": [],
-  "incompatibleVanilla": [],
-  "discoverer": "",
-  "researchers": [],
-  "discoveredDate": "",
-  "discoveredBy": "",
-  "runeTags": [],
   "rune1": "Arcanum",
   "rune2": "Aegis",
   "rune3": "Aegis",
   "rune4": "Aegis",
   "rune5": "Aegis",
-  "costRule": "once"
+  "discoveredDate": "2026-10-25",
+  "sourceRecordId": "reczQrAkElKVByBh7"
 }
