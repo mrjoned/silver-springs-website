@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import {onRequestPost,validateBuild} from '../functions/api/builds/index.js';
+import {onRequestGet} from '../functions/api/builds/[id].js';
+const rows=new Map();let args;
+const env={BUILDS_DB:{prepare(sql){return {bind(...values){args=values;return this},async run(){rows.set(args[0],args[2]);},async first(){return rows.has(args[0])?{payload:rows.get(args[0])}:null}}}}};
+const build={version:1,items:[{type:'Swords',enchants:[{name:'Test 🌟',level:2}],gems:[]}]};
+const request=()=>new Request('https://example.com/api/builds',{method:'POST',headers:{Origin:'https://example.com','Content-Type':'application/json'},body:JSON.stringify(build)});
+const response=await onRequestPost({request:request(),env});assert.equal(response.status,201);const link=(await response.json()).url;const id=link.split('/').pop();assert.match(id,/^[a-f0-9]{24}$/);
+assert.equal((await (await onRequestPost({request:request(),env})).json()).url,link);
+const fetched=await onRequestGet({params:{id},env});assert.equal((await fetched.json()).items[0].enchants[0].name,'Test 🌟');
+assert.equal((await onRequestGet({params:{id:'0'.repeat(24)},env})).status,404);
+assert.throws(()=>validateBuild({version:2,items:[]}));
+assert.equal((await onRequestPost({request:request(),env:{}})).status,503);
+console.log('Short links: save/load, Unicode, deduplication, validation, missing build and missing binding passed.');
