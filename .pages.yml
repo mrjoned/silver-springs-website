@@ -547,3 +547,73 @@ content:
     label: Draft (hide from website)
     type: boolean
     default: true
+- name: trials
+  label: Trials of Valor
+  type: collection
+  path: src/content/trials
+  format: json
+  filename:
+    template: '{primary}.json'
+    field: create
+  subfolders: false
+  view:
+    primary: name
+    fields: [name, order, draft]
+    sort: [order, name]
+    default:
+      sort: order
+      order: asc
+  fields:
+  - name: name
+    label: Trial name
+    type: string
+    required: true
+  - name: draft
+    label: Draft (hide from comparison and classes)
+    type: boolean
+    default: true
+  - name: order
+    label: Display order
+    type: number
+    default: 0
+  - name: entryCost
+    label: Entry cost
+    type: string
+    required: true
+    default: 1,000 silver
+  - name: length
+    label: Length (waves, rounds, bosses)
+    type: string
+    required: true
+  - name: playerLimit
+    label: Player limit
+    type: string
+    required: true
+  - name: rewards
+    label: Win rewards
+    type: string
+    required: true
+  - name: equipment
+    label: Equipment
+    type: string
+    required: true
+    default: Bring your own gear
+    description: Shown in the comparison when no classes are listed. With classes, their count or single class name is shown automatically.
+  - name: equipmentNotes
+    label: Equipment / class notes
+    type: text
+    description: Optional introduction shown above the class descriptions.
+  - name: classes
+    label: Classes
+    type: object
+    list: true
+    description: These classes appear in the guide and determine the class count in the comparison table.
+    fields:
+    - name: name
+      label: Class name
+      type: string
+      required: true
+    - name: description
+      label: Class description
+      type: text
+      required: true

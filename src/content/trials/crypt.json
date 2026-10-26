@@ -1,0 +1,25 @@
+{
+  "name": "Crypt",
+  "draft": false,
+  "order": 20,
+  "entryCost": "1,000 silver",
+  "length": "30 waves · 3 bosses",
+  "playerLimit": "6 players",
+  "rewards": "60 Trial Points + 4 Valor Badges",
+  "equipment": "Provided class",
+  "equipmentNotes": "",
+  "classes": [
+    {
+      "name": "Graverobber",
+      "description": "Shield melee; effective against skeletons."
+    },
+    {
+      "name": "Cryptstalker",
+      "description": "High-damage dual-wielding melee."
+    },
+    {
+      "name": "Tombraider",
+      "description": "Ranged combat; whip roots enemies."
+    }
+  ]
+}

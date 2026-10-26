@@ -1,0 +1,52 @@
+import assert from 'node:assert/strict';
+import {readFileSync,writeFileSync,unlinkSync,existsSync} from 'node:fs';
+import {execFileSync} from 'node:child_process';
+import vm from 'node:vm';
+import {renderTrials} from '../src/lib/trials.js';
+import {loadGameCatalogs,renderValorShop,valorData} from '../src/lib/game-catalogs.js';
+const read=p=>readFileSync(p,'utf8');
+const fixture={name:'Test Arena <unsafe>',draft:false,order:1000,entryCost:'2,000 silver',length:'12 waves',playerLimit:'4 players',rewards:'20 Trial Points',equipment:'Provided classes',classes:[{name:'Tester',description:'<script>unsafe()</script>'}]};
+const rendered=renderTrials([fixture,{draft:true}]);
+assert(rendered.table.includes('Test Arena &lt;unsafe&gt;'));
+assert(!rendered.classes.includes('<script>'));assert(rendered.classes.includes('&lt;script&gt;'));
+assert(rendered.table.includes('Tester'));
+assert(renderTrials([{...fixture,classes:[...fixture.classes,{name:'Second',description:'Second class'}]}]).table.includes('2 classes'));
+assert.throws(()=>renderTrials([{...fixture,classes:[{}]}]),/class/);
+assert.throws(()=>renderTrials([fixture,fixture]),/Duplicate/);
+const catalog=loadGameCatalogs(),shop=renderValorShop(catalog);
+const embedded=JSON.parse(shop.match(/const ITEMS=(.*);\n/)[1]);
+assert.equal(embedded.length,catalog.valor.filter(e=>e.shop!=='reference').length);
+assert(embedded.every(e=>e.Shop!=='reference'));
+assert(!shop.includes('<option value="reference">'));
+assert(shop.includes("ITEMS.length+' items'"));
+// Removing reference rows must not shift saved cart selections to other products.
+const all=valorData(catalog),first=all.find(e=>e.Shop!=='reference');
+const values=new Map([['valor-shop-cart-v2',JSON.stringify({[first.Id]:2})]]);
+const storage={getItem:k=>values.get(k)??null,setItem:(k,v)=>values.set(k,v)};
+const ctx=vm.createContext({window:{localStorage:storage}});
+vm.runInContext(read('public/assets/valor-cart-storage.js'),ctx);
+const saved=ctx.window.SSSValorStorage.load(embedded,[],e=>e.Shop!=='reference',storage);
+assert.equal(saved.cart[embedded.findIndex(e=>e.Id===first.Id)],2);
+const path='src/content/trials/guide-test-fixture.json',hidden='src/content/trials/guide-test-hidden.json';
+assert(!existsSync(path)&&!existsSync(hidden),'Test fixture paths must be unused');
+const build=()=>execFileSync(process.execPath,['node_modules/astro/bin/astro.mjs','build','--force'],{stdio:'pipe'});
+try{
+  writeFileSync(path,JSON.stringify(fixture));writeFileSync(hidden,JSON.stringify({name:'Hidden Test Arena',draft:true}));
+  build();
+  let html=read('dist/content-overview/index.html');
+  assert(html.includes('Test Arena &lt;unsafe&gt;'));assert(!html.includes('Hidden Test Arena'));
+  assert(!html.includes('THE DETAILS'));assert(!html.includes('Melon'));
+  assert(html.includes('Asteroids · 4 classes'));
+  assert(html.includes('guide-rush-status'));assert(!html.includes('Check current announcements for the active Rush'));
+  assert(!html.includes('Published catalog:'));assert(!html.includes('The updated catalog contains'));
+  for(const item of catalog.valor.filter(e=>e.category==='Additional Charms'))assert(html.includes(item.name.replace(/&/g,'&amp;')));
+  writeFileSync(path,JSON.stringify({...fixture,name:'Edited Test Arena',classes:[...fixture.classes,{name:'Second',description:'Another class'}]}));
+  build();html=read('dist/content-overview/index.html');
+  assert(html.includes('Edited Test Arena · 2 classes'));assert(!html.includes('Test Arena &lt;unsafe&gt;'));
+  writeFileSync(path,JSON.stringify({...fixture,draft:true}));build();
+  assert(!read('dist/content-overview/index.html').includes('Test Arena &lt;unsafe&gt;'));
+}finally{
+  for(const p of [path,hidden])if(existsSync(p))unlinkSync(p);
+  build();
+}
+console.log('Guide checks passed: CMS additions/edits/drafts, class counts, escaped text, shop counts, saved carts, Additional Charms and Rush placement.');

@@ -82,7 +82,8 @@ const hostile=structuredClone(catalog);hostile.enchantments[0].description='</sc
 assert(!renderTool('hub_build_planner.html',hostile).includes('<script>evil()'));
 hostile.valor[0].description='<img src=x onerror=evil()> $&';
 assert(!renderValorShop(hostile).includes('<img src=x'));
-const overview=renderOverview(readFileSync('src/content/pages/content-overview.html','utf8'),catalog);
+// The page resolves the separately rendered Tome table before catalog tokens.
+const overview=renderOverview(readFileSync('src/content/pages/content-overview.html','utf8').replace('__SSS_TOME_SPELL_TABLE__',''),catalog);
 assert(!overview.includes('__SSS_'));assert(!overview.includes('srcdoc='));assert(overview.includes('src="/valor-shop/"'));
 // Validation is independent of fixed record counts and supports drafts with incomplete fields.
 const fixture=mkdtempSync(join(tmpdir(),'sss-catalog-test-'));

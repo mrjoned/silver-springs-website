@@ -1,0 +1,17 @@
+{
+  "name": "Ruined Pantheon",
+  "draft": false,
+  "order": 50,
+  "entryCost": "1,000 silver",
+  "length": "10 rounds · 1 boss",
+  "playerLimit": "1 player · solo only",
+  "rewards": "15 Trial Points + 1 Valor Badge",
+  "equipment": "Provided class",
+  "equipmentNotes": "",
+  "classes": [
+    {
+      "name": "Last Defender",
+      "description": "You’re the last line of defense! The Last Defender comes with a sword, shield, bow, chainmail armor, and a few health potions. Ruined Pantheon is solo only."
+    }
+  ]
+}

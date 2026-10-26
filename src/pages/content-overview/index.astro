@@ -2,10 +2,18 @@
 import SiteLayout from "../../layouts/SiteLayout.astro";
 import rawContent from "../../content/pages/content-overview.html?raw";
 import { renderOverview } from '../../lib/site-catalogs.js';
+import GuideRushStatus from '../../components/GuideRushStatus.astro';
+import { renderTrials } from '../../lib/trials.js';
 import { renderTomeSpells } from '../../lib/tome-spells.js';
 const spells = import.meta.glob('../../content/tome-spells/*.json', { eager: true, import: 'default' });
-const content = renderOverview(rawContent.replace('__SSS_TOME_SPELL_TABLE__', renderTomeSpells(Object.values(spells))));
+const trials = import.meta.glob('../../content/trials/*.json', { eager: true, import: 'default' });
+const trialGuide = renderTrials(Object.values(trials));
+const content = renderOverview(rawContent.replace('<!--trials-table-->',trialGuide.table).replace('<!--trials-classes-->',trialGuide.classes).replace('__SSS_TOME_SPELL_TABLE__', renderTomeSpells(Object.values(spells))));
+const [beforeRush, afterRush] = content.split('<!--rush-status-->');
+if(afterRush === undefined) throw new Error('Guide Rush placement missing');
 ---
 <SiteLayout title={"Custom Content & Guides"} description={"Silver Springs Survival custom content and player tools."} styles={["/assets/chrome.css", "/content-overview/styles.css"]} scripts={["/content-overview/behavior.js"]}>
-  <Fragment set:html={content} />
+  <Fragment set:html={beforeRush} />
+  <GuideRushStatus />
+  <Fragment set:html={afterRush} />
 </SiteLayout>

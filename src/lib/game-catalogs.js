@@ -140,7 +140,7 @@ export function renderTool(name,catalog=loadGameCatalogs(),template) {
 }
 export function renderValorShop(catalog=loadGameCatalogs(),template,legacyIds) {
   const legacy=legacyIds??JSON.parse(readFileSync(new URL('src/catalog-templates/valor-legacy-ids.json',root),'utf8'));
-  return (template??readFileSync(new URL('src/catalog-templates/valor-shop.html',root),'utf8')).replace('__SSS_VALOR_DATA__',()=>scriptJSON(valorData(catalog))).replace('__SSS_LEGACY_IDS__',()=>scriptJSON(legacy));
+  return (template??readFileSync(new URL('src/catalog-templates/valor-shop.html',root),'utf8')).replace('__SSS_VALOR_DATA__',()=>scriptJSON(valorData(catalog).filter(item=>item.Shop!=='reference'))).replace('__SSS_LEGACY_IDS__',()=>scriptJSON(legacy));
 }
 
 const escapeHTML = value => String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -160,7 +160,7 @@ export function renderOverview(content,catalog=loadGameCatalogs()) {
     BOARDWALK_PRICES:prices('boardwalk'),VILLAGE_PRICES:prices('village'),
     ARTIFACT_ROWS:artifacts.map(e=>'<tr><th scope="row">'+escapeHTML(e.name)+'</th><td>'+escapeHTML(e.cost)+'</td></tr>').join(''),
     SERVICE_CARDS:services.map(e=>'<article class="card"><small>'+escapeHTML(e.cost)+'</small><h3>'+escapeHTML(e.name)+'</h3><p>'+paragraphs(e.description)+'</p></article>').join(''),
-    ADDITIONAL_CARDS:reference.map(e=>'<article class="card"><small>REFERENCE ONLY</small><h3>'+escapeHTML(e.name)+'</h3><p>'+paragraphs(e.description)+'<br><br><strong>How to obtain:</strong> '+escapeHTML(e.acquisition)+(e.cost&&/^\d+\s+Boundary Shards?$/i.test(e.cost)?'<br><strong>Conversion requirement:</strong> '+escapeHTML(e.cost):'')+'</p></article>').join(''),
+    ADDITIONAL_CARDS:reference.map(e=>'<article class="card"><h3>'+escapeHTML(e.name)+'</h3><p>'+paragraphs(e.description)+'<br><br><strong>How to obtain:</strong> '+escapeHTML(e.acquisition)+(e.cost&&/^\d+\s+Boundary Shards?$/i.test(e.cost)?'<br><strong>Conversion requirement:</strong> '+escapeHTML(e.cost):'')+'</p></article>').join(''),
     BONUS_SLOT_INFO:catalog.valor.filter(e=>e.id==='reckqDpxJ1iWLf7Pu').map(e=>'<small>'+escapeHTML(e.cost)+'</small><h3>'+escapeHTML(e.name)+'</h3><p>'+paragraphs(e.description)+'</p>').join('')||'<h3>Charm slot upgrades</h3><p>Check the current catalog for availability.</p>'
   };
   return content.replace(/__SSS_([A-Z_]+)__/g,(match,key)=>{assert(key in tokens,'unknown guide token '+key);return tokens[key];});

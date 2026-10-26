@@ -1,0 +1,25 @@
+{
+  "name": "Greenhouse",
+  "draft": false,
+  "order": 40,
+  "entryCost": "1,000 silver",
+  "length": "20 waves · 2 bosses",
+  "playerLimit": "6 players",
+  "rewards": "40 Trial Points + 3 Valor Badges",
+  "equipment": "Provided class",
+  "equipmentNotes": "",
+  "classes": [
+    {
+      "name": "Arsonist",
+      "description": "Fire Flinger and Blazing Torch."
+    },
+    {
+      "name": "Thresher",
+      "description": "Harvester; direct damage."
+    },
+    {
+      "name": "Botanist",
+      "description": "Gardening Hoe, Herbal Tea, and Natural Remedy; healing and debuff cleansing."
+    }
+  ]
+}
