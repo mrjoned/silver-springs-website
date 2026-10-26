@@ -1,0 +1,12 @@
+{
+  "name": "Cultist Raid",
+  "draft": false,
+  "order": 30,
+  "entryCost": "1,000 silver",
+  "length": "20 waves",
+  "playerLimit": "No player limit",
+  "rewards": "40 Trial Points + 3 Valor Badges",
+  "equipment": "Bring your own gear",
+  "equipmentNotes": "Defend the Arcanum with your own equipment. This Trial uses personal equipment instead of selectable classes.",
+  "classes": []
+}

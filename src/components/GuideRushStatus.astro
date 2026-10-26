@@ -1,0 +1,25 @@
+<aside class="guide-rush-status" aria-label="Rush Weekend status">
+  <strong data-guide-rush-title>Rush Weekends</strong>
+  <p data-guide-rush-date>Saturday at 2 AM through Monday at 1:59 AM Central time.</p>
+  <span data-guide-rush-countdown></span>
+</aside>
+<script>
+import {rushAt,countdown} from '../lib/rush-schedule.js';
+const panel=document.querySelector('.guide-rush-status');
+if(panel){
+  const title=panel.querySelector('[data-guide-rush-title]')!,date=panel.querySelector('[data-guide-rush-date]')!,timer=panel.querySelector('[data-guide-rush-countdown]')!;
+  const local=new Intl.DateTimeFormat(undefined,{weekday:'short',month:'short',day:'numeric',hour:'numeric',minute:'2-digit',timeZoneName:'short'});
+  let previous='';
+  function update(){
+    const now=Date.now(),rush=rushAt(now),key=rush.name+String(rush.active);
+    if(key!==previous){title.textContent=`${rush.active?'Active':'Upcoming'} Rush: ${rush.name}`;date.textContent=`${rush.active?'Ends':'Starts'} ${local.format(new Date(rush.target))} · your local time`;previous=key;}
+    timer.textContent=`${rush.active?'Ends':'Starts'} in ${countdown(rush.target-now)}`;
+  }
+  update();setInterval(update,1000);
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)update();});
+}
+</script>
+<style>
+.guide-rush-status{margin:20px 0;padding:20px 22px 26px;border:1px solid #61546d;border-radius:12px;background:#1b1724;color:#f7f4fa}
+.guide-rush-status strong{font-size:1.1rem}.guide-rush-status p{margin:8px 0;color:#c8c0d0}.guide-rush-status span{font-variant-numeric:tabular-nums;color:#f6c8e1}
+</style>
