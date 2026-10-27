@@ -1,6 +1,10 @@
 ---
 import SiteLayout from "../../layouts/SiteLayout.astro";
-import content from "../../content/pages/staffoverview.html?raw";
+import template from "../../content/pages/staffoverview.html?raw";
+import { renderStaff } from '../../lib/staff.js';
+const files = import.meta.glob('../../content/staff/*.json', { eager: true, import: 'default' });
+const staff = renderStaff(Object.entries(files).map(([path,data])=>({slug:path.split('/').pop().replace(/\.json$/,''),data})));
+const content = template.replace('<!--staff-roster-->',staff.roster).replace('<!--staff-cards-->',staff.cards);
 ---
 <SiteLayout title={"Our Staff"} description={"Meet the staff and founders of Silver Springs Survival."} styles={["/assets/site.css"]} scripts={[]}>
   <Fragment set:html={content} />
