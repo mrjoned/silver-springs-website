@@ -55,7 +55,7 @@ content:
   - name: author
     label: Author
     type: string
-    default: Jonathan Hill
+    default: Mr_Simba
   - name: topics
     label: Topics
     type: select
