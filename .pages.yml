@@ -617,3 +617,56 @@ content:
       label: Class description
       type: text
       required: true
+
+- name: staff
+  label: Staff
+  type: collection
+  path: src/content/staff
+  format: json
+  filename:
+    template: '{primary}.json'
+    field: create
+  subfolders: false
+  operations:
+    rename: false
+  view:
+    primary: name
+    fields: [name, role, order, draft]
+    default:
+      sort: order
+      order: asc
+  fields:
+  - name: name
+    label: Name
+    type: string
+    required: true
+  - name: draft
+    label: Draft (hide from website)
+    type: boolean
+    default: true
+  - name: order
+    label: Display order (lower first)
+    type: number
+    default: 0
+  - name: role
+    label: Role
+    type: string
+    required: true
+  - name: image
+    label: Portrait
+    type: image
+    required: true
+  - name: imageAlt
+    label: Image description
+    type: string
+  - name: bio
+    label: Biography
+    type: rich-text
+    required: true
+    options:
+      format: html
+  - name: history
+    label: Time on the team (optional)
+    type: rich-text
+    options:
+      format: html
