@@ -1,15 +1,10 @@
 import { makePosts } from './publishing.js';
 
-export const topics = [
-  { id: 'gameplay', label: 'Gameplay' },
-  { id: 'runecrafting', label: 'Runecrafting' },
-  { id: 'valor-shop', label: 'Valor Shop' },
-  { id: 'event', label: 'Events' },
-  { id: 'build-contest', label: 'Build Contests' },
-  { id: 'weekend-rush', label: 'Rush Weekends' },
-  { id: 'faq', label: 'FAQ' },
-  { id: 'miscellaneous', label: 'Miscellaneous' }
-];
+const topicFiles = import.meta.glob('../content/announcement-topics/*.json', { eager: true, import: 'default' });
+export const topics = Object.entries(topicFiles)
+  .map(([path, data]) => ({ id: path.split('/').pop().replace(/\.json$/, ''), ...data }))
+  .filter((topic) => topic.draft !== true && topic.id && topic.label)
+  .sort((a, b) => (Number(a.order) || 0) - (Number(b.order) || 0) || a.label.localeCompare(b.label));
 export const topicLabel = (id) => topics.find((topic) => topic.id === id)?.label || id;
 
 

@@ -58,26 +58,13 @@ content:
     default: Mr_Simba
   - name: topics
     label: Topics
-    type: select
+    type: reference
     options:
+      collection: announcement_topics
       multiple: true
-      values:
-      - name: gameplay
-        label: Gameplay
-      - name: runecrafting
-        label: Runecrafting
-      - name: valor-shop
-        label: Valor Shop
-      - name: event
-        label: Events
-      - name: build-contest
-        label: Build Contests
-      - name: weekend-rush
-        label: Rush Weekends
-      - name: faq
-        label: FAQ
-      - name: miscellaneous
-        label: Miscellaneous
+      search: label
+      value: '{name}'
+      label: '{primary}'
   - name: excerpt
     label: Summary
     type: rich-text
@@ -92,6 +79,36 @@ content:
     options:
       format: html
       switcher: true
+- name: announcement_topics
+  label: Announcement Topics
+  type: collection
+  path: src/content/announcement-topics
+  format: json
+  filename:
+    template: '{primary}.json'
+    field: create
+  subfolders: false
+  operations:
+    rename: false
+  view:
+    primary: label
+    fields: [label, order, draft]
+    default:
+      sort: order
+      order: asc
+  fields:
+  - name: label
+    label: Topic name
+    type: string
+    required: true
+  - name: order
+    label: Display order (lower first)
+    type: number
+    default: 0
+  - name: draft
+    label: Draft (hide from filters)
+    type: boolean
+    default: false
 - name: photos
   label: Gallery
   type: collection

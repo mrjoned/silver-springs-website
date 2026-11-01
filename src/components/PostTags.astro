@@ -1,7 +1,8 @@
 ---
-import { topicLabel } from '../lib/posts.js';
+import { topicLabel, topics as availableTopics } from '../lib/posts.js';
 const { topics = [] } = Astro.props;
+const activeTopics = new Set(availableTopics.map((topic) => topic.id));
 ---
 <div class="post-tags">
-  {topics.map((topic) => <a class="post-tag" href={`/changelog-and-faq/?topic=${topic}#archive`}>{topicLabel(topic)}</a>)}
+  {topics.filter((topic) => activeTopics.has(topic)).map((topic) => <a class="post-tag" href={`/changelog-and-faq/?topic=${topic}#archive`}>{topicLabel(topic)}</a>)}
 </div>

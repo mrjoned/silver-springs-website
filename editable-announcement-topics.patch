@@ -1,0 +1,201 @@
+diff --git a/.pages.yml b/.pages.yml
+index 15c7edd..75828f4 100644
+--- a/.pages.yml
++++ b/.pages.yml
+@@ -58,26 +58,13 @@ content:
+     default: Mr_Simba
+   - name: topics
+     label: Topics
+-    type: select
++    type: reference
+     options:
++      collection: announcement_topics
+       multiple: true
+-      values:
+-      - name: gameplay
+-        label: Gameplay
+-      - name: runecrafting
+-        label: Runecrafting
+-      - name: valor-shop
+-        label: Valor Shop
+-      - name: event
+-        label: Events
+-      - name: build-contest
+-        label: Build Contests
+-      - name: weekend-rush
+-        label: Rush Weekends
+-      - name: faq
+-        label: FAQ
+-      - name: miscellaneous
+-        label: Miscellaneous
++      search: label
++      value: '{name}'
++      label: '{primary}'
+   - name: excerpt
+     label: Summary
+     type: rich-text
+@@ -92,6 +79,36 @@ content:
+     options:
+       format: html
+       switcher: true
++- name: announcement_topics
++  label: Announcement Topics
++  type: collection
++  path: src/content/announcement-topics
++  format: json
++  filename:
++    template: '{primary}.json'
++    field: create
++  subfolders: false
++  operations:
++    rename: false
++  view:
++    primary: label
++    fields: [label, order, draft]
++    default:
++      sort: order
++      order: asc
++  fields:
++  - name: label
++    label: Topic name
++    type: string
++    required: true
++  - name: order
++    label: Display order (lower first)
++    type: number
++    default: 0
++  - name: draft
++    label: Draft (hide from filters)
++    type: boolean
++    default: false
+ - name: photos
+   label: Gallery
+   type: collection
+diff --git a/src/components/PostTags.astro b/src/components/PostTags.astro
+index 671909c..bbf3218 100644
+--- a/src/components/PostTags.astro
++++ b/src/components/PostTags.astro
+@@ -1,7 +1,8 @@
+ ---
+-import { topicLabel } from '../lib/posts.js';
++import { topicLabel, topics as availableTopics } from '../lib/posts.js';
+ const { topics = [] } = Astro.props;
++const activeTopics = new Set(availableTopics.map((topic) => topic.id));
+ ---
+ <div class="post-tags">
+-  {topics.map((topic) => <a class="post-tag" href={`/changelog-and-faq/?topic=${topic}#archive`}>{topicLabel(topic)}</a>)}
++  {topics.filter((topic) => activeTopics.has(topic)).map((topic) => <a class="post-tag" href={`/changelog-and-faq/?topic=${topic}#archive`}>{topicLabel(topic)}</a>)}
+ </div>
+diff --git a/src/content/announcement-topics/build-contest.json b/src/content/announcement-topics/build-contest.json
+new file mode 100644
+index 0000000..77ab14c
+--- /dev/null
++++ b/src/content/announcement-topics/build-contest.json
+@@ -0,0 +1,5 @@
++{
++  "label": "Build Contests",
++  "order": 50,
++  "draft": false
++}
+diff --git a/src/content/announcement-topics/event.json b/src/content/announcement-topics/event.json
+new file mode 100644
+index 0000000..93c2535
+--- /dev/null
++++ b/src/content/announcement-topics/event.json
+@@ -0,0 +1,5 @@
++{
++  "label": "Events",
++  "order": 40,
++  "draft": false
++}
+diff --git a/src/content/announcement-topics/faq.json b/src/content/announcement-topics/faq.json
+new file mode 100644
+index 0000000..a44c522
+--- /dev/null
++++ b/src/content/announcement-topics/faq.json
+@@ -0,0 +1,5 @@
++{
++  "label": "FAQ",
++  "order": 70,
++  "draft": false
++}
+diff --git a/src/content/announcement-topics/gameplay.json b/src/content/announcement-topics/gameplay.json
+new file mode 100644
+index 0000000..32cb273
+--- /dev/null
++++ b/src/content/announcement-topics/gameplay.json
+@@ -0,0 +1,5 @@
++{
++  "label": "Gameplay",
++  "order": 10,
++  "draft": false
++}
+diff --git a/src/content/announcement-topics/miscellaneous.json b/src/content/announcement-topics/miscellaneous.json
+new file mode 100644
+index 0000000..49159e5
+--- /dev/null
++++ b/src/content/announcement-topics/miscellaneous.json
+@@ -0,0 +1,5 @@
++{
++  "label": "Miscellaneous",
++  "order": 80,
++  "draft": false
++}
+diff --git a/src/content/announcement-topics/runecrafting.json b/src/content/announcement-topics/runecrafting.json
+new file mode 100644
+index 0000000..e6aa9da
+--- /dev/null
++++ b/src/content/announcement-topics/runecrafting.json
+@@ -0,0 +1,5 @@
++{
++  "label": "Runecrafting",
++  "order": 20,
++  "draft": false
++}
+diff --git a/src/content/announcement-topics/valor-shop.json b/src/content/announcement-topics/valor-shop.json
+new file mode 100644
+index 0000000..a83fcce
+--- /dev/null
++++ b/src/content/announcement-topics/valor-shop.json
+@@ -0,0 +1,5 @@
++{
++  "label": "Valor Shop",
++  "order": 30,
++  "draft": false
++}
+diff --git a/src/content/announcement-topics/weekend-rush.json b/src/content/announcement-topics/weekend-rush.json
+new file mode 100644
+index 0000000..fa2b3db
+--- /dev/null
++++ b/src/content/announcement-topics/weekend-rush.json
+@@ -0,0 +1,5 @@
++{
++  "label": "Rush Weekends",
++  "order": 60,
++  "draft": false
++}
+diff --git a/src/lib/posts.js b/src/lib/posts.js
+index bbb1028..d2bb178 100644
+--- a/src/lib/posts.js
++++ b/src/lib/posts.js
+@@ -1,15 +1,10 @@
+ import { makePosts } from './publishing.js';
+ 
+-export const topics = [
+-  { id: 'gameplay', label: 'Gameplay' },
+-  { id: 'runecrafting', label: 'Runecrafting' },
+-  { id: 'valor-shop', label: 'Valor Shop' },
+-  { id: 'event', label: 'Events' },
+-  { id: 'build-contest', label: 'Build Contests' },
+-  { id: 'weekend-rush', label: 'Rush Weekends' },
+-  { id: 'faq', label: 'FAQ' },
+-  { id: 'miscellaneous', label: 'Miscellaneous' }
+-];
++const topicFiles = import.meta.glob('../content/announcement-topics/*.json', { eager: true, import: 'default' });
++export const topics = Object.entries(topicFiles)
++  .map(([path, data]) => ({ id: path.split('/').pop().replace(/\.json$/, ''), ...data }))
++  .filter((topic) => topic.draft !== true && topic.id && topic.label)
++  .sort((a, b) => (Number(a.order) || 0) - (Number(b.order) || 0) || a.label.localeCompare(b.label));
+ export const topicLabel = (id) => topics.find((topic) => topic.id === id)?.label || id;
+ 
+ 
