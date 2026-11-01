@@ -1,0 +1,10 @@
+{
+  "name": "JenoIce",
+  "draft": false,
+  "order": 0,
+  "platform": "twitch",
+  "channel": "jenoice",
+  "url": "https://www.twitch.tv/jenoice",
+  "image": "/assets/uploads/jeno.png",
+  "bio": "<p>Hello! I'm Jeno Ice, I'm an artist and computer programmer so I'm sure you'll see me work on personal projects like a video game I've been making, playing games with friends, or just drawing something goofy for the stream like the avatars that walk around at the bottom of the stream</p>"
+}
