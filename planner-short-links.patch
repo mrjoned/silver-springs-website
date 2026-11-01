@@ -1,0 +1,147 @@
+diff --git a/D1-BUILD-SHARING.md b/D1-BUILD-SHARING.md
+new file mode 100644
+index 0000000..8917314
+--- /dev/null
++++ b/D1-BUILD-SHARING.md
+@@ -0,0 +1,14 @@
++# Build sharing setup
++
++1. In Cloudflare, open Storage & databases > D1 SQL database and create `silver-springs-builds`.
++2. In its Console, run the SQL from `migrations/0001_shared_builds.sql`.
++3. Open Workers & Pages > your Pages project > Settings > Bindings. Add a D1 database binding named `BUILDS_DB` and select `silver-springs-builds` for Production.
++4. For branch testing, create a separate preview database, run the same SQL, and bind it as `BUILDS_DB` in Preview.
++5. Deploy this change after saving the bindings. Bindings require a new deployment.
++6. Create a build, click Share Build, and open the copied /b/ link in another browser. Check all equipment, levels and gems. Confirm an old #build= link still loads.
++
++Shared snapshots are public to anyone with their link. Browser saves stay local. Identical snapshots reuse their link. There is no automatic expiry. Deleting a database record breaks its shared link.
++
++Requests are limited to 32 KiB and 30 pieces, with server-side validation. Consider a Cloudflare rate-limiting rule for POST /api/builds before broad promotion; the API's origin check is not bot protection. No database credentials are exposed to the browser.
++
++Tests: `node tests/shared-builds.mjs` and `npm run build`. Local tests use a D1 stub; the deployment preview must verify the actual D1 binding and SQL table.
+diff --git a/functions/api/builds/[id].js b/functions/api/builds/[id].js
+new file mode 100644
+index 0000000..3c24c8d
+--- /dev/null
++++ b/functions/api/builds/[id].js
+@@ -0,0 +1,6 @@
++export async function onRequestGet({params,env}){
++  const headers={'Content-Type':'application/json','Cache-Control':'no-store'};
++  if(!/^[a-f0-9]{24}$/.test(params.id))return new Response(JSON.stringify({error:'Invalid build link.'}),{status:400,headers});
++  try{const row=await env.BUILDS_DB.prepare('SELECT payload FROM shared_builds WHERE id=?').bind(params.id).first();return new Response(row?row.payload:JSON.stringify({error:'This build could not be found.'}),{status:row?200:404,headers});}
++  catch{return new Response(JSON.stringify({error:'Build sharing is temporarily unavailable.'}),{status:503,headers});}
++}
+diff --git a/functions/api/builds/index.js b/functions/api/builds/index.js
+new file mode 100644
+index 0000000..b195e5a
+--- /dev/null
++++ b/functions/api/builds/index.js
+@@ -0,0 +1,29 @@
++const json=(data,status=200)=>new Response(JSON.stringify(data),{status,headers:{'Content-Type':'application/json','Cache-Control':'no-store'}});
++export function validateBuild(data){
++  if(data?.version!==1||!Array.isArray(data.items)||!data.items.length||data.items.length>30)throw Error('Choose between 1 and 30 equipment pieces.');
++  return {version:1,items:data.items.map(item=>{
++    if(typeof item.type!=='string'||item.type.length>80||!Array.isArray(item.enchants)||item.enchants.length>60)throw Error('Invalid equipment.');
++    const enchants=item.enchants.map(e=>{if(typeof e.name!=='string'||e.name.length>150||!Number.isInteger(e.level)||e.level<1||e.level>100)throw Error('Invalid enchantment.');return {name:e.name,level:e.level};});
++    const gems=item.gems??[];if(!Array.isArray(gems)||gems.length>4||gems.some(g=>typeof g!=='string'||g.length>80))throw Error('Invalid gems.');
++    const result={type:item.type,enchants,gems};
++    for(const key of ['armorBase','toughnessBase','preservation','fortitude']){const value=item[key]??'';if(value!==''&&(typeof value!=='number'||!Number.isFinite(value)||value<0||value>100))throw Error('Invalid armor values.');result[key]=value;}
++    return result;
++  })};
++}
++export async function onRequestPost({request,env}){
++  if(!env.BUILDS_DB)return json({error:'Build sharing is not configured yet.'},503);
++  if(request.headers.get('Origin')!==new URL(request.url).origin)return json({error:'Please share from the website.'},403);
++  if(!request.headers.get('Content-Type')?.includes('application/json'))return json({error:'Expected JSON.'},415);
++  try{
++    const reader=request.body?.getReader();if(!reader)return json({error:'Missing build.'},400);
++    const chunks=[];let size=0;while(true){const {done,value}=await reader.read();if(done)break;size+=value.length;if(size>32768){await reader.cancel();return json({error:'This build is too large to share.'},413);}chunks.push(value);}
++    const bytes=new Uint8Array(size);let offset=0;for(const chunk of chunks){bytes.set(chunk,offset);offset+=chunk.length;}
++    let build;try{build=validateBuild(JSON.parse(new TextDecoder().decode(bytes)));}catch(e){return json({error:e.message},400);}
++    const payload=JSON.stringify(build);
++    const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(payload))),b=>b.toString(16).padStart(2,'0')).join('');
++    // Identical snapshots reuse one link and one database row.
++    const id=hash.slice(0,24);
++    await env.BUILDS_DB.prepare('INSERT OR IGNORE INTO shared_builds (id,fingerprint,payload) VALUES (?,?,?)').bind(id,hash,payload).run();
++    return json({url:new URL('/b/'+id,request.url).href},201);
++  }catch(e){console.error('Build sharing failed',e);return json({error:'Build sharing is temporarily unavailable. Please try again.'},503);}
++}
+diff --git a/functions/b/[id].js b/functions/b/[id].js
+new file mode 100644
+index 0000000..dc429bb
+--- /dev/null
++++ b/functions/b/[id].js
+@@ -0,0 +1,5 @@
++export function onRequestGet({request,params}){
++  if(!/^[a-f0-9]{24}$/.test(params.id))return new Response('Invalid build link.',{status:404});
++  const url=new URL('/runecrafting-hub/tools/hub_build_planner.html',request.url);url.hash='shared='+params.id;
++  return Response.redirect(url.href,302);
++}
+diff --git a/migrations/0001_shared_builds.sql b/migrations/0001_shared_builds.sql
+new file mode 100644
+index 0000000..91797a3
+--- /dev/null
++++ b/migrations/0001_shared_builds.sql
+@@ -0,0 +1,6 @@
++CREATE TABLE IF NOT EXISTS shared_builds (
++  id TEXT PRIMARY KEY,
++  fingerprint TEXT NOT NULL UNIQUE,
++  payload TEXT NOT NULL,
++  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
++);
+diff --git a/public/_routes.json b/public/_routes.json
+index bec1761..acb0288 100644
+--- a/public/_routes.json
++++ b/public/_routes.json
+@@ -2,7 +2,10 @@
+   "version": 1,
+   "include": [
+     "/api/calendar",
+-    "/api/calendar/"
++    "/api/calendar/",
++    "/api/builds",
++    "/api/builds/*",
++    "/b/*"
+   ],
+   "exclude": []
+ }
+diff --git a/src/catalog-templates/hub_build_planner.html b/src/catalog-templates/hub_build_planner.html
+index bfc9ed4..7078387 100644
+--- a/src/catalog-templates/hub_build_planner.html
++++ b/src/catalog-templates/hub_build_planner.html
+@@ -641,8 +641,14 @@ main,.wrap{max-width:none}main{padding:22px 20px 40px}body:has(>.wrap){padding:2
+   }catch(e){notice(e.message);}};
+   $('rcp-export-build').onclick=()=>{const url=URL.createObjectURL(new Blob([JSON.stringify(snapshot(),null,2)],{type:'application/json'}));const link=document.createElement('a');link.href=url;link.download='silver-springs-build.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
+   $('rcp-import-build').onchange=async ev=>{const file=ev.target.files[0];if(!file)return;try{if(file.size>200000)throw Error('Build file is too large.');if(loadBuild(JSON.parse(await file.text())))$('rcp-build-dialog').close();}catch(e){notice(e.message);}ev.target.value='';};
+-  $('rcp-share-build').onclick=async()=>{try{if(!state.items.length)return notice('Add equipment before sharing.');const bytes=new TextEncoder().encode(JSON.stringify(snapshot()));const encoded=btoa(Array.from(bytes,b=>String.fromCharCode(b)).join('')).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');const url=new URL('/runecrafting-hub/tools/hub_build_planner.html',location.origin);url.hash='build='+encoded;await navigator.clipboard.writeText(url.href);notice('Build link copied! Anyone with the link can open their own copy.');}catch(e){notice('Could not copy the link. You can export a build file from My Builds instead.');}};
+-  function openSharedBuild(){if(!location.hash.startsWith('#build='))return;try{const encoded=location.hash.slice(7);if(encoded.length>270000)throw Error('Build link is too large.');const bytes=Uint8Array.from(atob(encoded.replace(/-/g,'+').replace(/_/g,'/')),c=>c.charCodeAt(0));loadBuild(JSON.parse(new TextDecoder().decode(bytes)));}catch(e){notice('Unable to open shared build: '+e.message);}}
++  $('rcp-share-build').onclick=async()=>{
++    const button=$('rcp-share-build');if(!state.items.length)return notice('Add equipment before sharing.');button.disabled=true;notice('Creating share link…');
++    try{const response=await fetch('/api/builds',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(snapshot())});const result=await response.json();if(!response.ok)throw Error(result.error||'Unable to share build.');
++      try{await navigator.clipboard.writeText(result.url);notice('Short build link copied! Anyone with the link can open their own copy.');}
++      catch{notice('Your build link: '+result.url);}
++    }catch(e){notice(e.message+' You can still export a file from My Builds.');}finally{button.disabled=false;}
++  };
++  async function openSharedBuild(){if(location.hash.startsWith('#shared=')){try{const id=location.hash.slice(8);if(!/^[a-f0-9]{24}$/.test(id))throw Error('Invalid build link.');const response=await fetch('/api/builds/'+id);const build=await response.json();if(!response.ok)throw Error(build.error);loadBuild(build);}catch(e){notice('Unable to open shared build: '+e.message);}return;}if(!location.hash.startsWith('#build='))return;try{const encoded=location.hash.slice(7);if(encoded.length>270000)throw Error('Build link is too large.');const bytes=Uint8Array.from(atob(encoded.replace(/-/g,'+').replace(/_/g,'/')),c=>c.charCodeAt(0));loadBuild(JSON.parse(new TextDecoder().decode(bytes)));}catch(e){notice('Unable to open shared build: '+e.message);}}
+ 
+   render();
+   window.SSSHubData.fetch()
+diff --git a/tests/shared-builds.mjs b/tests/shared-builds.mjs
+new file mode 100644
+index 0000000..aeb667c
+--- /dev/null
++++ b/tests/shared-builds.mjs
+@@ -0,0 +1,14 @@
++import assert from 'node:assert/strict';
++import {onRequestPost,validateBuild} from '../functions/api/builds/index.js';
++import {onRequestGet} from '../functions/api/builds/[id].js';
++const rows=new Map();let args;
++const env={BUILDS_DB:{prepare(sql){return {bind(...values){args=values;return this},async run(){rows.set(args[0],args[2]);},async first(){return rows.has(args[0])?{payload:rows.get(args[0])}:null}}}}};
++const build={version:1,items:[{type:'Swords',enchants:[{name:'Test 🌟',level:2}],gems:[]}]};
++const request=()=>new Request('https://example.com/api/builds',{method:'POST',headers:{Origin:'https://example.com','Content-Type':'application/json'},body:JSON.stringify(build)});
++const response=await onRequestPost({request:request(),env});assert.equal(response.status,201);const link=(await response.json()).url;const id=link.split('/').pop();assert.match(id,/^[a-f0-9]{24}$/);
++assert.equal((await (await onRequestPost({request:request(),env})).json()).url,link);
++const fetched=await onRequestGet({params:{id},env});assert.equal((await fetched.json()).items[0].enchants[0].name,'Test 🌟');
++assert.equal((await onRequestGet({params:{id:'0'.repeat(24)},env})).status,404);
++assert.throws(()=>validateBuild({version:2,items:[]}));
++assert.equal((await onRequestPost({request:request(),env:{}})).status,503);
++console.log('Short links: save/load, Unicode, deduplication, validation, missing build and missing binding passed.');

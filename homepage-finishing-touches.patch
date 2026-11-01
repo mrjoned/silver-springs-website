@@ -1,0 +1,68 @@
+diff --git a/public/assets/homepage.css b/public/assets/homepage.css
+index c434ab6..1b4278b 100644
+--- a/public/assets/homepage.css
++++ b/public/assets/homepage.css
+@@ -8,8 +8,12 @@
+ .home-hero .actions{justify-content:center;margin-top:32px}
+ .home-hero .ipnote{font-size:22px;font-weight:700;letter-spacing:.02em;margin-top:18px;color:var(--pink)}
+ .home-hero .hero-caption{font-size:12px}
+-.home-hero:after{background:linear-gradient(0deg,#100f14 0%,#100f1499 42%,#100f1480 100%)}
++.home-hero:after{background:linear-gradient(0deg,#100f14 0%,#100f1440 42%,#100f1433 100%)}
+ @media(max-width:600px){.home-hero .hero-content{padding:55px 0 100px}.home-hero h1{font-size:46px}.home-hero .welcome-line{font-size:24px}.home-hero .hero-tagline{font-size:21px;max-width:340px}.home-hero .hero-caption{right:17px;bottom:42px;font-size:10px}.home-hero .ipnote{font-size:21px}.home-hero .actions{gap:12px}}
+ 
+ #news .discordnote{justify-content:flex-start;gap:.6rem 1rem;flex-wrap:wrap}#news .discordnote a{margin-left:0}
+-.about-community-photo{display:block;width:100%;height:auto;border-radius:12px;margin-top:24px;border:1px solid #49404f}
+\ No newline at end of file
++.about-community-photo{display:block;width:100%;height:auto;border-radius:12px;margin-top:24px;border:1px solid #49404f}
++.home-hero .hero-content h1,.home-hero .hero-tagline,.home-hero .ipnote{text-shadow:0 2px 8px #000c}
++.home-hero .actions a.btn{background:#211c29;border-color:#8c7188;color:#fff}
++.home-hero .actions a.btn:hover{background:#352c40;border-color:var(--pink)}
++.home-hero .actions button svg{flex-shrink:0;vertical-align:middle}
+diff --git a/src/components/Header.astro b/src/components/Header.astro
+index 909f4c5..2fea892 100644
+--- a/src/components/Header.astro
++++ b/src/components/Header.astro
+@@ -25,7 +25,6 @@ const around = [
+     <details class="navgroup">
+       <summary>Get to know us <span aria-hidden="true">⌄</span></summary>
+       <div class="navdrop">
+-        <a href="/about-us/#main">Our community</a>
+         {community.map(({ href, label }) => <a href={href} aria-current={active(href) ? 'page' : undefined}>{label}</a>)}
+       </div>
+     </details>
+diff --git a/src/content/pages/home-before-news.html b/src/content/pages/home-before-news.html
+index ed49428..fd861dc 100644
+--- a/src/content/pages/home-before-news.html
++++ b/src/content/pages/home-before-news.html
+@@ -1,4 +1,3 @@
+-<div class="hero home-hero"><img src="assets/hero.jpg" alt="A player-built town beside the water in Silver Springs Survival" fetchpriority="high"><div class="wrap hero-content"><h1><span class="welcome-line">Welcome to</span><em>Silver Springs Survival</em></h1><p class="hero-tagline">Like your typical survival server, with our own unique spin!</p><div class="actions"><button class="btn primary" data-copy="sssminecraft.com">Copy server IP <span aria-hidden="true">↗</span></button><a class="btn" href="/content-overview/">Explore custom content <span aria-hidden="true">→</span></a></div><div class="ipnote">sssminecraft.com</div></div><div class="hero-caption">Build - Fight - Explore</div></div>
++<div class="hero home-hero"><img src="assets/hero.jpg" alt="A player-built town beside the water in Silver Springs Survival" fetchpriority="high"><div class="wrap hero-content"><h1><span class="welcome-line">Welcome to</span><em>Silver Springs Survival</em></h1><p class="hero-tagline">Like your typical survival server, with our own unique spin!</p><div class="actions"><button class="btn primary" data-copy="sssminecraft.com">Copy server IP <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="5" width="12" height="16" rx="2"/><rect x="9" y="2" width="6" height="5" rx="1"/></svg></button><a class="btn" href="/content-overview/">Explore custom content <span aria-hidden="true">→</span></a></div><div class="ipnote">sssminecraft.com</div></div><div class="hero-caption">Build - Fight - Explore</div></div>
+ <div class="wrap quick"><a href="/content-overview/"><span class="icon" aria-hidden="true">✧</span><span><strong>Custom content</strong><small>Some guides to what we’ve added to the server</small></span><span class="arrow">→</span></a><a href="/runecrafting-hub/"><span class="icon" aria-hidden="true">◇</span><span><strong>Runecrafting Hub</strong><small>Enchantments, runes & gem socketing</small></span><span class="arrow">→</span></a><a href="/map/"><span class="icon" aria-hidden="true">⌖</span><span><strong>Server map</strong><small>See what’s around you</small></span><span class="arrow">→</span></a></div>
+ <section class="wrap split"><figure class="photo"><img src="assets/spawn.jpg" alt="The spawn town seen from the top of the springs" loading="lazy"><figcaption>A little corner of Silver Springs.</figcaption></figure><div class="copy"><div class="eyebrow">Vanilla with a Plus</div><h2>Survival with a few additions of our own</h2><p class="bodytext">Silver Springs has custom enchantments, arenas, relics, and tools to make everyday survival a little easier. We've got some handy guides to help you learn all about it!</p><a class="textlink" href="/content-overview/">Browse our custom content →</a></div></section>
+-<div class="contentband"><section class="wrap"><div class="sectionhead"><div><div class="eyebrow">Guides &amp; tools</div><h2>What makes us unique?</h2></div><p>Explore our content at your own pace!</p></div><div class="features"><article class="feature"><h3>Runecrafting</h3><p>Learn about our custom enchantments, then use the Runecrafting Hub to plan your gear.</p><a class="textlink" href="/content-overview/#sscc/runecrafting">Read the Runecrafting guide →</a><br><a class="textlink" href="/runecrafting-hub/">Open the planning tools ↗</a><span class="rune" aria-hidden="true">✧</span></article><div class="smallfeatures"><article class="feature"><h3>Trials of Valor</h3><p>Learn about the roles, challenges, and rewards in Trials of Valor.</p><a class="textlink" href="/content-overview/#sscc/trials">Read the Trials guide →</a></article><article class="feature"><h3>Vanilla Plus</h3><p>A guide to land protection, creative tools, travel, and other everyday conveniences.</p><a class="textlink" href="/content-overview/#sscc/vanilla">Read the Vanilla Plus guide →</a></article></div></div></section></div>
+diff --git a/src/content/pages/home-guides.html b/src/content/pages/home-guides.html
+new file mode 100644
+index 0000000..6b47e75
+--- /dev/null
++++ b/src/content/pages/home-guides.html
+@@ -0,0 +1 @@
++<div class="contentband"><section class="wrap"><div class="sectionhead"><div><div class="eyebrow">Guides &amp; tools</div><h2>Learn more here!</h2></div><p>Explore our content at your own pace!</p></div><div class="features"><article class="feature"><h3>Runecrafting</h3><p>Learn about our custom enchantments, then use the Runecrafting Hub to plan your gear.</p><a class="textlink" href="/content-overview/#sscc/runecrafting">Read the Runecrafting guide →</a><br><a class="textlink" href="/runecrafting-hub/">Open the planning tools ↗</a><span class="rune" aria-hidden="true">✧</span></article><div class="smallfeatures"><article class="feature"><h3>Trials of Valor</h3><p>Learn about the roles, challenges, and rewards in Trials of Valor.</p><a class="textlink" href="/content-overview/#sscc/trials">Read the Trials guide →</a></article><article class="feature"><h3>Vanilla Plus</h3><p>A guide to land protection, creative tools, travel, and other everyday conveniences.</p><a class="textlink" href="/content-overview/#sscc/vanilla">Read the Vanilla Plus guide →</a></article></div></div></section></div>
+diff --git a/src/pages/index.astro b/src/pages/index.astro
+index e0db259..81f71f9 100644
+--- a/src/pages/index.astro
++++ b/src/pages/index.astro
+@@ -3,12 +3,14 @@ import SiteLayout from '../layouts/SiteLayout.astro';
+ import HomepageGallery from '../components/HomepageGallery.astro';
+ import LatestNews from '../components/LatestNews.astro';
+ import beforeNews from '../content/pages/home-before-news.html?raw';
++import guides from '../content/pages/home-guides.html?raw';
+ import afterNews from '../content/pages/home-after-news.html?raw';
+ ---
+ <SiteLayout title="Silver Springs Survival" description="Discover Silver Springs Survival: community builds, custom enchantments, and your next Minecraft adventure." styles={['/assets/site.css', '/assets/homepage.css']}>
+   <main id="main">
+     <Fragment set:html={beforeNews} />
+     <LatestNews />
++    <Fragment set:html={guides} />
+     <HomepageGallery />
+     <Fragment set:html={afterNews} />
+   </main>

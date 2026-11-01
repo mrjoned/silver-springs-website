@@ -1,0 +1,391 @@
+diff --git a/.pages.yml b/.pages.yml
+index 50513b9..d8b0d6f 100644
+--- a/.pages.yml
++++ b/.pages.yml
+@@ -214,6 +214,34 @@ content:
+       format: html
+       media: false
+     required: true
++  - name: effects
++    label: Level effects
++    type: object
++    list: true
++    default: []
++    description: "Reference an effect with [effect:speed]display text[/effect] in the description."
++    fields:
++    - name: key
++      label: Effect key (e.g. speed)
++      type: string
++      required: true
++      pattern: '^[a-z][a-z0-9-]*$'
++    - name: label
++      label: Effect label
++      type: string
++      required: true
++    - name: levels
++      label: Values by level
++      type: object
++      list: true
++      fields:
++      - name: level
++        type: number
++        required: true
++      - name: value
++        label: Value (e.g. 40% or 5 seconds)
++        type: string
++        required: true
+   - name: maxLevel
+     label: Maximum level
+     type: number
+@@ -442,3 +470,33 @@ content:
+     type: string
+     readonly: true
+     hidden: true
++
++- name: glossary
++  label: Runecrafting Glossary
++  type: collection
++  path: src/content/glossary
++  format: json
++  filename:
++    template: '{primary}.json'
++    field: create
++  view:
++    primary: key
++    fields: [key, name, draft]
++  fields:
++  - name: key
++    label: Term key (e.g. freezing)
++    type: string
++    required: true
++    pattern: '^[a-z][a-z0-9-]*$'
++  - name: name
++    label: Display name
++    type: string
++    required: true
++  - name: description
++    label: Explanation
++    type: text
++    required: true
++  - name: draft
++    label: Draft (hide explanation)
++    type: boolean
++    default: false
+diff --git a/GLOSSARY-AND-EFFECTS.md b/GLOSSARY-AND-EFFECTS.md
+new file mode 100644
+index 0000000..baa81ab
+--- /dev/null
++++ b/GLOSSARY-AND-EFFECTS.md
+@@ -0,0 +1,44 @@
++# Runecrafting glossary and level effects
++
++These features work in the Lexicon, Build Planner (including review), Comparison, and Equipment Guide. Hover, focus with Tab, or click/tap marked text to read its explanation. Escape, tapping outside, or scrolling dismisses the popup.
++
++## Per-enchantment effects
++
++In Pages CMS, edit an enchantment and add an item under **Level effects**:
++
++- Effect key: `speed`
++- Effect label: `Speed bonus`
++- Values by level: level `1`, value `40%`; level `2`, value `80%`
++
++Levels are entered as numbers and displayed as Roman numerals. Each level may have any text value, such as `5 seconds` or `2–4 damage`; no linear scaling is assumed. Keys must be unique within an enchantment, lowercase, and may contain digits and hyphens. Levels must not exceed the enchantment's maximum level.
++
++Wrap the relevant words in the description:
++
++```
++[effect:speed]+40–80% speed[/effect]
++```
++
++Keep your current wording; only add the tags around the phrase you want explained. For Adrenaline Rush, use the actual level values confirmed in-game. Effects can be named for speed, damage, duration, or any other mechanic.
++
++## Shared glossary
++
++Open **Runecrafting Glossary** in Pages CMS. Add a term with a key (such as `freezing`), a display name, and its explanation. Keep Draft off when ready to publish. Write explanations as plain text; line breaks are supported.
++
++Reference the term in any enchantment:
++
++```
++[term:freezing]freezing[/term]
++```
++
++The displayed words can differ from the key. Updating one glossary entry updates every reference after the website deploys. Terms are linked explicitly, rather than automatically marking every matching word.
++
++## Colors and formatting
++
++```
++[effect:speed][gold]+40–80% speed[/gold][/effect]
++[term:freezing][aqua]freezing[/aqua][/term]
++```
++
++You can use bold, italics, and underline within the marked text. Keep each pair of tags in one paragraph, outside code samples and links. Do not nest tooltip tags within other tooltip tags. Tags remain visible in Pages CMS; the published website shows the tooltip. Unknown keys or unfinished tags remain visible so missing references can be corrected.
++
++No existing descriptions or gameplay values are changed by this update. The glossary starts empty. After installing, configure one effect, save, wait for Cloudflare's deployment, and verify it in the Lexicon before adding more.
+diff --git a/public/assets/description-format.css b/public/assets/description-format.css
+index 463b2f5..ecca31e 100644
+--- a/public/assets/description-format.css
++++ b/public/assets/description-format.css
+@@ -9,3 +9,5 @@
+ .sss-richtext .sss-color-pink{color:#ff99cc}
+ .sss-richtext .sss-color-gray{color:#bbbbbb}
+ .sss-richtext .sss-color-white{color:#ffffff}
++
++.sss-explanation{cursor:help;text-decoration:underline dotted;text-underline-offset:4px}.sss-explanation:focus-visible{outline:2px solid #ffb2d7;outline-offset:3px;border-radius:2px}.sss-tooltip{position:fixed;z-index:10000;box-sizing:border-box;width:max-content;max-width:min(340px,calc(100vw - 16px));max-height:70vh;overflow:auto;padding:12px 15px;border:1px solid #ac84c9;border-radius:9px;background:#19131f;color:#f5edf9;box-shadow:0 8px 28px #0008;font:15px/1.5 system-ui,sans-serif;white-space:pre-wrap;overflow-wrap:anywhere}.sss-tooltip[hidden]{display:none}
+diff --git a/public/assets/description-format.js b/public/assets/description-format.js
+index 03f2778..5c71c2c 100644
+--- a/public/assets/description-format.js
++++ b/public/assets/description-format.js
+@@ -72,14 +72,69 @@
+     }
+     return output.join('');
+   }
++  function explain(html, entry={}, glossary=[]) {
++    const parts=html.split(/(<[^>]*>)/g), out=[];
++    let pending=null, skip=0;
++    const roman=n=>['','I','II','III','IV','V','VI','VII','VIII','IX','X'][n]||String(n);
++    for(const part of parts){
++      if(part.startsWith('<')){
++        if(/^<(?:a|code|pre)\b/i.test(part)){skip++;pending=null;}
++        if(/^<\/(?:a|code|pre)>/i.test(part))skip=Math.max(0,skip-1);
++        if(/^<\/?(?:p|div|li|ul|ol|blockquote|table|tr|td|th|hr)\b/i.test(part))pending=null;
++        out.push(part);continue;
++      }
++      if(skip){out.push(part);continue;}
++      for(const token of part.split(/(\[(?:effect|term):[a-z][a-z0-9-]*\]|\[\/(?:effect|term)\])/g)){
++        const start=/^\[(effect|term):([a-z][a-z0-9-]*)\]$/.exec(token);
++        if(start){pending={type:start[1],key:start[2],index:out.length};out.push(token);continue;}
++        if(pending && token==='[/'+pending.type+']'){
++          let detail='';
++          if(pending.type==='effect'){
++            const effect=(entry.effects||[]).find(e=>e.key===pending.key);
++            if(effect)detail=effect.label+'\n'+[...(effect.levels||[])].sort((a,b)=>a.level-b.level).map(r=>'Level '+roman(r.level)+': '+r.value).join('\n');
++          } else {
++            const term=(glossary||[]).find(t=>!t.draft&&t.key===pending.key);
++            if(term)detail=term.name+'\n'+term.description;
++          }
++          if(detail){out[pending.index]='<span class="sss-explanation" tabindex="0" role="button" aria-expanded="false" data-explanation="'+escape(detail)+'">';out.push('</span>');}
++          else out.push(token);
++          pending=null;
++        }else out.push(token);
++      }
++    }
++    return out.join('');
++  }
++  // One shared popup, outside clipped cards, for mouse, keyboard and touch.
++  if(typeof document!=='undefined'){
++    let popup,active,hideTimer;
++    const close=()=>{if(active){active.removeAttribute('aria-describedby');active.setAttribute('aria-expanded','false');}active=null;if(popup)popup.hidden=true;};
++    const show=el=>{
++      clearTimeout(hideTimer);close();active=el;
++      if(!popup){popup=document.createElement('div');popup.id='sss-description-tooltip';popup.className='sss-tooltip';popup.setAttribute('role','tooltip');document.body.append(popup);
++        popup.addEventListener('pointerenter',()=>clearTimeout(hideTimer));popup.addEventListener('pointerleave',()=>{hideTimer=setTimeout(close,150);});}
++      popup.textContent=el.dataset.explanation;popup.hidden=false;el.setAttribute('aria-describedby',popup.id);el.setAttribute('aria-expanded','true');
++      const r=el.getBoundingClientRect(),p=popup.getBoundingClientRect();
++      popup.style.left=Math.max(8,Math.min(r.left,window.innerWidth-p.width-8))+'px';
++      popup.style.top=Math.max(8,r.bottom+p.height+12<window.innerHeight?r.bottom+8:r.top-p.height-8)+'px';
++    };
++    const target=e=>e.target.closest?.('.sss-explanation');
++    document.addEventListener('pointerover',e=>{const el=target(e);if(el&&el!==active&&e.pointerType!=='touch')show(el);});
++    document.addEventListener('pointerout',e=>{if(target(e)&&!target(e).contains(e.relatedTarget))hideTimer=setTimeout(close,150);});
++    document.addEventListener('focusin',e=>{const el=target(e);if(el)show(el);});
++    document.addEventListener('focusout',e=>{if(target(e))close();});
++    document.addEventListener('click',e=>{const el=target(e);if(el)show(el);else if(!popup?.contains(e.target))close();});
++    document.addEventListener('keydown',e=>{if(e.key==='Escape')close();else if((e.key==='Enter'||e.key===' ')&&target(e)){e.preventDefault();show(target(e));}});
++    document.addEventListener('scroll',close,true);window.addEventListener('resize',close);
++  }
+   const parser = new window.marked.Marked({gfm:true,breaks:true,renderer});
+   const cache = new Map();
+   window.SSSDescriptions = {
+-    format(value) {
++    format(value, entry={}, glossary=[]) {
+       const text=String(value||'No description available yet.');
+-      if(cache.has(text))return cache.get(text);
+-      const result=colorize(parser.parse(text));
+-      if(cache.size>=500)cache.clear();cache.set(text,result);
++      const key=JSON.stringify([text,entry.effects||[],glossary]);
++      if(cache.has(key))return cache.get(key);
++      const result=explain(colorize(parser.parse(text)),entry,glossary);
++      if(cache.size>=500)cache.clear();cache.set(key,result);
+       return result;
+     }
+   };
+diff --git a/src/catalog-templates/hub_build_planner.html b/src/catalog-templates/hub_build_planner.html
+index 874ebc0..33d2d4e 100644
+--- a/src/catalog-templates/hub_build_planner.html
++++ b/src/catalog-templates/hub_build_planner.html
+@@ -205,7 +205,7 @@ main,.wrap{max-width:none}main{padding:22px 20px 40px}body:has(>.wrap){padding:2
+   const runeNames = ['Aegis','Arcanum','Chills','Cinders','Echoes','Gusts','Kinesis','Moments','Mortus','Opulence','Sparks','Stones','Tides','Vitality','Void'];
+   const state = { items: [], nextId: 1 };
+   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+-  const formatDescription = window.SSSDescriptions.format;
++  const formatDescription = (value,e) => window.SSSDescriptions.format(value,e,DATA.glossary);
+   const makeOptions = (list, selected, placeholder) =>
+     (placeholder ? `<option value="">${esc(placeholder)}</option>` : '') +
+     list.map(v => `<option value="${esc(v)}" ${String(v)===String(selected)?'selected':''}>${esc(v)}</option>`).join('');
+@@ -408,7 +408,7 @@ main,.wrap{max-width:none}main{padding:22px 20px 40px}body:has(>.wrap){padding:2
+             <div class="rcp-field"><label>Enchantment</label><div class="rcp-select-with-info"><select data-action="enchant" data-item="${item.id}" data-index="${j}">${makeEnchantOptions(suggestions(item,j),entry.name)}</select>${e ? `<button type="button" class="rcp-info-toggle" data-action="toggle-description" data-item="${item.id}" data-index="${j}" aria-label="${entry.showDescription ? 'Hide' : 'Show'} description for ${esc(e.name)}" title="${entry.showDescription ? 'Hide' : 'Show'} enchantment description" aria-expanded="${!!entry.showDescription}" aria-controls="${descriptionId}">ⓘ</button>` : ''}</div>${e ? `<div class="rcp-small">Category: ${esc(categoryName(e))} · ${esc(costLabel)}</div>` : `<div class="rcp-small">Choose an enchantment to see its category and rune cost.</div>`}</div>
+             ${levelControl}
+             <button type="button" class="rcp-remove" aria-label="Remove enchantment" title="Remove enchantment" data-action="remove-enchant" data-item="${item.id}" data-index="${j}">×</button>
+-          </div>${e && entry.showDescription ? `<div class="rcp-description" id="${descriptionId}" role="region" aria-label="Description of ${esc(e.name)}"><div class="rcp-description-title">${esc(e.name)} — Description</div><div class="rcp-description-body sss-richtext">${formatDescription(e.description)}</div>${incompatibilityMarkup(e)}</div>` : ''}</div>`;
++          </div>${e && entry.showDescription ? `<div class="rcp-description" id="${descriptionId}" role="region" aria-label="Description of ${esc(e.name)}"><div class="rcp-description-title">${esc(e.name)} — Description</div><div class="rcp-description-body sss-richtext">${formatDescription(e.description,e)}</div>${incompatibilityMarkup(e)}</div>` : ''}</div>`;
+         }).join('');
+         return `<article class="rcp-item">
+           <div class="rcp-item-head"><h3>${esc(item.type)}</h3><div class="rcp-head-actions"><button type="button" class="rcp-button secondary" data-action="toggle-type" data-item="${item.id}" aria-expanded="${!!item.editingType}">${item.editingType ? 'Cancel' : 'Change'}</button><button type="button" class="rcp-button danger" data-action="remove-item" data-item="${item.id}">Remove</button></div></div>
+@@ -437,7 +437,7 @@ main,.wrap{max-width:none}main{padding:22px 20px 40px}body:has(>.wrap){padding:2
+       const enchants=item.enchants.map(entry=>({entry,e:DATA.enchantments.find(e=>e.name===entry.name)})).filter(x=>x.e);
+       return `<article class="rcp-review-gear"><h4>${esc(item.type)}</h4>${enchants.length?enchants.map(({entry,e})=>{
+         const suffix=hasFixedRomanLevel(e)||e.source==='Mythical'?'':` ${entry.level>1?'Level '+entry.level:'Level I'}`;
+-        return `<div class="rcp-review-enchant"><div class="rcp-review-enchant-title">${esc(e.name)}${esc(suffix)}</div><div class="rcp-small">${esc(categoryName(e))} · ${e.costMode==='free'?'No rune cost':'Runecrafted'}</div><div class="rcp-review-description sss-richtext">${formatDescription(e.description)}</div>${incompatibilityMarkup(e)}</div>`;
++        return `<div class="rcp-review-enchant"><div class="rcp-review-enchant-title">${esc(e.name)}${esc(suffix)}</div><div class="rcp-small">${esc(categoryName(e))} · ${e.costMode==='free'?'No rune cost':'Runecrafted'}</div><div class="rcp-review-description sss-richtext">${formatDescription(e.description,e)}</div>${incompatibilityMarkup(e)}</div>`;
+       }).join(''):'<p class="rcp-muted">No enchantments selected for this equipment.</p>'}${hasGemSockets(item)?gemSummary([item],'Planned Gems'):''}</article>`;
+     }).join('');
+     const totals=buildRuneTotals();
+diff --git a/src/catalog-templates/hub_comparison.html b/src/catalog-templates/hub_comparison.html
+index 0b91c6e..f5ba0d0 100644
+--- a/src/catalog-templates/hub_comparison.html
++++ b/src/catalog-templates/hub_comparison.html
+@@ -18,7 +18,7 @@ main,.wrap{max-width:none}main{padding:22px 20px 40px}body:has(>.wrap){padding:2
+ @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+ </style><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&amp;display=swap"><script src="/assets/hub-data.js"></script><script src="/vendor/marked-17.0.5.umd.js"></script><script src="/assets/description-format.js"></script><link rel="stylesheet" href="/assets/description-format.css"></head><body><main><div class="eyebrow">Runecrafting Tools</div><h1>Enchantment Comparison</h1><p>Compare up to three enchantments side by side to help choose the best fit for your equipment.</p><section class="panel"><h2>1. Choose your equipment</h2><p>Pick the item you're enchanting. The comparison choices will show only enchantments available for that item.</p><div id="equipment"></div><div class="actions"><span class="muted" id="equipment-count">Choose an item to get started.</span><button class="btn" id="clear-equipment" type="button">Change / Clear Equipment</button></div></section><section class="panel"><h2>2. Filter by category</h2><p>Only categories available for your selected equipment appear here.</p><div id="category-filter" class="category-filters"></div></section><section class="panel"><h2>3. Choose enchantments</h2><div class="chooser" id="choosers"></div><div class="actions"><span class="muted">Search each dark dropdown by name. Leave a slot empty to compare just two.</span><button class="btn" id="clear" type="button">Clear Comparison</button></div></section><section class="panel"><h2>4. Side-by-side details</h2><div id="results" class="results"></div></section><div id="status" class="status" role="status">Using bundled preview enchantment data.</div></main><script>
+ (()=>{'use strict';let DATA=__SSS_ENCHANTMENT_DATA__;const $=id=>document.getElementById(id),esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),roman=n=>{let s='';for(const [v,t] of [[10,'X'],[9,'IX'],[5,'V'],[4,'IV'],[1,'I']])while(n>=v){s+=t;n-=v}return s};let selected=['','',''],levels=[1,1,1],equipment='',category='';const groups={'Armor':['Helmets','Chestplates','Leggings','Boots','Elytra','Shields'],'Weapons':['Swords','Axes','Bows','Crossbows','Tridents','Maces','Spears'],'Tools':['Pickaxes','Shovels','Hoes','Shears','Fishing Rods','Flint and Steel'],'Other':['Spyglass','Goat Horns']};function eligible(e){return equipment&&(e.items||[]).includes(equipment)}function matchesFilters(e){return eligible(e)&&(!category||(e.category||'Uncategorized')===category)}function renderCategories(){const box=$('category-filter');if(!equipment){box.innerHTML='<div class="empty">Choose equipment first to see available categories.</div>';return}const categories=[...new Set(DATA.enchantments.filter(eligible).map(e=>e.category||'Uncategorized'))].sort((a,b)=>a.localeCompare(b));box.innerHTML=`<button type="button" class="category-choice" data-category="" aria-pressed="${!category}">All categories (${DATA.enchantments.filter(eligible).length})</button>`+categories.map(c=>`<button type="button" class="category-choice" data-category="${esc(c)}" aria-pressed="${category===c}">${esc(c)} (${DATA.enchantments.filter(e=>eligible(e)&&(e.category||'Uncategorized')===c).length})</button>`).join('')}function renderEquipment(){const all=[...new Set([...DATA.items||[],...DATA.enchantments.flatMap(e=>e.items||[])])];let html='';for(const [group,items] of Object.entries(groups)){const present=items.filter(x=>all.includes(x));if(!present.length)continue;html+=`<div class="equipment-group">${group}</div><div class="equipment-grid">`+present.map(item=>{const count=DATA.enchantments.filter(e=>(e.items||[]).includes(item)).length;return `<button type="button" class="equipment-choice" data-equipment="${esc(item)}" aria-pressed="${equipment===item}">${esc(item)}<small>${count} enchantments</small></button>`}).join('')+'</div>'}const extra=all.filter(x=>!Object.values(groups).flat().includes(x));if(extra.length)html+='<div class="equipment-group">Other equipment</div><div class="equipment-grid">'+extra.map(item=>`<button type="button" class="equipment-choice" data-equipment="${esc(item)}" aria-pressed="${equipment===item}">${esc(item)}</button>`).join('')+'</div>';$('equipment').innerHTML=html;$('equipment-count').textContent=equipment?`${DATA.enchantments.filter(eligible).length} enchantments available for ${equipment}.`:'Choose an item to get started.'}const upgradeNames=new Set(['Blast Protection V','Fire Aspect III','Fire Protection V','Projectile Protection V','Unbreaking IV']);function upgrade(e){return e.costRule==='once'}function free(e){return e.costMode==='free'||!e.runes?.length}function nameBase(n){return String(n).replace(/ (?:III|IV|V|VI|VII|VIII|IX|X)$/,'').trim().toLowerCase()}function get(i){return DATA.enchantments.find(e=>e.name===selected[i])}function closeMenus(except=-1){document.querySelectorAll('.menu').forEach((m,i)=>{if(i!==except){m.hidden=true;m.parentElement.querySelector('.trigger').setAttribute('aria-expanded','false')}})}function optionList(i,q=''){const menu=$('menu'+i),matches=DATA.enchantments.filter(e=>matchesFilters(e)&&e.name.toLowerCase().includes(q.toLowerCase())).sort((a,b)=>a.name.localeCompare(b.name));const available=matches.filter(e=>!selected.some((v,j)=>j!==i&&v===e.name));menu.querySelector('.options').innerHTML=`<button class="option" type="button" data-pick="" aria-selected="${!selected[i]}">— None —</button>`+available.slice(0,100).map(e=>`<button type="button" class="option" data-pick="${esc(e.name)}" aria-selected="${selected[i]===e.name}">${esc(e.name)}</button>`).join('')+(available.length>100?'<div class="muted">Keep typing to narrow the list.</div>':'');}function renderChoosers(){if(!equipment){$('choosers').innerHTML='<div class="empty" style="grid-column:1/-1">Choose equipment above to see its enchantments.</div>';return}const active=document.activeElement;const activeSearch=active?.classList?.contains('find')?active.id:null;const oldSearch=activeSearch?active.value:'';$('choosers').innerHTML=selected.map((name,i)=>{const e=get(i),max=Math.min(10,Math.max(1,Number(e?.maxLevel)||1));return `<div class="slot"><label for="trigger${i}">Enchantment ${i+1}</label><div class="picker"><button id="trigger${i}" class="trigger" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="menu${i}"><span>${esc(name||'Choose an enchantment…')}</span><span aria-hidden="true" style="color:#ffb5d9">▾</span></button><div class="menu" id="menu${i}" hidden><input id="find${i}" class="find" type="search" aria-label="Search enchantments for slot ${i+1}" placeholder="Type an enchantment name…"><div class="options" role="listbox"></div></div></div>${e?(upgrade(e)?`<div class="upgrade">One-time upgrade · ${esc(e.name)}</div>`:max>1?`<div class="levelbar">Level <div class="levels">${Array.from({length:max},(_,j)=>`<button class="level" type="button" data-level="${j+1}" data-slot="${i}" aria-pressed="${levels[i]===j+1}">${roman(j+1)}</button>`).join('')}</div></div>`:`<div class="levelbar">Level I</div>`):'<div class="muted" style="margin-top:10px">Optional slot</div>'}</div>`}).join('');selected.forEach((_,i)=>optionList(i));if(activeSearch){const el=$(activeSearch);if(el){el.value=oldSearch;optionList(Number(activeSearch.slice(-1)),oldSearch);el.focus()}}}
+-function isConflict(a,b){const A=(a.incompatible||[]).map(nameBase),B=(b.incompatible||[]).map(nameBase);return A.includes(nameBase(b.name))||B.includes(nameBase(a.name))}function intersection(a,b){return (a.items||[]).filter(x=>(b.items||[]).includes(x))}function recipe(e,i){if(free(e))return 'No rune cost';const times=upgrade(e)?1:levels[i];const counts=new Map();for(const r of e.runes)counts.set(r,(counts.get(r)||0)+times);return [...counts].map(([r,n])=>`${r} ×${n}`).join(' · ')}function renderResults(){const picks=selected.map((_,i)=>({e:get(i),i})).filter(x=>x.e);const box=$('results');if(!picks.length){box.innerHTML='<div class="empty">Choose enchantments above to see their details.</div>';return}box.innerHTML=picks.map(({e,i})=>`<article class="card"><div class="head"><h3>${esc(e.name)}</h3><span class="pill">${esc(e.source||'Unknown')}</span>${e.category?`<span class="pill">${esc(e.category)}</span>`:''}</div><div class="row"><div class="label">Selected level</div><div class="value">${upgrade(e)?'One-time upgrade':roman(levels[i])} · Max ${roman(Number(e.maxLevel)||1)}</div></div><div class="row description"><div class="label">Full description</div><div class="value sss-richtext">${window.SSSDescriptions.format(e.description)}</div></div><div class="row"><div class="label">Compatible equipment</div><div class="value">${esc((e.items||[]).join(', ')||'Not listed')}</div></div><div class="row runes"><div class="label">Rune cost for one craft</div><div class="value">${esc(recipe(e,i))}</div></div><div class="row"><div class="label">Incompatibilities</div><div class="value">${esc((e.incompatible||[]).join(', ')||'None listed')}</div></div></article>`).join('');}
++function isConflict(a,b){const A=(a.incompatible||[]).map(nameBase),B=(b.incompatible||[]).map(nameBase);return A.includes(nameBase(b.name))||B.includes(nameBase(a.name))}function intersection(a,b){return (a.items||[]).filter(x=>(b.items||[]).includes(x))}function recipe(e,i){if(free(e))return 'No rune cost';const times=upgrade(e)?1:levels[i];const counts=new Map();for(const r of e.runes)counts.set(r,(counts.get(r)||0)+times);return [...counts].map(([r,n])=>`${r} ×${n}`).join(' · ')}function renderResults(){const picks=selected.map((_,i)=>({e:get(i),i})).filter(x=>x.e);const box=$('results');if(!picks.length){box.innerHTML='<div class="empty">Choose enchantments above to see their details.</div>';return}box.innerHTML=picks.map(({e,i})=>`<article class="card"><div class="head"><h3>${esc(e.name)}</h3><span class="pill">${esc(e.source||'Unknown')}</span>${e.category?`<span class="pill">${esc(e.category)}</span>`:''}</div><div class="row"><div class="label">Selected level</div><div class="value">${upgrade(e)?'One-time upgrade':roman(levels[i])} · Max ${roman(Number(e.maxLevel)||1)}</div></div><div class="row description"><div class="label">Full description</div><div class="value sss-richtext">${window.SSSDescriptions.format(e.description,e,DATA.glossary)}</div></div><div class="row"><div class="label">Compatible equipment</div><div class="value">${esc((e.items||[]).join(', ')||'Not listed')}</div></div><div class="row runes"><div class="label">Rune cost for one craft</div><div class="value">${esc(recipe(e,i))}</div></div><div class="row"><div class="label">Incompatibilities</div><div class="value">${esc((e.incompatible||[]).join(', ')||'None listed')}</div></div></article>`).join('');}
+ 
+ function render(){renderEquipment();renderCategories();renderChoosers();renderResults()}$('equipment').addEventListener('click',ev=>{const btn=ev.target.closest('[data-equipment]');if(!btn)return;const next=btn.dataset.equipment;if(next===equipment)return;equipment=next;category="";selected=selected.map(n=>DATA.enchantments.find(e=>e.name===n&&eligible(e))?n:'');levels=levels.map((n,i)=>selected[i]?n:1);render()});$('clear-equipment').onclick=()=>{equipment='';category='';selected=['','',''];levels=[1,1,1];render()};$('category-filter').addEventListener('click',ev=>{const btn=ev.target.closest('[data-category]');if(!btn)return;category=btn.dataset.category;selected=selected.map(n=>DATA.enchantments.some(e=>e.name===n&&matchesFilters(e))?n:'');levels=levels.map((n,i)=>selected[i]?n:1);render()});$('choosers').addEventListener('click',ev=>{const trigger=ev.target.closest('.trigger');if(trigger){const i=Number(trigger.id.replace('trigger','')),m=$('menu'+i),open=m.hidden;closeMenus();m.hidden=!open;trigger.setAttribute('aria-expanded',String(open));if(open){$('find'+i).focus();optionList(i)}return}const pick=ev.target.closest('[data-pick]');if(pick){const i=Number(pick.closest('.menu').id.replace('menu',''));selected[i]=pick.dataset.pick;levels[i]=1;render();$('trigger'+i).focus();return}const level=ev.target.closest('[data-level]');if(level){levels[+level.dataset.slot]=+level.dataset.level;render()}});$('choosers').addEventListener('input',ev=>{if(ev.target.classList.contains('find'))optionList(Number(ev.target.id.replace('find','')),ev.target.value)});$('choosers').addEventListener('keydown',ev=>{if(ev.key==='Escape'){closeMenus();const i=Number(ev.target.closest('.menu')?.id.replace('menu',''));if(Number.isInteger(i))$('trigger'+i)?.focus()}if(ev.key==='Enter'&&ev.target.classList.contains('find')){ev.preventDefault();ev.target.closest('.menu').querySelector('.option:not([data-pick=""])')?.click()}});document.addEventListener('click',ev=>{if(!ev.target.closest('.picker'))closeMenus()});$('clear').onclick=()=>{selected=['','',''];levels=[1,1,1];render()};render();window.SSSHubData.fetch().then(r=>{if(!r.ok)throw Error('Unavailable');return r.json()}).then(d=>{if(!Array.isArray(d.enchantments))throw Error('Invalid data');DATA=d;selected=selected.map(n=>DATA.enchantments.some(e=>e.name===n&&eligible(e))?n:'');levels=levels.map((v,i)=>Math.min(v,Number(get(i)?.maxLevel)||1));render();$('status').textContent=(d._dataSource==='repository'?'Published enchantment catalog loaded.':'Showing bundled reference data.')}).catch(()=>{$('status').textContent='Showing bundled reference data. The published catalog could not be refreshed.'})})();
+ </script></body></html>
+\ No newline at end of file
+diff --git a/src/catalog-templates/hub_encyclopedia.html b/src/catalog-templates/hub_encyclopedia.html
+index d32a59e..ca88528 100644
+--- a/src/catalog-templates/hub_encyclopedia.html
++++ b/src/catalog-templates/hub_encyclopedia.html
+@@ -30,7 +30,7 @@ main,.wrap{max-width:none}main{padding:22px 20px 40px}body:has(>.wrap){padding:2
+ @media(max-width:600px){main{padding:18px 12px 30px}body:has(>.wrap){padding:18px 12px 30px}}
+ @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+ </style><script src="/assets/hub-data.js"></script><script src="/vendor/marked-17.0.5.umd.js"></script><script src="/assets/description-format.js"></script><link rel="stylesheet" href="/assets/description-format.css"></head><body><main class="wrap"><header><div class="pink" style="font-weight:700;letter-spacing:.1em;font-size:.8rem">RUNECRAFTING REFERENCE</div><h1>Lexicon</h1><p class="intro">Explore enchantments, discover what they do, filter by the runes you own, see where they belong, and check recipes and incompatibilities before planning your next build.</p></header><section class="controls" aria-label="Enchantment filters"><div class="control"><label for="search">Search enchantments</label><input id="search" type="search" placeholder="Search names or descriptions…" autocomplete="off"></div><div class="control"><label for="equipment">Equipment</label><select id="equipment"><option value="">All equipment</option></select></div><div class="control"><label for="source">Source</label><select id="source"><option value="">All sources</option></select></div><div class="control"><label for="category">Category</label><select id="category"><option value="">All categories</option></select></div><div class="control"><label for="rune">Rune used</label><select id="rune"><option value="">All runes</option></select></div></section><div class="meta"><div id="count" class="count" aria-live="polite"></div><button id="clear" class="secondary" type="button">Clear filters</button></div><section id="cards" class="grid" aria-label="Enchantment results"></section><p id="status" class="status" role="status">Loading bundled reference data…</p><footer>Enchantment information is provided by the same Airtable source used for the Runecrafting Build Planner. Changes to data may take a few minutes to appear.</footer></main><script>
+-(()=>{'use strict';let DATA=__SSS_ENCHANTMENT_DATA__;const $=id=>document.getElementById(id);const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const desc=window.SSSDescriptions.format;const roman=/\s+([IVXLCDM]+)$/i;const base=s=>String(s||'').replace(roman,'').trim();const vanilla=new Set('silk touch|fortune|efficiency|unbreaking|mending|infinity|power|punch|flame|looting|sharpness|smite|bane of arthropods|fire aspect|knockback|sweeping edge|protection|fire protection|blast protection|projectile protection|feather falling|respiration|aqua affinity|depth strider|frost walker|soul speed|swift sneak|thorns|binding curse|vanishing curse|curse of binding|curse of vanishing|riptide|loyalty|channeling|impaling|multishot|piercing|quick charge|luck of the sea|lure|density|breach|wind burst'.split('|'));const listNames=e=>Array.isArray(e.incompatible)?e.incompatible:[];const grouped=names=>{const map=new Map();names.forEach(n=>{if(!n)return;const b=base(n),key=b.toLowerCase();if(!map.has(key))map.set(key,{b,plain:false,lv:[]});const v=map.get(key),match=String(n).match(roman);if(match)v.lv.push(match[1]);else v.plain=true});return [...map.values()].map(v=>v.plain&&v.lv.length?`${v.b} (including ${[...new Set(v.lv)].join(', ')})`:v.plain?v.b:v.lv.length?[...new Set(v.lv)].map(l=>v.b+' '+l).join(', '):v.b)};function conflicts(e){const names=[...listNames(e)];for(const other of DATA.enchantments){if(other.name===e.name||!other.items?.some(i=>e.items?.includes(i)))continue;const otherNames=listNames(other);const groupRule=(a,b)=>a.includes('Other Avatars')&&b.startsWith('Avatar of ')||a.includes('Other Impetuses')&&b.startsWith('Impetus of ')||a.includes('Other Paradigms')&&b.startsWith('Paradigm of ');if(otherNames.includes(e.name)||groupRule(otherNames,e.name)||groupRule(names,other.name)){names.push(other.name)}}return [...new Set(names.filter(n=>!/^Other (Avatars|Impetuses|Paradigms)$/.test(n)))].sort((a,b)=>a.localeCompare(b))}function chips(names){return `<div class="chips">${names.map(n=>`<span class="chip">${esc(n)}</span>`).join('')}</div>`}function card(e){const incompatible=conflicts(e),v=grouped(incompatible.filter(n=>vanilla.has(base(n).toLowerCase()))),r=grouped(incompatible.filter(n=>!vanilla.has(base(n).toLowerCase())));const runes=e.costMode==='free'||!e.runes?.length?'<p class="note">No rune cost</p>':`<div class="runes">${e.runes.map((n,i)=>`<span class="rune">${i+1}. ${esc(n)}</span>`).join('')}</div><p class="note">Rune sequence per level (when applicable).</p>`;return `<article class="card"><div class="top"><h2>${esc(e.name)}</h2><span class="source">${esc(e.source||'Unknown')}</span></div><div class="badges"><span class="tag">${esc(e.category||'Uncategorized')}</span>${e.maxLevel?`<span class="tag">Max level ${esc(e.maxLevel)}</span>`:''}</div><div class="desc expanded sss-richtext">${desc(e.description)}</div><details class="detail"><summary>Equipment, recipe &amp; incompatibilities</summary><div class="sub">Compatible equipment</div>${chips(e.items||[])}<div class="sub">Rune recipe</div>${runes}<div class="sub">Incompatibilities</div>${r.length?'<div class="note">Runecrafted</div>'+chips(r):''}${v.length?'<div class="note" style="margin-top:8px">Vanilla</div>'+chips(v):''}${!r.length&&!v.length?'<p class="note">No listed incompatibilities.</p>':''}</details></article>`}function options(id,values){const sel=$(id),old=sel.value;sel.innerHTML='<option value="">'+({equipment:'All equipment',source:'All sources',category:'All categories',rune:'All runes'}[id])+'</option>'+values.sort((a,b)=>a.localeCompare(b)).map(v=>`<option value="${esc(v)}">${esc(v)}</option>`).join('');sel.value=values.includes(old)?old:'';syncCustom(id)}const filterIds=['equipment','source','category','rune'];
++(()=>{'use strict';let DATA=__SSS_ENCHANTMENT_DATA__;const $=id=>document.getElementById(id);const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const desc=(value,e)=>window.SSSDescriptions.format(value,e,DATA.glossary);const roman=/\s+([IVXLCDM]+)$/i;const base=s=>String(s||'').replace(roman,'').trim();const vanilla=new Set('silk touch|fortune|efficiency|unbreaking|mending|infinity|power|punch|flame|looting|sharpness|smite|bane of arthropods|fire aspect|knockback|sweeping edge|protection|fire protection|blast protection|projectile protection|feather falling|respiration|aqua affinity|depth strider|frost walker|soul speed|swift sneak|thorns|binding curse|vanishing curse|curse of binding|curse of vanishing|riptide|loyalty|channeling|impaling|multishot|piercing|quick charge|luck of the sea|lure|density|breach|wind burst'.split('|'));const listNames=e=>Array.isArray(e.incompatible)?e.incompatible:[];const grouped=names=>{const map=new Map();names.forEach(n=>{if(!n)return;const b=base(n),key=b.toLowerCase();if(!map.has(key))map.set(key,{b,plain:false,lv:[]});const v=map.get(key),match=String(n).match(roman);if(match)v.lv.push(match[1]);else v.plain=true});return [...map.values()].map(v=>v.plain&&v.lv.length?`${v.b} (including ${[...new Set(v.lv)].join(', ')})`:v.plain?v.b:v.lv.length?[...new Set(v.lv)].map(l=>v.b+' '+l).join(', '):v.b)};function conflicts(e){const names=[...listNames(e)];for(const other of DATA.enchantments){if(other.name===e.name||!other.items?.some(i=>e.items?.includes(i)))continue;const otherNames=listNames(other);const groupRule=(a,b)=>a.includes('Other Avatars')&&b.startsWith('Avatar of ')||a.includes('Other Impetuses')&&b.startsWith('Impetus of ')||a.includes('Other Paradigms')&&b.startsWith('Paradigm of ');if(otherNames.includes(e.name)||groupRule(otherNames,e.name)||groupRule(names,other.name)){names.push(other.name)}}return [...new Set(names.filter(n=>!/^Other (Avatars|Impetuses|Paradigms)$/.test(n)))].sort((a,b)=>a.localeCompare(b))}function chips(names){return `<div class="chips">${names.map(n=>`<span class="chip">${esc(n)}</span>`).join('')}</div>`}function card(e){const incompatible=conflicts(e),v=grouped(incompatible.filter(n=>vanilla.has(base(n).toLowerCase()))),r=grouped(incompatible.filter(n=>!vanilla.has(base(n).toLowerCase())));const runes=e.costMode==='free'||!e.runes?.length?'<p class="note">No rune cost</p>':`<div class="runes">${e.runes.map((n,i)=>`<span class="rune">${i+1}. ${esc(n)}</span>`).join('')}</div><p class="note">Rune sequence per level (when applicable).</p>`;return `<article class="card"><div class="top"><h2>${esc(e.name)}</h2><span class="source">${esc(e.source||'Unknown')}</span></div><div class="badges"><span class="tag">${esc(e.category||'Uncategorized')}</span>${e.maxLevel?`<span class="tag">Max level ${esc(e.maxLevel)}</span>`:''}</div><div class="desc expanded sss-richtext">${desc(e.description,e)}</div><details class="detail"><summary>Equipment, recipe &amp; incompatibilities</summary><div class="sub">Compatible equipment</div>${chips(e.items||[])}<div class="sub">Rune recipe</div>${runes}<div class="sub">Incompatibilities</div>${r.length?'<div class="note">Runecrafted</div>'+chips(r):''}${v.length?'<div class="note" style="margin-top:8px">Vanilla</div>'+chips(v):''}${!r.length&&!v.length?'<p class="note">No listed incompatibilities.</p>':''}</details></article>`}function options(id,values){const sel=$(id),old=sel.value;sel.innerHTML='<option value="">'+({equipment:'All equipment',source:'All sources',category:'All categories',rune:'All runes'}[id])+'</option>'+values.sort((a,b)=>a.localeCompare(b)).map(v=>`<option value="${esc(v)}">${esc(v)}</option>`).join('');sel.value=values.includes(old)?old:'';syncCustom(id)}const filterIds=['equipment','source','category','rune'];
+ function closeMenus(except){
+   document.querySelectorAll('.custom-menu').forEach(menu=>{
+     if(menu.id!==except){menu.hidden=true;menu.previousElementSibling.setAttribute('aria-expanded','false')}
+diff --git a/src/catalog-templates/hub_equipment_guide.html b/src/catalog-templates/hub_equipment_guide.html
+index aa390b2..6de83dc 100644
+--- a/src/catalog-templates/hub_equipment_guide.html
++++ b/src/catalog-templates/hub_equipment_guide.html
+@@ -21,7 +21,7 @@ main,.wrap{max-width:none}main{padding:22px 20px 40px}body:has(>.wrap){padding:2
+ function matches(){return DATA.enchantments.filter(e=>e.items?.includes(item))}function choices(key){return [...new Set(matches().map(e=>e[key]).filter(Boolean))].sort((a,b)=>a.localeCompare(b))}function dropdown(rootId,all,options,get,set){const root=$(rootId);root.innerHTML='<div class="custom"><button type="button" class="trigger" aria-expanded="false" aria-haspopup="listbox"></button><div class="menu" role="listbox" hidden></div></div>';const trigger=root.querySelector('.trigger'),menu=root.querySelector('.menu');const update=()=>{trigger.textContent=(get()||all)+' ▾';menu.innerHTML=[['',all],...options().map(x=>[x,x])].map(([v,label])=>`<button type="button" class="option" role="option" aria-selected="${get()===v}" data-value="${esc(v)}">${esc(label)}</button>`).join('')};trigger.onclick=()=>{document.querySelectorAll('.menu').forEach(x=>{if(x!==menu){x.hidden=true;x.previousElementSibling.setAttribute('aria-expanded','false')}});menu.hidden=!menu.hidden;trigger.setAttribute('aria-expanded',String(!menu.hidden));if(!menu.hidden)menu.querySelector('[aria-selected=true]')?.scrollIntoView({block:'nearest'})};menu.onclick=ev=>{const b=ev.target.closest('[data-value]');if(!b)return;set(b.dataset.value);menu.hidden=true;trigger.setAttribute('aria-expanded','false');update();renderCards();trigger.focus()};menu.onkeydown=ev=>{const opts=[...menu.querySelectorAll('.option')],i=opts.indexOf(document.activeElement);if(ev.key==='Escape'){menu.hidden=true;trigger.setAttribute('aria-expanded','false');trigger.focus()}if(['ArrowDown','ArrowUp'].includes(ev.key)){ev.preventDefault();opts[(i+(ev.key==='ArrowDown'?1:-1)+opts.length)%opts.length]?.focus()}};trigger.onkeydown=ev=>{if(['Enter',' ','ArrowDown'].includes(ev.key)){ev.preventDefault();menu.hidden=false;trigger.setAttribute('aria-expanded','true');menu.querySelector('[aria-selected=true]')?.focus()}};return update}
+ const updateSource=dropdown('sourceDropdown','All sources',()=>choices('source'),()=>source,v=>source=v);const updateCategory=dropdown('categoryDropdown','All categories',()=>choices('category'),()=>category,v=>category=v);document.addEventListener('click',ev=>{if(!ev.target.closest('.custom'))document.querySelectorAll('.menu').forEach(m=>{m.hidden=true;m.previousElementSibling.setAttribute('aria-expanded','false')})});
+ function renderEquipment(){const all=Object.entries(groups);$('groups').innerHTML=all.map(([g,items])=>`<button class="groupbtn ${group===g?'active':''}" data-group="${esc(g)}" aria-pressed="${group===g}">${esc(g)}</button>`).join('');$('items').innerHTML=(groups[group]||[]).filter(x=>DATA.items.includes(x)).map(x=>`<button class="itembtn ${item===x?'active':''}" data-item="${esc(x)}" aria-pressed="${item===x}">${esc(x)}<small>${DATA.enchantments.filter(e=>e.items?.includes(x)).length} enchantments</small></button>`).join('')}
+-function renderCards(){const q=$('search').value.trim().toLowerCase();const eligible=matches();const found=eligible.filter(e=>(!source||e.source===source)&&(!category||e.category===category)&&(!q||(e.name+' '+e.description).toLowerCase().includes(q))).sort((a,b)=>a.name.localeCompare(b.name));$('selectedInfo').textContent=`${item} · ${eligible.length} applicable enchantments`; $('count').textContent=`${found.length} match${found.length===1?'':'es'}`;$('cards').innerHTML=found.slice(0,limit).map(e=>{const conflicts=e.incompatible||[];const vanillaPlus=e.source==='Runecrafted'&&/ (?:IV|V|VI|VII|VIII|IX|X)$/.test(e.name)&&e.maxLevel===1;return `<article class="card"><h3>${esc(e.name)}</h3><div class="pills"><span class="pill pink">${esc(e.source)}</span>${e.category?`<span class="pill">${esc(e.category)}</span>`:''}<span class="pill">${vanillaPlus?'One-time upgrade':`Max level ${esc(e.maxLevel||1)}`}</span></div><div class="desc sss-richtext">${window.SSSDescriptions.format(e.description)}</div><details><summary>Rune recipe</summary><div class="detailbody">${e.costMode==='free'||!e.runes?.length?'No rune cost.':`${vanillaPlus?'One upgrade recipe':'Recipe per level'}: ${e.runes.map(esc).join(' · ')}`}</div></details><details><summary>Incompatibilities (${conflicts.length})</summary><div class="detailbody">${conflicts.length?conflicts.map(esc).join(' · '):'None listed in the data.'}</div></details></article>`}).join('')+(found.length>limit?`<div class="empty">Showing ${limit} of ${found.length}. Narrow your search to see more.</div>`:'')||'<div class="empty">No enchantments match these filters for this equipment.</div>'}
++function renderCards(){const q=$('search').value.trim().toLowerCase();const eligible=matches();const found=eligible.filter(e=>(!source||e.source===source)&&(!category||e.category===category)&&(!q||(e.name+' '+e.description).toLowerCase().includes(q))).sort((a,b)=>a.name.localeCompare(b.name));$('selectedInfo').textContent=`${item} · ${eligible.length} applicable enchantments`; $('count').textContent=`${found.length} match${found.length===1?'':'es'}`;$('cards').innerHTML=found.slice(0,limit).map(e=>{const conflicts=e.incompatible||[];const vanillaPlus=e.source==='Runecrafted'&&/ (?:IV|V|VI|VII|VIII|IX|X)$/.test(e.name)&&e.maxLevel===1;return `<article class="card"><h3>${esc(e.name)}</h3><div class="pills"><span class="pill pink">${esc(e.source)}</span>${e.category?`<span class="pill">${esc(e.category)}</span>`:''}<span class="pill">${vanillaPlus?'One-time upgrade':`Max level ${esc(e.maxLevel||1)}`}</span></div><div class="desc sss-richtext">${window.SSSDescriptions.format(e.description,e,DATA.glossary)}</div><details><summary>Rune recipe</summary><div class="detailbody">${e.costMode==='free'||!e.runes?.length?'No rune cost.':`${vanillaPlus?'One upgrade recipe':'Recipe per level'}: ${e.runes.map(esc).join(' · ')}`}</div></details><details><summary>Incompatibilities (${conflicts.length})</summary><div class="detailbody">${conflicts.length?conflicts.map(esc).join(' · '):'None listed in the data.'}</div></details></article>`}).join('')+(found.length>limit?`<div class="empty">Showing ${limit} of ${found.length}. Narrow your search to see more.</div>`:'')||'<div class="empty">No enchantments match these filters for this equipment.</div>'}
+ function refresh(){if(!DATA.items.includes(item)){item=DATA.items[0]||'';group=Object.keys(groups).find(g=>groups[g].includes(item))||'Other'}if(source&&!choices('source').includes(source))source='';if(category&&!choices('category').includes(category))category='';renderEquipment();updateSource();updateCategory();renderCards()}
+ $('groups').onclick=ev=>{const b=ev.target.closest('[data-group]');if(!b)return;group=b.dataset.group;item=groups[group].find(x=>DATA.items.includes(x))||'';source='';category='';limit=80;refresh()};$('items').onclick=ev=>{const b=ev.target.closest('[data-item]');if(!b)return;item=b.dataset.item;source='';category='';limit=80;refresh()};$('search').oninput=()=>{limit=80;renderCards()};refresh();window.SSSHubData.fetch().then(r=>{if(!r.ok)throw Error('Unavailable');return r.json()}).then(d=>{if(!Array.isArray(d.enchantments))throw Error('Invalid data');DATA=d;DATA.items=DATA.items||[...new Set(d.enchantments.flatMap(e=>e.items||[]))];refresh();$('status').textContent=(d._dataSource==='repository'?'Published enchantment catalog loaded.':'Showing bundled reference data.')}).catch(()=>{$('status').textContent='Showing bundled reference data. The published catalog could not be refreshed.'});})();
+ </script></body></html>
+\ No newline at end of file
+diff --git a/src/content/glossary/.gitkeep b/src/content/glossary/.gitkeep
+new file mode 100644
+index 0000000..e69de29
+diff --git a/src/lib/game-catalogs.js b/src/lib/game-catalogs.js
+index f9c6b27..ede305e 100644
+--- a/src/lib/game-catalogs.js
++++ b/src/lib/game-catalogs.js
+@@ -1,4 +1,4 @@
+-import { readdirSync, readFileSync } from 'node:fs';
++import { readdirSync, readFileSync, existsSync } from 'node:fs';
+ import { pathToFileURL } from 'node:url';
+ import { resolve } from 'node:path';
+ 
+@@ -33,9 +33,16 @@ export function parseCost(cost) {
+   });
+ }
+ export function loadGameCatalogs(base=root) {
+-  return makeGameCatalogs(readEntries('enchantments',base),readEntries('valor-items',base));
++  return makeGameCatalogs(readEntries('enchantments',base),readEntries('valor-items',base),existsSync(new URL('src/content/glossary/',base))?readEntries('glossary',base):[]);
+ }
+-export function makeGameCatalogs(enchantmentRows,valorRows) {
++export function makeGameCatalogs(enchantmentRows,valorRows,glossaryRows=[]) {
++  const glossary=publishedEntries(glossaryRows,'glossary');
++  const termKeys=new Set();
++  for(const term of glossary){
++    assert(/^[a-z][a-z0-9-]*$/.test(term.key),'invalid glossary key');
++    assert(!termKeys.has(term.key),'duplicate glossary key '+term.key);termKeys.add(term.key);
++    assert(term.description.trim(),term.name+' needs an explanation');
++  }
+   const enchantments=publishedEntries(enchantmentRows,'enchantments');
+   for(const e of enchantments) {
+     if(e.maxLevel===undefined||e.maxLevel==='')e.maxLevel=null;
+@@ -51,6 +58,21 @@ export function makeGameCatalogs(enchantmentRows,valorRows) {
+     for(let i=1;i<=5;i++) assert(e['rune'+i]===''||RUNE_NAMES.includes(e['rune'+i]),e.name+' has an invalid rune '+i);
+     if(e.costRule!=='free')for(let i=1;i<=5;i++)assert(e['rune'+i],e.name+' needs all five recipe runes');
+   }
++  for(const e of enchantments){
++    e.effects ??= [];
++    assert(Array.isArray(e.effects),e.name+' has an invalid effects list');
++    const keys=new Set();
++    for(const effect of e.effects){
++      assert(effect && /^[a-z][a-z0-9-]*$/.test(effect.key) && !keys.has(effect.key),e.name+' needs unique effect keys');keys.add(effect.key);
++      assert(text(effect.label)&&effect.label.trim(),e.name+' effect needs a label');
++      assert(Array.isArray(effect.levels)&&effect.levels.length>0,e.name+' effect needs level values');
++      const levels=new Set();
++      for(const row of effect.levels){
++        assert(Number.isInteger(row.level)&&row.level>=1&&row.level<=(e.maxLevel||10)&&!levels.has(row.level),e.name+' effect has invalid or repeated levels');levels.add(row.level);
++        assert(text(row.value)&&row.value.trim(),e.name+' effect needs a value');
++      }
++    }
++  }
+   enchantments.sort((a,b)=>a.name.localeCompare(b.name,'en'));
+   const valor=publishedEntries(valorRows,'valor-items');
+   const enchantmentIds=new Set(enchantments.map(e=>e.id));
+@@ -68,15 +90,15 @@ export function makeGameCatalogs(enchantmentRows,valorRows) {
+     if(e.shop!=='reference')parseCost(e.cost);
+   }
+   valor.sort((a,b)=>a.order-b.order||a.name.localeCompare(b.name,'en'));
+-  return { enchantments, valor };
++  return { enchantments, valor, glossary };
+ }
+ export function enchantmentData(catalog=loadGameCatalogs()) {
+   const enchantments=catalog.enchantments.map(e=>({
+-    id:e.id,name:e.name,runes:[1,2,3,4,5].map(i=>e['rune'+i]).filter(Boolean),items:e.items,maxLevel:e.maxLevel,
++    id:e.id,name:e.name,effects:e.effects||[],runes:[1,2,3,4,5].map(i=>e['rune'+i]).filter(Boolean),items:e.items,maxLevel:e.maxLevel,
+     incompatible:[...new Set([...e.incompatibleRunecrafted,...e.incompatibleVanilla])],description:e.description,
+     source:e.source,category:e.category,costMode:e.costRule==='free'?'free':'runes',costRule:e.costRule
+   }));
+-  return {enchantments,items:[...new Set(enchantments.flatMap(e=>e.items))].sort(),_dataSource:'repository'};
++  return {enchantments,glossary:catalog.glossary||[],items:[...new Set(enchantments.flatMap(e=>e.items))].sort(),_dataSource:'repository'};
+ }
+ export function valorData(catalog=loadGameCatalogs()) {
+   return catalog.valor.map(e=>({Id:e.id,Name:e.name,Category:e.category,Description:e.description,Cost:e.cost,'Skill Requirements':e.skillRequirements,'Acquisition (Non-Purchaseable)':e.acquisition,Shop:e.shop,RelatedEnchantments:e.relatedEnchantments.map(id=>catalog.enchantments.find(e=>e.id===id).name)}));
+diff --git a/tests/description-format.mjs b/tests/description-format.mjs
+index c518b37..656b445 100644
+--- a/tests/description-format.mjs
++++ b/tests/description-format.mjs
+@@ -52,3 +52,30 @@ assert(!format('<p>[red]one</p><p>two[/red]</p>').includes('sss-color'));
+ assert(!format('[custom]unknown[/custom]').includes('sss-color'));
+ assert(!format('[Link](https://example.com/[red]x[/red])').includes('sss-color'));
+ console.log('Color tags passed: ten colors, rich text, nesting, code, links and malformed tags.');
++
++const effects={effects:[{key:'speed',label:'Speed bonus',levels:[{level:2,value:'80%'},{level:1,value:'40%'}]}]};
++const glossary=[{key:'freezing',name:'Freezing',description:'A shared explanation.',draft:false}];
++const tip=format('<p>[effect:speed][gold]<strong>+40–80% speed</strong>[/gold][/effect]</p>',effects,glossary);
++assert.match(tip,/tabindex="0" role="button"/);
++assert.match(tip,/Level I: 40%\nLevel II: 80%/);
++assert.match(tip,/sss-color-gold/);
++assert(!tip.includes('[effect:'));
++assert.match(format('[term:freezing]freezing[/term]',{},glossary),/A shared explanation/);
++assert(!format('[term:freezing]freezing[/term]',{},[{...glossary[0],draft:true}]).includes('data-explanation'));
++assert(!format('[effect:speed]speed[/effect]',{}).includes('data-explanation'));
++assert.match(format('[effect:speed]speed[/effect]',effects),/40%/);
++assert(!format('`[effect:speed]speed[/effect]`',effects).includes('data-explanation'));
++assert(!format('<p>[effect:speed]one</p><p>two[/effect]</p>',effects).includes('data-explanation'));
++const unsafe=format('[term:x]X[/term]',{},[{key:'x',name:'X',description:'" onmouseover="evil <script>alert(1)</script>'}]);
++assert(unsafe.includes('&quot; onmouseover=&quot;'));
++assert(!unsafe.includes('<script>'));
++const {makeGameCatalogs,enchantmentData}=await import('../src/lib/game-catalogs.js');
++const current=loadGameCatalogs();
++const one=structuredClone(current.enchantments[0]);one.maxLevel=2;one.effects=effects.effects;
++const built=makeGameCatalogs([one],[],[{...glossary[0],id:'freezing'}]);
++assert.equal(enchantmentData(built).enchantments[0].effects[0].key,'speed');
++assert.equal(enchantmentData(built).glossary[0].key,'freezing');
++const invalid=structuredClone(one);invalid.effects[0].levels.push({level:2,value:'100%'});
++assert.throws(()=>makeGameCatalogs([invalid],[]),/invalid or repeated levels/);
++assert.throws(()=>makeGameCatalogs([one],[],[...glossary,...glossary]),/duplicate/);
++console.log('Glossary and level effects passed: context, colors, keyboard markup, escaping, drafts, and validation.');

@@ -1,0 +1,412 @@
+diff --git a/public/assets/overview/bundle.webp b/public/assets/overview/bundle.webp
+new file mode 100644
+index 0000000000000000000000000000000000000000..b38c490bb75fb4039f92937df83536ef7a7c7a21
+GIT binary patch
+literal 228
+zcmV<A02}{ONk&H800012MM6+kP&iD`0000lpTH*&Phd0v*)&Naiqg`QM6yD?2Urvm
+z{mViBB&1N&HWG7(;Oo=~Jb!RM&VK-~W4lnOWU2w{-IV?MJzx~uYMofX0v51<g;>Bs
+zEYw2v-puP~Nj4GvpMY_AhUnrk5G-y?bkTSMECx5*WYF01w!z|Ji6QpA$&0~ch)(19
+zZ7WN0^5V^lQyjl-Wy#_alNTqGPGh4>7T2pvh{r&Qo8-o6>~X<&)Dn{|FIoIWu+ce#
+e$$CE-Vx!x-7|f^f)HpuwXR5z%;`nzzI|c#eTy44l
+
+literal 0
+HcmV?d00001
+
+diff --git a/public/assets/overview/diamond-sword.webp b/public/assets/overview/diamond-sword.webp
+new file mode 100644
+index 0000000000000000000000000000000000000000..443bc88c4fa0a3aa59be6b7e063b082d5e90e294
+GIT binary patch
+literal 238
+zcmV<K01^LENk&HI00012MM6+kP&iE40000lpTH*&HLz(UNe+|CmV#3=Fo~Coi5ZMB
+zIBo5{(X4bb5=n}Gi$juzAVi`A{)-Ueil~VsN%8OMB%A~OkQtKxD{R}gkse68=L2&9
+zuD>&l3sC0&b(h8m^_dZr#ybJjY~t2z^)-XO+R|bo&TLiVexKr_%*)l5wzIo|R6?zk
+zhPLC&{MiUnmXtX~mAf;Peq7S5n|sTn-t@6o^Zm1l0W3k_mIzWA(EX9Gg!Gv{O5-j7
+olOjm*8Q-O^gtQ&s+(>gMmPV$&veJ8YH?X}^L~Y0TE<*(q09a#n3jhEB
+
+literal 0
+HcmV?d00001
+
+diff --git a/public/assets/overview/emerald.webp b/public/assets/overview/emerald.webp
+new file mode 100644
+index 0000000000000000000000000000000000000000..facdae9683254bbe617f74c46143ab68c1dd8a0d
+GIT binary patch
+literal 190
+zcmV;v073s!Nk&Gt00012MM6+kP&iDf0000lpTH*&5;w7JJC!2TAO{_oz!NG`$I$H|
+zb}v8p;iWOiHc~B)=hRN<fnLTS03>0gP){{WI-^XoME@tiXkFHDSlK{;>pvWtP5TTC
+zP~;b2fy*7-rqj^F3ZN)2zyjT-dr=P~6y-VSH+7qmmY{|5f_V!`gHT`Lv*|V-$_s`D
+sX4n!G@6iA)d|}@7g&!E9xm@uX4bZ|D5)UIZw<tcN@v!E$#b<hm0J*JE<^TWy
+
+literal 0
+HcmV?d00001
+
+diff --git a/public/assets/overview/enchanted-book.gif b/public/assets/overview/enchanted-book.gif
+new file mode 100644
+index 0000000000000000000000000000000000000000..dddfc52c6819d14fa843c63cb985dc565230a2b9
+GIT binary patch
+literal 14534
+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
+
+literal 0
+HcmV?d00001
+
+diff --git a/public/assets/overview/item-frame.webp b/public/assets/overview/item-frame.webp
+new file mode 100644
+index 0000000000000000000000000000000000000000..88294d08a007207ac4ad7465e405dbe5aa43c58c
+GIT binary patch
+literal 294
+zcmV+>0ondiNk&E<0RRA3MM6+kP&iBx0RR9mpTH*&Rk*2bTTYy$jE<CHXmNlI+EE22
+z5P%2#(4BSf|Il4BDh+^yjgx8Mc*N)fHkC$_q+I@CvAYN!CCYu>f5mOvM$!U~KRqXy
+zMq+G1l6lWN0(_-_i>a2hT&h*_kql-wl<(B`V^SNGC9_#TqMK#f@07GtN!}yCV<ed9
+z&}{pw;NgquEdhQ&pw^JKu4XZH&t)~*xCTIK<JKRf^fZySuI4lDx~idd(C~p;8<a)s
+zl%RDrpQ*8~(&@>C+BgfK+o^jl%V+AI%V?s8&s1AY%bgoDn`bfTz6;UhlxhauHnex4
+sZ0Gxaqq+YI(i_T0E8PmZsV2$QRLh*+&}vHg+$@;Nv|PTZ=6}Qq0I-^rLI3~&
+
+literal 0
+HcmV?d00001
+
+diff --git a/public/assets/overview/netherite-sword.webp b/public/assets/overview/netherite-sword.webp
+new file mode 100644
+index 0000000000000000000000000000000000000000..c04a0314ba8f8f982d33ed4ce7264217328f2b46
+GIT binary patch
+literal 260
+zcmV+f0sH<^Nk&He00012MM6+kP&iER0000lpTH*&hoGo!Bxiel?cVVRcqER7qDGRG
+zg&!aLS9VHBK^sZR@iT*ejW6Ic{}F2s|He9Fl@jHTup(lDAJG91P_JkD@OQG-OkeK0
+zz{qVIN9*nDt@;0dh3%&d5Yhh$h#%;S%LRtVse+{e!vpTHTwr*>6&_G9J~k^e+~Ep$
+zC>S4`l^Jeug&P!%kIk`s>Q#m-Y~TO|<I$Pg1`Ubf3L7{;!Fb91j2iCHu!jvCpkTas
+z&PE$JLc#dN{EQlIaD{^L*;!c)XDB$p2?}O@HC&)zK%Lq`!Q9TLc2F>Gt5dVQ1`5Ux
+K%+D&QQ%eZXig%y@
+
+literal 0
+HcmV?d00001
+
+diff --git a/public/assets/overview/valor-badge.webp b/public/assets/overview/valor-badge.webp
+new file mode 100644
+index 0000000000000000000000000000000000000000..6f51998420e51e0fdeaa53551b115b381519c6d4
+GIT binary patch
+literal 226
+zcmV<803H8QNk&H600012MM6+kP&iD@0000lpTH*&SD+@6B<1|OWRCt*vY{pb&;;op
+zgf83!AcM`PCIFCz{tY)&n0hk*0RaBLVBgWQByB$$N>_1em|+;fRRghg6AGpf3Z`HR
+zqhJc5Pzs@7nrG#){kfVH(f<i(e=g_I*TAIgc1{+*Nuez&6KAmGO$v>=*r_x+gT+tS
+zDeO$rYBwn~3T;sr2c3h#lGmB&?!)4jI(65WjKyl#X^Z2iFFq`EX)qb|qk~DXT`p=L
+c-cpvlH2BaKb<r7YUt7=8xZHlQp1lSE0JijIhyVZp
+
+literal 0
+HcmV?d00001
+
+diff --git a/public/content-overview/styles.css b/public/content-overview/styles.css
+index 38efdf4..aba3360 100644
+--- a/public/content-overview/styles.css
++++ b/public/content-overview/styles.css
+@@ -24,3 +24,9 @@
+ #ss-custom-content .overview-page .hero{display:block}
+ #ss-custom-content #sscc-toast{z-index:20;max-width:calc(100vw - 32px);overflow-wrap:anywhere}
+ @media(max-width:600px){#ss-custom-content .sscc-navigation{padding:9px 10px;gap:8px}#ss-custom-content .sscc-navigation .discord-link{font-size:11px}#ss-custom-content .tabs a{padding:7px 9px}}
++
++/* Minecraft item artwork supplied for the Overview cards. */
++#ss-custom-content .feature .art .item-icon { width: 112px; height: 112px; object-fit: contain; image-rendering: pixelated; }
++#ss-custom-content .crossed-swords { position: relative; display: block; width: 128px; height: 128px; }
++#ss-custom-content .crossed-swords img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; image-rendering: pixelated; }
++#ss-custom-content .crossed-swords img:first-child { transform: scaleX(-1); }
+diff --git a/src/content/pages/content-overview.html b/src/content/pages/content-overview.html
+index 1fbd280..be240f0 100644
+--- a/src/content/pages/content-overview.html
++++ b/src/content/pages/content-overview.html
+@@ -1,12 +1,12 @@
+ <main class="guide-host" id="main"><div id="ss-custom-content" data-sscc-version="test-1">
+-<p class="sscc-loading" data-sscc-loading role="status">Loading interactive guides…</p><noscript><p>Enable JavaScript to use the interactive guides and shopping planner.</p></noscript><div class="sscc-navigation"><nav class="tabs" aria-label="Custom Content navigation"><a href="#sscc/overview" data-nav="overview">✦ Overview</a><a href="#sscc/runecrafting" data-nav="runecrafting">🔮 Runecrafting</a><a href="#sscc/trials" data-nav="trials">⚔️ Trials of Valor</a><a href="#sscc/valor" data-nav="valor">🏆 Valor Shop & Rewards</a><a href="#sscc/gems" data-nav="gems">💎 Gem Socketing</a><a href="#sscc/heirlooms" data-nav="heirlooms">📜 Heirlooms</a><a href="#sscc/vanilla" data-nav="vanilla">🏡 Vanilla Plus</a></nav><a class="discord-link" href="https://discord.gg/r22U3prgPE" target="_blank" rel="noopener" aria-label="Join Silver Springs Discord for updates"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 4h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-8l-6 3v-3a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="M8 9h8M8 13h5"/></svg>Discord ↗</a></div><div class="sscc-main"><article class="page overview-page" data-page="overview"><div class="overview-content"><section class="hero" id="sscc-overview-start"><div class="eyebrow">Custom content at a glance</div><h1 tabindex="-1">Putting the Plus in<br><em>Vanilla Plus</em></h1><p>Get to know our custom enchantments, combat challenges, and gear, with guides to help you try them out.</p><div class="actions"><a class="btn" href="#sscc/overview/features">Explore Custom Content ↓</a><a class="btn secondary" href="#sscc/overview/tools">Try Our Player Tools ↓</a></div><div class="stats"><span class="stat">✧ Custom enchantments</span><span class="stat">⚔ Combat challenges</span><span class="stat">◇ Gear-enhancing gems</span><span class="stat">✦ Exclusive rewards</span></div></section>
++<p class="sscc-loading" data-sscc-loading role="status">Loading interactive guides…</p><noscript><p>Enable JavaScript to use the interactive guides and shopping planner.</p></noscript><div class="sscc-navigation"><nav class="tabs" aria-label="Custom Content navigation"><a href="#sscc/overview" data-nav="overview">✦ Overview</a><a href="#sscc/runecrafting" data-nav="runecrafting">🔮 Runecrafting</a><a href="#sscc/trials" data-nav="trials">⚔️ Trials of Valor</a><a href="#sscc/valor" data-nav="valor">🏆 Valor Shop & Rewards</a><a href="#sscc/gems" data-nav="gems">💎 Gem Socketing</a><a href="#sscc/heirlooms" data-nav="heirlooms">📜 Heirlooms</a><a href="#sscc/vanilla" data-nav="vanilla">🏡 Vanilla Plus</a></nav></div><div class="sscc-main"><article class="page overview-page" data-page="overview"><div class="overview-content"><section class="hero" id="sscc-overview-start"><div class="eyebrow">Custom content at a glance</div><h1 tabindex="-1">Putting the Plus in<br><em>Vanilla Plus</em></h1><p>Get to know our custom enchantments, combat challenges, and gear, with guides to help you try them out.</p><div class="actions"><a class="btn" href="#sscc/overview/features">Explore Custom Content ↓</a><a class="btn secondary" href="#sscc/overview/tools">Try Our Player Tools ↓</a></div><div class="stats"><span class="stat">✧ Custom enchantments</span><span class="stat">⚔ Combat challenges</span><span class="stat">◇ Gear-enhancing gems</span><span class="stat">✦ Exclusive rewards</span></div></section>
+ <section id="sscc-overview-features"><div class="section-head"><div><div class="eyebrow">Find something to try</div><h2>Featured custom content</h2></div><p>Here’s a little about each one, with links to the guides if you’d like to know more.</p></div><div class="grid">
+-<article class="feature"><div class="art" style="--glow:#8a3fb6"><span class="symbol">🔮</span></div><div class="feature-body"><div class="tag">Magic & progression</div><h3>Runecrafting</h3><p>Discover over 100 custom enchantments, from recipes you can craft at the Arcanum to Mythical enchantments found along the way. There are a few changes to familiar vanilla enchantments too.</p><a class="link" href="#sscc/runecrafting">Explore Runecrafting →</a></div></article>
+-<article class="feature"><div class="art" style="--glow:#9b3d4b"><span class="symbol">⚔️</span></div><div class="feature-body"><div class="tag">Combat challenges</div><h3>Trials of Valor</h3><p>Face hordes of mobs in custom arenas and earn rewards to use on your next outing.</p><a class="link" href="#sscc/trials">Explore the Trials →</a></div></article>
+-<article class="feature"><div class="art" style="--glow:#a16e27"><span class="symbol">🏆</span></div><div class="feature-body"><div class="tag">Rewards & equipment</div><h3>Valor Shop & Rewards</h3><p>Browse relics, armor sets, charms, and services for your gear. Spend Valor Badges at the Valor Shop, or Trial Points on select Trial Shop rewards.</p><a class="link" href="#sscc/valor">Discover the Valor Shop →</a></div></article>
+-<article class="feature"><div class="art" style="--glow:#347d9c"><span class="symbol">💎</span></div><div class="feature-body"><div class="tag">Gear customization</div><h3>Gem Socketing</h3><p>Customize your gear with socketable stat and armor gems. Socketing also extends to mount and companion equipment.</p><a class="link" href="#sscc/gems">Discover Gems →</a></div></article>
+-<article class="feature"><div class="art" style="--glow:#397a6a"><span class="symbol">📜</span></div><div class="feature-body"><div class="tag">Long-term progression</div><h3>Heirlooms</h3><p>Register up to three treasured items to carry forward between maps. Learn how to register at the Infinity Altar and prepare the matching item for reclaiming.</p><a class="link" href="#sscc/heirlooms">Learn About Heirlooms →</a></div></article>
+-<article class="feature"><div class="art" style="--glow:#7568a6"><span class="symbol">🏡</span></div><div class="feature-body"><div class="tag">Survival improvements</div><h3>Vanilla Plus</h3><p>Protect builds, customize displays, discover craftable conveniences, and explore survival improvements. Explore commands, creative tools, Rush Weekends, and seasonal activities.</p><a class="link" href="#sscc/vanilla">Explore Vanilla Plus →</a></div></article>
++<article class="feature"><div class="art" style="--glow:#8a3fb6"><img class="item-icon" src="/assets/overview/enchanted-book.gif" alt="" width="150" height="150" loading="lazy"></div><div class="feature-body"><div class="tag">Magic & progression</div><h3>Runecrafting</h3><p>Discover over 100 custom enchantments, from recipes you can craft at the Arcanum to Mythical enchantments found along the way. There are a few changes to familiar vanilla enchantments too.</p><a class="link" href="#sscc/runecrafting">Explore Runecrafting →</a></div></article>
++<article class="feature"><div class="art" style="--glow:#9b3d4b"><span class="crossed-swords" aria-hidden="true"><img src="/assets/overview/netherite-sword.webp" alt="" width="150" height="150" loading="lazy"><img src="/assets/overview/diamond-sword.webp" alt="" width="150" height="150" loading="lazy"></span></div><div class="feature-body"><div class="tag">Combat challenges</div><h3>Trials of Valor</h3><p>Face hordes of mobs in custom arenas and earn rewards to use on your next outing.</p><a class="link" href="#sscc/trials">Explore the Trials →</a></div></article>
++<article class="feature"><div class="art" style="--glow:#a16e27"><img class="item-icon" src="/assets/overview/valor-badge.webp" alt="" width="150" height="150" loading="lazy"></div><div class="feature-body"><div class="tag">Rewards & equipment</div><h3>Valor Shop & Rewards</h3><p>Browse relics, armor sets, charms, and services for your gear. Spend Valor Badges at the Valor Shop, or Trial Points on select Trial Shop rewards.</p><a class="link" href="#sscc/valor">Discover the Valor Shop →</a></div></article>
++<article class="feature"><div class="art" style="--glow:#347d9c"><img class="item-icon" src="/assets/overview/emerald.webp" alt="" width="150" height="150" loading="lazy"></div><div class="feature-body"><div class="tag">Gear customization</div><h3>Gem Socketing</h3><p>Customize your gear with socketable stat and armor gems. Socketing also extends to mount and companion equipment.</p><a class="link" href="#sscc/gems">Discover Gems →</a></div></article>
++<article class="feature"><div class="art" style="--glow:#397a6a"><img class="item-icon" src="/assets/overview/item-frame.webp" alt="" width="150" height="150" loading="lazy"></div><div class="feature-body"><div class="tag">Long-term progression</div><h3>Heirlooms</h3><p>Register up to three treasured items to carry forward between maps. Learn how to register at the Infinity Altar and prepare the matching item for reclaiming.</p><a class="link" href="#sscc/heirlooms">Learn About Heirlooms →</a></div></article>
++<article class="feature"><div class="art" style="--glow:#7568a6"><img class="item-icon" src="/assets/overview/bundle.webp" alt="" width="150" height="150" loading="lazy"></div><div class="feature-body"><div class="tag">Survival improvements</div><h3>Vanilla Plus</h3><p>Protect builds, customize displays, discover craftable conveniences, and explore survival improvements. Explore commands, creative tools, Rush Weekends, and seasonal activities.</p><a class="link" href="#sscc/vanilla">Explore Vanilla Plus →</a></div></article>
+ </div></section>
+ <section class="tools" id="sscc-overview-tools"><div class="section-head"><div><div class="eyebrow">Work out what you need</div><h2>Interactive player tools</h2></div><p>Handy tools for comparing your options and planning your gear.</p></div><div class="toolgrid"><article class="tool"><div class="toolicon">✨</div><div><h3>Runecrafting Hub</h3><p>Explore enchantments, plan your equipment builds, calculate rune costs, and compare options—all in one place.</p><a class="btn" href="/runecrafting-hub/" target="_blank" rel="noopener">Open Runecrafting Hub ↗</a></div></article><article class="tool"><div class="toolicon">🛍️</div><div><h3>Valor Shop Planner</h3><p>Browse the catalog, plan purchases by merchant, and look through Additional Charms in their own reference section.</p><a class="btn secondary" href="#sscc/valor/planner">Open Shopping Planner →</a></div></article></div></section>
+ <section id="sscc-overview-more"><div class="section-head"><div><div class="eyebrow">Vanilla Plus preview</div><h2>Improvements &amp; Conveniences</h2></div><p>A few more things to make everyday survival a little easier.</p></div><div class="detailgrid"><div class="accordion"><details><summary>🧰 Artifact Trader & material exchanges</summary><p>Prepare materials for custom artifacts, then trade with the villager beneath the lower-level stairs in the Valor Shop. <a style="color:var(--pink2)" href="#sscc/valor/trader">Explore Artifact Trader exchanges →</a></p></details><details><summary>🛡️ Protection & building</summary><p>Find Bolt commands, sharing controls, display tools, armor-stand posing, and creative-world settings. <a style="color:var(--pink2)" href="#sscc/vanilla/protect">Explore protection & access →</a></p></details><details><summary>🌱 Farming, Alchemy & exploration</summary><p>Harvest and replant, brew custom potions, bottle XP, and discover the influence of Luck. <a style="color:var(--pink2)" href="#sscc/vanilla/survival">Explore survival conveniences →</a></p></details><details><summary>⚡ Combat mechanics</summary><p>Learn shield parries and bashes, projectile rules, stuns, trident changes, and PvP exceptions. <a style="color:var(--pink2)" href="#sscc/vanilla/combat">Explore combat mechanics →</a></p></details><details><summary>🐾 Pets & mobs</summary><p>Capture mobs, control companions, and apply permanent mob effects. <a style="color:var(--pink2)" href="#sscc/vanilla/companions">Explore pets & mobs →</a></p></details><details><summary>🎉 Rush Weekends & seasonal events</summary><p>Explore recurring Rush bonuses, Blood Moons, Spooky Springs, Christmas gifts, and build contests. <a style="color:var(--pink2)" href="#sscc/vanilla/events">Explore events & activities →</a></p></details></div><aside class="quick"><h3>Quick in-game commands</h3><p>Useful shortcuts for exploring custom content. Tap Copy to grab a command.</p><div class="command"><span>/warp RuneHub</span><button class="copy" data-copy="/warp RuneHub">Copy</button></div><div class="command"><span>/warp Arcanum</span><button class="copy" data-copy="/warp Arcanum">Copy</button></div><div class="command"><span>/warp ValorShop</span><button class="copy" data-copy="/warp ValorShop">Copy</button></div><div class="command"><span>/warp TrialShop</span><button class="copy" data-copy="/warp TrialShop">Copy</button></div><div class="command"><span>/trialpoints</span><button class="copy" data-copy="/trialpoints">Copy</button></div><p>For Trial participation, use <strong>/trial join</strong> followed by the Trial name.</p><a class="btn secondary" style="margin-top:9px" href="#sscc/vanilla">Browse Vanilla Plus →</a></aside></div></section>

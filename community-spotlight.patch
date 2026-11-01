@@ -1,0 +1,258 @@
+diff --git a/.pages.yml b/.pages.yml
+index 821beda..15c7edd 100644
+--- a/.pages.yml
++++ b/.pages.yml
+@@ -670,3 +670,63 @@ content:
+     type: rich-text
+     options:
+       format: html
++
++- name: streamers
++  label: Community Streamers
++  type: collection
++  path: src/content/streamers
++  format: json
++  filename:
++    template: '{primary}.json'
++    field: create
++  subfolders: false
++  operations:
++    rename: false
++  view:
++    primary: name
++    fields: [name, platform, channel, order, draft]
++    default:
++      sort: order
++      order: asc
++  fields:
++  - name: name
++    label: Display name
++    type: string
++    required: true
++  - name: draft
++    label: Draft (hide from website)
++    type: boolean
++    default: true
++  - name: order
++    label: Display order (lower first)
++    type: number
++    default: 0
++  - name: platform
++    label: Platform
++    type: select
++    required: true
++    options:
++      values:
++      - name: twitch
++        label: Twitch
++  - name: channel
++    label: Channel login or handle
++    type: string
++    required: true
++    description: Use the Twitch channel login without the URL.
++  - name: url
++    label: Channel URL (optional)
++    type: string
++  - name: image
++    label: Profile image
++    type: image
++    required: true
++  - name: imageAlt
++    label: Image description
++    type: string
++  - name: bio
++    label: Short bio
++    type: rich-text
++    required: true
++    options:
++      format: html
+diff --git a/COMMUNITY-SPOTLIGHT.md b/COMMUNITY-SPOTLIGHT.md
+new file mode 100644
+index 0000000..2f5d9dc
+--- /dev/null
++++ b/COMMUNITY-SPOTLIGHT.md
+@@ -0,0 +1,12 @@
++# Community Spotlight setup
++
++The Community Spotlight page is managed through the **Community Streamers** collection in Pages CMS. Each published entry needs a display name, Twitch channel login, profile image, short bio, and an order number. Leave **Draft** enabled until the profile is ready to show.
++
++The page checks Twitch for live status and only adds a player when a channel is live. The embedded player does not autoplay. Live status is cached for about a minute so the page stays light on Twitch API requests.
++
++To enable live status on Cloudflare Pages, create a Twitch developer application and add these as Pages project secrets under **Settings → Environment variables**:
++
++- `TWITCH_CLIENT_ID`
++- `TWITCH_CLIENT_SECRET`
++
++The page still works without those secrets: profiles and channel links remain visible, but live status is unavailable. Twitch is the supported live platform in this first version; another platform can be added later if the community needs it.
+diff --git a/functions/api/streamers.js b/functions/api/streamers.js
+new file mode 100644
+index 0000000..62f6b8e
+--- /dev/null
++++ b/functions/api/streamers.js
+@@ -0,0 +1,23 @@
++const cacheHeaders = { 'Cache-Control': 'public, max-age=0, s-maxage=60', 'X-Content-Type-Options': 'nosniff' };
++const fail = (message, status = 503) => Response.json({ error: message }, { status, headers: { 'Cache-Control': 'no-store' } });
++export async function onRequestGet({ request, env }) {
++  const channels = [...new Set(new URL(request.url).searchParams.getAll('channels').flatMap(value => value.split(',').map(name => name.trim().toLowerCase()).filter(name => /^[a-z0-9_]{1,25}$/.test(name))))].slice(0, 100);
++  if (!channels.length) return Response.json({ streams: [] }, { headers: cacheHeaders });
++  if (!env.TWITCH_CLIENT_ID || !env.TWITCH_CLIENT_SECRET) return fail('Live stream status is not configured.');
++  const cache = globalThis.caches?.default;
++  const cacheKey = new Request(new URL(request.url).origin + '/api/streamers?channels=' + channels.join(','));
++  const hit = cache ? await cache.match(cacheKey) : null;
++  if (hit) return hit;
++  try {
++    const tokenResponse = await fetch('https://id.twitch.tv/oauth2/token', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams({ client_id: env.TWITCH_CLIENT_ID, client_secret: env.TWITCH_CLIENT_SECRET, grant_type: 'client_credentials' }) });
++    if (!tokenResponse.ok) throw new Error('token');
++    const token = await tokenResponse.json();
++    const query = channels.map(channel => `user_login=${encodeURIComponent(channel)}`).join('&');
++    const streamResponse = await fetch('https://api.twitch.tv/helix/streams?' + query, { headers: { Authorization: `Bearer ${token.access_token}`, 'Client-Id': env.TWITCH_CLIENT_ID, Accept: 'application/json' } });
++    if (!streamResponse.ok) throw new Error('streams');
++    const payload = await streamResponse.json();
++    const response = Response.json({ streams: Array.isArray(payload.data) ? payload.data.map(stream => ({ user_login: stream.user_login, user_name: stream.user_name, title: stream.title || '' })) : [] }, { headers: cacheHeaders });
++    if (cache) await cache.put(cacheKey, response.clone());
++    return response;
++  } catch { return fail('Live stream status is temporarily unavailable.'); }
++}
+diff --git a/public/_routes.json b/public/_routes.json
+index acb0288..c3a0691 100644
+--- a/public/_routes.json
++++ b/public/_routes.json
+@@ -5,6 +5,8 @@
+     "/api/calendar/",
+     "/api/builds",
+     "/api/builds/*",
++    "/api/streamers",
++    "/api/streamers/",
+     "/b/*"
+   ],
+   "exclude": []
+diff --git a/public/assets/site.css b/public/assets/site.css
+index ccc8e64..339f218 100644
+--- a/public/assets/site.css
++++ b/public/assets/site.css
+@@ -30,3 +30,6 @@
+ .founder-layout{display:grid;grid-template-columns:1fr 1.1fr;gap:65px;align-items:center}.founder-layout img{display:block;width:100%;max-height:350px;object-fit:contain;border:1px solid var(--line);border-radius:6px;background:#17131b}.founder-layout p{color:var(--muted)}.founder-names{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}.founder-names span{padding:8px 14px;border:1px solid var(--line);border-radius:4px;font-size:14px;color:var(--pink)}.after-section{padding-top:65px}.section-description{max-width:570px;color:var(--muted);font-size:15px}.inner-hero .eyebrow{font-size:11px}
+ @media(max-width:950px){.inner-hero .hero-grid{gap:30px}.story-section{gap:40px}.staff-card{padding:22px}.portrait{flex-basis:80px;width:80px;height:95px}.staff-heading{gap:15px}.staff-card h2{font-size:25px}.getting-started{gap:40px}.founder-layout{gap:35px}}
+ @media(max-width:700px){.inner-hero{padding:27px 0 40px}.inner-hero .hero-grid,.story-section,.getting-started,.founder-layout{grid-template-columns:1fr;gap:27px}.inner-hero h1{font-size:46px}.inner-hero p{font-size:17px}.inner-hero .hero-grid img{aspect-ratio:1.65}.crumbs{margin-bottom:25px}.principles,.staff-grid,.about-features{grid-template-columns:1fr}.principles{gap:20px}.staff-card{padding:23px}.staff-heading{gap:22px}.portrait{flex-basis:90px;width:90px;height:105px}.staff-card h2{font-size:29px}.story-section h2{font-size:34px}.about-feature{padding:24px 0}.founder-layout img{max-height:290px}.directory{padding-bottom:30px}.after-section{padding-top:45px}}
++/* Community Spotlight */
++.spotlight-mark{display:grid;place-items:center;min-height:260px;color:#efb4d070;font-size:190px;line-height:1}.spotlight-section{padding-top:70px}.streamer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.streamer-card{border:1px solid var(--line);border-radius:7px;background:linear-gradient(150deg,#271e2b,#1b181f);padding:24px;min-width:0}.streamer-profile{display:grid;grid-template-columns:112px 1fr;gap:22px}.streamer-profile>img{width:112px;height:112px;object-fit:cover;border-radius:6px;background:#15121a}.streamer-card h2{font-size:29px;margin:8px 0}.streamer-card p{color:var(--muted);font-size:15px}.streamer-card .textlink{margin-top:7px}.streamer-live{border-top:1px solid var(--line);margin-top:22px;padding-top:18px}.streamer-live-label{font-size:12px;color:#ff9aae;font-weight:700;margin-bottom:12px}.live-dot{display:inline-block;width:8px;height:8px;background:#ff6882;border-radius:50%;margin-right:7px}.streamer-player iframe{display:block;width:100%;aspect-ratio:16/9;min-height:300px;border:0;background:#09080c}.streamer-player p{margin:9px 0 0;font-size:13px}.empty-streamers{border:1px dashed var(--line);padding:28px;border-radius:7px;color:var(--muted)}
++@media(max-width:700px){.spotlight-mark{min-height:100px;font-size:100px}.streamer-grid{grid-template-columns:1fr}.streamer-profile{grid-template-columns:86px 1fr;gap:15px}.streamer-profile>img{width:86px;height:86px}.streamer-card{padding:19px}}
+diff --git a/public/assets/streamers.js b/public/assets/streamers.js
+new file mode 100644
+index 0000000..623862f
+--- /dev/null
++++ b/public/assets/streamers.js
+@@ -0,0 +1,31 @@
++(() => {
++  const cards = [...document.querySelectorAll('[data-streamer]')];
++  if (!cards.length) return;
++  const live = async () => {
++    const twitch = cards.filter(card => card.dataset.platform === 'twitch');
++    if (!twitch.length) return;
++    try {
++      const names = twitch.map(card => card.dataset.channel).join(',');
++      const response = await fetch('/api/streamers?channels=' + encodeURIComponent(names), { headers: { Accept: 'application/json' } });
++      if (!response.ok) return;
++      const payload = await response.json();
++      const active = new Map((payload.streams || []).map(stream => [stream.user_login.toLowerCase(), stream]));
++      twitch.forEach(card => {
++        const stream = active.get(card.dataset.channel.toLowerCase());
++        const panel = card.querySelector('.streamer-live');
++        const player = card.querySelector('.streamer-player');
++        if (!panel || !player) return;
++        if (!stream) {
++          panel.hidden = true;
++          player.replaceChildren();
++          return;
++        }
++        panel.hidden = false;
++        if (player.childElementCount) return;
++        player.innerHTML = `<iframe loading="lazy" title="Live stream from ${stream.user_name.replace(/[<>&\"']/g, '')}" src="https://player.twitch.tv/?channel=${encodeURIComponent(stream.user_login)}&parent=www.silverspringssurvival.com&parent=silverspringssurvival.com&autoplay=false&muted=false" allowfullscreen></iframe><p>${stream.title.replace(/[<>&\"']/g, '')}</p>`;
++      });
++    } catch { /* Profile cards remain useful if the status check is unavailable. */ }
++  };
++  live();
++  setInterval(live, 120000);
++})();
+diff --git a/src/components/Header.astro b/src/components/Header.astro
+index 2fea892..0623d6a 100644
+--- a/src/components/Header.astro
++++ b/src/components/Header.astro
+@@ -3,7 +3,8 @@ const path = Astro.url.pathname;
+ const active = (href) => path === href || (href !== '/' && path.startsWith(href));
+ const community = [
+   { href: '/about-us/', label: 'About Us' },
+-  { href: '/staffoverview/', label: 'Meet the staff' }
++  { href: '/staffoverview/', label: 'Meet the staff' },
++  { href: '/community-spotlight/', label: 'Community Spotlight' }
+ ];
+ const around = [
+   { href: '/gallery/', label: 'Gallery' },
+diff --git a/src/content/streamers/.gitkeep b/src/content/streamers/.gitkeep
+new file mode 100644
+index 0000000..8b13789
+--- /dev/null
++++ b/src/content/streamers/.gitkeep
+@@ -0,0 +1 @@
++
+diff --git a/src/lib/streamers.js b/src/lib/streamers.js
+new file mode 100644
+index 0000000..2c509aa
+--- /dev/null
++++ b/src/lib/streamers.js
+@@ -0,0 +1,13 @@
++const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
++
++export function renderStreamers(entries) {
++  const streamers = entries.filter(({ data }) => data.draft !== true).map(({ slug, data }) => {
++    if (!/^[a-z0-9_-]+$/.test(slug) || !data.name?.trim() || !data.channel?.trim() || !data.platform || !data.bio?.trim()) {
++      throw new Error(`Streamer ${slug} needs a name, platform, channel, and bio.`);
++    }
++    if (data.platform !== 'twitch') throw new Error(`Streamer ${slug} has an unsupported platform.`);
++    return { ...data, slug };
++  }).sort((a, b) => (Number(a.order) || 0) - (Number(b.order) || 0) || a.name.localeCompare(b.name));
++  const cards = streamers.map(s => `<article class="streamer-card" data-platform="${escape(s.platform)}" data-channel="${escape(s.channel)}" data-streamer="${escape(s.slug)}"><div class="streamer-profile"><img src="${escape(s.image)}" alt="${escape(s.imageAlt || `${s.name} profile image`)}" loading="lazy"><div><div class="eyebrow">${escape(s.platform === 'twitch' ? 'Twitch streamer' : 'YouTube creator')}</div><h2>${escape(s.name)}</h2><p>${s.bio}</p><a class="textlink" href="${escape(s.url || (s.platform === 'twitch' ? `https://twitch.tv/${s.channel}` : `https://youtube.com/@${s.channel}`))}" target="_blank" rel="noopener">Visit channel ↗</a></div></div><div class="streamer-live" hidden><div class="streamer-live-label"><span class="live-dot"></span>Live now</div><div class="streamer-player"></div></div></article>`).join('');
++  return { streamers, html: cards || '<p class="empty-streamers">Community streamers will appear here as profiles are added.</p>' };
++}
+diff --git a/src/pages/community-spotlight/index.astro b/src/pages/community-spotlight/index.astro
+new file mode 100644
+index 0000000..3752d1a
+--- /dev/null
++++ b/src/pages/community-spotlight/index.astro
+@@ -0,0 +1,13 @@
++---
++import SiteLayout from '../../layouts/SiteLayout.astro';
++import { renderStreamers } from '../../lib/streamers.js';
++const files = import.meta.glob('../../content/streamers/*.json', { eager: true, import: 'default' });
++const rendered = renderStreamers(Object.entries(files).map(([path, data]) => ({ slug: path.split('/').pop().replace(/\.json$/, ''), data })));
++---
++<SiteLayout title="Community Spotlight" description="Meet the Silver Springs community streamers and find their live channels." styles={["/assets/site.css"]} scripts={["/assets/streamers.js"]}>
++  <main id="main">
++    <section class="inner-hero"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span>Community Spotlight</span></nav><div class="hero-grid"><div><div class="eyebrow">Our community</div><h1>Community<br><em>Spotlight.</em></h1><p>Meet the people who stream, build, explore, and hang out around Silver Springs. When someone is live, you can watch here with the sound still in your hands.</p></div><div class="spotlight-mark" aria-hidden="true">✦</div></div></div></section>
++    <section class="wrap spotlight-section"><div class="sectionhead"><div><div class="eyebrow">Find a stream</div><h2>See what people are up to.</h2></div><p>Streams never start playing automatically. Choose play when you’re ready.</p></div><div class="streamer-grid"><Fragment set:html={rendered.html} /></div></section>
++    <div class="wrap after-section"><section class="join"><div class="eyebrow">Want to be included?</div><h2>Stream Silver Springs?</h2><p>Let the staff know and we can add your channel to the spotlight.</p><div class="actions"><a class="btn primary" href="https://discord.gg/r22U3prgPE">Contact us on Discord ↗</a></div></section></div>
++  </main>
++</SiteLayout>
+diff --git a/tests/streamers.mjs b/tests/streamers.mjs
+new file mode 100644
+index 0000000..8a5afb9
+--- /dev/null
++++ b/tests/streamers.mjs
+@@ -0,0 +1,17 @@
++import assert from 'node:assert/strict';
++import { renderStreamers } from '../src/lib/streamers.js';
++
++const result = renderStreamers([
++  { slug: 'second', data: { name: 'Second', platform: 'twitch', channel: 'second', bio: 'Later', image: '/second.png', order: 2 } },
++  { slug: 'draft', data: { name: 'Hidden', platform: 'twitch', channel: 'hidden', bio: 'Hidden', image: '/hidden.png', draft: true, order: 0 } },
++  { slug: 'first', data: { name: 'First & Co.', platform: 'twitch', channel: 'first', bio: 'A <strong>short</strong> bio.', image: '/first.png', order: 1 } }
++]);
++
++assert.deepEqual(result.streamers.map(streamer => streamer.slug), ['first', 'second']);
++assert.match(result.html, /First &amp; Co\./);
++assert.doesNotMatch(result.html, /Hidden/);
++assert.match(result.html, /data-channel="first"/);
++assert.match(result.html, /A <strong>short<\/strong> bio\./);
++
++assert.match(renderStreamers([]).html, /Community streamers will appear here/);
++console.log('Streamer rendering checks passed.');

@@ -5,6 +5,8 @@
     "/api/calendar/",
     "/api/builds",
     "/api/builds/*",
+    "/api/streamers",
+    "/api/streamers/",
     "/b/*"
   ],
   "exclude": []

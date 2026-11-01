@@ -1,0 +1,13 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import { renderStreamers } from '../../lib/streamers.js';
+const files = import.meta.glob('../../content/streamers/*.json', { eager: true, import: 'default' });
+const rendered = renderStreamers(Object.entries(files).map(([path, data]) => ({ slug: path.split('/').pop().replace(/\.json$/, ''), data })));
+---
+<SiteLayout title="Community Spotlight" description="Meet the Silver Springs community streamers and find their live channels." styles={["/assets/site.css"]} scripts={["/assets/streamers.js"]}>
+  <main id="main">
+    <section class="inner-hero"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span>Community Spotlight</span></nav><div class="hero-grid"><div><div class="eyebrow">Our community</div><h1>Community<br><em>Spotlight.</em></h1><p>Meet the people who stream, build, explore, and hang out around Silver Springs. When someone is live, you can watch here with the sound still in your hands.</p></div><div class="spotlight-mark" aria-hidden="true">✦</div></div></div></section>
+    <section class="wrap spotlight-section"><div class="sectionhead"><div><div class="eyebrow">Find a stream</div><h2>See what people are up to.</h2></div><p>Streams never start playing automatically. Choose play when you’re ready.</p></div><div class="streamer-grid"><Fragment set:html={rendered.html} /></div></section>
+    <div class="wrap after-section"><section class="join"><div class="eyebrow">Want to be included?</div><h2>Stream Silver Springs?</h2><p>Let the staff know and we can add your channel to the spotlight.</p><div class="actions"><a class="btn primary" href="https://discord.gg/r22U3prgPE">Contact us on Discord ↗</a></div></section></div>
+  </main>
+</SiteLayout>

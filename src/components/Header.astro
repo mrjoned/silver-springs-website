@@ -3,7 +3,8 @@ const path = Astro.url.pathname;
 const active = (href) => path === href || (href !== '/' && path.startsWith(href));
 const community = [
   { href: '/about-us/', label: 'About Us' },
-  { href: '/staffoverview/', label: 'Meet the staff' }
+  { href: '/staffoverview/', label: 'Meet the staff' },
+  { href: '/community-spotlight/', label: 'Community Spotlight' }
 ];
 const around = [
   { href: '/gallery/', label: 'Gallery' },

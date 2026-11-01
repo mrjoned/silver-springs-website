@@ -1,0 +1,97 @@
+diff --git a/src/components/RushBanner.astro b/src/components/RushBanner.astro
+new file mode 100644
+index 0000000..88da993
+--- /dev/null
++++ b/src/components/RushBanner.astro
+@@ -0,0 +1,20 @@
++<aside class="wrap rush-banner" aria-label="Rush Weekend">
++  <div class="rush-info"><span class="rush-dot" aria-hidden="true"></span><div><strong data-rush-title>Rush Weekends</strong><p data-rush-date>Every Saturday at 2 AM through Monday at 1:59 AM Central time.</p></div></div>
++  <div class="rush-right"><span data-rush-countdown></span><a href="/content-overview/#sscc/vanilla/events">About Rush Weekends →</a></div>
++</aside>
++<script>
++import {rushAt,countdown} from '../lib/rush-schedule.js';
++const banner=document.querySelector('.rush-banner');
++if(banner){
++ const title=banner.querySelector('[data-rush-title]')!,date=banner.querySelector('[data-rush-date]')!,timer=banner.querySelector('[data-rush-countdown]')!;
++ const local=new Intl.DateTimeFormat(undefined,{weekday:'short',month:'short',day:'numeric',hour:'numeric',minute:'2-digit',timeZoneName:'short'});
++ let previous='';
++ function update(){const now=Date.now(),rush=rushAt(now),key=rush.name+String(rush.active);if(key!==previous){title.textContent=`${rush.active?'Active':'Upcoming'} Rush: ${rush.name}`;banner!.classList.toggle('is-active',rush.active);date.textContent=`${rush.active?'Ends':'Starts'} ${local.format(new Date(rush.target))} · your local time`;previous=key;}timer.textContent=`${rush.active?'Ends':'Starts'} in ${countdown(rush.target-now)}`;}
++ update();setInterval(update,1000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)update();});
++}
++</script>
++<style>
++.rush-banner{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:18px 22px;margin-top:22px;margin-bottom:0;border:1px solid #514357;border-radius:12px;background:#1b1724;color:#f7f4fa;box-sizing:border-box}
++.rush-info{display:flex;align-items:center;gap:13px}.rush-dot{width:9px;height:9px;flex-shrink:0;border-radius:50%;background:#b7a0c9}.is-active .rush-dot{background:#8de4b2;box-shadow:0 0 12px #8de4b244}.rush-info strong{font-size:1.05rem}.rush-info p{margin:4px 0 0;color:#c8c0d0;font-size:.85rem}.rush-right{display:flex;flex-direction:column;gap:5px;text-align:right}.rush-right span{font-variant-numeric:tabular-nums;font-size:.9rem;color:#f6c8e1}.rush-right a{font-size:.82rem;color:#ffb2d7;text-decoration:none}.rush-right a:hover{text-decoration:underline}
++@media(max-width:650px){.rush-banner{margin:18px 17px 0;width:auto;flex-direction:column;align-items:flex-start;padding:16px}.rush-right{text-align:left;gap:8px}}
++</style>
+diff --git a/src/lib/rush-schedule.js b/src/lib/rush-schedule.js
+new file mode 100644
+index 0000000..2c737c6
+--- /dev/null
++++ b/src/lib/rush-schedule.js
+@@ -0,0 +1,17 @@
++export const RUSHES = ['River Rush','Lucky Rush','Gold Rush','Parkour Rush','Void Rush','Ominous Rush','Experience Rush','Lunch Rush','Rune Rush'];
++const DAY=86400000, WEEK=7*DAY;
++// Parkour Rush starts Saturday October 24, 2026 at 02:00 America/Chicago.
++const ANCHOR=Date.UTC(2026,9,24);
++const central=new Intl.DateTimeFormat('en-US',{timeZone:'America/Chicago',year:'numeric',month:'numeric',day:'numeric',hour:'numeric',minute:'numeric',second:'numeric',hourCycle:'h23'});
++function parts(ms){return Object.fromEntries(central.formatToParts(new Date(ms)).filter(p=>p.type!=='literal').map(p=>[p.type,Number(p.value)]));}
++// Convert a Central wall-clock date to an instant, accounting for DST.
++function atTwo(calendarDay){const desired=calendarDay+2*3600000;let instant=desired;for(let i=0;i<4;i++){const p=parts(instant);const actual=Date.UTC(p.year,p.month-1,p.day,p.hour,p.minute,p.second);const delta=desired-actual;if(!delta)break;instant+=delta;}return instant;}
++export function rushAt(now=Date.now()){
++ const p=parts(now),today=Date.UTC(p.year,p.month-1,p.day);
++ let week=Math.floor((today-ANCHOR)/WEEK),day=ANCHOR+week*WEEK;
++ let start=atTwo(day),end=atTwo(day+2*DAY);
++ if(now>=end){week++;day+=WEEK;start=atTwo(day);end=atTwo(day+2*DAY);}
++ const active=now>=start&&now<end;
++ return {name:RUSHES[((week+3)%RUSHES.length+RUSHES.length)%RUSHES.length],active,start,end,target:active?end:start};
++}
++export function countdown(ms){const total=Math.max(0,Math.ceil(ms/1000)),days=Math.floor(total/86400),hours=Math.floor(total%86400/3600),minutes=Math.floor(total%3600/60),seconds=total%60;return (days?`${days}d `:'')+`${hours}h ${minutes}m ${seconds}s`;}
+diff --git a/src/pages/index.astro b/src/pages/index.astro
+index 81f71f9..32d8daa 100644
+--- a/src/pages/index.astro
++++ b/src/pages/index.astro
+@@ -1,14 +1,19 @@
+ ---
+ import SiteLayout from '../layouts/SiteLayout.astro';
+ import HomepageGallery from '../components/HomepageGallery.astro';
++import RushBanner from '../components/RushBanner.astro';
+ import LatestNews from '../components/LatestNews.astro';
+ import beforeNews from '../content/pages/home-before-news.html?raw';
+ import guides from '../content/pages/home-guides.html?raw';
+ import afterNews from '../content/pages/home-after-news.html?raw';
++const quickStart = beforeNews.indexOf('<div class="wrap quick">');
++if (quickStart < 0) throw new Error('Homepage quick links marker missing');
+ ---
+ <SiteLayout title="Silver Springs Survival" description="Discover Silver Springs Survival: community builds, custom enchantments, and your next Minecraft adventure." styles={['/assets/site.css', '/assets/homepage.css']}>
+   <main id="main">
+-    <Fragment set:html={beforeNews} />
++    <Fragment set:html={beforeNews.slice(0, quickStart)} />
++    <RushBanner />
++    <Fragment set:html={beforeNews.slice(quickStart)} />
+     <LatestNews />
+     <Fragment set:html={guides} />
+     <HomepageGallery />
+diff --git a/tests/rush-schedule.mjs b/tests/rush-schedule.mjs
+new file mode 100644
+index 0000000..b66cb77
+--- /dev/null
++++ b/tests/rush-schedule.mjs
+@@ -0,0 +1,17 @@
++import assert from 'node:assert/strict';
++import {rushAt,countdown} from '../src/lib/rush-schedule.js';
++const at=s=>rushAt(Date.parse(s));
++assert.equal(at('2026-10-24T06:59:59Z').active,false);
++assert.equal(at('2026-10-24T07:00:00Z').name,'Parkour Rush');
++assert.equal(at('2026-10-24T07:00:00Z').active,true);
++assert.equal(at('2026-10-26T06:59:59Z').active,true);
++assert.equal(at('2026-10-26T07:00:00Z').name,'Void Rush');
++assert.equal(at('2026-10-26T07:00:00Z').active,false);
++const fall=at('2026-11-01T12:00:00Z');assert.equal(fall.name,'Void Rush');assert.equal(fall.end-fall.start,49*3600000);
++const spring=at('2027-03-14T12:00:00Z');assert.equal(spring.end-spring.start,47*3600000);
++assert.equal(at('2026-12-26T08:00:00Z').name,'Parkour Rush');
++assert.equal(at('2026-11-21T08:00:00Z').name,'Lunch Rush');
++assert.equal(at('2026-11-28T08:00:00Z').name,'Rune Rush');
++assert.equal(at('2026-12-05T08:00:00Z').name,'River Rush');
++assert.equal(countdown(90061000),'1d 1h 1m 1s');
++console.log('Rush schedule: boundaries, nine-week rotation, daylight saving changes and countdown passed.');

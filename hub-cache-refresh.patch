@@ -1,0 +1,71 @@
+diff --git a/public/_headers b/public/_headers
+index aea88b1..91cbc6d 100644
+--- a/public/_headers
++++ b/public/_headers
+@@ -9,5 +9,16 @@
+   X-Content-Type-Options: nosniff
+ 
+ /runecrafting-hub/tools/enchantments.json
+-  Cache-Control: public, max-age=0, must-revalidate
+   X-Content-Type-Options: nosniff
++
++/runecrafting-hub/*
++  Cache-Control: public, max-age=0, must-revalidate
++
++/assets/description-format.js
++  Cache-Control: public, max-age=0, must-revalidate
++
++/assets/description-format.css
++  Cache-Control: public, max-age=0, must-revalidate
++
++/assets/hub-data.js
++  Cache-Control: public, max-age=0, must-revalidate
+diff --git a/src/lib/game-catalogs.js b/src/lib/game-catalogs.js
+index 1459475..e9901a7 100644
+--- a/src/lib/game-catalogs.js
++++ b/src/lib/game-catalogs.js
+@@ -1,3 +1,4 @@
++import { createHash } from 'node:crypto';
+ import { readdirSync, readFileSync, existsSync } from 'node:fs';
+ import { pathToFileURL } from 'node:url';
+ import { resolve } from 'node:path';
+@@ -116,7 +117,11 @@ export function valorData(catalog=loadGameCatalogs()) {
+ export const scriptJSON = value => JSON.stringify(value).replace(/</g,'\\u003c').replace(/>/g,'\\u003e').replace(/&/g,'\\u0026').replace(/\u2028/g,'\\u2028').replace(/\u2029/g,'\\u2029');
+ export function renderTool(name,catalog=loadGameCatalogs(),template) {
+   assert(/^hub_(build_planner|comparison|encyclopedia|equipment_guide|rune_calculator)\.html$/.test(name),'unknown Hub tool');
+-  return (template??readFileSync(new URL('src/catalog-templates/'+name,root),'utf8')).replace('__SSS_ENCHANTMENT_DATA__',()=>scriptJSON(enchantmentData(catalog)));
++  return (template??readFileSync(new URL('src/catalog-templates/'+name,root),'utf8')).replace('__SSS_ENCHANTMENT_DATA__',()=>scriptJSON(enchantmentData(catalog)))
++    .replace(/(src|href)="(\/assets\/(?:description-format\.(?:js|css)|hub-data\.js))"/g,(_,attr,path)=>{
++      const version=createHash('sha256').update(readFileSync(new URL('public'+path,root))).digest('hex').slice(0,12);
++      return attr+'="'+path+'?v='+version+'"';
++    });
+ }
+ export function renderValorShop(catalog=loadGameCatalogs(),template,legacyIds) {
+   const legacy=legacyIds??JSON.parse(readFileSync(new URL('src/catalog-templates/valor-legacy-ids.json',root),'utf8'));
+diff --git a/tests/catalog-build.mjs b/tests/catalog-build.mjs
+index eacb2a9..c3dc87f 100644
+--- a/tests/catalog-build.mjs
++++ b/tests/catalog-build.mjs
+@@ -1,4 +1,5 @@
+ import assert from 'node:assert/strict';
++import { createHash } from 'node:crypto';
+ import { readFileSync, writeFileSync, unlinkSync, existsSync } from 'node:fs';
+ import { execFileSync } from 'node:child_process';
+ const tools=['hub_build_planner','hub_comparison','hub_encyclopedia','hub_equipment_guide','hub_rune_calculator'];
+@@ -30,6 +31,16 @@ try{
+  assert(!payload.enchantments.some(e=>e.name==='Hidden catalog integration enchantment'));
+  assert.deepEqual(JSON.parse(read('dist/runecrafting-hub/tools/enchantments.json')),payload);
+  for(const tool of tools){const html=read('dist/runecrafting-hub/tools/'+tool+'.html');assert(html.includes('Published glossary explanation.'));assert(!html.includes('Hidden glossary term'));assert(html.includes('Catalog integration enchantment'));assert(!html.includes('Hidden catalog integration enchantment'));assert(!html.includes('__SSS_'));}
++ for(const tool of tools){
++  const html=read('dist/runecrafting-hub/tools/'+tool+'.html');
++  for(const asset of ['description-format.js','description-format.css','hub-data.js']){
++   const path='/assets/'+asset;
++   if(!read('src/catalog-templates/'+tool+'.html').includes(path))continue;
++   const hash=createHash('sha256').update(readFileSync('public'+path)).digest('hex').slice(0,12);
++   assert(html.includes(path+'?v='+hash),tool+' must reference the current '+asset);
++   assert(!html.includes(path+'"'),tool+' must not retain an unversioned '+asset);
++  }
++ }
+  const shop=read('dist/valor-shop/index.html');assert(shop.includes('Catalog integration artifact'));assert(shop.includes('2 Sticks + 3 Rune of Echoes'));assert(!shop.includes('Hidden catalog integration artifact'));
+  const overview=read('dist/content-overview/index.html');assert(overview.includes('Catalog integration artifact'));assert(overview.includes('2 Sticks + 3 Rune of Echoes'));assert(!overview.includes('__SSS_'));assert(!overview.includes('srcdoc='));
+  const routes=JSON.parse(read('dist/_routes.json'));assert(routes.include.includes('/api/calendar'));assert(!routes.include.some(p=>p.includes('enchantments')));

@@ -1,0 +1,312 @@
+diff --git a/.pages.yml b/.pages.yml
+index 4d17dfd..e202c9c 100644
+--- a/.pages.yml
++++ b/.pages.yml
+@@ -617,3 +617,56 @@ content:
+       label: Class description
+       type: text
+       required: true
++
++- name: staff
++  label: Staff
++  type: collection
++  path: src/content/staff
++  format: json
++  filename:
++    template: '{primary}.json'
++    field: create
++  subfolders: false
++  operations:
++    rename: false
++  view:
++    primary: name
++    fields: [name, role, order, draft]
++    default:
++      sort: order
++      order: asc
++  fields:
++  - name: name
++    label: Name
++    type: string
++    required: true
++  - name: draft
++    label: Draft (hide from website)
++    type: boolean
++    default: true
++  - name: order
++    label: Display order (lower first)
++    type: number
++    default: 0
++  - name: role
++    label: Role
++    type: string
++    required: true
++  - name: image
++    label: Portrait
++    type: image
++    required: true
++  - name: imageAlt
++    label: Image description
++    type: string
++  - name: bio
++    label: Biography
++    type: rich-text
++    required: true
++    options:
++      format: html
++  - name: history
++    label: Time on the team (optional)
++    type: rich-text
++    options:
++      format: html
+diff --git a/src/catalog-templates/hub_encyclopedia.html b/src/catalog-templates/hub_encyclopedia.html
+index 316a256..a54afc5 100644
+--- a/src/catalog-templates/hub_encyclopedia.html
++++ b/src/catalog-templates/hub_encyclopedia.html
+@@ -29,7 +29,7 @@ main,.wrap{max-width:none}main{padding:22px 20px 40px}body:has(>.wrap){padding:2
+ .itembtn.active small{color:#240e1c}.btn.pink:hover,.load:hover,.result button:hover{background:#ffb2d7}
+ @media(max-width:600px){main{padding:18px 12px 30px}body:has(>.wrap){padding:18px 12px 30px}}
+ @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+-</style><script src="/assets/hub-data.js"></script><script src="/vendor/marked-17.0.5.umd.js"></script><script src="/assets/description-format.js"></script><link rel="stylesheet" href="/assets/description-format.css"></head><body><main class="wrap"><header><div class="pink" style="font-weight:700;letter-spacing:.1em;font-size:.8rem">RUNECRAFTING REFERENCE</div><h1>Lexicon</h1><p class="intro">Explore enchantments, discover what they do, filter by the runes you own, see where they belong, and check recipes and incompatibilities before planning your next build.</p></header><section class="controls" aria-label="Enchantment filters"><div class="control"><label for="search">Search enchantments</label><input id="search" type="search" placeholder="Search names or descriptions…" autocomplete="off"></div><div class="control"><label for="equipment">Equipment</label><select id="equipment"><option value="">All equipment</option></select></div><div class="control"><label for="source">Source</label><select id="source"><option value="">All sources</option></select></div><div class="control"><label for="category">Category</label><select id="category"><option value="">All categories</option></select></div><div class="control"><label for="rune">Rune used</label><select id="rune"><option value="">All runes</option></select></div></section><div class="meta"><div id="count" class="count" aria-live="polite"></div><button id="clear" class="secondary" type="button">Clear filters</button></div><section id="cards" class="grid" aria-label="Enchantment results"></section><p id="status" class="status" role="status">Loading bundled reference data…</p><footer>Enchantment information is provided by the same Airtable source used for the Runecrafting Build Planner. Changes to data may take a few minutes to appear.</footer></main><script>
++</style><script src="/assets/hub-data.js"></script><script src="/vendor/marked-17.0.5.umd.js"></script><script src="/assets/description-format.js"></script><link rel="stylesheet" href="/assets/description-format.css"></head><body><main class="wrap"><header><div class="pink" style="font-weight:700;letter-spacing:.1em;font-size:.8rem">RUNECRAFTING REFERENCE</div><h1>Lexicon</h1><p class="intro">Explore enchantments, discover what they do, filter by the runes you own, see where they belong, and check recipes and incompatibilities before planning your next build.</p></header><section class="controls" aria-label="Enchantment filters"><div class="control"><label for="search">Search enchantments</label><input id="search" type="search" placeholder="Search names or descriptions…" autocomplete="off"></div><div class="control"><label for="equipment">Equipment</label><select id="equipment"><option value="">All equipment</option></select></div><div class="control"><label for="source">Source</label><select id="source"><option value="">All sources</option></select></div><div class="control"><label for="category">Category</label><select id="category"><option value="">All categories</option></select></div><div class="control"><label for="rune">Rune used</label><select id="rune"><option value="">All runes</option></select></div></section><div class="meta"><div id="count" class="count" aria-live="polite"></div><button id="clear" class="secondary" type="button">Clear filters</button></div><section id="cards" class="grid" aria-label="Enchantment results"></section><p id="status" class="status" role="status" hidden></p></main><script>
+ (()=>{'use strict';let DATA=__SSS_ENCHANTMENT_DATA__;const $=id=>document.getElementById(id);const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const desc=(value,e)=>window.SSSDescriptions.format(value,e,DATA.glossary);const roman=/\s+([IVXLCDM]+)$/i;const base=s=>String(s||'').replace(roman,'').trim();const vanilla=new Set('silk touch|fortune|efficiency|unbreaking|mending|infinity|power|punch|flame|looting|sharpness|smite|bane of arthropods|fire aspect|knockback|sweeping edge|protection|fire protection|blast protection|projectile protection|feather falling|respiration|aqua affinity|depth strider|frost walker|soul speed|swift sneak|thorns|binding curse|vanishing curse|curse of binding|curse of vanishing|riptide|loyalty|channeling|impaling|multishot|piercing|quick charge|luck of the sea|lure|density|breach|wind burst|lunge'.split('|'));const listNames=e=>Array.isArray(e.incompatible)?e.incompatible:[];const grouped=names=>{const map=new Map();names.forEach(n=>{if(!n)return;const b=base(n),key=b.toLowerCase();if(!map.has(key))map.set(key,{b,plain:false,lv:[]});const v=map.get(key),match=String(n).match(roman);if(match)v.lv.push(match[1]);else v.plain=true});return [...map.values()].map(v=>v.plain&&v.lv.length?`${v.b} (including ${[...new Set(v.lv)].join(', ')})`:v.plain?v.b:v.lv.length?[...new Set(v.lv)].map(l=>v.b+' '+l).join(', '):v.b)};function conflicts(e){const names=[...listNames(e)];for(const other of DATA.enchantments){if(other.name===e.name||!other.items?.some(i=>e.items?.includes(i)))continue;const otherNames=listNames(other);const groupRule=(a,b)=>a.includes('Other Avatars')&&b.startsWith('Avatar of ')||a.includes('Other Impetuses')&&b.startsWith('Impetus of ')||a.includes('Other Paradigms')&&b.startsWith('Paradigm of ');if(otherNames.includes(e.name)||groupRule(otherNames,e.name)||groupRule(names,other.name)){names.push(other.name)}}return [...new Set(names.filter(n=>!/^Other (Avatars|Impetuses|Paradigms)$/.test(n)))].sort((a,b)=>a.localeCompare(b))}function chips(names){return `<div class="chips">${names.map(n=>`<span class="chip">${esc(n)}</span>`).join('')}</div>`}function card(e){const incompatible=conflicts(e),v=grouped(incompatible.filter(n=>vanilla.has(base(n).toLowerCase()))),r=grouped(incompatible.filter(n=>!vanilla.has(base(n).toLowerCase())));const runes=e.costMode==='free'||!e.runes?.length?'<p class="note">No rune cost</p>':`<div class="runes">${e.runes.map((n,i)=>`<span class="rune">${i+1}. ${esc(n)}</span>`).join('')}</div><p class="note">Rune sequence per level (when applicable).</p>`;return `<article class="card"><div class="top"><h2>${esc(e.name)}</h2><span class="source">${esc(e.source||'Unknown')}</span></div><div class="badges"><span class="tag">${esc(e.category||'Uncategorized')}</span>${e.maxLevel?`<span class="tag">Max level ${esc(e.maxLevel)}</span>`:''}</div><div class="desc expanded sss-richtext">${desc(e.description,e)}</div><details class="detail"><summary>Equipment, recipe &amp; incompatibilities</summary><div class="sub">Compatible equipment</div>${chips(e.items||[])}<div class="sub">Rune recipe</div>${runes}<div class="sub">Incompatibilities</div>${r.length?'<div class="note">Runecrafted</div>'+chips(r):''}${v.length?'<div class="note" style="margin-top:8px">Vanilla</div>'+chips(v):''}${!r.length&&!v.length?'<p class="note">No listed incompatibilities.</p>':''}</details></article>`}function options(id,values){const sel=$(id),old=sel.value;sel.innerHTML='<option value="">'+({equipment:'All equipment',source:'All sources',category:'All categories',rune:'All runes'}[id])+'</option>'+values.sort((a,b)=>a.localeCompare(b)).map(v=>`<option value="${esc(v)}">${esc(v)}</option>`).join('');sel.value=values.includes(old)?old:'';syncCustom(id)}const filterIds=['equipment','source','category','rune'];
+ function closeMenus(except){
+   document.querySelectorAll('.custom-menu').forEach(menu=>{
+@@ -95,5 +95,5 @@ function searchableText(e) {
+   return text;
+ }
+ 
+-function render(){const q=$('search').value.trim().toLowerCase(),equipment=$('equipment').value,source=$('source').value,category=$('category').value,rune=$('rune').value;const matches=DATA.enchantments.filter(e=>(!q||searchableText(e).includes(q))&&(!equipment||e.items?.includes(equipment))&&(!source||e.source===source)&&(!category||e.category===category)&&(!rune||(e.runes||[]).some(n=>n===rune))).sort((a,b)=>a.name.localeCompare(b.name));$('count').textContent=`Showing ${matches.length} of ${DATA.enchantments.length} enchantments`;$('cards').innerHTML=matches.length?matches.map(card).join(''):'<div class="empty">No enchantments match your filters. Try clearing one or more filters.</div>'}function refresh(){options('equipment',[...new Set(DATA.enchantments.flatMap(e=>e.items||[]))]);options('source',[...new Set(DATA.enchantments.map(e=>e.source).filter(Boolean))]);options('category',[...new Set(DATA.enchantments.map(e=>e.category).filter(Boolean))]);options('rune',[...new Set(DATA.enchantments.filter(e=>e.costMode!=='free').flatMap(e=>e.runes||[]).filter(Boolean))]);render()}['search','equipment','source','category','rune'].forEach(id=>$(id).addEventListener(id==='search'?'input':'change',render));$('clear').addEventListener('click',()=>{$('search').value='';['equipment','source','category','rune'].forEach(id=>{$(id).value='';syncCustom(id)});render()});initCustom();refresh();$('status').textContent='Loading enchantment data…';window.SSSHubData.fetch().then(r=>{if(!r.ok)throw Error('Live endpoint unavailable');return r.json()}).then(live=>{if(!Array.isArray(live.enchantments))throw Error('Unexpected data');DATA=live;refresh();$('status').textContent=(live._dataSource==='live'?'Published enchantment catalog loaded.':'Showing bundled reference data.')}).catch(()=>{$('status').textContent='Showing bundled reference data. The published catalog could not be refreshed.'})})();
++function render(){const q=$('search').value.trim().toLowerCase(),equipment=$('equipment').value,source=$('source').value,category=$('category').value,rune=$('rune').value;const matches=DATA.enchantments.filter(e=>(!q||searchableText(e).includes(q))&&(!equipment||e.items?.includes(equipment))&&(!source||e.source===source)&&(!category||e.category===category)&&(!rune||(e.runes||[]).some(n=>n===rune))).sort((a,b)=>a.name.localeCompare(b.name));$('count').textContent=`Showing ${matches.length} of ${DATA.enchantments.length} enchantments`;$('cards').innerHTML=matches.length?matches.map(card).join(''):'<div class="empty">No enchantments match your filters. Try clearing one or more filters.</div>'}function refresh(){options('equipment',[...new Set(DATA.enchantments.flatMap(e=>e.items||[]))]);options('source',[...new Set(DATA.enchantments.map(e=>e.source).filter(Boolean))]);options('category',[...new Set(DATA.enchantments.map(e=>e.category).filter(Boolean))]);options('rune',[...new Set(DATA.enchantments.filter(e=>e.costMode!=='free').flatMap(e=>e.runes||[]).filter(Boolean))]);render()}['search','equipment','source','category','rune'].forEach(id=>$(id).addEventListener(id==='search'?'input':'change',render));$('clear').addEventListener('click',()=>{$('search').value='';['equipment','source','category','rune'].forEach(id=>{$(id).value='';syncCustom(id)});render()});initCustom();refresh();window.SSSHubData.fetch().then(r=>{if(!r.ok)throw Error('Live endpoint unavailable');return r.json()}).then(live=>{if(!Array.isArray(live.enchantments))throw Error('Unexpected data');DATA=live;refresh();$('status').hidden=true}).catch(()=>{$('status').hidden=false;$('status').textContent='Could not refresh enchantments. You can still browse the saved catalog.'})})();
+ </script></body></html>
+\ No newline at end of file
+diff --git a/src/content/pages/about-us.html b/src/content/pages/about-us.html
+index 78a7ee1..7782a01 100644
+--- a/src/content/pages/about-us.html
++++ b/src/content/pages/about-us.html
+@@ -1,7 +1,7 @@
+ <main id="main">
+-<section class="inner-hero"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span>About Us</span></nav><div class="hero-grid"><div><div class="eyebrow">Get to know Silver Springs</div><h1>A little about us.<br><em>A lot to call home.</em></h1><p>A small Minecraft server with a warm community, a long history, and our own take on the vanilla experience.</p><div class="actions"><a class="btn primary" href="/staffoverview/">Meet our staff →</a><a class="btn" href="#how-we-play">How we play ↓</a></div></div><figure><img src="/assets/spawn.jpg" alt="The spawn town from the top of the springs" fetchpriority="high"><figcaption>A world shaped by the people who play here.</figcaption></figure></div></div></section>
+-<section class="wrap story-section"><div><div class="eyebrow">Our community</div><h2>Familiar faces.<br>New stories.</h2><div class="story-stamp"><span aria-hidden="true">🌸</span>Silver Springs Survival</div></div><div><p class="bodytext">Silver Springs Survival is dedicated to an enjoyable, customized vanilla experience. Over the years, we’ve put countless hours into fine-tuning our world while holding true to the Minecraft gameplay we love.</p><p class="bodytext">We’re fairly small, but our community is tight-knit, warm, and active. Some staff and players have been with us since the very beginning—and some were around even before that.</p><p class="bodytext">Whether you’re here to build, explore, take on a challenge, or spend time with friends, there’s room to find your own way to play.</p></div></section>
+-<div class="contentband"><section class="wrap" id="how-we-play"><div class="eyebrow">How we play</div><h2>A little common sense.<br>A lot of freedom.</h2><p class="section-description">We keep moderation plugins minimal and expect players to treat one another—and one another’s builds—with respect.</p><div class="principles"><article class="principle"><span class="number">01 / YOUR OWN WAY</span><h3>Build a town.<br>Or go your own way.</h3><p>There’s no Towny system. Settle with friends or head out on your own—the choice is yours.</p></article><article class="principle"><span class="number">02 / ROOM TO CREATE</span><h3>No land claims.<br>Respect comes first.</h3><p>Give other players enough space, respect their builds, and don’t grief. Griefing is taken seriously.</p></article><article class="principle"><span class="number">03 / SHARED EXPECTATIONS</span><h3>Know the rules.<br>Keep it welcoming.</h3><p>Once you join, read the full server rules in-game with <button class="inline-command" data-copy="/rules" aria-label="Copy the rules command">/rules</button>. Common sense guides how we share the world.</p></article></div></section></div>
+-<section class="wrap"><div class="sectionhead"><div><div class="eyebrow">The experience</div><h2>Vanilla at heart.<br>Silver Springs by design.</h2></div><p>Everyday survival, creative freedom, and optional challenges when you’re ready for more.</p></div><div class="about-features"><article class="about-feature"><h3>Survival with a challenge</h3><p>Hard mode survival in pregenerated worlds. Build a home, explore, and make your own goals.</p></article><article class="about-feature"><h3>More room to make things</h3><p>A freely accessible creative world for your ideas, plus resource worlds that automatically reset every two weeks.</p></article><article class="about-feature"><h3>Tools for the details</h3><p>Block rotation, block chiseling, armor-stand manipulation, and other conveniences for builders.</p><a class="textlink" href="/content-overview/#sscc/vanilla">Explore Vanilla Plus →</a></article><article class="about-feature"><h3>A player-driven marketplace</h3><p>A simple economy with a server shop, player marketplace, lotteries, and a custom item auction system.</p></article><article class="about-feature"><h3>Reasons to get together</h3><p>Build contests, hidden treasures around spawn, parkours, and regular community activities.</p><a class="textlink" href="/calendar/">See the event calendar →</a></article><article class="about-feature"><h3>A little more magic</h3><p>Opt-in late-game content: unique Runecrafting enchantments, relics and armor sets, minigames, and custom Mob Arenas.</p><a class="textlink" href="/content-overview/">Explore our custom content →</a></article></div></section>
+-<div class="contentband"><section class="wrap getting-started"><div><div class="eyebrow">New around here?</div><h2>Start with hello.</h2><p class="bodytext">There’s no need to learn every system on your first day. Get settled, meet the community, and discover the rest at your own pace.</p><a class="textlink" href="/staffoverview/">Meet the people behind the server →</a></div><ol class="steps"><li><div><strong>Join Silver Springs</strong><p>Add <button class="inline-command" data-copy="sssminecraft.com" aria-label="Copy server IP">sssminecraft.com</button> to your Minecraft server list.</p></div></li><li><div><strong>Read the rules</strong><p>Run <button class="inline-command" data-copy="/rules" aria-label="Copy the rules command">/rules</button> in-game, then take a look around and find a place to begin.</p></div></li><li><div><strong>Make yourself at home</strong><p>You’ll start as a <strong>[Player]</strong>. After at least 20 hours of playtime, promotion to <strong>[Member]</strong> is based on behavior.</p></div></li></ol></section></div>
+-<div class="wrap after-section"><section class="join"><div class="eyebrow">Your next chapter</div><h2>There’s a place for you here.</h2><p>Join us in-game, or get to know the community on Discord.</p><div class="actions"><button class="btn primary" data-copy="sssminecraft.com">Copy IP: sssminecraft.com</button><a class="btn" href="https://discord.gg/r22U3prgPE">Join our Discord ↗</a></div></section></div></main>
+\ No newline at end of file
++<section class="inner-hero"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span>About us</span></nav><div class="hero-grid"><div><div class="eyebrow">Get to know Silver Springs</div><h1>A little about us</h1><p>A small Minecraft server with a warm community, a long history, and our own take on the vanilla experience.</p><div class="actions"><a class="btn primary" href="/staffoverview/">Meet our staff →</a><a class="btn" href="#how-we-play">How we play ↓</a></div></div><figure><img src="/assets/spawn.jpg" alt="The spawn town from the top of the springs" fetchpriority="high"><figcaption>A world shaped by the people who play here.</figcaption></figure></div></div></section>
++<section class="wrap story-section"><div><div class="eyebrow">Our community</div><h2>Get to know the community</h2><div class="story-stamp"><span aria-hidden="true">🌸</span>Silver Springs Survival</div></div><div><p class="bodytext">Silver Springs Survival is dedicated to an enjoyable, customized vanilla experience. Over the years, we’ve put countless hours into fine-tuning our world while holding true to the Minecraft gameplay we love.</p><p class="bodytext">We’re fairly small, but our community is tight-knit, warm, and active. Some staff and players have been with us since the very beginning—and some were around even before that.</p><p class="bodytext">Whether you’re here to build, explore, take on a challenge, or spend time with friends, there’s room to find your own way to play.</p></div></section>
++<div class="contentband"><section class="wrap" id="how-we-play"><div class="eyebrow">How we play</div><h2>Common sense rules</h2><p class="section-description">We keep moderation plugins minimal and expect players to treat one another with respect</p><div class="principles"><article class="principle"><span class="number">01 / YOUR OWN WAY</span><h3>Build alone or with friends</h3><p>There’s no Towny system. Settle with friends or head out on your own—the choice is yours.</p></article><article class="principle"><span class="number">02 / ROOM TO CREATE</span><h3>No land claims</h3><p>Give other players enough space, respect their builds, and don’t grief. Griefing is taken seriously.</p></article><article class="principle"><span class="number">03 / SHARED EXPECTATIONS</span><h3>Follow the rules</h3><p>Once you join, read the server rules in-game with <button class="inline-command" data-copy="/rules" aria-label="Copy the rules command">/rules</button>. It's really that simple.</p></article></div></section></div>
++<section class="wrap"><div class="sectionhead"><div><div class="eyebrow">The experience</div><h2>What it’s like to play here</h2></div></div><div class="about-features"><article class="about-feature"><h3>Survival with a challenge</h3><p>Hard mode survival in pregenerated worlds. Build a home, explore, and make your own goals.</p></article><article class="about-feature"><h3>More room to make things</h3><p>A freely accessible creative world for your ideas, plus resource worlds that automatically reset every two weeks.</p></article><article class="about-feature"><h3>Tools for the details</h3><p>Block rotation, block chiseling, armor-stand manipulation, and other conveniences for builders.</p><a class="textlink" href="/content-overview/#sscc/vanilla">Explore Vanilla Plus →</a></article><article class="about-feature"><h3>A player-driven marketplace</h3><p>A simple economy with a server shop, player marketplace, lotteries, and a custom item auction system.</p></article><article class="about-feature"><h3>Reasons to get together</h3><p>Build contests, hidden treasures around spawn, parkours, and regular community activities.</p><a class="textlink" href="/calendar/">See the event calendar →</a></article><article class="about-feature"><h3>A little more magic</h3><p>Opt-in late-game content: unique Runecrafting enchantments, relics and armor sets, minigames, and custom Mob Arenas.</p><a class="textlink" href="/content-overview/">Explore our custom content →</a></article></div></section>
++<div class="contentband"><section class="wrap getting-started"><div><div class="eyebrow">New around here?</div><h2>Getting started</h2><p class="bodytext">There’s no need to learn every system on your first day. Get settled, meet the community, and discover the rest at your own pace.</p><a class="textlink" href="/staffoverview/">Meet the people behind the server →</a></div><ol class="steps"><li><div><strong>Join Silver Springs</strong><p>Add <button class="inline-command" data-copy="sssminecraft.com" aria-label="Copy server IP">sssminecraft.com</button> to your Minecraft server list.</p></div></li><li><div><strong>Read the rules</strong><p>Run <button class="inline-command" data-copy="/rules" aria-label="Copy the rules command">/rules</button> in-game, then take a look around and find a place to begin.</p></div></li><li><div><strong>Make yourself at home</strong><p>You’ll start as a <strong>[Player]</strong>. After at least 20 hours of playtime, promotion to <strong>[Member]</strong> is based on behavior.</p></div></li></ol></section></div>
++<div class="wrap after-section"><section class="join"><div class="eyebrow">Join us</div><h2>See you in-game!</h2><p>Connect at sssminecraft.com, or come say hello on Discord.</p><div class="actions"><button class="btn primary" data-copy="sssminecraft.com">Copy IP: sssminecraft.com</button><a class="btn" href="https://discord.gg/r22U3prgPE">Join our Discord ↗</a></div></section></div></main>
+diff --git a/src/content/pages/staffoverview.html b/src/content/pages/staffoverview.html
+index 282d1fc..834d01f 100644
+--- a/src/content/pages/staffoverview.html
++++ b/src/content/pages/staffoverview.html
+@@ -1 +1 @@
+-<main id="main"><section class="inner-hero"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span>Staff</span></nav><div class="hero-grid"><div><div class="eyebrow">Our lovely staff</div><h1>The people behind<br><em>Silver Springs.</em></h1><p>The familiar faces, creative minds, and personalities helping make this community what it is.</p><div class="actions"><a class="btn primary" href="#team">Meet the team ↓</a><a class="btn" href="/about-us/">A little about us →</a></div></div><figure><img src="/assets/staff/team.jpg" alt="Silver Springs staff gathered together in Minecraft" fetchpriority="high"><figcaption>Our lovely staff · from the community archives.</figcaption></figure></div></div></section><section class="wrap directory" id="team"><div class="sectionhead"><div><div class="eyebrow">Meet the team</div><h2>A name to every face.</h2></div><p>Jump to someone you know, or take a moment to meet everyone.</p></div><nav class="roster" aria-label="Staff directory"><a href="#mr_simba">Mr_Simba</a><a href="#beccc">Beccc</a><a href="#mrjoned">MrJoned</a><a href="#autumn_bun">Autumn_Bun</a><a href="#cubicbits">CubicBits</a><a href="#evildrac">EvilDrac</a><a href="#frostearrific">Frostearrific</a><a href="#drfeesh">DrFeesh</a><a href="#lukayva">Lukayva</a></nav></section><section class="wrap staff-section" aria-label="Staff biographies"><div class="staff-grid"><article class="staff-card" id="mr_simba"><div class="staff-heading"><img class="portrait" src="/assets/staff/mr_simba.jpg" alt="Mr_Simba’s Minecraft character" loading="lazy"><div><div class="eyebrow">Owner & Developer</div><h2>Mr_Simba</h2></div></div><div class="bio"><p>Mr_Simba is the owner and main developer of Silver Springs Survival, otherwise known as Simba. He is very friendly and kind to all players. </p><p>Simba made and maintains almost all of the special plugins that are used on the server.</p><p>It is widely believed that Squid Jesus was Simba&#x27;s first spouse.</p></div><details><summary>Time on the team</summary><p>Simba first became a Moderator March 9th of 2014, then became Developer on April 27 the same year, and has been the Owner since January 15th of 2015.</p></details></article><article class="staff-card" id="beccc"><div class="staff-heading"><img class="portrait" src="/assets/staff/beccc.jpg" alt="Beccc’s Minecraft character" loading="lazy"><div><div class="eyebrow">Head of Staff</div><h2>Beccc</h2></div></div><div class="bio"><p>Beccc is the Head of Staff (HoS) of Silver Springs Survival, otherwise known as Becc. As the HoS, she works with <a href="#mr_simba">Mr_Simba</a> on new and upcoming features for the server, as well as making sure the staff are able to do their job as intended.</p></div><details><summary>Time on the team</summary><p>Becc became a Moderator on the 5th of July 2015, then became an Admin on the 18th of March 2016. On January 29, 2019, Becc was promoted to the rank of HoS.</p></details></article><article class="staff-card" id="mrjoned"><div class="staff-heading"><img class="portrait" src="/assets/staff/mrjoned.jpg" alt="MrJoned’s Minecraft character" loading="lazy"><div><div class="eyebrow">Head of Fun</div><h2>MrJoned</h2></div></div><div class="bio"><p>MrJoned is the Head of Fun (HoF/Head of Fmemes) of Silver Springs Survival. Otherwise known as Jon, he also goes by James, or the Penguin man. He prefers to lick players he likes as opposed to being a normal person. He also records events, and fun things going on, on the server for his Youtube channel.</p><p>He is the worst mod. (Follow him on Twitter!) Despite being the worst mod, MrJoned also has a <a href="https://www.twitch.tv/mrjoned">Twitch</a> and a <a href="https://www.youtube.com/user/MrJoned15">Youtube</a> you should also follow!</p></div><details><summary>Time on the team</summary><p>MrJoned first became Moderator March 2nd of 2015 (along with <a href="#evildrac">EvilDrac</a>) and has been an admin since September 25th of the same year. On September 17, 2023, Jon became the new Head of Fun.</p></details></article><article class="staff-card" id="autumn_bun"><div class="staff-heading"><img class="portrait" src="/assets/staff/autumn_bun.jpg" alt="Autumn_Bun’s Minecraft character" loading="lazy"><div><div class="eyebrow">Designer</div><h2>Autumn_Bun</h2></div></div><div class="bio"><p>Autumn Bun is the Designer of Silver Springs Survival. She is very kind and makes everyone laugh. She is good friends with the owner, <a href="#mr_simba">Mr_Simba</a>. She primarily designs the custom content on the server such as the Runecrafting system and the Gemcrafting system!</p></div><details><summary>Time on the team</summary><p>Autumn Bun first became Moderator on October 12th of 2014 (along with <a href="#frostearrific">Frosty</a>) and has been Admin since November 2014. She then stepped up under the Designer role on September 20th, 2023 in recognition of designing, drafting, and testing most of the custom content on our server.</p></details></article><article class="staff-card" id="cubicbits"><div class="staff-heading"><img class="portrait" src="/assets/staff/cubicbits.jpg" alt="CubicBits’s Minecraft character" loading="lazy"><div><div class="eyebrow">Admin</div><h2>CubicBits</h2></div></div><div class="bio"><p>CubicBits is an Admin of Silver Springs Survival. He is a fairly active watermelon who spends his spare time chilling in the ocean. </p></div><details><summary>Time on the team</summary><p>CubicBits became a Moderator on April 24th, 2020 alongside <a href="#drfeesh">DrFeesh</a> and <a href="#lukayva">LunaPotato</a>, and became an Admin on September 20th, 2023.</p></details></article><article class="staff-card" id="evildrac"><div class="staff-heading"><img class="portrait" src="/assets/staff/evildrac.jpg" alt="EvilDrac’s Minecraft character" loading="lazy"><div><div class="eyebrow">Admin</div><h2>EvilDrac</h2></div></div><div class="bio"><p>EvilDrac is an Admin of Silver Springs Survival and the founder of the Wiki, and is otherwise known as Drac or Ber. He is very fond of magic and has expressed interest in alchemy. In the real world, however, Drac holds an interest in digital designing and creative works.</p></div><details><summary>Time on the team</summary><p>EvilDrac became a Moderator on March 2nd, 2015 (along with <a href="#mrjoned">MrJoned</a>) and was an Admin starting July 15th of the same year up until January 1st, 2018, when he stepped down to the Mod position for personal reasons. </p><p>On April 21st 2020, EvilDrac re-a s c e n d e d.</p></details></article><article class="staff-card" id="frostearrific"><div class="staff-heading"><img class="portrait" src="/assets/staff/frostearrific.jpg" alt="Frostearrific’s Minecraft character" loading="lazy"><div><div class="eyebrow">Admin</div><h2>Frostearrific</h2></div></div><div class="bio"><p>Frostearrific is an admin on Silver Springs Survival, otherwise known as Frosty. She is a laid back staffer often using dead memes and frequently farting. Extremely fond of farming, she is often called the Farming Queen or Farming Maniac. Frosty also goes by the nicknames Frooty, Fronky, or Frothy. She is a lover of sheep, poros, and all things floofy.</p></div><details><summary>Time on the team</summary><p>Frostearrific first became a Moderator October 12th of 2014 (along with <a href="#autumn_bun">Autumn Bun</a>) and first became an Admin in November of 2014.</p></details></article><article class="staff-card" id="drfeesh"><div class="staff-heading"><img class="portrait" src="/assets/staff/drfeesh.jpg" alt="DrFeesh’s Minecraft character" loading="lazy"><div><div class="eyebrow">Moderator</div><h2>DrFeesh</h2></div></div><div class="bio"><p>DrFeesh is a Moderator of Silver Springs Survival, otherwise known as Will. He is a prodigy among fish and is known server-wide for healing the fish of the land of Squid.</p></div><details><summary>Time on the team</summary><p>DrFeesh became a Moderator April 24th, 2020, alongside <a href="#cubicbits">CubicBits</a>, and <a href="#lukayva">LunaPotato</a>.</p></details></article><article class="staff-card" id="lukayva"><div class="staff-heading"><img class="portrait" src="/assets/staff/lukayva.jpg" alt="Lukayva’s Minecraft character" loading="lazy"><div><div class="eyebrow">Moderator</div><h2>Lukayva</h2></div></div><div class="bio"><p>Lukayva is a Moderator of Silver Springs Survival. She is the master of all things spooky, and specializes in fitting as many decorations into her builds as possible.</p></div><details><summary>Time on the team</summary><p>Lukayva became a Moderator April 22nd 2020, alongside <a href="#cubicbits">CubicBits</a>, and <a href="#drfeesh">DrFeesh</a>.</p></details></article></div></section><div class="contentband"><section class="wrap founder-layout"><div><div class="eyebrow">Where it all began</div><h2>Our founders.</h2><p>A place in the story of Silver Springs, and a part of the community’s history.</p><div class="founder-names"><span>Wolfwoodnyo</span><span>Merlin</span><span>Kanrilla</span></div></div><img src="/assets/staff/founders.jpg" alt="Minecraft characters of Silver Springs founders Wolfwoodnyo, Merlin, and Kanrilla" loading="lazy"></section></div><div class="wrap after-section"><section class="join"><div class="eyebrow">Your next chapter</div><h2>Say hello.</h2><p>Get to know the team and the rest of the community, in-game or on Discord.</p><div class="actions"><button class="btn primary" data-copy="sssminecraft.com">Copy IP: sssminecraft.com</button><a class="btn" href="https://discord.gg/r22U3prgPE">Join our Discord ↗</a></div></section></div></main>
+\ No newline at end of file
++<main id="main"><section class="inner-hero"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span>Staff</span></nav><div class="hero-grid"><div><div class="eyebrow">Our lovely staff</div><h1>The people behind<br><em>Silver Springs.</em></h1><p>The familiar faces, creative minds, and personalities helping make this community what it is.</p><div class="actions"><a class="btn primary" href="#team">Meet the team ↓</a><a class="btn" href="/about-us/">A little about us →</a></div></div><figure><img src="/assets/staff/team.jpg" alt="Silver Springs staff gathered together in Minecraft" fetchpriority="high"><figcaption>Our lovely staff.</figcaption></figure></div></div></section><section class="wrap directory" id="team"><div class="sectionhead"><div><div class="eyebrow">Meet the team</div><h2>Get to know us!</h2></div><p>Jump to someone you know, or take a moment to meet everyone.</p></div><!--staff-roster--></section><section class="wrap staff-section" aria-label="Staff biographies"><!--staff-cards--></section><div class="contentband"><section class="wrap founder-layout"><div><div class="eyebrow">Where it all began</div><h2>Our founders.</h2><p>The people who got us started! We're where we are now because of them! ❤️</p><div class="founder-names"><span>Wolfwoodnyo</span><span>Merlin</span><span>Kanrilla</span></div></div><img src="/assets/staff/founders.jpg" alt="Minecraft characters of Silver Springs founders Wolfwoodnyo, Merlin, and Kanrilla" loading="lazy"></section></div><div class="wrap after-section"><section class="join"><div class="eyebrow">Join us</div><h2>See you in-game!</h2><p>Connect at sssminecraft.com, or come say hello on Discord.</p><div class="actions"><button class="btn primary" data-copy="sssminecraft.com">Copy IP: sssminecraft.com</button><a class="btn" href="https://discord.gg/r22U3prgPE">Join our Discord ↗</a></div></section></div></main>
+\ No newline at end of file
+diff --git a/src/content/staff/autumn_bun.json b/src/content/staff/autumn_bun.json
+new file mode 100644
+index 0000000..0286f38
+--- /dev/null
++++ b/src/content/staff/autumn_bun.json
+@@ -0,0 +1,10 @@
++{
++  "name": "Autumn_Bun",
++  "draft": false,
++  "order": 40,
++  "role": "Designer",
++  "image": "/assets/staff/autumn_bun.jpg",
++  "imageAlt": "Autumn_Bun’s Minecraft character",
++  "bio": "<p>Autumn Bun is the Designer of Silver Springs Survival. She is very kind and makes everyone laugh. She is good friends with the owner, <a href=\"#mr_simba\">Mr_Simba</a>. She primarily designs the custom content on the server such as the Runecrafting system and the Gemcrafting system!</p>",
++  "history": "<p>Autumn Bun first became Moderator on October 12th of 2014 (along with <a href=\"#frostearrific\">Frosty</a>) and has been Admin since November 2014. She then stepped up under the Designer role on September 20th, 2023 in recognition of designing, drafting, and testing most of the custom content on our server.</p>"
++}
+diff --git a/src/content/staff/beccc.json b/src/content/staff/beccc.json
+new file mode 100644
+index 0000000..47d39a2
+--- /dev/null
++++ b/src/content/staff/beccc.json
+@@ -0,0 +1,10 @@
++{
++  "name": "Beccc",
++  "draft": false,
++  "order": 20,
++  "role": "Head of Staff",
++  "image": "/assets/staff/beccc.jpg",
++  "imageAlt": "Beccc’s Minecraft character",
++  "bio": "<p>Beccc is the Head of Staff (HoS) of Silver Springs Survival, otherwise known as Becc. As the HoS, she works with <a href=\"#mr_simba\">Mr_Simba</a> on new and upcoming features for the server, as well as making sure the staff are able to do their job as intended.</p>",
++  "history": "<p>Becc became a Moderator on the 5th of July 2015, then became an Admin on the 18th of March 2016. On January 29, 2019, Becc was promoted to the rank of HoS.</p>"
++}
+diff --git a/src/content/staff/cubicbits.json b/src/content/staff/cubicbits.json
+new file mode 100644
+index 0000000..25c6000
+--- /dev/null
++++ b/src/content/staff/cubicbits.json
+@@ -0,0 +1,10 @@
++{
++  "name": "CubicBits",
++  "draft": false,
++  "order": 50,
++  "role": "Admin",
++  "image": "/assets/staff/cubicbits.jpg",
++  "imageAlt": "CubicBits’s Minecraft character",
++  "bio": "<p>CubicBits is an Admin of Silver Springs Survival. He is a fairly active watermelon who spends his spare time chilling in the ocean. </p>",
++  "history": "<p>CubicBits became a Moderator on April 24th, 2020 alongside <a href=\"#drfeesh\">DrFeesh</a> and <a href=\"#lukayva\">LunaPotato</a>, and became an Admin on September 20th, 2023.</p>"
++}
+diff --git a/src/content/staff/drfeesh.json b/src/content/staff/drfeesh.json
+new file mode 100644
+index 0000000..1dba116
+--- /dev/null
++++ b/src/content/staff/drfeesh.json
+@@ -0,0 +1,10 @@
++{
++  "name": "DrFeesh",
++  "draft": false,
++  "order": 80,
++  "role": "Moderator",
++  "image": "/assets/staff/drfeesh.jpg",
++  "imageAlt": "DrFeesh’s Minecraft character",
++  "bio": "<p>DrFeesh is a Moderator of Silver Springs Survival, otherwise known as Will. He is a prodigy among fish and is known server-wide for healing the fish of the land of Squid.</p>",
++  "history": "<p>DrFeesh became a Moderator April 24th, 2020, alongside <a href=\"#cubicbits\">CubicBits</a>, and <a href=\"#lukayva\">LunaPotato</a>.</p>"
++}
+diff --git a/src/content/staff/evildrac.json b/src/content/staff/evildrac.json
+new file mode 100644
+index 0000000..77121d4
+--- /dev/null
++++ b/src/content/staff/evildrac.json
+@@ -0,0 +1,10 @@
++{
++  "name": "EvilDrac",
++  "draft": false,
++  "order": 60,
++  "role": "Admin",
++  "image": "/assets/staff/evildrac.jpg",
++  "imageAlt": "EvilDrac’s Minecraft character",
++  "bio": "<p>EvilDrac is an Admin of Silver Springs Survival and the founder of the Wiki, and is otherwise known as Drac or Ber. He is very fond of magic and has expressed interest in alchemy. In the real world, however, Drac holds an interest in digital designing and creative works.</p>",
++  "history": "<p>EvilDrac became a Moderator on March 2nd, 2015 (along with <a href=\"#mrjoned\">MrJoned</a>) and was an Admin starting July 15th of the same year up until January 1st, 2018, when he stepped down to the Mod position for personal reasons. </p><p>On April 21st 2020, EvilDrac re-a s c e n d e d.</p>"
++}
+diff --git a/src/content/staff/frostearrific.json b/src/content/staff/frostearrific.json
+new file mode 100644
+index 0000000..2ad3c42
+--- /dev/null
++++ b/src/content/staff/frostearrific.json
+@@ -0,0 +1,10 @@
++{
++  "name": "Frostearrific",
++  "draft": false,
++  "order": 70,
++  "role": "Admin",
++  "image": "/assets/staff/frostearrific.jpg",
++  "imageAlt": "Frostearrific’s Minecraft character",
++  "bio": "<p>Frostearrific is an admin on Silver Springs Survival, otherwise known as Frosty. She is a laid back staffer often using dead memes and frequently farting. Extremely fond of farming, she is often called the Farming Queen or Farming Maniac. Frosty also goes by the nicknames Frooty, Fronky, or Frothy. She is a lover of sheep, poros, and all things floofy.</p>",
++  "history": "<p>Frostearrific first became a Moderator October 12th of 2014 (along with <a href=\"#autumn_bun\">Autumn Bun</a>) and first became an Admin in November of 2014.</p>"
++}
+diff --git a/src/content/staff/lukayva.json b/src/content/staff/lukayva.json
+new file mode 100644
+index 0000000..8555a94
+--- /dev/null
++++ b/src/content/staff/lukayva.json
+@@ -0,0 +1,10 @@
++{
++  "name": "Lukayva",
++  "draft": false,
++  "order": 90,
++  "role": "Moderator",
++  "image": "/assets/staff/lukayva.jpg",
++  "imageAlt": "Lukayva’s Minecraft character",
++  "bio": "<p>Lukayva is a Moderator of Silver Springs Survival. She is the master of all things spooky, and specializes in fitting as many decorations into her builds as possible.</p>",
++  "history": "<p>Lukayva became a Moderator April 22nd 2020, alongside <a href=\"#cubicbits\">CubicBits</a>, and <a href=\"#drfeesh\">DrFeesh</a>.</p>"
++}
+diff --git a/src/content/staff/mr_simba.json b/src/content/staff/mr_simba.json
+new file mode 100644
+index 0000000..3475ab8
+--- /dev/null
++++ b/src/content/staff/mr_simba.json
+@@ -0,0 +1,10 @@
++{
++  "name": "Mr_Simba",
++  "draft": false,
++  "order": 10,
++  "role": "Owner & Developer",
++  "image": "/assets/staff/mr_simba.jpg",
++  "imageAlt": "Mr_Simba’s Minecraft character",
++  "bio": "<p>Mr_Simba is the owner and main developer of Silver Springs Survival, otherwise known as Simba. He is very friendly and kind to all players. </p><p>Simba made and maintains almost all of the special plugins that are used on the server.</p><p>It is widely believed that Squid Jesus was Simba&#x27;s first spouse.</p>",
++  "history": "<p>Simba first became a Moderator March 9th of 2014, then became Developer on April 27 the same year, and has been the Owner since January 15th of 2015.</p>"
++}
+diff --git a/src/content/staff/mrjoned.json b/src/content/staff/mrjoned.json
+new file mode 100644
+index 0000000..1415f2a
+--- /dev/null
++++ b/src/content/staff/mrjoned.json
+@@ -0,0 +1,10 @@
++{
++  "name": "MrJoned",
++  "draft": false,
++  "order": 30,
++  "role": "Head of Fun",
++  "image": "/assets/staff/mrjoned.jpg",
++  "imageAlt": "MrJoned’s Minecraft character",
++  "bio": "<p>MrJoned is the Head of Fun (HoF/Head of Fmemes) of Silver Springs Survival. Otherwise known as Jon, he also goes by James, or the Penguin man. He prefers to lick players he likes as opposed to being a normal person. He also records events, and fun things going on, on the server for his Youtube channel.</p><p>He is the worst mod. (Follow him on Twitter!) Despite being the worst mod, MrJoned also has a <a href=\"https://www.twitch.tv/mrjoned\">Twitch</a> and a <a href=\"https://www.youtube.com/user/MrJoned15\">Youtube</a> you should also follow!</p>",
++  "history": "<p>MrJoned first became Moderator March 2nd of 2015 (along with <a href=\"#evildrac\">EvilDrac</a>) and has been an admin since September 25th of the same year. On September 17, 2023, Jon became the new Head of Fun.</p>"
++}
+diff --git a/src/lib/staff.js b/src/lib/staff.js
+new file mode 100644
+index 0000000..b60e6f8
+--- /dev/null
++++ b/src/lib/staff.js
+@@ -0,0 +1,12 @@
++const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
++// Biographies and history are editor-authored rich text, like announcement bodies.
++export function renderStaff(entries) {
++ const staff=entries.filter(e=>e.data.draft!==true).map(({slug,data})=>{
++  if(!/^[a-z0-9_-]+$/.test(slug)||!data.name?.trim()||!data.role?.trim()||!data.bio?.trim()||!/^\/assets\//.test(data.image||'')) throw Error(`Staff ${slug} needs a name, role, biography, and local image.`);
++  return {...data,slug};
++ }).sort((a,b)=>(Number(a.order)||0)-(Number(b.order)||0)||a.name.localeCompare(b.name));
++ return {
++ roster:`<nav class="roster" aria-label="Staff directory">${staff.map(s=>`<a href="#${escape(s.slug)}">${escape(s.name)}</a>`).join('')}</nav>`,
++ cards:`<div class="staff-grid">${staff.map(s=>`<article class="staff-card" id="${escape(s.slug)}"><div class="staff-heading"><img class="portrait" src="${escape(s.image)}" alt="${escape(s.imageAlt||s.name+'’s Minecraft character')}" loading="lazy"><div><div class="eyebrow">${escape(s.role)}</div><h2>${escape(s.name)}</h2></div></div><div class="bio">${s.bio}</div>${s.history?.trim()?`<details><summary>Time on the team</summary>${s.history}</details>`:''}</article>`).join('')}</div>`
++ };
++}
+diff --git a/src/pages/staffoverview/index.astro b/src/pages/staffoverview/index.astro
+index 2de08cf..c565213 100644
+--- a/src/pages/staffoverview/index.astro
++++ b/src/pages/staffoverview/index.astro
+@@ -1,6 +1,10 @@
+ ---
+ import SiteLayout from "../../layouts/SiteLayout.astro";
+-import content from "../../content/pages/staffoverview.html?raw";
++import template from "../../content/pages/staffoverview.html?raw";
++import { renderStaff } from '../../lib/staff.js';
++const files = import.meta.glob('../../content/staff/*.json', { eager: true, import: 'default' });
++const staff = renderStaff(Object.entries(files).map(([path,data])=>({slug:path.split('/').pop().replace(/\.json$/,''),data})));
++const content = template.replace('<!--staff-roster-->',staff.roster).replace('<!--staff-cards-->',staff.cards);
+ ---
+ <SiteLayout title={"Our Staff"} description={"Meet the staff and founders of Silver Springs Survival."} styles={["/assets/site.css"]} scripts={[]}>
+   <Fragment set:html={content} />
+diff --git a/tests/staff.mjs b/tests/staff.mjs
+new file mode 100644
+index 0000000..dd453c3
+--- /dev/null
++++ b/tests/staff.mjs
+@@ -0,0 +1,18 @@
++import assert from 'node:assert/strict';
++import { readFileSync, readdirSync } from 'node:fs';
++import { renderStaff } from '../src/lib/staff.js';
++const entries=readdirSync('src/content/staff').map(file=>({slug:file.replace('.json',''),data:JSON.parse(readFileSync('src/content/staff/'+file))}));
++assert.equal(entries.length,9);
++const rendered=renderStaff(entries);
++assert.equal((rendered.cards.match(/class="staff-card"/g)||[]).length,9);
++const sample={slug:'test',data:{name:'<Test>',role:'Moderator',image:'/assets/test.jpg',bio:'<p>Hello</p>',order:-1}};
++const result=renderStaff([...entries,sample,{slug:'hidden',data:{draft:true}}]);
++assert.ok(result.roster.includes('&lt;Test&gt;'));
++assert.ok(!result.cards.includes('id="hidden"'));
++assert.ok(!result.cards.slice(0,result.cards.indexOf('id="mr_simba"')).includes('<summary>Time on the team</summary>'));
++assert.throws(()=>renderStaff([{slug:'bad',data:{name:'Missing fields'}}]));
++const built=readFileSync('dist/staffoverview/index.html','utf8');
++for(const {slug,data} of entries) { assert.ok(built.includes('id="'+slug+'"'));assert.ok(built.includes(data.bio)); }
++assert.ok(!built.includes('<!--staff-'));
++assert.ok(!readFileSync('dist/runecrafting-hub/tools/hub_encyclopedia.html','utf8').includes('same Airtable source'));
++console.log('Staff migration, rendering, drafts, ordering, optional history, and built output passed.');

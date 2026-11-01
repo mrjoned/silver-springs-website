@@ -1,0 +1,128 @@
+diff --git a/.pages.yml b/.pages.yml
+index 2e0d52f..29b3434 100644
+--- a/.pages.yml
++++ b/.pages.yml
+@@ -80,8 +80,11 @@ content:
+         label: Miscellaneous
+   - name: excerpt
+     label: Summary
+-    type: text
+-    description: Optional short summary for announcement cards. Leave blank to use the opening text.
++    type: rich-text
++    options:
++      format: html
++      switcher: true
++    description: Optional formatted summary for announcement cards. Leave blank to use the opening text.
+   - name: body
+     label: Announcement
+     type: rich-text
+diff --git a/src/components/LatestNews.astro b/src/components/LatestNews.astro
+index e0094df..13c73b3 100644
+--- a/src/components/LatestNews.astro
++++ b/src/components/LatestNews.astro
+@@ -10,10 +10,14 @@ import { posts } from '../lib/posts.js';
+     {posts.slice(0, 2).map((post) => <article>
+       <time datetime={post.dateISO}>{post.dateLabel.toUpperCase()}</time>
+       <h3><a href={post.path}>{post.title}</a></h3>
+-      <p>{post.excerpt}</p>
++      <div class="announcement-summary" set:html={post.excerptHtml} />
+       <a class="textlink" href={post.path}>Read the announcement →</a>
+     </article>)}
+     <article><div class="eyebrow">Guides & player tools</div><h3>Your next project starts here.</h3><p>Our Custom Content Overview and Runecrafting Hub bring the guides and planning tools together.</p><a class="textlink" href="/content-overview/">Explore the guides →</a></article>
+   </div>
+   <div class="discordnote"><span>Updates reach Discord first. Website announcements follow when available.</span><a href="https://discord.gg/r22U3prgPE">Keep up with the community on Discord ↗</a></div>
+ </section>
++
++<style is:global>
++.announcement-summary p{margin:0 0 .65em}.announcement-summary > :last-child{margin-bottom:0}.announcement-summary ul,.announcement-summary ol{padding-left:1.4em}.announcement-summary a{text-decoration:underline}
++</style>
+diff --git a/src/lib/publishing.js b/src/lib/publishing.js
+index fb9bfe5..75d75e4 100644
+--- a/src/lib/publishing.js
++++ b/src/lib/publishing.js
+@@ -1,6 +1,6 @@
+ export function plainText(html = '') {
+   const named = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ' };
+-  return html.replace(/<[^>]*>/g, ' ')
++  return html.replace(/<\/?(?:p|div|br|li|ul|ol|h[1-6]|blockquote|hr)\b[^>]*>/gi, ' ').replace(/<[^>]*>/g, '')
+     .replace(/&(#x[\da-f]+|#\d+|amp|lt|gt|quot|apos|nbsp);/gi, (entity, key) => {
+       if (key[0] !== '#') return named[key.toLowerCase()] || entity;
+       const value = key[1].toLowerCase() === 'x' ? parseInt(key.slice(2), 16) : Number(key.slice(1));
+@@ -18,18 +18,26 @@ export function makePosts(entries) {
+     const date = new Date(published);
+     const options = { timeZone: 'America/Chicago' };
+     const text = plainText(data.body);
++    const title = plainText(data.title);
++    const summary = data.excerpt?.trim() || '';
++    const excerpt = summary ? plainText(summary) : (text.length > 240 ? text.slice(0, 237).trimEnd() + '…' : text);
++    // Summary HTML is editor-authored content, rendered with the same trust model as the announcement body.
++    const escape = value => value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
++    const excerptHtml = /<[a-z][^>]*>/i.test(summary) ? summary : '<p>' + escape(excerpt) + '</p>';
+     return {
+       ...data,
++      title,
++      excerptHtml,
+       id: data.id || slug,
+       slug,
+       published,
+       topics: Array.isArray(data.topics) ? data.topics : [],
+-      excerpt: data.excerpt?.trim() || (text.length > 240 ? text.slice(0, 237).trimEnd() + '…' : text),
++      excerpt,
+       path: `/changelog-and-faq/${slug}/`,
+       year: new Intl.DateTimeFormat('en-US', { ...options, year: 'numeric' }).format(date),
+       dateISO: new Intl.DateTimeFormat('en-CA', { ...options, year: 'numeric', month: '2-digit', day: '2-digit' }).format(date),
+       dateLabel: new Intl.DateTimeFormat('en-US', { ...options, month: 'long', day: 'numeric', year: 'numeric' }).format(date),
+-      search: `${data.title} ${text}`
++      search: `${title} ${excerpt} ${text}`
+     };
+   }).sort((a, b) => b.published - a.published || a.slug.localeCompare(b.slug));
+ }
+diff --git a/src/pages/changelog-and-faq/index.astro b/src/pages/changelog-and-faq/index.astro
+index b207a07..a3a4f0a 100644
+--- a/src/pages/changelog-and-faq/index.astro
++++ b/src/pages/changelog-and-faq/index.astro
+@@ -16,7 +16,7 @@ const archiveJSON = JSON.stringify(searchIndex).replace(/</g, '\\u003c');
+     </div></section>
+     <section class="wrap news-highlights" id="news-highlights">
+       {latest ? <article class="featured-post"><div class="eyebrow">Latest announcement</div><div class="featured-date"><time datetime={latest.dateISO}>{latest.dateLabel}</time></div>
+-        <h2><a href={latest.path}>{latest.title}</a></h2><p>{latest.excerpt}</p><PostTags topics={latest.topics} /><a class="textlink" href={latest.path}>Read the announcement →</a>
++        <h2><a href={latest.path}>{latest.title}</a></h2><div class="announcement-summary" set:html={latest.excerptHtml} /><PostTags topics={latest.topics} /><a class="textlink" href={latest.path}>Read the announcement →</a>
+       </article> : <article class="featured-post"><h2>More stories to come.</h2><p>Check Discord for the latest from Silver Springs.</p></article>}
+       <aside class="news-connect"><div class="eyebrow">Stay in the loop</div><h3>Discord gets it first.</h3><p>We share updates on Discord first, then bring them to the website when available.</p><a class="textlink" href="https://discord.gg/r22U3prgPE">Join the community ↗</a><div class="news-shortcuts"><a href="/calendar/">Check the event calendar →</a><a href="/content-overview/">Explore the gameplay guides →</a></div></aside>
+     </section>
+@@ -32,7 +32,7 @@ const archiveJSON = JSON.stringify(searchIndex).replace(/</g, '\\u003c');
+       <div id="news-posts">
+         {posts.map((post) => <article class="archive-card" data-post={post.id}>
+           <div class="archive-date"><time datetime={post.dateISO}>{post.dateLabel}</time></div>
+-          <div class="archive-card-body"><PostTags topics={post.topics} /><h3><a href={post.path}>{post.title}</a></h3><p>{post.excerpt}</p><a class="textlink" href={post.path}>Read the full post →</a></div>
++          <div class="archive-card-body"><PostTags topics={post.topics} /><h3><a href={post.path}>{post.title}</a></h3><div class="announcement-summary" set:html={post.excerptHtml} /><a class="textlink" href={post.path}>Read the full post →</a></div>
+         </article>)}
+       </div>
+       <div id="news-empty" hidden><h3>No posts found.</h3><p>Try another topic, year, or search term.</p></div>
+@@ -42,3 +42,7 @@ const archiveJSON = JSON.stringify(searchIndex).replace(/</g, '\\u003c');
+     <script is:inline type="application/json" id="news-data" set:html={archiveJSON}></script>
+   </main>
+ </SiteLayout>
++
++<style is:global>
++.announcement-summary p{margin:0 0 .65em}.announcement-summary > :last-child{margin-bottom:0}.announcement-summary ul,.announcement-summary ol{padding-left:1.4em}.announcement-summary a{text-decoration:underline}
++</style>
+diff --git a/tests/publishing.mjs b/tests/publishing.mjs
+index 9fbb697..8545502 100644
+--- a/tests/publishing.mjs
++++ b/tests/publishing.mjs
+@@ -33,3 +33,14 @@ assert.equal(photos[2].year, 'more');
+ assert.equal(photos[0].source, photos[0].src);
+ assert.throws(() => makePhotos([photo('missing-description', { alt: '' })]), /description/);
+ console.log('Publishing checks passed: draft exclusion, newest-post order, Chicago dates, stable URLs, automatic summaries, new-photo ordering, and year filters.');
++
++const rich=makePosts([post('encoded-title','2026-10-20',{title:'Build &amp; Updates',excerpt:'<p>Meet <strong>friends</strong> &amp; <em>explore</em>.</p>'})])[0];
++assert.equal(rich.title,'Build & Updates');
++assert.equal(rich.excerpt,'Meet friends & explore.');
++assert.match(rich.excerptHtml,/<strong>friends<\/strong>/);
++assert.equal(rich.path,'/changelog-and-faq/encoded-title/');
++assert(!rich.search.includes('&amp;'));
++const plain=makePosts([post('plain-summary','2026-10-20',{excerpt:'A & B < 3'})])[0];
++assert.equal(plain.excerptHtml,'<p>A &amp; B &lt; 3</p>');
++assert.equal(posts[0].excerptHtml,'<p>Hello Silver Springs &amp; friends.</p>');
++console.log('Announcement summaries preserve rich text, metadata stays plain, and encoded titles decode without URL changes.');

@@ -1,0 +1,64 @@
+diff --git a/.pages.yml b/.pages.yml
+index fb123dd..b1cd27f 100644
+--- a/.pages.yml
++++ b/.pages.yml
+@@ -227,9 +227,9 @@ content:
+       required: true
+       pattern: '^[a-z][a-z0-9-]*$'
+     - name: label
+-      label: Effect label
++      label: Effect label (optional)
+       type: string
+-      required: true
++      description: Leave blank to show only the values by level in the tooltip.
+     - name: levels
+       label: Values by level
+       type: object
+diff --git a/public/assets/description-format.js b/public/assets/description-format.js
+index f92741d..11463cd 100644
+--- a/public/assets/description-format.js
++++ b/public/assets/description-format.js
+@@ -91,7 +91,7 @@
+           let detail='';
+           if(pending.type==='effect'){
+             const effect=(entry.effects||[]).find(e=>e.key===pending.key);
+-            if(effect)detail=effect.label+'\n'+[...(effect.levels||[])].sort((a,b)=>a.level-b.level).map(r=>'Level '+roman(r.level)+': '+r.value).join('\n');
++            if(effect)detail=(effect.label?.trim()?effect.label.trim()+'\n':'')+[...(effect.levels||[])].sort((a,b)=>a.level-b.level).map(r=>'Level '+roman(r.level)+': '+r.value).join('\n');
+           } else {
+             const term=(glossary||[]).find(t=>!t.draft&&t.key===pending.key);
+             if(term)detail=(term.name?.trim()?term.name.trim()+'\n':'')+term.description;
+diff --git a/src/lib/game-catalogs.js b/src/lib/game-catalogs.js
+index 705b5ab..8db36e2 100644
+--- a/src/lib/game-catalogs.js
++++ b/src/lib/game-catalogs.js
+@@ -68,7 +68,8 @@ export function makeGameCatalogs(enchantmentRows,valorRows,glossaryRows=[]) {
+     const keys=new Set();
+     for(const effect of e.effects){
+       assert(effect && /^[a-z][a-z0-9-]*$/.test(effect.key) && !keys.has(effect.key),e.name+' needs unique effect keys');keys.add(effect.key);
+-      assert(text(effect.label)&&effect.label.trim(),e.name+' effect needs a label');
++      effect.label ??= '';
++      assert(text(effect.label),e.name+' effect has an invalid label');
+       assert(Array.isArray(effect.levels)&&effect.levels.length>0,e.name+' effect needs level values');
+       const levels=new Set();
+       for(const row of effect.levels){
+diff --git a/tests/description-format.mjs b/tests/description-format.mjs
+index ef1e3fa..2410771 100644
+--- a/tests/description-format.mjs
++++ b/tests/description-format.mjs
+@@ -88,3 +88,16 @@ for(const name of [undefined,'','   ']){
+  assert(!output.includes('undefined'));
+ }
+ console.log('Glossary names are optional; empty names render explanation-only tooltips.');
++
++for(const label of [undefined,'','   ']){
++ const entry=structuredClone(one);
++ entry.effects[0].label=label;
++ const catalog=makeGameCatalogs([entry],[]);
++ const output=format('[effect:speed]speed[/effect]',enchantmentData(catalog).enchantments[0]);
++ assert.match(output,/data-explanation="Level I: 40%\nLevel II: 80%"/);
++ assert(!output.includes('undefined'));
++}
++assert.match(tip,/data-explanation="Speed bonus\nLevel I: 40%\nLevel II: 80%"/);
++const invalidLabel=structuredClone(one);invalidLabel.effects[0].label=123;
++assert.throws(()=>makeGameCatalogs([invalidLabel],[]),/invalid label/);
++console.log('Effect labels are optional; unlabeled tooltips start directly with level values.');

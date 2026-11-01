@@ -670,3 +670,63 @@ content:
     type: rich-text
     options:
       format: html
+
+- name: streamers
+  label: Community Streamers
+  type: collection
+  path: src/content/streamers
+  format: json
+  filename:
+    template: '{primary}.json'
+    field: create
+  subfolders: false
+  operations:
+    rename: false
+  view:
+    primary: name
+    fields: [name, platform, channel, order, draft]
+    default:
+      sort: order
+      order: asc
+  fields:
+  - name: name
+    label: Display name
+    type: string
+    required: true
+  - name: draft
+    label: Draft (hide from website)
+    type: boolean
+    default: true
+  - name: order
+    label: Display order (lower first)
+    type: number
+    default: 0
+  - name: platform
+    label: Platform
+    type: select
+    required: true
+    options:
+      values:
+      - name: twitch
+        label: Twitch
+  - name: channel
+    label: Channel login or handle
+    type: string
+    required: true
+    description: Use the Twitch channel login without the URL.
+  - name: url
+    label: Channel URL (optional)
+    type: string
+  - name: image
+    label: Profile image
+    type: image
+    required: true
+  - name: imageAlt
+    label: Image description
+    type: string
+  - name: bio
+    label: Short bio
+    type: rich-text
+    required: true
+    options:
+      format: html
