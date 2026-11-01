@@ -10,11 +10,14 @@
       if (!response.ok) return;
       const payload = await response.json();
       const active = new Map((payload.streams || []).map(stream => [stream.user_login.toLowerCase(), stream]));
+      const grid = cards[0]?.parentElement;
+      const originalOrder = new Map(cards.map((card, index) => [card, index]));
       twitch.forEach(card => {
         const stream = active.get(card.dataset.channel.toLowerCase());
         const panel = card.querySelector('.streamer-live');
         const player = card.querySelector('.streamer-player');
         if (!panel || !player) return;
+        card.classList.toggle('is-live', Boolean(stream));
         if (!stream) {
           panel.hidden = true;
           player.replaceChildren();
@@ -24,6 +27,9 @@
         if (player.childElementCount) return;
         player.innerHTML = `<iframe loading="lazy" title="Live stream from ${stream.user_name.replace(/[<>&\"']/g, '')}" src="https://player.twitch.tv/?channel=${encodeURIComponent(stream.user_login)}&parent=www.silverspringssurvival.com&parent=silverspringssurvival.com&autoplay=false&muted=false" allowfullscreen></iframe><p>${stream.title.replace(/[<>&\"']/g, '')}</p>`;
       });
+      if (grid) {
+        [...cards].sort((a, b) => Number(b.classList.contains('is-live')) - Number(a.classList.contains('is-live')) || originalOrder.get(a) - originalOrder.get(b)).forEach(card => grid.append(card));
+      }
     } catch { /* Profile cards remain useful if the status check is unavailable. */ }
   };
   live();
