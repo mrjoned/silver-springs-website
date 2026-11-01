@@ -1,0 +1,82 @@
+diff --git a/.pages.yml b/.pages.yml
+index d8b0d6f..fb123dd 100644
+--- a/.pages.yml
++++ b/.pages.yml
+@@ -489,9 +489,9 @@ content:
+     required: true
+     pattern: '^[a-z][a-z0-9-]*$'
+   - name: name
+-    label: Display name
++    label: Display name (optional)
+     type: string
+-    required: true
++    description: Leave blank to show only the explanation in the tooltip.
+   - name: description
+     label: Explanation
+     type: text
+diff --git a/public/assets/description-format.js b/public/assets/description-format.js
+index 5c71c2c..f92741d 100644
+--- a/public/assets/description-format.js
++++ b/public/assets/description-format.js
+@@ -94,7 +94,7 @@
+             if(effect)detail=effect.label+'\n'+[...(effect.levels||[])].sort((a,b)=>a.level-b.level).map(r=>'Level '+roman(r.level)+': '+r.value).join('\n');
+           } else {
+             const term=(glossary||[]).find(t=>!t.draft&&t.key===pending.key);
+-            if(term)detail=term.name+'\n'+term.description;
++            if(term)detail=(term.name?.trim()?term.name.trim()+'\n':'')+term.description;
+           }
+           if(detail){out[pending.index]='<span class="sss-explanation" tabindex="0" role="button" aria-expanded="false" data-explanation="'+escape(detail)+'">';out.push('</span>');}
+           else out.push(token);
+diff --git a/src/lib/game-catalogs.js b/src/lib/game-catalogs.js
+index ede305e..705b5ab 100644
+--- a/src/lib/game-catalogs.js
++++ b/src/lib/game-catalogs.js
+@@ -36,12 +36,16 @@ export function loadGameCatalogs(base=root) {
+   return makeGameCatalogs(readEntries('enchantments',base),readEntries('valor-items',base),existsSync(new URL('src/content/glossary/',base))?readEntries('glossary',base):[]);
+ }
+ export function makeGameCatalogs(enchantmentRows,valorRows,glossaryRows=[]) {
+-  const glossary=publishedEntries(glossaryRows,'glossary');
++  const glossary=glossaryRows.filter(term=>{
++    assert(typeof term.draft==='boolean','glossary/'+term.id+' needs a Draft value');
++    return !term.draft;
++  }).map(term=>({...term,name:term.name??''}));
+   const termKeys=new Set();
+   for(const term of glossary){
+     assert(/^[a-z][a-z0-9-]*$/.test(term.key),'invalid glossary key');
+     assert(!termKeys.has(term.key),'duplicate glossary key '+term.key);termKeys.add(term.key);
+-    assert(term.description.trim(),term.name+' needs an explanation');
++    assert(text(term.name),'glossary/'+term.key+' has an invalid display name');
++    assert(text(term.description)&&term.description.trim(),term.key+' needs an explanation');
+   }
+   const enchantments=publishedEntries(enchantmentRows,'enchantments');
+   for(const e of enchantments) {
+diff --git a/tests/catalog-build.mjs b/tests/catalog-build.mjs
+index 6231b50..eacb2a9 100644
+--- a/tests/catalog-build.mjs
++++ b/tests/catalog-build.mjs
+@@ -6,7 +6,7 @@ const build=()=>{try{execFileSync(process.execPath,['node_modules/astro/bin/astr
+ const read=p=>readFileSync(p,'utf8');
+ const enchant={name:'Fixture',source:'Runecrafted',category:'Damage',description:'Fixture',draft:false,maxLevel:2,items:['Swords'],costRule:'per-level',rune1:'Aegis',rune2:'Aegis',rune3:'Chills',rune4:'Chills',rune5:'Void',incompatibleRunecrafted:[],incompatibleVanilla:[],runeTags:[],researchers:[]};
+ const fixtures=[
+- ['src/content/glossary/catalog-integration-term.json',{key:'catalog-integration-term',name:'Catalog integration term',description:'Published glossary explanation.',draft:false}],
++ ['src/content/glossary/catalog-integration-term.json',{key:'catalog-integration-term',description:'Published glossary explanation.',draft:false}],
+  ['src/content/glossary/catalog-integration-hidden.json',{key:'catalog-integration-hidden',name:'Hidden glossary term',draft:true}],
+  ['src/content/enchantments/catalog-integration-new.json',{...enchant,sourceRecordId:'',name:'Catalog integration enchantment',draft:false,description:'A temporary effect from the CMS catalog.'}],
+  ['src/content/enchantments/catalog-integration-draft.json',{name:'Hidden catalog integration enchantment',draft:true}],
+diff --git a/tests/description-format.mjs b/tests/description-format.mjs
+index 656b445..ef1e3fa 100644
+--- a/tests/description-format.mjs
++++ b/tests/description-format.mjs
+@@ -79,3 +79,12 @@ const invalid=structuredClone(one);invalid.effects[0].levels.push({level:2,value
+ assert.throws(()=>makeGameCatalogs([invalid],[]),/invalid or repeated levels/);
+ assert.throws(()=>makeGameCatalogs([one],[],[...glossary,...glossary]),/duplicate/);
+ console.log('Glossary and level effects passed: context, colors, keyboard markup, escaping, drafts, and validation.');
++
++for(const name of [undefined,'','   ']){
++ const term={key:'no-heading',name,description:'Explanation only.',draft:false};
++ const built=makeGameCatalogs([],[],[term]);
++ const output=format('[term:no-heading]word[/term]',{},built.glossary);
++ assert.match(output,/data-explanation="Explanation only\."/);
++ assert(!output.includes('undefined'));
++}
++console.log('Glossary names are optional; empty names render explanation-only tooltips.');

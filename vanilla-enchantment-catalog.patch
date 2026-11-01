@@ -1,0 +1,1025 @@
+diff --git a/.pages.yml b/.pages.yml
+index 70215aa..9c0f616 100644
+--- a/.pages.yml
++++ b/.pages.yml
+@@ -190,11 +190,12 @@ content:
+       values:
+       - Runecrafted
+       - Mythical
++      - Enhanced Vanilla
+       - Vanilla
+       - Curse
+       - Projects
+     required: true
+-    description: Source controls rune costs. Runecrafted and Projects use recipes; Vanilla, Curse, and Mythical
++    description: Source controls rune costs. Runecrafted and Projects use recipes; Vanilla, Enhanced Vanilla, Curse, and Mythical
+       have no rune cost.
+   - name: category
+     label: Category
+@@ -213,7 +214,7 @@ content:
+         label: One recipe for a fixed upgrade
+       - name: free
+         label: No rune cost
+-    description: Use one recipe for fixed Vanilla upgrades such as Unbreaking IV. Vanilla, Curse, and Mythical must
++    description: Use one recipe for fixed Vanilla upgrades such as Unbreaking IV. Vanilla, Enhanced Vanilla, Curse, and Mythical must
+       use No rune cost.
+   - name: description
+     label: Effect / description
+diff --git a/VANILLA-CATALOG-NOTES.md b/VANILLA-CATALOG-NOTES.md
+new file mode 100644
+index 0000000..d6e2afd
+--- /dev/null
++++ b/VANILLA-CATALOG-NOTES.md
+@@ -0,0 +1,12 @@
++# Vanilla catalog
++Baseline: Java Edition 1.21.11 (the server’s Mounts of Mayhem content), including Lunge.
++Levels, supported equipment and vanilla exclusivity were checked against the extracted game data:
++https://github.com/misode/mcmeta/tree/1.21.11-data-json/data/minecraft/enchantment
++https://www.minecraft.net/en-us/article/minecraft-java-edition-1-21-11
++
++Existing Vanilla records become Enhanced Vanilla without changing their IDs, names, descriptions or server rules.
++Existing curses remain Curse. Rune-crafted upgrades retain Runecrafted and their rune recipes.
++No duplicate base records are added for the nine enhanced enchantments or the two existing curses.
++Channeling deliberately permits Riptide to preserve the server’s documented enhancement.
++New entries are normal Pages CMS enchantment records and can be edited there.
++New vanilla equipment lists cover the Hub's existing equipment types; this does not add new equipment categories.
+diff --git a/src/catalog-templates/hub_build_planner.html b/src/catalog-templates/hub_build_planner.html
+index 7078387..525635b 100644
+--- a/src/catalog-templates/hub_build_planner.html
++++ b/src/catalog-templates/hub_build_planner.html
+@@ -273,7 +273,7 @@ main,.wrap{max-width:none}main{padding:22px 20px 40px}body:has(>.wrap){padding:2
+   };
+   // Display direct incompatibility rules even when the other enchantment is
+   // vanilla and not included as a selectable entry in the Airtable catalog.
+-  const vanillaNames = new Set(['silk touch','fortune','efficiency','unbreaking','mending','infinity','power','punch','flame','looting','sharpness','smite','bane of arthropods','fire aspect','knockback','sweeping edge','protection','fire protection','blast protection','projectile protection','feather falling','respiration','aqua affinity','depth strider','frost walker','soul speed','swift sneak','thorns','binding curse','vanishing curse','curse of binding','curse of vanishing','riptide','loyalty','channeling','impaling','multishot','piercing','quick charge','luck of the sea','lure','density','breach','wind burst']);
++  const vanillaNames = new Set(['silk touch','fortune','efficiency','unbreaking','mending','infinity','power','punch','flame','looting','sharpness','smite','bane of arthropods','fire aspect','knockback','sweeping edge','protection','fire protection','blast protection','projectile protection','feather falling','respiration','aqua affinity','depth strider','frost walker','soul speed','swift sneak','thorns','binding curse','vanishing curse','curse of binding','curse of vanishing','riptide','loyalty','channeling','impaling','multishot','piercing','quick charge','luck of the sea','lure','density','breach','wind burst','lunge']);
+   const vanillaBase = name => name.toLowerCase().replace(/\s+[ivxlcdm]+$/i,'').trim();
+   const incompatibleNamesFor = e => {
+     const resolved = DATA.enchantments.filter(other => other.name !== e.name &&
+diff --git a/src/catalog-templates/hub_encyclopedia.html b/src/catalog-templates/hub_encyclopedia.html
+index ca88528..70392b4 100644
+--- a/src/catalog-templates/hub_encyclopedia.html
++++ b/src/catalog-templates/hub_encyclopedia.html
+@@ -30,7 +30,7 @@ main,.wrap{max-width:none}main{padding:22px 20px 40px}body:has(>.wrap){padding:2
+ @media(max-width:600px){main{padding:18px 12px 30px}body:has(>.wrap){padding:18px 12px 30px}}
+ @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+ </style><script src="/assets/hub-data.js"></script><script src="/vendor/marked-17.0.5.umd.js"></script><script src="/assets/description-format.js"></script><link rel="stylesheet" href="/assets/description-format.css"></head><body><main class="wrap"><header><div class="pink" style="font-weight:700;letter-spacing:.1em;font-size:.8rem">RUNECRAFTING REFERENCE</div><h1>Lexicon</h1><p class="intro">Explore enchantments, discover what they do, filter by the runes you own, see where they belong, and check recipes and incompatibilities before planning your next build.</p></header><section class="controls" aria-label="Enchantment filters"><div class="control"><label for="search">Search enchantments</label><input id="search" type="search" placeholder="Search names or descriptions…" autocomplete="off"></div><div class="control"><label for="equipment">Equipment</label><select id="equipment"><option value="">All equipment</option></select></div><div class="control"><label for="source">Source</label><select id="source"><option value="">All sources</option></select></div><div class="control"><label for="category">Category</label><select id="category"><option value="">All categories</option></select></div><div class="control"><label for="rune">Rune used</label><select id="rune"><option value="">All runes</option></select></div></section><div class="meta"><div id="count" class="count" aria-live="polite"></div><button id="clear" class="secondary" type="button">Clear filters</button></div><section id="cards" class="grid" aria-label="Enchantment results"></section><p id="status" class="status" role="status">Loading bundled reference data…</p><footer>Enchantment information is provided by the same Airtable source used for the Runecrafting Build Planner. Changes to data may take a few minutes to appear.</footer></main><script>
+-(()=>{'use strict';let DATA=__SSS_ENCHANTMENT_DATA__;const $=id=>document.getElementById(id);const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const desc=(value,e)=>window.SSSDescriptions.format(value,e,DATA.glossary);const roman=/\s+([IVXLCDM]+)$/i;const base=s=>String(s||'').replace(roman,'').trim();const vanilla=new Set('silk touch|fortune|efficiency|unbreaking|mending|infinity|power|punch|flame|looting|sharpness|smite|bane of arthropods|fire aspect|knockback|sweeping edge|protection|fire protection|blast protection|projectile protection|feather falling|respiration|aqua affinity|depth strider|frost walker|soul speed|swift sneak|thorns|binding curse|vanishing curse|curse of binding|curse of vanishing|riptide|loyalty|channeling|impaling|multishot|piercing|quick charge|luck of the sea|lure|density|breach|wind burst'.split('|'));const listNames=e=>Array.isArray(e.incompatible)?e.incompatible:[];const grouped=names=>{const map=new Map();names.forEach(n=>{if(!n)return;const b=base(n),key=b.toLowerCase();if(!map.has(key))map.set(key,{b,plain:false,lv:[]});const v=map.get(key),match=String(n).match(roman);if(match)v.lv.push(match[1]);else v.plain=true});return [...map.values()].map(v=>v.plain&&v.lv.length?`${v.b} (including ${[...new Set(v.lv)].join(', ')})`:v.plain?v.b:v.lv.length?[...new Set(v.lv)].map(l=>v.b+' '+l).join(', '):v.b)};function conflicts(e){const names=[...listNames(e)];for(const other of DATA.enchantments){if(other.name===e.name||!other.items?.some(i=>e.items?.includes(i)))continue;const otherNames=listNames(other);const groupRule=(a,b)=>a.includes('Other Avatars')&&b.startsWith('Avatar of ')||a.includes('Other Impetuses')&&b.startsWith('Impetus of ')||a.includes('Other Paradigms')&&b.startsWith('Paradigm of ');if(otherNames.includes(e.name)||groupRule(otherNames,e.name)||groupRule(names,other.name)){names.push(other.name)}}return [...new Set(names.filter(n=>!/^Other (Avatars|Impetuses|Paradigms)$/.test(n)))].sort((a,b)=>a.localeCompare(b))}function chips(names){return `<div class="chips">${names.map(n=>`<span class="chip">${esc(n)}</span>`).join('')}</div>`}function card(e){const incompatible=conflicts(e),v=grouped(incompatible.filter(n=>vanilla.has(base(n).toLowerCase()))),r=grouped(incompatible.filter(n=>!vanilla.has(base(n).toLowerCase())));const runes=e.costMode==='free'||!e.runes?.length?'<p class="note">No rune cost</p>':`<div class="runes">${e.runes.map((n,i)=>`<span class="rune">${i+1}. ${esc(n)}</span>`).join('')}</div><p class="note">Rune sequence per level (when applicable).</p>`;return `<article class="card"><div class="top"><h2>${esc(e.name)}</h2><span class="source">${esc(e.source||'Unknown')}</span></div><div class="badges"><span class="tag">${esc(e.category||'Uncategorized')}</span>${e.maxLevel?`<span class="tag">Max level ${esc(e.maxLevel)}</span>`:''}</div><div class="desc expanded sss-richtext">${desc(e.description,e)}</div><details class="detail"><summary>Equipment, recipe &amp; incompatibilities</summary><div class="sub">Compatible equipment</div>${chips(e.items||[])}<div class="sub">Rune recipe</div>${runes}<div class="sub">Incompatibilities</div>${r.length?'<div class="note">Runecrafted</div>'+chips(r):''}${v.length?'<div class="note" style="margin-top:8px">Vanilla</div>'+chips(v):''}${!r.length&&!v.length?'<p class="note">No listed incompatibilities.</p>':''}</details></article>`}function options(id,values){const sel=$(id),old=sel.value;sel.innerHTML='<option value="">'+({equipment:'All equipment',source:'All sources',category:'All categories',rune:'All runes'}[id])+'</option>'+values.sort((a,b)=>a.localeCompare(b)).map(v=>`<option value="${esc(v)}">${esc(v)}</option>`).join('');sel.value=values.includes(old)?old:'';syncCustom(id)}const filterIds=['equipment','source','category','rune'];
++(()=>{'use strict';let DATA=__SSS_ENCHANTMENT_DATA__;const $=id=>document.getElementById(id);const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const desc=(value,e)=>window.SSSDescriptions.format(value,e,DATA.glossary);const roman=/\s+([IVXLCDM]+)$/i;const base=s=>String(s||'').replace(roman,'').trim();const vanilla=new Set('silk touch|fortune|efficiency|unbreaking|mending|infinity|power|punch|flame|looting|sharpness|smite|bane of arthropods|fire aspect|knockback|sweeping edge|protection|fire protection|blast protection|projectile protection|feather falling|respiration|aqua affinity|depth strider|frost walker|soul speed|swift sneak|thorns|binding curse|vanishing curse|curse of binding|curse of vanishing|riptide|loyalty|channeling|impaling|multishot|piercing|quick charge|luck of the sea|lure|density|breach|wind burst|lunge'.split('|'));const listNames=e=>Array.isArray(e.incompatible)?e.incompatible:[];const grouped=names=>{const map=new Map();names.forEach(n=>{if(!n)return;const b=base(n),key=b.toLowerCase();if(!map.has(key))map.set(key,{b,plain:false,lv:[]});const v=map.get(key),match=String(n).match(roman);if(match)v.lv.push(match[1]);else v.plain=true});return [...map.values()].map(v=>v.plain&&v.lv.length?`${v.b} (including ${[...new Set(v.lv)].join(', ')})`:v.plain?v.b:v.lv.length?[...new Set(v.lv)].map(l=>v.b+' '+l).join(', '):v.b)};function conflicts(e){const names=[...listNames(e)];for(const other of DATA.enchantments){if(other.name===e.name||!other.items?.some(i=>e.items?.includes(i)))continue;const otherNames=listNames(other);const groupRule=(a,b)=>a.includes('Other Avatars')&&b.startsWith('Avatar of ')||a.includes('Other Impetuses')&&b.startsWith('Impetus of ')||a.includes('Other Paradigms')&&b.startsWith('Paradigm of ');if(otherNames.includes(e.name)||groupRule(otherNames,e.name)||groupRule(names,other.name)){names.push(other.name)}}return [...new Set(names.filter(n=>!/^Other (Avatars|Impetuses|Paradigms)$/.test(n)))].sort((a,b)=>a.localeCompare(b))}function chips(names){return `<div class="chips">${names.map(n=>`<span class="chip">${esc(n)}</span>`).join('')}</div>`}function card(e){const incompatible=conflicts(e),v=grouped(incompatible.filter(n=>vanilla.has(base(n).toLowerCase()))),r=grouped(incompatible.filter(n=>!vanilla.has(base(n).toLowerCase())));const runes=e.costMode==='free'||!e.runes?.length?'<p class="note">No rune cost</p>':`<div class="runes">${e.runes.map((n,i)=>`<span class="rune">${i+1}. ${esc(n)}</span>`).join('')}</div><p class="note">Rune sequence per level (when applicable).</p>`;return `<article class="card"><div class="top"><h2>${esc(e.name)}</h2><span class="source">${esc(e.source||'Unknown')}</span></div><div class="badges"><span class="tag">${esc(e.category||'Uncategorized')}</span>${e.maxLevel?`<span class="tag">Max level ${esc(e.maxLevel)}</span>`:''}</div><div class="desc expanded sss-richtext">${desc(e.description,e)}</div><details class="detail"><summary>Equipment, recipe &amp; incompatibilities</summary><div class="sub">Compatible equipment</div>${chips(e.items||[])}<div class="sub">Rune recipe</div>${runes}<div class="sub">Incompatibilities</div>${r.length?'<div class="note">Runecrafted</div>'+chips(r):''}${v.length?'<div class="note" style="margin-top:8px">Vanilla</div>'+chips(v):''}${!r.length&&!v.length?'<p class="note">No listed incompatibilities.</p>':''}</details></article>`}function options(id,values){const sel=$(id),old=sel.value;sel.innerHTML='<option value="">'+({equipment:'All equipment',source:'All sources',category:'All categories',rune:'All runes'}[id])+'</option>'+values.sort((a,b)=>a.localeCompare(b)).map(v=>`<option value="${esc(v)}">${esc(v)}</option>`).join('');sel.value=values.includes(old)?old:'';syncCustom(id)}const filterIds=['equipment','source','category','rune'];
+ function closeMenus(except){
+   document.querySelectorAll('.custom-menu').forEach(menu=>{
+     if(menu.id!==except){menu.hidden=true;menu.previousElementSibling.setAttribute('aria-expanded','false')}
+diff --git a/src/content/enchantments/rec4CyfBeytoBYst7.json b/src/content/enchantments/rec4CyfBeytoBYst7.json
+index c1d74d8..7d8c833 100644
+--- a/src/content/enchantments/rec4CyfBeytoBYst7.json
++++ b/src/content/enchantments/rec4CyfBeytoBYst7.json
+@@ -1,7 +1,7 @@
+ {
+   "name": "Multishot",
+   "draft": false,
+-  "source": "Vanilla",
++  "source": "Enhanced Vanilla",
+   "category": "Uncategorized",
+   "costRule": "free",
+   "description": "<p>[term:arcanumbonus][purple]Arcanum Bonuses[/purple][/term]:</p><p>Projectiles do not apply invulnerability frames, allowing all multishot projectiles to hit the same target.</p>",
+diff --git a/src/content/enchantments/rec9DHSoycG47ppB7.json b/src/content/enchantments/rec9DHSoycG47ppB7.json
+index cc720bc..db81a7c 100644
+--- a/src/content/enchantments/rec9DHSoycG47ppB7.json
++++ b/src/content/enchantments/rec9DHSoycG47ppB7.json
+@@ -1,7 +1,7 @@
+ {
+   "name": "Sweeping Edge",
+   "draft": false,
+-  "source": "Vanilla",
++  "source": "Enhanced Vanilla",
+   "category": "Sweeping",
+   "costRule": "free",
+   "description": "<p>[term:arcanumbonus][purple]Arcanum Bonuses[/purple][/term]:</p><p>Performs a sweep attack at the target area even on missed attacks.</p>",
+diff --git a/src/content/enchantments/recNj0stBYOrIASMG.json b/src/content/enchantments/recNj0stBYOrIASMG.json
+index bc5fada..4304556 100644
+--- a/src/content/enchantments/recNj0stBYOrIASMG.json
++++ b/src/content/enchantments/recNj0stBYOrIASMG.json
+@@ -1,7 +1,7 @@
+ {
+   "name": "Frost Walker",
+   "draft": false,
+-  "source": "Vanilla",
++  "source": "Enhanced Vanilla",
+   "category": "Travel",
+   "costRule": "free",
+   "description": "<p>[term:arcanumbonus][purple]Arcanum Bonuses[/purple][/term]:</p><ul><li><p>Grants +[effect:speed][dark-gray]25-50% speed[/dark-gray][/effect] while walking on snow or ice blocks.</p></li><li><p>Permanent freezes nearby powder snow into solid snow.</p></li></ul><p></p>",
+diff --git a/src/content/enchantments/recOI37Xb8hop2vHJ.json b/src/content/enchantments/recOI37Xb8hop2vHJ.json
+index 1d6449d..dff5a9b 100644
+--- a/src/content/enchantments/recOI37Xb8hop2vHJ.json
++++ b/src/content/enchantments/recOI37Xb8hop2vHJ.json
+@@ -1,7 +1,7 @@
+ {
+   "name": "Riptide",
+   "draft": false,
+-  "source": "Vanilla",
++  "source": "Enhanced Vanilla",
+   "category": "Trajectory",
+   "costRule": "free",
+   "description": "<p>[term:arcanumbonus][purple]Arcanum Bonuses[/purple][/term]:</p><ul><li><p>Propels you faster while in water.</p></li><li><p>Grants brief invulnerability upon colliding during a riptide.</p></li><li><p>No longer exclusive with Channeling, which activates upon your first riptide collision during a thunderstorm.</p></li></ul><p></p>",
+diff --git a/src/content/enchantments/recVl6o6la83vvH41.json b/src/content/enchantments/recVl6o6la83vvH41.json
+index 60e2150..dcf8f48 100644
+--- a/src/content/enchantments/recVl6o6la83vvH41.json
++++ b/src/content/enchantments/recVl6o6la83vvH41.json
+@@ -1,7 +1,7 @@
+ {
+   "name": "Impaling",
+   "draft": false,
+-  "source": "Vanilla",
++  "source": "Enhanced Vanilla",
+   "category": "Damage",
+   "costRule": "free",
+   "description": "<p>[term:arcanumbonus][purple]Arcanum Bonuses[/purple][/term]:</p><p>Additionally applies to Drowned, and to any target in water or rain, not just aquatic mobs.</p>",
+diff --git a/src/content/enchantments/recXEklkiybnriKCQ.json b/src/content/enchantments/recXEklkiybnriKCQ.json
+index 6b1c670..ef1c590 100644
+--- a/src/content/enchantments/recXEklkiybnriKCQ.json
++++ b/src/content/enchantments/recXEklkiybnriKCQ.json
+@@ -1,7 +1,7 @@
+ {
+   "name": "Loyalty",
+   "draft": false,
+-  "source": "Vanilla",
++  "source": "Enhanced Vanilla",
+   "category": "Uncategorized",
+   "costRule": "free",
+   "description": "<p>[term:arcanumbonus][purple]Arcanum Bonuses[/purple][/term]:</p><p>Tridents now returns faster, with a max flight time of [effect:sec][dark-gray]2-1.6 seconds[/dark-gray][/effect].</p>",
+diff --git a/src/content/enchantments/receZ7ascgjloApZ6.json b/src/content/enchantments/receZ7ascgjloApZ6.json
+index 51bf349..65d79f6 100644
+--- a/src/content/enchantments/receZ7ascgjloApZ6.json
++++ b/src/content/enchantments/receZ7ascgjloApZ6.json
+@@ -1,7 +1,7 @@
+ {
+   "name": "Bane of Arthropods",
+   "draft": false,
+-  "source": "Vanilla",
++  "source": "Enhanced Vanilla",
+   "category": "Damage",
+   "costRule": "free",
+   "description": "<p>[term:arcanumbonus][purple]Arcanum Bonuses[/purple][/term]:</p><ul><li><p>Additionally applies to Shulkers.</p></li><li><p>Always slows for its full duration of [effect:bane][dark-gray]1.5-3.5 seconds[/dark-gray][/effect].</p></li></ul><p></p>",
+diff --git a/src/content/enchantments/reckcGnWwhEOGDWMT.json b/src/content/enchantments/reckcGnWwhEOGDWMT.json
+index a553c4c..2768577 100644
+--- a/src/content/enchantments/reckcGnWwhEOGDWMT.json
++++ b/src/content/enchantments/reckcGnWwhEOGDWMT.json
+@@ -1,7 +1,7 @@
+ {
+   "name": "Thorns",
+   "draft": false,
+-  "source": "Vanilla",
++  "source": "Enhanced Vanilla",
+   "category": "Hazard",
+   "costRule": "free",
+   "description": "<p>[term:arcanumbonus][purple]Arcanum Bonuses[/purple][/term]:</p><p>Always activates and deals consistent damage, [effect:dmg][dark-gray]0.13-0.25❤️ damage[/dark-gray][/effect] per piece of armor with Thorns.</p>",
+diff --git a/src/content/enchantments/recuUFCXenozMM1Ar.json b/src/content/enchantments/recuUFCXenozMM1Ar.json
+index 746357c..4e50a71 100644
+--- a/src/content/enchantments/recuUFCXenozMM1Ar.json
++++ b/src/content/enchantments/recuUFCXenozMM1Ar.json
+@@ -1,7 +1,7 @@
+ {
+   "name": "Soul Speed",
+   "draft": false,
+-  "source": "Vanilla",
++  "source": "Enhanced Vanilla",
+   "category": "Traversal",
+   "costRule": "free",
+   "description": "<p>[term:arcanumbonus][purple]Arcanum Bonuses[/purple][/term]:</p><p>No longer consumes durability.</p>",
+diff --git a/src/content/enchantments/vanilla-aqua-affinity.json b/src/content/enchantments/vanilla-aqua-affinity.json
+new file mode 100644
+index 0000000..43ee55a
+--- /dev/null
++++ b/src/content/enchantments/vanilla-aqua-affinity.json
+@@ -0,0 +1,14 @@
++{
++  "name": "Aqua Affinity",
++  "draft": false,
++  "source": "Vanilla",
++  "category": "Utility",
++  "costRule": "free",
++  "description": "<p>Mine underwater without the usual underwater mining speed penalty.</p>",
++  "maxLevel": 1,
++  "items": [
++    "Helmets"
++  ],
++  "incompatibleRunecrafted": [],
++  "incompatibleVanilla": []
++}
+diff --git a/src/content/enchantments/vanilla-blast-protection.json b/src/content/enchantments/vanilla-blast-protection.json
+new file mode 100644
+index 0000000..a8431fd
+--- /dev/null
++++ b/src/content/enchantments/vanilla-blast-protection.json
+@@ -0,0 +1,21 @@
++{
++  "name": "Blast Protection",
++  "draft": false,
++  "source": "Vanilla",
++  "category": "Protection",
++  "costRule": "free",
++  "description": "<p>Reduces explosion damage and explosion knockback.</p>",
++  "maxLevel": 4,
++  "items": [
++    "Boots",
++    "Chestplates",
++    "Helmets",
++    "Leggings"
++  ],
++  "incompatibleRunecrafted": [],
++  "incompatibleVanilla": [
++    "Protection",
++    "Fire Protection",
++    "Projectile Protection"
++  ]
++}
+diff --git a/src/content/enchantments/vanilla-breach.json b/src/content/enchantments/vanilla-breach.json
+new file mode 100644
+index 0000000..ef7e9ce
+--- /dev/null
++++ b/src/content/enchantments/vanilla-breach.json
+@@ -0,0 +1,20 @@
++{
++  "name": "Breach",
++  "draft": false,
++  "source": "Vanilla",
++  "category": "Damage",
++  "costRule": "free",
++  "description": "<p>Reduces how much the target’s armor protects them from mace attacks.</p>",
++  "maxLevel": 4,
++  "items": [
++    "Maces"
++  ],
++  "incompatibleRunecrafted": [],
++  "incompatibleVanilla": [
++    "Sharpness",
++    "Smite",
++    "Bane of Arthropods",
++    "Impaling",
++    "Density"
++  ]
++}
+diff --git a/src/content/enchantments/vanilla-channeling.json b/src/content/enchantments/vanilla-channeling.json
+new file mode 100644
+index 0000000..8c370c2
+--- /dev/null
++++ b/src/content/enchantments/vanilla-channeling.json
+@@ -0,0 +1,14 @@
++{
++  "name": "Channeling",
++  "draft": false,
++  "source": "Vanilla",
++  "category": "Utility",
++  "costRule": "free",
++  "description": "<p>Calls down lightning when a thrown trident hits an exposed target during a thunderstorm. On this server it also works with Riptide, as described in the Riptide entry.</p>",
++  "maxLevel": 1,
++  "items": [
++    "Tridents"
++  ],
++  "incompatibleRunecrafted": [],
++  "incompatibleVanilla": []
++}
+diff --git a/src/content/enchantments/vanilla-density.json b/src/content/enchantments/vanilla-density.json
+new file mode 100644
+index 0000000..87ec21a
+--- /dev/null
++++ b/src/content/enchantments/vanilla-density.json
+@@ -0,0 +1,20 @@
++{
++  "name": "Density",
++  "draft": false,
++  "source": "Vanilla",
++  "category": "Damage",
++  "costRule": "free",
++  "description": "<p>Adds extra damage to mace smash attacks based on how far you fall.</p>",
++  "maxLevel": 5,
++  "items": [
++    "Maces"
++  ],
++  "incompatibleRunecrafted": [],
++  "incompatibleVanilla": [
++    "Sharpness",
++    "Smite",
++    "Bane of Arthropods",
++    "Impaling",
++    "Breach"
++  ]
++}
+diff --git a/src/content/enchantments/vanilla-depth-strider.json b/src/content/enchantments/vanilla-depth-strider.json
+new file mode 100644
+index 0000000..574e831
+--- /dev/null
++++ b/src/content/enchantments/vanilla-depth-strider.json
+@@ -0,0 +1,16 @@
++{
++  "name": "Depth Strider",
++  "draft": false,
++  "source": "Vanilla",
++  "category": "Travel",
++  "costRule": "free",
++  "description": "<p>Move faster through water.</p>",
++  "maxLevel": 3,
++  "items": [
++    "Boots"
++  ],
++  "incompatibleRunecrafted": [],
++  "incompatibleVanilla": [
++    "Frost Walker"
++  ]
++}
+diff --git a/src/content/enchantments/vanilla-efficiency.json b/src/content/enchantments/vanilla-efficiency.json
+new file mode 100644
+index 0000000..2398cd0
+--- /dev/null
++++ b/src/content/enchantments/vanilla-efficiency.json
+@@ -0,0 +1,18 @@
++{
++  "name": "Efficiency",
++  "draft": false,
++  "source": "Vanilla",
++  "category": "Utility",
++  "costRule": "free",
++  "description": "<p>Break suitable blocks faster with this tool.</p>",
++  "maxLevel": 5,
++  "items": [
++    "Axes",
++    "Hoes",
++    "Pickaxes",
++    "Shears",
++    "Shovels"
++  ],
++  "incompatibleRunecrafted": [],
++  "incompatibleVanilla": []
++}
+diff --git a/src/content/enchantments/vanilla-feather-falling.json b/src/content/enchantments/vanilla-feather-falling.json
+new file mode 100644
+index 0000000..27d9b38
+--- /dev/null
++++ b/src/content/enchantments/vanilla-feather-falling.json
+@@ -0,0 +1,14 @@
++{
++  "name": "Feather Falling",
++  "draft": false,
++  "source": "Vanilla",
++  "category": "Protection",
++  "costRule": "free",
++  "description": "<p>Reduces damage from falls and ender pearl teleports.</p>",
++  "maxLevel": 4,
++  "items": [
++    "Boots"
++  ],
++  "incompatibleRunecrafted": [],
++  "incompatibleVanilla": []
++}
+diff --git a/src/content/enchantments/vanilla-fire-aspect.json b/src/content/enchantments/vanilla-fire-aspect.json
+new file mode 100644
+index 0000000..c984234
+--- /dev/null
++++ b/src/content/enchantments/vanilla-fire-aspect.json
+@@ -0,0 +1,16 @@
++{
++  "name": "Fire Aspect",
++  "draft": false,
++  "source": "Vanilla",
++  "category": "Damage",
++  "costRule": "free",
++  "description": "<p>Sets targets on fire when you hit them.</p>",
++  "maxLevel": 2,
++  "items": [
++    "Maces",
++    "Spears",
++    "Swords"
++  ],
++  "incompatibleRunecrafted": [],
++  "incompatibleVanilla": []
++}
+diff --git a/src/content/enchantments/vanilla-fire-protection.json b/src/content/enchantments/vanilla-fire-protection.json
+new file mode 100644
+index 0000000..a4ed2c9
+--- /dev/null
++++ b/src/content/enchantments/vanilla-fire-protection.json
+@@ -0,0 +1,21 @@
++{
++  "name": "Fire Protection",
++  "draft": false,
++  "source": "Vanilla",
++  "category": "Protection",
++  "costRule": "free",
++  "description": "<p>Reduces fire and lava damage and shortens the time you stay on fire.</p>",
++  "maxLevel": 4,
++  "items": [
++    "Boots",
++    "Chestplates",
++    "Helmets",
++    "Leggings"
++  ],
++  "incompatibleRunecrafted": [],
++  "incompatibleVanilla": [
++    "Protection",
++    "Blast Protection",
++    "Projectile Protection"
++  ]
++}
+diff --git a/src/content/enchantments/vanilla-flame.json b/src/content/enchantments/vanilla-flame.json
+new file mode 100644
+index 0000000..263bbbb
+--- /dev/null
++++ b/src/content/enchantments/vanilla-flame.json
+@@ -0,0 +1,14 @@
++{
++  "name": "Flame",
++  "draft": false,
++  "source": "Vanilla",
++  "category": "Damage",
++  "costRule": "free",
++  "description": "<p>Fired arrows set targets on fire.</p>",
++  "maxLevel": 1,
++  "items": [
++    "Bows"
++  ],
++  "incompatibleRunecrafted": [],
++  "incompatibleVanilla": []
++}
+diff --git a/src/content/enchantments/vanilla-fortune.json b/src/content/enchantments/vanilla-fortune.json
+new file mode 100644
+index 0000000..8c1af9e
+--- /dev/null
++++ b/src/content/enchantments/vanilla-fortune.json
+@@ -0,0 +1,19 @@
++{
++  "name": "Fortune",
++  "draft": false,
++  "source": "Vanilla",
++  "category": "Utility",
++  "costRule": "free",
++  "description": "<p>Increases drops from blocks that support Fortune, such as ores.</p>",
++  "maxLevel": 3,
++  "items": [
++    "Axes",
++    "Hoes",
++    "Pickaxes",
++    "Shovels"
++  ],
++  "incompatibleRunecrafted": [],
++  "incompatibleVanilla": [
++    "Silk Touch"
++  ]
++}
+diff --git a/src/content/enchantments/vanilla-infinity.json b/src/content/enchantments/vanilla-infinity.json
+new file mode 100644
+index 0000000..8edb2e5
+--- /dev/null
++++ b/src/content/enchantments/vanilla-infinity.json
+@@ -0,0 +1,16 @@
++{
++  "name": "Infinity",
++  "draft": false,
++  "source": "Vanilla",
++  "category": "Utility",
++  "costRule": "free",
++  "description": "<p>Fire ordinary arrows without consuming them, as long as you have an arrow in your inventory. Special arrows are still consumed.</p>",
++  "maxLevel": 1,
++  "items": [
++    "Bows"
++  ],
++  "incompatibleRunecrafted": [],
++  "incompatibleVanilla": [
++    "Mending"
++  ]
++}
+diff --git a/src/content/enchantments/vanilla-knockback.json b/src/content/enchantments/vanilla-knockback.json
+new file mode 100644
+index 0000000..54d2896
+--- /dev/null
++++ b/src/content/enchantments/vanilla-knockback.json
+@@ -0,0 +1,15 @@
++{
++  "name": "Knockback",
++  "draft": false,
++  "source": "Vanilla",
++  "category": "Utility",
++  "costRule": "free",
++  "description": "<p>Pushes targets farther away when you hit them.</p>",
++  "maxLevel": 2,
++  "items": [
++    "Spears",
++    "Swords"
++  ],
++  "incompatibleRunecrafted": [],
++  "incompatibleVanilla": []
++}
+diff --git a/src/content/enchantments/vanilla-looting.json b/src/content/enchantments/vanilla-looting.json
+new file mode 100644
+index 0000000..8fafa4e
+--- /dev/null
++++ b/src/content/enchantments/vanilla-looting.json
+@@ -0,0 +1,15 @@
++{
++  "name": "Looting",
++  "draft": false,
++  "source": "Vanilla",
++  "category": "Utility",
++  "costRule": "free",
++  "description": "<p>Increases eligible mob drops and the chance of certain rare drops.</p>",
++  "maxLevel": 3,
++  "items": [
++    "Spears",
++    "Swords"
++  ],
++  "incompatibleRunecrafted": [],
++  "incompatibleVanilla": []
++}
+diff --git a/src/content/enchantments/vanilla-luck-of-the-sea.json b/src/content/enchantments/vanilla-luck-of-the-sea.json
+new file mode 100644
+index 0000000..8775ce3
+--- /dev/null
++++ b/src/content/enchantments/vanilla-luck-of-the-sea.json
+@@ -0,0 +1,14 @@
++{
++  "name": "Luck of the Sea",
++  "draft": false,
++  "source": "Vanilla",
++  "category": "Utility",
++  "costRule": "free",
++  "description": "<p>Improves the chance of fishing up treasure and reduces junk catches. Treasure still requires suitable open water.</p>",
++  "maxLevel": 3,
++  "items": [
++    "Fishing Rods"
++  ],
++  "incompatibleRunecrafted": [],
++  "incompatibleVanilla": []
++}
+diff --git a/src/content/enchantments/vanilla-lunge.json b/src/content/enchantments/vanilla-lunge.json
+new file mode 100644
+index 0000000..147380d
+--- /dev/null
++++ b/src/content/enchantments/vanilla-lunge.json
+@@ -0,0 +1,14 @@
++{
++  "name": "Lunge",
++  "draft": false,
++  "source": "Vanilla",
++  "category": "Travel",
++  "costRule": "free",
++  "description": "<p>Launches you forward when you jab with a spear, using hunger and durability. Higher levels give a stronger lunge.</p>",
++  "maxLevel": 3,
++  "items": [
++    "Spears"
++  ],
++  "incompatibleRunecrafted": [],
++  "incompatibleVanilla": []
++}
+diff --git a/src/content/enchantments/vanilla-lure.json b/src/content/enchantments/vanilla-lure.json
+new file mode 100644
+index 0000000..004017a
+--- /dev/null
++++ b/src/content/enchantments/vanilla-lure.json
+@@ -0,0 +1,14 @@
++{
++  "name": "Lure",
++  "draft": false,
++  "source": "Vanilla",
++  "category": "Utility",
++  "costRule": "free",
++  "description": "<p>Shortens the wait for a bite while fishing.</p>",
++  "maxLevel": 3,
++  "items": [
++    "Fishing Rods"
++  ],
++  "incompatibleRunecrafted": [],
++  "incompatibleVanilla": []
++}
+diff --git a/src/content/enchantments/vanilla-mending.json b/src/content/enchantments/vanilla-mending.json
+new file mode 100644
+index 0000000..5b13db4
+--- /dev/null
++++ b/src/content/enchantments/vanilla-mending.json
+@@ -0,0 +1,32 @@
++{
++  "name": "Mending",
++  "draft": false,
++  "source": "Vanilla",
++  "category": "Utility",
++  "costRule": "free",
++  "description": "<p>Uses collected experience to repair this item while it is held or equipped.</p>",
++  "maxLevel": 1,
++  "items": [
++    "Axes",
++    "Boots",
++    "Bows",
++    "Chestplates",
++    "Crossbows",
++    "Elytra",
++    "Fishing Rods",
++    "Flint and Steel",
++    "Helmets",
++    "Hoes",
++    "Leggings",
++    "Maces",
++    "Pickaxes",
++    "Shears",
++    "Shields",
++    "Shovels",
++    "Spears",
++    "Swords",
++    "Tridents"
++  ],
++  "incompatibleRunecrafted": [],
++  "incompatibleVanilla": []
++}
+diff --git a/src/content/enchantments/vanilla-piercing.json b/src/content/enchantments/vanilla-piercing.json
+new file mode 100644
+index 0000000..cc2944c
+--- /dev/null
++++ b/src/content/enchantments/vanilla-piercing.json
+@@ -0,0 +1,16 @@
++{
++  "name": "Piercing",
++  "draft": false,
++  "source": "Vanilla",
++  "category": "Trajectory",
++  "costRule": "free",
++  "description": "<p>Crossbow arrows can pass through multiple targets and shields. Each level adds another target they can pass through.</p>",
++  "maxLevel": 4,
++  "items": [
++    "Crossbows"
++  ],
++  "incompatibleRunecrafted": [],
++  "incompatibleVanilla": [
++    "Multishot"
++  ]
++}
+diff --git a/src/content/enchantments/vanilla-power.json b/src/content/enchantments/vanilla-power.json
+new file mode 100644
+index 0000000..95e84a4
+--- /dev/null
++++ b/src/content/enchantments/vanilla-power.json
+@@ -0,0 +1,14 @@
++{
++  "name": "Power",
++  "draft": false,
++  "source": "Vanilla",
++  "category": "Damage",
++  "costRule": "free",
++  "description": "<p>Increases damage dealt by arrows fired from a bow.</p>",
++  "maxLevel": 5,
++  "items": [
++    "Bows"
++  ],
++  "incompatibleRunecrafted": [],
++  "incompatibleVanilla": []
++}
+diff --git a/src/content/enchantments/vanilla-projectile-protection.json b/src/content/enchantments/vanilla-projectile-protection.json
+new file mode 100644
+index 0000000..3bb68b7
+--- /dev/null
++++ b/src/content/enchantments/vanilla-projectile-protection.json
+@@ -0,0 +1,21 @@
++{
++  "name": "Projectile Protection",
++  "draft": false,
++  "source": "Vanilla",
++  "category": "Protection",
++  "costRule": "free",
++  "description": "<p>Reduces damage from projectiles such as arrows and thrown tridents.</p>",
++  "maxLevel": 4,
++  "items": [
++    "Boots",
++    "Chestplates",
++    "Helmets",
++    "Leggings"
++  ],
++  "incompatibleRunecrafted": [],
++  "incompatibleVanilla": [
++    "Protection",
++    "Blast Protection",
++    "Fire Protection"
++  ]
++}
+diff --git a/src/content/enchantments/vanilla-protection.json b/src/content/enchantments/vanilla-protection.json
+new file mode 100644
+index 0000000..1a848a8
+--- /dev/null
++++ b/src/content/enchantments/vanilla-protection.json
+@@ -0,0 +1,21 @@
++{
++  "name": "Protection",
++  "draft": false,
++  "source": "Vanilla",
++  "category": "Protection",
++  "costRule": "free",
++  "description": "<p>Reduces most incoming damage while the armor is equipped.</p>",
++  "maxLevel": 4,
++  "items": [
++    "Boots",
++    "Chestplates",
++    "Helmets",
++    "Leggings"
++  ],
++  "incompatibleRunecrafted": [],
++  "incompatibleVanilla": [
++    "Blast Protection",
++    "Fire Protection",
++    "Projectile Protection"
++  ]
++}
+diff --git a/src/content/enchantments/vanilla-punch.json b/src/content/enchantments/vanilla-punch.json
+new file mode 100644
+index 0000000..0eebeed
+--- /dev/null
++++ b/src/content/enchantments/vanilla-punch.json
+@@ -0,0 +1,14 @@
++{
++  "name": "Punch",
++  "draft": false,
++  "source": "Vanilla",
++  "category": "Utility",
++  "costRule": "free",
++  "description": "<p>Arrows fired from a bow knock targets farther back.</p>",
++  "maxLevel": 2,
++  "items": [
++    "Bows"
++  ],
++  "incompatibleRunecrafted": [],
++  "incompatibleVanilla": []
++}
+diff --git a/src/content/enchantments/vanilla-quick-charge.json b/src/content/enchantments/vanilla-quick-charge.json
+new file mode 100644
+index 0000000..934b110
+--- /dev/null
++++ b/src/content/enchantments/vanilla-quick-charge.json
+@@ -0,0 +1,14 @@
++{
++  "name": "Quick Charge",
++  "draft": false,
++  "source": "Vanilla",
++  "category": "Utility",
++  "costRule": "free",
++  "description": "<p>Loads a crossbow faster.</p>",
++  "maxLevel": 3,
++  "items": [
++    "Crossbows"
++  ],
++  "incompatibleRunecrafted": [],
++  "incompatibleVanilla": []
++}
+diff --git a/src/content/enchantments/vanilla-respiration.json b/src/content/enchantments/vanilla-respiration.json
+new file mode 100644
+index 0000000..4cf5add
+--- /dev/null
++++ b/src/content/enchantments/vanilla-respiration.json
+@@ -0,0 +1,14 @@
++{
++  "name": "Respiration",
++  "draft": false,
++  "source": "Vanilla",
++  "category": "Utility",
++  "costRule": "free",
++  "description": "<p>Lets you stay underwater longer before running out of air.</p>",
++  "maxLevel": 3,
++  "items": [
++    "Helmets"
++  ],
++  "incompatibleRunecrafted": [],
++  "incompatibleVanilla": []
++}
+diff --git a/src/content/enchantments/vanilla-sharpness.json b/src/content/enchantments/vanilla-sharpness.json
+new file mode 100644
+index 0000000..ff99d4e
+--- /dev/null
++++ b/src/content/enchantments/vanilla-sharpness.json
+@@ -0,0 +1,22 @@
++{
++  "name": "Sharpness",
++  "draft": false,
++  "source": "Vanilla",
++  "category": "Damage",
++  "costRule": "free",
++  "description": "<p>Increases melee damage against targets.</p>",
++  "maxLevel": 5,
++  "items": [
++    "Axes",
++    "Spears",
++    "Swords"
++  ],
++  "incompatibleRunecrafted": [],
++  "incompatibleVanilla": [
++    "Smite",
++    "Bane Of Arthropods",
++    "Impaling",
++    "Density",
++    "Breach"
++  ]
++}
+diff --git a/src/content/enchantments/vanilla-silk-touch.json b/src/content/enchantments/vanilla-silk-touch.json
+new file mode 100644
+index 0000000..8877c24
+--- /dev/null
++++ b/src/content/enchantments/vanilla-silk-touch.json
+@@ -0,0 +1,19 @@
++{
++  "name": "Silk Touch",
++  "draft": false,
++  "source": "Vanilla",
++  "category": "Utility",
++  "costRule": "free",
++  "description": "<p>Lets suitable blocks drop themselves instead of their usual drops.</p>",
++  "maxLevel": 1,
++  "items": [
++    "Axes",
++    "Hoes",
++    "Pickaxes",
++    "Shovels"
++  ],
++  "incompatibleRunecrafted": [],
++  "incompatibleVanilla": [
++    "Fortune"
++  ]
++}
+diff --git a/src/content/enchantments/vanilla-smite.json b/src/content/enchantments/vanilla-smite.json
+new file mode 100644
+index 0000000..36729c0
+--- /dev/null
++++ b/src/content/enchantments/vanilla-smite.json
+@@ -0,0 +1,23 @@
++{
++  "name": "Smite",
++  "draft": false,
++  "source": "Vanilla",
++  "category": "Damage",
++  "costRule": "free",
++  "description": "<p>Increases melee damage against undead mobs.</p>",
++  "maxLevel": 5,
++  "items": [
++    "Axes",
++    "Maces",
++    "Spears",
++    "Swords"
++  ],
++  "incompatibleRunecrafted": [],
++  "incompatibleVanilla": [
++    "Sharpness",
++    "Bane Of Arthropods",
++    "Impaling",
++    "Density",
++    "Breach"
++  ]
++}
+diff --git a/src/content/enchantments/vanilla-swift-sneak.json b/src/content/enchantments/vanilla-swift-sneak.json
+new file mode 100644
+index 0000000..eaf2c45
+--- /dev/null
++++ b/src/content/enchantments/vanilla-swift-sneak.json
+@@ -0,0 +1,14 @@
++{
++  "name": "Swift Sneak",
++  "draft": false,
++  "source": "Vanilla",
++  "category": "Travel",
++  "costRule": "free",
++  "description": "<p>Move faster while sneaking.</p>",
++  "maxLevel": 3,
++  "items": [
++    "Leggings"
++  ],
++  "incompatibleRunecrafted": [],
++  "incompatibleVanilla": []
++}
+diff --git a/src/content/enchantments/vanilla-unbreaking.json b/src/content/enchantments/vanilla-unbreaking.json
+new file mode 100644
+index 0000000..be42f4e
+--- /dev/null
++++ b/src/content/enchantments/vanilla-unbreaking.json
+@@ -0,0 +1,32 @@
++{
++  "name": "Unbreaking",
++  "draft": false,
++  "source": "Vanilla",
++  "category": "Utility",
++  "costRule": "free",
++  "description": "<p>Gives the item a chance to avoid losing durability when used.</p>",
++  "maxLevel": 3,
++  "items": [
++    "Axes",
++    "Boots",
++    "Bows",
++    "Chestplates",
++    "Crossbows",
++    "Elytra",
++    "Fishing Rods",
++    "Flint and Steel",
++    "Helmets",
++    "Hoes",
++    "Leggings",
++    "Maces",
++    "Pickaxes",
++    "Shears",
++    "Shields",
++    "Shovels",
++    "Spears",
++    "Swords",
++    "Tridents"
++  ],
++  "incompatibleRunecrafted": [],
++  "incompatibleVanilla": []
++}
+diff --git a/src/content/enchantments/vanilla-wind-burst.json b/src/content/enchantments/vanilla-wind-burst.json
+new file mode 100644
+index 0000000..ed87253
+--- /dev/null
++++ b/src/content/enchantments/vanilla-wind-burst.json
+@@ -0,0 +1,14 @@
++{
++  "name": "Wind Burst",
++  "draft": false,
++  "source": "Vanilla",
++  "category": "Travel",
++  "costRule": "free",
++  "description": "<p>A successful mace smash attack launches you back into the air. Higher levels launch you farther.</p>",
++  "maxLevel": 3,
++  "items": [
++    "Maces"
++  ],
++  "incompatibleRunecrafted": [],
++  "incompatibleVanilla": []
++}
+diff --git a/src/lib/game-catalogs.js b/src/lib/game-catalogs.js
+index e9901a7..1a97b6b 100644
+--- a/src/lib/game-catalogs.js
++++ b/src/lib/game-catalogs.js
+@@ -4,7 +4,7 @@ import { pathToFileURL } from 'node:url';
+ import { resolve } from 'node:path';
+ 
+ export const RUNE_NAMES = ['Aegis','Arcanum','Chills','Cinders','Echoes','Gusts','Kinesis','Moments','Mortus','Opulence','Sparks','Stones','Tides','Vitality','Void'];
+-export const SOURCES = ['Runecrafted','Mythical','Vanilla','Curse','Projects'];
++export const SOURCES = ['Runecrafted','Mythical','Enhanced Vanilla','Vanilla','Curse','Projects'];
+ export const SHOPS = ['badge','material','trial','boardwalk','village','reference'];
+ // Astro bundles this module into dist before prerendering. Resolve the source checkout from the build working directory.
+ const root = pathToFileURL(resolve(process.cwd())+'/');
+@@ -54,7 +54,7 @@ export function makeGameCatalogs(enchantmentRows,valorRows,glossaryRows=[]) {
+     for(const key of ['items','incompatibleRunecrafted','incompatibleVanilla','runeTags','researchers'])if(e[key]===undefined||e[key]===null)e[key]=[];
+     for(let i=1;i<=5;i++)if(e['rune'+i]===undefined||e['rune'+i]===null)e['rune'+i]='';
+     assert(['free','once','per-level'].includes(e.costRule),e.name+' needs a rune cost rule');
+-    if(['Vanilla','Curse','Mythical'].includes(e.source))assert(e.costRule==='free',e.name+' must have no rune cost for its source');
++    if(['Vanilla','Enhanced Vanilla','Curse','Mythical'].includes(e.source))assert(e.costRule==='free',e.name+' must have no rune cost for its source');
+     assert(SOURCES.includes(e.source),e.name+' has an invalid source');
+     assert(text(e.category)&&e.category,e.name+' needs a category');
+     assert(e.maxLevel===null||Number.isInteger(e.maxLevel)&&e.maxLevel>=1&&e.maxLevel<=10,e.name+' needs a max level from 1–10 (or blank for an unlevelled effect)');
+@@ -108,6 +108,21 @@ export function enchantmentData(catalog=loadGameCatalogs()) {
+     incompatible:[...new Set([...e.incompatibleRunecrafted,...e.incompatibleVanilla])],description:e.description,
+     source:e.source,category:e.category,costMode:e.costRule==='free'?'free':'runes',costRule:e.costRule
+   }));
++  // Fixed upgrades replace their base enchantment on a piece of equipment.
++  // Resolve base-name rules to upgrades too, consistently for all five tools.
++  const upgrades = enchantments.filter(e=>e.costRule==='once').map(upgrade=>({
++    upgrade, base: enchantments.find(e=>e.name===upgrade.name.replace(/\s+[IVXLCDM]+$/,''))
++  })).filter(pair=>pair.base);
++  for(const {upgrade,base} of upgrades){
++    upgrade.incompatible.push(base.name);
++    base.incompatible.push(upgrade.name);
++  }
++  for(const e of enchantments){
++    for(const {upgrade,base} of upgrades){
++      if(e.name!==upgrade.name && e.incompatible.includes(base.name))e.incompatible.push(upgrade.name);
++    }
++    e.incompatible=[...new Set(e.incompatible.filter(name=>name!==e.name))];
++  }
+   return {enchantments,glossary:catalog.glossary||[],items:[...new Set(enchantments.flatMap(e=>e.items))].sort(),_dataSource:'repository'};
+ }
+ export function valorData(catalog=loadGameCatalogs()) {
+diff --git a/tests/vanilla-catalog.mjs b/tests/vanilla-catalog.mjs
+new file mode 100644
+index 0000000..49a1bf8
+--- /dev/null
++++ b/tests/vanilla-catalog.mjs
+@@ -0,0 +1,30 @@
++import assert from 'node:assert/strict';
++import fs from 'node:fs';
++import vm from 'node:vm';
++import {loadGameCatalogs,enchantmentData,renderTool} from '../src/lib/game-catalogs.js';
++const catalog=loadGameCatalogs(),data=enchantmentData(catalog);
++const get=name=>{const e=data.enchantments.find(e=>e.name===name);assert(e,`Missing ${name}`);return e;};
++assert.equal(data.enchantments.filter(e=>e.source==='Vanilla').length,32);
++assert.equal(data.enchantments.filter(e=>e.source==='Enhanced Vanilla').length,9);
++assert.equal(get('Curse of Binding').source,'Curse');
++assert.equal(get('Unbreaking IV').source,'Runecrafted');
++assert.equal(get('Unbreaking IV').runes.length,5);
++for(const e of data.enchantments.filter(e=>['Vanilla','Enhanced Vanilla'].includes(e.source))){assert.equal(e.costMode,'free');assert.equal(e.runes.length,0);}
++assert.equal(get('Lunge').maxLevel,3);assert.deepEqual(get('Lunge').items,['Spears']);
++assert(get('Sharpness').items.includes('Spears'));
++assert(!get('Sharpness').items.includes('Maces'));
++assert.equal(get('Protection').maxLevel,4);
++const source=fs.readFileSync('src/catalog-templates/hub_build_planner.html','utf8');
++const context={};vm.createContext(context);
++vm.runInContext(source.slice(source.indexOf('  const groupConflict ='),source.indexOf('  // Display direct incompatibility'))+'\nthis.conflict=namesConflict;',context);
++for(const [a,b] of [['Infinity','Mending'],['Fortune','Silk Touch'],['Sharpness','Smite'],['Piercing','Multishot'],['Depth Strider','Frost Walker'],['Density','Breach'],['Unbreaking','Unbreaking IV'],['Fire Aspect','Fire Aspect III'],['Fire Protection V','Blast Protection V'],['Protection','Fire Protection V']]){
++ assert(context.conflict(get(a),get(b)),`${a} should conflict with ${b}`);
++ assert(context.conflict(get(b),get(a)),`${b} should conflict with ${a}`);
++}
++assert(!context.conflict(get('Channeling'),get('Riptide')),'Preserve server Riptide/Channeling exception');
++assert(!context.conflict(get('Mending'),get('Lunge')));
++for(const tool of ['build_planner','comparison','encyclopedia','equipment_guide','rune_calculator']){
++ const html=renderTool(`hub_${tool}.html`,catalog);
++ assert(html.includes('Enhanced Vanilla'));assert(html.includes('vanilla-lunge'));
++}
++console.log('Vanilla catalog: source migration, free costs, equipment, levels, upgrade conflicts, server exception and five tools passed.');

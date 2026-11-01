@@ -1,0 +1,105 @@
+diff --git a/src/catalog-templates/hub_build_planner.html b/src/catalog-templates/hub_build_planner.html
+index 33d2d4e..cd260f4 100644
+--- a/src/catalog-templates/hub_build_planner.html
++++ b/src/catalog-templates/hub_build_planner.html
+@@ -162,6 +162,16 @@ main,.wrap{max-width:none}main{padding:22px 20px 40px}body:has(>.wrap){padding:2
+ #runecrafting-planner .rcp-gem-total{display:flex;justify-content:space-between;gap:10px;border:1px solid var(--rcp-line);border-radius:9px;padding:10px;background:#171923}
+ #runecrafting-planner .rcp-gem-summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+ @media(max-width:420px){#runecrafting-planner .rcp-gem-slots{grid-template-columns:1fr}}
++
++#runecrafting-planner select[hidden]{display:none}
++#runecrafting-planner .rcp-custom{position:relative;min-width:0;flex:1}
++#runecrafting-planner .rcp-trigger{width:100%;padding:10px;border:1px solid #61546d;border-radius:8px;background:#11121b;color:#f7f4fa;font:inherit;text-align:left;cursor:pointer}
++#runecrafting-planner .rcp-menu{position:absolute;top:calc(100% + 5px);left:0;width:100%;min-width:150px;max-height:300px;overflow:auto;background:#171923;border:1px solid #61546d;border-radius:9px;box-shadow:0 12px 30px #0008;padding:5px;z-index:50}
++#runecrafting-planner .rcp-menu button{display:block;width:100%;border:0;border-radius:5px;padding:9px 10px;background:transparent;color:#f7f4fa;font:inherit;text-align:left;cursor:pointer}
++#runecrafting-planner .rcp-menu button[aria-selected=true]{background:#322437}
++#runecrafting-planner .rcp-menu button:hover,#runecrafting-planner .rcp-menu button:focus-visible{background:#493352;color:#fff;outline:2px solid #c48aff;outline-offset:-2px}
++#runecrafting-planner .rcp-option-group{padding:8px 10px 4px;color:#c48aff;font-size:.78rem;font-weight:bold}
++#runecrafting-planner .rcp-trigger:focus-visible{outline:2px solid #c48aff;outline-offset:2px}
+ </style>
+   <div class="rcp-shell">
+     <div class="rcp-top">
+@@ -375,6 +385,7 @@ main,.wrap{max-width:none}main{padding:22px 20px 40px}body:has(>.wrap){padding:2
+     const item={id:state.nextId++, type, enchants:[], editingType:false}; initGems(item); state.items.push(item);
+     render();
+     $('rcp-new-type').value = '';
++    enhanceSelects();
+     $('rcp-add-item').disabled = true;
+   }
+   function addEnchant(itemId) {
+@@ -385,6 +396,55 @@ main,.wrap{max-width:none}main{padding:22px 20px 40px}body:has(>.wrap){padding:2
+     item.enchants.push({name:'', level:1});
+     render();
+   }
++  let menuId = 0;
++  function enhanceSelects() {
++    root.querySelectorAll('select').forEach(select => {
++      let wrap = select.nextElementSibling;
++      if (!wrap?.classList.contains('rcp-custom')) {
++        wrap = document.createElement('div'); wrap.className = 'rcp-custom';
++        const id = 'rcp-menu-' + ++menuId;
++        wrap.innerHTML = `<button type="button" class="rcp-trigger" aria-haspopup="listbox" aria-expanded="false" aria-controls="${id}"></button><div class="rcp-menu" id="${id}" role="listbox" hidden></div>`;
++        select.after(wrap); select.hidden = true;
++        const trigger = wrap.firstElementChild, menu = wrap.lastElementChild;
++        const close = () => {menu.hidden = true; trigger.setAttribute('aria-expanded','false');};
++        const open = () => {
++          root.querySelectorAll('.rcp-menu').forEach(m => {m.hidden=true;m.previousElementSibling.setAttribute('aria-expanded','false');});
++          menu.hidden=false;trigger.setAttribute('aria-expanded','true');
++          (menu.querySelector('[aria-selected="true"]:not(:disabled)') || menu.querySelector('button:not(:disabled)'))?.focus();
++        };
++        trigger.onclick = () => menu.hidden ? open() : close();
++        trigger.onkeydown = ev => {if(['ArrowDown','ArrowUp'].includes(ev.key)){ev.preventDefault();open();}};
++        menu.onclick = ev => {
++          const option=ev.target.closest('[data-option]'); if(!option || option.disabled)return;
++          const identity = select.id ? '#'+select.id : `select[data-action="${select.dataset.action}"][data-item="${select.dataset.item}"][data-index="${select.dataset.index}"]`;
++          select.selectedIndex=Number(option.dataset.option); close();
++          select.dispatchEvent(new Event('change',{bubbles:true}));
++          enhanceSelects(); root.querySelector(identity)?.nextElementSibling?.querySelector('button')?.focus();
++        };
++        menu.onkeydown = ev => {
++          const options=[...menu.querySelectorAll('button:not(:disabled)')], i=options.indexOf(document.activeElement);
++          if(ev.key==='Escape'){ev.preventDefault();close();trigger.focus();}
++          if(ev.key==='Tab')close();
++          if(['ArrowDown','ArrowUp','Home','End'].includes(ev.key)){
++            ev.preventDefault(); const next=ev.key==='Home'?0:ev.key==='End'?options.length-1:(i+(ev.key==='ArrowDown'?1:-1)+options.length)%options.length; options[next]?.focus();
++          }
++        };
++        wrap.onfocusout = ev => {if(!wrap.contains(ev.relatedTarget))close();};
++      }
++      const trigger=wrap.firstElementChild,menu=wrap.lastElementChild;
++      const label=select.labels?.[0]?.textContent || select.closest('.rcp-field')?.querySelector('label')?.textContent || 'Choose an option';
++      trigger.textContent=(select.selectedOptions[0]?.textContent || 'Choose…')+' ▾';
++      trigger.setAttribute('aria-label',label+': '+(select.selectedOptions[0]?.textContent||'')); trigger.disabled=select.disabled;
++      menu.setAttribute('aria-label',label);
++      let group='';menu.innerHTML=[...select.options].map((opt,i)=>{
++        const name=opt.parentElement.tagName==='OPTGROUP'?opt.parentElement.label:'';
++        const heading=name!==group&&name?`<div class="rcp-option-group">${esc(name)}</div>`:'';group=name;
++        return heading+`<button type="button" role="option" data-option="${i}" aria-selected="${opt.selected}" ${opt.disabled||opt.parentElement.disabled?'disabled':''}>${esc(opt.textContent)}</button>`;
++      }).join('');
++    });
++  }
++  document.addEventListener('click',ev=>{if(!ev.target.closest('.rcp-custom'))root.querySelectorAll('.rcp-menu').forEach(m=>{m.hidden=true;m.previousElementSibling.setAttribute('aria-expanded','false');});});
++
+   function render() {
+     const equipmentSelect = $('rcp-new-type');
+     const previousEquipment = equipmentSelect.value;
+@@ -419,6 +479,7 @@ main,.wrap{max-width:none}main{padding:22px 20px 40px}body:has(>.wrap){padding:2
+         </article>`;
+       }).join('');
+     }
++    enhanceSelects();
+     renderTotals();
+     if (state.reviewOpen) renderReview();
+   }
+diff --git a/src/catalog-templates/hub_rune_calculator.html b/src/catalog-templates/hub_rune_calculator.html
+index 0ec6ec3..1736c79 100644
+--- a/src/catalog-templates/hub_rune_calculator.html
++++ b/src/catalog-templates/hub_rune_calculator.html
+@@ -17,5 +17,5 @@ main,.wrap{max-width:none}main{padding:22px 20px 40px}body:has(>.wrap){padding:2
+ @media(max-width:600px){main{padding:18px 12px 30px}body:has(>.wrap){padding:18px 12px 30px}}
+ @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+ </style><script src="/assets/hub-data.js"></script></head><body><main><div class="eyebrow">Runecrafting Tools</div><h1>Rune Calculator</h1><p>Choose Runecrafted enchantments, set their levels and quantities, and get one combined rune shopping list. No equipment setup required.</p><section class="panel"><h2>1. Find enchantments</h2><label for="search" class="muted">Search by name or description</label><input id="search" class="search" type="search" placeholder="Try Aftershock, Transmuting, Protection…" autocomplete="off"><div id="results" class="results" aria-live="polite"></div><div class="tip">Runecrafted enchantments use runes. Vanilla+ upgrades cost one recipe per item, regardless of the upgrade level. Ordinary Vanilla and Mythical enchantments have no rune cost.</div></section><section class="panel"><div class="line"><h2>2. Your enchantments</h2><span id="itemCount" class="count">0 selected</span></div><div id="selected" class="selected"></div><div class="foot"><button id="clear" class="secondary" type="button">Clear Selection</button></div></section><section class="panel"><div class="line"><h2>3. Total runes needed</h2><span id="runeCount" class="count"></span></div><div id="totals" class="totals"></div><div class="foot"><button id="copy" class="pink" type="button">Copy Rune List</button></div><div id="copyStatus" class="status" role="status"></div></section><div id="status" class="status" role="status">Loading enchantment data…</div></main><script>
+-(()=>{'use strict';let DATA=__SSS_ENCHANTMENT_DATA__;const $=id=>document.getElementById(id),esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const roman=n=>{let r='';for(const [v,s] of [[10,'X'],[9,'IX'],[5,'V'],[4,'IV'],[1,'I']])while(n>=v){r+=s;n-=v}return r};const chosen=new Map();let resultsLimit=35;function upgrade(e){return e.costRule==='once'}function free(e){return e.costMode==='free'||(e.source!=='Runecrafted'&&e.source!=='Vanilla+')||!e.runes?.length}function renderResults(){const q=$('search').value.trim().toLowerCase();const matches=DATA.enchantments.filter(e=>!free(e)&&(!q||(e.name+' '+(e.description||'')).toLowerCase().includes(q))).sort((a,b)=>a.name.localeCompare(b.name));$('results').innerHTML=matches.slice(0,resultsLimit).map(e=>`<div class="result"><div><div class="name">${esc(e.name)}</div><div class="meta">${esc(e.source)} · ${free(e)?'No rune cost':`${e.runes.length} runes per ${upgrade(e)?'upgrade':'level'}`}</div></div><button class="${chosen.has(e.name)?'secondary':'pink'}" data-add="${esc(e.name)}" ${chosen.has(e.name)?'disabled':''}>${chosen.has(e.name)?'Added':'+ Add'}</button></div>`).join('')+(matches.length>resultsLimit?`<div class="empty">Showing ${resultsLimit} of ${matches.length}. Narrow your search to see more.</div>`:'')||'<div class="empty">No rune-cost enchantments found.</div>'}function renderSelected(){const rows=[...chosen.values()];$('itemCount').textContent=`${rows.length} selected`;$('selected').innerHTML=rows.length?rows.map(({e,level,qty})=>`<div class="entry"><div class="entryhead"><div><div class="name">${esc(e.name)}</div><div class="meta">${esc(e.source)} · ${free(e)?'No rune cost':upgrade(e)?'One upgrade recipe × quantity':'Runes × level × quantity'}</div></div><button class="remove" data-remove="${esc(e.name)}" aria-label="Remove ${esc(e.name)}">Remove</button></div><div class="controls">${!free(e)&&!upgrade(e)&&e.maxLevel>1?`<div><div class="meta">Level</div><div class="levels">${Array.from({length:Math.min(10,e.maxLevel)},(_,i)=>`<button class="level" aria-pressed="${level===i+1}" data-level="${i+1}" data-name="${esc(e.name)}">${roman(i+1)}</button>`).join('')}</div></div>`:!free(e)?`<span class="meta">${upgrade(e)?'Upgrade '+esc(e.name.match(/ (III|IV|V|VI|VII|VIII|IX|X)$/)?.[1]||'once'):'Level '+roman(level)}</span>`:''}<label>Quantity <input class="qty" type="number" min="1" max="999" step="1" value="${qty}" data-qty="${esc(e.name)}" aria-label="Quantity for ${esc(e.name)}"></label></div>${!free(e)?`<div class="detail">${upgrade(e)?'One-time upgrade recipe':'Recipe per level'}: ${esc(e.runes.join(' · '))}</div>`:''}</div>`).join(''):'<div class="empty">Nothing selected yet. Search above and click + Add.</div>';renderTotals();renderResults()}function counts(){const map=new Map();for(const {e,level,qty} of chosen.values()){if(free(e))continue;for(const rune of e.runes)map.set(rune,(map.get(rune)||0)+(upgrade(e)?1:level)*qty)}return [...map.entries()].sort((a,b)=>a[0].localeCompare(b[0]))}function renderTotals(){const entries=counts();$('runeCount').textContent=entries.length?`${entries.reduce((sum,[,n])=>sum+n,0)} runes total`:'No runes needed';$('totals').innerHTML=entries.length?entries.map(([r,n])=>`<div class="total"><span>${esc(r)}</span><strong>${n.toLocaleString()}</strong></div>`).join(''):'<div class="empty">Add a Runecrafted enchantment to calculate rune requirements.</div>';$('copy').disabled=!entries.length}function refreshData(data){if(!Array.isArray(data.enchantments))throw Error('Invalid enchantment data');DATA=data;for(const [name,row] of chosen){const e=DATA.enchantments.find(x=>x.name===name);if(e&&!free(e)){row.e=e;row.level=upgrade(e)?1:Math.min(row.level,Math.max(1,e.maxLevel||1))}else chosen.delete(name)}renderSelected()}$('results').addEventListener('click',ev=>{const btn=ev.target.closest('[data-add]');if(!btn)return;const e=DATA.enchantments.find(x=>x.name===btn.dataset.add);if(!e||free(e))return;chosen.set(e.name,{e,level:1,qty:1});renderSelected()});$('selected').addEventListener('click',ev=>{const rem=ev.target.closest('[data-remove]');if(rem){chosen.delete(rem.dataset.remove);renderSelected();return}const level=ev.target.closest('[data-level]');if(level){const row=chosen.get(level.dataset.name);if(row){row.level=+level.dataset.level;renderSelected()}}});$('selected').addEventListener('change',ev=>{const field=ev.target.closest('[data-qty]');if(!field)return;const row=chosen.get(field.dataset.qty);if(row){row.qty=Math.max(1,Math.min(999,Math.floor(Number(field.value)||1)));renderSelected()}});$('search').addEventListener('input',()=>{resultsLimit=35;renderResults()});$('clear').addEventListener('click',()=>{chosen.clear();renderSelected()});$('copy').addEventListener('click',async()=>{const entries=counts();const txt='Runecrafting Rune List\n'+entries.map(([r,n])=>`${r}: ${n}`).join('\n');try{await navigator.clipboard.writeText(txt);$('copyStatus').textContent='Rune list copied!'}catch(e){const box=document.createElement('textarea');box.value=txt;document.body.appendChild(box);box.select();const ok=document.execCommand('copy');box.remove();$('copyStatus').textContent=ok?'Rune list copied!':'Copy unavailable in this browser. Please use a secure HTTPS preview.'}});renderSelected();$('status').textContent='Using bundled enchantment data. Catalog updates publish with the website.';window.SSSHubData.fetch().then(r=>{if(!r.ok)throw Error('Live endpoint unavailable');return r.json()}).then(data=>{refreshData(data);$('status').textContent=(data._dataSource==='repository'?'Published enchantment catalog loaded.':'Showing bundled reference data.')}).catch(()=>{$('status').textContent='Showing bundled reference data. The published catalog could not be refreshed.'})})();
++(()=>{'use strict';let DATA=__SSS_ENCHANTMENT_DATA__;const $=id=>document.getElementById(id),esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const roman=n=>{let r='';for(const [v,s] of [[10,'X'],[9,'IX'],[5,'V'],[4,'IV'],[1,'I']])while(n>=v){r+=s;n-=v}return r};const chosen=new Map();let resultsLimit=35;function upgrade(e){return e.costRule==='once'}function free(e){return e.costMode==='free'||(e.source!=='Runecrafted'&&e.source!=='Vanilla+')||!e.runes?.length}function renderResults(){const q=$('search').value.trim().toLowerCase();const matches=DATA.enchantments.filter(e=>!free(e)&&(!q||(e.name+' '+(e.description||'')).toLowerCase().includes(q))).sort((a,b)=>a.name.localeCompare(b.name));$('results').innerHTML=matches.slice(0,resultsLimit).map(e=>`<div class="result"><div><div class="name">${esc(e.name)}</div></div><button class="${chosen.has(e.name)?'secondary':'pink'}" data-add="${esc(e.name)}" ${chosen.has(e.name)?'disabled':''}>${chosen.has(e.name)?'Added':'+ Add'}</button></div>`).join('')+(matches.length>resultsLimit?`<div class="empty">Showing ${resultsLimit} of ${matches.length}. Narrow your search to see more.</div>`:'')||'<div class="empty">No rune-cost enchantments found.</div>'}function renderSelected(){const rows=[...chosen.values()];$('itemCount').textContent=`${rows.length} selected`;$('selected').innerHTML=rows.length?rows.map(({e,level,qty})=>`<div class="entry"><div class="entryhead"><div><div class="name">${esc(e.name)}</div></div><button class="remove" data-remove="${esc(e.name)}" aria-label="Remove ${esc(e.name)}">Remove</button></div><div class="controls">${!free(e)&&!upgrade(e)&&e.maxLevel>1?`<div><div class="meta">Level</div><div class="levels">${Array.from({length:Math.min(10,e.maxLevel)},(_,i)=>`<button class="level" aria-pressed="${level===i+1}" data-level="${i+1}" data-name="${esc(e.name)}">${roman(i+1)}</button>`).join('')}</div></div>`:!free(e)?`<span class="meta">${upgrade(e)?'Upgrade '+esc(e.name.match(/ (III|IV|V|VI|VII|VIII|IX|X)$/)?.[1]||'once'):'Level '+roman(level)}</span>`:''}<label>Quantity <input class="qty" type="number" min="1" max="999" step="1" value="${qty}" data-qty="${esc(e.name)}" aria-label="Quantity for ${esc(e.name)}"></label></div>${!free(e)?`<div class="detail">${upgrade(e)?'One-time upgrade recipe':'Recipe per level'}: ${esc(e.runes.join(' · '))}</div>`:''}</div>`).join(''):'<div class="empty">Nothing selected yet. Search above and click + Add.</div>';renderTotals();renderResults()}function counts(){const map=new Map();for(const {e,level,qty} of chosen.values()){if(free(e))continue;for(const rune of e.runes)map.set(rune,(map.get(rune)||0)+(upgrade(e)?1:level)*qty)}return [...map.entries()].sort((a,b)=>a[0].localeCompare(b[0]))}function renderTotals(){const entries=counts();$('runeCount').textContent=entries.length?`${entries.reduce((sum,[,n])=>sum+n,0)} runes total`:'No runes needed';$('totals').innerHTML=entries.length?entries.map(([r,n])=>`<div class="total"><span>${esc(r)}</span><strong>${n.toLocaleString()}</strong></div>`).join(''):'<div class="empty">Add a Runecrafted enchantment to calculate rune requirements.</div>';$('copy').disabled=!entries.length}function refreshData(data){if(!Array.isArray(data.enchantments))throw Error('Invalid enchantment data');DATA=data;for(const [name,row] of chosen){const e=DATA.enchantments.find(x=>x.name===name);if(e&&!free(e)){row.e=e;row.level=upgrade(e)?1:Math.min(row.level,Math.max(1,e.maxLevel||1))}else chosen.delete(name)}renderSelected()}$('results').addEventListener('click',ev=>{const btn=ev.target.closest('[data-add]');if(!btn)return;const e=DATA.enchantments.find(x=>x.name===btn.dataset.add);if(!e||free(e))return;chosen.set(e.name,{e,level:1,qty:1});renderSelected()});$('selected').addEventListener('click',ev=>{const rem=ev.target.closest('[data-remove]');if(rem){chosen.delete(rem.dataset.remove);renderSelected();return}const level=ev.target.closest('[data-level]');if(level){const row=chosen.get(level.dataset.name);if(row){row.level=+level.dataset.level;renderSelected()}}});$('selected').addEventListener('change',ev=>{const field=ev.target.closest('[data-qty]');if(!field)return;const row=chosen.get(field.dataset.qty);if(row){row.qty=Math.max(1,Math.min(999,Math.floor(Number(field.value)||1)));renderSelected()}});$('search').addEventListener('input',()=>{resultsLimit=35;renderResults()});$('clear').addEventListener('click',()=>{chosen.clear();renderSelected()});$('copy').addEventListener('click',async()=>{const entries=counts();const txt='Runecrafting Rune List\n'+entries.map(([r,n])=>`${r}: ${n}`).join('\n');try{await navigator.clipboard.writeText(txt);$('copyStatus').textContent='Rune list copied!'}catch(e){const box=document.createElement('textarea');box.value=txt;document.body.appendChild(box);box.select();const ok=document.execCommand('copy');box.remove();$('copyStatus').textContent=ok?'Rune list copied!':'Copy unavailable in this browser. Please use a secure HTTPS preview.'}});renderSelected();$('status').textContent='Using bundled enchantment data. Catalog updates publish with the website.';window.SSSHubData.fetch().then(r=>{if(!r.ok)throw Error('Live endpoint unavailable');return r.json()}).then(data=>{refreshData(data);$('status').textContent=(data._dataSource==='repository'?'Published enchantment catalog loaded.':'Showing bundled reference data.')}).catch(()=>{$('status').textContent='Showing bundled reference data. The published catalog could not be refreshed.'})})();
+ </script></body></html>
+\ No newline at end of file

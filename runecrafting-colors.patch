@@ -1,0 +1,101 @@
+diff --git a/.pages.yml b/.pages.yml
+index cac9e89..50513b9 100644
+--- a/.pages.yml
++++ b/.pages.yml
+@@ -208,6 +208,7 @@ content:
+       use No rune cost.
+   - name: description
+     label: Effect / description
++    description: "Colors: [red]text[/red]. Also gold, yellow, green, aqua, blue, purple, pink, gray, white. Colors appear on the website; tags remain visible in this editor."
+     type: rich-text
+     options:
+       format: html
+diff --git a/public/assets/description-format.css b/public/assets/description-format.css
+index 607bc00..463b2f5 100644
+--- a/public/assets/description-format.css
++++ b/public/assets/description-format.css
+@@ -1 +1,11 @@
+ .sss-richtext{white-space:normal!important}.sss-richtext p{margin:0 0 .65em}.sss-richtext p:last-child{margin-bottom:0}.sss-richtext strong{font-weight:700}.sss-richtext em{font-style:italic}.sss-richtext u{text-decoration:underline}.sss-richtext ul,.sss-richtext ol{padding-left:1.4em}.sss-richtext blockquote{margin:.6em 0;padding-left:1em;border-left:2px solid #b888b8}
++.sss-richtext .sss-color-red{color:#ff7777}
++.sss-richtext .sss-color-gold{color:#ffbb55}
++.sss-richtext .sss-color-yellow{color:#ffff77}
++.sss-richtext .sss-color-green{color:#77ee88}
++.sss-richtext .sss-color-aqua{color:#66eeee}
++.sss-richtext .sss-color-blue{color:#88aaff}
++.sss-richtext .sss-color-purple{color:#cc99ff}
++.sss-richtext .sss-color-pink{color:#ff99cc}
++.sss-richtext .sss-color-gray{color:#bbbbbb}
++.sss-richtext .sss-color-white{color:#ffffff}
+diff --git a/public/assets/description-format.js b/public/assets/description-format.js
+index 7d354fa..03f2778 100644
+--- a/public/assets/description-format.js
++++ b/public/assets/description-format.js
+@@ -42,13 +42,43 @@
+       return '<div class="sss-richtext-table"><table><thead><tr>'+header.map(t=>cell(t,'th')).join('')+'</tr></thead><tbody>'+rows.map(row=>'<tr>'+row.map(t=>cell(t,'td')).join('')+'</tr>').join('')+'</tbody></table></div>';
+     }
+   };
++  const colors = new Set(['red','gold','yellow','green','aqua','blue','purple','pink','gray','white']);
++  // Process text nodes only, leaving HTML attributes and code samples untouched.
++  function colorize(html) {
++    const parts = html.split(/(<[^>]*>)/g);
++    const output = [], stack = [];
++    let codeDepth = 0;
++    for (const part of parts) {
++      if (part.startsWith('<')) {
++        if (/^<(?:pre|code)\b/i.test(part)) codeDepth++;
++        if (/^<\/(?:pre|code)>/i.test(part)) codeDepth = Math.max(0, codeDepth - 1);
++        if (/^<\/?(?:p|div|li|ul|ol|blockquote|pre|table|tr|td|th|hr)\b/i.test(part)) stack.length = 0;
++        output.push(part);
++        continue;
++      }
++      if (codeDepth) { output.push(part); continue; }
++      for (const token of part.split(/(\[\/?[a-z]+\])/gi)) {
++        const match = /^\[(\/?)([a-z]+)\]$/i.exec(token);
++        const color = match?.[2].toLowerCase();
++        if (!colors.has(color)) { output.push(token); continue; }
++        if (!match[1]) {
++          stack.push({color, index:output.length}); output.push(token);
++        } else if (stack.length && stack[stack.length-1].color === color) {
++          const opening = stack.pop();
++          output[opening.index] = '<span class="sss-color-' + color + '">';
++          output.push('</span>');
++        } else { output.push(token); }
++      }
++    }
++    return output.join('');
++  }
+   const parser = new window.marked.Marked({gfm:true,breaks:true,renderer});
+   const cache = new Map();
+   window.SSSDescriptions = {
+     format(value) {
+       const text=String(value||'No description available yet.');
+       if(cache.has(text))return cache.get(text);
+-      const result=parser.parse(text);
++      const result=colorize(parser.parse(text));
+       if(cache.size>=500)cache.clear();cache.set(text,result);
+       return result;
+     }
+diff --git a/tests/description-format.mjs b/tests/description-format.mjs
+index 57be248..c518b37 100644
+--- a/tests/description-format.mjs
++++ b/tests/description-format.mjs
+@@ -36,3 +36,19 @@ const chainsaw=enchantments.find(e=>e.name==='Chainsaw');
+ assert.match(format(chainsaw.description),/<em>revs the chainsaw<\/em>/);
+ assert.match(format(chainsaw.description),/<em>berserk<\/em>/);
+ console.log('Description formatting passed: full catalog, emphasis, bold, code, lists, line breaks, quotes, links, and hostile markup.');
++
++for (const color of ['red','gold','yellow','green','aqua','blue','purple','pink','gray','white']) {
++ assert.match(format(`<p>[${color}]colored text[/${color}]</p>`), new RegExp(`<span class="sss-color-${color}">colored text</span>`));
++}
++assert.match(format('<p>[red]<strong>Fire</strong> and <em>burning</em>[/red]</p>'), /<span class="sss-color-red"><strong>Fire<\/strong> and <em>burning<\/em><\/span>/);
++assert.match(format('[aqua]**Freezing**[/aqua]'), /sss-color-aqua/);
++assert.match(format('<p>[red]fire [gold]burst[/gold][/red]</p>'), /sss-color-red.*sss-color-gold/);
++assert.match(format('[RED]Fire[/RED]'), /sss-color-red/);
++assert(!format('`[red]code[/red]`').includes('sss-color'));
++assert(!format('<pre><code>[red]code[/red]</code></pre>').includes('sss-color'));
++assert(!format('[red]unclosed').includes('sss-color'));
++assert(!format('[red]mismatch[/blue]').includes('sss-color'));
++assert(!format('<p>[red]one</p><p>two[/red]</p>').includes('sss-color'));
++assert(!format('[custom]unknown[/custom]').includes('sss-color'));
++assert(!format('[Link](https://example.com/[red]x[/red])').includes('sss-color'));
++console.log('Color tags passed: ten colors, rich text, nesting, code, links and malformed tags.');

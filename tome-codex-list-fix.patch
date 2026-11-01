@@ -1,0 +1,14 @@
+diff --git a/.pages.yml b/.pages.yml
+index 25941f7..ea2e318 100644
+--- a/.pages.yml
++++ b/.pages.yml
+@@ -520,6 +520,9 @@ content:
+   type: collection
+   path: src/content/tome-spells
+   format: json
++  filename:
++    template: '{primary}.json'
++    field: create
+   subfolders: false
+   view:
+     primary: rune

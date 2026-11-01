@@ -1,0 +1,117 @@
+diff --git a/.pages.yml b/.pages.yml
+index b1cd27f..615bbb5 100644
+--- a/.pages.yml
++++ b/.pages.yml
+@@ -208,7 +208,7 @@ content:
+       use No rune cost.
+   - name: description
+     label: Effect / description
+-    description: "Colors: [red]text[/red]. Also gold, yellow, green, aqua, blue, purple, pink, gray, white. Colors appear on the website; tags remain visible in this editor."
++    description: "Colors: [red]text[/red]. Also gold, yellow, green, aqua, blue, purple, pink, gray, white, brown, orange, dark-red, dark-gray, dark-green. Gradients: [gradient:orange:gold]text[/gradient] (choose any two supported colors). Colors appear on the website; tags remain visible in this editor."
+     type: rich-text
+     options:
+       format: html
+diff --git a/public/assets/description-format.css b/public/assets/description-format.css
+index ecca31e..aa99081 100644
+--- a/public/assets/description-format.css
++++ b/public/assets/description-format.css
+@@ -11,3 +11,27 @@
+ .sss-richtext .sss-color-white{color:#ffffff}
+ 
+ .sss-explanation{cursor:help;text-decoration:underline dotted;text-underline-offset:4px}.sss-explanation:focus-visible{outline:2px solid #ffb2d7;outline-offset:3px;border-radius:2px}.sss-tooltip{position:fixed;z-index:10000;box-sizing:border-box;width:max-content;max-width:min(340px,calc(100vw - 16px));max-height:70vh;overflow:auto;padding:12px 15px;border:1px solid #ac84c9;border-radius:9px;background:#19131f;color:#f5edf9;box-shadow:0 8px 28px #0008;font:15px/1.5 system-ui,sans-serif;white-space:pre-wrap;overflow-wrap:anywhere}.sss-tooltip[hidden]{display:none}
++
++.sss-richtext .sss-color-brown{color:#c29973}
++.sss-richtext .sss-color-orange{color:#ff9955}
++.sss-richtext .sss-color-dark-red{color:#d96565}
++.sss-richtext .sss-color-dark-gray{color:#92929e}
++.sss-richtext .sss-color-dark-green{color:#58ad72}
++.sss-richtext .sss-gradient{color:var(--sss-gradient-from)}
++.sss-gradient-from-red{--sss-gradient-from:#ff7777}.sss-gradient-to-red{--sss-gradient-to:#ff7777}
++.sss-gradient-from-gold{--sss-gradient-from:#ffbb55}.sss-gradient-to-gold{--sss-gradient-to:#ffbb55}
++.sss-gradient-from-yellow{--sss-gradient-from:#ffff77}.sss-gradient-to-yellow{--sss-gradient-to:#ffff77}
++.sss-gradient-from-green{--sss-gradient-from:#77ee88}.sss-gradient-to-green{--sss-gradient-to:#77ee88}
++.sss-gradient-from-aqua{--sss-gradient-from:#66eeee}.sss-gradient-to-aqua{--sss-gradient-to:#66eeee}
++.sss-gradient-from-blue{--sss-gradient-from:#88aaff}.sss-gradient-to-blue{--sss-gradient-to:#88aaff}
++.sss-gradient-from-purple{--sss-gradient-from:#cc99ff}.sss-gradient-to-purple{--sss-gradient-to:#cc99ff}
++.sss-gradient-from-pink{--sss-gradient-from:#ff99cc}.sss-gradient-to-pink{--sss-gradient-to:#ff99cc}
++.sss-gradient-from-gray{--sss-gradient-from:#bbbbbb}.sss-gradient-to-gray{--sss-gradient-to:#bbbbbb}
++.sss-gradient-from-white{--sss-gradient-from:#ffffff}.sss-gradient-to-white{--sss-gradient-to:#ffffff}
++.sss-gradient-from-brown{--sss-gradient-from:#c29973}.sss-gradient-to-brown{--sss-gradient-to:#c29973}
++.sss-gradient-from-orange{--sss-gradient-from:#ff9955}.sss-gradient-to-orange{--sss-gradient-to:#ff9955}
++.sss-gradient-from-dark-red{--sss-gradient-from:#d96565}.sss-gradient-to-dark-red{--sss-gradient-to:#d96565}
++.sss-gradient-from-dark-gray{--sss-gradient-from:#92929e}.sss-gradient-to-dark-gray{--sss-gradient-to:#92929e}
++.sss-gradient-from-dark-green{--sss-gradient-from:#58ad72}.sss-gradient-to-dark-green{--sss-gradient-to:#58ad72}
++@supports (background-clip:text){.sss-richtext .sss-gradient{background-image:linear-gradient(90deg,var(--sss-gradient-from),var(--sss-gradient-to));background-clip:text;color:transparent;box-decoration-break:clone;-webkit-box-decoration-break:clone}}
++@media (forced-colors:active){.sss-richtext .sss-gradient{background:none;color:CanvasText}}
+diff --git a/public/assets/description-format.js b/public/assets/description-format.js
+index 11463cd..3cdf937 100644
+--- a/public/assets/description-format.js
++++ b/public/assets/description-format.js
+@@ -42,7 +42,7 @@
+       return '<div class="sss-richtext-table"><table><thead><tr>'+header.map(t=>cell(t,'th')).join('')+'</tr></thead><tbody>'+rows.map(row=>'<tr>'+row.map(t=>cell(t,'td')).join('')+'</tr>').join('')+'</tbody></table></div>';
+     }
+   };
+-  const colors = new Set(['red','gold','yellow','green','aqua','blue','purple','pink','gray','white']);
++  const colors = new Set(['red','gold','yellow','green','aqua','blue','purple','pink','gray','white','brown','orange','dark-red','dark-gray','dark-green']);
+   // Process text nodes only, leaving HTML attributes and code samples untouched.
+   function colorize(html) {
+     const parts = html.split(/(<[^>]*>)/g);
+@@ -57,15 +57,19 @@
+         continue;
+       }
+       if (codeDepth) { output.push(part); continue; }
+-      for (const token of part.split(/(\[\/?[a-z]+\])/gi)) {
+-        const match = /^\[(\/?)([a-z]+)\]$/i.exec(token);
++      for (const token of part.split(/(\[\/?[a-z-]+(?::[a-z-]+:[a-z-]+)?\])/gi)) {
++        const match = /^\[(\/?)([a-z-]+)(?::([a-z-]+):([a-z-]+))?\]$/i.exec(token);
+         const color = match?.[2].toLowerCase();
+-        if (!colors.has(color)) { output.push(token); continue; }
++        const gradient = color === 'gradient';
++        const from = match?.[3]?.toLowerCase(), to = match?.[4]?.toLowerCase();
++        if (!match || (gradient ? (match[1] ? !!from : !colors.has(from)||!colors.has(to)) : !colors.has(color)||!!from)) { output.push(token); continue; }
+         if (!match[1]) {
+-          stack.push({color, index:output.length}); output.push(token);
++          stack.push({color, from, to, index:output.length}); output.push(token);
+         } else if (stack.length && stack[stack.length-1].color === color) {
+           const opening = stack.pop();
+-          output[opening.index] = '<span class="sss-color-' + color + '">';
++          output[opening.index] = gradient
++            ? '<span class="sss-gradient sss-gradient-from-'+opening.from+' sss-gradient-to-'+opening.to+'">'
++            : '<span class="sss-color-' + color + '">';
+           output.push('</span>');
+         } else { output.push(token); }
+       }
+diff --git a/tests/description-format.mjs b/tests/description-format.mjs
+index 2410771..b7d7512 100644
+--- a/tests/description-format.mjs
++++ b/tests/description-format.mjs
+@@ -37,7 +37,7 @@ assert.match(format(chainsaw.description),/<em>revs the chainsaw<\/em>/);
+ assert.match(format(chainsaw.description),/<em>berserk<\/em>/);
+ console.log('Description formatting passed: full catalog, emphasis, bold, code, lists, line breaks, quotes, links, and hostile markup.');
+ 
+-for (const color of ['red','gold','yellow','green','aqua','blue','purple','pink','gray','white']) {
++for (const color of ['red','gold','yellow','green','aqua','blue','purple','pink','gray','white','brown','orange','dark-red','dark-gray','dark-green']) {
+  assert.match(format(`<p>[${color}]colored text[/${color}]</p>`), new RegExp(`<span class="sss-color-${color}">colored text</span>`));
+ }
+ assert.match(format('<p>[red]<strong>Fire</strong> and <em>burning</em>[/red]</p>'), /<span class="sss-color-red"><strong>Fire<\/strong> and <em>burning<\/em><\/span>/);
+@@ -51,7 +51,7 @@ assert(!format('[red]mismatch[/blue]').includes('sss-color'));
+ assert(!format('<p>[red]one</p><p>two[/red]</p>').includes('sss-color'));
+ assert(!format('[custom]unknown[/custom]').includes('sss-color'));
+ assert(!format('[Link](https://example.com/[red]x[/red])').includes('sss-color'));
+-console.log('Color tags passed: ten colors, rich text, nesting, code, links and malformed tags.');
++console.log('Color tags passed: fifteen colors, rich text, nesting, code, links and malformed tags.');
+ 
+ const effects={effects:[{key:'speed',label:'Speed bonus',levels:[{level:2,value:'80%'},{level:1,value:'40%'}]}]};
+ const glossary=[{key:'freezing',name:'Freezing',description:'A shared explanation.',draft:false}];
+@@ -101,3 +101,11 @@ assert.match(tip,/data-explanation="Speed bonus\nLevel I: 40%\nLevel II: 80%"/);
+ const invalidLabel=structuredClone(one);invalidLabel.effects[0].label=123;
+ assert.throws(()=>makeGameCatalogs([invalidLabel],[]),/invalid label/);
+ console.log('Effect labels are optional; unlabeled tooltips start directly with level values.');
++
++assert.match(format('[gradient:orange:gold]**Fancy item**[/gradient]'), /class="sss-gradient sss-gradient-from-orange sss-gradient-to-gold"><strong>Fancy item<\/strong><\/span>/);
++assert.match(format('[effect:speed][gradient:dark-green:green]speed[/gradient][/effect]',effects), /data-explanation=.*sss-gradient/s);
++assert.match(format('[term:freezing][gradient:blue:aqua]Freezing[/gradient][/term]',{},glossary), /data-explanation=.*sss-gradient/s);
++for(const source of ['[gradient:bad:red]x[/gradient]','[gradient:red:blue]unclosed','[gradient:red:blue]x[/red]','[red:blue:green]x[/red]','[gradient:red:blue]x[/gradient:red:blue]','`[gradient:red:blue]code[/gradient]`','<p>[gradient:red:blue]one</p><p>two[/gradient]</p>']){
++ assert(!format(source).includes('class="sss-gradient'),source);
++}
++console.log('Gradients passed: formatting, glossary/effect tooltips, invalid colors, code and malformed tags.');

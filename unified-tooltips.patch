@@ -1,0 +1,104 @@
+diff --git a/.pages.yml b/.pages.yml
+index 615bbb5..2e0d52f 100644
+--- a/.pages.yml
++++ b/.pages.yml
+@@ -215,25 +215,30 @@ content:
+       media: false
+     required: true
+   - name: effects
+-    label: Level effects
++    label: Tooltips
+     type: object
+     list: true
+     default: []
+-    description: "Reference an effect with [effect:speed]display text[/effect] in the description."
++    description: "Use [effect:speed]display text[/effect] in the description. Add an explanation, values by level, or both. Existing effect tags still work."
+     fields:
+     - name: key
+-      label: Effect key (e.g. speed)
++      label: Tooltip key (e.g. speed)
+       type: string
+       required: true
+       pattern: '^[a-z][a-z0-9-]*$'
+     - name: label
+-      label: Effect label (optional)
++      label: Heading (optional)
+       type: string
+-      description: Leave blank to show only the values by level in the tooltip.
++      description: Leave blank to show the explanation and/or level values without a heading.
++    - name: explanation
++      label: Explanation (optional)
++      type: text
++      description: Plain-text information shown above any level values.
+     - name: levels
+-      label: Values by level
++      label: Values by level (optional)
+       type: object
+       list: true
++      default: []
+       fields:
+       - name: level
+         type: number
+diff --git a/public/assets/description-format.js b/public/assets/description-format.js
+index 3cdf937..f5df92e 100644
+--- a/public/assets/description-format.js
++++ b/public/assets/description-format.js
+@@ -95,7 +95,11 @@
+           let detail='';
+           if(pending.type==='effect'){
+             const effect=(entry.effects||[]).find(e=>e.key===pending.key);
+-            if(effect)detail=(effect.label?.trim()?effect.label.trim()+'\n':'')+[...(effect.levels||[])].sort((a,b)=>a.level-b.level).map(r=>'Level '+roman(r.level)+': '+r.value).join('\n');
++            if(effect){
++              const rows=[...(effect.levels||[])].sort((a,b)=>a.level-b.level).map(r=>'Level '+roman(r.level)+': '+r.value).join('\n');
++              const explanation=effect.explanation?.trim()||'';
++              if(explanation||rows)detail=[effect.label?.trim(),explanation,rows].filter(Boolean).join('\n');
++            }
+           } else {
+             const term=(glossary||[]).find(t=>!t.draft&&t.key===pending.key);
+             if(term)detail=(term.name?.trim()?term.name.trim()+'\n':'')+term.description;
+diff --git a/src/lib/game-catalogs.js b/src/lib/game-catalogs.js
+index 8db36e2..1459475 100644
+--- a/src/lib/game-catalogs.js
++++ b/src/lib/game-catalogs.js
+@@ -70,7 +70,11 @@ export function makeGameCatalogs(enchantmentRows,valorRows,glossaryRows=[]) {
+       assert(effect && /^[a-z][a-z0-9-]*$/.test(effect.key) && !keys.has(effect.key),e.name+' needs unique effect keys');keys.add(effect.key);
+       effect.label ??= '';
+       assert(text(effect.label),e.name+' effect has an invalid label');
+-      assert(Array.isArray(effect.levels)&&effect.levels.length>0,e.name+' effect needs level values');
++      effect.explanation ??= '';
++      effect.levels ??= [];
++      assert(text(effect.explanation),e.name+' tooltip has an invalid explanation');
++      assert(Array.isArray(effect.levels),e.name+' tooltip has invalid level values');
++      assert(effect.explanation.trim()||effect.levels.length>0,e.name+' tooltip '+effect.key+' needs an explanation or level values');
+       const levels=new Set();
+       for(const row of effect.levels){
+         assert(Number.isInteger(row.level)&&row.level>=1&&row.level<=(e.maxLevel||10)&&!levels.has(row.level),e.name+' effect has invalid or repeated levels');levels.add(row.level);
+diff --git a/tests/description-format.mjs b/tests/description-format.mjs
+index b7d7512..a48c5e6 100644
+--- a/tests/description-format.mjs
++++ b/tests/description-format.mjs
+@@ -109,3 +109,24 @@ for(const source of ['[gradient:bad:red]x[/gradient]','[gradient:red:blue]unclos
+  assert(!format(source).includes('class="sss-gradient'),source);
+ }
+ console.log('Gradients passed: formatting, glossary/effect tooltips, invalid colors, code and malformed tags.');
++
++for(const levels of [undefined,[]]){
++ const entry=structuredClone(one);
++ entry.effects=[{key:'duration',explanation:'20 seconds',levels}];
++ const saved=enchantmentData(makeGameCatalogs([entry],[])).enchantments[0];
++ assert.match(format('[effect:duration][blue]temporarily[/blue][/effect]',saved),/data-explanation="20 seconds"/);
++ assert.match(format('[effect:duration][blue]temporarily[/blue][/effect]',saved),/sss-color-blue/);
++}
++const combined=structuredClone(one);
++combined.effects[0].explanation='Applies while active.';
++assert.match(format('[effect:speed]speed[/effect]',enchantmentData(makeGameCatalogs([combined],[])).enchantments[0]),/data-explanation="Speed bonus\nApplies while active\.\nLevel I: 40%\nLevel II: 80%"/);
++for(const explanation of [undefined,'','   ']){
++ const entry=structuredClone(one);entry.effects=[{key:'empty',label:'Heading only',explanation}];
++ assert.throws(()=>makeGameCatalogs([entry],[]),/needs an explanation or level values/);
++ assert(!format('[effect:empty]empty[/effect]',entry).includes('data-explanation'));
++}
++const unsafeExplanation=structuredClone(one);
++unsafeExplanation.effects=[{key:'plain',explanation:'<script>alert(1)</script> "quoted"'}];
++const safeTip=format('[effect:plain]text[/effect]',unsafeExplanation);
++assert(!safeTip.includes('<script>'));assert(safeTip.includes('&lt;script&gt;'));
++console.log('Unified tooltips passed: explanation-only, combined content, empty rejection and safe plain text.');

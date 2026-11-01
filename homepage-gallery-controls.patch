@@ -1,0 +1,217 @@
+diff --git a/.pages.yml b/.pages.yml
+index 29b3434..11951f7 100644
+--- a/.pages.yml
++++ b/.pages.yml
+@@ -107,6 +107,7 @@ content:
+     - title
+     - image
+     - date
++    - showOnHomepage
+     - draft
+     sort:
+     - date
+@@ -139,7 +140,12 @@ content:
+     label: Display order
+     type: number
+     default: 0
+-    description: Lower numbers appear first. Leave 0 to place a new photo before the imported collection.
++    description: Lower numbers appear first in the gallery and homepage carousel. Leave 0 to place a new photo before the imported collection.
++  - name: showOnHomepage
++    label: Show on homepage
++    type: boolean
++    default: false
++    description: Include this photo in the homepage carousel. Draft photos remain hidden everywhere.
+   - name: draft
+     label: Draft (hide from website)
+     type: boolean
+diff --git a/src/components/HomepageGallery.astro b/src/components/HomepageGallery.astro
+new file mode 100644
+index 0000000..971fdfe
+--- /dev/null
++++ b/src/components/HomepageGallery.astro
+@@ -0,0 +1,29 @@
++---
++import { photos } from '../lib/photos.js';
++const selected = photos.filter(photo => photo.showOnHomepage);
++---
++{selected.length > 0 && <section class="wrap community">
++  <div class="sectionhead">
++    <div><div class="eyebrow">Gallery</div><h2>Around Silver Springs</h2></div>
++    <p>A few photos of the server and community!</p>
++  </div>
++  <div class="carousel" role="region" aria-roledescription="carousel" aria-label="Silver Springs community photos">
++    <div class="carousel-track" tabindex="0" aria-label="Photo gallery. Use left and right arrow keys to browse.">
++      {selected.map((photo, index) => <figure class="slide" role="group" aria-roledescription="slide" aria-label={`${index + 1} of ${selected.length}`}>
++        <img src={photo.src} alt={photo.alt} loading="lazy" />
++        <figcaption>{photo.name}</figcaption>
++      </figure>)}
++    </div>
++    <div class="carousel-controls">
++      <div class="slidebuttons">
++        <button class="gallery-prev" aria-label="Previous photo" disabled={selected.length < 2}>←</button>
++        <button class="gallery-next" aria-label="Next photo" disabled={selected.length < 2}>→</button>
++      </div>
++      <span class="gallery-count" aria-live="polite" aria-atomic="true">1 / {selected.length}</span>
++      <div class="gallery-dots" aria-label="Choose a photo">
++        {selected.map((photo, index) => <button aria-label={`Show photo ${index + 1}`} aria-current={String(index === 0)} data-slide={index}></button>)}
++      </div>
++      <a class="textlink" href="/gallery/">See the full gallery ↗</a>
++    </div>
++  </div>
++</section>}
+diff --git a/src/content/pages/home-after-news.html b/src/content/pages/home-after-news.html
+index e4ef6f4..9722e8c 100644
+--- a/src/content/pages/home-after-news.html
++++ b/src/content/pages/home-after-news.html
+@@ -1,3 +1 @@
+-
+-<section class="wrap community"><div class="sectionhead"><div><div class="eyebrow">Gallery</div><h2>Around Silver Springs</h2></div><p>A few photos of the server and community!</p></div><div class="carousel" role="region" aria-roledescription="carousel" aria-label="Silver Springs community photos"><div class="carousel-track" tabindex="0" aria-label="Photo gallery. Use left and right arrow keys to browse."><figure class="slide" role="group" aria-roledescription="slide" aria-label="1 of 8"><img src="assets/bridge.jpg" alt="A view from the central bridge in spawn" loading="lazy"><figcaption>The central bridge at spawn.</figcaption></figure><figure class="slide" role="group" aria-roledescription="slide" aria-label="2 of 8"><img src="assets/players.jpg" alt="A group of equipped Silver Springs players" loading="lazy"><figcaption>A few of our players.</figcaption></figure><figure class="slide" role="group" aria-roledescription="slide" aria-label="3 of 8"><img src="assets/spawn.jpg" alt="The spawn town from the top of the springs" loading="lazy"><figcaption>A view from the springs.</figcaption></figure><figure class="slide" role="group" aria-roledescription="slide" aria-label="4 of 8"><img src="assets/tree.jpg" alt="The view from the spawn tree" loading="lazy"><figcaption>Spawn from the tree.</figcaption></figure><figure class="slide" role="group" aria-roledescription="slide" aria-label="5 of 8"><img src="assets/bridge-reverse.jpg" alt="The opposite view from the central bridge" loading="lazy"><figcaption>The other side of the central bridge.</figcaption></figure><figure class="slide" role="group" aria-roledescription="slide" aria-label="6 of 8"><img src="assets/fishing.jpg" alt="Players gathered for a fishing party" loading="lazy"><figcaption>A fishing party.</figcaption></figure><figure class="slide" role="group" aria-roledescription="slide" aria-label="7 of 8"><img src="assets/night.jpg" alt="A server screenshot from December 2021" loading="lazy"><figcaption>December 2021.</figcaption></figure><figure class="slide" role="group" aria-roledescription="slide" aria-label="8 of 8"><img src="assets/world.jpg" alt="A server screenshot from June 2021" loading="lazy"><figcaption>June 2021.</figcaption></figure></div><div class="carousel-controls"><div class="slidebuttons"><button class="gallery-prev" aria-label="Previous photo">←</button><button class="gallery-next" aria-label="Next photo">→</button></div><span class="gallery-count" aria-live="polite" aria-atomic="true">1 / 8</span><div class="gallery-dots" aria-label="Choose a photo"><button aria-label="Show photo 1" aria-current="true" data-slide="0"></button><button aria-label="Show photo 2" aria-current="false" data-slide="1"></button><button aria-label="Show photo 3" aria-current="false" data-slide="2"></button><button aria-label="Show photo 4" aria-current="false" data-slide="3"></button><button aria-label="Show photo 5" aria-current="false" data-slide="4"></button><button aria-label="Show photo 6" aria-current="false" data-slide="5"></button><button aria-label="Show photo 7" aria-current="false" data-slide="6"></button><button aria-label="Show photo 8" aria-current="false" data-slide="7"></button></div><a class="textlink" href="/gallery/">See the full gallery ↗</a></div></div></section>
+ <section class="aboutband" id="about"><div class="wrap about-layout"><div><div class="eyebrow">Get to know us</div><h2>A little about Silver Springs</h2><img class="about-community-photo" src="/assets/bitss-community.jpg" alt="Silver Springs players wearing pumpkin heads pose together on wooden benches" width="1500" height="844" loading="lazy"></div><div><p class="about-intro">We’re a small Minecraft community that’s been playing and building together for years. Some staff and players have been here since the beginning; others have joined more recently.</p><p class="bodytext">The server has changed over time, with custom content and additions that have grown alongside the community.</p><div class="aboutlinks"><a href="/about-us/"><span><strong>About the server</strong></span><span aria-hidden="true">→</span></a><a href="/staffoverview/"><span><strong>Meet our staff</strong></span><span aria-hidden="true">→</span></a></div></div></div></section><div class="wrap"><section class="join" id="join"><div class="eyebrow">Join us</div><h2>See you in-game</h2><p>Connect at sssminecraft.com, or come say hello on Discord.</p><div class="actions"><button class="btn primary" data-copy="sssminecraft.com">Copy IP: sssminecraft.com</button><a class="btn" href="https://discord.gg/r22U3prgPE">Join our Discord ↗</a></div></section></div>
+\ No newline at end of file
+diff --git a/src/content/photos/photo-07.json b/src/content/photos/photo-07.json
+index 46f591f..6094c9b 100644
+--- a/src/content/photos/photo-07.json
++++ b/src/content/photos/photo-07.json
+@@ -4,5 +4,6 @@
+   "alt": "Silver Springs community photo 7",
+   "date": "2021-12-14",
+   "order": 7,
+-  "draft": false
++  "draft": false,
++  "showOnHomepage": true
+ }
+diff --git a/src/content/photos/photo-08.json b/src/content/photos/photo-08.json
+index 7d95ffa..99538df 100644
+--- a/src/content/photos/photo-08.json
++++ b/src/content/photos/photo-08.json
+@@ -4,5 +4,6 @@
+   "alt": "Silver Springs community photo 8",
+   "date": "2023-07-28",
+   "order": 8,
+-  "draft": false
++  "draft": false,
++  "showOnHomepage": true
+ }
+diff --git a/src/content/photos/photo-09.json b/src/content/photos/photo-09.json
+index d0b5809..7bd2612 100644
+--- a/src/content/photos/photo-09.json
++++ b/src/content/photos/photo-09.json
+@@ -4,5 +4,6 @@
+   "alt": "Silver Springs community photo 9",
+   "date": "2021-06-27",
+   "order": 9,
+-  "draft": false
++  "draft": false,
++  "showOnHomepage": true
+ }
+diff --git a/src/content/photos/photo-17.json b/src/content/photos/photo-17.json
+index 8602db8..a21a067 100644
+--- a/src/content/photos/photo-17.json
++++ b/src/content/photos/photo-17.json
+@@ -4,5 +4,6 @@
+   "alt": "Silver Springs community photo 17",
+   "date": "2023-08-19",
+   "order": 17,
+-  "draft": false
++  "draft": false,
++  "showOnHomepage": true
+ }
+diff --git a/src/content/photos/photo-24.json b/src/content/photos/photo-24.json
+index 768a462..67e28a9 100644
+--- a/src/content/photos/photo-24.json
++++ b/src/content/photos/photo-24.json
+@@ -4,5 +4,6 @@
+   "alt": "Silver Springs community photo 24",
+   "date": "2023-08-13",
+   "order": 24,
+-  "draft": false
++  "draft": false,
++  "showOnHomepage": true
+ }
+diff --git a/src/content/photos/photo-30.json b/src/content/photos/photo-30.json
+index c44a2ae..dfb609b 100644
+--- a/src/content/photos/photo-30.json
++++ b/src/content/photos/photo-30.json
+@@ -4,5 +4,6 @@
+   "alt": "Silver Springs community photo 30",
+   "date": "2023-09-20",
+   "order": 30,
+-  "draft": false
++  "draft": false,
++  "showOnHomepage": true
+ }
+diff --git a/src/content/photos/photo-31.json b/src/content/photos/photo-31.json
+index 259cc1f..8672201 100644
+--- a/src/content/photos/photo-31.json
++++ b/src/content/photos/photo-31.json
+@@ -4,5 +4,6 @@
+   "alt": "Silver Springs community photo 31",
+   "date": "2023-09-20",
+   "order": 31,
+-  "draft": false
++  "draft": false,
++  "showOnHomepage": true
+ }
+diff --git a/src/content/photos/photo-32.json b/src/content/photos/photo-32.json
+index e388088..dc84d0c 100644
+--- a/src/content/photos/photo-32.json
++++ b/src/content/photos/photo-32.json
+@@ -4,5 +4,6 @@
+   "alt": "Silver Springs community photo 32",
+   "date": "2023-09-20",
+   "order": 32,
+-  "draft": false
++  "draft": false,
++  "showOnHomepage": true
+ }
+diff --git a/src/lib/publishing.js b/src/lib/publishing.js
+index 75d75e4..7f5fa87 100644
+--- a/src/lib/publishing.js
++++ b/src/lib/publishing.js
+@@ -55,6 +55,7 @@ export function makePhotos(entries) {
+       id: slug,
+       src: data.image,
+       source: data.image,
++      showOnHomepage: data.showOnHomepage === true,
+       name: data.title,
+       alt: data.alt,
+       date,
+diff --git a/src/pages/index.astro b/src/pages/index.astro
+index 0a58ad6..e0db259 100644
+--- a/src/pages/index.astro
++++ b/src/pages/index.astro
+@@ -1,5 +1,6 @@
+ ---
+ import SiteLayout from '../layouts/SiteLayout.astro';
++import HomepageGallery from '../components/HomepageGallery.astro';
+ import LatestNews from '../components/LatestNews.astro';
+ import beforeNews from '../content/pages/home-before-news.html?raw';
+ import afterNews from '../content/pages/home-after-news.html?raw';
+@@ -8,6 +9,7 @@ import afterNews from '../content/pages/home-after-news.html?raw';
+   <main id="main">
+     <Fragment set:html={beforeNews} />
+     <LatestNews />
++    <HomepageGallery />
+     <Fragment set:html={afterNews} />
+   </main>
+ </SiteLayout>
+diff --git a/tests/publishing.mjs b/tests/publishing.mjs
+index 8545502..4e5a3c3 100644
+--- a/tests/publishing.mjs
++++ b/tests/publishing.mjs
+@@ -44,3 +44,15 @@ const plain=makePosts([post('plain-summary','2026-10-20',{excerpt:'A & B < 3'})]
+ assert.equal(plain.excerptHtml,'<p>A &amp; B &lt; 3</p>');
+ assert.equal(posts[0].excerptHtml,'<p>Hello Silver Springs &amp; friends.</p>');
+ console.log('Announcement summaries preserve rich text, metadata stays plain, and encoded titles decode without URL changes.');
++
++const carouselPhotos = makePhotos([
++  photo('selected-later', { showOnHomepage: true, order: 2 }),
++  photo('gallery-only', { showOnHomepage: false }),
++  photo('selected-first', { showOnHomepage: true, order: 1 }),
++  photo('legacy-photo'),
++  photo('selected-draft', { showOnHomepage: true, draft: true })
++]);
++assert.equal(carouselPhotos.length, 4, 'Full gallery keeps unselected published photos');
++assert.deepEqual(carouselPhotos.filter(p => p.showOnHomepage).map(p => p.id), ['selected-first', 'selected-later']);
++assert.equal(makePhotos([photo('default')])[0].showOnHomepage, false);
++console.log('Homepage photo selection respects drafts and display order without hiding full-gallery photos.');
