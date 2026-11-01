@@ -8,6 +8,10 @@ export function plainText(html = '') {
     }).replace(/\s+/g, ' ').trim();
 }
 
+function normalizeTopic(value) {
+  return String(value ?? '').replace(/\\/g, '/').split('/').pop().replace(/\.json$/i, '');
+}
+
 export function makePosts(entries) {
   return entries.filter(({ data }) => data.draft !== true).map(({ slug, data }) => {
     if (!/^[a-z0-9-]+$/.test(slug)) throw new Error(`Invalid announcement filename: ${slug}`);
@@ -31,7 +35,7 @@ export function makePosts(entries) {
       id: data.id || slug,
       slug,
       published,
-      topics: Array.isArray(data.topics) ? data.topics : [],
+      topics: Array.isArray(data.topics) ? data.topics.map(normalizeTopic).filter(Boolean) : [],
       excerpt,
       path: `/changelog-and-faq/${slug}/`,
       year: new Intl.DateTimeFormat('en-US', { ...options, year: 'numeric' }).format(date),
