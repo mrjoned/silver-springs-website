@@ -1,0 +1,20 @@
+.ipnote {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+}
+
+.ipnote strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.community {
+  padding-top: 90px;
+}
+
+@media (max-width: 600px) {
+  .community {
+    padding-top: 55px;
+  }
+}
