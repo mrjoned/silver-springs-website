@@ -12,11 +12,11 @@
 }
 
 .community {
-  padding-top: 90px;
+  margin-top: 90px;
 }
 
 @media (max-width: 600px) {
   .community {
-    padding-top: 55px;
+    margin-top: 55px;
   }
 }
