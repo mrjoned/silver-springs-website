@@ -15,6 +15,15 @@
   font-weight: 700;
 }
 
+.ip-label {
+  color: #f3a6c8;
+}
+
+.ipnote strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
 main#main > section.wrap.community {
   padding-top: 90px !important;
 }
