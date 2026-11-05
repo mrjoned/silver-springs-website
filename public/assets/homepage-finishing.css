@@ -11,12 +11,12 @@
   font-weight: 700;
 }
 
-.community {
-  margin-top: 90px;
+main#main > section.wrap.community {
+  padding-top: 90px !important;
 }
 
 @media (max-width: 600px) {
-  .community {
-    margin-top: 55px;
+  main#main > section.wrap.community {
+    padding-top: 55px !important;
   }
 }
