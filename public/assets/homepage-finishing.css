@@ -29,3 +29,16 @@ main#main > section.wrap.community {
     padding-top: 55px !important;
   }
 }
+
+.homepage-notice {
+  max-width: 760px;
+  margin: 16px auto 0;
+  color: var(--text);
+  text-align: center;
+}
+
+.homepage-featured-link {
+  display: block;
+  width: fit-content;
+  margin: 12px auto 0;
+}

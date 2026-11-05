@@ -747,3 +747,47 @@ content:
     required: true
     options:
       format: html
+
+- name: homepage_settings
+  label: Homepage Settings
+  type: collection
+  path: src/content/homepage-settings
+  format: json
+  filename:
+    template: '{primary}.json'
+    field: create
+  subfolders: false
+  operations:
+    rename: false
+  view:
+    primary: name
+    fields: [name, serverVersion]
+  fields:
+  - name: name
+    label: Settings name
+    type: string
+    required: true
+    readonly: true
+  - name: serverVersion
+    label: Server version
+    type: string
+    required: true
+    description: Version shown beside the server IP.
+  - name: heroTagline
+    label: Hero tagline
+    type: string
+    required: true
+    description: Short line beneath the server name.
+  - name: homepageNotice
+    label: Homepage notice (optional)
+    type: rich-text
+    options:
+      format: html
+      media: false
+    description: Temporary message shown below the server details. Leave blank to hide it.
+  - name: featuredLinkLabel
+    label: Featured link text (optional)
+    type: string
+  - name: featuredLinkUrl
+    label: Featured link URL (optional)
+    type: string

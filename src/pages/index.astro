@@ -6,14 +6,53 @@ import LatestNews from '../components/LatestNews.astro';
 import beforeNews from '../content/pages/home-before-news.html?raw';
 import guides from '../content/pages/home-guides.html?raw';
 import afterNews from '../content/pages/home-after-news.html?raw';
+import homepageSettings from '../content/homepage-settings/homepage.json';
 const quickStart = beforeNews.indexOf('<div class="wrap quick">');
 if (quickStart < 0) throw new Error('Homepage quick links marker missing');
+
+const escapeHtml = (value) =>
+  String(value ?? '').replace(/[&<>"']/g, (character) => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
+  }[character]));
+
+const serverVersion = escapeHtml(homepageSettings.serverVersion || '26.3');
+const heroTagline = escapeHtml(
+  homepageSettings.heroTagline || 'Hardmode Java Minecraft, with our own unique spin!'
+);
+const homepageNotice = homepageSettings.homepageNotice
+  ? `<div class="homepage-notice">${homepageSettings.homepageNotice}</div>`
+  : '';
+
+const configuredUrl = String(homepageSettings.featuredLinkUrl || '');
+const safeFeaturedUrl =
+  configuredUrl.startsWith('/') || /^https?:\/\//i.test(configuredUrl)
+    ? configuredUrl
+    : '';
+
+const featuredLink =
+  homepageSettings.featuredLinkLabel && safeFeaturedUrl
+    ? `<a class="homepage-featured-link" href="${escapeHtml(safeFeaturedUrl)}">${escapeHtml(homepageSettings.featuredLinkLabel)} →</a>`
+    : '';
+
+const homepageBeforeNews = beforeNews
+  .replace(
+    /<p class="hero-tagline">.*?<\/p>/s,
+    `<p class="hero-tagline">${heroTagline}</p>`
+  )
+  .replace(
+    /<div class="ipnote">.*?<\/div>/s,
+    `<div class="ipnote"><span class="ip-label">Server IP: <strong>sssminecraft.com</strong></span><span class="ip-label">Server Version: <strong>${serverVersion}</strong></span></div>${homepageNotice}${featuredLink}`
+  );
 ---
 <SiteLayout title="Silver Springs Survival" description="Discover Silver Springs Survival: community builds, custom enchantments, and your next Minecraft adventure." styles={['/assets/homepage-finishing.css', '/assets/site.css', '/assets/homepage.css']}>
   <main id="main">
-    <Fragment set:html={beforeNews.slice(0, quickStart)} />
+    <Fragment set:html={homepageBeforeNews.slice(0, quickStart)} />
     <RushBanner />
-    <Fragment set:html={beforeNews.slice(quickStart)} />
+    <Fragment set:html={homepageBeforeNews.slice(quickStart)} />
     <LatestNews />
     <Fragment set:html={guides} />
     <HomepageGallery />
