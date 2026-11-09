@@ -1,0 +1,41 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+
+const archives = [
+  { version: '1.21', size: '49.3 GB · Java Edition', status: 'Archive being prepared', download: '' },
+  { version: '1.20', size: '15.9 GB · Java Edition', status: 'Archive being prepared', download: '' },
+  { version: '1.18', size: '34.9 GB · Java Edition', status: 'Archive being prepared', download: '' },
+  { version: '1.17', size: '41.6 GB · Java Edition', status: 'Archive being prepared', download: '' }
+];
+---
+
+<SiteLayout
+  title="World Archives"
+  description="Revisit the builds, adventures, and communities that shaped Silver Springs Survival."
+  styles={['/assets/site.css', '/assets/world-archives.css']}
+>
+  <main id="main">
+    <section class="inner-hero world-archives-hero">
+      <div class="wrap">
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span>World Archives</span></nav>
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">Silver Springs Survival</div>
+            <h1>World Archives</h1>
+            <p>Our worlds may change, but the memories don't have to. Revisit the builds, adventures, and communities that shaped Silver Springs.</p>
+          </div>
+          <figure><img src="/assets/spawn.jpg" alt="A view of the Silver Springs spawn town" fetchpriority="high"><figcaption>A little corner of Silver Springs.</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap archive-section">
+      <div class="sectionhead"><div><div class="eyebrow">Explore our past worlds</div><h2>Four generations of Silver Springs history</h2></div><p>We're preparing each world for download. The archive cards will become active as their files are uploaded, checked, and ready to share.</p></div>
+      <div class="archive-grid">
+        {archives.map((archive) => <article class="archive-card"><div class="archive-card-top"><span class="archive-version">Minecraft {archive.version}</span><span class="archive-status">{archive.status}</span></div><p class="archive-size">{archive.size}</p>{archive.download ? <a class="btn primary" href={archive.download} download>Download world ↓</a> : <span class="btn archive-disabled" aria-disabled="true">Coming soon</span>}</article>)}
+      </div>
+    </section>
+
+    <section class="contentband"><div class="wrap archive-howto"><div><div class="eyebrow">How to play an archived world</div><h2>Bring an old world back to life.</h2></div><div><ol><li><strong>Download and extract the ZIP.</strong> Keep the world folder itself, rather than the outer download folder.</li><li><strong>Use a compatible Minecraft Java version.</strong> Older worlds are safest to open in the version they were built for.</li><li><strong>Move the world into your Minecraft saves folder.</strong> Then launch Minecraft and select it from Singleplayer.</li></ol><p class="archive-note">Some server worlds may need additional preparation for single-player use. We’ll add compatibility notes and verified checksums as each archive is published.</p></div></div></section>
+  </main>
+</SiteLayout>
