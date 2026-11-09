@@ -791,3 +791,56 @@ content:
   - name: featuredLinkUrl
     label: Featured link URL (optional)
     type: string
+
+- name: world_archives
+  label: World Archives
+  type: collection
+  path: src/content/world-archives
+  format: json
+  filename:
+    template: '{primary}.json'
+    field: create
+  subfolders: false
+  operations:
+    rename: false
+  view:
+    primary: name
+    fields: [name, version, size, draft]
+    sort: [order, version]
+    default:
+      sort: order
+      order: asc
+  fields:
+  - name: name
+    label: Archive name
+    type: string
+    required: true
+  - name: draft
+    label: Draft (hide from website)
+    type: boolean
+    default: true
+  - name: order
+    label: Display order
+    type: number
+    default: 0
+  - name: version
+    label: Minecraft version
+    type: string
+    required: true
+  - name: size
+    label: Verified download size
+    type: string
+    required: true
+  - name: status
+    label: Archive status
+    type: string
+    default: Archive being prepared
+  - name: downloadUrl
+    label: R2 download URL (optional)
+    type: string
+  - name: checksum
+    label: SHA-256 checksum (optional)
+    type: string
+  - name: notes
+    label: Archive notes (optional)
+    type: text
