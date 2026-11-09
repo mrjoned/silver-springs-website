@@ -1,11 +1,8 @@
 {
   "name": "Minecraft 1.17 World",
-  "draft": false,
+  "draft": true,
   "order": 4,
   "version": "1.17",
-  "size": "41.6 GB \u00b7 Java Edition",
-  "status": "Archive being prepared",
-  "downloadUrl": "",
-  "checksum": "",
-  "notes": ""
+  "size": "41.6 GB · Java Edition",
+  "status": "Archive being prepared"
 }
