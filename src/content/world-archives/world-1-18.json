@@ -1,8 +1,10 @@
 {
-  "name": "Silver Springs 1.18",
+  "name": "Silver Springs 1.17 Temp Map",
   "draft": true,
   "order": 5,
-  "version": "1.18",
+  "version": "1.17.1",
   "size": "34.9 GB",
-  "status": "Archive being prepared"
+  "status": "Upload in Progress",
+  "checksum": "59EADD69B6F88C460627D93D291C68FF95DD17189E5B3B41E978AC20D541A599",
+  "notes": "We used custom terrain on this map, so it'll ask if you're sure about launching. It should be fine! (It worked great for me!)"
 }
