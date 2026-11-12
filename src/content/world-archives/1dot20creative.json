@@ -1,9 +1,11 @@
 {
   "name": "Silver Springs 1.20 Creative World",
   "draft": false,
-  "order": 0,
+  "order": 7,
   "version": "1.20 Creative World",
   "size": "4.3 GB",
-  "status": "Upload in Progress",
+  "status": "Ready to Download",
+  "downloadUrl": "https://downloads.silverspringssurvival.com/silver-springs-creative-world-1-20.zip",
+  "checksum": "8FBEF01127E0CDC6CB12E9D132FA75200F918E8B4C1E95BDA8C8B47A5253B4E6",
   "notes": "This is ONLY the creative world from the 1.20 map"
 }
