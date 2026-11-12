@@ -1,8 +1,10 @@
 {
   "name": "Minecraft 1.20 World",
-  "draft": true,
+  "draft": false,
   "order": 2,
   "version": "1.20",
-  "size": "15.9 GB · Java Edition",
-  "status": "Archive being prepared"
+  "size": "17.07 GB",
+  "status": "Ready to Download",
+  "downloadUrl": "https://downloads.silverspringssurvival.com/silver-springs-1-20.zip",
+  "checksum": "689BF8EC2D7973DD808A27C07F85502632DDFE7CD398D34C326794B7FB289D70"
 }
