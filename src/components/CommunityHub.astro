@@ -1,0 +1,138 @@
+---
+import { photos } from '../lib/photos.js';
+import viewer from '../content/pages/gallery-viewer.html?raw';
+
+const worldFiles = import.meta.glob('../content/world-archives/*.json', { eager: true, import: 'default' });
+const archives = Object.values(worldFiles).filter((archive) => !archive.draft).sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+const videoFiles = import.meta.glob('../content/videos/*.json', { eager: true, import: 'default' });
+const videos = Object.values(videoFiles).filter((video) => !video.draft).sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+const years = [...new Set(photos.filter((photo) => photo.year !== 'more').map((photo) => photo.year))].sort().reverse();
+const generationLabel = archives.length === 1 ? 'generation' : 'generations';
+const initialTab = Astro.props.initialTab ?? 'gallery';
+const categoryKey = (value = 'Other') => value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const safeVideoUrl = (value) => {
+  try {
+    const url = new URL(value);
+    return ['https:', 'http:'].includes(url.protocol) ? url.href : null;
+  } catch { return null; }
+};
+const safeYouTubeId = (value) => /^[A-Za-z0-9_-]{11}$/.test(value ?? '') ? value : null;
+const categories = [['map-launch', 'Map launches'], ['community-event', 'Community events'], ['pvp-tournament', 'PvP tournaments'], ['other', 'Other']];
+---
+<main id="main" class="community-hub" data-initial-tab={initialTab}>
+  <section class="inner-hero community-hero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span>Community Archive</span></nav>
+      <div class="eyebrow">Silver Springs through the years</div>
+      <h1>Community Archive</h1>
+      <p>Builds, maps, and memories from the people, places, and events that shaped Silver Springs.</p>
+    </div>
+  </section>
+
+  <div class="wrap community-tabs-wrap">
+    <nav class="community-tabs" role="tablist" aria-label="Community Archive sections">
+      <a class="community-tab" id="tab-gallery" role="tab" href="#community-gallery" aria-controls="community-gallery" aria-selected={initialTab === 'gallery' ? 'true' : 'false'}>Gallery</a>
+      <a class="community-tab" id="tab-maps" role="tab" href="#community-maps" aria-controls="community-maps" aria-selected={initialTab === 'maps' ? 'true' : 'false'}>Map Archive</a>
+      <a class="community-tab" id="tab-videos" role="tab" href="#community-videos" aria-controls="community-videos" aria-selected={initialTab === 'videos' ? 'true' : 'false'}>Video Archive</a>
+    </nav>
+  </div>
+
+  <section class="community-panel" id="community-gallery" role="tabpanel" aria-labelledby="tab-gallery" tabindex="0">
+    <div class="wrap community-panel-heading">
+      <div class="eyebrow">A world made by its players</div>
+      <h2>Our world. <em>Our memories.</em></h2>
+      <p>Builds worth wandering through. Moments worth coming back to. A look through the Silver Springs community archives.</p>
+    </div>
+    <div class="wrap gallery-collection">
+      <div class="gallery-toolbar">
+        <div><span class="eyebrow">The collection</span><p id="photo-count" role="status">Showing all {photos.length} photos</p></div>
+        <label>Browse the archives<select id="photo-filter"><option value="all">All photos</option>{years.map((year) => <option value={year}>{year}</option>)}<option value="more">More moments</option></select></label>
+      </div>
+      <div class="photo-masonry">
+        {photos.map((photo, index) => <button class="photo-tile" data-photo={photo.id} data-year={photo.year} aria-label={`View photo: ${photo.name}`}>
+          <img src={photo.src} alt={photo.alt} loading={index < 3 ? 'eager' : 'lazy'} decoding="async" />
+          <span class="photo-label"><span>{photo.name}</span><span aria-hidden="true">↗</span></span>
+        </button>)}
+      </div>
+      {!photos.length && <p class="bodytext">Community photos will appear here when published.</p>}
+      <p class="gallery-end">Every build and every gathering adds another chapter.</p>
+      <a class="textlink" href="/about-us/">Get to know our community →</a>
+    </div>
+    <Fragment set:html={viewer} />
+  </section>
+
+  <section class="community-panel" id="community-maps" role="tabpanel" aria-labelledby="tab-maps" tabindex="0">
+    <section class="wrap archive-section">
+      <div class="community-panel-heading">
+        <div class="eyebrow">Explore our past worlds</div>
+        <h2>{archives.length} {generationLabel} of Silver Springs history</h2>
+        <p>Our worlds may change, but the memories don't have to. Revisit the builds, adventures, and communities that shaped Silver Springs.</p>
+      </div>
+      <div class="archive-grid">
+        {archives.map((archive) => <article class="archive-card">
+          <div class="archive-card-top"><span class="archive-version">{archive.name}</span><span class="archive-status">Minecraft {archive.version}</span></div>
+          <p class="archive-size">{archive.size}</p>
+          {archive.status && <p class="archive-notes">{archive.status}</p>}
+          {archive.notes && <p class="archive-notes">{archive.notes}</p>}
+          {archive.downloadUrl ? <a class="btn primary" href={archive.downloadUrl} download>Download world ↓</a> : <span class="btn archive-disabled" aria-disabled="true">Coming soon</span>}
+          {archive.checksum && <code class="archive-checksum">SHA-256: {archive.checksum}</code>}
+        </article>)}
+      </div>
+      {!archives.length && <p class="bodytext">Archived worlds will appear here as they are prepared for download.</p>}
+    </section>
+    <section class="contentband">
+      <div class="wrap archive-howto">
+        <div><div class="eyebrow">How to play an archived world</div><h2>Bring an old world back to life.</h2></div>
+        <div>
+          <ol>
+            <li><strong>Download and extract the ZIP.</strong> Keep the world folder itself.</li>
+            <li><strong>Use a compatible Minecraft Java version.</strong></li>
+            <li><strong>Move the world into your Minecraft saves folder.</strong></li>
+          </ol>
+          <p class="archive-note">Some server worlds may need additional preparation for single-player use. Check each archive for compatibility notes and verified checksums.</p>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <section class="community-panel" id="community-videos" role="tabpanel" aria-labelledby="tab-videos" tabindex="0">
+    <section class="wrap video-archive-section">
+      <div class="community-panel-heading">
+        <div class="eyebrow">Events, launches, and live moments</div>
+        <h2>Video Archive</h2>
+        <p>Watch map beginnings, community events, PvP tournaments, and full livestream recordings from Silver Springs.</p>
+      </div>
+      <div class="video-toolbar">
+        <label>Filter videos<select id="video-filter"><option value="all">All videos</option>{categories.map(([key, label]) => <option value={key}>{label}</option>)}</select></label>
+        <p role="status" id="video-count">{videos.length} {videos.length === 1 ? 'video' : 'videos'}</p>
+      </div>
+      {videos.length ? (
+        <div class="video-grid" id="video-grid">
+          {videos.map((video) => {
+            const category = video.category || 'Other';
+            const videoUrl = safeVideoUrl(video.videoUrl);
+            const youtubeId = safeYouTubeId(video.youtubeId);
+            return <article class="video-card" data-video-category={categoryKey(category)}>
+              {youtubeId ? <div class="video-frame"><iframe src={`https://www.youtube-nocookie.com/embed/${youtubeId}`} title={`Watch ${video.title}`} loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                : video.thumbnail ? <img class="video-thumbnail" src={video.thumbnail} alt={video.thumbnailAlt || video.title} loading="lazy" decoding="async" />
+                : <div class="video-art" aria-hidden="true"><span>▶</span></div>}
+              <div class="video-card-content">
+                <div class="video-meta"><span>{category}</span>{video.format && <span>{video.format}</span>}{video.date && <time datetime={video.date}>{video.date}</time>}</div>
+                <h3>{video.title}</h3>
+                {video.description && <p>{video.description}</p>}
+                {videoUrl && <a class="textlink" href={videoUrl} target="_blank" rel="noopener noreferrer">Watch video ↗</a>}
+              </div>
+            </article>;
+          })}
+        </div>
+      ) : (
+        <div class="video-empty">
+          <span class="video-empty-icon" aria-hidden="true">▶</span>
+          <h3>The archive is just getting started.</h3>
+          <p>Silver Springs videos will appear here as recordings are added, from map launches and community events to tournament highlights and full VODs.</p>
+        </div>
+      )}
+      {videos.length > 0 && <p id="video-filter-empty" class="video-filter-empty" hidden>No videos in this category yet. Choose another filter to keep browsing.</p>}
+    </section>
+  </section>
+</main>

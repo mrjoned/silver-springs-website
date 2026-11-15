@@ -1,0 +1,9 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import CommunityHub from '../../components/CommunityHub.astro';
+
+const description = 'Explore Silver Springs community photos, archived worlds, and event videos.';
+---
+<SiteLayout title="Community Archive" description={description} styles={['/assets/site.css', '/assets/gallery-calendar.css', '/assets/world-archives.css', '/assets/community-hub.css']} scripts={['/assets/community-hub.js', '/assets/gallery.js']}>
+  <CommunityHub />
+</SiteLayout>
