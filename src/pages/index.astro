@@ -7,8 +7,6 @@ import beforeNews from '../content/pages/home-before-news.html?raw';
 import guides from '../content/pages/home-guides.html?raw';
 import afterNews from '../content/pages/home-after-news.html?raw';
 import homepageSettings from '../content/homepage-settings/homepage.json';
-const quickStart = beforeNews.indexOf('<div class="wrap quick">');
-if (quickStart < 0) throw new Error('Homepage quick links marker missing');
 
 const escapeHtml = (value) =>
   String(value ?? '').replace(/[&<>"']/g, (character) => ({
@@ -47,6 +45,10 @@ const homepageBeforeNews = beforeNews
     /<div class="ipnote">.*?<\/div>/s,
     `<div class="ipnote"><span class="ip-label">Server IP: <strong>sssminecraft.com</strong></span><span class="ip-label">Server Version: <strong>${serverVersion}</strong></span></div>${homepageNotice}${featuredLink}`
   );
+
+const quickStart = homepageBeforeNews.indexOf('<div class="wrap quick">');
+if (quickStart < 0) throw new Error('Homepage quick links marker missing');
+
 ---
 <SiteLayout title="Silver Springs Survival" description="Discover Silver Springs Survival: community builds, custom enchantments, and your next Minecraft adventure." styles={['/assets/homepage-finishing.css', '/assets/site.css', '/assets/homepage.css']}>
   <main id="main">

@@ -1,5 +1,7 @@
 .ipnote {
   display: flex;
+  justify-content: center;
+  text-align: center;
   flex-wrap: wrap;
   gap: 6px 18px;
 }
@@ -9,13 +11,22 @@
   font-weight: 700;
 }
 
-.community {
-  padding-top: 90px;
+.ip-label {
+  color: #f3a6c8;
+}
+
+.ipnote strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
+main#main > section.wrap.community {
+  padding-top: 90px !important;
 }
 
 @media (max-width: 600px) {
-  .community {
-    padding-top: 55px;
+  main#main > section.wrap.community {
+    padding-top: 55px !important;
   }
 }
 
