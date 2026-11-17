@@ -27,6 +27,18 @@ const safeVideoUrl = (value) => {
   } catch { return null; }
 };
 const safeYouTubeId = (value) => /^[A-Za-z0-9_-]{11}$/.test(value ?? '') ? value : null;
+const twitchClipSlug = (videoUrl) => {
+  if (!videoUrl) return null;
+
+  const { hostname, pathname } = new URL(videoUrl);
+  if (hostname === 'clips.twitch.tv' && pathname !== '/embed' && pathname !== '/embed/') {
+    return pathname.match(/^\/([\w-]+)\/?$/)?.[1] ?? null;
+  }
+  if (hostname === 'www.twitch.tv' || hostname === 'twitch.tv') {
+    return pathname.match(/^\/[\w-]+\/clip\/([\w-]+)\/?$/)?.[1] ?? null;
+  }
+  return null;
+};
 const categories = [['map-launch', 'Map launches'], ['community-event', 'Community events'], ['pvp-tournament', 'PvP tournaments'], ['other', 'Other']];
 ---
 <main id="main" class="community-hub" data-initial-tab={initialTab}>
@@ -122,16 +134,26 @@ const categories = [['map-launch', 'Map launches'], ['community-event', 'Communi
           {videos.map((video) => {
             const category = video.category || 'Other';
             const videoUrl = safeVideoUrl(video.videoUrl);
+            const twitchClip = twitchClipSlug(videoUrl);
             const youtubeId = safeYouTubeId(video.youtubeId);
+            const preview = video.thumbnail ? (
+              <img class="video-thumbnail" src={video.thumbnail} alt={video.thumbnailAlt || video.title} loading="lazy" decoding="async" />
+            ) : (
+              <div class="video-art" aria-hidden="true"><span>▶</span></div>
+            );
             return <article class="video-card" data-video-category={categoryKey(category)} data-video-date={videoDate(video)}>
-              {youtubeId ? <div class="video-frame"><iframe src={`https://www.youtube-nocookie.com/embed/${youtubeId}`} title={`Watch ${video.title}`} loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-                : video.thumbnail ? <img class="video-thumbnail" src={video.thumbnail} alt={video.thumbnailAlt || video.title} loading="lazy" decoding="async" />
-                : <div class="video-art" aria-hidden="true"><span>▶</span></div>}
+              {twitchClip ? (
+                <div data-twitch-clip={twitchClip}>
+                  <div data-twitch-preview>{preview}</div>
+                  <iframe class="video-twitch-frame" title={`Watch ${video.title} on Twitch`} loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen hidden></iframe>
+                </div>
+              ) : youtubeId ? <div class="video-frame"><iframe src={`https://www.youtube-nocookie.com/embed/${youtubeId}`} title={`Watch ${video.title}`} loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                : preview}
               <div class="video-card-content">
                 <div class="video-meta"><span>{category}</span>{video.format && <span>{video.format}</span>}{video.date && <time datetime={video.date}>{video.date}</time>}</div>
                 <h3>{video.title}</h3>
                 {video.description && <p>{video.description}</p>}
-                {videoUrl && <a class="textlink" href={videoUrl} target="_blank" rel="noopener noreferrer">Watch video ↗</a>}
+                {videoUrl && <a class="textlink" href={videoUrl} target="_blank" rel="noopener noreferrer">{twitchClip ? 'Watch on Twitch ↗' : 'Watch video ↗'}</a>}
               </div>
             </article>;
           })}

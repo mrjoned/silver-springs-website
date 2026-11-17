@@ -76,4 +76,29 @@
     if (count) count.textContent = shown + (shown === 1 ? ' video' : ' videos');
     if (empty) empty.hidden = shown !== 0;
   });
+
+  const twitchClips = hub.querySelectorAll('[data-twitch-clip]');
+  if (!twitchClips.length) return;
+
+  const clipObserver = new ResizeObserver((entries) => {
+    for (const { target, contentRect } of entries) {
+      const frame = target.querySelector('iframe');
+      const preview = target.querySelector('[data-twitch-preview]');
+      const fits = contentRect.width >= 400;
+      if (fits === !frame.hidden) continue;
+
+      if (fits) {
+        const embed = new URL('https://clips.twitch.tv/embed');
+        embed.searchParams.set('clip', target.dataset.twitchClip);
+        embed.searchParams.set('parent', location.hostname);
+        embed.searchParams.set('autoplay', 'false');
+        frame.src = embed.href;
+      } else {
+        frame.removeAttribute('src');
+      }
+      frame.hidden = !fits;
+      preview.hidden = fits;
+    }
+  });
+  twitchClips.forEach((clip) => clipObserver.observe(clip));
 })();
