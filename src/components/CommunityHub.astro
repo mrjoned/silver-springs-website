@@ -5,7 +5,17 @@ import viewer from '../content/pages/gallery-viewer.html?raw';
 const worldFiles = import.meta.glob('../content/world-archives/*.json', { eager: true, import: 'default' });
 const archives = Object.values(worldFiles).filter((archive) => !archive.draft).sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
 const videoFiles = import.meta.glob('../content/videos/*.json', { eager: true, import: 'default' });
-const videos = Object.values(videoFiles).filter((video) => !video.draft).sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+const videoDate = (video) => {
+  const date = Date.parse(video.date || '');
+  return Number.isFinite(date) ? date : null;
+};
+const videos = Object.values(videoFiles).filter((video) => !video.draft).sort((a, b) => {
+  const first = videoDate(a);
+  const second = videoDate(b);
+  if (first === null && second !== null) return 1;
+  if (second === null && first !== null) return -1;
+  return (second ?? 0) - (first ?? 0) || (a.order ?? 0) - (b.order ?? 0);
+});
 const years = [...new Set(photos.filter((photo) => photo.year !== 'more').map((photo) => photo.year))].sort().reverse();
 const generationLabel = archives.length === 1 ? 'generation' : 'generations';
 const initialTab = Astro.props.initialTab ?? 'gallery';
@@ -104,6 +114,7 @@ const categories = [['map-launch', 'Map launches'], ['community-event', 'Communi
       </div>
       <div class="video-toolbar">
         <label>Filter videos<select id="video-filter"><option value="all">All videos</option>{categories.map(([key, label]) => <option value={key}>{label}</option>)}</select></label>
+        <label>Sort by date<select id="video-sort"><option value="newest">Newest first</option><option value="oldest">Oldest first</option></select></label>
         <p role="status" id="video-count">{videos.length} {videos.length === 1 ? 'video' : 'videos'}</p>
       </div>
       {videos.length ? (
@@ -112,7 +123,7 @@ const categories = [['map-launch', 'Map launches'], ['community-event', 'Communi
             const category = video.category || 'Other';
             const videoUrl = safeVideoUrl(video.videoUrl);
             const youtubeId = safeYouTubeId(video.youtubeId);
-            return <article class="video-card" data-video-category={categoryKey(category)}>
+            return <article class="video-card" data-video-category={categoryKey(category)} data-video-date={videoDate(video)}>
               {youtubeId ? <div class="video-frame"><iframe src={`https://www.youtube-nocookie.com/embed/${youtubeId}`} title={`Watch ${video.title}`} loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
                 : video.thumbnail ? <img class="video-thumbnail" src={video.thumbnail} alt={video.thumbnailAlt || video.title} loading="lazy" decoding="async" />
                 : <div class="video-art" aria-hidden="true"><span>▶</span></div>}
