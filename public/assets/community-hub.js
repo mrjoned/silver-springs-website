@@ -42,6 +42,28 @@
 
   const filter = document.getElementById('video-filter');
   const cards = [...document.querySelectorAll('[data-video-category]')];
+  const sort = document.getElementById('video-sort');
+  const grid = document.getElementById('video-grid');
+  function sortVideos() {
+    if (!sort || !grid) return;
+    const dated = cards.map((card, index) => {
+      const value = card.getAttribute('data-video-date');
+      const date = value === null || value === '' ? NaN : Number(value);
+      return { card, index, date };
+    });
+    dated.sort((a, b) => {
+      const aMissing = !Number.isFinite(a.date);
+      const bMissing = !Number.isFinite(b.date);
+      if (aMissing !== bMissing) return aMissing ? 1 : -1;
+      if (aMissing) return a.index - b.index;
+      return (sort.value === 'oldest' ? a.date - b.date : b.date - a.date) || a.index - b.index;
+    });
+    // Keep DOM order aligned with the visible order for keyboard navigation.
+    dated.forEach(({ card }, index) => {
+      if (grid.children[index] !== card) grid.insertBefore(card, grid.children[index] || null);
+    });
+  }
+  if (sort) sort.addEventListener('change', sortVideos);
   const count = document.getElementById('video-count');
   const empty = document.getElementById('video-filter-empty');
   if (filter) filter.addEventListener('change', () => {
