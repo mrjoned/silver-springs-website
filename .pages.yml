@@ -893,6 +893,7 @@ content:
       values:
       - Edited video
       - Full VOD
+      - Clip
   - name: date
     label: Event or recording date
     type: date
@@ -906,7 +907,7 @@ content:
     label: Video page URL
     type: string
     required: true
-    description: Link to the video on YouTube, Twitch, or another video platform.
+    description: Paste a Twitch clip URL to embed it automatically, or link to another video platform.
   - name: youtubeId
     label: YouTube video ID (optional)
     type: string
