@@ -884,7 +884,14 @@ content:
       - Map launch
       - Community event
       - PvP tournament
-      - Other
+      - name: Server review
+        label: Server Reviews
+      - name: Mob Arena
+        label: Mob Arenas
+      - name: Trailer
+        label: Trailers
+      - name: Other
+        label: Uncategorized
   - name: format
     label: Video format
     type: select

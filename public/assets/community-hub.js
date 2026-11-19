@@ -2,6 +2,7 @@
   'use strict';
   const hub = document.querySelector('.community-hub');
   if (!hub) return;
+  let activePlayer;
   const tabs = [...hub.querySelectorAll('[role="tab"]')];
   const panels = [...hub.querySelectorAll('[role="tabpanel"]')];
   const keys = ['gallery', 'maps', 'videos'];
@@ -10,6 +11,7 @@
 
   function activate(key, updateHistory) {
     if (!keys.includes(key)) return;
+    if (key !== 'videos') closeVideo();
     tabs.forEach((tab, index) => {
       const selected = keys[index] === key;
       tab.setAttribute('aria-selected', String(selected));
@@ -40,65 +42,137 @@
   addEventListener('popstate', restoreFromHistory);
   addEventListener('hashchange', restoreFromHistory);
 
-  const filter = document.getElementById('video-filter');
-  const cards = [...document.querySelectorAll('[data-video-category]')];
-  const sort = document.getElementById('video-sort');
-  const grid = document.getElementById('video-grid');
-  function sortVideos() {
-    if (!sort || !grid) return;
-    const dated = cards.map((card, index) => {
-      const value = card.getAttribute('data-video-date');
-      const date = value === null || value === '' ? NaN : Number(value);
-      return { card, index, date };
-    });
-    dated.sort((a, b) => {
-      const aMissing = !Number.isFinite(a.date);
-      const bMissing = !Number.isFinite(b.date);
-      if (aMissing !== bMissing) return aMissing ? 1 : -1;
-      if (aMissing) return a.index - b.index;
-      return (sort.value === 'oldest' ? a.date - b.date : b.date - a.date) || a.index - b.index;
-    });
-    // Keep DOM order aligned with the visible order for keyboard navigation.
-    dated.forEach(({ card }, index) => {
-      if (grid.children[index] !== card) grid.insertBefore(card, grid.children[index] || null);
-    });
+  function closeVideo(restoreFocus = false) {
+    if (!activePlayer) return;
+    const { button, preview, player, observer } = activePlayer;
+    observer?.disconnect();
+    player.remove();
+    preview.hidden = false;
+    activePlayer = undefined;
+    if (restoreFocus) button.focus();
   }
-  if (sort) sort.addEventListener('change', sortVideos);
+
+  function playVideo(button) {
+    const media = button.closest('.video-media');
+    const preview = button.closest('.video-preview');
+    const { videoPlatform, videoId } = button.dataset;
+    const twitch = videoPlatform === 'twitch';
+    if (twitch && media.clientWidth < 400) return;
+
+    closeVideo();
+    const embed = twitch
+      ? new URL('https://clips.twitch.tv/embed')
+      : new URL(`https://www.youtube-nocookie.com/embed/${videoId}`);
+    if (twitch) {
+      embed.searchParams.set('clip', videoId);
+      embed.searchParams.set('parent', location.hostname);
+    }
+    embed.searchParams.set('autoplay', twitch ? 'true' : '1');
+
+    const player = document.createElement('div');
+    const frame = document.createElement('iframe');
+    frame.className = twitch ? 'video-twitch-frame' : 'video-frame';
+    frame.title = button.getAttribute('aria-label');
+    frame.referrerPolicy = 'strict-origin-when-cross-origin';
+    frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    frame.allowFullscreen = true;
+    frame.src = embed.href;
+
+    const close = document.createElement('button');
+    close.type = 'button';
+    close.className = 'btn video-player-close';
+    close.textContent = 'Close player';
+    close.addEventListener('click', () => closeVideo(true));
+    player.append(frame, close);
+    preview.hidden = true;
+    media.append(player);
+
+    const observer = twitch ? new ResizeObserver(([entry]) => {
+      if (entry.contentRect.width < 400) closeVideo();
+    }) : undefined;
+    activePlayer = { button, preview, player, observer };
+    observer?.observe(media);
+    frame.focus();
+  }
+
+  const grid = document.getElementById('video-grid');
+  if (!grid) return;
+
+  const cards = [...grid.querySelectorAll('[data-video-category]')];
+  const filters = [...hub.querySelectorAll('[data-video-filter]')];
+  const sort = document.getElementById('video-sort');
   const count = document.getElementById('video-count');
   const empty = document.getElementById('video-filter-empty');
-  if (filter) filter.addEventListener('change', () => {
-    let shown = 0;
-    cards.forEach((card) => {
-      const visible = filter.value === 'all' || card.dataset.videoCategory === filter.value;
-      card.hidden = !visible;
-      if (visible) shown += 1;
+  const pages = document.getElementById('video-pages');
+  const pageNumber = document.getElementById('video-page-number');
+  const previous = document.getElementById('video-previous');
+  const next = document.getElementById('video-next');
+  const pageSize = 12;
+  let category = 'all';
+  let page = 1;
+
+  const videoDate = (card) => {
+    const date = card.dataset.videoDate;
+    return date == null || date === '' ? null : Number(date);
+  };
+  const oldestFirst = [...cards].sort((a, b) => {
+    const first = videoDate(a);
+    const second = videoDate(b);
+    if (first === null) return second === null ? 0 : 1;
+    if (second === null) return -1;
+    return first - second;
+  });
+
+  function renderVideos() {
+    closeVideo();
+    const sorted = sort.value === 'oldest' ? oldestFirst : cards;
+    const matches = sorted.filter((card) => category === 'all' || card.dataset.videoCategory === category);
+    const totalPages = Math.ceil(matches.length / pageSize);
+    const start = (page - 1) * pageSize;
+    const visible = matches.slice(start, start + pageSize);
+    const showing = new Set(visible);
+    cards.forEach((card) => { card.hidden = !showing.has(card); });
+    visible.forEach((card, index) => {
+      if (grid.children[index] !== card) grid.insertBefore(card, grid.children[index]);
     });
-    if (count) count.textContent = shown + (shown === 1 ? ' video' : ' videos');
-    if (empty) empty.hidden = shown !== 0;
+
+    count.textContent = matches.length > 0
+      ? `Showing ${start + 1}–${start + visible.length} of ${matches.length} ${matches.length === 1 ? 'video' : 'videos'}`
+      : '0 videos';
+    empty.hidden = matches.length > 0;
+    pages.hidden = totalPages < 2;
+    pageNumber.textContent = `Page ${page} of ${totalPages}`;
+    previous.disabled = page <= 1;
+    next.disabled = page >= totalPages;
+  }
+
+  filters.forEach((filter) => {
+    filter.addEventListener('click', () => {
+      if (category === filter.dataset.videoFilter) return;
+      category = filter.dataset.videoFilter;
+      filters.forEach((button) => button.setAttribute('aria-pressed', String(button === filter)));
+      page = 1;
+      renderVideos();
+    });
+  });
+  sort.addEventListener('change', () => {
+    page = 1;
+    renderVideos();
   });
 
-  const twitchClips = hub.querySelectorAll('[data-twitch-clip]');
-  if (!twitchClips.length) return;
+  function turnPage(step) {
+    page += step;
+    renderVideos();
+    grid.focus({ preventScroll: true });
+    grid.scrollIntoView({ block: 'start' });
+  }
+  previous.addEventListener('click', () => turnPage(-1));
+  next.addEventListener('click', () => turnPage(1));
 
-  const clipObserver = new ResizeObserver((entries) => {
-    for (const { target, contentRect } of entries) {
-      const frame = target.querySelector('iframe');
-      const preview = target.querySelector('[data-twitch-preview]');
-      const fits = contentRect.width >= 400;
-      if (fits === !frame.hidden) continue;
-
-      if (fits) {
-        const embed = new URL('https://clips.twitch.tv/embed');
-        embed.searchParams.set('clip', target.dataset.twitchClip);
-        embed.searchParams.set('parent', location.hostname);
-        embed.searchParams.set('autoplay', 'false');
-        frame.src = embed.href;
-      } else {
-        frame.removeAttribute('src');
-      }
-      frame.hidden = !fits;
-      preview.hidden = fits;
-    }
+  grid.querySelectorAll('.video-play').forEach((button) => {
+    button.hidden = false;
+    button.addEventListener('click', () => playVideo(button));
   });
-  twitchClips.forEach((clip) => clipObserver.observe(clip));
+  renderVideos();
+  document.getElementById('video-controls').hidden = false;
 })();
