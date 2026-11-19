@@ -19,7 +19,7 @@ const videos = Object.values(videoFiles).filter((video) => !video.draft).sort((a
 const years = [...new Set(photos.filter((photo) => photo.year !== 'more').map((photo) => photo.year))].sort().reverse();
 const generationLabel = archives.length === 1 ? 'generation' : 'generations';
 const initialTab = Astro.props.initialTab ?? 'gallery';
-const categoryKey = (value = 'Other') => value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const categoryKey = (value) => (value ?? '').trim().toLowerCase().replace(/[^a-z0-9]+/g, '-');
 const safeVideoUrl = (value) => {
   try {
     const url = new URL(value);
@@ -39,7 +39,15 @@ const twitchClipSlug = (videoUrl) => {
   }
   return null;
 };
-const categories = [['map-launch', 'Map launches'], ['community-event', 'Community events'], ['pvp-tournament', 'PvP tournaments'], ['other', 'Other']];
+const categories = new Map([
+  ['map-launch', 'Map Launches'],
+  ['community-event', 'Community Events'],
+  ['pvp-tournament', 'PvP Tournaments'],
+  ['server-review', 'Server Reviews'],
+  ['mob-arena', 'Mob Arenas'],
+  ['trailer', 'Trailers'],
+  ['uncategorized', 'Uncategorized']
+]);
 ---
 <main id="main" class="community-hub" data-initial-tab={initialTab}>
   <section class="inner-hero community-hero">
@@ -124,40 +132,70 @@ const categories = [['map-launch', 'Map launches'], ['community-event', 'Communi
         <h2>Video Archive</h2>
         <p>Watch map beginnings, community events, PvP tournaments, and full livestream recordings from Silver Springs.</p>
       </div>
-      <div class="video-toolbar">
-        <label>Filter videos<select id="video-filter"><option value="all">All videos</option>{categories.map(([key, label]) => <option value={key}>{label}</option>)}</select></label>
-        <label>Sort by date<select id="video-sort"><option value="newest">Newest first</option><option value="oldest">Oldest first</option></select></label>
-        <p role="status" id="video-count">{videos.length} {videos.length === 1 ? 'video' : 'videos'}</p>
-      </div>
       {videos.length ? (
-        <div class="video-grid" id="video-grid">
-          {videos.map((video) => {
-            const category = video.category || 'Other';
-            const videoUrl = safeVideoUrl(video.videoUrl);
-            const twitchClip = twitchClipSlug(videoUrl);
-            const youtubeId = safeYouTubeId(video.youtubeId);
-            const preview = video.thumbnail ? (
-              <img class="video-thumbnail" src={video.thumbnail} alt={video.thumbnailAlt || video.title} loading="lazy" decoding="async" />
-            ) : (
-              <div class="video-art" aria-hidden="true"><span>▶</span></div>
-            );
-            return <article class="video-card" data-video-category={categoryKey(category)} data-video-date={videoDate(video)}>
-              {twitchClip ? (
-                <div data-twitch-clip={twitchClip}>
-                  <div data-twitch-preview>{preview}</div>
-                  <iframe class="video-twitch-frame" title={`Watch ${video.title} on Twitch`} loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen hidden></iframe>
+        <>
+          <div id="video-controls" hidden>
+            <div class="video-categories" role="group" aria-label="Video categories">
+              <button type="button" data-video-filter="all" aria-pressed="true" aria-controls="video-grid">All Videos</button>
+              {[...categories].map(([key, label]) => (
+                <button type="button" data-video-filter={key} aria-pressed="false" aria-controls="video-grid">{label}</button>
+              ))}
+            </div>
+            <div class="video-toolbar">
+              <p id="video-count" role="status"></p>
+              <label>Sort by date
+                <select id="video-sort">
+                  <option value="newest">Newest first</option>
+                  <option value="oldest">Oldest first</option>
+                </select>
+              </label>
+            </div>
+          </div>
+          <div class="video-grid" id="video-grid" role="region" aria-label="Videos" tabindex="-1">
+            {videos.map((video) => {
+              const key = categoryKey(video.category);
+              const category = categories.has(key) ? key : 'uncategorized';
+              const videoUrl = safeVideoUrl(video.videoUrl);
+              const twitchClip = twitchClipSlug(videoUrl);
+              const youtubeId = safeYouTubeId(video.youtubeId);
+              const platform = twitchClip ? 'twitch' : youtubeId ? 'youtube' : null;
+              const watchUrl = videoUrl ?? (youtubeId ? `https://www.youtube.com/watch?v=${youtubeId}` : null);
+              const thumbnail = video.thumbnail || (platform === 'youtube' ? `https://i.ytimg.com/vi/${youtubeId}/hqdefault.jpg` : null);
+
+              return <article class="video-card" data-video-category={category} data-video-date={videoDate(video)}>
+                <div class="video-media">
+                  <div class="video-preview">
+                    {thumbnail
+                      ? <img class="video-thumbnail" src={thumbnail} alt={video.thumbnailAlt || ''} loading="lazy" decoding="async" />
+                      : <div class="video-art" aria-hidden="true"><span>▶</span></div>}
+                    {platform && (
+                      <button
+                        type="button"
+                        class="video-play"
+                        data-video-platform={platform}
+                        data-video-id={twitchClip ?? youtubeId}
+                        aria-label={`Play ${video.title}`}
+                        hidden
+                      ><span class="btn primary">▶ Play</span></button>
+                    )}
+                  </div>
                 </div>
-              ) : youtubeId ? <div class="video-frame"><iframe src={`https://www.youtube-nocookie.com/embed/${youtubeId}`} title={`Watch ${video.title}`} loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-                : preview}
-              <div class="video-card-content">
-                <div class="video-meta"><span>{category}</span>{video.format && <span>{video.format}</span>}{video.date && <time datetime={video.date}>{video.date}</time>}</div>
-                <h3>{video.title}</h3>
-                {video.description && <p>{video.description}</p>}
-                {videoUrl && <a class="textlink" href={videoUrl} target="_blank" rel="noopener noreferrer">{twitchClip ? 'Watch on Twitch ↗' : 'Watch video ↗'}</a>}
-              </div>
-            </article>;
-          })}
-        </div>
+                <div class="video-card-content">
+                  <div class="video-meta"><span>{categories.get(category)}</span>{video.format && <span>{video.format}</span>}{video.date && <time datetime={video.date}>{video.date}</time>}</div>
+                  <h3>{video.title}</h3>
+                  {video.description && <p>{video.description}</p>}
+                  {watchUrl && <a class="textlink" href={watchUrl} target="_blank" rel="noopener noreferrer">{twitchClip ? 'Watch on Twitch ↗' : 'Watch video ↗'}</a>}
+                </div>
+              </article>;
+            })}
+          </div>
+          <p id="video-filter-empty" class="video-filter-empty" hidden>No videos in this category yet.</p>
+          <nav id="video-pages" class="video-pages" aria-label="Video archive pages" hidden>
+            <button type="button" class="btn" id="video-previous">← Previous</button>
+            <span id="video-page-number"></span>
+            <button type="button" class="btn" id="video-next">Next →</button>
+          </nav>
+        </>
       ) : (
         <div class="video-empty">
           <span class="video-empty-icon" aria-hidden="true">▶</span>
@@ -165,7 +203,6 @@ const categories = [['map-launch', 'Map launches'], ['community-event', 'Communi
           <p>Silver Springs videos will appear here as recordings are added, from map launches and community events to tournament highlights and full VODs.</p>
         </div>
       )}
-      {videos.length > 0 && <p id="video-filter-empty" class="video-filter-empty" hidden>No videos in this category yet. Choose another filter to keep browsing.</p>}
     </section>
   </section>
 </main>
