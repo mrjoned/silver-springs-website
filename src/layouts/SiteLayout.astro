@@ -18,6 +18,7 @@ const pageTitle = title === 'Silver Springs Survival' ? title : `${title} · Sil
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex" />}
     <title>{pageTitle}</title>
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet" />
     {styles.map((href) => <link rel="stylesheet" href={href} />)}
