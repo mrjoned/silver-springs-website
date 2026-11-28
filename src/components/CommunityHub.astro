@@ -48,6 +48,43 @@ const categories = new Map([
   ['trailer', 'Trailers'],
   ['uncategorized', 'Uncategorized']
 ]);
+const wikiBase = 'https://silver-springs-survival.fandom.com/wiki/';
+const arenaFeatures = [
+  {
+    name: 'Dawntreader',
+    wikiPage: 'Dawntreader',
+    description: 'A multi-level team arena with 30 waves. The old recordings show players fighting through later rounds and celebrating one of their early wins.',
+    recordings: [
+      ['SyaPjWGNQT4', 'Watch Round 3'],
+      ['8a46nbA2tJk', 'Watch the third win'],
+    ],
+  },
+  {
+    name: 'Hellfire',
+    wikiPage: 'Hellfire',
+    description: 'A Nether-themed arena where players could take on classes inspired by Nether mobs.',
+    recordings: [['Iap6CZRjLVQ', 'Watch Hellfire gameplay']],
+  },
+].map((arena) => {
+  const recordings = arena.recordings.flatMap(([id, label]) => {
+    const video = videos.find((entry) => entry.youtubeId === id);
+    if (!video) return [];
+    return [{
+      label,
+      url: safeVideoUrl(video.videoUrl) ?? `https://www.youtube.com/watch?v=${id}`,
+      thumbnail: video.thumbnail || `https://i.ytimg.com/vi/${id}/hqdefault.jpg`,
+    }];
+  });
+  return { ...arena, recordings };
+});
+const arenaNotes = [
+  ['DesertStorm', 'DesertStorm', 'An arena from an earlier map with its own class kits and boss encounters.'],
+  ['Ice', 'Ice', 'A 15-wave solo arena, shorter than most of the old Mob Arenas.'],
+  ['Plague', 'Plague', 'A solo arena that packed its encounters into 10 waves.'],
+  ['International Silver Springs Station', 'ISSS', 'A space-station arena where players earned credits to unlock doors and upgrade gear at the power core.'],
+  ['LowerSpire', 'LowerSpire', 'A three-level arena with 30 waves, from an upper ring down to the main floor.'],
+  ['SpiresPeak', 'SpiresPeak', 'A one-wave boss fight set above LowerSpire.'],
+];
 ---
 <main id="main" class="community-hub" data-initial-tab={initialTab}>
   <section class="inner-hero community-hero">
@@ -64,6 +101,7 @@ const categories = new Map([
       <a class="community-tab" id="tab-gallery" role="tab" href="#community-gallery" aria-controls="community-gallery" aria-selected={initialTab === 'gallery' ? 'true' : 'false'}>Gallery</a>
       <a class="community-tab" id="tab-maps" role="tab" href="#community-maps" aria-controls="community-maps" aria-selected={initialTab === 'maps' ? 'true' : 'false'}>Map Archive</a>
       <a class="community-tab" id="tab-videos" role="tab" href="#community-videos" aria-controls="community-videos" aria-selected={initialTab === 'videos' ? 'true' : 'false'}>Video Archive</a>
+      <a class="community-tab" id="tab-retired-arenas" role="tab" href="#retired-arenas" aria-controls="retired-arenas" aria-selected="false">Retired Arenas</a>
     </nav>
   </div>
 
@@ -205,4 +243,97 @@ const categories = new Map([
       )}
     </section>
   </section>
+
+  <section class="community-panel" id="retired-arenas" role="tabpanel" aria-labelledby="tab-retired-arenas" tabindex="0">
+    <div class="wrap retired-arena-section">
+      <div class="community-panel-heading">
+        <h2>Retired Arenas</h2>
+        <p>Revisit the Mob Arenas and Valor Arenas of earlier Silver Springs maps, with gameplay recordings and notes from the old wiki.</p>
+      </div>
+      <div class="video-grid">
+        {arenaFeatures.map((arena) => (
+          <article class="video-card">
+            {arena.recordings[0] && <img class="video-thumbnail" src={arena.recordings[0].thumbnail} alt="" loading="lazy" decoding="async" />}
+            <div class="video-card-content">
+              <h3>{arena.name}</h3>
+              <p>{arena.description}</p>
+              <ul class="arena-links">
+                {arena.recordings.map((video) => (
+                  <li><a class="textlink" href={video.url} target="_blank" rel="noopener noreferrer">{video.label} ↗</a></li>
+                ))}
+                <li><a class="textlink" href={wikiBase + arena.wikiPage} aria-label={`Wiki notes for ${arena.name}`}>Wiki notes ↗</a></li>
+              </ul>
+            </div>
+          </article>
+        ))}
+      </div>
+      <section class="arena-notes" aria-labelledby="other-retired-arenas">
+        <h3 id="other-retired-arenas">More arenas from past maps</h3>
+        <div class="arena-notes-grid">
+          {arenaNotes.map(([name, wikiPage, description]) => (
+            <article>
+              <h4>{name}</h4>
+              <p>{description}</p>
+              <a class="textlink" href={wikiBase + wikiPage} aria-label={`Wiki notes for ${name}`}>Wiki notes ↗</a>
+            </article>
+          ))}
+        </div>
+      </section>
+    </div>
+  </section>
 </main>
+
+<style>
+  .retired-arena-section {
+    padding-block: 28px 90px;
+  }
+
+  .arena-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 20px;
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 0;
+  }
+
+  .arena-notes {
+    margin-top: 48px;
+  }
+
+  .arena-notes h3 {
+    margin: 0 0 20px;
+    font-size: clamp(24px, 3vw, 32px);
+  }
+
+  .arena-notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+    gap: 16px;
+  }
+
+  .arena-notes-grid article {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 22px;
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    background: var(--panel);
+  }
+
+  .arena-notes-grid h4 {
+    margin: 0;
+    font-size: 19px;
+  }
+
+  .arena-notes-grid p {
+    margin: 8px 0 16px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  .arena-notes-grid a {
+    margin-top: auto;
+  }
+</style>

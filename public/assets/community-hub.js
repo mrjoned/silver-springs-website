@@ -5,9 +5,9 @@
   let activePlayer;
   const tabs = [...hub.querySelectorAll('[role="tab"]')];
   const panels = [...hub.querySelectorAll('[role="tabpanel"]')];
-  const keys = ['gallery', 'maps', 'videos'];
-  const panelIds = { gallery: 'community-gallery', maps: 'community-maps', videos: 'community-videos' };
-  const aliases = { gallery: 'gallery', 'community-gallery': 'gallery', maps: 'maps', 'community-maps': 'maps', videos: 'videos', 'community-videos': 'videos' };
+  const keys = ['gallery', 'maps', 'videos', 'retired-arenas'];
+  const panelIds = { gallery: 'community-gallery', maps: 'community-maps', videos: 'community-videos', 'retired-arenas': 'retired-arenas' };
+  const aliases = { gallery: 'gallery', 'community-gallery': 'gallery', maps: 'maps', 'community-maps': 'maps', videos: 'videos', 'community-videos': 'videos', 'retired-arenas': 'retired-arenas' };
 
   function activate(key, updateHistory) {
     if (!keys.includes(key)) return;
